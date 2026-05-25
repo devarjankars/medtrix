@@ -15,12 +15,26 @@ import DynamicHeader from '@/components/DynamicHeader';
     
      <main className=" ">
       {/* Usage 1: Exactly like the image */}
-      <DynamicHeader
-        tagText="COMMERCIAL SOLUTIONS"
-        title="We enable large-scale, high-quality content production "
-        paragraphs={strategyParagraphs}
-        graphicSrc="/servicesHeader.png"
-      />
+    <DynamicHeader
+  tagText="COMMERCIAL SOLUTIONS"
+  title="Capability to achieve transformational outcomes"
+  graphicSrc="/servicesHeader.png"
+  paragraphs={strategyParagraphs}
+  statsCards={[
+    {
+      value: "1000,000+",
+      label: "Assets Created"
+    },
+    {
+      value: "AI",
+      label: "Catalysts"
+    },
+    {
+      value: "Faster MLR",
+      label: "Approval"
+    }
+  ]}
+/>
       <div className="absolute inset-0 overflow-hidden pointer-events-none select-none z-0">
 
       

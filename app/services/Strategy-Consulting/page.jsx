@@ -3,8 +3,8 @@ import DynamicHeader from '@/components/DynamicHeader';
 import FeatureSection from '@/components/FeatureSection';
 
 const strategyParagraphs = [
-  "We partner with healthcare brands across stages and scales—serving as an Agency of Record for some, while enabling others through flexible, decoupled engagement models.",
-  "For emerging and mid-sized pharmas, we deliver end-to-end brand strategy and execution. For larger organizations, we complement existing ecosystems—driving innovation, omnichannel excellence, and high-impact strategic initiatives."
+  "We partner with healthcare brands across stages and scales—serving as an Agency of Record for some, while enabling others through flexible, decoupled engagement models. ",
+  "For emerging and mid-sized pharma, we deliver end-to-end brand strategy and execution. For larger organizations, we complement existing ecosystems—driving innovation, omnichannel excellence, and high-impact strategic initiatives. "
 ];
 
 const singleButton1 = [{ label: "Explore our AOR partnership", type: "primary" }];
@@ -18,7 +18,7 @@ export default function page() {
     <main className="relative w-[90%] md:w-[80%] mx-auto">
       <DynamicHeader
         tagText="STRATEGY & CONSULTING"
-        title="Strategy That Adapts to Your Needs"
+        title="Strategy That Adapts to Your Needs "
         paragraphs={strategyParagraphs}
         graphicSrc="/servicesHeader.png"
       />
