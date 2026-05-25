@@ -8,7 +8,7 @@ const statsData = [
  
 export default function Animation() {
   return (
-    <div className=" overflow-hidden  ">
+    <div className="overflow-hidden  ">
             <BeanCanvasAnimation />
       <section className="relative  px-0 lg:px-0 py-20 overflow-hidden z-1">
  
@@ -46,7 +46,7 @@ export default function Animation() {
     {/* RIGHT CONTENT */}
     <div className="
     lg:pl-10
-    lg:border-l
+    lg:border-l section
     border-[#2A2A2A]
     ">
  
@@ -87,10 +87,10 @@ export default function Animation() {
     </div>
  
   </div>
- 
+
 </section>
      
-      <section className="relative  px-6 lg:px-0 py-20 mt-10 overflow-hidden isolate z-20">
+      <section className="relative  px-6 lg:px-0 py-20  overflow-hidden isolate z-20">
  
  
         {/* STATS */}
@@ -112,8 +112,8 @@ export default function Animation() {
         </div>
  
         {/* GLOW */}
-       
- 
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
+
       </section>
     </div>
   );

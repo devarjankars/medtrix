@@ -14,7 +14,7 @@ export default function BeanCanvasAnimation() {
         position: 'absolute',
      
         width: '99vw',
-        height: '100vh',
+        height: '85vh',
         left: 0,
         zIndex: 0,
         pointerEvents: 'none',
