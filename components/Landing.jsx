@@ -1,7 +1,7 @@
 "use client";
 export default function Landing() {
   return (
-    <section className=" py-20 bg-[#000] relative isolate z-10 px-6 h-[90vh] lg:px-0">
+    <section className=" py-20  relative isolate z-10 px-6 h-[90vh] w-[90%] md:w-[80%] mx-auto lg:px-0">
       <div className="flex flex-col md:flex-row items-center justify-between gap-18 ">
         <div className="text-left flex w-1/2 flex-col gap-5">
            <h1 className=" text-[70px]   font-bold leading-[1.2] text-[#FFF]
