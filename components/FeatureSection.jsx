@@ -65,8 +65,8 @@ export default function FeatureSection({
 
         </div>
       </div>
-      
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[350px] bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-[#7a1210] via-[#3a0806] to-transparent opacity-70 blur-3xl pointer-events-none z-0" />
+      <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
+
     </section>
   );
 }
