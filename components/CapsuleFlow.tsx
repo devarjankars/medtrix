@@ -27,7 +27,7 @@ interface CapsuleFlowProps {
  */
 export default function CapsuleFlow({
   glbUrl = '/img/capsule.glb',
-  count = 1000,
+  count = 600,
   className = '',
   style,
 }: CapsuleFlowProps) {
