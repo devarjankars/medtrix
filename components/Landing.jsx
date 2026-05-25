@@ -1,6 +1,6 @@
 export default function Landing() {
   return (
-    <section className=" py-20 bg-transparent">
+    <section className=" py-20 bg-[#000] relative isolate z-10 px-6 lg:px-10">
       <div className="flex flex-col md:flex-row items-center gap-18">
         <div className="text-left flex flex-col gap-5">
            <h1 className=" text-4xl font-bold leading-[1.2] text-[#FFF]
@@ -17,12 +17,9 @@ export default function Landing() {
          <img src="./tablet.png" alt=""  className=" items-center min-w-70 md:min-w-1" />
       </div>
        <div
-          className="
-    absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[1400px] h-[350px] rounded-full pointer-events-none
-  "
+          className="absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[1400px] h-[350px] rounded-full pointer-events-none"
           style={{
-            background:
-              "radial-gradient(circle, rgba(255,0,0,0.35) 0%, rgba(180,0,0,0.18) 40%, transparent 75%)",
+            background: "radial-gradient(circle, rgba(0,106,128,0.3) 0%, rgba(0,0,0,0.4) 100%)",
             filter: "blur(90px)",
           }}
         />
