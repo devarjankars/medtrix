@@ -17,13 +17,7 @@ export default function Landing() {
         </div>
          <img src="/tablet.png" alt=""  className=" items-center min-w-70 md:min-w-1" />
       </div>
-       <div
-          className="absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[1400px] h-[350px] rounded-full pointer-events-none"
-          style={{
-            background: "radial-gradient(circle, rgba(0,106,128,0.3) 0%, rgba(0,0,0,0.4) 100%)",
-            filter: "blur(90px)",
-          }}
-        />
+      
     </section>
   );
 }

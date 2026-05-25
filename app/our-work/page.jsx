@@ -1,21 +1,48 @@
 "use client";
-const projects = [
-  { title: "Regional Hospital Network", desc: "Unified EHR system across 12 hospitals." },
-  
+import { useState } from "react";
+import WorkCard from "@/components/WorkCard";
+import { projects } from "@/Data/project";
+
+const filters = [
+  "ALL PROJECTS",
+  "STRATEGY & CONSULTING",
+  "COMMERCIAL SOLUTIONS",
+  "MEDICAL AFFAIRS",
+  "DIGITAL",
 ];
 
-export default function OurWork() {
+export default function WorkPage() {
+  const [active, setActive] = useState("ALL PROJECTS");
+
+  const filtered = active === "ALL PROJECTS"
+    ? projects
+    : projects.filter(p => p.category.toUpperCase() === active);
+
   return (
-    <section className="max-w-4xl mx-auto px-6 py-20 bg-transparent">
-      <h1 className="text-4xl font-bold text-[#FFF] mb-10">Our Work</h1>
-      <div className="flex flex-col gap-6">
-        {projects.map(({ title, desc }) => (
-          <div key={title} className="bg-white rounded-xl border border-zinc-200 p-6 shadow-sm">
-            <h2 className="text-xl font-semibold text-zinc-800 mb-2">{title}</h2>
-            <p className="text-zinc-500">{desc}</p>
-          </div>
+    <section className="bg-black min-h-screen px-6 lg:px-24 py-20">
+
+      <p className="text-white uppercase text-sm tracking-[4px] mb-12">Our Work</p>
+
+      <div className="flex gap-3 overflow-x-auto mb-20 pb-2">
+        {filters.map((item) => (
+          <button
+            key={item}
+            onClick={() => setActive(item)}
+            className={`px-6 py-3 rounded-xl text-sm whitespace-nowrap transition font-medium ${
+              active === item
+                ? "bg-white text-black"
+                : "bg-[#1E1E1E] text-white hover:bg-[#2a2a2a]"
+            }`}
+          >
+            {item}
+          </button>
         ))}
       </div>
+
+      {filtered.map(project => (
+        <WorkCard key={project.id} project={project} />
+      ))}
+
     </section>
   );
 }

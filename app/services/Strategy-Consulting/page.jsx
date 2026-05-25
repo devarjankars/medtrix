@@ -1,6 +1,7 @@
 "use client";
 import DynamicHeader from '@/components/DynamicHeader';
 import FeatureSection from '@/components/FeatureSection';
+
  
  
  const strategyParagraphs = [
@@ -109,3 +110,12 @@ export default function page() {
    
   );
 }
+
+
+
+ 
+ 
+
+ 
+
+ 
