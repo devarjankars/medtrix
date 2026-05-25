@@ -1,6 +1,5 @@
-
-import BeanCanvasAnimation from '@/components/BeanCanvasAnimation';
 import CapsuleFlow from '@/components/CapsuleFlow';
+
 const statsData = [
   { value: "3,200+", label: "Projects Delivered" },
   { value: "200,000+", label: "HCPs Engaged" },
