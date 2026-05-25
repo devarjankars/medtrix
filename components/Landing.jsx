@@ -3,8 +3,8 @@ export default function Landing() {
   return (
     <section className="p-10 xl:py-20  relative isolate z-10 px-6 lg:h-[100vh] w-[90%] md:w-[80%] mx-auto lg:px-0">
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-18 ">
-        <div className="text-left flex xl:w-1/2 flex-col gap-5">
-           <h1 className=" text-[70px]   font-bold leading-[1.2] text-[#FFF]
+        <div className=" pl-2 md:pl-0 text-left flex xl:w-1/2 flex-col gap-5">
+           <h1 className="  text-[70px]   font-bold leading-[1.2] text-[#FFF]
 1  ">MedTrix - Catalyzing <span className=" text-red-600">Healthcare</span></h1>
                   <p className="text-[22px] text-[#7f818B]">MedTrix is a growth catalyst for pharmaceutical and life science companies. 
                     We work with the science you've built, the teams you've assembled, and the brands you've invested in, 
