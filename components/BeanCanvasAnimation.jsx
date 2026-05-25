@@ -9,17 +9,7 @@ import CapsuleFlow from '@/components/CapsuleFlow';
  */
 export default function BeanCanvasAnimation() {
   return (
-    <CapsuleFlow
-      style={{
-        position: 'absolute',
-     
-        width: '99vw',
-        height: '85vh',
-        left: 0,
-        zIndex: 0,
-        pointerEvents: 'none',
-      }}
-    />
+    <></>
   );
 }
  

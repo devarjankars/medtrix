@@ -99,13 +99,18 @@ export default function CapsuleFlow({
  
     const buildCurve = () => {
       const { visW, visH } = getFullVisSize();
+      const rect = container.getBoundingClientRect();
+      // Convert container center from screen-space to world-space Y
+      const containerCenterY = rect.top + rect.height / 2;
+      const ndcY = 1 - (containerCenterY / window.innerHeight) * 2;
+      const worldY = ndcY * (visH / 2);
       curve = new THREE.CatmullRomCurve3([
-        new THREE.Vector3(-visW * 0.52,  visH * 0.15, 0),
-        new THREE.Vector3(-visW * 0.3,   visH * 0.08, 0),
-        new THREE.Vector3(-visW * 0.1,   visH * 0.02, 0),
-        new THREE.Vector3( visW * 0.1,  -visH * 0.02, 0),
-        new THREE.Vector3( visW * 0.3,  -visH * 0.08, 0),
-        new THREE.Vector3( visW * 0.52, -visH * 0.15, 0),
+        new THREE.Vector3(-visW * 0.52,  worldY + visH * 0.15, 0),
+        new THREE.Vector3(-visW * 0.3,   worldY + visH * 0.08, 0),
+        new THREE.Vector3(-visW * 0.1,   worldY + visH * 0.02, 0),
+        new THREE.Vector3( visW * 0.1,   worldY - visH * 0.02, 0),
+        new THREE.Vector3( visW * 0.3,   worldY - visH * 0.08, 0),
+        new THREE.Vector3( visW * 0.52,  worldY - visH * 0.15, 0),
       ]);
     };
  
@@ -208,7 +213,10 @@ export default function CapsuleFlow({
  
       renderer.setScissor(x, y, width, height);
       renderer.setViewport(0, 0, window.innerWidth * dpr, window.innerHeight * dpr);
- 
+
+      // Rebuild curve every frame so it tracks the container's scroll position
+      buildCurve();
+
       if (curve.points.length < 2 || beans.length === 0) {
         renderer.render(scene, camera);
         return;

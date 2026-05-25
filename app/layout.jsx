@@ -24,8 +24,8 @@ export default function RootLayout({ children }) {
         <ScrollToTop />
         <LenisProvider>
         <Navbar />
-        <main className="flex-1 bg-[#000000]">
-          <div className="w-full">{children}</div>
+        <main className="flex-1 w-full bg-[#000000]">
+          <div className="w-full ">{children}</div>
         </main>
         <Footer />
         </LenisProvider>
