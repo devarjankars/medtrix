@@ -27,7 +27,8 @@ export default function BeanBackground() {
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        const maxDPR = window.innerWidth < 768 ? 1.5 : 2;
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxDPR));
         container.appendChild(renderer.domElement);
 
         // Lights
@@ -78,17 +79,30 @@ export default function BeanBackground() {
         const visH = 2 * Math.tan(vFov / 2) * dist;
         updateCurve(visH * (window.innerWidth / window.innerHeight), visH);
 
+        // Dynamic count & size based on screen
+        const getConfig = () => {
+            const area = window.innerWidth * window.innerHeight;
+            const isMobile = window.innerWidth < 768;
+            const count = Math.round(THREE.MathUtils.clamp(area / 500, 300, 2000));
+            const TABLET_SIZE = isMobile ? 0.28 : 0.38;
+            return { count, TABLET_SIZE };
+        };
+
         // Create Beans
         const gltfLoader = new GLTFLoader();
-        const count = 2000;
-        const TABLET_SIZE = 0.38;
+        let { count, TABLET_SIZE } = getConfig();
+
+        let sourceRef = null;
+        let sourceScaleRef = 1;
 
         gltfLoader.load('/img/capsule.glb', (gltf) => {
             const source = gltf.scene;
             const bbox = new THREE.Box3().setFromObject(source);
             const size = new THREE.Vector3();
             bbox.getSize(size);
-            const scale = TABLET_SIZE / Math.max(size.y, size.x, size.z, 1);
+            sourceScaleRef = Math.max(size.y, size.x, size.z, 1);
+            sourceRef = source;
+            const scale = TABLET_SIZE / sourceScaleRef;
 
             for (let i = 0; i < count; i++) {
                 const mesh = source.clone(true);
@@ -122,10 +136,39 @@ export default function BeanBackground() {
             camera.aspect = window.innerWidth / window.innerHeight;
             camera.updateProjectionMatrix();
             renderer.setSize(window.innerWidth, window.innerHeight);
+            const maxDPR = window.innerWidth < 768 ? 1.5 : 2;
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxDPR));
             const dist = camera.position.z;
             const vFov = THREE.MathUtils.degToRad(camera.fov);
             const visH = 2 * Math.tan(vFov / 2) * dist;
             updateCurve(visH * camera.aspect, visH);
+
+            // Adjust bean count on resize
+            const newConfig = getConfig();
+            if (newConfig.count !== beans.length && sourceRef) {
+                const newScale = newConfig.TABLET_SIZE / sourceScaleRef;
+                while (beans.length > newConfig.count) {
+                    const b = beans.pop();
+                    scene.remove(b.mesh);
+                }
+                while (beans.length < newConfig.count) {
+                    const i = beans.length;
+                    const mesh = sourceRef.clone(true);
+                    mesh.scale.setScalar(newScale);
+                    scene.add(mesh);
+                    beans.push({
+                        mesh,
+                        progress: -0.5 + (i / newConfig.count) * 1.6,
+                        radialAngle: Math.random() * Math.PI * 2,
+                        radialDist: Math.sqrt(Math.random()),
+                        rest: new THREE.Vector3(),
+                        vel: new THREE.Vector3(),
+                        spin: (Math.random() - 0.5) * 0.06,
+                        phase: Math.random() * Math.PI * 4,
+                        firstFrame: true
+                    });
+                }
+            }
         };
 
         window.addEventListener('mousemove', onMouseMove);

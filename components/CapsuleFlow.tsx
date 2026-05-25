@@ -191,9 +191,9 @@ export default function CapsuleFlow({
     // ── animation loop ─────────────────────────────────────────────────────
     const REPEL_RADIUS   = 2.2;
     const REPEL_STRENGTH = 3.0;
-    const SPRING         = 0.000;
-    const DAMPING        = 0.0;
-    const FLOW_SPEED     = 0;
+    const SPRING         = 0.003;
+    const DAMPING        = 0.88;
+    const FLOW_SPEED     = 0.025;
  
     const clock = new THREE.Clock();
     let rafId: number;
