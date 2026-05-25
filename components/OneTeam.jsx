@@ -5,14 +5,27 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactLenis from "lenis/react";
+import Image from "next/image";
+
+import vp1 from "../public/vp1.png";
+import vp2 from "../public/vp2.png";
+import vp3 from "../public/vp3.png";
+import vp4 from "../public/vp4.png";
+import ceoImg from "../public/ceo.png";
+import linkedinImg from "../public/linkdin.png";
+import mapImg from "../public/map.png";
+import gptwImg from "../public/gptw.png";
+import s1 from "../public/s1.webp";
+import s2 from "../public/s2.jpg";
+import s3 from "../public/s3.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const vpData = [
-  { img: "/vp1.png", name: "Kumar Badampudi", role: "VP - Medical Affairs & Strategy" },
-  { img: "/vp2.png", name: "Shijin Pulikkotil", role: "VP - Head of Operations" },
-  { img: "/vp3.png", name: "Hari Prabhakaran", role: "VP - Business Development" },
-  { img: "/vp4.png", name: "Vincent Morella", role: "US Operations Admin" },
+  { img: vp1, name: "Kumar Badampudi", role: "VP - Medical Affairs & Strategy" },
+  { img: vp2, name: "Shijin Pulikkotil", role: "VP - Head of Operations" },
+  { img: vp3, name: "Hari Prabhakaran", role: "VP - Business Development" },
+  { img: vp4, name: "Vincent Morella", role: "US Operations Admin" },
 ];
 
 const clientLogos = [
@@ -28,9 +41,9 @@ const awardsData = [
 ];
 
 const stackCards = [
-  { id: 1, image: "/s1.webp" },
-  { id: 2, image: "/s2.jpg" },
-  { id: 3, image: "/s3.jpg" },
+  { id: 1, image: s1 },
+  { id: 2, image: s2 },
+  { id: 3, image: s3 },
 ];
 
 function StickyCards() {
@@ -87,7 +100,7 @@ function StickyCards() {
           {stackCards.map((card, i) => (
             <img
               key={card.id}
-              src={card.image}
+              src={card.image.src}
               alt={`slide-${card.id}`}
               className="absolute h-full w-full object-cover rounded-3xl"
               ref={(el) => { imageRefs.current[i] = el; }}
@@ -105,7 +118,7 @@ function OneTeam() {
       <>
         <div className="flex flex-col lg:flex-row gap-8 pt-12 px-10 md:px-1 py-10 bg-[#18181B] border-t-4 border-[#878787] rounded-3xl text-white">
           <div className="flex flex-col gap-5">
-            <img src="/ceo.png" alt="Vimal Narayanan" className="max-w-[280px] rounded-xl" />
+            <Image src={ceoImg} alt="Vimal Narayanan" className="max-w-[280px] rounded-xl" />
           </div>
           <div className="flex items-start justify-center lg:px-10 flex-col gap-10">
             <p className="text-[30px] leading-relaxed">
@@ -117,7 +130,7 @@ function OneTeam() {
                 <h5 className="text-[28px] font-semibold">Vimal Narayanan</h5>
                 <p className="text-[20px] text-gray-300">Founder and CEO</p>
               </div>
-              <img src="/linkdin.png" alt="LinkedIn" className="w-[60px] h-[60px] object-contain cursor-pointer" />
+              <Image src={linkedinImg} alt="LinkedIn" className="w-[60px] h-[60px] object-contain cursor-pointer" />
             </div>
           </div>
         </div>
@@ -126,20 +139,24 @@ function OneTeam() {
           {vpData.map((vp, index) => (
             <div key={index} className="flex flex-col gap-1 px-5 py-5 pb-4 bg-[#18181B] border border-[#252525] border-t-[3px] border-t-[#504e4e] rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="flex justify-center">
-                <img src={vp.img} alt={vp.name} className="w-full h-auto object-contain" />
+                <Image src={vp.img} alt={vp.name} className="w-full h-auto object-contain" />
               </div>
               <div className="flex items-start justify-between">
                 <div className="flex-1">
                   <h5 className="text-[20px] font-semibold leading-tight">{vp.name}</h5>
                   <p className="text-gray-400 mt-1 text-[14px]">{vp.role}</p>
                 </div>
-                <img src="/linkdin.png" alt="LinkedIn" className="w-[56px] h-[56px] object-contain cursor-pointer shrink-0" />
+                <Image src={linkedinImg} alt="LinkedIn" className="w-[56px] h-[56px] object-contain cursor-pointer shrink-0" />
               </div>
             </div>
           ))}
         </div>
 
-        <StickyCards />
+        {/* <StickyCards /> */}
+
+        <div className="flex items-center justify-center py-20">
+          <Image src={gptwImg} alt="Great Place to Work" />
+        </div>
 
         <section className="bg-black py-24 px-6 lg:px-2 relative overflow-hidden">
           <div className="inline-flex px-8 py-3 rounded-full bg-[#242424] mb-10">
@@ -159,7 +176,7 @@ function OneTeam() {
           <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[180px] bg-red-700/30 blur-[120px] rounded-full" />
         </section>
 
-        <section className="bg-black lg:px-24 py-24 relative overflow-hidden">
+        <section className=" py-24 relative overflow-hidden">
           <div className="inline-flex px-6 py-3 rounded-full bg-[#262626] mb-10">
             <span className="text-white uppercase tracking-[4px] text-sm font-semibold">One Standard</span>
           </div>
@@ -178,7 +195,7 @@ function OneTeam() {
         </section>
 
         <section className="bg-black px-6 lg:px-1 flex flex-col items-center">
-          <img src="/map.png" alt="Contact Locations" className="w-full object-contain" />
+          <Image src={mapImg} alt="Contact Locations" className="w-full object-contain" />
           <button className="mt-8 px-10 py-4 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
             Contact Us
           </button>

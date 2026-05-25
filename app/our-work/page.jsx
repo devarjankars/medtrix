@@ -19,7 +19,7 @@ export default function WorkPage() {
     : projects.filter(p => p.category.toUpperCase() === active);
 
   return (
-    <section className="bg-black min-h-screen px-6 lg:px-24 py-20">
+    <div className="w-[90%] md:w-[80%] mx-auto bg-black min-h-screen py-20">
 
       <p className="text-white uppercase text-sm tracking-[4px] mb-12">Our Work</p>
 
@@ -43,6 +43,6 @@ export default function WorkPage() {
         <WorkCard key={project.id} project={project} />
       ))}
 
-    </section>
+    </div>
   );
 }

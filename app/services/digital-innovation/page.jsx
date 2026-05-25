@@ -35,7 +35,7 @@ import FeatureSection from '@/components/FeatureSection';
 ];
 function Page() {
   return (
-    < div className="min-h-screen ">
+    < div className="w-[90%] md:w-[80%] mx-auto min-h-screen">
         <section className="relative py-10 overflow-hidden">
          <DynamicHeader
         tagText="DIGITAL & INNOVATION"

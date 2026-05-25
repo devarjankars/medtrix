@@ -10,12 +10,12 @@ export default function Animation() {
   return (
     <div className=" overflow-hidden  ">
             <BeanCanvasAnimation />
-      <section className="relative  px-6 lg:px-10 py-20 overflow-hidden z-1">
+      <section className="relative  px-0 lg:px-0 py-20 overflow-hidden z-1">
  
-  <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[48%_52%] gap-14 items-center">
+  <div className="  grid grid-cols-1 lg:grid-cols-[48%_52%] gap-14 items-center">
  
     {/* LEFT IMAGE */}
-    <div className="relative">
+    <div className="relative flex items-start  h-full">
  
       <div className="inline-flex px-6 py-3 rounded-full bg-[#2A2525] mb-8 text-white tracking-[4px] text-sm font-bold uppercase">
         THE POWER OF ONE
@@ -71,8 +71,8 @@ export default function Animation() {
  
       <button className="
       mt-10
-      px-10
-      py-5
+      px-8
+      py-3
       bg-[#FF322A]
       rounded-full
       text-white
@@ -90,12 +90,12 @@ export default function Animation() {
  
 </section>
      
-      <section className="relative bg-black px-6 lg:px-10 py-20 overflow-hidden isolate z-20">
+      <section className="relative  px-6 lg:px-0 py-20 mt-10 overflow-hidden isolate z-20">
  
  
         {/* STATS */}
-        <div className="py-14 px-4 sm:px-6 lg:px-8 mb-4 mt-4">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="py-14 px-4 sm:px-6 lg:px-0 mb-4 mt-4">
+          <div className="  grid grid-cols-1 md:grid-cols-3 gap-20">
             {statsData.map((stat, index) => (
               <div
                 key={index}

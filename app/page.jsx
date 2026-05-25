@@ -5,7 +5,7 @@ import Animation from "@/components/Animation";
 
 export default function Home() {
   return (
-    <>
+    <div className="w-[90%] md:w-[80%] mx-auto">
       <Landing />
       <Animation />
       <div className="mt-4 mb-12">
@@ -16,6 +16,6 @@ export default function Home() {
        </div>
       <OneTeam />
 
-    </>
+    </div>
   );
 }

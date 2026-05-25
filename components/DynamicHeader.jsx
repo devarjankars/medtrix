@@ -6,19 +6,12 @@ export default function DynamicHeader({
   graphicAlt = "Header graphic"
 }) {
   return (
-    <section className="relative w-full bg-[#050505] text-white py-24 px-6 md:px-0 overflow-hidden min-h-[70vh] flex items-center">
+    <section className="relative   text-white py-24  md:px-0 overflow-hidden min-h-[70vh] flex items-center">
       
       {/* Background Gradients */}
       {/* Subtle Cyan/Blue Glow bottom left */}
-      <div className="absolute bottom-0 left-[10%] w-[400px] h-[300px] bg-cyan-900/15 radial-gradient blur-[120px] pointer-events-none" 
-           style={{ backgroundImage: 'radial-gradient(circle, rgba(6,182,212,0.15) 0%, transparent 70%)' }} />
-      
-      {/* Deep Red ambient glow behind the graphic on the right */}
-      <div className="absolute top-1/2 right-[10%] -translate-y-1/2 w-[500px] h-[500px] bg-red-900/10 rounded-full blur-[140px] pointer-events-none"
-           style={{ backgroundImage: 'radial-gradient(circle, rgba(225,37,27,0.12) 0%, transparent 70%)' }} />
-
-      {/* Main Content Box */}
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+    
+      <div className="max-w-7xl  w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
         {/* Left Side Content Column */}
         <div className="lg:col-span-7 flex flex-col items-start space-y-6">

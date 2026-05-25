@@ -22,7 +22,7 @@ const footerData = [
 export default function Footer() {
   return (
     <footer className="bg-black">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+      <div className="w-[90%] md:w-[80%] mx-auto py-16">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-12">
 
           <div className="col-span-2 lg:col-span-1 flex justify-center lg:justify-start">

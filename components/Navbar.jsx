@@ -173,7 +173,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-[#000] sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+      <div className="w-[90%] md:w-[80%] mx-auto py-5 flex items-center justify-between">
         <Link href="/">
           <img src="/logo.png" alt="Medtrix Logo" width={150} />
         </Link>

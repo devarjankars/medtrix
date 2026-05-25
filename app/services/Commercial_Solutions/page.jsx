@@ -61,7 +61,7 @@ const timelineData = [ { no: "01", title: "Videos", icon: "/videologo.png", desc
   { no: "02", title: "3D MOA / MOD", icon: "/cube.png", desc: "We specialize in mechanism of action videos.", }, 
   { no: "03", title: "Interactive Platforms", icon: "/platform.png", desc: "Custom apps and data-driven platforms.", } ];
 export default function Commercial_Solutions() {
-  return (<div>
+  return (<div className="w-[90%] md:w-[80%] mx-auto">
     
      <main className=" ">
       {/* Usage 1: Exactly like the image */}

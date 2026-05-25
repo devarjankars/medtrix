@@ -33,7 +33,7 @@ const catalystData = [
   return (
    
     
-        <div className="">
+        <div className="w-[90%] md:w-[80%] mx-auto">
          <section className="relative py-10 overflow-hidden">
                   <DynamicHeader
                  tagText="AI CATALYSTS"
