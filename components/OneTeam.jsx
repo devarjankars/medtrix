@@ -42,8 +42,7 @@ import awd10 from "../public/awd10.png";
 import awd11 from "../public/awd11.png";
 import awd12 from "../public/awd12.png";
 
-
-
+// added something here to test the commit and push functionality of git
 gsap.registerPlugin(ScrollTrigger);
 
 const vpData = [
