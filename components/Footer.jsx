@@ -25,7 +25,7 @@ export default function Footer() {
       <div className="w-[90%] md:w-[80%] mx-auto py-16">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-12">
 
-          <div className="col-span-2 lg:col-span-1 flex justify-center lg:justify-start">
+          <div className="col-span-2 lg:col-span-1 flex  lg:justify-start">
             <img src="/logo.png" alt="Medtrix" className="w-[180px] object-contain" />
           </div>
 
@@ -43,8 +43,8 @@ export default function Footer() {
           ))}
 
         </div>
-        <div className="border-t border-[#222222] pt-8 mt-8 flex flex-col lg:flex-row items-center justify-between">
-          <p>© 2026. All rights reserved. Medtrix Healthcare</p>
+        <div className="border-t border-[#222222] pt-8 mt-8 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+          <p className="text-center ">© 2026. All rights reserved. Medtrix Healthcare</p>
           <div className="flex  gap-6 mt-4">
             <Link href="#" className="text-gray-300 hover:text-white transition mr-4">
               Privacy Policy

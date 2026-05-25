@@ -41,7 +41,7 @@ export default function page() {
           buttons={singleButton2}
         />
         <div className="py-10" />
-        <FeatureSection tagText="OMNICHANNEL" imageSrc="/lunchandlifecycle.png" imageAlt="Omnichannel" imagePosition="left"
+        <FeatureSection tagText="OMNICHANNEL" imageSrc="/omni.png" imageAlt="Omnichannel" imagePosition="left"
           paragraphs={[
             "For the past 10 plus years, we have been pioneers in omnichannel approaches that bring together channels, content, and data into a connected brand experience ensuring every interaction feels relevant, timely, and consistent.",
             "Built on a strong understanding of HCPs, patients, and stakeholders, we map key journeys and identify the moments that influence decisions—aligning engagement across channels to improve reach and effectiveness.",
