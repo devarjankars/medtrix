@@ -6,7 +6,7 @@ export default function WorkCard({ project }) {
   return (
     <div className="
     grid
-    lg:grid-cols-[65%_35%]
+    lg:grid-cols-[50%_50%]
     gap-8
     mb-20
     ">
@@ -20,9 +20,9 @@ export default function WorkCard({ project }) {
           alt={project.title}
           className="
           w-full
-          h-[320px]
-          lg:h-[520px]
-          object-cover
+          
+          lg:h-[auto]
+          object-contain
           "
         />
       </div>
