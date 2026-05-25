@@ -6,6 +6,7 @@ const statsData = [
   { value: "100,000+", label: "Assets Created" },
 ];
  
+// added something here to test the commit and push functionality of git
 export default function Animation() {
   return (
     <div className="overflow-hidden relative min-h-screen">
