@@ -18,6 +18,20 @@ import gptwImg from "../public/gptw.png";
 import s1 from "../public/s1.webp";
 import s2 from "../public/s2.jpg";
 import s3 from "../public/s3.jpg";
+import awd1 from "../public/awd1.png";
+import awd2 from "../public/awd2.png";
+import awd3 from "../public/awd3.png";
+import awd4 from "../public/awd4.png";
+import awd5 from "../public/awd5.png";
+import awd6 from "../public/awd6.png";
+import awd7 from "../public/awd7.png";
+import awd8 from "../public/awd8.png";
+import awd9 from "../public/awd9.png";
+import awd10 from "../public/awd10.png";
+import awd11 from "../public/awd11.png";
+import awd12 from "../public/awd12.png";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,8 +50,8 @@ const clientLogos = [
 ];
 
 const awardsData = [
-  "/award1.png", "/award2.png", "/award3.png",
-  "/award4.png", "/award5.png", "/award6.png",
+  awd1, awd2, awd3,
+  awd4, awd5, awd6,awd7,awd8, awd9, awd10, awd11, awd12
 ];
 
 const stackCards = [
@@ -184,10 +198,10 @@ function OneTeam() {
             <span className="text-red-500">Excellence,</span>
             <span className="text-white"> recognized by the industry.</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
             {awardsData.map((award, index) => (
-              <div key={index} className="bg-[#ECECEC] rounded-3xl h-[220px] flex items-center justify-center p-8 transition-all duration-300 hover:-translate-y-1">
-                <img src={award} alt={`award-${index}`} className="max-w-[240px] max-h-[120px] object-contain" />
+              <div key={index} className="   flex items-center justify-center p-2 transition-all duration-300 hover:-translate-y-1">
+              <Image src={award} alt={`award-${index}`} className="max-w-[250px]  object-contain" />
               </div>
             ))}
           </div>
