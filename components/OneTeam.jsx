@@ -167,10 +167,14 @@ function OneTeam() {
         </div>
 
         {/* <StickyCards /> */}
-
-        <div className="flex items-center justify-center py-20">
+         <section className="relative ">
+        <div className="flex items-center justify-center py-20  ">
           <Image src={gptwImg} alt="Great Place to Work" />
+
         </div>
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
+
+        </section>
 
         <section className="bg-black py-24 px-6 lg:px-2 relative overflow-hidden">
           <div className="inline-flex px-8 py-3 rounded-full bg-[#242424] mb-10">
@@ -187,7 +191,8 @@ function OneTeam() {
               </div>
             ))}
           </div>
-          <div className="absolute bottom-[-100px] left-1/2 -translate-x-1/2 w-[500px] h-[180px] bg-red-700/30 blur-[120px] rounded-full" />
+          <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
+
         </section>
 
         <section className=" py-24 relative overflow-hidden">
@@ -205,7 +210,8 @@ function OneTeam() {
               </div>
             ))}
           </div>
-          <div className="absolute bottom-[-120px] left-1/2 -translate-x-1/2 w-[600px] h-[180px] bg-red-700/30 blur-[120px] rounded-full" />
+          <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
+
         </section>
 
         <section className="bg-black px-6 lg:px-1 flex flex-col items-center">
@@ -213,6 +219,8 @@ function OneTeam() {
           <button className="mt-8 px-10 py-4 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
             Contact Us
           </button>
+          <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
+
         </section>
       </>
     </ReactLenis>

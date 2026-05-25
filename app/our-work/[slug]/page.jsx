@@ -1,70 +1,33 @@
-import WorkCard from "@/components/WorkCard";
-import { projects } from "@/data/projects";
+"use client";
+import { projects } from "@/Data/project";
 
-const filters = [
-  "ALL PROJECTS",
-  "STRATEGY & CONSULTING",
-  "COMMERCIAL SOLUTIONS",
-  "MEDICAL AFFAIRS",
-  "DIGITAL",
-];
+export default function WorkDetailPage({ params }) {
+  const project = projects.find(p => p.slug === params.slug);
 
-export default function WorkPage() {
+  if (!project) {
+    return (
+      <div className="w-[90%] md:w-[80%] mx-auto py-20 text-white">
+        <h1 className="text-4xl font-bold">Project not found</h1>
+      </div>
+    );
+  }
+
   return (
-
-<section className="
-bg-black
-min-h-screen
-px-6
-lg:px-24
-py-20
-">
-
-<p className="
-text-white
-uppercase
-text-sm
-mb-12
-">
-OUR WORK
-</p>
-
-<div className="
-flex
-gap-5
-overflow-auto
-mb-20
-">
-
-{filters.map((item,index)=>(
-<button
-key={index}
-className="
-px-8
-py-4
-rounded-xl
-bg-[#1E1E1E]
-text-white
-whitespace-nowrap
-hover:bg-white
-hover:text-black
-transition
-"
->
-{item}
-</button>
-))}
-
-</div>
-
-{projects.map(project=>(
-<WorkCard
-key={project.id}
-project={project}
-/>
-))}
-
-</section>
-
+    <div className="w-[90%] md:w-[80%] mx-auto py-20 text-white">
+      <img src={project.image} alt={project.title} className="w-full h-[500px] object-cover rounded-3xl mb-10" />
+      <div className="flex gap-3 mb-6">
+        {project.tags.map(tag => (
+          <span key={tag} className="border border-[#444] px-4 py-2 text-xs rounded-md">{tag}</span>
+        ))}
+      </div>
+      <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
+      <p className="text-sm text-gray-400 uppercase mb-2">Platform / Stack</p>
+      <p className="text-gray-300 mb-8">{project.stack}</p>
+      <div className="flex flex-col gap-3">
+        {project.desc.map((item, i) => (
+          <p key={i} className="text-gray-300">{item}</p>
+        ))}
+      </div>
+    </div>
   );
 }
