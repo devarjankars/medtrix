@@ -1,6 +1,5 @@
-
-import BeanCanvasAnimation from '@/components/BeanCanvasAnimation';
 import CapsuleFlow from '@/components/CapsuleFlow';
+
 const statsData = [
   { value: "3,200+", label: "Projects Delivered" },
   { value: "200,000+", label: "HCPs Engaged" },
@@ -11,7 +10,7 @@ export default function Animation() {
   return (
     <div className="overflow-hidden relative min-h-screen">
             <CapsuleFlow
-    className=" absolute top-0 left-0 w-full h-[50%] pointer-events-none z-0 "
+    className=" xl:absolute top-0 left-0 w-full h-[100px] overflow-hiddenxl:h-[50%] pointer-events-none z-0 "
       style={{
      
      

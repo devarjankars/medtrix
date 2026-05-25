@@ -6,10 +6,11 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
  
 interface CapsuleFlowProps {
   glbUrl?: string;
-  count?: number;
   className?: string;
   style?: React.CSSProperties;
 }
+
+
  
 /**
  * CapsuleFlow
@@ -27,7 +28,6 @@ interface CapsuleFlowProps {
  */
 export default function CapsuleFlow({
   glbUrl = '/img/capsule.glb',
-  count = 600,
   className = '',
   style,
 }: CapsuleFlowProps) {
@@ -50,8 +50,19 @@ export default function CapsuleFlow({
     );
     camera.position.set(0, 0, 10);
  
+    const getConfig = () => {
+      const w = window.innerWidth;
+      const area = w * window.innerHeight;
+      const count = Math.round(THREE.MathUtils.clamp(area / 600, 150, 600));
+      const TABLET_SIZE = w < 768 ? 0.26 : w < 1280 ? 0.32 : 0.38;
+      const maxDPR = w < 768 ? 1.5 : 2;
+      return { count, TABLET_SIZE, maxDPR };
+    };
+
+    let { count, TABLET_SIZE, maxDPR } = getConfig();
+
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxDPR));
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setScissorTest(true); // only draw inside the container rect
  
@@ -130,8 +141,9 @@ export default function CapsuleFlow({
     };
  
     const beans: Bean[] = [];
-    const TABLET_SIZE = 0.38;
- 
+    let sourceRef: THREE.Object3D | null = null;
+    let rawSize = 1;
+
     const indices = Array.from({ length: count }, (_, i) => i);
     for (let i = indices.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -157,7 +169,9 @@ export default function CapsuleFlow({
       const source = gltf.scene;
       const size   = new THREE.Vector3();
       new THREE.Box3().setFromObject(source).getSize(size);
-      const scale  = TABLET_SIZE / Math.max(size.x, size.y, size.z, 1);
+      rawSize    = Math.max(size.x, size.y, size.z, 1);
+      sourceRef  = source;
+      const scale = TABLET_SIZE / rawSize;
       for (let i = 0; i < count; i++) {
         if (!indices.length) break;
         const mesh = source.clone(true);
@@ -179,10 +193,25 @@ export default function CapsuleFlow({
     };
  
     const onResize = () => {
+      const cfg = getConfig();
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, cfg.maxDPR));
       buildCurve();
+
+      if (!sourceRef || cfg.count === beans.length) return;
+      const scale = cfg.TABLET_SIZE / rawSize;
+      while (beans.length > cfg.count) {
+        const b = beans.pop()!;
+        scene.remove(b.mesh);
+      }
+      while (beans.length < cfg.count) {
+        const mesh = sourceRef.clone(true);
+        mesh.scale.setScalar(scale);
+        addBean(mesh, beans.length);
+      }
+      count = cfg.count;
     };
  
     window.addEventListener('mousemove', onMouseMove);
@@ -293,7 +322,7 @@ export default function CapsuleFlow({
       renderer.dispose();
       if (document.body.contains(canvas)) document.body.removeChild(canvas);
     };
-  }, [glbUrl, count]);
+  }, [glbUrl]);
  
   return (
     <div
