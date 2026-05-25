@@ -1,3 +1,4 @@
+"use client";
 import Landing from "@/components/Landing";
 import OneTeam from "@/components/OneTeam";
 import Animation from "@/components/Animation";

@@ -1,3 +1,4 @@
+"use client";
 const news = [
   { date: "June 2025", title: "Medtrix Launches AI Diagnostics Module", desc: "Our new AI module is now available to all enterprise clients." },
   { date: "April 2025", title: "Partnership with HealthNet", desc: "Medtrix partners with HealthNet to expand telemedicine reach." },

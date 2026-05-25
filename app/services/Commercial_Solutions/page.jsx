@@ -1,8 +1,3 @@
-
-
-
-
-
 "use client";
 import DynamicHeader from '@/components/DynamicHeader';
 

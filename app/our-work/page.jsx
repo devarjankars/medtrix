@@ -1,3 +1,4 @@
+"use client";
 const projects = [
   { title: "Regional Hospital Network", desc: "Unified EHR system across 12 hospitals." },
   

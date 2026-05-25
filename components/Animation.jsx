@@ -1,4 +1,3 @@
-import BeanCanvasAnimation from '@/components/BeanCanvasAnimation';
 const statsData = [
   { value: "3,200+", label: "Projects Delivered" },
   { value: "200,000+", label: "HCPs Engaged" },
@@ -27,7 +26,7 @@ export default function Animation() {
       ">
 
         <img
-          src="/images/power-one.png"
+          src="/assets/animation.png"
           alt=""
           className="
           w-full
@@ -90,7 +89,6 @@ export default function Animation() {
       
       <section className="relative bg-black px-6 lg:px-10 py-20 overflow-hidden isolate z-20">
 
-        <BeanCanvasAnimation />
         {/* STATS */}
         <div className="py-14 px-4 sm:px-6 lg:px-8 mb-4 mt-4">
           <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">

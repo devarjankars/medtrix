@@ -5,30 +5,21 @@ import { useState } from "react";
 
 const links = [
   {
-    label: "Who We Are",
-    href: "/",
-    items: [
-      { label: "Who We Are", href: "/who-we-are" },
-      { label: "Our Team", href: "/who-we-are/team" },
-      { label: "Our Story", href: "/who-we-are/story" },
-    ],
-  },
-  {
     label: "Services",
-    href: "/services",
+    href: null,
     items: [
+      { label: "Strategy & Consulting", href: "/services/Strategy-Consulting" },
       { label: "Commercial Solutions", href: "/services/Commercial_Solutions" },
       { label: "Medical Affairs", href: "/services/medical-affairs" },
       { label: "Digital & Innovation", href: "/services/digital-innovation" },
-      { label: "MedTrix AI Catalysts ", href: "/services/ai-catalysts" },  
-    
+      { label: "MedTrix AI Catalysts", href: "/services/ai-catalysts" },
     ],
   },
   { label: "Our Work", href: "/our-work" },
   { label: "News & Updates", href: "/news" },
   {
     label: "Careers",
-    href: "/careers",
+    href: null,
     items: [
       { label: "Open Positions", href: "/careers/open-positions" },
       { label: "Life at Medtrix", href: "/careers/life-at-medtrix" },
@@ -39,8 +30,8 @@ const links = [
 
 function NavItem({ label, href, items, pathname, button }) {
   const [open, setOpen] = useState(false);
+  const [hovered, setHovered] = useState(false);
   const hasItems = items && items.length > 0;
-  const isActive = pathname === href || (hasItems && items.some((i) => pathname === i.href));
 
   if (button) {
     return (
@@ -60,28 +51,29 @@ function NavItem({ label, href, items, pathname, button }) {
       className="relative"
       onMouseEnter={() => hasItems && setOpen(true)}
       onMouseLeave={() => hasItems && setOpen(false)}
+      onClick={() => hasItems && setOpen(!open)}
     >
-      <Link
-        href={href}
-        className="flex items-center gap-1 text-sm font-medium text-white border-b-2 border-transparent hover:border-white pb-0.5 transition-all"
-      >
-        {label}
-        {hasItems && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="14" height="14"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className={`transition-transform duration-200 ${open ? "rotate-180" : "rotate-0"}`}
-          >
+      {hasItems ? (
+        <button
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          className={`flex items-center gap-1 text-sm font-medium text-white border-b-2 pb-0.5 transition-all cursor-pointer ${hovered ? "border-white" : "border-transparent"}`}
+        >
+          {label}
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={`transition-transform duration-200 ${open ? "rotate-180" : "rotate-0"}`}>
             <polyline points="6 9 12 15 18 9" />
           </svg>
-        )}
-      </Link>
+        </button>
+      ) : (
+        <Link
+          href={href}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          className={`flex items-center gap-1 text-sm font-medium text-white border-b-2 pb-0.5 transition-all ${hovered ? "border-white" : "border-transparent"}`}
+        >
+          {label}
+        </Link>
+      )}
 
       {hasItems && open && (
         <div className="absolute top-full left-0 z-50" style={{ paddingTop: "6px" }}>
@@ -115,34 +107,26 @@ function MobileMenu({ pathname }) {
     <div className="md:hidden bg-[#111] px-6 pb-6 flex flex-col gap-1">
       {links.map(({ label, href, items, button }) => {
         const hasItems = items && items.length > 0;
-        const isOpen = openSection === href;
+        const isOpen = openSection === label;
 
         if (button) {
           return (
-            <Link
-              key={href}
-              href={href}
-              className="mt-3 bg-[#FF0000]  text-white text-lg font-bold px-6 py-2.5 rounded-full text-center transition-colors"
-            >
+            <Link key={label} href={href} className="mt-3 bg-[#FF0000] text-white text-lg font-bold px-6 py-2.5 rounded-full text-center transition-colors">
               {label}
             </Link>
           );
         }
 
         return (
-          <div key={href}>
+          <div key={label}>
             <div
               className="flex items-center justify-between py-3  border-zinc-800 cursor-pointer"
-              onClick={() => hasItems ? setOpenSection(isOpen ? null : href) : null}
+              onClick={() => hasItems ? setOpenSection(isOpen ? null : label) : null}
             >
               {hasItems ? (
-                <span className={`text-lg font-bold ${pathname === href ? "text-red-500" : "text-white"}`}>
-                  {label}
-                </span>
+                <span className="text-lg font-bold text-white">{label}</span>
               ) : (
-                <Link href={href} className={`text-lg font-bold ${pathname === href ? "text-red-500" : "text-white"}`}>
-                  {label}
-                </Link>
+                <Link href={href} className="text-lg font-bold text-white">{label}</Link>
               )}
               {hasItems && (
                 <svg
@@ -197,7 +181,7 @@ export default function Navbar() {
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8 ">
           {links.map((link) => (
-            <NavItem key={link.href} {...link} pathname={pathname} />
+            <NavItem key={link.label} {...link} pathname={pathname} />
           ))}
         </ul>
 

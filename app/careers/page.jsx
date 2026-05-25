@@ -1,3 +1,4 @@
+"use client";
 const openings = [
   { role: "Frontend Engineer", type: "Full-time · Remote" },
   { role: "Backend Engineer", type: "Full-time · Hybrid" },

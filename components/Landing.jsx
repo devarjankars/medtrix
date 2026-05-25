@@ -1,3 +1,4 @@
+"use client";
 export default function Landing() {
   return (
     <section className=" py-20 bg-[#000] relative isolate z-10 px-6 lg:px-10">
@@ -14,7 +15,7 @@ export default function Landing() {
               From launch through the lifecycle, we don't just support your growth. We <b className="text-[#FFF]">Catalyze</b> it. </p>
           
         </div>
-         <img src="./tablet.png" alt=""  className=" items-center min-w-70 md:min-w-1" />
+         <img src="/tablet.png" alt=""  className=" items-center min-w-70 md:min-w-1" />
       </div>
        <div
           className="absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[1400px] h-[350px] rounded-full pointer-events-none"
