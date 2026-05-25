@@ -1,8 +1,8 @@
 "use client";
 export default function Landing() {
   return (
-    <section className=" py-20  relative isolate z-10 px-6 lg:h-[100vh] w-[90%] md:w-[80%] mx-auto lg:px-0">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-18 ">
+    <section className="p-10 xl:py-20  relative isolate z-10 px-6 lg:h-[100vh] w-[90%] md:w-[80%] mx-auto lg:px-0">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-18 ">
         <div className="text-left flex xl:w-1/2 flex-col gap-5">
            <h1 className=" text-[70px]   font-bold leading-[1.2] text-[#FFF]
 1  ">MedTrix - Catalyzing <span className=" text-red-600">Healthcare</span></h1>

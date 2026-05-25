@@ -13,7 +13,7 @@ import vp3 from "../public/vp3.png";
 import vp4 from "../public/vp4.png";
 import ceoImg from "../public/ceo.png";
 import linkedinImg from "../public/linkdin.png";
-import mapImg from "../public/map.png";
+
 import gptwImg from "../public/gptw.png";
 import logo1 from "../public/logo1.png";
 import logo2 from "../public/logo2.png";
@@ -222,13 +222,7 @@ function OneTeam() {
 
         </section>
 
-        <section className="bg-black px-6 lg:px-1 flex flex-col items-center">
-          <Image src={mapImg} alt="Contact Locations" className="w-full object-contain" />
-          <button className="mt-8 px-10 py-4 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
-            Contact Us
-          </button>
-          
-        </section>
+       
       </>
     </ReactLenis>
   );
