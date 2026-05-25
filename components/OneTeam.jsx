@@ -43,10 +43,10 @@ const vpData = [
 ];
 
 const clientLogos = [
-  "/logo1.png", "/logo2.png", "/logo3.png",
-  "/logo4.png", "/logo5.png", "/logo6.png",
-  "/logo1.png", "/logo2.png", "/logo3.png",
-  "/logo4.png", "/logo5.png", "/logo6.png",
+  "./logo1.png", "./logo2.png", "./logo3.png",
+  "./logo4.png", "./logo5.png", "./logo6.png",
+  "./logo1.png", "./logo2.png", "./logo3.png",
+  "./logo4.png", "./logo5.png", ".I/logo6.png",
 ];
 
 const awardsData = [

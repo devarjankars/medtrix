@@ -26,15 +26,15 @@ export default function FeatureSection({
           
           {/* Image Block */}
           <div className={`lg:col-span-5 ${isImageLeft ? 'lg:order-1' : 'lg:order-2'}`}>
-            <div className="relative rounded-2xl overflow-hidden aspect-square border border-[#1f1a1a] shadow-2xl">
+            <div className="relative rounded-2xl overflow-hidden aspect-square   shadow-2xl">
               <img 
                 src={imageSrc} 
                 alt={imageAlt} 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain object-top transition-transform duration-300 hover:scale-105"
               />
             </div>
           </div>
-          <div className={`hidden lg:block lg:col-span-1 justify-self-start h-4/5 w-[1px] bg-gradient-to-b from-transparent via-[#2a2222] to-transparent ${isImageLeft ? 'lg:order-2' : 'lg:order-3'}`} />
+          <div className={`hidden lg:block lg:col-span-1 justify-self-start h-4/5 w-[1px]  `} />
           <div className={`lg:col-span-6 flex flex-col gap-6 self-start ${isImageLeft ? 'lg:order-3' : 'lg:order-1'}`}>
             {paragraphs.map((text, index) => (
               <p key={index} className="text-[#b3b3b3] text-base md:text-lg leading-relaxed font-light">
