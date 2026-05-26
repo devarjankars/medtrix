@@ -123,14 +123,18 @@ export default function BeanBackground({ className = '', style }) {
         };
 
         const onResize = () => {
-            const w = container.offsetWidth;
-            const h = container.offsetHeight;
+            const w = container.offsetWidth || window.innerWidth;
+            const h = container.offsetHeight || window.innerHeight;
             camera.aspect = w / h;
             camera.updateProjectionMatrix();
             renderer.setSize(w, h);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
             buildCurve();
+            beans.forEach(b => { b.firstFrame = true; });
         };
 
+        const resizeObserver = new ResizeObserver(onResize);
+        resizeObserver.observe(container);
         window.addEventListener('mousemove', onMouseMove);
         window.addEventListener('resize', onResize);
 
@@ -201,6 +205,7 @@ export default function BeanBackground({ className = '', style }) {
 
         return () => {
             cancelAnimationFrame(requestID);
+            resizeObserver.disconnect();
             window.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('resize', onResize);
             if (container.contains(canvas)) container.removeChild(canvas);

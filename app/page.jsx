@@ -4,7 +4,7 @@ import OneTeam from "@/components/OneTeam";
 import Animation from "@/components/Animation";
 import Image from "next/image";
 import mapImg from "../public/map.png";
-
+import mobile_map from "../public/mobile_map.png";
 export default function Home() {
   return (
     <div className="w-[100%]  mx-auto">
@@ -23,8 +23,10 @@ export default function Home() {
             Contact Us
             </h5>
              <div className="w-full px-6 lg:px-1 flex flex-col items-center py-10   gap-4">
-          <Image src={mapImg} alt="Contact Locations" className="w-full object-contain" />
-          <button className="mt-8 px-10 py-4 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
+          <Image src={mapImg} alt="Contact Locations" className="w-full hidden lg:block object-contain" />
+          <Image src={mobile_map} alt="Contact Locations" className="w-full lg:hidden object-contain" />
+
+          <button className="mt-8 px-8 py-2 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
             Contact Us
           </button>
           </div>

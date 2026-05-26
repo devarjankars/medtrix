@@ -233,13 +233,13 @@ bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border bo
 
         </section>
 
-        <section className="bg-black px-6 lg:px-1 flex flex-col items-center">
+        {/* <section className="bg-black px-6 lg:px-1 flex flex-col items-center">
           <Image src={mapImg} alt="Contact Locations" className="w-full object-contain" />
           <button className="mt-8 px-10 py-4 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
             Contact Us
           </button>
           
-        </section>
+        </section> */}
       </>
 
   );
