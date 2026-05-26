@@ -233,12 +233,9 @@ bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border bo
 
         </section>
 
-        <section className="bg-black px-6 lg:px-1 flex flex-col items-center lg:pb-[100px] pb-[50px] relative overflow-hidden">
-          <p className="text-white text-[28px] lg:text-[48px] font-semibold mb-4 text-left  w-full py-[25px] lg:py-[50px]">Contact Us</p>
-          <Image src={mapImg} alt="Contact Locations" className="w-full object-contain hidden lg:block" />
-          <Image src={mobile_map} alt="Contact Locations" className="w-full  object-contain lg:hidden  " />
-
-          <button className="mt-8 px-8 py-2 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
+        <section className="bg-black px-6 lg:px-1 flex flex-col items-center">
+          <Image src={mapImg} alt="Contact Locations" className="w-full object-contain" />
+          <button className="mt-8 px-10 py-4 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
             Contact Us
           </button>
           

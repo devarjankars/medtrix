@@ -74,7 +74,7 @@ export default function DynamicHeader({
           {/* MOBILE IMAGE ONLY */}
           {mobileImg && (
             <section className="block  lg:hidden">
-              div
+            
               <img
                 src={mobileImg.src}
                 alt=""
