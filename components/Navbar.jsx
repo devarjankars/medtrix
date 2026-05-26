@@ -104,7 +104,7 @@ function MobileMenu({ pathname }) {
   const [openSection, setOpenSection] = useState(null);
 
   return (
-    <div className="md:hidden bg-[#111] px-6 pb-6 flex flex-col gap-1">
+    <div className="md:hidden bg-[#111] px-6 pb-6 flex flex-col gap-1 min-h-screen">
       {links.map(({ label, href, items, button }) => {
         const hasItems = items && items.length > 0;
         const isOpen = openSection === label;

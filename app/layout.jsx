@@ -3,7 +3,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
-import LenisProvider from "@/components/LenisProvider";
+import Loader from "@/components/Loader";
+
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -22,13 +23,14 @@ export default function RootLayout({ children }) {
       
       <body className={`${albertSans.className} min-h-screen flex flex-col bg-black`}>
         <ScrollToTop />
-        <LenisProvider>
+        <Loader />
+     
         <Navbar />
         <main className="flex-1 w-full bg-[#000000]">
           <div className="w-full ">{children}</div>
         </main>
         <Footer />
-        </LenisProvider>
+    
       </body>
     </html>
   );
