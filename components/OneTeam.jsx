@@ -3,8 +3,7 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
+import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger);
 
 const FULL_TEXT = "“We believe great outcomes are built by great teams. Our strength lies in our people and the way we come together as one to solve complex challenges, support one another, and deliver meaningful impact for our clients.”";
@@ -70,6 +69,8 @@ import vp4 from "../public/vp4.webp";
 import ceoImg from "../public/ceo.webp";
 import linkedinImg from "../public/linkdin.png";
 import gptwImg from "../public/gptw.webp";
+import gptw_mobile from "../public/gptw_mobile.png";
+
 import logo1 from "../public/logo1.png";
 import logo2 from "../public/logo2.png";
 import logo3 from "../public/logo3.png";
@@ -235,9 +236,17 @@ function OneTeam() {
             src={gptwImg}
             alt="Great Place to Work"
             
-            className="w-full object-contain"
+            className="w-full hidden lg:block  object-contain"
             loading="lazy"
           />
+          <Image
+            src={gptw_mobile}
+            alt="Great Place to Work"
+            
+            className="w-full lg:hidden object-contain"
+            loading="lazy"
+          />
+
         </div>
         <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]" style={redGlow} />
       </section>
