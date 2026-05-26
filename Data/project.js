@@ -7,6 +7,7 @@ export const projects = [
     category: "Medical Affairs",
     tags: ["MOBILE APP", "3D"],
     stack: "Unity 3D",
+      timeline: "6 Months / Completed",
     desc: [
       "2x faster user workflows",
       "50% shorter time-to-market",
@@ -22,6 +23,7 @@ export const projects = [
     category: "Strategy",
     tags: ["MOBILE APP", "3D"],
     stack: "Unity 3D",
+      timeline: "6 Months / Completed",
     desc: [
       "2x faster user workflows",
       "50% shorter time-to-market",
@@ -37,6 +39,7 @@ export const projects = [
     category: "Commercial",
     tags: ["MOBILE APP", "3D"],
     stack: "Unity 3D",
+    timeline: "6 Months / Completed",
     desc: [
       "2x faster user workflows",
       "50% shorter time-to-market",
@@ -52,6 +55,7 @@ export const projects = [
     category: "Digital",
     tags: ["MOBILE APP", "3D"],
     stack: "Unity 3D",
+      timeline: "6 Months / Completed",
     desc: [
       "2x faster user workflows",
       "50% shorter time-to-market",

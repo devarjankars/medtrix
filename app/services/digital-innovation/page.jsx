@@ -3,9 +3,9 @@ import DynamicHeader from '@/components/DynamicHeader';
 import FeatureSection from '@/components/FeatureSection';
 
  const strategyParagraphs = [
-    "Some of our strongest partnerships with global pharmaceutical companies have been built through immersive experiences, custom innovations, and a willingness to solve problems others considered too complex. ",
-    "A defining milestone in our journey was the challenge from Allergan to transform facial cadaveric dissection into a digital experience—resulting in the world’s first holographic cadaveric dissection program and establishing a new benchmark in immersive medical engagement. ",
-    "When Merck faced delays in PD-L1 biomarker sample logistics, we developed a mobile application connecting HCPs, couriers, and central laboratories to simplify coordination and accelerate the process."
+    "Innovation, for us, has never been just about technology but about solving real problems in meaningful ways. It has been a defining characteristic for us since our beginning. It drove us to do more with less and enable novel experiences for clients and patients.",
+    "Our strongest partnerships with pharmaceutical companies have been built through innovative solutions built to achieve unique objectives and address challenges specific to a particular client or set of circumstances.",
+
   ];
   const innovationData = [
   {
@@ -36,16 +36,16 @@ import FeatureSection from '@/components/FeatureSection';
 function Page() {
   return (
     < div className="w-[90%] md:w-[80%] mx-auto min-h-screen">
-        <section className="relative py-10 overflow-hidden">
+        <section className="relative overflow-hidden">
          <DynamicHeader
         tagText="DIGITAL & INNOVATION"
-        title="Innovation lies at the core of who we are"
+        title="Innovation that creates meaningful impact "
         paragraphs={strategyParagraphs}
         graphicSrc="/servicesHeader.png"
       />
       
       </section>
-      <section className="relative py-10 overflow-hidden">
+      {/* <section className="relative py-10 overflow-hidden">
     
                <FeatureSection tagText={"Innovation That Creates Meaningful Impact"} imageSrc={"/innovation.png"} imageAlt={"Innovation That Creates Meaningful Impact"} 
               imagePosition={"left"} 
@@ -57,28 +57,16 @@ function Page() {
               buttons={[{ label: "Connect With Us", type: "primary" }]}
               
               />
-               <div
-          className="
-    absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[1400px] h-[350px] rounded-full pointer-events-none
-  "
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,0,0,0.35) 0%, rgba(180,0,0,0.18) 40%, transparent 75%)",
-            filter: "blur(90px)",
-          }}
-        />
+        </section> */}
+         <section className="relative bg-black py-20 px-10 md:px-0 overflow-hidden">
 
-         
-        </section>
-         <section className="relative bg-black py-10 px-6 overflow-hidden">
-
-      <div className="max-w-7xl mx-auto mb-40">
+      <div className=" mb-40">
 
         {/* top tag */}
         <div className="mb-12">
 
-          <span className="inline-block text-[11px] font-bold tracking-[0.15em] uppercase text-[#FFF] bg-[#201212] px-4 py-1.5 rounded-full ">
-            Explore Our Innovation Stories
+          <span className="inline-block text-[14px] font-bold tracking-[0.15em] uppercase text-[#FFF] bg-[#201212] px-6 py-2 rounded-full ">
+            EXPLORE OUR INNOVATION CASE STUDIES
           </span>
 
         </div>
@@ -111,10 +99,7 @@ function Page() {
               {/* content */}
               <div className="p-6">
 
-                <span className=" inline-flex  px-4  py-2 rounded-full border border-[#FF7C70]  text-[#FF7C70] text-sm  mb-5
-                ">
-                  Innovation Stories
-                </span>
+                
 
                 <h3 className=" text-white text-[22px]  font-medium  leading-snug
                 ">
@@ -132,32 +117,14 @@ function Page() {
       </div>
 
       {/* bottom glow */}
-      <div
-        className="
-          absolute
-          bottom-[-240px]
-          left-1/2
-          -translate-x-1/2
-          w-[1300px]
-          h-[220px]
-          pointer-events-none
-        "
-        style={{
-          background:
-            "radial-gradient(circle, rgba(255,0,0,0.25) 0%, rgba(255,0,0,0.12) 35%, transparent 75%)",
-          filter: "blur(70px)",
-        }}
-      />
-      <div
-          className="
-    absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[1400px] h-[350px] rounded-full pointer-events-none
-  "
-          style={{
-            background:
-              "radial-gradient(circle, rgba(255,0,0,0.35) 0%, rgba(180,0,0,0.18) 40%, transparent 75%)",
-            filter: "blur(90px)",
-          }}
-        />
+     <div
+      className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px] rounded-full"
+      style={{
+        background:
+          "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)",
+      }}
+    />
+      
 
     </section>
     </div>

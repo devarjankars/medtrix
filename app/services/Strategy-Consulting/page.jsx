@@ -22,7 +22,7 @@ export default function page() {
         paragraphs={strategyParagraphs}
         graphicSrc="/servicesHeader.png"
       />
-      <div className="py-10">
+      <div className="py-5">
         <FeatureSection tagText="Brand and Business Strategy" imageSrc="/servicesBrand.png" imageAlt="Brand Strategy Image" imagePosition="left"
           paragraphs={[
             "We serve as an Agency of Record for emerging and mid-sized pharma brands—enabling brand launches, delivering practical, cost-effective strategies that drive consistent year-on-year growth never seen before in the brand lifecycle.",
@@ -31,7 +31,7 @@ export default function page() {
           ]}
           buttons={singleButton1}
         />
-        <div className="py-10" />
+        <div className="py-5" />
         <FeatureSection tagText="Launch and Lifecycle" imageSrc="/lunchandlifecycle.png" imageAlt="Launch and Lifecycle" imagePosition="right"
           paragraphs={[
             "We support brands across the entire spectrum—from launch preparation and tactical planning to ongoing lifecycle management.",
@@ -40,7 +40,7 @@ export default function page() {
           ]}
           buttons={singleButton2}
         />
-        <div className="py-10" />
+        <div className="py-5" />
         <FeatureSection tagText="OMNICHANNEL" imageSrc="/omni.png" imageAlt="Omnichannel" imagePosition="left"
           paragraphs={[
             "For the past 10 plus years, we have been pioneers in omnichannel approaches that bring together channels, content, and data into a connected brand experience ensuring every interaction feels relevant, timely, and consistent.",
@@ -48,7 +48,7 @@ export default function page() {
           ]}
           buttons={[]}
         />
-        <div className="py-10" />
+        <div className="py-5" />
         <FeatureSection tagText="Measurement and Optimization" imageSrc="/Chart.png" imageAlt="Chart Image" imagePosition="right"
           paragraphs={[
             "We help brands measure what matters most translating data into clear insights that guide smarter decisions and improve performance over time.",

@@ -20,7 +20,7 @@ export default function DynamicHeader({
       relative
       overflow-hidden
       text-white
-      py-24
+      py-20
       min-h-screen
       flex
       items-center
@@ -32,7 +32,7 @@ export default function DynamicHeader({
         lg:block
         absolute
         inset-0
-        z-0
+        z-0 
       ">
         <img
           src={desktopBg.src}
@@ -41,16 +41,7 @@ export default function DynamicHeader({
         />
       </div>
 
-      <div className="
-        relative
-        z-10
-        max-w-7xl
-        mx-auto
-        grid
-        grid-cols-1
-        lg:grid-cols-12
-        gap-8
-        items-center
+      <div className="  relative  z-10  grid  grid-cols-1  lg:grid-cols-12  gap-8  items-center
       ">
         
 
@@ -95,7 +86,7 @@ export default function DynamicHeader({
               className="
                 text-gray-400
                 text-[18px]
-                leading-9
+                leading-9 pr-0 md:pr-40
               "
             >
               {item}
@@ -108,7 +99,7 @@ export default function DynamicHeader({
               grid
               grid-cols-1
               md:grid-cols-3
-              gap-4
+              gap-10
             ">
               {statsCards.map((card, index) => (
                 <div
@@ -153,6 +144,7 @@ export default function DynamicHeader({
             className="
               w-full
               max-w-[400px]
+              mr-40
             "
           />
         </div>

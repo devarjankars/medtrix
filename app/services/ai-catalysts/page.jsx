@@ -4,8 +4,8 @@ import DynamicHeader from '@/components/DynamicHeader';
 import FeatureSection from '@/components/FeatureSection';
 
  const strategyParagraphs = [
-    "organizations, the MedTrix Catalyst Suite was created to catalyze the way scientific content, brands, and engagement strategies are developed and delivered. ",
- "The MedTrix Catalyst Suite is distilled from decades of collective experience across both MedTrix teams and our client partnerships. The suite brings together AI-enabled workflows, modular content approaches, intelligent automation, and scalable engagement solutions designed to help teams work faster, smarter, and more compliantly. " ];
+    "Built on 14 years of experience partnering with leading pharmaceutical and life sciences organizations, MedTrix AI Catalysts were created to support the development and delivery of scientific content. ",
+ "Developed through years of research, pilot programs, and real-world implementation, the AI Catalysts help automate and streamline key MedComm operations—from content creation and adaptation to review and production—while maintaining compliance rigor, data security, and human oversight at every stage.  " ];
 
 const catalystData = [
   {
@@ -37,155 +37,63 @@ const catalystData = [
          <section className="relative py-10 overflow-hidden">
                   <DynamicHeader
                  tagText="AI CATALYSTS"
-                 title="Built on 14 years of experienceworking with leading pharmaceutical & life sciences  "
+                 title="Intelligent Catalysts for Content, Compliance, and Engagement"
                  paragraphs={strategyParagraphs}
                  graphicSrc="/servicesHeader.png"
                />
                
           </section>
-          <section className="relative bg-black py-24 px-6 overflow-hidden">
-
-              <div className="max-w-7xl mx-auto">
-
-                  {/* Tag */}
-                  <div className="mb-12">
-
-                      <span className="
-            inline-flex
-            px-6
-            py-3
-            rounded-full
-            bg-[#2A2525]
-            text-white
-            uppercase
-            tracking-[4px]
-            text-sm
-            font-bold
-          ">
-                          Catalyst Suite: Powered by GenAI
-                      </span>
-
-                  </div>
-
-                  {/* Description */}
-                  <p className="
-          text-white
-          text-[22px]
-          leading-[1.8]
-          max-w-[1300px]
-          mb-16
-        ">
-                      From leveraging off-the-shelf GenAI technologies informed by our internal research and pilot programs to building customized in-house solutions tailored to specific business and compliance needs, the Catalyst Suite addresses known pain points in the medical communications space while enabling more connected, scalable, and compliant content operations.
-                  </p>
-
-                  {/* Cards */}
-                  <div className="
-          grid
-          grid-cols-1
-          md:grid-cols-2
-          xl:grid-cols-3
-          gap-10 mt-5
-        ">
-
-                      {catalystData.map((item, index) => (
-
-                          <div
-                              key={index}
-                              className="
-                bg-[#111111]
-                border
-                border-[#2A2A2A]
-                rounded-[36px]
-                p-10
-                min-h-[270px]
-                flex
-                flex-col
-                justify-center
-                transition-all
-                duration-300
-                hover:border-red-500/40
-              "
-                          >
-
-                              <div className="
-                w-[92px]
-                h-[92px]
-                rounded-2xl
-                bg-red-600
-                flex
-                items-center
-                justify-center
-                mb-12
-              ">
-
-                                  <img
-                                      src={item.icon}
-                                      alt=""
-                                      className="w-10 h-10"
-                                  />
-
-                              </div>
-
-                              <h3 className="
-                text-white
-                text-[28px]
-                font-semibold
-                leading-snug
-              ">
-                                  {item.title}
-                              </h3>
-
-                          </div>
-
-                      ))}
-
-                  </div>
-
-              </div>
-
-              {/* Bottom glow */}
-              <div
-                  className="
-          absolute
-          bottom-[-220px]
-          left-1/2
-          -translate-x-1/2
-          w-[1300px]
-          h-[240px]
-          pointer-events-none
-        "
-                  style={{
-                      background:
-                          "radial-gradient(circle, rgba(255,0,0,0.28) 0%, rgba(255,0,0,0.12) 40%, transparent 75%)",
-                      filter: "blur(70px)",
-                  }}
-              />
-
-          </section>
-             <section className="relative py-16 overflow-hidden">
+            <section className="relative py-5 overflow-hidden">
               
-                         <FeatureSection tagText={"Workflow Catalyst "} imageSrc={"/lunchandlifecycle.png"} imageAlt={"Workflow Catalyst "} 
-                        imagePosition={"right"} 
+                <FeatureSection tagText={"MLR Catalyst"} imageSrc={"/lunchandlifecycle.png"} imageAlt={"Workflow Catalyst "} 
+                        imagePosition={"left"} 
                         paragraphs={[
-                         "Workflow Catalyst combines MedTrix’s lean delivery process with an enterprise-grade GenAI ecosystem to accelerate medical content workflows while maintaining data security and human oversight.",
-                          "Supported by trained teams, standardized prompt frameworks, and a predefined render library with nearly 50 output formats, the platform enables scalable and efficient omnichannel content production.",
-                          "In a large-scale program with Ferring Pharmaceuticals, the GenAI-enabled workflow reduced production timelines by 30% within two months."
+                         "The MLR Catalyst is a tool built to reduce the time, and effort involved it the medical-legal-regulatory approval process. It utilizes AI methodologies rooted to a validated and brand-specific knowledge bank to simplify repetitive tasks. ",
+                          "Importantly it validates claims in a document with information in the knowledge bank and allows reviewers to utilize their more efficiently and where it matters the most.",
+                          
                         ]}
-                        buttons={[{ label: "Learn How Workflow Catalyst Reduced Timelines by 30% ", type: "primary" }]}
+                        buttons={[{ label: "Learn More ", type: "primary" }, {label:"Read the Video Catalyst Case Study ",type:"secondary"}]}
                         
                         />
-                         <div
-                    className="
-              absolute bottom-[-200px] left-1/2 -translate-x-1/2 w-[1400px] h-[350px] rounded-full pointer-events-none
-            "
-                    style={{
-                      background:
-                        "radial-gradient(circle, rgba(255,0,0,0.35) 0%, rgba(180,0,0,0.18) 40%, transparent 75%)",
-                      filter: "blur(90px)",
-                    }}
-                  />
-          
-                   
                   </section>
+                  <section className="relative py-5 overflow-hidden">
+              
+                <FeatureSection tagText={"Knowledge Catalyst"} imageSrc={"/lunchandlifecycle.png"} imageAlt={"Workflow Catalyst "} 
+                        imagePosition={"right"} 
+                        paragraphs={[
+                         "The Knowledge Catalyst is an AI-enabled authoring support tool. It uses a knowledge bank comprising a validated set of documents of different types and gives reference-backed first drafts of content for different types of documents. ",
+                          "It makes content only from the validated knowledge bank and has presets for different types of audiences, volume of content, and the type of deliverable. The system can also be synchronized with production tools and supports nearly 50 layout templates, enabling faster adaptation and scalable content development workflows.",
+                        ]}
+                        buttons={[{ label: "Read a Case Study on Knowledge Catalyst in Action  ", type: "primary" }]}
+                        
+                        />
+                  </section>
+                  <section className="relative py-5 overflow-hidden">
+              
+                <FeatureSection tagText={"Video Catalyst"} imageSrc={"/lunchandlifecycle.png"} imageAlt={"Video Catalyst "} 
+                        imagePosition={"left"} 
+                        paragraphs={[
+                         "The video catalyst brings together a suite of AI-enabled tools to radically simplify the process of developing videos of all types. It applies AI image and video generation capabilities to pre-production, production, and post-production of live action and all other stylistic types of videos. ",
+                          "The video catalyst dramatically reduces the time to market for videos and lowers the cost and complexity of producing live action videos by using AI-generated characters, sets, props, and shots. ",
+                          
+                        ]}
+                        buttons={[{ label: "Read the Video Catalyst Case Study  ", type: "primary" }]}
+                        
+                        />
+                  </section>
+                   <section className="relative py-5 overflow-hidden">
+              
+                <FeatureSection tagText={"Campaign Catalyst "} imageSrc={"/lunchandlifecycle.png"} imageAlt={"Campaign Catalyst  "} 
+                        imagePosition={"right"} 
+                        paragraphs={[
+                         "The Campaign Catalyst is an AI-enabled production ecosystem designed to accelerate compliant digital communications across email and banner formats. Built specifically for pharmaceutical regulatory requirements, it streamlines content authoring, review formatting, and technical production within a centralized workflow.",
+                          "The system includes automated handling of mandatory sections and outputs optimized for Veeva, media channels, and deployment environments. By reducing manual effort and simplifying campaign adaptation, the Campaign Catalyst improves scalability, compliance, efficiency, and speed to deployment.",
+                          
+                        ]}
+                        buttons={[{ label: "Book a demo ", type: "primary" }]}
+                        
+                        />
+                  </section>
+                  
         </div>      
   )};

@@ -1,33 +1,65 @@
-"use client";
-import { projects } from "@/Data/project";
 
-export default function WorkDetailPage({ params }) {
-  const project = projects.find(p => p.slug === params.slug);
+
+
+import { notFound } from "next/navigation";
+
+export default function ProjectDetail({ params }) {
+  
+  const project = projects.find(
+    (p) => p.slug === params.slug
+  );
 
   if (!project) {
-    return (
-      <div className="w-[90%] md:w-[80%] mx-auto py-20 text-white">
-        <h1 className="text-4xl font-bold">Project not found</h1>
-      </div>
-    );
+    notFound();
   }
 
   return (
-    <div className="w-[90%] md:w-[80%] mx-auto py-20 text-white">
-      <img src={project.image} alt={project.title} className="w-full h-[500px] object-cover rounded-3xl mb-10" />
-      <div className="flex gap-3 mb-6">
-        {project.tags.map(tag => (
-          <span key={tag} className="border border-[#444] px-4 py-2 text-xs rounded-md">{tag}</span>
+    <section className="w-[90%] md:w-[80%] mx-auto py-20 text-white">
+
+      <img
+        src={project.image}
+        alt={project.title}
+        className="w-full rounded-[22px] mb-10"
+      />
+
+      <h1 className="text-5xl mb-8">
+        {project.title}
+      </h1>
+
+      <div className="flex gap-3 mb-10 flex-wrap">
+        {project.tags.map((tag) => (
+          <span
+            key={tag}
+            className="
+            border
+            border-[#3A3A3A]
+            px-4
+            py-2
+            rounded-md
+            "
+          >
+            {tag}
+          </span>
         ))}
       </div>
-      <h1 className="text-4xl font-bold mb-4">{project.title}</h1>
-      <p className="text-sm text-gray-400 uppercase mb-2">Platform / Stack</p>
-      <p className="text-gray-300 mb-8">{project.stack}</p>
-      <div className="flex flex-col gap-3">
-        {project.desc.map((item, i) => (
-          <p key={i} className="text-gray-300">{item}</p>
-        ))}
-      </div>
-    </div>
+
+      <p className="mb-6">
+        Platform: {project.stack}
+      </p>
+
+      <p className="mb-10">
+        Timeline: {project.timeline}
+      </p>
+
+      {project.desc.map((item, i) => (
+        <p
+          key={i}
+          className="mb-4 text-gray-300"
+        >
+          {item}
+        </p>
+      ))}
+
+    </section>
   );
 }
