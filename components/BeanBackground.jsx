@@ -138,13 +138,32 @@ export default function BeanBackground({ className = '', style }) {
         window.addEventListener('mousemove', onMouseMove);
         window.addEventListener('resize', onResize);
 
+        // Reusable vectors — allocated once, never inside the loop
+        const _dir = new THREE.Vector3();
+        const _perp1 = new THREE.Vector3();
+        const _perp2 = new THREE.Vector3(0, 0, 0.8);
+        const _repel = new THREE.Vector3();
+        const _curvePoint = new THREE.Vector3();
+
+        const REPEL_RADIUS = 2.2;
+        const REPEL_STRENGTH = 3.0;
+        const DAMPING = 0.88;
+        const FLOW_SPEED = 0.025;
+
+        // Pause when off-screen
+        let isVisible = true;
+        const visObserver = new IntersectionObserver(
+            ([entry]) => { isVisible = entry.isIntersecting; },
+            { threshold: 0 }
+        );
+        visObserver.observe(container);
+
+        let rafId;
         const animate = () => {
-            const requestID = requestAnimationFrame(animate);
+            rafId = requestAnimationFrame(animate);
+            if (!isVisible) return;
+
             const dt = clock.getDelta();
-            const REPEL_RADIUS = 2.2;
-            const REPEL_STRENGTH = 3.0;
-            const DAMPING = 0.88;
-            const FLOW_SPEED = 0.025;
 
             if (cursorActive) {
                 hoverLight.position.set(cursor.x, cursor.y, 3.5);
@@ -156,21 +175,21 @@ export default function BeanBackground({ className = '', style }) {
             beans.forEach(bean => {
                 const { mesh, rest, vel, radialAngle, radialDist } = bean;
                 const p = THREE.MathUtils.clamp(bean.progress, 0, 1);
-                const dir = curve.getTangentAt(p).normalize();
-                const perp1 = new THREE.Vector3(-dir.y, dir.x, 0).normalize();
-                const perp2 = new THREE.Vector3(0, 0, 0.8);
+
+                curve.getTangentAt(p, _dir).normalize();
+                _perp1.set(-_dir.y, _dir.x, 0).normalize();
 
                 bean.progress += FLOW_SPEED * dt;
                 if (bean.progress > 1.2) {
                     bean.progress -= 1.4;
-                    mesh.position.copy(curve.getPointAt(THREE.MathUtils.clamp(bean.progress, 0, 1)));
+                    curve.getPointAt(THREE.MathUtils.clamp(bean.progress, 0, 1), mesh.position);
                     vel.set(0, 0, 0);
                 }
 
-                rest.copy(curve.getPointAt(p));
+                curve.getPointAt(p, rest);
                 const currentRadius = THREE.MathUtils.lerp(2.2, 1, p);
-                rest.addScaledVector(perp1, Math.cos(radialAngle) * radialDist * currentRadius);
-                rest.addScaledVector(perp2, Math.sin(radialAngle) * radialDist * currentRadius);
+                rest.addScaledVector(_perp1, Math.cos(radialAngle) * radialDist * currentRadius);
+                rest.addScaledVector(_perp2, Math.sin(radialAngle) * radialDist * currentRadius);
 
                 if (bean.firstFrame) {
                     mesh.position.copy(rest);
@@ -179,8 +198,8 @@ export default function BeanBackground({ className = '', style }) {
                     const distToCursor = mesh.position.distanceTo(cursor);
                     if (distToCursor < REPEL_RADIUS && distToCursor > 0.001) {
                         const f = (1 - distToCursor / REPEL_RADIUS) ** 2;
-                        const repel = mesh.position.clone().sub(cursor).normalize().multiplyScalar(f * REPEL_STRENGTH);
-                        vel.add(repel);
+                        _repel.copy(mesh.position).sub(cursor).normalize().multiplyScalar(f * REPEL_STRENGTH);
+                        vel.add(_repel);
                     }
                     vel.x += (rest.x - mesh.position.x) * 0.003;
                     vel.y += (rest.y - mesh.position.y) * 0.003;
@@ -198,14 +217,14 @@ export default function BeanBackground({ className = '', style }) {
             });
 
             renderer.render(scene, camera);
-            return requestID;
         };
 
-        const requestID = animate();
+        animate();
 
         return () => {
-            cancelAnimationFrame(requestID);
+            cancelAnimationFrame(rafId);
             resizeObserver.disconnect();
+            visObserver.disconnect();
             window.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('resize', onResize);
             if (container.contains(canvas)) container.removeChild(canvas);
