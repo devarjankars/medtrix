@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-export default function BeanBackground() {
+export default function BeanBackground({ className = '', style }) {
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -16,27 +16,37 @@ export default function BeanBackground() {
         let cursorActive = false;
         const clock = new THREE.Clock();
         let curve = new THREE.CurvePath();
-        let lastSectionTop;
+
+        const W = container.offsetWidth || window.innerWidth;
+        const H = container.offsetHeight || window.innerHeight;
 
         // Scene Setup
         const scene = new THREE.Scene();
         scene.fog = new THREE.Fog(0x000000, 7, 12);
 
-        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
+        const camera = new THREE.PerspectiveCamera(45, W / H, 0.1, 100);
         camera.position.set(0, 0, 10);
 
         const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        const maxDPR = window.innerWidth < 768 ? 1.5 : 2;
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxDPR));
-        container.appendChild(renderer.domElement);
+        renderer.setSize(W, H);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        const canvas = renderer.domElement;
+        canvas.style.position = 'absolute';
+        canvas.style.top = '0';
+        canvas.style.left = '0';
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.style.pointerEvents = 'none';
+        canvas.style.zIndex = '0';
+        container.appendChild(canvas);
 
         // Lights
         scene.add(new THREE.AmbientLight(0xffffff, 0.05));
         const key = new THREE.DirectionalLight(0xffeacc, 0.4);
         key.position.set(6, 8, 6);
         scene.add(key);
-        
+
         const warm = new THREE.PointLight(0xff8a40, 0.5, 22);
         warm.position.set(-5, -3, 5);
         scene.add(warm);
@@ -49,60 +59,39 @@ export default function BeanBackground() {
         const ndc = new THREE.Vector2();
         const hitPoint = new THREE.Vector3();
 
-        const updateCurve = (visW, visH) => {
-            const section = document.querySelector('.philosophy-section');
-            if (!section) return;
-            const rect = section.getBoundingClientRect();
+        const getVisSize = () => {
+            const dist = camera.position.z;
+            const visH = 2 * Math.tan(THREE.MathUtils.degToRad(camera.fov) / 2) * dist;
+            return { visW: visH * camera.aspect, visH };
+        };
 
-            const getPoint = (rx, ry) => {
-                const pxX = rect.left + rx * rect.width;
-                const pxY = rect.top + ry * rect.height;
-                return new THREE.Vector3(
-                    (pxX / window.innerWidth - 0.5) * visW,
-                    (0.5 - (pxY / window.innerHeight)) * visH,
-                    0
-                );
-            };
-
-            const points = [
+        const buildCurve = () => {
+            const { visW, visH } = getVisSize();
+            const getPoint = (rx, ry) => new THREE.Vector3(
+                (rx - 0.5) * visW,
+                (0.5 - ry) * visH,
+                0
+            );
+            curve = new THREE.CatmullRomCurve3([
                 getPoint(-0.5, 0.8), getPoint(0.05, 0.24), getPoint(0.18, 0.24),
                 getPoint(0.32, 0.30), getPoint(0.42, 0.46), getPoint(0.52, 0.66),
                 getPoint(0.68, 0.82), getPoint(0.88, 0.90), getPoint(1.12, 0.98), getPoint(1.35, 1.12),
-            ];
-            curve = new THREE.CatmullRomCurve3(points);
-            if (lastSectionTop === undefined) lastSectionTop = rect.top;
+            ]);
         };
 
-        // Init Curve
-        const dist = camera.position.z;
-        const vFov = THREE.MathUtils.degToRad(camera.fov);
-        const visH = 2 * Math.tan(vFov / 2) * dist;
-        updateCurve(visH * (window.innerWidth / window.innerHeight), visH);
-
-        // Dynamic count & size based on screen
-        const getConfig = () => {
-            const area = window.innerWidth * window.innerHeight;
-            const isMobile = window.innerWidth < 768;
-            const count = Math.round(THREE.MathUtils.clamp(area / 500, 300, 2000));
-            const TABLET_SIZE = isMobile ? 0.28 : 0.38;
-            return { count, TABLET_SIZE };
-        };
+        buildCurve();
 
         // Create Beans
-        const gltfLoader = new GLTFLoader();
-        let { count, TABLET_SIZE } = getConfig();
+      
+        const isMobile = window.innerWidth < 768;
+          const count = isMobile ? 500 : 1000;
+        const TABLET_SIZE = isMobile ? 0.66 : 0.26;
 
-        let sourceRef = null;
-        let sourceScaleRef = 1;
-
-        gltfLoader.load('/img/capsule.glb', (gltf) => {
+        new GLTFLoader().load('/img/gold_V2.glb', (gltf) => {
             const source = gltf.scene;
-            const bbox = new THREE.Box3().setFromObject(source);
             const size = new THREE.Vector3();
-            bbox.getSize(size);
-            sourceScaleRef = Math.max(size.y, size.x, size.z, 1);
-            sourceRef = source;
-            const scale = TABLET_SIZE / sourceScaleRef;
+            new THREE.Box3().setFromObject(source).getSize(size);
+            const scale = TABLET_SIZE / Math.max(size.y, size.x, size.z, 1);
 
             for (let i = 0; i < count; i++) {
                 const mesh = source.clone(true);
@@ -123,8 +112,9 @@ export default function BeanBackground() {
         });
 
         const onMouseMove = (e) => {
-            ndc.x = (e.clientX / window.innerWidth) * 2 - 1;
-            ndc.y = -(e.clientY / window.innerHeight) * 2 + 1;
+            const rect = container.getBoundingClientRect();
+            ndc.x = ((e.clientX - rect.left) / rect.width) * 2 - 1;
+            ndc.y = -((e.clientY - rect.top) / rect.height) * 2 + 1;
             raycaster.setFromCamera(ndc, camera);
             if (raycaster.ray.intersectPlane(plane, hitPoint)) {
                 cursor.copy(hitPoint);
@@ -133,42 +123,12 @@ export default function BeanBackground() {
         };
 
         const onResize = () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
+            const w = container.offsetWidth;
+            const h = container.offsetHeight;
+            camera.aspect = w / h;
             camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            const maxDPR = window.innerWidth < 768 ? 1.5 : 2;
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, maxDPR));
-            const dist = camera.position.z;
-            const vFov = THREE.MathUtils.degToRad(camera.fov);
-            const visH = 2 * Math.tan(vFov / 2) * dist;
-            updateCurve(visH * camera.aspect, visH);
-
-            // Adjust bean count on resize
-            const newConfig = getConfig();
-            if (newConfig.count !== beans.length && sourceRef) {
-                const newScale = newConfig.TABLET_SIZE / sourceScaleRef;
-                while (beans.length > newConfig.count) {
-                    const b = beans.pop();
-                    scene.remove(b.mesh);
-                }
-                while (beans.length < newConfig.count) {
-                    const i = beans.length;
-                    const mesh = sourceRef.clone(true);
-                    mesh.scale.setScalar(newScale);
-                    scene.add(mesh);
-                    beans.push({
-                        mesh,
-                        progress: -0.5 + (i / newConfig.count) * 1.6,
-                        radialAngle: Math.random() * Math.PI * 2,
-                        radialDist: Math.sqrt(Math.random()),
-                        rest: new THREE.Vector3(),
-                        vel: new THREE.Vector3(),
-                        spin: (Math.random() - 0.5) * 0.06,
-                        phase: Math.random() * Math.PI * 4,
-                        firstFrame: true
-                    });
-                }
-            }
+            renderer.setSize(w, h);
+            buildCurve();
         };
 
         window.addEventListener('mousemove', onMouseMove);
@@ -179,25 +139,8 @@ export default function BeanBackground() {
             const dt = clock.getDelta();
             const REPEL_RADIUS = 2.2;
             const REPEL_STRENGTH = 3.0;
-            const SPRING = 0.003;
             const DAMPING = 0.88;
             const FLOW_SPEED = 0.025;
-
-            const currentDist = camera.position.z;
-            const currentVFov = THREE.MathUtils.degToRad(camera.fov);
-            const currentVisH = 2 * Math.tan(currentVFov / 2) * currentDist;
-            const currentVisW = currentVisH * camera.aspect;
-
-            const section = document.querySelector('.philosophy-section');
-            if (section) {
-                const rect = section.getBoundingClientRect();
-                if (lastSectionTop !== undefined) {
-                    const deltaY3D = -((rect.top - lastSectionTop) / window.innerHeight) * currentVisH;
-                    beans.forEach(b => b.mesh.position.y += deltaY3D);
-                }
-                lastSectionTop = rect.top;
-            }
-            updateCurve(currentVisW, currentVisH);
 
             if (cursorActive) {
                 hoverLight.position.set(cursor.x, cursor.y, 3.5);
@@ -225,25 +168,26 @@ export default function BeanBackground() {
                 rest.addScaledVector(perp1, Math.cos(radialAngle) * radialDist * currentRadius);
                 rest.addScaledVector(perp2, Math.sin(radialAngle) * radialDist * currentRadius);
 
-                if (cursorActive) {
+                if (bean.firstFrame) {
+                    mesh.position.copy(rest);
+                    bean.firstFrame = false;
+                } else if (cursorActive) {
                     const distToCursor = mesh.position.distanceTo(cursor);
                     if (distToCursor < REPEL_RADIUS && distToCursor > 0.001) {
                         const f = (1 - distToCursor / REPEL_RADIUS) ** 2;
                         const repel = mesh.position.clone().sub(cursor).normalize().multiplyScalar(f * REPEL_STRENGTH);
                         vel.add(repel);
                     }
-                }
-
-                if (bean.firstFrame) {
-                    mesh.position.copy(rest);
-                    bean.firstFrame = false;
-                } else {
-                    vel.x += (rest.x - mesh.position.x) * SPRING;
-                    vel.y += (rest.y - mesh.position.y) * SPRING;
-                    vel.z += (rest.z - mesh.position.z) * SPRING;
+                    vel.x += (rest.x - mesh.position.x) * 0.003;
+                    vel.y += (rest.y - mesh.position.y) * 0.003;
+                    vel.z += (rest.z - mesh.position.z) * 0.003;
                     vel.multiplyScalar(DAMPING);
                     mesh.position.add(vel);
+                } else {
+                    vel.set(0, 0, 0);
+                    mesh.position.copy(rest);
                 }
+
                 mesh.quaternion.copy(camera.quaternion);
                 bean.phase += bean.spin + vel.length() * 0.1;
                 mesh.rotateZ(bean.phase);
@@ -259,12 +203,10 @@ export default function BeanBackground() {
             cancelAnimationFrame(requestID);
             window.removeEventListener('mousemove', onMouseMove);
             window.removeEventListener('resize', onResize);
-            if (container && container.contains(renderer.domElement)) {
-                container.removeChild(renderer.domElement);
-            }
+            if (container.contains(canvas)) container.removeChild(canvas);
             renderer.dispose();
         };
     }, []);
 
-    return <div id="beanCanvas" ref={containerRef} style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }} />;
+    return <div ref={containerRef} className={className} style={{ width: '100%', height: '100%', ...style }} />;
 }

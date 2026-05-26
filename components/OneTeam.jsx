@@ -7,14 +7,15 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import ReactLenis from "lenis/react";
 import Image from "next/image";
 
-import vp1 from "../public/vp1.png";
-import vp2 from "../public/vp2.png";
-import vp3 from "../public/vp3.png";
-import vp4 from "../public/vp4.png";
-import ceoImg from "../public/ceo.png";
+import vp1 from "../public/vp1.webp";
+import vp2 from "../public/vp2.webp";
+import vp3 from "../public/vp3.webp";
+import vp4 from "../public/vp4.webp";
+import ceoImg from "../public/ceo.webp";
 import linkedinImg from "../public/linkdin.png";
 import mapImg from "../public/map.png";
-import gptwImg from "../public/gptw.png";
+import gptwImg from "../public/gptw.webp";
+import gptwMobileImg from "../public/gptw_mobile.png";
 import logo1 from "../public/logo1.png";
 import logo2 from "../public/logo2.png";
 import logo3 from "../public/logo3.png";
@@ -41,7 +42,7 @@ import awd9 from "../public/awd9.png";
 import awd10 from "../public/awd10.png";
 import awd11 from "../public/awd11.png";
 import awd12 from "../public/awd12.png";
-
+import mobile_map from "../public/mobile_map.png";
 // added something here to test the commit and push functionality of git
 gsap.registerPlugin(ScrollTrigger);
 
@@ -136,30 +137,36 @@ const awardsData = [
 
 function OneTeam() {
   return (
-    <ReactLenis root>
+
       <>
-        <div className="flex flex-col lg:flex-row gap-8 pt-12 px-10 md:px-1 py-10 bg-[#18181B] border-t-4 border-[#878787] rounded-3xl text-white">
+       <div className="
+flex flex-col lg:flex-row gap-8 p-[30px]
+border border-white/15
+border-t-4 border-t-[rgba(135,135,135,0.24)]
+bg-[radial-gradient(circle_at_20%_0%,_rgba(255,255,255,0.15)_0%,_rgba(24,24,27,0.24)_35%,_rgba(0,0,0,1)_100%)]
+rounded-3xl text-white
+">
           <div className="flex flex-col gap-5">
             <Image src={ceoImg} alt="Vimal Narayanan" className="max-w-[280px] rounded-xl" />
           </div>
           <div className="flex items-start justify-center lg:px-10 flex-col gap-10">
-            <p className="text-[30px] leading-relaxed">
-              "We believe great outcomes are built by great teams. Our strength lies in our people and the way we come together as{" "}
-              <span className="text-red-500">one</span> to solve complex challenges, support one another, and deliver meaningful impact for our clients."
+            <p className="lg:text-[30px] text-[22px] leading-relaxed">
+              &ldquo;We believe great outcomes are built by great teams. Our strength lies in our people and the way we come together as{" "}
+              <span className="text-red-500">one </span> to solve complex challenges, support one another, and deliver meaningful impact for our clients.&rdquo;
             </p>
             <div className="flex items-center justify-between gap-2">
               <div>
-                <h5 className="text-[28px] font-semibold">Vimal Narayanan</h5>
-                <p className="text-[20px] text-gray-300">Founder and CEO</p>
+                <h5 className="lg:text-[28px] text-[22px] font-semibold">Vimal Narayanan</h5>
+                <p className="lg:text-[20px] text-[16px]  text-gray-300">Founder and CEO</p>
               </div>
               <Image src={linkedinImg} alt="LinkedIn" className="w-[60px] h-[60px] object-contain cursor-pointer" />
             </div>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2 mt-12 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mt-12 text-white">
           {vpData.map((vp, index) => (
-            <div key={index} className="flex flex-col gap-1 px-5 py-5 pb-4 bg-[#18181B] border border-[#252525] border-t-[3px] border-t-[#504e4e] rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-1">
+            <div key={index} className="flex flex-col gap-1 px-5 py-5 pb-4  border border-[#252525] border-t-4 border-t-[rgba(135,135,135,0.24)] bg-[radial-gradient(circle_at_20%_0%,_rgba(255,255,255,0.15)_0%,_rgba(24,24,27,0.24)_35%,_rgba(0,0,0,1)_100%)] border-t-[rgba(135,135,135,0.24)]  rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-1">
               <div className="flex justify-center">
                 <Image src={vp.img} alt={vp.name} className="w-full h-auto object-contain" />
               </div>
@@ -176,23 +183,27 @@ function OneTeam() {
 
         {/* <StickyCards /> */}
          <section className="relative ">
-        <div className="flex items-center justify-center py-20  ">
-          <Image src={gptwImg} alt="Great Place to Work" />
+        <div className="flex items-center justify-center py-[50px]  lg:py-[100px]  ">
+          <Image src={gptwImg} alt="Great Place to Work" className="hidden lg:block" />
+          <Image src={gptwMobileImg} alt="Great Place to Work" className="block lg:hidden" />
 
         </div>
         <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
 
         </section>
 
-        <section className="bg-black py-24 px-6 lg:px-2 relative overflow-hidden">
-          <div className="inline-flex px-8 py-3 rounded-full bg-[#242424] mb-10">
+        <section className="bg-black lg:py-[100px]  py-[50px]  px-6 lg:px-2 relative overflow-hidden">
+        <div className="
+inline-flex px-8 py-3 rounded-full mb-10
+bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]
+">
             <span className="text-white tracking-[4px] text-sm font-semibold uppercase">One Commitment</span>
           </div>
-          <h2 className="text-3xl font-bold mb-20">
+          <h2 className="text-3xl text-[26px] lg:text-[70px] font-bold mb-[10px] lg:mb-20">
             <span className="text-red-500">Client</span>{" "}
             <span className="text-white">Success</span>
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-16 gap-x-10 items-center justify-items-center">
+          <div className="grid grid-cols-3  lg:grid-cols-6 gap-y-16 gap-x-10 items-center justify-items-center">
             {clientLogos.map((logo, index) => (
               <div key={index} className="w-full h-[80px] flex items-center justify-center transition duration-300 hover:scale-105">
                 <img src={logo.src} alt={`client-${index}`} className="max-h-[50px] w-auto object-contain opacity-90" />
@@ -203,18 +214,18 @@ function OneTeam() {
 
         </section>
 
-        <section className=" py-24 relative overflow-hidden">
-          <div className="inline-flex px-6 py-3 rounded-full bg-[#262626] mb-10">
+        <section className="pt-[50px] pb-[50px] lg:pt-[100px] lg:pb-[80px] relative overflow-hidden">
+          <div className="inline-flex px-6 py-3 rounded-full bg-[#262626] mb-10 bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]">
             <span className="text-white uppercase tracking-[4px] text-sm font-semibold">One Standard</span>
           </div>
-          <h2 className="text-3xl font-bold mb-16 leading-tight">
+          <h2 className="text-[26px] lg:text-[70px] font-bold mb-[30px] lg:mb-16 leading-tight">
             <span className="text-red-500">Excellence,</span>
             <span className="text-white"> recognized by the industry.</span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-2">
             {awardsData.map((award, index) => (
               <div key={index} className="   flex items-center justify-center p-2 transition-all duration-300 hover:-translate-y-1">
-              <Image src={award} alt={`award-${index}`} className="max-w-[250px]  object-contain" />
+              <Image src={award} alt={`award-${index}`} className="lg:max-w-[250px]  object-contain" />
               </div>
             ))}
           </div>
@@ -222,15 +233,18 @@ function OneTeam() {
 
         </section>
 
-        <section className="bg-black px-6 lg:px-1 flex flex-col items-center">
-          <Image src={mapImg} alt="Contact Locations" className="w-full object-contain" />
-          <button className="mt-8 px-10 py-4 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
+        <section className="bg-black px-6 lg:px-1 flex flex-col items-center lg:pb-[100px] pb-[50px] relative overflow-hidden">
+          <p className="text-white text-[28px] lg:text-[48px] font-semibold mb-4 text-left  w-full py-[25px] lg:py-[50px]">Contact Us</p>
+          <Image src={mapImg} alt="Contact Locations" className="w-full object-contain hidden lg:block" />
+          <Image src={mobile_map} alt="Contact Locations" className="w-full  object-contain lg:hidden  " />
+
+          <button className="mt-8 px-8 py-2 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
             Contact Us
           </button>
           
         </section>
       </>
-    </ReactLenis>
+
   );
 }
 
