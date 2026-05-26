@@ -1,4 +1,5 @@
 import Link from "next/link";
+import heder from "../../../public/work3.png";
 
 export default function StemlineExecution() {
   return (

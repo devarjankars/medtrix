@@ -1,4 +1,5 @@
 import Link from "next/link";
+import heder from "../../../public/work2.png";
 
 export default function IdorsiaStrategy() {
   return (

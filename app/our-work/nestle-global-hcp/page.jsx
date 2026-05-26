@@ -1,4 +1,5 @@
 import Link from "next/link";
+import heder from "../../../public/work4.png";
 
 export default function NestleGlobalHcp() {
   return (
