@@ -156,8 +156,8 @@ function OneTeam() {
           <Image
             src={gptwImg}
             alt="Great Place to Work"
-            sizes="(max-width: 768px) 90vw, 60vw"
-            className="w-full max-w-3xl object-contain"
+            
+            className="w-full object-contain"
             loading="lazy"
           />
         </div>
