@@ -9,7 +9,7 @@ export default function FeatureSection({
   const isImageLeft = imagePosition === "left";
 
   return (
-    <section className="relative w-full text-white py-10 md:py-4 overflow-x-hidden">
+    <section className="relative w-full text-white py-5 md:py-4 overflow-x-hidden">
 
       <div className="relative z-10">
 
@@ -31,7 +31,7 @@ export default function FeatureSection({
             </div>
           </div>
 
-          <div className={`flex flex-col gap-8  ${isImageLeft ? "lg:order-2" : "lg:order-1"}`}>
+          <div className={`flex flex-col gap-6  ${isImageLeft ? "lg:order-2" : "lg:order-1"}`}>
             {paragraphs.map((text, index) => (
               <p key={index} className="text-[#b3b3b3] text-base md:text-lg leading-relaxed font-light w-full lg:w-[80%]">
                 {text}

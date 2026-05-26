@@ -2,20 +2,20 @@ import Link from "next/link";
 
 const footerData = [
   {
-    title: "Capabilities",
-    links: ["Commercial Solutions", "Medical Affairs", "Digital & Innovation", "MedTrix AI Catalysts"],
-  },
-  {
-    title: "About Us",
-    links: ["One Belief", "One Team", "One Standard"],
+    title: "Services",
+    links: ["Commercial Solutions ", "Medical Affairs", "Digital & Innovation ", "MedTrix AI Catalysts", "Strategy & Consulting"],
   },
   {
     title: "Our Work",
-    links: ["Case Studies", "Innovation Stories"],
+    links: [],
   },
   {
-    title: "Clients",
-    links: ["USA", "India"],
+    title: "News & Updates",
+    links: [],
+  },
+  {
+    title: "Life@Medtrix",
+    links: [],
   },
 ];
 
@@ -25,13 +25,13 @@ export default function Footer() {
       <div className="w-[90%] md:w-[80%] mx-auto py-16">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-12">
 
-          <div className="col-span-2 lg:col-span-1 flex  lg:justify-start">
+          <div className="col-span-2 lg:col-span-1 flex  lg:justify-self-start items-start">
             <img src="/logo.png" alt="Medtrix" className="w-[180px] object-contain" />
           </div>
 
           {footerData.map((section, index) => (
             <div key={index}>
-              <h3 className="text-white text-2xl font-bold mb-6">{section.title}</h3>
+              <h3 className="text-white text-2xl font-semibold mb-6">{section.title}</h3>
               <div className="flex flex-col gap-5">
                 {section.links.map((link, i) => (
                   <p key={i} className="text-gray-300 text-lg cursor-pointer hover:text-white transition">

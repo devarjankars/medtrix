@@ -16,23 +16,10 @@ export default function DynamicHeader({
   statsCards = [],
 }) {
   return (
-    <section className="
-      relative
-      overflow-hidden
-      text-white
-      py-24
-      min-h-screen
-      flex
-      items-center
-    ">
+    <section className="   relative   overflow-hidden   text-white   py-20   min-h-screen  flex items-start  ">
 
       {/* DESKTOP BG */}
-      <div className="
-        hidden
-        lg:block
-        absolute
-        inset-0
-        z-0
+      <div className="  hidden lg:block absolute inset-0  z-0 
       ">
         <img
           src={desktopBg.src}
@@ -41,25 +28,12 @@ export default function DynamicHeader({
         />
       </div>
 
-      <div className="
-        relative
-        z-10
-        max-w-7xl
-        mx-auto
-        grid
-        grid-cols-1
-        lg:grid-cols-12
-        gap-8
-        items-center
+      <div className="  relative  z-10  grid  grid-cols-1  lg:grid-cols-12  gap-8  items-center
       ">
         
 
         {/* LEFT */}
-        <div className="
-          lg:col-span-7
-          flex
-          flex-col
-          gap-5
+        <div className="lg:col-span-7  flex flex-col gap-5
         ">
            <div className=" relative inline-block rounded-full max-w-fit p-[1px]" style={{ background: 'linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)' }}> <span className="inline-block text-[11px] font-bold tracking-[0.15em] uppercase text-[#FFF] bg-[#0c0606] px-4 py-1.5 rounded-full"> {tagText} </span> </div>
          
@@ -95,7 +69,7 @@ export default function DynamicHeader({
               className="
                 text-gray-400
                 text-[18px]
-                leading-9
+                leading-9 pr-0 md:pr-40
               "
             >
               {item}
@@ -108,7 +82,7 @@ export default function DynamicHeader({
               grid
               grid-cols-1
               md:grid-cols-3
-              gap-4
+              gap-10
             ">
               {statsCards.map((card, index) => (
                 <div
@@ -153,6 +127,7 @@ export default function DynamicHeader({
             className="
               w-full
               max-w-[400px]
+              mr-40
             "
           />
         </div>
