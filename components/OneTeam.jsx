@@ -1,6 +1,66 @@
 'use client'
 
+import { useEffect, useRef } from "react";
 import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+gsap.registerPlugin(ScrollTrigger);
+
+const FULL_TEXT = "“We believe great outcomes are built by great teams. Our strength lies in our people and the way we come together as one to solve complex challenges, support one another, and deliver meaningful impact for our clients.”";
+const RED_WORD = "one";
+
+function TypingQuote() {
+  const paraRef = useRef(null);
+
+  useEffect(() => {
+    const el = paraRef.current;
+    if (!el) return;
+
+    // Split into segments: before "one", "one", after "one"
+    const idx = FULL_TEXT.indexOf(RED_WORD);
+    const before = FULL_TEXT.slice(0, idx);
+    const after = FULL_TEXT.slice(idx + RED_WORD.length);
+
+    // Build char spans
+    const makeSpans = (text, className = '') =>
+      text.split('').map(ch => {
+        const s = document.createElement('span');
+        s.textContent = ch;
+        s.style.opacity = '0';
+        if (className) s.className = className;
+        return s;
+      });
+
+    const beforeSpans = makeSpans(before);
+    const redSpans = makeSpans(RED_WORD, 'text-red-500');
+    const afterSpans = makeSpans(after);
+    const allSpans = [...beforeSpans, ...redSpans, ...afterSpans];
+
+    el.innerHTML = '';
+    allSpans.forEach(s => el.appendChild(s));
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        once: true,
+      },
+    });
+
+    tl.to(allSpans, {
+      opacity: 1,
+      duration: 0.01,
+      stagger: 0.018,
+      ease: 'none',
+    });
+
+    return () => tl.kill();
+  }, []);
+
+  return (
+    <p ref={paraRef} className="lg:text-[30px] text-[22px] leading-relaxed" />
+  );
+}
 
 import vp1 from "../public/vp1.webp";
 import vp2 from "../public/vp2.webp";
@@ -9,6 +69,8 @@ import vp4 from "../public/vp4.webp";
 import ceoImg from "../public/ceo.webp";
 import linkedinImg from "../public/linkdin.png";
 import gptwImg from "../public/gptw.webp";
+import gptw_mobile from "../public/gptw_mobile.png";
+
 import logo1 from "../public/logo1.png";
 import logo2 from "../public/logo2.png";
 import logo3 from "../public/logo3.png";
@@ -77,6 +139,26 @@ function SectionHeading({ red, white }) {
 }
 
 function OneTeam() {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    cardRefs.current.forEach((card, i) => {
+      if (!card) return;
+      gsap.fromTo(card,
+        { opacity: 0, x: 60 },
+        {
+          opacity: 1, x: 0, duration: 0.5, ease: 'power2.out',
+          scrollTrigger: {
+            trigger: cardRefs.current[0],
+            start: 'top 80%',
+            once: true,
+          },
+          delay: i * 0.2,
+        }
+      );
+    });
+  }, []);
+
   return (
     <>
       {/* CEO Quote Card */}
@@ -94,11 +176,7 @@ function OneTeam() {
           />
         </div>
         <div className="flex items-start justify-center lg:px-10 flex-col gap-10">
-          <p className="lg:text-[30px] text-[22px] leading-relaxed">
-            &ldquo;We believe great outcomes are built by great teams. Our strength lies in our people and the way we come together as{" "}
-            <span className="text-red-500">one </span>
-            to solve complex challenges, support one another, and deliver meaningful impact for our clients.&rdquo;
-          </p>
+          <TypingQuote />
           <div className="flex items-center gap-4">
             <div>
               <h5 className="lg:text-[28px] text-[22px] font-semibold">Vimal Narayanan</h5>
@@ -120,8 +198,9 @@ function OneTeam() {
         {vpData.map((vp, index) => (
           <div
             key={index}
+            ref={el => cardRefs.current[index] = el}
             className="flex flex-col gap-1 px-5 py-5 pb-4 border border-[#252525] border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1"
-            style={{ ...cardStyle, willChange: "transform" }}
+            style={{ ...cardStyle, willChange: "opacity, transform", opacity: 0 }}
           >
             <div className="flex justify-center">
               <Image
@@ -157,9 +236,17 @@ function OneTeam() {
             src={gptwImg}
             alt="Great Place to Work"
             
-            className="w-full object-contain"
+            className="w-full hidden lg:block  object-contain"
             loading="lazy"
           />
+          <Image
+            src={gptw_mobile}
+            alt="Great Place to Work"
+            
+            className="w-full lg:hidden object-contain"
+            loading="lazy"
+          />
+
         </div>
         <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]" style={redGlow} />
       </section>

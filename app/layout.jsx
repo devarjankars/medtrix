@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import Loader from "@/components/Loader";
+import LenisProvider from "@/components/LenisProvider";
 
 
 const albertSans = Albert_Sans({
@@ -22,14 +23,15 @@ export default function RootLayout({ children }) {
     <html lang="en" className={albertSans.variable} suppressHydrationWarning>
       
       <body className={`${albertSans.className} min-h-screen flex flex-col bg-black`}>
-        <ScrollToTop />
-        <Loader />
-     
-        <Navbar />
-        <main className="flex-1 w-full bg-[#000000]">
-          <div className="w-full ">{children}</div>
-        </main>
-        <Footer />
+        <LenisProvider>
+          <ScrollToTop />
+          <Loader />
+          <Navbar />
+          <main className="flex-1 w-full bg-[#000000]">
+            <div className="w-full">{children}</div>
+          </main>
+          <Footer />
+        </LenisProvider>
     
       </body>
     </html>
