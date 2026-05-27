@@ -18,12 +18,9 @@ const links = [
   { label: "Our Work", href: "/our-work" },
   { label: "News & Updates", href: "/news" },
   {
-    label: "Careers",
-    href: null,
-    items: [
-      { label: "Open Positions", href: "/careers/open-positions" },
-      { label: "Life at Medtrix", href: "/life-at-medtrix" },
-    ],
+    label: "Life@Medtrix",
+     href: "/life-at-medtrix" 
+    
   },
   { label: "Contact Us", href: "/contact", button: true },
 ];
