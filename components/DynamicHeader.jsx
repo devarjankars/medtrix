@@ -24,8 +24,14 @@ const fadeScale = {
 };
 
 // ── word-by-word title split ─────────────────────────────────────────────────
+// title can be a string OR an array of strings (each item = one desktop line)
 function AnimatedTitle({ text }) {
-  const words = text.split(" ");
+  // normalise to array of lines
+  const lines = Array.isArray(text) ? text : [text];
+
+  // flat word list for mobile (single continuous flow)
+  const allWords = lines.join(" ").split(" ");
+
   return (
     <motion.h1
       className="text-4xl lg:text-6xl"
@@ -34,24 +40,53 @@ function AnimatedTitle({ text }) {
         visible: { transition: { staggerChildren: 0.07, delayChildren: 0 } },
       }}
     >
-      {words.map((word, i) => (
-        <motion.span
-          key={i}
-          className="inline-block mr-[0.25em]"
-          variants={{
-            hidden: { opacity: 0, y: 32, rotateX: -20 },
-            visible: {
-              opacity: 1,
-              y: 0,
-              rotateX: 0,
-              transition: { duration: 0.6, ease },
-            },
-          }}
-          style={{ transformOrigin: "bottom center" }}
-        >
-          {word}
-        </motion.span>
-      ))}
+      {/* ── DESKTOP: render line by line with block breaks ── */}
+      <span className="hidden lg:block">
+        {lines.map((line, li) => (
+          <span key={li} className="block">
+            {line.split(" ").map((word, wi) => (
+              <motion.span
+                key={`${li}-${wi}`}
+                className="inline-block mr-[0.25em]"
+                variants={{
+                  hidden: { opacity: 0, y: 32, rotateX: -20 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    rotateX: 0,
+                    transition: { duration: 0.6, ease },
+                  },
+                }}
+                style={{ transformOrigin: "bottom center" }}
+              >
+                {word}
+              </motion.span>
+            ))}
+          </span>
+        ))}
+      </span>
+
+      {/* ── MOBILE: all words flow naturally, no forced breaks ── */}
+      <span className="block lg:hidden">
+        {allWords.map((word, i) => (
+          <motion.span
+            key={i}
+            className="inline-block mr-[0.25em]"
+            variants={{
+              hidden: { opacity: 0, y: 32, rotateX: -20 },
+              visible: {
+                opacity: 1,
+                y: 0,
+                rotateX: 0,
+                transition: { duration: 0.6, ease },
+              },
+            }}
+            style={{ transformOrigin: "bottom center" }}
+          >
+            {word}
+          </motion.span>
+        ))}
+      </span>
     </motion.h1>
   );
 }
@@ -72,15 +107,19 @@ export default function DynamicHeader({
   return (
     <section className="relative overflow-hidden text-white py-20 min-h-screen flex items-start">
 
-      {/* BG — slow fade in */}
+      {/* BG — slow fade in, never cropped */}
       <motion.div
         className="hidden lg:block absolute inset-0 z-0"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, ease: "easeOut" }}
-      >
-        <img src={desktopBgSrc} className="w-full h-full object-cover" alt="" />
-      </motion.div>
+        style={{
+          backgroundImage: `url(${desktopBgSrc})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
 
       {/* subtle radial red glow top-left */}
       <motion.div
@@ -99,12 +138,12 @@ export default function DynamicHeader({
 
         {/* LEFT COLUMN */}
         <motion.div
-          className="lg:col-span-7 flex flex-col gap-5"
+          className="lg:col-span-7 flex flex-col gap-5 max-w-2xl"
           variants={leftCol}
           initial="hidden"
           animate="visible"
         >
-          {/* Tag pill */}
+          
           <motion.div variants={fadeScale}>
             <div
               className="relative inline-block rounded-full max-w-fit p-px"
@@ -119,30 +158,29 @@ export default function DynamicHeader({
             </div>
           </motion.div>
 
-          {/* Title — word by word */}
-          <motion.div variants={fadeUp}>
+          <motion.div variants={fadeUp} className="w-full">
             <AnimatedTitle text={title ?? ""} />
           </motion.div>
 
-          {/* Mobile image */}
+          
           {mobileImgSrc && (
             <motion.section className="block lg:hidden" variants={fadeUp}>
               <img src={mobileImgSrc} alt="" className="w-full object-contain" />
             </motion.section>
           )}
 
-          {/* Paragraphs */}
+       
           {paragraphs.map((item, index) => (
             <motion.p
               key={index}
               variants={fadeUp}
-              className="text-gray-400 text-[18px] leading-9 pr-0 md:pr-40"
+              className="text-gray-400 text-[18px] leading-9"
             >
               {item}
             </motion.p>
           ))}
 
-          {/* Stats cards */}
+        
           {statsCards.length > 0 && (
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-10"

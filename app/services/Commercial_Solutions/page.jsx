@@ -3,9 +3,12 @@ import DynamicHeader from '@/components/DynamicHeader';
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 
 const strategyParagraphs = [
-  "through AI-powered tools, structured workflows, and domain expertise with human oversight at the core. Our proprietary accelerators improve speed, consistency, and efficiency across digital delivery programs.",
-  "Our omnichannel approach combines enterprise-grade AI guardrails with expert validation to ensure secure, compliant, and accurate outputs. Supported by experienced project teams, we help accelerate large-scale digital production and reduce PRC approval timelines by up to 50%."
-];
+ 
+    "Large-scale, high-quality content production, customer engagement design, content intelligence and digital optimization, and meetings and events support through a model that combines domain expertise, structured workflows, and AI-powered tools.",
+"Our proprietary AI a Catalysts are integrated into our delivery ecosystem and, where appropriate, made available to our clients to enhance speed, consistency, and efficiency. Our model has helped clients achieve up to a 50% reduction in MLR approval time, significantly accelerating time to market."
+
+]
+;
 
 export default function Commercial_Solutions() {
   return (

@@ -242,6 +242,7 @@ export const projects = [
   {
     id: "abbvie-rinvoq-case-player",
     category: "DIGITAL INNOVATION",
+    cardTitle: "AbbVie: Rinvoq Case Player",
     imgforfiltersection: "/di1.png",
     imgfordetail:"/didesk1.png",
     imgfordetailmbl: "/didesk1.png",
@@ -266,6 +267,7 @@ export const projects = [
   {
     id: "allergan-anatomy-app",
     category: "DIGITAL INNOVATION",
+    cardTitle: "Allergan Medical Institute: Anatomy App",
     imgforfiltersection: "/di2.png",
     imgfordetail: "/didesk2.png",
     imgfordetailmbl:"/didesk2.png",
@@ -290,6 +292,7 @@ export const projects = [
   {
     id: "allergan-ha-dermal-portal",
     category: "DIGITAL INNOVATION",
+    cardTitle: "Allergan Medical Institute: HA Dermal Portal",
     imgforfiltersection: "/di3.png",
     imgfordetail: "/didesk3.png",
     imgfordetailmbl: "/didesk3.png",
@@ -314,6 +317,7 @@ export const projects = [
   {
     id: "celltrion-ibd-vr",
     category: "DIGITAL INNOVATION",
+    cardTitle: "Celltrion: IBD VR @ DDW 2026",
     imgforfiltersection: "/di4.png",
     imgfordetail: "/didesk4.png",
     imgfordetailmbl: "/didesk4.png",
@@ -338,6 +342,7 @@ export const projects = [
   {
     id: "novartis-web-ar-jakavi",
     category: "DIGITAL INNOVATION",
+    cardTitle: "Novartis: Web AR for Jakavi",
     imgforfiltersection:"/di5.png",
     imgfordetail:"/didesk5.png",
     imgfordetailmbl: "/didesk5.png",
@@ -362,6 +367,7 @@ export const projects = [
   {
     id: "stemline-ai-storytelling",
     category: "DIGITAL INNOVATION",
+    cardTitle: "Stemline: AI Story Telling",
     imgforfiltersection:"/di6.png",
     imgfordetail: "/didesk6.png",
     imgfordetailmbl: "/didesk6.png",

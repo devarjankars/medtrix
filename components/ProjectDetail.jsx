@@ -445,8 +445,12 @@ export default function ProjectDetail({ project, onBack }) {
             </div>
           </Reveal>
 
-          {/* recognitions */}
-          {project.recognitions?.length > 0 && (
+          {/* recognitions — only render if at least one item has images */}
+          {project.recognitions?.length > 0 &&
+            project.recognitions.some((rec) => {
+              const imgs = Array.isArray(rec.img) ? rec.img : typeof rec === "string" ? [rec] : [];
+              return imgs.length > 0;
+            }) && (
             <Reveal delay={0.1} className="py-10">
               <div className="w-full flex justify-center py-8">
                 <motion.h5
@@ -463,6 +467,7 @@ export default function ProjectDetail({ project, onBack }) {
                 {project.recognitions.map((rec, i) => {
                   const imgs = Array.isArray(rec.img) ? rec.img : typeof rec === "string" ? [rec] : [];
                   const content = rec.content || "";
+                  if (!imgs.length && !content) return null;
                   return (
                     <motion.div
                       key={i}

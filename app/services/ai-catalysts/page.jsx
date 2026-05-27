@@ -33,8 +33,13 @@ export default function page() {
     <main className="relative ">
       <DynamicHeader
         tagText="AI CATALYSTS"
-        title="Intelligent Catalysts for Content, Compliance, and Engagement"
-        paragraphs={strategyParagraphs}
+        
+      title={  [
+  "Intelligent Catalysts for",
+  "Content, Compliance, and",
+  "Engagement"
+]
+     }     paragraphs={strategyParagraphs}
         desktopBg={"/mAideskbg.png"}
          mobileImg={"/maimbl.png"}
       />
