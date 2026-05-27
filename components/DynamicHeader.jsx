@@ -1,6 +1,62 @@
+"use client";
 
+import { motion } from "framer-motion";
 import bg from "../public/bg.png";
 import mblbg from "../public/mblbg.png";
+
+// ── shared easing ────────────────────────────────────────────────────────────
+const ease = [0.22, 1, 0.36, 1];
+
+// ── stagger container for left column ───────────────────────────────────────
+const leftCol = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.12, delayChildren: 0.1 },
+  },
+};
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 28 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } },
+};
+
+const fadeScale = {
+  hidden: { opacity: 0, scale: 0.82 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.55, ease } },
+};
+
+// ── word-by-word title split ─────────────────────────────────────────────────
+function AnimatedTitle({ text }) {
+  const words = text.split(" ");
+  return (
+    <motion.h1
+      className="text-4xl lg:text-6xl"
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.07, delayChildren: 0 } },
+      }}
+    >
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          className="inline-block mr-[0.25em]"
+          variants={{
+            hidden: { opacity: 0, y: 32, rotateX: -20 },
+            visible: {
+              opacity: 1,
+              y: 0,
+              rotateX: 0,
+              transition: { duration: 0.6, ease },
+            },
+          }}
+          style={{ transformOrigin: "bottom center" }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.h1>
+  );
+}
 
 export default function DynamicHeader({
   tagText,
@@ -9,138 +65,155 @@ export default function DynamicHeader({
   graphicSrc,
   graphicAlt = "",
   desktopBg = bg,
-
-  // NEW MOBILE IMAGE
   mobileImg = mblbg,
-
   statsCards = [],
 }) {
   return (
-    <section className="   relative   overflow-hidden   text-white   py-20   min-h-screen  flex items-start  ">
+    <section className="relative overflow-hidden text-white py-20 min-h-screen flex items-start">
 
-      {/* DESKTOP BG */}
-      <div className="  hidden lg:block absolute inset-0  z-0 
-      ">
-        <img
-          src={desktopBg.src}
-          className="w-full h-full object-cover"
-          alt=""
-        />
-      </div>
+      {/* BG — slow fade in */}
+      <motion.div
+        className="hidden lg:block absolute inset-0 z-0"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.4, ease: "easeOut" }}
+      >
+        <img src={desktopBg.src} className="w-full h-full object-cover" alt="" />
+      </motion.div>
 
-      <div className="  relative  z-10  grid  grid-cols-1  lg:grid-cols-12  gap-8  items-center
-      ">
-        
+      {/* subtle radial red glow top-left */}
+      <motion.div
+        className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full z-0"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(225,37,27,0.08) 0%, transparent 70%)",
+        }}
+        initial={{ opacity: 0, scale: 0.6 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1.8, ease }}
+      />
 
-        {/* LEFT */}
-        <div className="lg:col-span-7  flex flex-col gap-5
-        ">
-           <div className=" relative inline-block rounded-full max-w-fit p-[1px]" style={{ background: 'linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)' }}> <span className="inline-block text-[14px] font-bold tracking-[0.15em] uppercase text-[#FFF] bg-[#0c0606] px-4 py-1.5 rounded-full"> {tagText} </span> </div>
-         
+      {/* ── MAIN GRID ─────────────────────────────────────────────────────── */}
+      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
 
-        <h1 className="
-            text-4xl
-            lg:text-6xl
-          ">
-            {title}
-          </h1>
+        {/* LEFT COLUMN */}
+        <motion.div
+          className="lg:col-span-7 flex flex-col gap-5"
+          variants={leftCol}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Tag pill */}
+          <motion.div variants={fadeScale}>
+            <div
+              className="relative inline-block rounded-full max-w-fit p-px"
+              style={{
+                background:
+                  "linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
+              }}
+            >
+              <span className="inline-block text-[14px] font-bold tracking-[0.15em] uppercase text-white bg-[#0c0606] px-4 py-1.5 rounded-full">
+                {tagText}
+              </span>
+            </div>
+          </motion.div>
 
-          {/* MOBILE IMAGE ONLY */}
+          {/* Title — word by word */}
+          <motion.div variants={fadeUp}>
+            <AnimatedTitle text={title ?? ""} />
+          </motion.div>
+
+          {/* Mobile image */}
           {mobileImg && (
-            <section className="block  lg:hidden">
-            
+            <motion.section
+              className="block lg:hidden"
+              variants={fadeUp}
+            >
               <img
                 src={mobileImg.src}
                 alt=""
-                className="
-                  w-full
-                  
-                  object-contain
-                "
+                className="w-full object-contain"
               />
-                 
-            </section>
-            
+            </motion.section>
           )}
 
+          {/* Paragraphs */}
           {paragraphs.map((item, index) => (
-            <p
+            <motion.p
               key={index}
-              className="
-                text-gray-400
-                text-[18px]
-                leading-9 pr-0 md:pr-40
-              "
+              variants={fadeUp}
+              className="text-gray-400 text-[18px] leading-9 pr-0 md:pr-40"
             >
               {item}
-            </p>
+            </motion.p>
           ))}
 
-          {/* BOXES */}
+          {/* Stats cards */}
           {statsCards.length > 0 && (
-            <div className="
-              grid
-              grid-cols-1
-              md:grid-cols-3
-              gap-10
-            ">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-10"
+              variants={{
+                hidden: {},
+                visible: {
+                  transition: { staggerChildren: 0.1 },
+                },
+              }}
+            >
               {statsCards.map((card, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="
-                    bg-black/30
-                    border
-                    border-[#2A2A2A]
-                    rounded-2xl
-                    p-6
-                  "
+                  variants={fadeUp}
+                  whileHover={{ y: -4, borderColor: "rgba(225,37,27,0.5)" }}
+                  transition={{ type: "spring", stiffness: 300, damping: 22 }}
+                  className="bg-black/30 border border-[#2A2A2A] rounded-2xl p-6 cursor-default"
                 >
-                  <div className="
-                    w-5
-                    h-[2px]
-                    bg-red-500
-                    mb-4
-                  " />
-
+                  <div className="w-5 h-0.5 bg-red-500 mb-4" />
                   <h3>{card.value}</h3>
-
                   <p>{card.label}</p>
-
-                </div>
+                </motion.div>
               ))}
-              
-            </div>
+            </motion.div>
           )}
+        </motion.div>
 
-        </div>
-
-        {/* DESKTOP RIGHT IMAGE */}
-        <div className="
-          hidden
-          lg:flex
-          lg:col-span-5
-          justify-end
-        ">
-          <img
-            src={graphicSrc}
-            alt={graphicAlt}
-            className="
-              w-full
-              max-w-[400px]
-              mr-40
-            "
-          />
-        </div>
-
+        {/* RIGHT IMAGE — floats in + continuous gentle float */}
+        {graphicSrc && (
+          <div className="hidden lg:flex lg:col-span-5 justify-end">
+            <motion.img
+              src={graphicSrc}
+              alt={graphicAlt}
+              className="w-full max-w-100 mr-40"
+              initial={{ opacity: 0, x: 60, scale: 0.95 }}
+              animate={{
+                opacity: 1,
+                x: 0,
+                scale: 1,
+                y: [0, -12, 0],
+              }}
+              transition={{
+                opacity: { duration: 0.8, ease, delay: 0.3 },
+                x:       { duration: 0.8, ease, delay: 0.3 },
+                scale:   { duration: 0.8, ease, delay: 0.3 },
+                y: {
+                  duration: 4,
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  delay: 1.2,
+                },
+              }}
+            />
+          </div>
+        )}
       </div>
-                <div
-  className="  mt-4 pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full lg:hidden"
-  style={{
-    background:
-      'radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)',
-  }}
-/>
 
+      {/* bottom glow — mobile */}
+      <div
+        className="mt-4 pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-10 rounded-full lg:hidden"
+        style={{
+          background:
+            "radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)",
+        }}
+      />
     </section>
   );
 }

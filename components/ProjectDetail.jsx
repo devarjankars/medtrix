@@ -4,36 +4,102 @@ import { useEffect, useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import TestimonialSlider from "@/components/TestimonialSlider";
 
-// ── Reusable scroll-reveal wrapper ───────────────────────────────────────────
+const ease = [0.22, 1, 0.36, 1];
+
+// ── Scroll-reveal wrapper ────────────────────────────────────────────────────
 function Reveal({ children, delay = 0, className = "" }) {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.15 });
+  const inView = useInView(ref, { once: true, amount: 0.12 });
   return (
     <motion.div
       ref={ref}
       className={className}
-      initial={{ opacity: 0, y: 40 }}
+      initial={{ opacity: 0, y: 28 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, ease: "easeOut", delay }}
+      transition={{ duration: 0.65, ease, delay }}
     >
       {children}
     </motion.div>
   );
 }
 
-// ── Section label pill ────────────────────────────────────────────────────────
-function SectionPill({ label }) {
+// ── Word-by-word animated heading ────────────────────────────────────────────
+function AnimatedHeading({ text, className = "" }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.3 });
+  const words = text.split(" ");
   return (
-    <div
-      className="inline-flex px-6 py-3 rounded-full mb-8 text-white tracking-[4px] text-sm font-bold uppercase border border-[#2A2525]"
-      style={{ background: "linear-gradient(to right, rgba(255,255,255,0.2), rgba(0,0,0,0.4))" }}
+    <motion.h1
+      ref={ref}
+      className={className}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={{
+        hidden: {},
+        visible: { transition: { staggerChildren: 0.06, delayChildren: 0.05 } },
+      }}
     >
-      {label}
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          className="inline-block mr-[0.25em]"
+          variants={{
+            hidden: { opacity: 0, y: 28, rotateX: -18 },
+            visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.55, ease } },
+          }}
+          style={{ transformOrigin: "bottom center" }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.h1>
+  );
+}
+
+// ── Section pill with animated draw-in line ──────────────────────────────────
+function SectionPill({ label }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.5 });
+  return (
+    <div ref={ref} className="flex items-center gap-4 mb-8">
+      {/* line draws in from left */}
+      <motion.div
+        className="h-px bg-linear-to-r from-[#E1251B] to-transparent"
+        initial={{ width: 0, opacity: 0 }}
+        animate={inView ? { width: 48, opacity: 1 } : {}}
+        transition={{ duration: 0.6, ease }}
+      />
+      <motion.div
+        initial={{ opacity: 0, x: -12 }}
+        animate={inView ? { opacity: 1, x: 0 } : {}}
+        transition={{ duration: 0.5, ease, delay: 0.2 }}
+        className="inline-flex px-6 py-3 rounded-full text-white tracking-[4px] text-sm font-bold uppercase border border-[#2A2525]"
+        style={{ background: "linear-gradient(to right, rgba(255,255,255,0.2), rgba(0,0,0,0.4))" }}
+      >
+        {label}
+      </motion.div>
     </div>
   );
 }
 
-// ── Animated glow divider ─────────────────────────────────────────────────────
+// ── Animated paragraph — fades in as one smooth block ───────────────────────
+function AnimatedParagraph({ text, className = "", delay = 0 }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.1 });
+  return (
+    <motion.p
+      ref={ref}
+      className={className}
+      initial={{ opacity: 0, y: 20 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease, delay }}
+    >
+      {text}
+    </motion.p>
+  );
+}
+
+// ── Glow divider ─────────────────────────────────────────────────────────────
 function GlowDivider() {
   return (
     <motion.div
@@ -41,7 +107,7 @@ function GlowDivider() {
       initial={{ opacity: 0, scaleX: 0.4 }}
       whileInView={{ opacity: 1, scaleX: 1 }}
       viewport={{ once: true }}
-      transition={{ duration: 1, ease: "easeOut" }}
+      transition={{ duration: 1.1, ease }}
       style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.45) 0%, transparent 80%)" }}
     />
   );
@@ -69,11 +135,10 @@ function ImageSlider({ images = [] }) {
 
   return (
     <div ref={ref} className="w-full">
-      {/* viewport */}
       <div className="relative overflow-hidden rounded-[28px] border border-[#812626] bg-[#090202] h-80 md:h-120">
         <motion.div
           animate={{ x: `-${current * 100}%` }}
-          transition={{ duration: 0.75, ease: "easeInOut" }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
           className="flex h-full"
         >
           {slides.map((slide, i) => (
@@ -86,11 +151,8 @@ function ImageSlider({ images = [] }) {
             </div>
           ))}
         </motion.div>
-
-
       </div>
 
-      {/* dots */}
       {slides.length > 1 && (
         <div className="flex justify-center gap-3 mt-5">
           {slides.map((_, i) => (
@@ -105,7 +167,6 @@ function ImageSlider({ images = [] }) {
         </div>
       )}
 
-      {/* left / right text — animated on slide change */}
       <AnimatePresence mode="wait">
         {(slides[current]?.leftText || slides[current]?.rightText) && (
           <motion.div
@@ -153,32 +214,34 @@ export default function ProjectDetail({ project, onBack }) {
       <motion.div
         initial={{ opacity: 0, x: -20 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.35 }}
+        transition={{ duration: 0.35, ease }}
         className="py-8"
       >
-        <button
+        <motion.button
           onClick={onBack}
-          className="group inline-flex items-center gap-4 text-sm text-gray-400 hover:text-white transition"
+          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors"
+          whileHover={{ x: -3 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
         >
           <motion.span
-            className="inline-block"
-            whileHover={{ x: -4 }}
-            transition={{ type: "spring", stiffness: 400 }}
+            className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors"
+            whileHover={{ scale: 1.1 }}
           >
             ←
           </motion.span>
           Back to Projects
-        </button>
+        </motion.button>
       </motion.div>
 
       {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section className="mb-4 overflow-hidden">
+
         {/* category pill */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.85 }}
+          initial={{ opacity: 0, scale: 0.82 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4, delay: 0.05 }}
-          className="relative inline-block rounded-full max-w-fit p-px mb-10"
+          transition={{ duration: 0.45, ease, delay: 0.05 }}
+          className="relative inline-block rounded-full max-w-fit p-px mb-6"
           style={{ background: "linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)" }}
         >
           <span className="inline-block text-[14px] font-bold tracking-[0.15em] uppercase text-white bg-[#0c0606] px-4 py-1.5 rounded-full">
@@ -186,21 +249,67 @@ export default function ProjectDetail({ project, onBack }) {
           </span>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.1 }}
-          className="text-3xl md:text-4xl font-medium leading-tight mb-10"
-        >
-          {project.title}
-        </motion.h1>
+        {/* title — word by word */}
+        <AnimatedHeading
+          text={project.title}
+          className="text-3xl md:text-4xl font-medium leading-tight mb-6"
+        />
 
-        {/* hero image with parallax-style reveal */}
+        {/* tags */}
+        {project.tags?.length > 0 && (
+          <motion.div
+            className="flex flex-wrap gap-2 mb-10"
+            initial="hidden"
+            animate="visible"
+            variants={{
+              hidden: {},
+              visible: { transition: { staggerChildren: 0.07, delayChildren: 0.35 } },
+            }}
+          >
+            {project.tags.map((tag, i) => (
+              <motion.span
+                key={i}
+                variants={{
+                  hidden: { opacity: 0, scale: 0.8, y: 8 },
+                  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease } },
+                }}
+                className="px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase border border-[#2A2A2A] text-[#888]"
+              >
+                {tag}
+              </motion.span>
+            ))}
+          </motion.div>
+        )}
+
+        {/* meta row — engagement model + timeline */}
+        {(project.engagementModel || project.timeline) && (
+          <motion.div
+            className="flex flex-wrap gap-6 mb-10 pb-10 border-b border-[#1a1a1a]"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease, delay: 0.5 }}
+          >
+            {project.engagementModel && (
+              <div className="flex flex-col gap-1">
+                <span className="text-[11px] tracking-[3px] uppercase text-[#555]">Engagement Model</span>
+                <span className="text-sm text-[#aaa]">{project.engagementModel}</span>
+              </div>
+            )}
+            {project.timeline && (
+              <div className="flex flex-col gap-1">
+                <span className="text-[11px] tracking-[3px] uppercase text-[#555]">Timeline</span>
+                <span className="text-sm text-[#aaa]">{project.timeline}</span>
+              </div>
+            )}
+          </motion.div>
+        )}
+
+        {/* hero image — Ken Burns zoom */}
         {project.imgfordetail && (
           <motion.div
-            initial={{ opacity: 0, scale: 1.04 }}
+            initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+            transition={{ duration: 0.9, ease, delay: 0.15 }}
             className="overflow-hidden rounded-[22px]"
           >
             <img
@@ -215,12 +324,9 @@ export default function ProjectDetail({ project, onBack }) {
       {/* ── CHALLENGE ────────────────────────────────────────────────────── */}
       {project.challenge && (
         <section className="relative py-20">
-          <Reveal>
-            <SectionPill label="Challenge" />
-          </Reveal>
+          <SectionPill label="Challenge" />
 
-          <div className="grid lg:grid-cols-2 gap-14 items-center  rounded-2xl px-6 md:px-0 py-10">
-            {/* image */}
+          <div className="grid lg:grid-cols-2 gap-14 items-center rounded-2xl px-6 md:px-0 py-10">
             {project.challengeImg ? (
               <Reveal delay={0.05}>
                 <div className="rounded-2xl overflow-hidden">
@@ -237,12 +343,11 @@ export default function ProjectDetail({ project, onBack }) {
               <div className="hidden lg:block" />
             )}
 
-            {/* text */}
-            <Reveal delay={0.12}>
-              <p className="text-[22px] leading-[1.9] text-[#A6A6A6]">
-                {project.challenge}
-              </p>
-            </Reveal>
+            <AnimatedParagraph
+              text={project.challenge}
+              className="text-[20px] leading-[1.9] text-[#A6A6A6]"
+              delay={0.1}
+            />
           </div>
 
           <GlowDivider />
@@ -252,24 +357,19 @@ export default function ProjectDetail({ project, onBack }) {
       {/* ── OUR SOLUTION ─────────────────────────────────────────────────── */}
       {project.solution && (
         <section className="relative py-20">
-          <Reveal>
-            <SectionPill label="Our Solution" />
-          </Reveal>
+          <SectionPill label="Our Solution" />
 
           {project.slider?.length > 0 && (
-            <Reveal delay={0.05} className="mb-10 ">
-              <ImageSlider images={project.slider} navigation={false}
- />
+            <Reveal delay={0.05} className="mb-10">
+              <ImageSlider images={project.slider} />
             </Reveal>
           )}
 
-          <Reveal delay={0.1}>
-            <div className="rounded-2xl px-6 md:px-0 py-10">
-              <p className="text-[18px] leading-[1.9] text-[#A6A6A6]">
-                {project.solution}
-              </p>
-            </div>
-          </Reveal>
+          <AnimatedParagraph
+            text={project.solution}
+            className="text-[18px] leading-[1.9] text-[#A6A6A6] px-6 md:px-0 py-10"
+            delay={0.1}
+          />
 
           <GlowDivider />
         </section>
@@ -278,41 +378,64 @@ export default function ProjectDetail({ project, onBack }) {
       {/* ── THE RESULT ───────────────────────────────────────────────────── */}
       {project.result && (
         <section className="relative py-20">
-          <Reveal>
-            <SectionPill label="The Result" />
-          </Reveal>
+          <SectionPill label="The Result" />
 
           <Reveal delay={0.05}>
-            <div className="border border-gray-700 rounded-2xl px-6 md:px-12 py-14 flex flex-col gap-10">
-              <p className="text-[18px] leading-[1.9] text-[#A6A6A6]">{project.result}</p>
+            <div className="border border-[#1f1f1f] rounded-2xl px-6 md:px-12 py-14 flex flex-col gap-10">
+              <AnimatedParagraph
+                text={project.result}
+                className="text-[18px] leading-[1.9] text-[#A6A6A6]"
+              />
 
               {project.desc?.length > 0 && (
-                <ul className="flex flex-col gap-1">
+                <motion.ul
+                  className="flex flex-col gap-1"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
+                  variants={{
+                    hidden: {},
+                    visible: { transition: { staggerChildren: 0.1 } },
+                  }}
+                >
                   {project.desc.map((item, i) => (
                     <motion.li
                       key={i}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: i * 0.08 }}
+                      variants={{
+                        hidden: { opacity: 0, x: -24 },
+                        visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease } },
+                      }}
                       className="flex items-start gap-4 text-[#A6A6A6] text-lg"
                     >
-                      <span className="mt-2 w-2 h-2 rounded-full bg-[#ad8c8cb6] shrink-0" />
+                      {/* animated dot */}
+                      <motion.span
+                        className="mt-2.5 w-2 h-2 rounded-full bg-[#705c5b] shrink-0"
+                        variants={{
+                          hidden: { scale: 0 },
+                          visible: { scale: 1, transition: { duration: 0.3, ease } },
+                        }}
+                      />
                       {item}
                     </motion.li>
                   ))}
-                </ul>
+                </motion.ul>
               )}
             </div>
           </Reveal>
 
           {/* recognitions */}
           {project.recognitions?.length > 0 && (
-            <Reveal delay={0.1} className="mt-12">
+            <Reveal delay={0.1} className="py-10">
               <div className="w-full flex justify-center py-8">
-                <h5 className="text-white font-semibold text-4xl">
+                <motion.h5
+                  className="text-white font-semibold text-4xl"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.55, ease }}
+                >
                   <span className="text-red-600">The</span> Recognitions
-                </h5>
+                </motion.h5>
               </div>
               <div className="flex flex-col gap-10">
                 {project.recognitions.map((rec, i) => {
@@ -324,7 +447,7 @@ export default function ProjectDetail({ project, onBack }) {
                       initial={{ opacity: 0, y: 24 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.1 }}
+                      transition={{ duration: 0.5, ease, delay: i * 0.1 }}
                       className="flex flex-col items-center gap-6"
                     >
                       {imgs.length > 0 && (
@@ -360,9 +483,7 @@ export default function ProjectDetail({ project, onBack }) {
       {/* ── CLIENT TESTIMONIAL ───────────────────────────────────────────── */}
       {testimonialItems.length > 0 && (
         <section className="relative py-20">
-          <Reveal>
-            <SectionPill label="Client Testimonial" />
-          </Reveal>
+          <SectionPill label="Client Testimonial" />
           <Reveal delay={0.08}>
             <TestimonialSlider items={testimonialItems} autoPlay={true} delay={3000} />
           </Reveal>

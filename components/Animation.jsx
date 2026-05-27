@@ -9,7 +9,7 @@ const statsData = [
 // added something here to test the commit and push functionality of git
 export default function Animation() {
   return (
-    <div className="overflow-hidden relative min-h-screen">
+    <div className="overflow-hidden relative h-auto">
       <BeanBackground
         className="absolute hidden lg:block  inset-0 pointer-events-none z-0"
         style={{ pointerEvents: 'none' }}
@@ -62,13 +62,13 @@ export default function Animation() {
         MedTrix is driven by the philosophy of the Power of One—the belief that when diverse minds align around a single goal, they can achieve greater outcomes. It is our unified way of working—bringing people, expertise, and technology together as a unified force to <span className="text-white font-semibold">Catalyze</span> how our clients engage their stakeholders and how physicians deliver patient care.
       </p>
  
-      {/* <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
-        Our capabilities span the entire value chain—from brand and launch strategy to large-scale digital production, innovation, and AI-powered accelerators.
+      <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
+        {/* Our capabilities span the entire value chain—from brand and launch strategy to large-scale digital production, innovation, and AI-powered accelerators. */}
       </p>
  
       <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
-        If you are looking for a partner that combines the strategic depth and scale of a large agency with the agility and efficiency of a lean organization, we invite you to explore our services.
-      </p> */}
+        {/* If you are looking for a partner that combines the strategic depth and scale of a large agency with the agility and efficiency of a lean organization, we invite you to explore our services. */}
+      </p>
  
       <button className="
       mt-10
@@ -114,9 +114,10 @@ export default function Animation() {
         </div>
  
         {/* GLOW */}
-        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
 
       </section>
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
+
     </div>
   );
 }
