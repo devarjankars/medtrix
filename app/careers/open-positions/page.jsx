@@ -1,12 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import LifeatMet from "@/components/LifeatMet";
 import JobCard from "@/components/JobCard";
 import JobDetailsCard from "@/components/JobDetailsCard";
 import { jobsData } from "@/Data/jobs";
 
-export default function Careers() {
+export default function OpenPositionsPage() {
   const [selectedJob, setSelectedJob] = useState(null);
 
   return (
@@ -30,22 +29,15 @@ export default function Careers() {
               </span>
             </div>
 
-            {/* ── Life at MedTrix slider ── */}
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-              What we believe in
-            </h2>
-            <div className="mb-20">
-              <LifeatMet />
-            </div>
-
-            {/* ── Open positions ── */}
-            <p className="text-xs uppercase tracking-[0.2em] text-red-500 font-semibold mb-2">
-              Open Roles
+            {/* ── Heading ── */}
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">
+              Open Positions
+            </h1>
+            <p className="text-gray-400 text-sm md:text-base mb-10">
+              {jobsData.length} roles available · Join the MedTrix team
             </p>
-            <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8">
-              Current Openings
-            </h2>
 
+            {/* ── Job card grid ── */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {jobsData.map((job) => (
                 <JobCard key={job.id} job={job} onClick={setSelectedJob} />

@@ -19,7 +19,7 @@ export default function Landing() {
           
         </div>
         <div className="w-1/2 hidden lg:block ">
-          <img src="/gold2.png" alt=""  className=" items-center min-w-70 md:w-full lg:ml-8 " />
+          <img src="/tablet.png" alt=""  className=" items-center min-w-70 md:w-full lg:ml-8 " />
         </div>
       </div>
            <div

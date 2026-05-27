@@ -1,24 +1,57 @@
 "use client";
 
-const news = [
-  { date: "June 2025", title: "Medtrix Launches AI Diagnostics Module", desc: "Our new AI module is now available to all enterprise clients." },
-  { date: "April 2025", title: "Partnership with HealthNet", desc: "Medtrix partners with HealthNet to expand telemedicine reach." },
-  { date: "January 2025", title: "Series B Funding Secured", desc: "Medtrix raises $40M to accelerate product development." },
-];
+import { useState, useEffect, useRef } from "react";
+import NewsCard from "@/components/NewsCard";
+import NewsDetails from "@/components/NewsDetails";
+import { newsData } from "@/Data/news";
+import gsap from "gsap";
 
-export default function News() {
+function CardGrid({ newsData, setSelected }) {
+  const cardsRef = useRef([]);
+
+  useEffect(() => {
+    gsap.fromTo(
+      cardsRef.current,
+      { opacity: 0, y: 40 },
+      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.15 }
+    );
+  }, []);
+
   return (
-    <section className="w-[90%] md:w-[80%] mx-auto py-20">
-      <h1 className="text-4xl font-bold text-white mb-10">News & Updates</h1>
-      <div className="flex flex-col gap-6">
-        {news.map(({ date, title, desc }) => (
-          <div key={title} className="bg-[#18181B] rounded-xl border border-[#2a2a2a] p-6">
-            <span className="text-xs text-red-500 font-semibold uppercase tracking-wide">{date}</span>
-            <h2 className="text-xl font-semibold text-white mt-1 mb-2">{title}</h2>
-            <p className="text-gray-400">{desc}</p>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {newsData.map((item, i) => (
+        <div key={item.id} ref={(el) => (cardsRef.current[i] = el)} style={{ opacity: 0 }}>
+          <NewsCard news={item} onClick={setSelected} />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default function NewsPage() {
+  const [selected, setSelected] = useState(null);
+
+  return (
+    <section className="w-[90%] md:w-[80%] mx-auto py-10 min-h-screen">
+      {selected ? (
+        <NewsDetails news={selected} onBack={() => setSelected(null)} />
+      ) : (
+        <>
+          <div
+            className="relative inline-block rounded-full max-w-fit p-[1px] mb-10"
+            style={{
+              background:
+                "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
+            }}
+          >
+            <span className="inline-block text-[14px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
+              NEWS &amp; UPDATES
+            </span>
           </div>
-        ))}
-      </div>
+
+          <CardGrid newsData={newsData} setSelected={setSelected} />
+        </>
+      )}
     </section>
   );
 }

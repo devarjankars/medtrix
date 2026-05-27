@@ -7,6 +7,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Global lenis instance so other components can call scrollToTop
+export let lenisInstance = null;
+
 export default function LenisProvider({ children }) {
   useEffect(() => {
     const lenis = new Lenis({
@@ -15,6 +18,8 @@ export default function LenisProvider({ children }) {
       smoothWheel: true,
     });
 
+    lenisInstance = lenis;
+
     lenis.on('scroll', ScrollTrigger.update);
 
     gsap.ticker.add((time) => lenis.raf(time * 1000));
@@ -22,6 +27,7 @@ export default function LenisProvider({ children }) {
 
     return () => {
       lenis.destroy();
+      lenisInstance = null;
       gsap.ticker.remove((time) => lenis.raf(time * 1000));
     };
   }, []);
