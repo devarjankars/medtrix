@@ -9,7 +9,7 @@ const statsData = [
 // added something here to test the commit and push functionality of git
 export default function Animation() {
   return (
-    <div className="overflow-hidden relative min-h-screen">
+    <div className="overflow-hidden relative h-auto">
       <BeanBackground
         className="absolute hidden lg:block  inset-0 pointer-events-none z-0"
         style={{ pointerEvents: 'none' }}
@@ -114,9 +114,10 @@ export default function Animation() {
         </div>
  
         {/* GLOW */}
-        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
 
       </section>
+        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[40px] rounded-full" style={{ background: 'radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)' }} />
+
     </div>
   );
 }
