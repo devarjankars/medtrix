@@ -2,28 +2,38 @@
 
 import { useState } from "react";
 import WorkCard from "@/components/WorkCard";
+import ProjectDetail from "@/components/ProjectDetail";
 import { projects } from "@/Data/project";
 
 const filters = [
-  "ALL PROJECTS",
-  "STRATEGY & CONSULTING",
   "COMMERCIAL SOLUTIONS",
   "MEDICAL AFFAIRS",
-  "DIGITAL",
+  "DIGITAL INNOVATION",
+  "STRATEGY AND CONSULTING",
 ];
 
 export default function WorkPage() {
-  const [active, setActive] = useState("ALL PROJECTS");
+  const [active, setActive] = useState("COMMERCIAL SOLUTIONS");
+  const [selectedProject, setSelectedProject] = useState(null);
 
-  const filtered =
-    active === "ALL PROJECTS"
-      ? projects
-      : projects.filter(
-          (p) => p.category.toUpperCase() === active
-        );
+  // ── Detail view ────────────────────────────────────────────────────────────
+  if (selectedProject) {
+    return (
+      <ProjectDetail
+        project={selectedProject}
+        onBack={() => setSelectedProject(null)}
+      />
+    );
+  }
+
+  // ── List view ──────────────────────────────────────────────────────────────
+  const filtered = projects.filter(
+    (p) => p.category.toUpperCase() === active
+  );
 
   return (
     <section className="w-[90%] md:w-[80%] mx-auto py-20">
+      {/* FILTER TABS */}
       <div className="flex gap-3 mb-10 flex-wrap">
         {filters.map((filter) => (
           <button
@@ -39,10 +49,13 @@ export default function WorkPage() {
           </button>
         ))}
       </div>
+
+      {/* PROJECT CARDS */}
       {filtered.map((project) => (
         <WorkCard
           key={project.id}
           project={project}
+          onExplore={() => setSelectedProject(project)}
         />
       ))}
     </section>
