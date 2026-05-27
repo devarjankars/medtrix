@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
-export default function BeanBackground({ className = '', style }) {
+export default function BeanBackground({ className = '', style, spotlightRef }) {
     const containerRef = useRef(null);
 
     useEffect(() => {
@@ -53,6 +53,9 @@ export default function BeanBackground({ className = '', style }) {
 
         const hoverLight = new THREE.PointLight(0xffffff, 0, 0);
         scene.add(hoverLight);
+
+        const sectionLight = new THREE.PointLight(0xffffff, 0, 0);
+        scene.add(sectionLight);
 
         const plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0);
         const raycaster = new THREE.Raycaster();
@@ -170,6 +173,23 @@ export default function BeanBackground({ className = '', style }) {
                 hoverLight.intensity = THREE.MathUtils.lerp(hoverLight.intensity, 100.0, 0.05);
             } else {
                 hoverLight.intensity = THREE.MathUtils.lerp(hoverLight.intensity, 0.0, 0.05);
+            }
+
+            // Tracking the .spotlight element and brightening passing tablets
+            if (spotlightRef?.current) {
+                const sRect = spotlightRef.current.getBoundingClientRect();
+                const cRect = container.getBoundingClientRect();
+                const cx = sRect.left + sRect.width / 2 - cRect.left;
+                const cy = sRect.top + sRect.height / 2 - cRect.top;
+                ndc.x = (cx / cRect.width) * 2 - 1;
+                ndc.y = -(cy / cRect.height) * 2 + 1;
+                raycaster.setFromCamera(ndc, camera);
+                if (raycaster.ray.intersectPlane(plane, hitPoint)) {
+                    sectionLight.position.set(hitPoint.x, hitPoint.y, 4.0);
+                    sectionLight.intensity = THREE.MathUtils.lerp(sectionLight.intensity, 150.0, 0.05);
+                }
+            } else {
+                sectionLight.intensity = THREE.MathUtils.lerp(sectionLight.intensity, 0.0, 0.05);
             }
 
             beans.forEach(bean => {

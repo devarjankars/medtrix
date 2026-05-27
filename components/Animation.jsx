@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import BeanBackground from '@/components/BeanBackground';
 
 const statsData = [
@@ -8,18 +9,29 @@ const statsData = [
  
 // added something here to test the commit and push functionality of git
 export default function Animation() {
+ 
+  const spotlightRef = useRef(null);
+
   return (
     <div className="overflow-hidden relative h-auto">
       <BeanBackground
         className="absolute hidden lg:block  inset-0 pointer-events-none z-0"
         style={{ pointerEvents: 'none' }}
+        spotlightRef={spotlightRef}
       />
       <section className="relative px-0 lg:px-0 py-[50px] lg:py-[100px] overflow-hidden z-1 w-[90%] md:w-[80%] mx-auto">
  
-  <div className="animationBG relative grid grid-cols-1 lg:grid-cols-2 lg:gap-14 items-center">
+  <div 
+   
+    className="animationBG relative grid grid-cols-1 lg:grid-cols-2 lg:gap-14 items-center"
+  >
  
     {/* LEFT IMAGE */}
-    <div className="relative flex flex-col items-start h-full z-10">
+    <div 
+      ref={spotlightRef}
+      className="spotlight relative flex flex-col items-start h-full z-10"
+    
+    >
  
       {/* <div className="inline-flex px-6 py-3 rounded-full bg-[#2A2525] lg:mb-8 text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]">
         THE POWER OF ONE
