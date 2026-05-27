@@ -1,5 +1,8 @@
 import Link from "next/link";
-import heder from "../../../public/work2.png";
+import heder from "../../../public/3dAmi.png";
+import lineDesign from "../../../public/AMIline_Design.png"
+import Image from "next/image";
+
 
 export default function IdorsiaStrategy() {
   return (
@@ -14,9 +17,25 @@ export default function IdorsiaStrategy() {
               <img src={heder.src} alt="" srcset="" className=" w-full  mt-5 mb-5" />
             </div>
           </section>
-          <section className="py-12">
-           
-          </section>
-        </main>
+      <section className="py-20">
+      <div className="inline-flex px-6 py-3 rounded-full bg-[#292424] lg:mb-8 text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]">
+        Challenge
+      </div>
+        <Image
+          src={lineDesign}
+          alt="challenge"
+          className="w-[90%] h-auto object-contain mb mb-8 "
+          priority
+        />
+   
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[60px] rounded-full"
+        style={{
+          background:
+            'radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)',
+        }}
+      />
+      </section>
+    </main>
   );
 }
