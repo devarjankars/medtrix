@@ -118,6 +118,7 @@ function ImageSlider({ images = [] }) {
   const [current, setCurrent] = useState(0);
   const ref = useRef(null);
   const isInView = useInView(ref, { amount: 0.3 });
+  const dragStartX = useRef(null);
 
   const slides = images.map((item) =>
     typeof item === "string"
@@ -131,11 +132,26 @@ function ImageSlider({ images = [] }) {
     return () => clearInterval(t);
   }, [isInView, slides.length]);
 
+  function prev() { setCurrent((p) => (p - 1 + slides.length) % slides.length); }
+  function next() { setCurrent((p) => (p + 1) % slides.length); }
+
+  function onTouchStart(e) { dragStartX.current = e.touches[0].clientX; }
+  function onTouchEnd(e) {
+    if (dragStartX.current === null) return;
+    const diff = dragStartX.current - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) diff > 0 ? next() : prev();
+    dragStartX.current = null;
+  }
+
   if (!slides.length) return null;
 
   return (
     <div ref={ref} className="w-full">
-      <div className="relative overflow-hidden rounded-[28px] border border-[#812626] bg-[#090202] h-80 md:h-120">
+      <div
+        className="relative overflow-hidden rounded-2xl md:rounded-[28px] border border-[#812626] bg-[#090202] h-52 sm:h-72 md:h-96 lg:h-120"
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+      >
         <motion.div
           animate={{ x: `-${current * 100}%` }}
           transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
@@ -151,6 +167,8 @@ function ImageSlider({ images = [] }) {
             </div>
           ))}
         </motion.div>
+
+        {/* arrows removed */}
       </div>
 
       {slides.length > 1 && (
@@ -175,11 +193,13 @@ function ImageSlider({ images = [] }) {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.4 }}
-            className="flex flex-col md:flex-row gap-10 mt-10"
+            className="flex flex-col md:flex-row gap-8 md:gap-10 mt-8 md:mt-10"
           >
             {slides[current]?.leftText && (
               <div className="flex-1">
-                <p className="text-gray-300 text-lg leading-[1.9]">{slides[current].leftText}</p>
+                <p className="text-gray-300 text-base md:text-lg leading-8 md:leading-[1.9]">
+                  {slides[current].leftText}
+                </p>
               </div>
             )}
             {slides[current]?.leftText && slides[current]?.rightText && (
@@ -187,7 +207,9 @@ function ImageSlider({ images = [] }) {
             )}
             {slides[current]?.rightText && (
               <div className="flex-1">
-                <p className="text-gray-300 text-lg leading-[1.9]">{slides[current].rightText}</p>
+                <p className="text-gray-300 text-base md:text-lg leading-8 md:leading-[1.9]">
+                  {slides[current].rightText}
+                </p>
               </div>
             )}
           </motion.div>
