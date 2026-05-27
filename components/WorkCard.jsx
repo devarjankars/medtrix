@@ -1,13 +1,28 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function WorkCard({ project, onExplore }) {
   return (
-    <div
-      className=" grid  lg:grid-cols-[50%_50%]  gap-8 mb-24">
+    <motion.div
+      className="grid lg:grid-cols-[50%_50%] gap-8 mb-24"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
+    >
       {/* LEFT IMAGE */}
-      <div className="rounded-[22px] overflow-hidden">
-        <img src={project.imgforfiltersection || project.image} alt={project.title}  className="  w-full  object-cover  rounded-[22px]" />
-      </div>
+      <motion.div
+        className="rounded-[22px] overflow-hidden"
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.4 }}
+      >
+        <img
+          src={project.imgforfiltersection || project.image}
+          alt={project.title}
+          className="w-full object-cover rounded-[22px]"
+        />
+      </motion.div>
 
       {/* RIGHT */}
       <div className="text-white flex flex-col">
@@ -60,11 +75,16 @@ export default function WorkCard({ project, onExplore }) {
           ))}
         </div>
 
-        <button  onClick={onExplore} className="   inline-flex  w-fit   items-center   px-8  py-4  rounded-full  bg-[#FF2F2F]   hover:scale-105  transition " >
+        <motion.button
+          onClick={onExplore}
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.97 }}
+          className="inline-flex w-fit items-center px-8 py-4 rounded-full bg-[#FF2F2F] transition"
+        >
           EXPLORE →
-        </button>
+        </motion.button>
       </div>
-      
-    </div>
+
+    </motion.div>
   );
 }
