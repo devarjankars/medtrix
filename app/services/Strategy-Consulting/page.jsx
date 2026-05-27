@@ -15,14 +15,15 @@ const singleButton2 = [
 
 export default function page() {
   return (
-    <main className="relative w-[90%] md:w-[80%] mx-auto">
+    <main className="relative " >
       <DynamicHeader
         tagText="STRATEGY & CONSULTING"
         title="Strategy That Adapts to Your Needs "
         paragraphs={strategyParagraphs}
-        graphicSrc="/servicesHeader.png"
+        desktopBg={"/stdeskbg.png"}
+         mobileImg={"/stmbl.png"}
       />
-      <div className="py-5">
+      <div className="py-5 w-[90%] md:w-[80%] mx-auto">
         <FeatureSection tagText="Brand and Business Strategy" imageSrc="/servicesBrand.png" imageAlt="Brand Strategy Image" imagePosition="left"
           paragraphs={[
             "We serve as an Agency of Record for emerging and mid-sized pharma brands—enabling brand launches, delivering practical, cost-effective strategies that drive consistent year-on-year growth never seen before in the brand lifecycle.",

@@ -414,9 +414,9 @@ export const projects = [
   {
     id: "stemline-aor-elzonris",
     category: "STRATEGY AND CONSULTING",
-    imgforfiltersection: "",
-    imgfordetail: "",
-    imgfordetailmbl: "",
+    imgforfiltersection: "/sc2.png",
+    imgfordetail: "/scdesk2.png",
+    imgfordetailmbl: "/scdesk2.png",
     title: "Elzonris: MedTrix as AOR for the Brand",
     tags: ["AOR", "OMNICHANNEL STRATEGY", "CONGRESS EXPERIENCE"],
     engagementModel: "Strategic Brand AOR Partnership",

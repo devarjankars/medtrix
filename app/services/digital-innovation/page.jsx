@@ -41,15 +41,16 @@ function Page() {
   const pillInView = useInView(pillRef, { once: true, amount: 0.5 });
 
   return (
-    <main className="relative w-[90%] md:w-[80%] mx-auto min-h-screen">
+    <main className="relative min-h-screen">
       <DynamicHeader
         tagText="DIGITAL & INNOVATION"
         title="Innovation that creates meaningful impact"
         paragraphs={strategyParagraphs}
-        graphicSrc="/servicesHeader.png"
+        desktopBg={"/dibgdesk.png"}
+        mobileImg={"/dimbl.png"}
       />
 
-      <section className="relative bg-black py-20 px-10 md:px-0 overflow-hidden">
+      <section className="relative bg-black py-20 px-10 md:px-0 overflow-hidden w-[90%] md:w-[80%] mx-auto ">
         <div className="mb-40">
 
           {/* Section pill */}

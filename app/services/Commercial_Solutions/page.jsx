@@ -9,11 +9,12 @@ const strategyParagraphs = [
 
 export default function Commercial_Solutions() {
   return (
-    <main className="relative w-[90%] md:w-[80%] mx-auto">
+    <main className="relative ">
       <DynamicHeader
         tagText="COMMERCIAL SOLUTIONS"
         title="Capability to achieve transformational outcomes"
-        graphicSrc="/servicesHeader.png"
+         mobileImg={"/csmbl.png"}
+         desktopBg={"/csbg.png"}
         paragraphs={strategyParagraphs}
         statsCards={[
           {
@@ -30,7 +31,7 @@ export default function Commercial_Solutions() {
           },
         ]}
       />
-      <div className="py-12">
+      <div className="py-12 w-[90%] md:w-[80%] mx-auto">
         <section className="relative bg-black py-24 px-6 overflow-hidden">
           <CapabilitiesSection />
         </section>

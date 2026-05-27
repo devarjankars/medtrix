@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import bg from "../public/bg.png";
-import mblbg from "../public/mblbg.png";
 
 // ── shared easing ────────────────────────────────────────────────────────────
 const ease = [0.22, 1, 0.36, 1];
@@ -64,10 +62,13 @@ export default function DynamicHeader({
   paragraphs = [],
   graphicSrc,
   graphicAlt = "",
-  desktopBg = bg,
-  mobileImg = mblbg,
+  desktopBg = "/bg",
+  mobileImg = "/mblbg.png",
   statsCards = [],
 }) {
+  // accept both imported image objects ({ src: "..." }) and plain strings
+  const desktopBgSrc = typeof desktopBg === "string" ? desktopBg : desktopBg?.src;
+  const mobileImgSrc = typeof mobileImg === "string" ? mobileImg : mobileImg?.src;
   return (
     <section className="relative overflow-hidden text-white py-20 min-h-screen flex items-start">
 
@@ -78,12 +79,12 @@ export default function DynamicHeader({
         animate={{ opacity: 1 }}
         transition={{ duration: 1.4, ease: "easeOut" }}
       >
-        <img src={desktopBg.src} className="w-full h-full object-cover" alt="" />
+        <img src={desktopBgSrc} className="w-full h-full object-cover" alt="" />
       </motion.div>
 
       {/* subtle radial red glow top-left */}
       <motion.div
-        className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full z-0"
+        className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full z-0 "
         style={{
           background:
             "radial-gradient(circle, rgba(225,37,27,0.08) 0%, transparent 70%)",
@@ -94,7 +95,7 @@ export default function DynamicHeader({
       />
 
       {/* ── MAIN GRID ─────────────────────────────────────────────────────── */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center w-full">
+      <div className="relative z-10 w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
         {/* LEFT COLUMN */}
         <motion.div
@@ -124,16 +125,9 @@ export default function DynamicHeader({
           </motion.div>
 
           {/* Mobile image */}
-          {mobileImg && (
-            <motion.section
-              className="block lg:hidden"
-              variants={fadeUp}
-            >
-              <img
-                src={mobileImg.src}
-                alt=""
-                className="w-full object-contain"
-              />
+          {mobileImgSrc && (
+            <motion.section className="block lg:hidden" variants={fadeUp}>
+              <img src={mobileImgSrc} alt="" className="w-full object-contain" />
             </motion.section>
           )}
 
@@ -207,13 +201,13 @@ export default function DynamicHeader({
       </div>
 
       {/* bottom glow — mobile */}
-      <div
-        className="mt-4 pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-10 rounded-full lg:hidden"
-        style={{
-          background:
-            "radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)",
-        }}
-      />
+         <div
+  className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[60px] rounded-full"
+  style={{
+    background:
+      'radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)',
+  }}
+/>
     </section>
   );
 }

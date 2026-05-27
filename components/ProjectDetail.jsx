@@ -295,7 +295,7 @@ export default function ProjectDetail({ project, onBack }) {
                   hidden: { opacity: 0, scale: 0.8, y: 8 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease } },
                 }}
-                className="px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase border border-[#2A2A2A] text-[#888]"
+                className="px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase border border-[#676767] text-[#ededed]"
               >
                 {tag}
               </motion.span>
@@ -306,21 +306,21 @@ export default function ProjectDetail({ project, onBack }) {
         {/* meta row — engagement model + timeline */}
         {(project.engagementModel || project.timeline) && (
           <motion.div
-            className="flex flex-wrap gap-6 mb-10 pb-10 border-b border-[#1a1a1a]"
+            className="flex flex-wrap gap-6 mb-10 pb-10 border-b border-[#2e2d2d]"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease, delay: 0.5 }}
           >
             {project.engagementModel && (
               <div className="flex flex-col gap-1">
-                <span className="text-[11px] tracking-[3px] uppercase text-[#555]">Engagement Model</span>
-                <span className="text-sm text-[#aaa]">{project.engagementModel}</span>
+                <span className="text-[11px] tracking-[3px] uppercase text-[#e7e7e7]">Engagement Model</span>
+                <span className="text-sm text-[#8d8c8c]">{project.engagementModel}</span>
               </div>
             )}
             {project.timeline && (
               <div className="flex flex-col gap-1">
-                <span className="text-[11px] tracking-[3px] uppercase text-[#555]">Timeline</span>
-                <span className="text-sm text-[#aaa]">{project.timeline}</span>
+                <span className="text-[11px] tracking-[3px] uppercase text-[#e7e7e7]">Timeline</span>
+                <span className="text-sm text-[#8d8c8c]">{project.timeline}</span>
               </div>
             )}
           </motion.div>

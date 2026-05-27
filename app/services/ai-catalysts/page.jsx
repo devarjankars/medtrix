@@ -30,13 +30,15 @@ const catalystData = [
 ];
 export default function page() {
   return (
-    <main className="relative w-[90%] md:w-[80%] mx-auto">
+    <main className="relative ">
       <DynamicHeader
         tagText="AI CATALYSTS"
         title="Intelligent Catalysts for Content, Compliance, and Engagement"
         paragraphs={strategyParagraphs}
-        graphicSrc="/servicesHeader.png"
+        desktopBg={"/mAideskbg.png"}
+         mobileImg={"/maimbl.png"}
       />
+      <div className='w-[90%] md:w-[80%] mx-auto'>
       <section className="relative py-5 overflow-hidden">
         <FeatureSection tagText={"MLR Catalyst"} imageSrc={"/lunchandlifecycle.png"} imageAlt={"Workflow Catalyst "}
           imagePosition={"left"}
@@ -77,6 +79,7 @@ export default function page() {
           buttons={[{ label: "Book a demo ", type: "primary" }]}
         />
       </section>
+      </div>
     </main>
   );
 }
