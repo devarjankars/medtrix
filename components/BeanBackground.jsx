@@ -87,7 +87,7 @@ export default function BeanBackground({ className = '', style }) {
           const count = isMobile ? 500 : 1000;
         const TABLET_SIZE = isMobile ? 0.66 : 0.26;
 
-        new GLTFLoader().load('/img/gold_V2.glb', (gltf) => {
+        new GLTFLoader().load('/img/capsule.glb', (gltf) => {
             const source = gltf.scene;
             const size = new THREE.Vector3();
             new THREE.Box3().setFromObject(source).getSize(size);

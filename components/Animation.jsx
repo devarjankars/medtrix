@@ -21,9 +21,9 @@ export default function Animation() {
     {/* LEFT IMAGE */}
     <div className="relative flex flex-col items-start h-full z-10">
  
-      <div className="inline-flex px-6 py-3 rounded-full bg-[#2A2525] lg:mb-8 text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]">
+      {/* <div className="inline-flex px-6 py-3 rounded-full bg-[#2A2525] lg:mb-8 text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]">
         THE POWER OF ONE
-      </div>
+      </div> */}
 
       {/* Mobile: BeanBackground between button and image */}
       <div className="block lg:hidden w-full h-[280px] relative my-6 rounded-xl overflow-hidden">
@@ -32,6 +32,7 @@ export default function Animation() {
  
       <div className="relative rounded-xl overflow-hidden w-full">
  
+
         <img
           src="/images/power-one.png"
           alt=""
@@ -48,7 +49,7 @@ export default function Animation() {
     </div>
  
     {/* RIGHT CONTENT */}
-    <div className="lg:pl-10 lg:border-l border-[#2A2A2A] z-10 relative">
+    <div className="lg:pl-10  border-[#2A2A2A] z-10 relative">
  
       <h2 className="text-[26px] lg:text-[70px] leading-none font-bold text-white mb-8">
         The Power of{" "}
@@ -61,13 +62,13 @@ export default function Animation() {
         MedTrix is driven by the philosophy of the Power of One—the belief that when diverse minds align around a single goal, they can achieve greater outcomes. It is our unified way of working—bringing people, expertise, and technology together as a unified force to <span className="text-white font-semibold">Catalyze</span> how our clients engage their stakeholders and how physicians deliver patient care.
       </p>
  
-      <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
+      {/* <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
         Our capabilities span the entire value chain—from brand and launch strategy to large-scale digital production, innovation, and AI-powered accelerators.
       </p>
  
       <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
         If you are looking for a partner that combines the strategic depth and scale of a large agency with the agility and efficiency of a lean organization, we invite you to explore our services.
-      </p>
+      </p> */}
  
       <button className="
       mt-10

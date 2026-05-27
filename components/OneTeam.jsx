@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 const FULL_TEXT = "“We believe great outcomes are built by great teams. Our strength lies in our people and the way we come together as one to solve complex challenges, support one another, and deliver meaningful impact for our clients.”";
 const RED_WORD = "one";
 
-function TypingQuote() {
+function TypingQuote({ onDone }) {
   const paraRef = useRef(null);
 
   useEffect(() => {
@@ -52,6 +52,7 @@ function TypingQuote() {
       duration: 0.01,
       stagger: 0.018,
       ease: 'none',
+      onComplete: onDone,
     });
 
     return () => tl.kill();
@@ -140,6 +141,7 @@ function SectionHeading({ red, white }) {
 
 function OneTeam() {
   const cardRefs = useRef([]);
+  const [quoteDone, setQuoteDone] = useState(false);
 
   useEffect(() => {
     cardRefs.current.forEach((card, i) => {
@@ -176,8 +178,8 @@ function OneTeam() {
           />
         </div>
         <div className="flex items-start justify-center lg:px-10 flex-col gap-10">
-          <TypingQuote />
-          <div className="flex items-center gap-4">
+          <TypingQuote onDone={() => setQuoteDone(true)} />
+          <div className={`flex items-center gap-4 transition-opacity duration-700 ${quoteDone ? 'opacity-100' : 'opacity-0'}`}>
             <div>
               <h5 className="lg:text-[28px] text-[22px] font-semibold">Vimal Narayanan</h5>
               <p className="lg:text-[20px] text-[16px] text-gray-300">Founder and CEO</p>
