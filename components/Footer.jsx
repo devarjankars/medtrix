@@ -7,7 +7,7 @@ const footerData = [
   },
   {
     title: "Our Work",
-    links: [],
+    links: ["Strategy & Consulting","Commercial Solutions","Medical Affairs","Digital & Innovation"],
   },
   {
     title: "News & Updates",
