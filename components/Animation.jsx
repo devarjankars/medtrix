@@ -62,13 +62,13 @@ export default function Animation() {
         MedTrix is driven by the philosophy of the Power of One—the belief that when diverse minds align around a single goal, they can achieve greater outcomes. It is our unified way of working—bringing people, expertise, and technology together as a unified force to <span className="text-white font-semibold">Catalyze</span> how our clients engage their stakeholders and how physicians deliver patient care.
       </p>
  
-      {/* <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
-        Our capabilities span the entire value chain—from brand and launch strategy to large-scale digital production, innovation, and AI-powered accelerators.
+      <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
+        {/* Our capabilities span the entire value chain—from brand and launch strategy to large-scale digital production, innovation, and AI-powered accelerators. */}
       </p>
  
       <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2] mt-6">
-        If you are looking for a partner that combines the strategic depth and scale of a large agency with the agility and efficiency of a lean organization, we invite you to explore our services.
-      </p> */}
+        {/* If you are looking for a partner that combines the strategic depth and scale of a large agency with the agility and efficiency of a lean organization, we invite you to explore our services. */}
+      </p>
  
       <button className="
       mt-10
