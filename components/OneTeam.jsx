@@ -282,13 +282,13 @@ function OneTeam() {
           {awardsData.map((award, index) => (
             <div
               key={index}
-              className="flex items-center justify-center p-2 transition-transform duration-300 hover:-translate-y-1"
+              className="flex items-center justify-center lg:items-start lg:justify-start p-2 transition-transform duration-300 hover:-translate-y-1"
               style={{ willChange: "transform" }}
             >
               <Image
                 src={award}
                 alt={`award-${index}`}
-                className="lg:max-w-[250px] object-contain"
+                className="lg:max-w-[200px] object-contain"
                 sizes="(max-width: 768px) 45vw, 22vw"
                 loading="lazy"
               />

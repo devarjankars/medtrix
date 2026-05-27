@@ -84,7 +84,7 @@ export default function BeanBackground({ className = '', style }) {
         // Create Beans
       
         const isMobile = window.innerWidth < 768;
-          const count = isMobile ? 500 : 1000;
+          const count = isMobile ? 500 : 600;
         const TABLET_SIZE = isMobile ? 0.66 : 0.26;
 
         new GLTFLoader().load('/img/capsule.glb', (gltf) => {
@@ -187,7 +187,7 @@ export default function BeanBackground({ className = '', style }) {
                 }
 
                 curve.getPointAt(p, rest);
-                const currentRadius = THREE.MathUtils.lerp(2.2, 1, p);
+                const currentRadius = THREE.MathUtils.lerp(2.2, 2, p);
                 rest.addScaledVector(_perp1, Math.cos(radialAngle) * radialDist * currentRadius);
                 rest.addScaledVector(_perp2, Math.sin(radialAngle) * radialDist * currentRadius);
 
