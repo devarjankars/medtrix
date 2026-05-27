@@ -1,13 +1,28 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function WorkCard({ project, onExplore }) {
   return (
-    <div
-      className=" grid  lg:grid-cols-[50%_50%]  gap-8 mb-24">
+    <motion.div
+      className="grid lg:grid-cols-[50%_50%] gap-8 mb-24"
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.15 }}
+      transition={{ duration: 0.55, ease: "easeOut" }}
+    >
       {/* LEFT IMAGE */}
-      <div className="rounded-[22px] overflow-hidden">
-        <img src={project.imgforfiltersection || project.image} alt={project.title}  className="  w-full  object-cover  rounded-[22px]" />
-      </div>
+      <motion.div
+        className="rounded-[22px] overflow-hidden"
+        whileHover={{ scale: 1.02 }}
+        transition={{ duration: 0.4 }}
+      >
+        <img
+          src={project.imgforfiltersection || project.image}
+          alt={project.title}
+          className="h-full object-cover rounded-[22px]"
+        />
+      </motion.div>
 
       {/* RIGHT */}
       <div className="text-white flex flex-col">
@@ -60,11 +75,44 @@ export default function WorkCard({ project, onExplore }) {
           ))}
         </div>
 
-        <button  onClick={onExplore} className="   inline-flex  w-fit   items-center   px-8  py-4  rounded-full  bg-[#FF2F2F]   hover:scale-105  transition " >
-          EXPLORE →
-        </button>
+        <motion.button
+          onClick={onExplore}
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
+          className="relative inline-flex w-fit items-center gap-2 px-8 py-4 rounded-full text-white font-medium overflow-hidden"
+          style={{
+            background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+            boxShadow: "0 0 18px rgba(225,37,27,0.45)",
+          }}
+        >
+          {/* shimmer sweep */}
+          <motion.span
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
+              backgroundSize: "200% 100%",
+            }}
+            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+            transition={{
+              duration: 2.5,
+              ease: "linear",
+              repeat: Infinity,
+              repeatDelay: 1.5,
+            }}
+          />
+          <span className="relative z-10">EXPLORE</span>
+          <motion.span
+            className="relative z-10"
+            animate={{ x: [0, 4, 0] }}
+            transition={{ duration: 1.2, ease: "easeInOut", repeat: Infinity }}
+          >
+            →
+          </motion.span>
+        </motion.button>
       </div>
-      
-    </div>
+
+    </motion.div>
   );
 }
