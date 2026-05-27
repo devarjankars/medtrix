@@ -338,9 +338,9 @@ export const projects = [
   {
     id: "novartis-web-ar-jakavi",
     category: "DIGITAL INNOVATION",
-    imgforfiltersection: "",
-    imgfordetail: "",
-    imgfordetailmbl: "",
+    imgforfiltersection:"/di5.png",
+    imgfordetail:"/didesk5.png",
+    imgfordetailmbl: "/didesk5.png",
     title: "Novartis: Transforming Patient Engagement Through a Web-Based AR Experience for Jakavi",
     tags: ["WEB-BASED AUGMENTED REALITY", "PATIENT ENGAGEMENT", "DIGITAL INNOVATION"],
     engagementModel: "Digital Patient Engagement Initiative",
@@ -360,35 +360,11 @@ export const projects = [
     }]
   },
   {
-    id: "sanofi-ar-mirror",
-    category: "DIGITAL INNOVATION",
-    imgforfiltersection: "",
-    imgfordetail: "",
-    imgfordetailmbl: "",
-    title: "Sanofi: Immersive Medical Education Through a cGVHD AR Mirror Experience",
-    tags: ["AR", "IMMERSIVE EDUCATION", "CONGRESS ENGAGEMENT"],
-    engagementModel: "Interactive Disease Education Initiative",
-    timeline: "1 month, Completed",
-    desc: [
-      "Developed immersive AR Mirror experience for real-time cGVHD visualization",
-      "Enabled interactive HCP education through touchless augmented reality engagement",
-      "Increased booth interaction and engagement at Tandem 2026"
-    ],
-    challenge: "Communicating the complex, multi-organ manifestations of cGVHD in traditional congress settings can be challenging, particularly in high-traffic booth environments where capturing and retaining HCP attention is critical. Sanofi required an innovative and scalable engagement solution that could simplify disease education while creating a more interactive and memorable scientific experience for healthcare professionals.",
-    solution: "MedTrix designed and deployed an AR Mirror experience that enabled healthcare professionals to visualize organ-specific manifestations of cGVHD directly on their own bodies through real-time augmented reality interaction. The solution featured full-screen mirrored visualization, scientifically accurate AR overlays, touchless gesture navigation, integrated analytics, and interactive learning elements designed to improve engagement and knowledge retention. The platform was optimized for congress booth deployment and built with scalability to support additional disease states, organs, and future events.",
-    result: "The immersive AR experience enabled Sanofi to create a highly engaging scientific booth interaction that supported better understanding of cGVHD organ involvement through real-time visualization. The experience was featured at Tandem 2026, where it helped increase HCP engagement and contributed to improved booth footfall compared to previous events. The scalable platform also provided Sanofi with a reusable engagement asset that can be adapted for future congresses, including planned installation for ASH 2026.",
-    recognitions: [],
-    testimonials: [{
-      quote: "",
-      author: ""
-    }]
-  },
-  {
     id: "stemline-ai-storytelling",
     category: "DIGITAL INNOVATION",
-    imgforfiltersection: "",
-    imgfordetail: "",
-    imgfordetailmbl: "",
+    imgforfiltersection:"/di6.png",
+    imgfordetail: "/didesk6.png",
+    imgfordetailmbl: "/didesk6.png",
     title: "Stemline Therapeutics: AI-Assisted Content Creation",
     tags: ["AI-ASSISTED CONTENT CREATION", "HCP EDUCATION", "DIGITAL STORYTELLING"],
     engagementModel: "Scientific Content Innovation Initiative",
@@ -414,9 +390,9 @@ export const projects = [
   {
     id: "idorsia-tryvio-launch",
     category: "STRATEGY AND CONSULTING",
-    imgforfiltersection: "",
-    imgfordetail: "",
-    imgfordetailmbl: "",
+    imgforfiltersection: "/sc1.png",
+    imgfordetail: "/scdesk1.png",
+    imgfordetailmbl: "/scdesk1.png",
     title: "Idorsia: Building a Launch-Ready Strategy for TRYVIO Through a Strategic AOR Partnership",
     tags: ["LAUNCH STRATEGY", "OMNICHANNEL", "SCALABILITY"],
     engagementModel: "AOR Partnership for Global Brand Launch",
