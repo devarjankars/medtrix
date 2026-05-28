@@ -183,7 +183,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
         if (button) {
           return (
             <div key={label} className="flex justify-center mt-4">
-              <Link href={href} onClick={onClose} className="bg-[#FF0000] absolute bottom-[160px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
+              <Link href={href} onClick={() => { setOpenSection(null); onClose(); }} className="bg-[#FF0000] absolute bottom-[160px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
                 {label}
               </Link>
             </div>
@@ -203,7 +203,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
               ) : (
                 <Link
                   href={href}
-                  onClick={onClose}
+                  onClick={() => { setOpenSection(null); onClose(); }}
                   className={`text-base font-semibold w-full ${pathname === href ? "text-[#E1251B]" : "text-white/75"}`}
                 >
                   {label}
@@ -227,7 +227,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
                     <Link
                       key={item.href}
                       href={item.href}
-                      onClick={onClose}
+                      onClick={() => { setOpenSection(label); onClose(); }}
                       className={`flex items-center gap-2 py-3 px-2 w-full text-lg font-light ${
                       pathname === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
                     }`}
