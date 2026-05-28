@@ -33,17 +33,11 @@ export const projects = [
       }
     ],
     testimonials: [{
-      quote: "MedTrix took on an ambitious VR initiative that others hesitated to pursue and delivered an exceptional experience in an incredibly short timeframe. The final product was innovative, immersive, and visually impressive while still maintaining the educational depth and scientific rigor that was critical for our audience. The success of the experience has sparked discussions around expanding its use into a broader, enduring educational resource for HCPs, and we look forward to continuing to build on this foundation for future meetings.",
-      author: "Executive Medical Director, Head of Medical & Scientific Communication"
+      quote: "Thank you for the great collaboration throughout our partnership. The MedTrix team consistently demonstrated professionalism, responsiveness, and a collaborative spirit that made working together truly seamless and enjoyable. ",
+     
+      author: "Marketing Manager, Abbvie "
     },
-    {
-      quote: "MedTrix took on an ambitious VR initiative that others hesitated to pursue and delivered an exceptional experience in an incredibly short timeframe. The final product was innovative, immersive, and visually impressive while still maintaining the educational depth and scientific rigor that was critical for our audience. The success of the experience has sparked discussions around expanding its use into a broader, enduring educational resource for HCPs, and we look forward to continuing to build on this foundation for future meetings.",
-      author: "Executive Medical Director, Head of Medical & Scientific Communication"
-    },
-    {
-      quote: "MedTrix took on an ambitious VR initiative that others hesitated to pursue and delivered an exceptional experience in an incredibly short timeframe. The final product was innovative, immersive, and visually impressive while still maintaining the educational depth and scientific rigor that was critical for our audience. The success of the experience has sparked discussions around expanding its use into a broader, enduring educational resource for HCPs, and we look forward to continuing to build on this foundation for future meetings.",
-      author: "Executive Medical Director, Head of Medical & Scientific Communication"
-    }
+    
   ],
   },
   {
