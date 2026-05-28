@@ -4,6 +4,9 @@ import { useState } from "react";
 import Image from "next/image";
 
 import videothunbExperience from "../public/videothunbExperience.png";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
 
 const tabs = [
   "Experience",
@@ -162,7 +165,7 @@ export default function CapabilitiesSection() {
   );
 }
 
-function SectionGrid({ label, title, items, cols, button }) {
+function SectionGrid({ label, title, items, cols, button, link }) {
   return (
     <div className="  relative lg:py-[100px] py-[50px]">
 
@@ -177,16 +180,18 @@ function SectionGrid({ label, title, items, cols, button }) {
         {items.map((item) => (
           <div
             key={item.title}
-            className="relative rounded-[22px] overflow-hidden border border-[#1F1F1F] "
+            className="relative rounded-[22px] overflow-hidden border border-[#1F1F1F]"
           >
-
-            <Image
-              src={item.img}
-              alt={item.title}
-              width={500}
-              height={320}
-              className="w-full h-[320px] object-cover"
-            />
+            {/* fixed-height container for fill image */}
+            <div className="relative w-full h-[350px]">
+              <Image
+                src={item.img}
+                alt={item.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
@@ -205,14 +210,69 @@ function SectionGrid({ label, title, items, cols, button }) {
 
       </div>
         <div className="flex justify-center mt-12">
-  <button
-    className="px-6 py-3 rounded-full  text-sm font-medium tracking-wide transition-all duration-300 bg-[#E1251B] text-white hover:bg-[#ff3329] shadow-lg  shadow-[#e1251b33]
-    "
-  >
-    {button}
-  </button>
+         {button && (
+  link ? (
+    <Link href={link}>
+      <motion.div
+        whileHover={{ scale: 1.06 }}
+        whileTap={{ scale: 0.97 }}
+        transition={{ type: "spring", stiffness: 380, damping: 22 }}
+        className="relative inline-flex w-fit items-center gap-2 px-8 py-4 mt-8 rounded-full text-white font-medium overflow-hidden cursor-pointer"
+        style={{
+          background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+          boxShadow: "0 0 18px rgba(225,37,27,0.45)",
+        }}
+      >
+        <motion.span
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
+              backgroundSize: "200% 100%",
+            }}
+            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+            transition={{
+              duration: 2.5,
+              ease: "linear",
+              repeat: Infinity,
+              repeatDelay: 1.5,
+            }}
+          />
+          <span className="relative z-10">{button}</span>
+      </motion.div>
+    </Link>
+  ) : (
+    <motion.div
+      whileHover={{ scale: 1.06 }}
+      whileTap={{ scale: 0.97 }}
+      transition={{ type: "spring", stiffness: 380, damping: 22 }}
+      className="relative inline-flex w-fit items-center gap-2 px-8 py-4 mt-8 rounded-full text-white font-medium overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+        boxShadow: "0 0 18px rgba(225,37,27,0.45)",
+      }}
+    >
+      <motion.span
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
+              backgroundSize: "200% 100%",
+            }}
+            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+            transition={{
+              duration: 2.5,
+              ease: "linear",
+              repeat: Infinity,
+              repeatDelay: 1.5,
+            }}
+          />
+          <span className="relative z-10">{button}</span>
+    </motion.div>
+  )
+)}
 </div>
-
+          
       <Glow />
 
     </div>
