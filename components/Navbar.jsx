@@ -176,8 +176,9 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
       className="md:hidden bg-[#000000] px-6 pb-6 flex flex-col gap-1 min-h-screen relative"
     >
       {links.map(({ label, href, items, button }) => {
-        const hasItems = items && items.length > 0;
-        const isOpen   = openSection === label;
+        const hasItems    = items && items.length > 0;
+        const isOpen       = openSection === label;
+        const isChildActive = hasItems && items.some((i) => pathname === i.href);
 
         if (button) {
           return (
@@ -196,7 +197,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
               onClick={() => hasItems ? setOpenSection(isOpen ? null : label) : null}
             >
               {hasItems ? (
-                <span className={`text-base font-semibold ${isOpen ? "text-white" : "text-white/75"}`}>
+                <span className={`text-base font-semibold ${isOpen || isChildActive ? "text-[#E1251B]" : "text-white/75"}`}>
                   {label}
                 </span>
               ) : (
