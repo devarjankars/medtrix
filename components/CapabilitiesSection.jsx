@@ -136,7 +136,7 @@ export default function CapabilitiesSection() {
             <button
               key={tab}
               onClick={() => setActive(tab)}
-              className={`px-6 py-3 rounded-full whitespace-nowrap text-sm font-medium transition-all duration-200 ${
+              className={`px-6 py-3 rounded-full cursor-pointer whitespace-nowrap text-sm font-medium transition-all duration-200 ${
                 active === tab
                   ? "bg-[#E1251B] text-white shadow-[0_0_14px_rgba(225,37,27,0.4)]"
                   : "text-gray-400 hover:text-white"
@@ -186,13 +186,15 @@ export default function CapabilitiesSection() {
               <div className="grid md:grid-cols-3 gap-8">
                 {content.points.map((pt, i) => (
                   <div key={i} className="flex flex-col gap-2">
-                    <div className="w-8 h-[2px] bg-[#E1251B] rounded-full mb-1" />
+                    <h2 className="text-[#E1251B] text-5xl font-bold mb-2">
+                      {String(i + 1).padStart(2, "0")}
+                    </h2>
                     <h3 className="text-white text-sm font-semibold leading-snug">{pt.title}</h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">{pt.desc}</p>
+                    <p className="text-gray-400 text-sm leading-relaxed max-w-[70%]">{pt.desc}</p>
                   </div>
                 ))}
               </div>
-
+{/* 
               {content.caseStudy && (
                 <Link
                   href={content.caseStudy.href}
@@ -200,7 +202,7 @@ export default function CapabilitiesSection() {
                 >
                   {content.caseStudy.label}
                 </Link>
-              )}
+              )} */}
             </div>
           </motion.div>
         </AnimatePresence>
