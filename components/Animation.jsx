@@ -126,7 +126,7 @@ export default function Animation() {
  
         {/* STATS */}
         <div className="p px-0 sm:px-6 lg:px-0 mb-4 mt-4">
-          <div className="  grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-20">
+          <div className="  grid grid-cols-1 md:grid-cols-3 gap-2 lg:gap-20">
             {statsData.map((stat, index) => (
               <div
   key={index}

@@ -79,7 +79,7 @@ function DigitalInnovationInner() {
         tagText="DIGITAL & INNOVATION"
         title="Innovation that creates meaningful impact"
         paragraphs={strategyParagraphs}
-        desktopBg={"/dibgdesk.png"}
+        desktopBg={"/dibgdesk.jpg"}
         mobileImg={"/dimbl.png"}
       />
 

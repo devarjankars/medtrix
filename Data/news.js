@@ -77,7 +77,7 @@ export const newsData = [
     thumbnail: "/news6.png",
     body: [
       "MedTrix is proud to announce our sponsorship of the 2025 Pharma CX Marketing Summit — one of the most influential gatherings in pharmaceutical customer experience and marketing.",
-      "Our VP, Vimal Narayanan, will be representing MedTrix at the summit, sharing insights on how data-driven strategies and innovative communications are reshaping the pharma marketing landscape.",
+      "Our CEO, Vimal Narayanan, will be representing MedTrix at the summit, sharing insights on how data-driven strategies and innovative communications are reshaping the pharma marketing landscape.",
       "We look forward to connecting with industry leaders, exchanging ideas, and exploring new ways to drive meaningful engagement in healthcare.",
     ],
     images: ["/newsin0_1.png"],
