@@ -12,15 +12,19 @@ export default function Animation() {
   return (
     <div className="overflow-hidden relative h-auto" style={{ isolation: 'isolate' }}>
       <BeanBackground
-        className="absolute inset-0 pointer-events-none z-0"
+        className="absolute hidden lg:block inset-0 pointer-events-none z-0"
         style={{ pointerEvents: 'none' }}
       />
 
       <section className="relative px-0 lg:px-0 py-[50px] lg:py-[100px] overflow-hidden z-10 w-[90%] md:w-[80%] mx-auto">
         <div className="relative grid grid-cols-1 lg:grid-cols-2 lg:gap-14 items-center">
 
-          {/* LEFT - intentionally empty */}
-          <div className="hidden lg:block" />
+          {/* LEFT - empty on desktop, tablet animation on mobile */}
+          <div className="w-full h-[280px] lg:h-auto relative">
+            <div className="block lg:hidden absolute inset-0">
+              <BeanBackground className="absolute inset-0" />
+            </div>
+          </div>
 
           {/* RIGHT CONTENT */}
           <div className="relative z-10">
