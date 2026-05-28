@@ -157,7 +157,7 @@ export default function Services() {
           <SectionBadge number={4} />
           <FeatureSection
             tagText="Measurement and Optimization"
-            imageSrc="/Chart.png"
+            imageSrc="/mesurment.png"
             imageAlt="Chart Image"
             imagePosition="right"
             paragraphs={[

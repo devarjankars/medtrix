@@ -230,3 +230,12 @@ button[aria-label="Previous slide"],
 button[aria-label="Next slide"] {
   display: none !important;
 }
+
+/* Hide scrollbar for horizontal scroll containers */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

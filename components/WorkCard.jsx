@@ -80,7 +80,7 @@ export default function WorkCard({ project, onExplore }) {
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
-          className="relative inline-flex w-fit items-center gap-2 px-8 py-4 rounded-full text-white font-medium overflow-hidden"
+          className="relative inline-flex w-fit items-center gap-2 px-8 py-4 rounded-full text-white font-medium overflow-hidden  cursor-pointer"
           style={{
             background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
             boxShadow: "0 0 18px rgba(225,37,27,0.45)",
@@ -88,7 +88,7 @@ export default function WorkCard({ project, onExplore }) {
         >
           {/* shimmer sweep */}
           <motion.span
-            className="absolute inset-0 rounded-full pointer-events-none"
+            className="absolute inset-0 rounded-full "
             style={{
               background:
                 "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
