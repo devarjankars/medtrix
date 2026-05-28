@@ -51,7 +51,7 @@ export default function page() {
           buttons={singleButton3}
         />
         <div className="py-5" />
-        <FeatureSection tagText="Measurement and Optimization" imageSrc="/Measurement.png" imageAlt="Chart Image" imagePosition="right"
+        <FeatureSection tagText="Measurement and Optimization" imageSrc="/mesurment.png" imageAlt="Chart Image" imagePosition="right"
           paragraphs={[
            "We help brands measure what matters most translating data into clear insights that guide smarter decisions and improve performance over time. ",
            "From defining the right KPIs to tracking engagement across channels, we ensure every activity is aligned to meaningful outcomes and business goals, through custom built engines and dashboards"
