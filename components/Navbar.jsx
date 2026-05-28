@@ -180,7 +180,7 @@ function MobileMenu({ pathname }) {
         if (button) {
           return (
             <div key={label} className="flex justify-center mt-4">
-              <Link href={href} className="bg-[#FF0000] absolute bottom-[120px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
+              <Link href={href} className="bg-[#FF0000] absolute bottom-[160px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
                 {label}
               </Link>
             </div>
