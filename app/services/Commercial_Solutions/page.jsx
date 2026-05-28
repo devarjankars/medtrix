@@ -34,8 +34,8 @@ export default function Commercial_Solutions() {
           },
         ]}
       />
-      <div className="py-12 w-[90%] md:w-[80%] mx-auto">
-        <section className="relative bg-black py-24 px-6 overflow-hidden">
+      <div className="p w-[90%] md:w-[80%] mx-auto">
+        <section className="relative bg-black lg:py-[100px]  py-[50px] px-6 overflow-hidden">
           <CapabilitiesSection />
         </section>
       </div>

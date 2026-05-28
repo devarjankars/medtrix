@@ -105,45 +105,44 @@ export default function DynamicHeader({
   const desktopBgSrc = typeof desktopBg === "string" ? desktopBg : desktopBg?.src;
   const mobileImgSrc = typeof mobileImg === "string" ? mobileImg : mobileImg?.src;
   return (
-    <section className="relative overflow-hidden text-white py-20 min-h-screen flex items-start">
-
-      {/* BG — slow fade in, never cropped */}
-      <motion.div
-        className="hidden lg:block absolute inset-0 z-0"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.4, ease: "easeOut" }}
-        style={{
-          backgroundImage: `url(${desktopBgSrc})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center center",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
+    <section className="relative overflow-hidden text-white min-h-[80vh] flex items-center">
 
       {/* subtle radial red glow top-left */}
       <motion.div
-        className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full z-0 "
-        style={{
-          background:
-            "radial-gradient(circle, rgba(225,37,27,0.08) 0%, transparent 70%)",
-        }}
+        className="pointer-events-none absolute -top-40 -left-40 w-[600px] h-[600px] rounded-full z-0"
+        style={{ background: "radial-gradient(circle, rgba(225,37,27,0.08) 0%, transparent 70%)" }}
         initial={{ opacity: 0, scale: 0.6 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1.8, ease }}
       />
 
-      {/* ── MAIN GRID ─────────────────────────────────────────────────────── */}
-      <div className="relative z-10 w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      {/* ── RIGHT IMAGE — absolute, fills full right 70% top-to-bottom ── */}
+      <motion.div
+        className="hidden lg:block absolute top-0 right-0 w-full h-full z-0"
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.9, ease, delay: 0.2 }}
+      >
+        {/* dark gradient on left edge so text stays readable */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent z-10" />
+        <img
+          src={desktopBgSrc}
+          alt={graphicAlt}
+          className="w-full h-full object-cover object-center"
+        />
+      </motion.div>
 
-        {/* LEFT COLUMN */}
+      {/* ── MAIN GRID ─────────────────────────────────────────────────────── */}
+      <div className="relative z-10 w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-[600px_55%] gap-1 items-center py-20">
+
+        {/* LEFT COLUMN — 50% */}
         <motion.div
-          className="lg:col-span-7 flex flex-col gap-5 max-w-2xl"
+          className="flex flex-col gap-5 "
           variants={leftCol}
           initial="hidden"
           animate="visible"
         >
-          
+          {/* Tag badge */}
           <motion.div variants={fadeScale}>
             <div
               className="relative inline-block rounded-full max-w-fit p-px"
@@ -158,38 +157,34 @@ export default function DynamicHeader({
             </div>
           </motion.div>
 
+          {/* Title */}
           <motion.div variants={fadeUp} className="w-full">
             <AnimatedTitle text={title ?? ""} />
           </motion.div>
 
-          
+          {/* Mobile image */}
           {mobileImgSrc && (
-            <motion.section className="block lg:hidden" variants={fadeUp}>
-              <img src={mobileImgSrc} alt="" className="w-full object-contain" />
-            </motion.section>
+            <motion.div className="block lg:hidden" variants={fadeUp}>
+              <img src={mobileImgSrc} alt="" className="w-full object-contain rounded-xl" />
+            </motion.div>
           )}
 
-       
+          {/* Paragraphs */}
           {paragraphs.map((item, index) => (
             <motion.p
               key={index}
               variants={fadeUp}
-              className="text-gray-400 text-[18px] leading-9"
+              className="text-gray-400 text-[16px] leading-8"
             >
               {item}
             </motion.p>
           ))}
 
-        
+          {/* Stats cards */}
           {statsCards.length > 0 && (
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-10"
-              variants={{
-                hidden: {},
-                visible: {
-                  transition: { staggerChildren: 0.1 },
-                },
-              }}
+              variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
             >
               {statsCards.map((card, index) => (
                 <motion.div
@@ -208,44 +203,16 @@ export default function DynamicHeader({
           )}
         </motion.div>
 
-        {/* RIGHT IMAGE — floats in + continuous gentle float */}
-        {graphicSrc && (
-          <div className="hidden lg:flex lg:col-span-5 justify-end">
-            <motion.img
-              src={graphicSrc}
-              alt={graphicAlt}
-              className="w-full max-w-100 mr-40"
-              initial={{ opacity: 0, x: 60, scale: 0.95 }}
-              animate={{
-                opacity: 1,
-                x: 0,
-                scale: 1,
-                y: [0, -12, 0],
-              }}
-              transition={{
-                opacity: { duration: 0.8, ease, delay: 0.3 },
-                x:       { duration: 0.8, ease, delay: 0.3 },
-                scale:   { duration: 0.8, ease, delay: 0.3 },
-                y: {
-                  duration: 4,
-                  ease: "easeInOut",
-                  repeat: Infinity,
-                  delay: 1.2,
-                },
-              }}
-            />
-          </div>
-        )}
+        {/* right col spacer — keeps grid balanced, image is absolute */}
+        <div className="hidden lg:block" />
+
       </div>
 
-      {/* bottom glow — mobile */}
-         <div
-  className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[60px] rounded-full"
-  style={{
-    background:
-      'radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)',
-  }}
-/>
+      {/* bottom glow */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[60px] rounded-full"
+        style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)" }}
+      />
     </section>
   );
 }

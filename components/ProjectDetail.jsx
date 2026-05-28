@@ -345,7 +345,7 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── CHALLENGE ────────────────────────────────────────────────────── */}
       {project.challenge && (
-        <section className="relative py-20">
+        <section className="lg:py-[100px] py-[50px] relative">
           <SectionPill label="Challenge" />
 
           <div className="grid lg:grid-cols-2 gap-14 items-center rounded-2xl px-6 md:px-0 py-10">
@@ -378,7 +378,7 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── OUR SOLUTION ─────────────────────────────────────────────────── */}
       {project.solution && (
-        <section className="relative py-20">
+        <section className="lg:py-[100px] py-[50px] relative">
           <SectionPill label="Our Solution" />
 
           {project.slider?.length > 0 && (
@@ -389,7 +389,7 @@ export default function ProjectDetail({ project, onBack }) {
 
           <AnimatedParagraph
             text={project.solution}
-            className="text-[18px] leading-[1.9] text-[#A6A6A6] px-6 md:px-0 py-10"
+            className="text-[18px] leading-[1.9] text-[#A6A6A6] px-6 md:px-0 py-0"
             delay={0.1}
           />
 
@@ -399,7 +399,7 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── THE RESULT ───────────────────────────────────────────────────── */}
       {project.result && (
-        <section className="relative py-20">
+        <section className="lg:py-[100px] py-[50px] relative">
           <SectionPill label="The Result" />
 
           <Reveal delay={0.05}>
@@ -509,7 +509,7 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── CLIENT TESTIMONIAL ───────────────────────────────────────────── */}
       {testimonialItems.length > 0 && (
-        <section className="relative py-20">
+        <section className="lg:py-[100px] py-[50px] relative">
           <SectionPill label="Client Testimonial" />
           <Reveal delay={0.08}>
             <TestimonialSlider items={testimonialItems} autoPlay={true} delay={3000} />

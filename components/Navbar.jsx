@@ -172,23 +172,18 @@ function MobileMenu({ pathname }) {
   }, []);
 
   return (
-    <div
-      ref={menuRef}
-      className="md:hidden  backdrop-blur-md border-t border-white/8 px-6 pb-8 flex flex-col gap-0.5 min-h-screen"
-    >
+    <div className="md:hidden bg-[#000000] px-6 pb-6 flex flex-col gap-1 h-[100vh] relative">
       {links.map(({ label, href, items, button }) => {
         const hasItems = items && items.length > 0;
         const isOpen   = openSection === label;
 
         if (button) {
           return (
-            <Link
-              key={label}
-              href={href}
-              className="mt-4 bg-[#E1251B] text-white text-base font-semibold px-6 py-3 rounded-full text-center shadow-[0_0_20px_rgba(225,37,27,0.3)]"
-            >
-              {label}
-            </Link>
+            <div key={label} className="flex justify-center mt-4">
+              <Link href={href} className="bg-[#FF0000] absolute bottom-[120px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
+                {label}
+              </Link>
+            </div>
           );
         }
 
@@ -223,28 +218,18 @@ function MobileMenu({ pathname }) {
             </div>
 
             {hasItems && isOpen && (
-              <div className="flex flex-col pb-3 gap-0.5">
-                {items.map((item) => {
-                  const isActive = pathname === item.href;
-                  return (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className={`flex items-center gap-3 py-2.5 pl-2 text-sm transition-colors ${
-                        isActive ? "text-[#E1251B]" : "text-white/50 hover:text-white/80"
-                      }`}
-                    >
-                      <span
-                        className={`shrink-0 w-[3px] h-3.5 rounded-full ${
-                          isActive
-                            ? "bg-[#E1251B] shadow-[0_0_6px_rgba(225,37,27,0.6)]"
-                            : "bg-white/20"
-                        }`}
-                      />
-                      {item.label}
-                    </Link>
-                  );
-                })}
+              <div className="flex flex-col p py-1 gap-1">
+                {items.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className={`flex items-center gap-2 py-2 text-lg font-light ${
+                      pathname === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
               </div>
             )}
           </div>
@@ -281,15 +266,8 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      ref={navRef}
-      className={`w-full sticky top-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "bg-black/80 backdrop-blur-xl border-b border-white/8 shadow-[0_4px_30px_rgba(0,0,0,0.5)]"
-          : "bg-black"
-      }`}
-    >
-      <div className="w-[90%] md:w-[80%] mx-auto py-4 flex items-center justify-between">
+    <nav className="w-full bg-[#000] fixed top-0 left-0 right-0 z-50">
+      <div className="w-[90%] md:w-[80%] mx-auto py-5 flex items-center justify-between">
         <Link href="/">
           <img src="/logo.png" alt="Medtrix Logo" width={140} />
         </Link>
@@ -312,11 +290,18 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
-          <div className="flex flex-col gap-[5px] w-6">
-            <span className={`block h-[1.5px] bg-current rounded-full transition-all duration-300 origin-center ${menuOpen ? "rotate-45 translate-y-[6.5px]" : ""}`} />
-            <span className={`block h-[1.5px] bg-current rounded-full transition-all duration-300 ${menuOpen ? "opacity-0 scale-x-0" : ""}`} />
-            <span className={`block h-[1.5px] bg-current rounded-full transition-all duration-300 origin-center ${menuOpen ? "-rotate-45 -translate-y-[6.5px]" : ""}`} />
-          </div>
+          {menuOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <line x1="3" y1="12" x2="21" y2="12" />
+              <line x1="3" y1="6" x2="21" y2="6" />
+              <line x1="3" y1="18" x2="11" y2="18" />
+            </svg>
+          )}
         </button>
       </div>
 

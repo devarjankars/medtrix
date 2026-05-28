@@ -80,7 +80,7 @@ export default function CapabilitiesSection() {
   const [active, setActive] = useState("Experience");
 
   return (
-    <section className="bg-black py-28">
+    <section className="bg-black ">
 
       {/* EXPERIENCE */}
 
@@ -167,9 +167,9 @@ export default function CapabilitiesSection() {
 
 function SectionGrid({ label, title, items, cols, button, link }) {
   return (
-    <div className="  relative py-30">
+    <div className="  relative lg:py-[100px] py-[50px]">
 
-      <span className="inline-block bg-[#5e5d5d] rounded-full px-5 py-2 text-sm tracking-[3px] text-white mb-10 mt-5">
+      <span className="inline-block bg-[#5e5d5d] rounded-full px-5 p-2 text-sm tracking-[3px] text-white mb-10 mt-0">
         {label}
       </span>
 

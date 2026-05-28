@@ -55,10 +55,10 @@ export default function FeatureSection({
   const inView = useInView(ref, { once: true, amount: 0.12 });
 
   return (
-    <section className="relative w-full text-white py-5 md:py-4 overflow-x-hidden">
+    <section className="relative w-full text-white lg:pb-[100px] lg:pt-[63px] pb-[50px]  pt-[30px] overflow-x-hidden">
       <motion.div
         ref={ref}
-        className="relative z-10"
+        className="relative z-10 "
         variants={container}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
@@ -84,14 +84,14 @@ export default function FeatureSection({
             className={isImageLeft ? "lg:order-1" : "lg:order-2"}
           >
             <motion.div
-              className="relative rounded-2xl overflow-hidden aspect-square shadow-2xl"
+              className="relative rounded-2xl overflow-hidden  shadow-2xl"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                className="w-full lg:w-[70%] h-full object-contain object-top"
+                className="w-full lg:w-[70%] h-fi object-contain object-top"
               />
             </motion.div>
           </motion.div>
