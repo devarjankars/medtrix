@@ -15,7 +15,7 @@ export default function Animation() {
   const spotlightRef = useRef(null);
 
   return (
-    <div className="overflow-hidden relative h-auto">
+    <div className="overflow-hidden relative h-auto" style={{ isolation: 'isolate' }}>
       <BeanBackground
         className="absolute hidden lg:block  inset-0 pointer-events-none z-0"
         style={{ pointerEvents: 'none' }}
@@ -40,7 +40,7 @@ export default function Animation() {
       </div> */}
 
       {/* Mobile: BeanBackground between button and image */}
-      <div className="block lg:hidden w-full h-[280px] relative my-6 rounded-xl overflow-hidden">
+      <div className="block lg:hidden w-full h-[280px] relative my-6 rounded-xl overflow-hidden" style={{ WebkitTransform: 'translateZ(0)', transform: 'translateZ(0)' }}>
         <BeanBackground className="absolute inset-0" />
       </div>
  
