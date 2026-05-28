@@ -157,7 +157,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
 });
 
 /* ── Mobile menu ── */
-function MobileMenu({ pathname }) {
+function MobileMenu({ pathname, onClose }) {
   const [openSection, setOpenSection] = useState(null);
   const menuRef = useRef(null);
 
@@ -180,7 +180,7 @@ function MobileMenu({ pathname }) {
         if (button) {
           return (
             <div key={label} className="flex justify-center mt-4">
-              <Link href={href} className="bg-[#FF0000] absolute bottom-[160px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
+              <Link href={href} onClick={onClose} className="bg-[#FF0000] absolute bottom-[160px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
                 {label}
               </Link>
             </div>
@@ -200,6 +200,7 @@ function MobileMenu({ pathname }) {
               ) : (
                 <Link
                   href={href}
+                  onClick={onClose}
                   className={`text-base font-semibold ${pathname === href ? "text-[#E1251B]" : "text-white/75"}`}
                 >
                   {label}
@@ -223,6 +224,7 @@ function MobileMenu({ pathname }) {
                   <Link
                     key={item.href}
                     href={item.href}
+                    onClick={onClose}
                     className={`flex items-center gap-2 py-2 text-lg font-light ${
                       pathname === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
                     }`}
@@ -306,7 +308,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && <MobileMenu pathname={pathname} />}
+      {menuOpen && <MobileMenu pathname={pathname} onClose={() => setMenuOpen(false)} />}
     </nav>
   );
 }

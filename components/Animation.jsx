@@ -12,14 +12,14 @@ const statsData = [
 // added something here to test the commit and push functionality of git
 export default function Animation() {
  
-
+  
 
   return (
     <div className="overflow-hidden relative h-auto" style={{ isolation: 'isolate' }}>
       <BeanBackground
         className="absolute hidden lg:block  inset-0 pointer-events-none z-0"
         style={{ pointerEvents: 'none' }}
-       
+  
       />
       <section className="relative px-0 lg:px-0 py-[50px] lg:py-[100px] overflow-hidden z-1 w-[90%] md:w-[80%] mx-auto">
  
@@ -30,7 +30,7 @@ export default function Animation() {
  
     {/* LEFT IMAGE */}
     <div 
-   
+  
       className=" relative flex flex-col items-start h-full z-10"
     
     >
@@ -40,7 +40,7 @@ export default function Animation() {
       </div> */}
 
       {/* Mobile: BeanBackground between button and image */}
-      <div className="block lg:hidden w-full h-[280px] relative my-6 rounded-xl overflow-hidden" style={{ WebkitTransform: 'translateZ(0)', transform: 'translateZ(0)' }}>
+      <div className="block lg:hidden w-full h-[280px] relative my-6 rounded-xl overflow-hidden bg-black" style={{ WebkitTransform: 'translateZ(0)', transform: 'translateZ(0)', WebkitMaskImage: '-webkit-radial-gradient(black, black)' }}>
         <BeanBackground className="absolute inset-0" />
       </div>
  
@@ -126,7 +126,7 @@ export default function Animation() {
  
         {/* STATS */}
         <div className="p px-0 sm:px-6 lg:px-0 mb-4 mt-4">
-          <div className="  grid grid-cols-1 md:grid-cols-3 gap-20">
+          <div className="  grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-20">
             {statsData.map((stat, index) => (
               <div
   key={index}
@@ -135,7 +135,7 @@ export default function Animation() {
                 <div className="w-8 h-1 bg-[#E1251B] rounded-full mb-0" />
                 <div>
                   <h3 className="text-[50px] font-bold text-white tracking-tight ">{stat.value}</h3>
-                  <p className="text-[20px] lg:text-base text-gray-500 font-medium  tracking-wide">{stat.label}</p>
+                  <p className="text-[20px] lg:text-base text-gray-600 font-light  tracking-wide">{stat.label}</p>
                 </div>
               </div>
             ))}

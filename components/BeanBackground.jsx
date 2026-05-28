@@ -39,6 +39,7 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
         canvas.style.height = '100%';
         canvas.style.pointerEvents = 'none';
         canvas.style.zIndex = '0';
+        canvas.style.backgroundColor = 'transparent';
         container.appendChild(canvas);
 
         // Lights
@@ -252,5 +253,5 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
         };
     }, []);
 
-    return <div ref={containerRef} className={className} style={{ width: '100%', height: '100%', ...style }} />;
+    return <div ref={containerRef} className={className} style={{ width: '100%', height: '100%', backgroundColor: 'transparent', ...style }} />;
 }
