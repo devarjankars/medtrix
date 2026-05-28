@@ -75,7 +75,7 @@ function WorkPageInner() {
   );
 
   return (
-    <section className="w-[90%] md:w-[80%] mx-auto py-20">
+    <section className="w-[90%] md:w-[80%] mx-auto py-4 md:py-20">
 
       {/* PAGE HEADING */}
       <div
@@ -106,8 +106,8 @@ function WorkPageInner() {
               key={filter}
               variants={filterBtn}
               onClick={() => setActive(filter)}
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.96 }}
+              whileHover={{ scale: 0.99, y: -2 }}
+              whileTap={{ scale: 0.95 }}
               transition={{ type: "spring", stiffness: 380, damping: 22 }}
               className={`relative shrink-0 px-5 py-2.5 rounded-full text-sm font-medium overflow-hidden flex items-center gap-2 cursor-pointer ${
                 isActive
