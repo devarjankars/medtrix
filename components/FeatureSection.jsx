@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import Link from "next/link";
 
 // ── Single container variant — one IntersectionObserver drives everything ────
 const container = {
@@ -115,21 +116,54 @@ export default function FeatureSection({
               <motion.div variants={item} className="flex flex-wrap gap-4 pt-4">
                 {buttons.map((btn, index) => {
                   const isPrimary = btn.type === "primary";
-                  return (
-                    <motion.button
+
+                  const motionBtn = (
+                    <motion.div
                       key={index}
-                      onClick={btn.onClick}
-                      whileHover={{ scale: 1.04 }}
+                      whileHover={{ scale: 1.06 }}
                       whileTap={{ scale: 0.97 }}
                       transition={{ type: "spring", stiffness: 380, damping: 22 }}
-                      className={`px-6 py-3 rounded-full text-sm font-medium tracking-wide transition-colors duration-300 ${
-                        isPrimary
-                          ? "bg-[#E1251B] text-white hover:bg-[#ff3329] shadow-lg shadow-[#e1251b33]"
-                          : "bg-[#1c1616] text-[#b3b3b3] border border-[#3a2f2f] hover:text-white hover:bg-[#282020]"
+                      className={`relative inline-flex w-fit items-center gap-2 px-8 py-4 rounded-full text-white font-medium overflow-hidden cursor-pointer ${
+                        isPrimary ? "" : "bg-[#1c1616] border border-[#3a2f2f] hover:bg-[#282020] text-[#b3b3b3] hover:text-white"
                       }`}
+                      style={
+                        isPrimary
+                          ? {
+                              background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+                              boxShadow: "0 0 18px rgba(225,37,27,0.45)",
+                            }
+                          : {}
+                      }
                     >
-                      {btn.label}
-                    </motion.button>
+                      {isPrimary && (
+                        <motion.span
+                          className="absolute inset-0 rounded-full pointer-events-none"
+                          style={{
+                            background:
+                              "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
+                            backgroundSize: "200% 100%",
+                          }}
+                          animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+                          transition={{
+                            duration: 2.5,
+                            ease: "linear",
+                            repeat: Infinity,
+                            repeatDelay: 1.5,
+                          }}
+                        />
+                      )}
+                      <span className="relative z-10 text-sm tracking-wide">{btn.label}</span>
+                    </motion.div>
+                  );
+
+                  return btn.href ? (
+                    <Link key={index} href={btn.href}>
+                      {motionBtn}
+                    </Link>
+                  ) : (
+                    <span key={index} onClick={btn.onClick}>
+                      {motionBtn}
+                    </span>
                   );
                 })}
               </motion.div>

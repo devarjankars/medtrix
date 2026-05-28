@@ -174,7 +174,7 @@ function MobileMenu({ pathname }) {
   return (
     <div
       ref={menuRef}
-      className="md:hidden bg-[#0d0d0d]/98 backdrop-blur-md border-t border-white/8 px-6 pb-8 flex flex-col gap-0.5 min-h-screen"
+      className="md:hidden  backdrop-blur-md border-t border-white/8 px-6 pb-8 flex flex-col gap-0.5 min-h-screen"
     >
       {links.map(({ label, href, items, button }) => {
         const hasItems = items && items.length > 0;
