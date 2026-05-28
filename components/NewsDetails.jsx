@@ -54,9 +54,9 @@ export default function NewsDetails({ news, onBack }) {
 
       {/* Image Gallery */}
       {news.images && news.images.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className={`grid gap-4 ${news.images.length === 1 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
           {news.images.map((src, i) => (
-            <div key={i} className="rounded-[14px] overflow-hidden border border-[#2a2a2a]">
+            <div key={i} className={`rounded-[14px] overflow-hidden border border-[#2a2a2a] ${news.images.length === 1 ? 'w-full' : ''}`}>
               <img
                 src={src}
                 alt={`${news.title} image ${i + 1}`}

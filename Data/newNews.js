@@ -29,13 +29,13 @@ export const newsData = [
       "We also celebrated the collective spirit, resilience, creativity, and leadership that women across MedTrix bring to our organization and the impact they continue to make across the healthcare industry.",
       "We look forward to continuing to foster a workplace where people feel valued, supported, and empowered to grow"
     ],
-    images: ["/news4.png"],
+    images: ["/newsNew_2_1.png", "/newsNews_2_2.png"],
   },
   {
     id: 3,
     date: "March 2026",
     category: "Award",
-    title: "Three years of being a Great Place to Work®",
+    title: "Medtrix Townhall 2026 ",
     thumbnail: "/news8.png",
     body: [
       "MedTrix has been certified as a Great Place to Work® for the third consecutive year — a testament to our people-first culture and the trust our employees place in the organisation.",
@@ -48,7 +48,7 @@ export const newsData = [
     id: 3,
     date: "March 2026",
     category: "Award",
-    title: "Three years of being a Great Place to Work®",
+    title: "Christmas 2026 ",
     thumbnail: "/news7.png",
     body: [
       "MedTrix has been certified as a Great Place to Work® for the third consecutive year — a testament to our people-first culture and the trust our employees place in the organisation.",
