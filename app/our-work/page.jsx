@@ -79,7 +79,7 @@ function WorkPageInner() {
 
       {/* PAGE HEADING */}
       <div
-            className="relative inline-block rounded-full max-w-fit p-[1px] mb-10"
+            className="relative inline-block rounded-full max-w-fit p-[1px] mb-10 mt-4"
             style={{
               background:
                 "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
@@ -93,7 +93,7 @@ function WorkPageInner() {
         variants={filterRow}
         initial="hidden"
         animate="visible"
-        className="flex gap-3 mb-14 flex-wrap"
+        className="flex gap-3 mb-14 flex-nowrap overflow-x-auto md:flex-wrap md:overflow-visible scrollbar-none pb-2 md:pb-0"
       >
         {filters.map((filter) => {
           const isActive = active === filter;
@@ -109,7 +109,7 @@ function WorkPageInner() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 380, damping: 22 }}
-              className={`relative px-5 py-2.5 rounded-full text-sm font-medium overflow-hidden flex items-center gap-2 ${
+              className={`relative shrink-0 px-5 py-2.5 rounded-full text-sm font-medium overflow-hidden flex items-center gap-2 ${
                 isActive
                   ? "text-white"
                   : "bg-zinc-800 text-zinc-400 hover:text-white"
