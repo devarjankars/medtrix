@@ -88,3 +88,31 @@ export default function page() {
     </main>
   );
 }
+
+
+// commerical soulution 
+// medical affairs 
+// innovation
+// 
+
+
+// scrollbar for all pages
+//remove medtrix from Ai 
+// data boxeses 
+// dynamic header imges
+// website 
+//video 
+// innnovation page
+// explore onimchanal --->redirect to capion catalyest -in Al   c
+//  cs== // explor module to ---> our work
+
+  // every page need start from top
+
+
+  // blank space from cards
+  //  map hompage -contact to contact us
+
+
+
+  //learn more -->gen Ai old medterix
+  
