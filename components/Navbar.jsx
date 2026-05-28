@@ -172,7 +172,10 @@ function MobileMenu({ pathname, onClose }) {
   }, []);
 
   return (
-    <div className="md:hidden bg-[#000000] px-6 pb-6 flex flex-col gap-1 h-[100vh] relative">
+    <div
+      ref={menuRef}
+      className="md:hidden bg-[#000000] px-6 pb-6 flex flex-col gap-1 min-h-screen relative"
+    >
       {links.map(({ label, href, items, button }) => {
         const hasItems = items && items.length > 0;
         const isOpen   = openSection === label;
@@ -190,7 +193,7 @@ function MobileMenu({ pathname, onClose }) {
         return (
           <div key={label} className="border-b border-white/6">
             <div
-              className="flex items-center justify-between py-4 cursor-pointer"
+              className="flex items-center justify-between py-4 cursor-pointer w-full"
               onClick={() => hasItems ? setOpenSection(isOpen ? null : label) : null}
             >
               {hasItems ? (
@@ -201,7 +204,7 @@ function MobileMenu({ pathname, onClose }) {
                 <Link
                   href={href}
                   onClick={onClose}
-                  className={`text-base font-semibold ${pathname === href ? "text-[#E1251B]" : "text-white/75"}`}
+                  className={`text-base font-semibold w-full ${pathname === href ? "text-[#E1251B]" : "text-white/75"}`}
                 >
                   {label}
                 </Link>
@@ -221,11 +224,11 @@ function MobileMenu({ pathname, onClose }) {
             {hasItems && isOpen && (
               <div className="flex flex-col p py-1 gap-1">
                 {items.map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={onClose}
-                    className={`flex items-center gap-2 py-2 text-lg font-light ${
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={onClose}
+                      className={`flex items-center gap-2 py-3 px-2 w-full text-lg font-light ${
                       pathname === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
                     }`}
                   >
@@ -269,16 +272,23 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-[#000] fixed top-0 left-0 right-0 z-50">
-      <div className="w-[90%] md:w-[80%] mx-auto py-5 flex items-center justify-between">
+      <div
+        className="w-[90%] md:w-[80%] mx-auto flex items-center justify-between"
+        style={{ padding: scrolled ? '14px 0' : '26px 0', transition: 'padding 0.6s cubic-bezier(0.4,0,0.2,1)' }}
+      >
         <Link href="/">
-          <img src="/logo.png" alt="Medtrix Logo" width={140} />
+          <img
+            src="/logo.png"
+            alt="Medtrix Logo"
+            style={{ width: scrolled ? '130px' : '180px', transition: 'width 0.6s cubic-bezier(0.4,0,0.2,1)' }}
+          />
         </Link>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-7">
           {links.map((link, i) => (
             <NavItem
-              key={link.label}
+              key={`desktop-${link.label}`}
               {...link}
               pathname={pathname}
               ref={(el) => (linksRef.current[i] = el)}
