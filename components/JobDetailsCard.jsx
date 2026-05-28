@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { lenisInstance } from "@/components/LenisProvider";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 
 export default function JobDetailsCard({ job, onBack }) {
   const [saved, setSaved] = useState(false);
@@ -34,13 +35,20 @@ export default function JobDetailsCard({ job, onBack }) {
     <div className="w-full animate-fadeIn">
 
       {/* ── Back button ── */}
-      <button
-        onClick={onBack}
-        className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-10 group"
-      >
-        <span className="text-lg group-hover:-translate-x-1 transition-transform duration-200">←</span>
-        Back 
-      </button>
+      <motion.button
+          onClick={onBack}
+          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
+          whileHover={{ x: -3 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
+        >
+          <motion.span
+            className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors cursor-pointer"
+            whileHover={{ scale: 1.1 }}
+          >
+            ←
+          </motion.span>
+          Back to life at medtrix
+        </motion.button>
 
       {/* ── Header ── */}
       <div className="flex items-start justify-between mb-2">
@@ -78,7 +86,7 @@ export default function JobDetailsCard({ job, onBack }) {
       </div>
 
       {/* ── Apply Now ── */}
-      <button className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200 mb-10">
+      <button className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200 mb-10 cursor-pointer">
         Apply Now
       </button>
 

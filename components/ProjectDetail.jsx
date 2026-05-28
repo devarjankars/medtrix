@@ -241,12 +241,13 @@ export default function ProjectDetail({ project, onBack }) {
       >
         <motion.button
           onClick={onBack}
+          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
           className="group inline-flex items-center gap-3 text-sm mt-3 text-gray-400 hover:text-white transition-colors"
           whileHover={{ x: -3 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
         >
           <motion.span
-            className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors"
+            className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors cursor-pointer"
             whileHover={{ scale: 1.1 }}
           >
             ←
