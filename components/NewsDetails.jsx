@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { lenisInstance } from "@/components/LenisProvider";
 
 export default function NewsDetails({ news, onBack }) {
@@ -14,13 +15,20 @@ export default function NewsDetails({ news, onBack }) {
   return (
     <div className="w-full animate-fadeIn">
       {/* Back Button */}
-      <button
-        onClick={onBack}
-        className="flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors mb-10 group"
-      >
-        <span className="text-lg group-hover:-translate-x-1 transition-transform duration-200">←</span>
-        Back to News
-      </button>
+       <motion.button
+          onClick={onBack}
+          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
+          whileHover={{ x: -3 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
+        >
+           <motion.span
+            className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors cursor-pointer"
+            whileHover={{ scale: 1.1 }}
+          >
+            ←
+          </motion.span>
+        Back to News & Updates
+     </motion.button>
 
       {/* Title */}
       <h1 className="text-3xl  lg:text-[56px] font-semibold text-white lg:leading-[72px] mb-8">
