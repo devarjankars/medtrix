@@ -6,7 +6,7 @@ import NewsCard from "@/components/NewsCard";
 import NewsDetails from "@/components/NewsDetails";
 import JobCard from "@/components/JobCard";
 import JobDetailsCard from "@/components/JobDetailsCard";
-import { newsData } from "@/Data/news";
+import { newsData } from "@/Data/newNews";
 import { jobsData } from "@/Data/jobs";
 import gsap from "gsap";
 
@@ -22,7 +22,7 @@ function CardGrid({ newsData, setSelected }) {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
       {newsData.map((item, i) => (
         <div key={item.id} ref={(el) => (cardsRef.current[i] = el)} style={{ opacity: 0 }}>
           <NewsCard news={item} onClick={setSelected} />

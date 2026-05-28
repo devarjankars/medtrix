@@ -23,7 +23,7 @@ export default function Landing() {
         </div>
       </div>
            <div
-  className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[60px] rounded-full"
+  className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[100%] h-[20px] lg:h-[60px] rounded-full"
   style={{
     background:
       'radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)',
