@@ -25,9 +25,9 @@ export default function RootLayout({ children }) {
       <body className={`${albertSans.className} min-h-screen flex flex-col bg-black`}>
         <LenisProvider>
           <ScrollToTop />
-          <Loader />
+          {/* <Loader /> */}
           <Navbar />
-          <main className="flex-1 w-full bg-[#000000]">
+          <main className="flex-1 w-full bg-[#000000] pt-[72px]">
             <div className="w-full">{children}</div>
           </main>
           <Footer />

@@ -196,7 +196,7 @@ function OneTeam() {
       </div>
 
       {/* VP Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden ">
         {vpData.map((vp, index) => (
           <div
             key={index}
@@ -257,7 +257,7 @@ function OneTeam() {
       <section className="bg-black lg:py-[100px] py-[50px] px-6 lg:px-2 relative overflow-hidden">
         <Badge label="One Commitment" />
         <SectionHeading red="Client " white="Success" />
-        <div className="grid grid-cols-3 lg:grid-cols-6 gap-y-14 gap-x-8 items-center justify-items-center">
+        <div className="grid grid-cols-3 lg:grid-cols-4 gap-y-14 gap-x-8 items-center justify-center ">
           {clientLogos.map((logo, index) => (
             <div key={index} className="w-full h-[70px] flex items-center justify-center transition-transform duration-300 hover:scale-105" style={{ willChange: "transform" }}>
               <Image
@@ -282,7 +282,7 @@ function OneTeam() {
           {awardsData.map((award, index) => (
             <div
               key={index}
-              className="flex items-center justify-center lg:items-start lg:justify-start p-2 transition-transform duration-300 hover:-translate-y-1"
+              className="flex items-center justify-center rounded-[10px] border-1  p-2 transition-transform duration-300 hover:-translate-y-1"
               style={{ willChange: "transform" }}
             >
               <Image

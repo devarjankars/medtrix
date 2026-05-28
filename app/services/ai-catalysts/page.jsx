@@ -35,9 +35,7 @@ export default function page() {
         tagText="AI CATALYSTS"
         
       title={  [
-  "Intelligent Catalysts for",
-  "Content, Compliance, and",
-  "Engagement"
+  "Intelligent Catalysts for Content, Compliance, and Engagement"
 ]
      }     paragraphs={strategyParagraphs}
         desktopBg={"/mAideskbg.png"}

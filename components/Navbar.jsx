@@ -101,16 +101,18 @@ function MobileMenu({ pathname }) {
   const [openSection, setOpenSection] = useState(null);
 
   return (
-    <div className="md:hidden bg-[#111] px-6 pb-6 flex flex-col gap-1 min-h-screen">
+    <div className="md:hidden bg-[#000000] px-6 pb-6 flex flex-col gap-1 h-[100vh] relative">
       {links.map(({ label, href, items, button }) => {
         const hasItems = items && items.length > 0;
         const isOpen = openSection === label;
 
         if (button) {
           return (
-            <Link key={label} href={href} className="mt-3 bg-[#FF0000] text-white text-lg font-bold px-6 py-2.5 rounded-full text-center transition-colors">
-              {label}
-            </Link>
+            <div key={label} className="flex justify-center mt-4">
+              <Link href={href} className="bg-[#FF0000] absolute bottom-[120px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
+                {label}
+              </Link>
+            </div>
           );
         }
 
@@ -142,16 +144,15 @@ function MobileMenu({ pathname }) {
               )}
             </div>
             {hasItems && isOpen && (
-              <div className="flex flex-col pl-4 py-1 gap-1">
+              <div className="flex flex-col p py-1 gap-1">
                 {items.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className={`flex items-center gap-2 py-2 text-lg font-bold ${
-                      pathname === item.href ? "text-red-500" : "text-zinc-400 hover:scale-105 transition-transform"
+                    className={`flex items-center gap-2 py-2 text-lg font-light ${
+                      pathname === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
                     }`}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-current shrink-0 text-lg font-bold" />
                     {item.label}
                   </Link>
                 ))}
@@ -169,7 +170,7 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full bg-[#000] sticky top-0 z-50">
+    <nav className="w-full bg-[#000] fixed top-0 left-0 right-0 z-50">
       <div className="w-[90%] md:w-[80%] mx-auto py-5 flex items-center justify-between">
         <Link href="/">
           <img src="/logo.png" alt="Medtrix Logo" width={150} />
@@ -189,15 +190,15 @@ export default function Navbar() {
           aria-label="Toggle menu"
         >
           {menuOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
               <line x1="3" y1="12" x2="21" y2="12" />
               <line x1="3" y1="6" x2="21" y2="6" />
-              <line x1="3" y1="18" x2="21" y2="18" />
+              <line x1="3" y1="18" x2="11" y2="18" />
             </svg>
           )}
         </button>
