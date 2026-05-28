@@ -5,7 +5,7 @@ import Link from "next/link";
 const statsData = [
   { value: "3,200+", label: "Projects Delivered" },
   { value: "200,000+", label: "HCPs Engaged" },
-  { value: "100,000+", label: "Assets Created" },
+  { value: "100,00+", label: "Assets Created" },
 ];
 
 export default function Animation() {

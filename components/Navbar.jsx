@@ -157,8 +157,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
 });
 
 /* ── Mobile menu ── */
-function MobileMenu({ pathname, onClose }) {
-  const [openSection, setOpenSection] = useState(null);
+function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -248,6 +247,7 @@ function MobileMenu({ pathname, onClose }) {
 export default function Navbar() {
   const pathname          = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openSection, setOpenSection] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const navRef            = useRef(null);
   const linksRef          = useRef([]);
@@ -344,7 +344,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && <MobileMenu pathname={pathname} onClose={() => setMenuOpen(false)} />}
+      {menuOpen && <MobileMenu pathname={pathname} onClose={() => setMenuOpen(false)} openSection={openSection} setOpenSection={setOpenSection} />}
     </nav>
   );
 }

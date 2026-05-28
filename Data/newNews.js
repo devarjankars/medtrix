@@ -48,7 +48,7 @@ export const newsData = [
     id: 3,
     date: "March 2026",
     category: "Award",
-    title: "Christmas 2026 ",
+    title: "Christmas 2025 ",
     thumbnail: "/news7.png",
     body: [
       "MedTrix has been certified as a Great Place to Work® for the third consecutive year — a testament to our people-first culture and the trust our employees place in the organisation.",
