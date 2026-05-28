@@ -266,7 +266,7 @@ function SectionGrid({ label, title, items, cols, button, link }) {
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-            <div className="absolute bottom-8 left-8 right-8">
+            <div className="absolute bottom-4 left-8 right-8">
               <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
               <p className="text-gray-300 text-sm">{item.desc}</p>
             </div>
