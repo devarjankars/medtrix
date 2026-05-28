@@ -40,25 +40,16 @@ export default function Animation() {
       </div> */}
 
       {/* Mobile: BeanBackground between button and image */}
-      <div className="block lg:hidden w-full h-[280px] relative my-6 rounded-xl overflow-hidden bg-black" style={{ WebkitTransform: 'translateZ(0)', transform: 'translateZ(0)', WebkitMaskImage: '-webkit-radial-gradient(black, black)' }}>
+      <div className="block lg:hidden w-full h-[280px] relative my-6" style={{ background: '#000' }}>
         <BeanBackground className="absolute inset-0" />
       </div>
  
-      <div className="relative rounded-xl overflow-hidden w-full">
+      {/* <div className="relative rounded-xl overflow-hidden w-full">
  
 
-        <img
-          src="/images/power-one.png"
-          alt=""
-          className="
-          w-full
-          h-auto
-          object-cover
-          block
-          "
-        />
+
  
-      </div>
+      </div> */}
  
     </div>
  
@@ -126,7 +117,7 @@ export default function Animation() {
  
         {/* STATS */}
         <div className="p px-0 sm:px-6 lg:px-0 mb-4 mt-4">
-          <div className="  grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-20">
+          <div className="  grid grid-cols-1 md:grid-cols-3 gap-20">
             {statsData.map((stat, index) => (
               <div
   key={index}
@@ -135,7 +126,7 @@ export default function Animation() {
                 <div className="w-8 h-1 bg-[#E1251B] rounded-full mb-0" />
                 <div>
                   <h3 className="text-[50px] font-bold text-white tracking-tight ">{stat.value}</h3>
-                  <p className="text-[20px] lg:text-base text-gray-600 font-light  tracking-wide">{stat.label}</p>
+                  <p className="text-[20px] lg:text-base text-gray-500 font-medium  tracking-wide">{stat.label}</p>
                 </div>
               </div>
             ))}
