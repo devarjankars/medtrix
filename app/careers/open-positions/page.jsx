@@ -10,7 +10,7 @@ export default function OpenPositionsPage() {
 
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
-      <section className="w-[90%] md:w-[80%] mx-auto py-10">
+      <section className="w-[90%] md:w-[80%] mx-auto md:py-5">
 
         {selectedJob ? (
           <JobDetailsCard job={selectedJob} onBack={() => setSelectedJob(null)} />

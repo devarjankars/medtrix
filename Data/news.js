@@ -3,20 +3,23 @@ export const newsData = [
     id: 1,
     date: "April 2026",
     category: "Conference",
-    title: "The MedTrix Healthcare team is heading to ASCO 2026.",
+    title: "The MedTrix Healthcare team is heading to ASCO 2026. ",
     thumbnail: "/news.png",
     body: [
-      "We are thrilled to announce that the MedTrix Healthcare team will be attending ASCO 2026, one of the most prestigious oncology conferences in the world.",
-      "Our team will be showcasing our latest innovations in oncology communications and medical education, connecting with leading healthcare professionals and thought leaders from across the globe.",
-      "ASCO 2026 represents a key opportunity for MedTrix to strengthen its presence in the oncology space and explore new partnerships that drive meaningful impact for patients and providers alike.",
-    ],
-    images: ["/news2.png"],
+      "We’re excited for the days ahead as we engage in conversations, collaboration, and knowledge-sharing with industry leaders, partners, and peers.", 
+
+  "Events like these create valuable opportunities to exchange ideas, explore emerging trends, and strengthen partnerships that continue to shape the future of healthcare communication and innovation.",
+
+"We look forward to connecting with attendees, learning from diverse perspectives, and sharing how MedTrix continues to drive impactful healthcare experiences through the convergence of science, creativity, and technology.",
+
+"If you’re attending as well, we would love to connect and continue the conversation. "],
+    images: ["/news_1_01.png"],
   },
   {
     id: 2,
     date: "February 2026",
     category: "Award",
-    title: "We are PM360 ELITE 100 Winner in AI Marketing Pioneers category",
+    title: "We are PM360 ELITE 100 Winner in AI Marketing Pioneers category ",
     thumbnail: "/news2.png",
     body: [
       "MedTrix is proud to be recognised as a PM360 ELITE 100 Winner in the AI Marketing Pioneers category for 2026.",
@@ -32,11 +35,13 @@ export const newsData = [
     title: "Three years of being a Great Place to Work®",
     thumbnail: "/news3.png",
     body: [
-      "MedTrix has been certified as a Great Place to Work® for the third consecutive year — a testament to our people-first culture and the trust our employees place in the organisation.",
-      "This recognition is not just a badge; it reflects the everyday experiences of our team members — the sense of belonging, the opportunities to grow, and the environment of respect and inclusion that we strive to build every day.",
-      "We are proud of this achievement and remain committed to making MedTrix an even better place to work for every individual who is part of our journey.",
+      "We are proud to share that MedTrix has once again been recognized as a Great Place to Work® Certified™ organization, 3 times in a row. This recognition is more than an achievement for us. It reflects the culture we have continued to build together through collaboration, trust, inclusion, and a shared commitment to excellence.",
+      "We are proud to share that MedTrix has once again been recognized as a Great Place to Work® Certified™ organization, 3 times in a row. This recognition is more than an achievement for us. It reflects the culture we have continued to build together through collaboration, trust, inclusion, and a shared commitment to excellence.",
+      
+"Over the years, we have remained focused on fostering a workplace that empowers people to grow, contribute meaningfully, and feel supported in their professional journey. This certification reinforces our commitment to building a culture where people feel inspired to do their best work every day.",
+"We extend our heartfelt gratitude to our employees for making this recognition possible. Their energy, resilience, and belief in our shared vision continue to shape the MedTrix story. As we celebrate this milestone, we look forward to growing together and building an even stronger workplace for the future."
     ],
-    images: ["/news3.png"],
+    images: ["/news_2_1.png"],
   },
   {
     id: 4,
@@ -68,11 +73,11 @@ export const newsData = [
     id: 6,
     date: "November 2025",
     category: "Sponsorship",
-    title: "We're proud to sponsor the 2025 #PharmaCX Marketing Summit",
+    title: "We’re proud to sponsor the 2025 #PharmaCX Marketing Summit",
     thumbnail: "/news6.png",
     body: [
       "MedTrix is proud to announce our sponsorship of the 2025 Pharma CX Marketing Summit — one of the most influential gatherings in pharmaceutical customer experience and marketing.",
-      "Our VP, Vimal Narayanan, will be representing MedTrix at the summit, sharing insights on how data-driven strategies and innovative communications are reshaping the pharma marketing landscape.",
+      "Our CEO, Vimal Narayanan, will be representing MedTrix at the summit, sharing insights on how data-driven strategies and innovative communications are reshaping the pharma marketing landscape.",
       "We look forward to connecting with industry leaders, exchanging ideas, and exploring new ways to drive meaningful engagement in healthcare.",
     ],
     images: ["/newsin0_1.png"],

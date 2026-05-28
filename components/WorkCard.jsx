@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function WorkCard({ project, onExplore }) {
   return (
     <motion.div
-      className="grid lg:grid-cols-[50%_50%] gap-8 mb-24"
+      className="grid lg:grid-cols-2 gap-8 mb-20"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
@@ -20,7 +20,7 @@ export default function WorkCard({ project, onExplore }) {
         <img
           src={project.imgforfiltersection || project.image}
           alt={project.title}
-          className="h-full object-cover rounded-[22px]"
+          className="w-full h-full object-contain rounded-[22px]"
         />
       </motion.div>
 

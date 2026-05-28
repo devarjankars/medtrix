@@ -23,7 +23,7 @@ export default function NewsCard({ news, onClick }) {
           {/* Text on top of image */}
           <div className="absolute bottom-0 left-0 right-0 p-4">
            
-            <h3 className="text-white text-[22px] font-semibold leading-[38px] line-clamp-3">
+            <h3 className="text-white text-[18px] font-semibold leading-[22px] line-clamp-3">
               {news.title}
             </h3>
           </div>

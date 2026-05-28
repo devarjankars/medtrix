@@ -79,12 +79,12 @@ function DigitalInnovationInner() {
         tagText="DIGITAL & INNOVATION"
         title="Innovation that creates meaningful impact"
         paragraphs={strategyParagraphs}
-        desktopBg={"/dibgdesk.png"}
+        desktopBg={"/dibgdesk.jpg"}
         mobileImg={"/dimbl.png"}
       />
 
-      <section className="relative bg-black py-20 px-10 md:px-0 overflow-hidden w-[90%] md:w-[80%] mx-auto">
-        <div className="mb-40">
+      <section className="relative bg-black py-5 md:py-14 px-2 md:px-0 overflow-hidden w-[90%] md:w-[80%] mx-auto">
+        <div className="mb-10">
 
           {/* Section pill */}
           <motion.div
@@ -95,7 +95,7 @@ function DigitalInnovationInner() {
             transition={{ duration: 0.55, ease }}
           >
             <div
-              className="inline-flex px-6 py-3 rounded-full text-white tracking-[4px] text-sm font-bold uppercase border border-[#2A2525]"
+              className="inline-flex px-4 py-3 rounded-full text-white tracking-[4px] text-xs md:text-sm font-bold uppercase border border-[#2A2525]"
               style={{
                 background:
                   "linear-gradient(to right, rgba(255,255,255,0.2), rgba(0,0,0,0.4))",
