@@ -120,7 +120,7 @@ export default function FeatureSection({
                   const motionBtn = (
                     <motion.div
                       key={index}
-                      whileHover={{ scale: 1.06 }}
+                      whileHover={{ scale: 0.99 }}
                       whileTap={{ scale: 0.97 }}
                       transition={{ type: "spring", stiffness: 380, damping: 22 }}
                       className={`relative inline-flex w-fit items-center gap-2 px-8 py-4 rounded-full text-white font-medium overflow-hidden cursor-pointer ${
