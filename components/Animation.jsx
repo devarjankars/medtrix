@@ -126,7 +126,7 @@ export default function Animation() {
  
         {/* STATS */}
         <div className="p px-0 sm:px-6 lg:px-0 mb-4 mt-4">
-          <div className="  grid grid-cols-1 md:grid-cols-3 gap-20">
+          <div className="  grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-20">
             {statsData.map((stat, index) => (
               <div
   key={index}
@@ -135,7 +135,7 @@ export default function Animation() {
                 <div className="w-8 h-1 bg-[#E1251B] rounded-full mb-0" />
                 <div>
                   <h3 className="text-[50px] font-bold text-white tracking-tight ">{stat.value}</h3>
-                  <p className="text-[20px] lg:text-base text-gray-500 font-medium  tracking-wide">{stat.label}</p>
+                  <p className="text-[20px] lg:text-base text-gray-600 font-light  tracking-wide">{stat.label}</p>
                 </div>
               </div>
             ))}

@@ -177,9 +177,9 @@ function OneTeam() {
             priority
           />
         </div>
-        <div className="flex items-start justify-center lg:px-10 flex-col gap-10">
+        <div className="flex items-start justify-between  lg:justify-center lg:px-10 flex-col gap-10">
           <TypingQuote onDone={() => setQuoteDone(true)} />
-          <div className={`flex items-center gap-4 transition-opacity duration-700 ${quoteDone ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`flex lg:items-center justify-between w-full lg:w-fit gap-4 transition-opacity duration-700 ${quoteDone ? 'opacity-100' : 'opacity-0'}`}>
             <div>
               <h5 className="lg:text-[28px] text-[22px] font-semibold">Vimal Narayanan</h5>
               <p className="lg:text-[20px] text-[16px] text-gray-300">Founder and CEO</p>
@@ -187,9 +187,8 @@ function OneTeam() {
             <Image
               src={linkedinImg}
               alt="LinkedIn"
-              width={56}
-              height={56}
-              className="object-contain cursor-pointer"
+              
+              className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer"
             />
           </div>
         </div>
@@ -221,9 +220,8 @@ function OneTeam() {
               <Image
                 src={linkedinImg}
                 alt="LinkedIn"
-                width={48}
-                height={48}
-                className="object-contain cursor-pointer shrink-0"
+               
+                className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer shrink-0"
                 loading="lazy"
               />
             </div>
@@ -257,7 +255,7 @@ function OneTeam() {
       <section className="bg-black lg:py-[100px] py-[50px] px-6 lg:px-2 relative overflow-hidden">
         <Badge label="One Commitment" />
         <SectionHeading red="Client " white="Success" />
-        <div className="grid grid-cols-3 lg:grid-cols-4 gap-y-14 gap-x-8 items-center justify-center ">
+        <div className="grid grid-cols-3 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-5 items-center justify-center ">
           {clientLogos.map((logo, index) => (
             <div key={index} className="w-full h-[70px] flex items-center justify-center transition-transform duration-300 hover:scale-105" style={{ willChange: "transform" }}>
               <Image
@@ -275,10 +273,10 @@ function OneTeam() {
       </section>
 
       {/* Awards */}
-      <section className="pt-[50px] pb-[50px] lg:pt-[100px] lg:pb-[80px] relative overflow-hidden">
+      <section className="pt-[50px] pb-[50px] lg:pt-[100px] lg:pb-[80px] relative lg:overflow-visible">
         <Badge label="One Standard" />
         <SectionHeading red="Excellence, " white="recognized by the industry." />
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3   w-full ">
           {awardsData.map((award, index) => (
             <div
               key={index}
