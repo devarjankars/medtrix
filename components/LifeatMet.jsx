@@ -216,8 +216,8 @@ export default function LifeatMet() {
 
   return (
     <div
-      className="relative w-full overflow-hidden rounded-[20px] select-none cursor-grab active:cursor-grabbing"
-      style={{ height: "clamp(320px, 55vw, 560px)" }}
+      className="relative w-full overflow-hidden rounded-[20px] h-[450px] lg:h-[560px] select-none cursor-grab active:cursor-grabbing"
+      // style={{ height: "clamp(320px, 55vw, 560px)" }}
       onMouseDown={onPointerDown}
       onMouseMove={onPointerMove}
       onMouseUp={onPointerUp}
