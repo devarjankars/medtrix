@@ -144,7 +144,7 @@ export default function Contact() {
                 </div>
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
                   <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Company</label>
-                  <input type="text" placeholder="Your company" className={inputClass} />
+                  <input required type="text" placeholder="Your company" className={inputClass} />
                 </div>
               </div>
 

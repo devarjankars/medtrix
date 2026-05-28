@@ -33,6 +33,7 @@ function PageInner() {
     : null;
 
   function openProject(project) {
+    
     router.push(`/our-work/commercial-solutions?project=${project.id}`, { scroll: false });
   }
 

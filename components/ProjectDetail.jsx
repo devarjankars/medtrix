@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import TestimonialSlider from "@/components/TestimonialSlider";
+import { lenisInstance } from "@/components/LenisProvider";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -221,6 +222,15 @@ function ImageSlider({ images = [] }) {
 
 // ── Main component ────────────────────────────────────────────────────────────
 export default function ProjectDetail({ project, onBack }) {
+  /* Scroll to top via Lenis (bypasses native scroll which Lenis intercepts) */
+  useEffect(() => {
+    if (lenisInstance) {
+      lenisInstance.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, []);
+
   const testimonialItems = Array.isArray(project.testimonials)
     ? project.testimonials
         .filter((t) => t.quote)
