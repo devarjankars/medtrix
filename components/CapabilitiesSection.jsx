@@ -180,16 +180,18 @@ function SectionGrid({ label, title, items, cols, button, link }) {
         {items.map((item) => (
           <div
             key={item.title}
-            className="relative rounded-[22px] overflow-hidden border border-[#1F1F1F] "
+            className="relative rounded-[22px] overflow-hidden border border-[#1F1F1F]"
           >
-
-            <Image
-              src={item.img}
-              alt={item.title}
-              width={500}
-              height={320}
-              className="w-full h-[320px] object-cover"
-            />
+            {/* fixed-height container for fill image */}
+            <div className="relative w-full h-[350px]">
+              <Image
+                src={item.img}
+                alt={item.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
 
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
