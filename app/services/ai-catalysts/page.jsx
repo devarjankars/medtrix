@@ -49,7 +49,7 @@ export default function page() {
             "The MLR Catalyst is a tool built to reduce the time, and effort involved it the medical-legal-regulatory approval process. It utilizes AI methodologies rooted to a validated and brand-specific knowledge bank to simplify repetitive tasks",
             "Importantly it validates claims in a document with information in the knowledge bank and allows reviewers to utilize their more efficiently and where it matters the most.",
           ]}
-          buttons={[{ label: "Learn More ", type: "primary" }, {label:"Read the Video Catalyst Case Study ",type:"secondary"}]}
+          buttons={[{ label: "Learn More ", type: "primary" },]}
         />
       </section>
 

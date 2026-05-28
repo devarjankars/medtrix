@@ -1,7 +1,10 @@
 export const projects = [
   // =========================================================================
-  // COMMERCIAL SOLUTIONS
+  // COMMERCIAL SOLUTIONS  
   // =========================================================================
+
+
+  // make video loop  
   {
     id: "abbvie-rinvoq-immunology",
     category: "COMMERCIAL SOLUTIONS",
@@ -9,7 +12,7 @@ export const projects = [
     imgfordetail: "/csdesk1.png",
     imgfordetailmbl: "/csdesk1.png",
     challengeImg:"/challenge1.png",
-    slider:["./slider1.png", "/slider2.webp","/slider3.webp"],
+    slider:["/slide0.png"],
     title: "AbbVie Rinvoq Immunology: Transforming International-to-Affiliate Modular Content Enablement",
     tags: ["MODULAR CONTENT", "GLOBAL-TO-LOCAL ENABLEMENT", "VEEVA DAMS"],
     engagementModel: "Global-to-Local Modular Content Enablement",
@@ -49,6 +52,8 @@ export const projects = [
     imgforfiltersection: "/cs2.png",
     imgfordetail: "/csdesk2.png",
     imgfordetailmbl: "/csdesk2.png",
+    challengeImg: "/challenge2.png",
+    slider: ["/slide1.png"],
     title: "MOD 3D Video and AR Adaptation for Keytruda",
     tags: ["3D ANIMATION", "AR", "ONCOLOGY EDUCATION"],
     engagementModel: "Immersive Scientific Visualization Initiative",
@@ -62,10 +67,7 @@ export const projects = [
     solution: "We introduced a 3D MOD video, that visually communicates complex interactions and promotes a better understanding of the mechanisms in the Tumor Immune Microenvironment (TIME) of prostate cancer. The video was designed for easy comprehension from a medical perspective, at the same time was dynamic in nature, featuring animations and motion graphics that capture and retain viewers' attention. Furthermore, we are transforming the 3D video into an augmented reality (AR) experience, integrating interactive sequences at strategic touchpoints. This adaptation ensures focused engagement during Medical Science Liaisons (MSL) visits and oncology conferences, providing an immersive and informative experience.",
     result: "MedTrix was among the first agencies within Merck’s roster to successfully develop a 3D MOD concept focused on immunotherapy in prostate cancer. The project required close collaboration across Medical, Legal, and Regulatory (MLR) teams, along with multiple rounds of concept refinement and review to ensure scientific accuracy and compliance. The final video was presented at major oncology conferences globally, where it was well received for its ability to simplify and visually communicate complex immunotherapy concepts in an engaging and accessible format.",
      recognitions: [
-      {
-        img:["/recognitions.png"],
-        content:""
-      }
+      
     ],
     testimonials: [{
       quote: "Navigating the review process involving Medical, Legal, and Regulatory aspects was the most demanding phase of the project. Throughout this journey, MedTrix's content and creative teams showcased remarkable medical expertise and creative insight. They meticulously crafted hand-drawn sketches for every frame of the storyboard, vividly unfolding the complex sequence of events. This played a pivotal role in aiding the reviewers' comprehension of the concept. We extend our sincere appreciation to the team for their relentless dedication in elevating the video to its current level of refinement, meeting all the stringent medical, legal, and regulatory standards.",
@@ -78,6 +80,8 @@ export const projects = [
     imgforfiltersection: "/cs3.png",
     imgfordetail:"/csdesk3.png",
     imgfordetailmbl:"/csdesk3.png",
+    challengeImg: "/challenge3.png",
+    slider: ["/slide2.png"],
     title: "Nestlé Health Science: Building a Global HCP Education & Certification Ecosystem for ModuLife™",
     tags: ["LMS", "GLOBAL EDUCATION", "HCP CERTIFICATION"],
     engagementModel: "Global HCP Education & Certification Initiative",
@@ -91,10 +95,7 @@ export const projects = [
     solution: "MedTrix partnered with Nestlé Health Science to design and deploy a global HCP education and certification program focused on ModuLife__. The team developed a structured curriculum featuring clinically validated learning modules covering the scientific foundations of CDED, implementation in clinical practice, multidisciplinary care collaboration, and long-term disease management. The program also included case-based learning experiences and expert-led educational sessions to enhance HCP engagement and knowledge retention. Using MedTrix’s proprietary Learning Management System (LMS), we built a scalable multilingual platform with certification workflows, assessments, webinars, workshops, onboarding programs, and interactive case discussions. MedTrix also managed localization, translation, deployment, maintenance, and lifecycle content management across six languages to support global adoption and regional compliance requirements.",
     result: "The ModuLife™ certification ecosystem enabled Nestlé Health Science to successfully scale structured HCP education globally while supporting broader adoption of nutrition-based therapy for Crohn’s disease management. The platform delivered a consistent, accessible, and multilingual learning experience for healthcare professionals across regions and specialties. Today, the program has been deployed across 94 countries, supporting more than 12,000 registered HCPs and over 6,000 certified experts worldwide. Through strategic partnership, scientific rigor, and digital innovation, MedTrix helped transform ModuLife™ into a scalable global education and certification ecosystem that continues to drive ongoing clinical engagement, implementation, and long-term learning sustainability.",
      recognitions: [
-      {
-        img:["/recognitions.png"],
-        content:""
-      }
+      
     ],
     testimonials: [{
       quote: "ModulifExpert was an important program for NHSc, and MedTrix worked closely with us to strategize and execute the program. The structured approach to training, coupled with their UI/UX design, helped create a simple but effective interface for HCP education. The integrated webinar platform within helped HCPs with ongoing education. It was a great example of teamwork, and the proof is in the success of the program.",
@@ -107,6 +108,8 @@ export const projects = [
     imgforfiltersection: "/cs4.png",
     imgfordetail: "/csdesk4.png",
     imgfordetailmbl: "",
+    challengeImg: "/challenge4.png",
+    slider: ["/slide3.png"],
     title: "Stemline Therapeutics: Decoupling High-Volume Execution",
     tags: ["OMNICHANNEL", "COMMERCIAL OPERATIONS", "SCALABLE DELIVERY"],
     engagementModel: "Strategic Omnichannel Operations Partnership",
@@ -120,10 +123,7 @@ export const projects = [
     solution: "MedTrix Healthcare established a hub-and-spoke operating model that combined US-based strategic leadership with India-based scaled delivery capabilities. The New Jersey Strategic Hub led omnichannel planning, messaging strategy, and execution governance, while the Bangalore Delivery Hub managed large-scale production, adaptation, and orchestration across channels and execution partners. Over the partnership, MedTrix delivered more than 650 email campaigns, 320+ banner assets, and 70+ website updates while improving operational efficiency and maintaining nearly 95% on-time delivery. As the engagement evolved, MedTrix expanded into congress support, AI-assisted video development, and automation-enabled MLR workflow discussions, transforming the relationship into a trusted AI-integrated strategic partnership.",
     result: "The partnership successfully decoupled high-volume omnichannel execution from the traditional AOR model, enabling Stemline Therapeutics to scale delivery operations more efficiently while maintaining strategic oversight, scientific rigor, and creative quality. MedTrix established a scalable hub-and-spoke ecosystem that improved operational flexibility, accelerated execution timelines, and optimized delivery workflows across omnichannel campaigns. Through streamlined processes and workflow optimization, production timelines were reduced by approximately 40%, while MLR first-pass review timelines improved by nearly 50%. The engagement maintained approximately 95% on-time delivery across promotional assets and strengthened stakeholder confidence through consistent execution excellence. The partnership also enabled the adoption of AI-assisted and automation-driven workflows, supporting Stemline’s transition toward a more innovative and future-ready commercial operations model.",
      recognitions: [
-      {
-        img:["/recognitions.png"],
-        content:""
-      }
+      
     ],
     testimonials: [{
       quote: "The steady increase in the volume of work has been primarily driven by the exceptional work of the MedTrix team. The proactive approach, attention to detail, and seamless management of our projects are truly appreciated. We look forward to continuing this momentum.",
@@ -140,6 +140,8 @@ export const projects = [
     imgforfiltersection: "/ma1.png",
     imgfordetail: "/maDesk1.png",
     imgfordetailmbl: "/maDesk1.png",
+    challengeImg: "/challenge5.png",
+    slider: ["/slide4.png"],
     title: "Celltrion: Elevating Medical Affairs Scientific Engagement",
     tags: ["VR", "MEDICAL AFFAIRS", "SCIENTIFIC ENGAGEMENT"],
     engagementModel: "Integrated Scientific Engagement Initiative",
@@ -153,10 +155,7 @@ export const projects = [
     solution: "MedTrix designed and executed a multi-modal scientific engagement ecosystem that included a disease awareness video, interactive scientific infographic, VR experience, advisory board materials, and supporting educational assets optimized for both digital and congress deployment. The engagement framework included a 120-second disease awareness video, a 40-screen interactive infographic, scientific advisory board slide decks, and a VR experience illustrating the mechanism of action of various IBD treatment modalities. Analytics-enabled engagement tools were also integrated to support HCP interaction and insight generation. All materials were developed through structured MLR-reviewed workflows aligned with Medical Affairs objectives and Sunshine Act compliance requirements.",
     result: "The integrated Medical Affairs ecosystem enabled connected engagement across pre-, during-, and post-congress phases at AIBD 2025 and DDW 2026. The solution supported Celltrion’s standalone Medical booth presence at both congresses and contributed to strong HCP engagement through interactive scientific experiences. Structured KOL insights captured during advisory board discussions also helped inform future Medical Affairs planning and ongoing omnichannel engagement initiatives.",
      recognitions: [
-      {
-        img:["/recognitions.png"],
-        content:""
-      }
+      
     ],
     testimonials: [{
       quote: "MedTrix took on an ambitious VR initiative that others hesitated to pursue and delivered an exceptional experience in an incredibly short timeframe. The final product was innovative, immersive, and visually impressive while still maintaining the educational depth and scientific rigor that was critical for our audience. The success of the experience has sparked discussions around expanding its use into a broader, enduring educational resource for HCPs, and we look forward to continuing to build on this foundation for future meetings.",
@@ -169,6 +168,8 @@ export const projects = [
     imgforfiltersection: "/ma2.png",
     imgfordetail: "/maDesk2.png",
     imgfordetailmbl: "/maDesk2.png",
+    challengeImg: "/challenge6.png",
+    slider: ["/slide5.png"],
     title: "CSL Behring: Advancing Cardio-Renal Scientific Engagement",
     tags: ["MEDICAL AFFAIRS", "PHASE 2 DATA", "MSL ENGAGEMENT"],
     engagementModel: "Integrated Scientific Engagement Initiative",
@@ -193,6 +194,8 @@ export const projects = [
     imgforfiltersection:  "/ma3.png",
     imgfordetail:  "/maDesk3.png",
     imgfordetailmbl:  "/maDesk3.png",
+    challengeImg: "/challenge7.png",
+    slider: ["/slide6.png"],
     title: "Exact Sciences Portfolio and Pipeline Initiatives",
     tags: ["CONGRESS ENGAGEMENT", "SCIENTIFIC COMMUNICATIONS", "HEOR"],
     engagementModel: "Integrated Scientific Communications & Interactive Engagement Initiative",
@@ -217,6 +220,8 @@ export const projects = [
     imgforfiltersection:  "/ma4.png",
     imgfordetail:  "/maDesk4.png",
     imgfordetailmbl: "/maDesk4.png",
+    challengeImg: "/challenge8.png",
+    slider: ["/slide7.png"],
     title: "Lilly Oncology: Building COMPASS (Clinical Outreach Mapping Platform for Actionable Strategic Support)",
     tags: ["DATA VISUALIZATION", "GEN AI", "MEDICAL AFFAIRS"],
     engagementModel: "Medical Affairs Intelligence & Insights Initiative",
@@ -246,6 +251,8 @@ export const projects = [
     imgforfiltersection: "/di1.png",
     imgfordetail:"/didesk1.png",
     imgfordetailmbl: "/didesk1.png",
+    challengeImg: "/challenge9.png",
+    slider: ["/slide8.png"],
     title: "AbbVie Rinvoq Immunology: Advancing HCP Engagement Through an Interactive Case Player",
     tags: ["CASE-BASED LEARNING", "MACHINE LEARNING", "HCP ENGAGEMENT"],
     engagementModel: "Global Digital Medical Education Initiative",
@@ -271,6 +278,8 @@ export const projects = [
     imgforfiltersection: "/di2.png",
     imgfordetail: "/didesk2.png",
     imgfordetailmbl:"/didesk2.png",
+    challengeImg: "/challenge10.png",
+    slider: ["/slide9.png"],
     title: "Allergan Medical Institute: 3D Facial Anatomy App",
     tags: ["MOBILE", "iPAD", "3D"],
     engagementModel: "Global Digital Education Initiative",
@@ -296,6 +305,8 @@ export const projects = [
     imgforfiltersection: "/di3.png",
     imgfordetail: "/didesk3.png",
     imgfordetailmbl: "/didesk3.png",
+    challengeImg: "/challenge11.png",
+    slider: ["/slide10.png"],
     title: "Allergan Medical Institute: Interactive Rheology Portal for HA Dermal Fillers",
     tags: ["INTERACTIVE DASHBOARD", "SCIENTIFIC VISUALIZATION", "HCP EDUCATION"],
     engagementModel: "Scientific Education & Interactive Visualization Initiative",
@@ -321,6 +332,8 @@ export const projects = [
     imgforfiltersection: "/di4.png",
     imgfordetail: "/didesk4.png",
     imgfordetailmbl: "/didesk4.png",
+    challengeImg: "/challenge12.png",
+    slider: ["/slide11.png"],
     title: "Celltrion: Transforming IBD Education Through an Immersive VR Experience at DDW 2026",
     tags: ["VIRTUAL REALITY", "IMMERSIVE SCIENTIFIC ENGAGEMENT", "CONGRESS EXPERIENCE"],
     engagementModel: "Scientific Experience & Congress Engagement Initiative",
@@ -346,6 +359,8 @@ export const projects = [
     imgforfiltersection:"/di5.png",
     imgfordetail:"/didesk5.png",
     imgfordetailmbl: "/didesk5.png",
+    challengeImg: "/challenge13.png",
+    slider: ["/slide12.png"],
     title: "Novartis: Transforming Patient Engagement Through a Web-Based AR Experience for Jakavi",
     tags: ["WEB-BASED AUGMENTED REALITY", "PATIENT ENGAGEMENT", "DIGITAL INNOVATION"],
     engagementModel: "Digital Patient Engagement Initiative",
@@ -371,6 +386,8 @@ export const projects = [
     imgforfiltersection:"/di6.png",
     imgfordetail: "/didesk6.png",
     imgfordetailmbl: "/didesk6.png",
+    challengeImg: "/challenge14.png",
+    slider: ["/slide13.png"],
     title: "Stemline Therapeutics: AI-Assisted Content Creation",
     tags: ["AI-ASSISTED CONTENT CREATION", "HCP EDUCATION", "DIGITAL STORYTELLING"],
     engagementModel: "Scientific Content Innovation Initiative",
@@ -383,7 +400,7 @@ export const projects = [
     challenge: "Stemline Therapeutics required an HCP-focused educational video to support awareness and management of Capillary Leak Syndrome (CLS) associated with Elzonris treatment. The objective was to communicate complex clinical information through visually engaging storytelling while maintaining scientific accuracy, compliance alignment, and seamless deployment within the HCP website ecosystem. The engagement required rapid execution, with the final video needing to be developed and deployed within less than eight weeks. Conventional production approaches involving time-intensive character illustration, animation, and video development workflows were not feasible within the required timelines. Stemline therefore needed a web-optimized, scalable, and faster content production approach capable of delivering hyper-realistic visuals while supporting MLR expectations and website integration requirements.",
     solution: "MedTrix leveraged an AI-assisted production workflow to create hyper-realistic educational video content with significantly reduced manual effort and accelerated production timelines. The engagement began with MLR alignment and concept briefing sessions to establish clarity around AI-generated content usage, copyright ownership, compliance expectations, and downstream review processes. Our team developed AI-generated characters, backgrounds, environments, and supporting visual assets using an AI-assisted production workflow optimized for speed and scalability. Motion prototyping, iterative refinement, compositing, transitions, AI-generated voiceovers, and final editing were combined into a cohesive scientific storytelling experience optimized for HCP website deployment and engagement.",
     result: "The AI-assisted educational video was successfully approved through MLR review and deployed within Stemline Therapeutics’ HCP website ecosystem. Following storyboard approval, the complete video was developed and finalized within just two weeks, demonstrating the speed and efficiency of the AI-assisted production workflow while maintaining scientific accuracy and visual quality. The web-optimized and visually engaging experience effectively communicated complex clinical concepts related to CLS management while supporting seamless digital integration and HCP accessibility. The initiative demonstrated the value of AI-assisted creative workflows in accelerating scientific content production and was ultimately recognized externally with a Hermes Award for innovation in healthcare communication and digital content execution.",
-    recognitions: ["Hermes Award"],
+    recognitions: [],
     testimonials: [{
       quote: "",
       author: ""
@@ -399,6 +416,8 @@ export const projects = [
     imgforfiltersection: "/sc1.png",
     imgfordetail: "/scdesk1.png",
     imgfordetailmbl: "/scdesk1.png",
+    challengeImg: "/challenge15.png",
+    slider: ["/slide14.png"],
     title: "Idorsia: Building a Launch-Ready Strategy for TRYVIO Through a Strategic AOR Partnership",
     tags: ["LAUNCH STRATEGY", "OMNICHANNEL", "SCALABILITY"],
     engagementModel: "AOR Partnership for Global Brand Launch",
@@ -423,6 +442,8 @@ export const projects = [
     imgforfiltersection: "/sc2.png",
     imgfordetail: "/scdesk2.png",
     imgfordetailmbl: "/scdesk2.png",
+    challengeImg: "/challenge16.png",
+    slider: ["/slide15.png"],
     title: "Elzonris: MedTrix as AOR for the Brand",
     tags: ["AOR", "OMNICHANNEL STRATEGY", "CONGRESS EXPERIENCE"],
     engagementModel: "Strategic Brand AOR Partnership",
