@@ -40,7 +40,7 @@ export default function Animation() {
       </div> */}
 
       {/* Mobile: BeanBackground between button and image */}
-      <div className="block lg:hidden w-full h-[280px] relative my-6 rounded-xl overflow-hidden bg-black" style={{ WebkitTransform: 'translateZ(0)', transform: 'translateZ(0)', WebkitMaskImage: '-webkit-radial-gradient(black, black)' }}>
+      <div className="block lg:hidden w-full h-[280px] relative my-6" style={{ background: '#000' }}>
         <BeanBackground className="absolute inset-0" />
       </div>
  
@@ -48,14 +48,9 @@ export default function Animation() {
  
 
         <img
-          src="/images/power-one.png"
-          alt=""
-          className="
-          w-full
-          h-auto
-          object-cover
-          block
-          "
+          src="/img/powerofone.webp"
+          alt="The Power of One"
+          className="w-full h-auto object-cover block"
         />
  
       </div>
