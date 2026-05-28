@@ -39,6 +39,7 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
         canvas.style.height = '100%';
         canvas.style.pointerEvents = 'none';
         canvas.style.zIndex = '0';
+        canvas.style.backgroundColor = 'transparent';
         container.appendChild(canvas);
 
         // Lights
@@ -87,7 +88,7 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
         // Create Beans
       
         const isMobile = window.innerWidth < 768;
-          const count = isMobile ? 500 : 600;
+          const count = isMobile ? 400 : 400;
         const TABLET_SIZE = isMobile ? 0.66 : 0.26;
 
         new GLTFLoader().load('/img/capsule.glb', (gltf) => {
@@ -176,21 +177,21 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
             }
 
             // Tracking the .spotlight element and brightening passing tablets
-            if (spotlightRef?.current) {
-                const sRect = spotlightRef.current.getBoundingClientRect();
-                const cRect = container.getBoundingClientRect();
-                const cx = sRect.left + sRect.width / 2 - cRect.left;
-                const cy = sRect.top + sRect.height / 2 - cRect.top;
-                ndc.x = (cx / cRect.width) * 2 - 1;
-                ndc.y = -(cy / cRect.height) * 2 + 1;
-                raycaster.setFromCamera(ndc, camera);
-                if (raycaster.ray.intersectPlane(plane, hitPoint)) {
-                    sectionLight.position.set(hitPoint.x, hitPoint.y, 4.0);
-                    sectionLight.intensity = THREE.MathUtils.lerp(sectionLight.intensity, 150.0, 0.05);
-                }
-            } else {
-                sectionLight.intensity = THREE.MathUtils.lerp(sectionLight.intensity, 0.0, 0.05);
-            }
+            // if (spotlightRef?.current) {
+            //     const sRect = spotlightRef.current.getBoundingClientRect();
+            //     const cRect = container.getBoundingClientRect();
+            //     const cx = sRect.left + sRect.width / 2 - cRect.left;
+            //     const cy = sRect.top + sRect.height / 2 - cRect.top;
+            //     ndc.x = (cx / cRect.width) * 2 - 1;
+            //     ndc.y = -(cy / cRect.height) * 2 + 1;
+            //     raycaster.setFromCamera(ndc, camera);
+            //     if (raycaster.ray.intersectPlane(plane, hitPoint)) {
+            //         sectionLight.position.set(hitPoint.x, hitPoint.y, 4.0);
+            //         sectionLight.intensity = THREE.MathUtils.lerp(sectionLight.intensity, 150.0, 0.05);
+            //     }
+            // } else {
+            //     sectionLight.intensity = THREE.MathUtils.lerp(sectionLight.intensity, 0.0, 0.05);
+            // }
 
             beans.forEach(bean => {
                 const { mesh, rest, vel, radialAngle, radialDist } = bean;
@@ -252,5 +253,5 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
         };
     }, []);
 
-    return <div ref={containerRef} className={className} style={{ width: '100%', height: '100%', ...style }} />;
+    return <div ref={containerRef} className={className} style={{ width: '100%', height: '100%', backgroundColor: 'transparent', ...style }} />;
 }
