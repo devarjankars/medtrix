@@ -5,6 +5,9 @@ import Animation from "@/components/Animation";
 import Image from "next/image";
 import mapImg from "../public/map.png";
 import mobile_map from "../public/mobile_map.png";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="w-[100%]  mx-auto">
@@ -26,9 +29,36 @@ export default function Home() {
           <Image src={mapImg} alt="Contact Locations" className="w-full hidden lg:block object-contain" />
           <Image src={mobile_map} alt="Contact Locations" className="w-full lg:hidden object-contain" />
 
-          <button className="mt-8 px-8 py-2 bg-[#FF3B3B] text-white rounded-full text-lg font-medium hover:bg-red-600 transition-all duration-300">
-            Contact Us
-          </button>
+           <Link href="/contact">
+        <motion.div
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
+          className="relative inline-flex w-fit items-center gap-2 px-8 py-4 mt-8 rounded-full text-white font-medium overflow-hidden cursor-pointer"
+          style={{
+            background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+            boxShadow: "0 0 18px rgba(225,37,27,0.45)",
+          }}
+        >
+          {/* shimmer sweep */}
+          <motion.span
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
+              backgroundSize: "200% 100%",
+            }}
+            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+            transition={{
+              duration: 2.5,
+              ease: "linear",
+              repeat: Infinity,
+              repeatDelay: 1.5,
+            }}
+          />
+          <span className="relative z-10">Contact Us</span>
+        </motion.div>
+      </Link>
           </div>
         </section>
 

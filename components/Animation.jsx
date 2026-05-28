@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 import BeanBackground from '@/components/BeanBackground';
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const statsData = [
   { value: "3,200+", label: "Projects Delivered" },
@@ -82,21 +84,36 @@ export default function Animation() {
         {/* If you are looking for a partner that combines the strategic depth and scale of a large agency with the agility and efficiency of a lean organization, we invite you to explore our services. */}
       </p>
  
-      <button className="
-      mt-10
-      px-8
-      py-3
-      bg-[#FF322A]
-      rounded-full
-      text-white
-      text-[18px]
-      lg:text-xl
-      font-semibold
-      hover:bg-red-600
-      transition
-      ">
-        Our Services
-      </button>
+      <Link href="/services/Commercial_Solutions">
+        <motion.div
+          whileHover={{ scale: 1.06 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
+          className="relative inline-flex w-fit items-center gap-2 px-8 py-4 mt-8 rounded-full text-white font-medium overflow-hidden cursor-pointer"
+          style={{
+            background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+            boxShadow: "0 0 18px rgba(225,37,27,0.45)",
+          }}
+        >
+          {/* shimmer sweep */}
+          <motion.span
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{
+              background:
+                "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
+              backgroundSize: "200% 100%",
+            }}
+            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+            transition={{
+              duration: 2.5,
+              ease: "linear",
+              repeat: Infinity,
+              repeatDelay: 1.5,
+            }}
+          />
+          <span className="relative z-10">Our Services</span>
+        </motion.div>
+      </Link>
  
     </div>
  

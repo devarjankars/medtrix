@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, forwardRef } from "react";
 import gsap from "gsap";
 
 const links = [
@@ -23,7 +23,7 @@ const links = [
 ];
 
 /* ── Desktop nav item ── */
-function NavItem({ label, href, items, pathname, button }) {
+const NavItem = forwardRef(function NavItem({ label, href, items, pathname, button }, ref) {
   const [open, setOpen]     = useState(false);
   const hasItems            = items && items.length > 0;
   const dropdownRef         = useRef(null);
@@ -49,7 +49,7 @@ function NavItem({ label, href, items, pathname, button }) {
 
   if (button) {
     return (
-      <li>
+      <li ref={ref}>
         <Link
           href={href}
           className="relative inline-flex items-center gap-1.5 bg-[#E1251B] hover:bg-[#c41f17] text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors duration-200 shadow-[0_0_18px_rgba(225,37,27,0.35)] hover:shadow-[0_0_26px_rgba(225,37,27,0.55)]"
@@ -62,6 +62,7 @@ function NavItem({ label, href, items, pathname, button }) {
 
   return (
     <li
+      ref={ref}
       className="relative"
       onMouseEnter={() => hasItems && setOpen(true)}
       onMouseLeave={() => hasItems && setOpen(false)}
@@ -153,7 +154,7 @@ function NavItem({ label, href, items, pathname, button }) {
       )}
     </li>
   );
-}
+});
 
 /* ── Mobile menu ── */
 function MobileMenu({ pathname }) {
@@ -296,9 +297,12 @@ export default function Navbar() {
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-7">
           {links.map((link, i) => (
-            <li key={link.label} ref={(el) => (linksRef.current[i] = el)} className="list-none">
-              <NavItem {...link} pathname={pathname} />
-            </li>
+            <NavItem
+              key={link.label}
+              {...link}
+              pathname={pathname}
+              ref={(el) => (linksRef.current[i] = el)}
+            />
           ))}
         </ul>
 
