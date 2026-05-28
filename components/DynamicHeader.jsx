@@ -100,6 +100,8 @@ export default function DynamicHeader({
   desktopBg = "/bg",
   mobileImg = "/mblbg.png",
   statsCards = [],
+  desktopImgHeight,
+  desktopImgAlign = 'bottom',
 }) {
   // accept both imported image objects ({ src: "..." }) and plain strings
   const desktopBgSrc = typeof desktopBg === "string" ? desktopBg : desktopBg?.src;
@@ -128,12 +130,16 @@ export default function DynamicHeader({
         <img
           src={desktopBgSrc}
           alt={graphicAlt}
-          className="w-full h-full object-cover object-center"
+          className="w-full object-cover"
+          style={desktopImgHeight
+            ? { height: desktopImgHeight, position: 'absolute', [desktopImgAlign]: 0, left: 0 }
+            : { height: '100%', objectFit: 'cover' }
+          }
         />
       </motion.div>
 
       {/* ── MAIN GRID ─────────────────────────────────────────────────────── */}
-      <div className="relative z-10 w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-[600px_55%] gap-1 items-center py-[100px] ">
+      <div className="relative z-10 w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-[600px_55%] gap-1 items-center py-20  ">
 
         {/* LEFT COLUMN — 50% */}
         <motion.div
