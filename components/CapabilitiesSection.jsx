@@ -29,7 +29,7 @@ const tabContent = {
   },
   "Websites": {
     mediaType: "image",
-    mediaSrc: "/ourcap1.jpg",
+    mediaSrc: "/ourcap2.jpg",
     headline: "Websites",
     desc: "End-to-end capability for design, development, SEO, deployment, maintenance, and omnichannel integration of websites and microsites.",
     points: [
@@ -64,7 +64,7 @@ const tabContent = {
   },
   "Interactive Platforms": {
     mediaType: "image",
-    mediaSrc: "/ourcap2.jpg",
+    mediaSrc: "/ourcap1.jpg",
     headline: "Interactive Platforms",
     desc: "Custom applications and data-driven platforms that enable informed decision-making and effective engagement.",
     points: [

@@ -1,43 +1,99 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useInView } from "framer-motion";
+import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const ease = [0.22, 1, 0.36, 1];
+gsap.registerPlugin(ScrollTrigger);
 
 const inputClass =
   "w-full bg-[#0f0f0f] border border-[#2a2a2a] rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-[#E1251B] focus:ring-1 focus:ring-[#E1251B]/40 transition-all duration-200";
 
 export default function Contact() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.1 });
   const [submitted, setSubmitted] = useState(false);
+
+  /* refs for GSAP */
+  const headerRef  = useRef(null);
+  const formRef    = useRef(null);
+  const mapRef     = useRef(null);
+  const cardsRef   = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+
+      /* Header — slides down on mount */
+      gsap.fromTo(
+        headerRef.current,
+        { opacity: 0, y: -30 },
+        { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", delay: 0.1 }
+      );
+
+      /* Form fields — stagger up on scroll */
+      gsap.fromTo(
+        formRef.current?.querySelectorAll(".form-field"),
+        { opacity: 0, y: 36 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.65,
+          stagger: 0.09,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: formRef.current,
+            start: "top 80%",
+            once: true,
+          },
+        }
+      );
+
+      /* Map — slides in from right */
+      gsap.fromTo(
+        mapRef.current,
+        { opacity: 0, x: 60, scale: 0.97 },
+        {
+          opacity: 1, x: 0, scale: 1,
+          duration: 0.9,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: mapRef.current,
+            start: "top 80%",
+            once: true,
+          },
+        }
+      );
+
+      /* Office cards — stagger up */
+      gsap.fromTo(
+        cardsRef.current?.querySelectorAll(".office-card"),
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.55,
+          stagger: 0.12,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: cardsRef.current,
+            start: "top 85%",
+            once: true,
+          },
+        }
+      );
+
+    });
+
+    return () => ctx.revert();
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
     setSubmitted(true);
   }
 
-  const containerVariants = {
-    hidden: {},
-    visible: { transition: { staggerChildren: 0.1, delayChildren: 0.05 } },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 28 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease } },
-  };
-
   return (
     <section className="w-[90%] md:w-[80%] mx-auto py-16 md:py-24">
 
       {/* ── Header ── */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease }}
-        className="mb-12 md:mb-16"
-      >
+      <div ref={headerRef} className="mb-12 md:mb-16 opacity-0">
         <div
           className="relative inline-block rounded-full max-w-fit p-px mb-6"
           style={{
@@ -56,25 +112,19 @@ export default function Contact() {
         <p className="text-zinc-400 mt-4 text-base md:text-lg max-w-xl">
           Have a question or want to work with us? We'd love to hear from you.
         </p>
-      </motion.div>
+      </div>
 
-      {/* ── Two-column layout ── */}
-      <motion.div
-        ref={ref}
-        variants={containerVariants}
-        initial="hidden"
-        animate={inView ? "visible" : "hidden"}
-        className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start"
-      >
+      {/* ── Two-column layout: form left, map right (wider) ── */}
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-14 items-start">
 
         {/* ── LEFT: Form ── */}
-        <motion.div variants={itemVariants}>
+        <div ref={formRef}>
           {submitted ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5, ease }}
-              className="flex flex-col items-center justify-center text-center py-20 gap-4"
+              transition={{ duration: 0.5 }}
+              className="flex flex-col items-center justify-center text-center py-24 gap-4"
             >
               <div className="w-16 h-16 rounded-full bg-[#E1251B]/15 flex items-center justify-center mb-2">
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -87,43 +137,38 @@ export default function Contact() {
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
 
-              {/* Name + Company row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <motion.div variants={itemVariants} className="flex flex-col gap-1.5">
+                <div className="form-field flex flex-col gap-1.5 opacity-0">
                   <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Name</label>
                   <input required type="text" placeholder="Your name" className={inputClass} />
-                </motion.div>
-                <motion.div variants={itemVariants} className="flex flex-col gap-1.5">
+                </div>
+                <div className="form-field flex flex-col gap-1.5 opacity-0">
                   <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Company</label>
                   <input type="text" placeholder="Your company" className={inputClass} />
-                </motion.div>
+                </div>
               </div>
 
-              {/* Email */}
-              <motion.div variants={itemVariants} className="flex flex-col gap-1.5">
+              <div className="form-field flex flex-col gap-1.5 opacity-0">
                 <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Email</label>
                 <input required type="email" placeholder="you@company.com" className={inputClass} />
-              </motion.div>
+              </div>
 
-              {/* Subject */}
-              <motion.div variants={itemVariants} className="flex flex-col gap-1.5">
+              <div className="form-field flex flex-col gap-1.5 opacity-0">
                 <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Subject</label>
                 <input type="text" placeholder="How can we help?" className={inputClass} />
-              </motion.div>
+              </div>
 
-              {/* Message */}
-              <motion.div variants={itemVariants} className="flex flex-col gap-1.5">
+              <div className="form-field flex flex-col gap-1.5 opacity-0">
                 <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Message</label>
                 <textarea
                   required
-                  rows={5}
+                  rows={6}
                   placeholder="Tell us about your project..."
                   className={`${inputClass} resize-none`}
                 />
-              </motion.div>
+              </div>
 
-              {/* Submit */}
-              <motion.div variants={itemVariants}>
+              <div className="form-field opacity-0">
                 <motion.button
                   type="submit"
                   whileHover={{ scale: 1.04 }}
@@ -135,7 +180,6 @@ export default function Contact() {
                     boxShadow: "0 0 20px rgba(225,37,27,0.4)",
                   }}
                 >
-                  {/* shimmer */}
                   <motion.span
                     className="absolute inset-0 rounded-full pointer-events-none"
                     style={{
@@ -150,65 +194,59 @@ export default function Contact() {
                     className="relative z-10"
                     animate={{ x: [0, 4, 0] }}
                     transition={{ duration: 1.2, ease: "easeInOut", repeat: Infinity }}
-                  >
-                    →
-                  </motion.span>
+                  >→</motion.span>
                 </motion.button>
-              </motion.div>
+              </div>
 
             </form>
           )}
-        </motion.div>
+        </div>
 
-        {/* ── RIGHT: Map + info ── */}
-        <motion.div variants={itemVariants} className="flex flex-col gap-6 order-first lg:order-last">
+        {/* ── RIGHT: Map + info (wider column, sticky on desktop) ── */}
+        <div className="flex flex-col gap-6 order-first lg:order-last lg:sticky lg:top-24" ref={cardsRef}>
 
-          {/* Map image */}
-          <motion.div
-            className="relative rounded-2xl overflow-hidden border border-white/8"
-            whileHover={{ scale: 1.01 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+          {/* Map */}
+          <div
+            ref={mapRef}
+            className="relative rounded-2xl overflow-hidden border border-white/10 opacity-0 "
           >
-            {/* desktop map */}
             <img
               src="/map.png"
               alt="Medtrix office locations"
-              className="w-full h-auto hidden md:block"
+              className="w-full  object-contain  md:block "
             />
-            {/* mobile map */}
             <img
               src="/mobile_map.png"
               alt="Medtrix office locations"
               className="w-full h-auto block md:hidden"
             />
-            {/* subtle red glow overlay */}
-            <div
-              className="absolute inset-0 pointer-events-none rounded-2xl"
-              style={{ boxShadow: "inset 0 0 40px rgba(225,37,27,0.08)" }}
-            />
-          </motion.div>
+            {/* animated pulse dot — Bangalore */}
+            <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "38%", left: "67%" }}>
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
+              </span>
+            </div>
+            {/* animated pulse dot — New Jersey */}
+            <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "52%", left: "24%" }}>
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
+              </span>
+            </div>
+          </div>
 
-          {/* Office info cards */}
+          {/* Office cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
-              {
-                city: "Bangalore",
-                country: "India",
-                address: "Medtrix Healthcare Pvt. Ltd.",
-                icon: "🇮🇳",
-              },
-              {
-                city: "New Jersey",
-                country: "USA",
-                address: "Medtrix Healthcare Inc.",
-                icon: "🇺🇸",
-              },
+              { city: "Bangalore", country: "India",   address: "Medtrix Healthcare Pvt. Ltd.", icon: "🇮🇳" },
+              { city: "New Jersey", country: "USA",    address: "Medtrix Healthcare Inc.",      icon: "🇺🇸" },
             ].map((office) => (
               <motion.div
                 key={office.city}
                 whileHover={{ y: -3 }}
                 transition={{ duration: 0.25 }}
-                className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-xl p-5 flex flex-col gap-1"
+                className="office-card opacity-0 bg-[#0f0f0f] border border-[#1e1e1e] rounded-xl p-5 flex flex-col gap-1"
               >
                 <span className="text-xl mb-1">{office.icon}</span>
                 <h4 className="text-white font-semibold text-sm">{office.city}, {office.country}</h4>
@@ -222,7 +260,7 @@ export default function Contact() {
             href="mailto:info@medtrixhealthcare.com"
             whileHover={{ x: 4 }}
             transition={{ duration: 0.2 }}
-            className="inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group"
+            className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group"
           >
             <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -233,8 +271,8 @@ export default function Contact() {
             info@medtrixhealthcare.com
           </motion.a>
 
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
 
     </section>
   );
