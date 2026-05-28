@@ -270,17 +270,19 @@ export default function Navbar() {
     }
   }, []);
 
+  const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
+
   return (
     <nav className="w-full bg-[#000] fixed top-0 left-0 right-0 z-50">
       <div
         className="w-[90%] md:w-[80%] mx-auto flex items-center justify-between"
-        style={{ padding: scrolled ? '14px 0' : '26px 0', transition: 'padding 0.6s cubic-bezier(0.4,0,0.2,1)' }}
+        style={isDesktop ? { padding: scrolled ? '14px 0' : '26px 0', transition: 'padding 0.6s cubic-bezier(0.4,0,0.2,1)' } : { padding: '14px 0' }}
       >
         <Link href="/">
           <img
             src="/logo.png"
             alt="Medtrix Logo"
-            style={{ width: scrolled ? '130px' : '180px', transition: 'width 0.6s cubic-bezier(0.4,0,0.2,1)' }}
+            style={isDesktop ? { width: scrolled ? '130px' : '180px', transition: 'width 0.6s cubic-bezier(0.4,0,0.2,1)' } : { width: '130px' }}
           />
         </Link>
 

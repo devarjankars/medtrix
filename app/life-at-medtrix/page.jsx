@@ -55,7 +55,7 @@ export default function LifeAtMedtrixPage() {
               }}
             >
               <span className="inline-block text-[14px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
-                LIFE AT MEDTRIX
+                LIFE @ MEDTRIX
               </span>
             </div>
 
