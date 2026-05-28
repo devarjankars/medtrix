@@ -28,7 +28,7 @@ const footerData = [
     links: [],
   },
   {
-    title: "Life@Medtrix",
+    title: "Life @ Medtrix",
     href: "/life-at-medtrix",
     links: [],
   },

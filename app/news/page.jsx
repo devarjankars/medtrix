@@ -32,7 +32,7 @@ export default function NewsPage() {
   const [selected, setSelected] = useState(null);
 
   return (
-    <section className="w-[90%] md:w-[80%] mx-auto py-10 min-h-screen">
+    <section className="w-[90%] md:w-[80%] mx-auto py-20 min-h-screen">
       {selected ? (
         <NewsDetails news={selected} onBack={() => setSelected(null)} />
       ) : (

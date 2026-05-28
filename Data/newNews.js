@@ -42,20 +42,20 @@ export const newsData = [
       "This recognition is not just a badge; it reflects the everyday experiences of our team members — the sense of belonging, the opportunities to grow, and the environment of respect and inclusion that we strive to build every day.",
       "We are proud of this achievement and remain committed to making MedTrix an even better place to work for every individual who is part of our journey.",
     ],
-    images: ["/news3.png"],
+    images: ["/news8.png"],
   },
    {
     id: 3,
     date: "March 2026",
     category: "Award",
-    title: "Christmas 2026 ",
+    title: "Christmas 2025 ",
     thumbnail: "/news7.png",
     body: [
       "MedTrix has been certified as a Great Place to Work® for the third consecutive year — a testament to our people-first culture and the trust our employees place in the organisation.",
       "This recognition is not just a badge; it reflects the everyday experiences of our team members — the sense of belonging, the opportunities to grow, and the environment of respect and inclusion that we strive to build every day.",
       "We are proud of this achievement and remain committed to making MedTrix an even better place to work for every individual who is part of our journey.",
     ],
-    images: ["/news10.png"],
+    images: ["/news7.png"],
   },
   
   

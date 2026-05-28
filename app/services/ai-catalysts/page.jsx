@@ -33,12 +33,13 @@ export default function page() {
     <main className="relative ">
       <DynamicHeader
         tagText="AI CATALYSTS"
-        
+        desktopImgHeight={"95%"}
+        desktopImgAlign={"bottom"}
       title={  [
   "Intelligent Catalysts for Content, Compliance, and Engagement"
 ]
      }     paragraphs={strategyParagraphs}
-        desktopBg={"/mAideskbg.png"}
+        desktopBg={"/mAideskb.png"}
          mobileImg={"/maimbl.png"}
       />
       <div className='w-[90%] md:w-[80%] mx-auto'>
