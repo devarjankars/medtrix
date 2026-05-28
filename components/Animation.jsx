@@ -12,14 +12,14 @@ const statsData = [
 // added something here to test the commit and push functionality of git
 export default function Animation() {
  
-  const spotlightRef = useRef(null);
+
 
   return (
     <div className="overflow-hidden relative h-auto" style={{ isolation: 'isolate' }}>
       <BeanBackground
         className="absolute hidden lg:block  inset-0 pointer-events-none z-0"
         style={{ pointerEvents: 'none' }}
-        spotlightRef={spotlightRef}
+       
       />
       <section className="relative px-0 lg:px-0 py-[50px] lg:py-[100px] overflow-hidden z-1 w-[90%] md:w-[80%] mx-auto">
  
@@ -30,8 +30,8 @@ export default function Animation() {
  
     {/* LEFT IMAGE */}
     <div 
-      ref={spotlightRef}
-      className="spotlight relative flex flex-col items-start h-full z-10"
+   
+      className=" relative flex flex-col items-start h-full z-10"
     
     >
  
