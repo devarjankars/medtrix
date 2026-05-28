@@ -19,7 +19,7 @@ export default function page() {
         tagText="STRATEGY & CONSULTING"
         title="Strategy That Adapts to Your Needs "
         paragraphs={strategyParagraphs}
-        desktopBg={"/stdeskbg.png"}
+        desktopBg={"/stdeskb.png"}
          mobileImg={"/stmbl.png"}
       />
       <div className="py-5 w-[90%] md:w-[80%] mx-auto">

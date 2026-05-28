@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+
 export default function JobCard({ job, onClick }) {
   const [saved, setSaved] = useState(false);
 
@@ -38,7 +39,7 @@ export default function JobCard({ job, onClick }) {
       <div>
         <button
           onClick={() => onClick?.(job)}
-          className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200"
+          className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200 cursor-pointer"
         >
           Read More
         </button>

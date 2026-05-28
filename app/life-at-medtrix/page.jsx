@@ -38,7 +38,7 @@ export default function LifeAtMedtrixPage() {
 
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
-      <section className="w-[90%] md:w-[80%] mx-auto py-10">
+      <section className="w-[90%] md:w-[80%] mx-auto py-20">
 
         {selected ? (
           <NewsDetails news={selected} onBack={() => setSelected(null)} />
@@ -55,7 +55,7 @@ export default function LifeAtMedtrixPage() {
               }}
             >
               <span className="inline-block text-[14px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
-                LIFE AT MEDTRIX
+                LIFE @ MEDTRIX
               </span>
             </div>
 

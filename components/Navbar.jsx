@@ -18,7 +18,7 @@ const links = [
   },
   { label: "Our Work",      href: "/our-work" },
   { label: "News & Updates", href: "/news" },
-  { label: "Life@Medtrix",  href: "/life-at-medtrix" },
+  { label: "Life @ Medtrix",  href: "/life-at-medtrix" },
   { label: "Contact Us",    href: "/contact", button: true },
 ];
 
@@ -157,8 +157,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
 });
 
 /* ── Mobile menu ── */
-function MobileMenu({ pathname, onClose }) {
-  const [openSection, setOpenSection] = useState(null);
+function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -177,8 +176,9 @@ function MobileMenu({ pathname, onClose }) {
       className="md:hidden bg-[#000000] px-6 pb-6 flex flex-col gap-1 min-h-screen relative"
     >
       {links.map(({ label, href, items, button }) => {
-        const hasItems = items && items.length > 0;
-        const isOpen   = openSection === label;
+        const hasItems    = items && items.length > 0;
+        const isOpen       = openSection === label;
+        const isChildActive = hasItems && items.some((i) => pathname === i.href);
 
         if (button) {
           return (
@@ -197,7 +197,7 @@ function MobileMenu({ pathname, onClose }) {
               onClick={() => hasItems ? setOpenSection(isOpen ? null : label) : null}
             >
               {hasItems ? (
-                <span className={`text-base font-semibold ${isOpen ? "text-white" : "text-white/75"}`}>
+                <span className={`text-base font-semibold ${isOpen || isChildActive ? "text-[#E1251B]" : "text-white/75"}`}>
                   {label}
                 </span>
               ) : (
@@ -248,6 +248,7 @@ function MobileMenu({ pathname, onClose }) {
 export default function Navbar() {
   const pathname          = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openSection, setOpenSection] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const navRef            = useRef(null);
   const linksRef          = useRef([]);
@@ -258,6 +259,30 @@ export default function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  /* Lock body scroll when mobile menu is open (iOS safe) */
+  useEffect(() => {
+    if (menuOpen) {
+      const scrollY = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.width = '100%';
+      document.body.style.overflowY = 'scroll';
+    } else {
+      const scrollY = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
+      window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    }
+    return () => {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      document.body.style.overflowY = '';
+    };
+  }, [menuOpen]);
 
   /* Mount: stagger nav links in */
   useEffect(() => {
@@ -270,17 +295,19 @@ export default function Navbar() {
     }
   }, []);
 
+  const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
+
   return (
     <nav className="w-full bg-[#000] fixed top-0 left-0 right-0 z-50">
       <div
         className="w-[90%] md:w-[80%] mx-auto flex items-center justify-between"
-        style={{ padding: scrolled ? '14px 0' : '26px 0', transition: 'padding 0.6s cubic-bezier(0.4,0,0.2,1)' }}
+        style={isDesktop ? { padding: scrolled ? '14px 0' : '26px 0', transition: 'padding 0.6s cubic-bezier(0.4,0,0.2,1)' } : { padding: '14px 0' }}
       >
         <Link href="/">
           <img
             src="/logo.png"
             alt="Medtrix Logo"
-            style={{ width: scrolled ? '130px' : '180px', transition: 'width 0.6s cubic-bezier(0.4,0,0.2,1)' }}
+            style={isDesktop ? { width: scrolled ? '130px' : '180px', transition: 'width 0.6s cubic-bezier(0.4,0,0.2,1)' } : { width: '130px' }}
           />
         </Link>
 
@@ -318,7 +345,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && <MobileMenu pathname={pathname} onClose={() => setMenuOpen(false)} />}
+      {menuOpen && <MobileMenu pathname={pathname} onClose={() => setMenuOpen(false)} openSection={openSection} setOpenSection={setOpenSection} />}
     </nav>
   );
 }

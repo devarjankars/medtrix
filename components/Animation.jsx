@@ -5,7 +5,7 @@ import Link from "next/link";
 const statsData = [
   { value: "3,200+", label: "Projects Delivered" },
   { value: "200,000+", label: "HCPs Engaged" },
-  { value: "100,000+", label: "Assets Created" },
+  { value: "100,00+", label: "Assets Created" },
 ];
 
 export default function Animation() {
@@ -67,7 +67,7 @@ export default function Animation() {
 
       <section className="relative px-0 lg:px-0 lg:pb-[100px] pb-[50px] overflow-hidden isolate w-[90%] md:w-[80%] mx-auto mt-0 lg:mx-auto z-20">
         <div className="px-0 sm:px-6 lg:px-0 mb-4 mt-4">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 lg:gap-20">
             {statsData.map((stat, index) => (
               <div
                 key={index}

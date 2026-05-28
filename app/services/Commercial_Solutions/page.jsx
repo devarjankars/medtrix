@@ -17,7 +17,9 @@ export default function Commercial_Solutions() {
         tagText="COMMERCIAL SOLUTIONS"
         title="Capability to achieve transformational outcomes"
          mobileImg={"/csmbl.png"}
-         desktopBg={"/csbg.png"}
+         desktopImgHeight={"700px"}
+         desktopImgAlign={"top"}
+         desktopBg={"/csbg.jpg"}
         paragraphs={strategyParagraphs}
         statsCards={[
           {

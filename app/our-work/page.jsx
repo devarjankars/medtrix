@@ -76,7 +76,7 @@ function WorkPageInner() {
   );
 
   return (
-    <section className="w-[90%] md:w-[80%] mx-auto py-4 md:py-20">
+    <section className="w-[90%] md:w-[80%] mx-auto py-4 lg:py-20">
 
       {/* PAGE HEADING */}
       <div
