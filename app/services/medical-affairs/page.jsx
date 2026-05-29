@@ -49,12 +49,7 @@ const sections = [
         ],
       },
       {
-<<<<<<< HEAD
         title: "Patient Education and Engagement",
-=======
-        title: "Patient Education & Engagement",
-        img: "/medcom4.png",
->>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Patient education brochures and disease awareness",
           "Patient decision aids and shared decision-making tools",
@@ -70,12 +65,7 @@ const sections = [
     cols: 3,
     items: [
       {
-<<<<<<< HEAD
         title: "Medical Information and Scientific Support",
-=======
-        title: "Medical Information & Scientific Support",
-        img: "/maservice1.png",
->>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Medical information center operations",
           "Response development to unsolicited HCP inquiries",
@@ -84,12 +74,7 @@ const sections = [
         ],
       },
       {
-<<<<<<< HEAD
         title: "Medical Strategy and Planning",
-=======
-        title: "Medical Strategy & Planning",
-        img: "/maservice2.png",
->>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Comprehensive medical affairs strategic plans",
           "Key opinion leader (KOL) mapping strategy",
@@ -132,12 +117,7 @@ const sections = [
     cols: 3,
     items: [
       {
-<<<<<<< HEAD
         title: "Launch Planning and Execution",
-=======
-        title: "Launch Planning & Execution",
-        img: "/lifecycle1.png",
->>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Integrated strategy (med + comm)",
           "Timeline and milestone planning",
@@ -146,12 +126,7 @@ const sections = [
         ],
       },
       {
-<<<<<<< HEAD
         title: "Product Lifecycle and Sustained Support",
-=======
-        title: "Product Lifecycle & Sustained Support",
-        img: "/lifecycle2.png",
->>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Ongoing medical information services",
           "Continued HCP and patient education",
