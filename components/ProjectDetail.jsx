@@ -100,6 +100,30 @@ function AnimatedParagraph({ text, className = "", delay = 0 }) {
   );
 }
 
+// ── Red bullet list ───────────────────────────────────────────────────────────
+function BulletList({ items }) {
+  return (
+    <motion.ul
+      className="flex flex-col gap-4"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
+    >
+      {items.map((item, i) => (
+        <motion.li
+          key={i}
+          variants={{ hidden: { opacity: 0, x: -24 }, visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease } } }}
+          className="flex items-center gap-4 text-[#A6A6A6] text-[18px] leading-[1.9]"
+        >
+          <span className="w-2 h-2 rounded-full bg-[#E1251B] shrink-0" />
+          {item}
+        </motion.li>
+      ))}
+    </motion.ul>
+  );
+}
+
 // ── Glow divider ─────────────────────────────────────────────────────────────
 function GlowDivider() {
   return (
@@ -376,11 +400,15 @@ export default function ProjectDetail({ project, onBack }) {
               <div className="hidden lg:block" />
             )}
 
-            <AnimatedParagraph
-              text={project.challenge}
-              className="text-[20px] leading-[1.9] text-[#A6A6A6]"
-              delay={0.1}
-            />
+            {Array.isArray(project.challenge?.content) ? (
+              <BulletList items={project.challenge.content} />
+            ) : (
+              <AnimatedParagraph
+                text={project.challenge}
+                className="text-[20px] leading-[1.9] text-[#A6A6A6]"
+                delay={0.1}
+              />
+            )}
           </div>
 
           <GlowDivider />
@@ -398,11 +426,15 @@ export default function ProjectDetail({ project, onBack }) {
             </Reveal>
           )}
 
-          <AnimatedParagraph
-            text={project.solution}
-            className="text-[18px] leading-[1.9] text-[#A6A6A6] px-6 md:px-0 py-0"
-            delay={0.1}
-          />
+          {Array.isArray(project.solution?.content) ? (
+            <BulletList items={project.solution.content} />
+          ) : (
+            <AnimatedParagraph
+              text={project.solution}
+              className="text-[18px] leading-[1.9] text-[#A6A6A6] px-6 md:px-0 py-0"
+              delay={0.1}
+            />
+          )}
 
           <GlowDivider />
         </section>
@@ -415,44 +447,16 @@ export default function ProjectDetail({ project, onBack }) {
 
           <Reveal delay={0.05}>
             <div className="border border-[#1f1f1f] rounded-2xl px-6 md:px-12 py-14 flex flex-col gap-10">
-              <AnimatedParagraph
-                text={project.result}
-                className="text-[18px] leading-[1.9] text-[#A6A6A6]"
-              />
-
-              {project.desc?.length > 0 && (
-                <motion.ul
-                  className="flex flex-col gap-1"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.1 }}
-                  variants={{
-                    hidden: {},
-                    visible: { transition: { staggerChildren: 0.1 } },
-                  }}
-                >
-                  {project.desc.map((item, i) => (
-                    <motion.li
-                      key={i}
-                      variants={{
-                        hidden: { opacity: 0, x: -24 },
-                        visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease } },
-                      }}
-                      className="flex items-start gap-4 text-[#A6A6A6] text-lg"
-                    >
-                      {/* animated dot */}
-                      <motion.span
-                        className="mt-2.5 w-2 h-2 rounded-full bg-[#705c5b] shrink-0"
-                        variants={{
-                          hidden: { scale: 0 },
-                          visible: { scale: 1, transition: { duration: 0.3, ease } },
-                        }}
-                      />
-                      {item}
-                    </motion.li>
-                  ))}
-                </motion.ul>
+              {Array.isArray(project.result?.content) ? (
+                <BulletList items={project.result.content} />
+              ) : (
+                <AnimatedParagraph
+                  text={project.result}
+                  className="text-[18px] leading-[1.9] text-[#A6A6A6]"
+                />
               )}
+
+              {project.desc?.length > 0 && <BulletList items={project.desc} />}
             </div>
           </Reveal>
 

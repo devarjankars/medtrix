@@ -29,7 +29,7 @@ const sections = [
         title: "Publication Extenders: Digital Amplification Suite",
         points: [
           "Visual Abstracts: graphical summaries optimized for social media",
-          "Video Abstracts: authors explain study background & significance",
+          "Video Abstracts: authors explain study background and significance",
           "Podcasts: audio summaries for multitasking physicians",
           "Animated Summaries: 2D/3D animations explaining complex MOA",
           "Infographics: visual data stories for medical portals",
@@ -39,20 +39,20 @@ const sections = [
         title: "Healthcare Provider Communications",
         points: [
           "Peer-reviewed journal article reprints",
-          "Conference presentations & slide decks",
+          "Conference presentations and slide decks",
           "Poster and e-poster design",
           "Live/Virtual symposia and webinars",
           "Digital learning platforms",
         ],
       },
       {
-        title: "Patient Education & Engagement",
+        title: "Patient Education and Engagement",
         points: [
-          "Patient education brochures & disease awareness",
-          "Patient decision aids & shared decision-making tools",
+          "Patient education brochures and disease awareness",
+          "Patient decision aids and shared decision-making tools",
           "Multimedia content (video, animation, interactive)",
-          "Patient mobile apps & digital health tools",
-          "Social media strategy & content development",
+          "Patient mobile apps and digital health tools",
+          "Social media strategy and content development",
         ],
       },
     ],
@@ -62,16 +62,16 @@ const sections = [
     cols: 3,
     items: [
       {
-        title: "Medical Information & Scientific Support",
+        title: "Medical Information and Scientific Support",
         points: [
           "Medical information center operations",
           "Response development to unsolicited HCP inquiries",
-          "Scientific literature monitoring & trend analysis",
+          "Scientific literature monitoring and trend analysis",
           "Evidence-based response protocols",
         ],
       },
       {
-        title: "Medical Strategy & Planning",
+        title: "Medical Strategy and Planning",
         points: [
           "Comprehensive medical affairs strategic plans",
           "Key opinion leader (KOL) mapping strategy",
@@ -111,21 +111,21 @@ const sections = [
     cols: 3,
     items: [
       {
-        title: "Launch Planning & Execution",
+        title: "Launch Planning and Execution",
         points: [
           "Integrated strategy (med + comm)",
-          "Timeline & milestone planning",
+          "Timeline and milestone planning",
           "Medical education initiation",
           "Publication strategy execution",
         ],
       },
       {
-        title: "Product Lifecycle & Sustained Support",
+        title: "Product Lifecycle and Sustained Support",
         points: [
           "Ongoing medical information services",
           "Continued HCP and patient education",
           "Competitive response strategy",
-          "Safety surveillance & post-marketing",
+          "Safety surveillance and post-marketing",
         ],
       },
       {
@@ -140,7 +140,7 @@ const sections = [
     ],
   },
   {
-    label: "Integration & Special Services",
+    label: "Integration and Special Services",
     cols: 2,
     items: [
       {
@@ -153,7 +153,7 @@ const sections = [
         ],
       },
       {
-        title: "Medical Review & Quality Assurance",
+        title: "Medical Review and Quality Assurance",
         points: [
           "Promotional claim substantiation and review",
           "Comparative claim validation and risk assessment",
@@ -164,7 +164,7 @@ const sections = [
     ],
   },
   {
-    label: "Technology & Digital Solutions",
+    label: "Technology and Digital Solutions",
     cols: 3,
     items: [
       {
@@ -176,7 +176,7 @@ const sections = [
         ],
       },
       {
-        title: "Mobile Apps & Web Platforms",
+        title: "Mobile Apps and Web Platforms",
         points: [
           "Healthcare provider portals and engagement platforms",
           "Patient mobile applications and digital tools",
@@ -184,7 +184,7 @@ const sections = [
         ],
       },
       {
-        title: "AI & Automation",
+        title: "AI and Automation",
         points: [
           "Literature mining and evidence synthesis automation",
           "Chatbot and virtual assistant for medical inquiries",

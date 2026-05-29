@@ -23,7 +23,7 @@ export default function Commercial_Solutions() {
         paragraphs={strategyParagraphs}
         statsCards={[
           {
-            value: "1000,00+",
+            value: "100,00+",
             label: "Assets Created",
           },
           {

@@ -21,9 +21,9 @@ const tabContent = {
     headline: "Experience",
     desc: "Immersive and stunning experiential solutions for communication at Congresses, Symposia, and meetings that deliver engaging, compliant, and scalable digital experiences",
     points: [
-      { title: "Multi-screen LED experiences:", desc: "Synchronized engagement solutions for Congresses" },
-      { title: "Immersive experiences:", desc: "Large-screen and HMD-driven experiences for individual and group engagement" },
-      { title: "Device-independent experiences:", desc: "Browser-based scalable experiences across devices" },
+      { title: "Multi-Screen LED Experiences", desc: "Synchronized engagement solutions for Congresses" },
+      { title: "Immersive Experiences", desc: "Large-screen and HMD-driven experiences for individual and group engagement" },
+      { title: "Device-Independent Experiences", desc: "Browser-based scalable experiences across devices" },
     ],
     caseStudy: null,
   },
@@ -33,9 +33,9 @@ const tabContent = {
     headline: "Websites",
     desc: "End-to-end capability for design, development, SEO, deployment, maintenance, and omnichannel integration of websites and microsites",
     points: [
-      { title: "Audience Expertise:", desc: "Websites across brand, HCP, patient, disease education, and medical affairs audiences" },
-      { title: "CMS & Platforms:", desc: "Expertise across Drupal, WordPress, Adobe Experience Manager, and headless CMS platforms" },
-      { title: "Compliance & Integrations:", desc: "Capabilities across GDPR/HIPAA/SOC2 compliance and Veeva PromoMats/Engage integrations" },
+      { title: "Audience Expertise", desc: "Websites across brand, HCP, patient, disease education, and medical affairs audiences" },
+      { title: "CMS & Platforms", desc: "Expertise across Drupal, WordPress, Adobe Experience Manager, and headless CMS platforms" },
+      { title: "Compliance & Integrations", desc: "Capabilities across GDPR/HIPAA/SOC2 compliance and Veeva PromoMats/Engage Integrations" },
     ],
     caseStudy: null,
   },
@@ -45,9 +45,9 @@ const tabContent = {
     headline: "Videos",
     desc: "Video development capabilities to produce compelling narratives using the whole spectrum of video animation style",
     points: [
-      { title: "2D and 3D videos:", desc: "Full-scale production capabilities for 2D and 3D video content of varying complexity of animation" },
-      { title: "Live action videos:", desc: "Planning, production, and post-production of KOL and patient videos" },
-      { title: "Multimodal videos:", desc: "Video content deployed as standard videos and immersive AR/VR experiences" },
+      { title: "2D and 3D Videos", desc: "Full-scale production capabilities for 2D and 3D video content of varying complexity of animation" },
+      { title: "Live Action Videos", desc: "Planning, production, and post-production of KOL and patient videos" },
+      { title: "Multimodal Videos", desc: "Video content deployed as standard videos and immersive AR/VR experiences" },
     ],
     caseStudy: null,
   },
@@ -57,8 +57,8 @@ const tabContent = {
     headline: "3D Content, MOA/MOD",
     desc: "3D mechanism of action (MOA) and mechanism of disease (MOD) videos, developed by seasoned 3D artists and guided by medical experts",
     points: [
-      { title: "MOA and MOD videos:", desc: "Hyper realistic and scientifically accurate structures and animations" },
-      { title: "3D content development:", desc: "3D content development for integration into banners, slides, detail aids, websites etc." },
+      { title: "MOA and MOD Videos", desc: "Hyper realistic and scientifically accurate structures and animations" },
+      { title: "3D Content Development", desc: "3D content development for integration into banners, slides, detail aids, websites etc." },
     ],
     caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work?project=merck-keytruda-mod" },
   },
@@ -66,11 +66,11 @@ const tabContent = {
     mediaType: "image",
     mediaSrc: "/ourcap1.jpg",
     headline: "Interactive Platforms",
-    desc: "Custom applications and data-driven platforms that enable informed decision-making and effective engagement.",
+    desc: "Custom applications and data-driven platforms that enable informed decision-making and effective engagement",
     points: [
-      { title: "Interactive guidelines and management algorithms:", desc: "Applications that support and augment clinical decision making" },
-      { title: "Product and data-driven applications:", desc: "Unified data and product portfolio showcase platforms for web and interactive screens" },
-      { title: "Webcast and Symposia platform:", desc: "Unified platform for onboarding, video streaming, quiz and interaction delivery for webinars" },
+      { title: "Interactive Guidelines and Management Algorithms", desc: "Applications that support and augment clinical decision making" },
+      { title: "Product and Data-Driven Applications", desc: "Unified data and product portfolio showcase platforms for web and interactive screens" },
+      { title: "Webcast and Symposia Platform", desc: "Unified platform for onboarding, video streaming, quiz and interaction delivery for webinars" },
     ],
     caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work?project=lilly-med-affairs-intelligence" },
   },
@@ -126,9 +126,11 @@ export default function CapabilitiesSection() {
       <div className="mx-auto relative pb-28">
 
         {/* Header pill */}
-        <span className="inline-block bg-[#4d4949] text-white px-5 py-2 rounded-full text-xs tracking-[3px] uppercase mb-8">
+        <span className="inline-flex rounded-full mb-8 bg-[#1a1a1a] border border-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[3px] text-white/70">
           Our capabilities include
         </span>
+
+      
 
         {/* Tab bar */}
         <div className="border border-[#222] rounded-2xl bg-[#111] p-2 flex flex-wrap gap-2 mb-6">
@@ -179,7 +181,7 @@ export default function CapabilitiesSection() {
             {/* Text content */}
             <div className="p-8 lg:p-12">
               <h2 className="text-white text-2xl lg:text-3xl font-bold mb-3">{content.headline}</h2>
-              <p className="text-gray-400 text-base lg:text-lg leading-relaxed mb-8 max-w-3xl">
+              <p className="text-gray-400 text-base lg:text-lg leading-relaxed mb-8 w-7xl">
                 {content.desc}
               </p>
 
@@ -189,7 +191,7 @@ export default function CapabilitiesSection() {
                     <h2 className="text-[#E1251B] text-5xl font-bold mb-2">
                       {String(i + 1).padStart(2, "0")}
                     </h2>
-                    <h3 className="text-white text-sm font-semibold leading-snug">{pt.title}</h3>
+                    <h3 className="text-white text-xl font-semibold leading-snug">{pt.title}</h3>
                     <p className="text-gray-400 text-sm leading-relaxed max-w-[70%]">{pt.desc}</p>
                   </div>
                 ))}
@@ -216,7 +218,7 @@ export default function CapabilitiesSection() {
         title="High-impact engagement assets across all channels"
         items={[
           { title: "Emailers",              img: "/valuecard1.png", desc: "Veeva, SFMC, and third-party platforms" },
-          { title: "Paid and Earned media", img: "/valuecard2.png", desc: "Interactive banners and HCP platforms" },
+          { title: "Paid & Earned Media", img: "/valuecard2.png", desc: "Interactive banners and HCP platforms" },
           { title: "Rep-Driven Engagements",img: "/valuecard3.png", desc: "E-detailers and explainers" },
         ]}
         cols={3}
@@ -245,7 +247,7 @@ export default function CapabilitiesSection() {
 function SectionGrid({ label, title, items, cols, button, link }) {
   return (
     <div className="relative lg:py-24 py-16">
-      <span className="inline-block bg-[#5e5d5d] rounded-full px-5 py-2 text-sm tracking-[3px] text-white mb-10">
+      <span  className="inline-flex rounded-full mb-8 bg-[#1a1a1a] border border-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[3px] text-white/70">
         {label}
       </span>
 

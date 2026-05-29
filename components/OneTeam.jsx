@@ -195,7 +195,7 @@ function OneTeam() {
       </div>
 
       {/* VP Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden">
         {vpData.map((vp, index) => (
           <div
             key={index}
@@ -220,7 +220,7 @@ function OneTeam() {
               <Image
                 src={linkedinImg}
                 alt="LinkedIn"
-               
+            
                 className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer shrink-0"
                 loading="lazy"
               />
