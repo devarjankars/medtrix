@@ -14,6 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const features = [
   {
     no: "01",
+    img: "/ai1.svg",
     title: "Using AI to simplify repetitive tasks",
     desc: "Quantitative and qualitative evaluation of alignment with pre-approved documents, claims, use-cases, variations for modular content etc.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_1.mp4",
@@ -22,6 +23,7 @@ const features = [
   },
   {
     no: "02",
+    img: "/ai2.svg",
     title: "AI built specifically with approved documents",
     desc: "A system that works strictly off of role-specific pre-approved knowledge base for Medical Affairs, Brand Teams, Legal, and Regulatory functions.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_2.mp4",
@@ -30,6 +32,7 @@ const features = [
   },
   {
     no: "03",
+    img: "/ai3.svg",
     title: "AI-driven accuracy assessment",
     desc: "Multi-modal AI evaluates text, images, tables, and videos for review accuracy using validated statistical techniques.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_3.mp4",
@@ -192,15 +195,11 @@ export default function MlrCatalyst() {
             </div>
                       <div className="flex items-center w-full bg-black px-8 pt-[75px] pb-16 md:pb-20">
                           <div className="flex-grow border-t border-[#4C4C4C]" />
-
-                          <Image
-                              src="https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/bolt_icon.svg" // put in public folder
+                          <img
+                              src="https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/bolt_icon.svg"
                               alt="Divider Icon"
-                              width={24}
-                              height={24}
                               className="mx-4 h-6 w-6 object-contain"
                           />
-
                           <div className="flex-grow border-t border-[#4C4C4C]" />
                       </div>
 
@@ -222,10 +221,10 @@ export default function MlrCatalyst() {
 
                 {/* Text */}
                 <div className="feature-text opacity-0 w-full md:w-1/2 space-y-3">
-                  <Image
-                    src="https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/checklist.svg"
-                    alt="icon" width={24} height={24}
-                    className="mx-4 h-6 w-6 object-contain"
+                  <img
+                    src={f.img}
+                    alt={f.title}
+                    className="h-6 w-6 object-contain"
                   />
                   <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white">{f.title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed font-light">{f.desc}</p>
@@ -267,11 +266,9 @@ export default function MlrCatalyst() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-16">
             {advantages.map((a, i) => (
               <div key={i} className="adv-card opacity-0 flex flex-col items-start space-y-3">
-                <Image
+                <img
                   src={a.img}
                   alt={a.title}
-                  width={20}
-                  height={20}
                   className="h-6 w-6 object-contain"
                 />
                 <h4 className="text-[19px] font-bold tracking-tight text-[#FFF] leading-snug">{a.title}</h4>

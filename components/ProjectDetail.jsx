@@ -252,7 +252,6 @@ export default function ProjectDetail({ project, onBack }) {
         <motion.button
           onClick={onBack}
           className="group inline-flex items-center mt-4 gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
-          
           whileHover={{ x: -3 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
         >
@@ -262,7 +261,7 @@ export default function ProjectDetail({ project, onBack }) {
           >
             ←
           </motion.span>
-          Back to our work
+          Back to {project.category.charAt(0).toUpperCase() + project.category.slice(1).toLowerCase()}
         </motion.button>
       </motion.div>
 
@@ -362,11 +361,11 @@ export default function ProjectDetail({ project, onBack }) {
           <div className="grid lg:grid-cols-2 gap-14 items-center rounded-2xl px-6 md:px-0 py-10">
             {project.challengeImg ? (
               <Reveal delay={0.05}>
-                <div className="rounded-2xl overflow-hidden">
+                <div className="rounded-2xl overflow-hidden flex items-center justify-center bg-[#0d0d0d] p-4">
                   <motion.img
                     src={project.challengeImg}
                     alt="Challenge"
-                    className="w-full h-full object-cover rounded-2xl"
+                    className="w-full max-h-[420px] object-contain rounded-xl"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.4 }}
                   />
