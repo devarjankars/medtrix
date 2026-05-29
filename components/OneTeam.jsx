@@ -196,7 +196,7 @@ function OneTeam() {
       </div>
 
       {/* VP Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden ">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden">
         {vpData.map((vp, index) => (
           <div
             key={index}

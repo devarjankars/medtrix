@@ -69,9 +69,12 @@ export default function WorkCard({ project, onExplore }) {
         </div>
 
         {/* DESCRIPTION */}
-        <div className="space-y-0 text-gray-300 mb-10">
+        <div className="space-y-3 text-gray-300 mb-10">
           {project.desc.map((item) => (
-            <p key={item}>{item}</p>
+            <p key={item} className="flex items-start gap-3">
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#E1251B] shrink-0" />
+              {item}
+            </p>
           ))}
         </div>
 
