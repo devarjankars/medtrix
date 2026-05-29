@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const features = [
   {
     no: "01",
-    img: "/ai1.svg",
+    img: "/ai1.png",
     title: "Using AI to simplify repetitive tasks",
     desc: "Quantitative and qualitative evaluation of alignment with pre-approved documents, claims, use-cases, variations for modular content etc.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_1.mp4",
@@ -23,7 +23,7 @@ const features = [
   },
   {
     no: "02",
-    img: "/ai2.svg",
+    img: "/ai2.png",
     title: "AI built specifically with approved documents",
     desc: "A system that works strictly off of role-specific pre-approved knowledge base for Medical Affairs, Brand Teams, Legal, and Regulatory functions.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_2.mp4",
@@ -32,7 +32,7 @@ const features = [
   },
   {
     no: "03",
-    img: "/ai3.svg",
+    img: "/ai3.png",
     title: "AI-driven accuracy assessment",
     desc: "Multi-modal AI evaluates text, images, tables, and videos for review accuracy using validated statistical techniques.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_3.mp4",

@@ -6,7 +6,6 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Loader from "@/components/Loader";
 import LenisProvider from "@/components/LenisProvider";
 
-
 const albertSans = Albert_Sans({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
@@ -21,18 +20,16 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={albertSans.variable} suppressHydrationWarning>
-      
       <body className={`${albertSans.className} min-h-screen flex flex-col bg-black`}>
         <LenisProvider>
           <ScrollToTop />
-          {/* <Loader /> */}
+          <Loader />
           <Navbar />
-          <main className="flex-1 w-full bg-[#000000] pt-[72px]">
+          <main className="flex-1 w-full bg-black pt-[72px]">
             <div className="w-full">{children}</div>
           </main>
           <Footer />
         </LenisProvider>
-    
       </body>
     </html>
   );
