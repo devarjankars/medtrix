@@ -264,7 +264,7 @@ function ServiceGrid({ label, cols, items }) {
             {/* Icon */}
             <div className="relative mb-5">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-[#E1251B]/30 bg-[#E1251B]/8 p-2.5">
-                <img src={service.img || iconSrc} alt={service.title} className="w-full h-full object-contain opacity-90" />
+                <img src={service.img || "/advertising1.png"} alt={service.title} className="w-full h-full object-contain opacity-90" />
               </div>
             </div>
 
