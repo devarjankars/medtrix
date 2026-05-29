@@ -65,7 +65,7 @@ export const projects = [
     ],
     testimonials: [{
       quote: "Navigating the review process involving Medical, Legal, and Regulatory aspects was the most demanding phase of the project. Throughout this journey, MedTrix's content and creative teams showcased remarkable medical expertise and creative insight. They meticulously crafted hand-drawn sketches for every frame of the storyboard, vividly unfolding the complex sequence of events. This played a pivotal role in aiding the reviewers' comprehension of the concept. We extend our sincere appreciation to the team for their relentless dedication in elevating the video to its current level of refinement, meeting all the stringent medical, legal, and regulatory standards.",
-      author: "_Director Medical Affairs"
+      author: "Director Medical Affairs"
     }]
   },
   {
