@@ -57,6 +57,14 @@ export default function NewsDetails({ news, onBack }) {
           {news.body.map((para, i) => (
             <p key={i}>{para}</p>
           ))}
+            {news.link && (
+            <p>
+              <a href={news.link} target="_blank" rel="noopener noreferrer" className="text-[#E1251B] underline underline-offset-4 hover:opacity-80 transition-opacity">
+                Click here
+              </a>
+              {news.linkLabel && ` ${news.linkLabel}`}
+            </p>
+          )}
         </div>
       )}
 
