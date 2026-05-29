@@ -186,12 +186,7 @@ const sections = [
         ],
       },
       {
-<<<<<<< HEAD
         title: "Medical Review and Quality Assurance",
-=======
-        title: "Medical Review & Quality Assurance",
-        img: "/integration2.png",
->>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Promotional claim substantiation and review",
           "Comparative claim validation and risk assessment",
