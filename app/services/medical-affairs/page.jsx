@@ -270,8 +270,8 @@ function ServiceGrid({ label, cols, items }) {
             {/* List */}
             <ul className="relative space-y-2">
               {service.points.map((pt, idx) => (
-                <li key={idx} className="text-zinc-400 text-sm leading-relaxed flex gap-2">
-                  <span className="mt-1.5 shrink-0 w-1 h-1 rounded-full bg-[#E1251B]/60" />
+                <li key={idx} className="text-zinc-400 text-sm leading-relaxed flex  gap-2">
+                  <span className="shrink-0 mt-[9px] w-1 h-1 rounded-full bg-[#E1251B]/60" />
                   <span>{pt}</span>
                 </li>
               ))}

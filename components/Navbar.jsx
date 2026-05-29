@@ -11,7 +11,7 @@ const links = [
     items: [
       { label: "Commercial Solutions", href: "/services/Commercial_Solutions" },
       { label: "Medical Affairs",       href: "/services/medical-affairs" },
-      { label: "Digital & Innovation",  href: "/services/digital-innovation" },
+      { label: "Digital Innovation",  href: "/services/digital-innovation" },
       { label: "AI Catalysts",          href: "/services/ai-catalysts" },
       { label: "Strategy & Consulting", href: "/services/Strategy-Consulting" },
     ],

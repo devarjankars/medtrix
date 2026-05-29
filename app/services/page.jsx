@@ -80,7 +80,7 @@ export default function Services() {
 
       <DynamicHeader
         tagText="STRATEGY & CONSULTING"
-        title="Strategy That Adapts to Your Needs"
+        title="Strategy that adapts to your needs"
         paragraphs={strategyParagraphs}
         graphicSrc="/servicesHeader.png"
       />

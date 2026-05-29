@@ -25,8 +25,8 @@ const cardItem = {
 };
 
 const strategyParagraphs = [
-  "Innovation, for us, has never been just about technology but about solving real problems in meaningful ways. It has been a defining characteristic for us since our beginning. It drove us to do more with less and enable novel experiences for clients and patients.",
-  "Our strongest partnerships with pharmaceutical companies have been built through innovative solutions built to achieve unique objectives and address challenges specific to a particular client or set of circumstances.",
+  "Innovation, for us, has never been just about technology but about solving real problems in meaningful ways. It has been our defining characteristic from the very beginning. It drove us to do more with less and enable novel experiences for clients and patients.",
+  "Our strongest partnerships with pharmaceutical companies have been built through innovative solutions to achieve unique objectives and address challenges specific to a particular client or set of circumstances.",
 ];
 
 // filtered once — only DIGITAL INNOVATION projects
@@ -76,7 +76,7 @@ function DigitalInnovationInner() {
   return (
     <main className="relative min-h-screen">
       <DynamicHeader
-        tagText="DIGITAL & INNOVATION"
+        tagText="DIGITAL INNOVATION"
         title="Innovation that creates meaningful impact"
         paragraphs={strategyParagraphs}
         desktopBg={"/dibgdesk.jpg"}
