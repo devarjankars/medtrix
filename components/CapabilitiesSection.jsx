@@ -47,7 +47,7 @@ const tabContent = {
     points: [
       { title: "2D and 3D videos:", desc: "Full-scale production capabilities for 2D and 3D video content of varying complexity of animation" },
       { title: "Live action videos:", desc: "Planning, production, and post-production of KOL and patient videos" },
-      { title: "Multimodal videos:", desc: "Video content deployed as regular videos and immersive AR/VR experiences" },
+      { title: "Multimodal videos:", desc: "Video content deployed as standard videos and immersive AR/VR experiences" },
     ],
     caseStudy: null,
   },
@@ -55,7 +55,7 @@ const tabContent = {
     mediaType: "video",
     mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/Merck+Prostate+Cancer+%281%29.mp4",
     headline: "3D Content, MOA/MOD",
-    desc: "3D mechanism of action (MOA) and mechanism of disease (MOD) videos, developed by expert 3D artists and guided by medical experts.",
+    desc: "3D mechanism of action (MOA) and mechanism of disease (MOD) videos, developed by seasoned 3D artists and guided by medical experts",
     points: [
       { title: "MOA and MOD videos:", desc: "Hyper realistic and scientifically accurate structures and animations" },
       { title: "3D content development:", desc: "3D content development for integration into banners, slides, detail aids, websites etc." },
@@ -69,7 +69,7 @@ const tabContent = {
     desc: "Custom applications and data-driven platforms that enable informed decision-making and effective engagement.",
     points: [
       { title: "Interactive guidelines and management algorithms:", desc: "Applications that support and augment clinical decision making" },
-      { title: "Product and Data-driven applications:", desc: "Unified data and product portfolio showcase platforms for web and interactive screens" },
+      { title: "Product and data-driven applications:", desc: "Unified data and product portfolio showcase platforms for web and interactive screens" },
       { title: "Webcast and Symposia platform:", desc: "Unified platform for onboarding, video streaming, quiz and interaction delivery for webinars" },
     ],
     caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work?project=lilly-med-affairs-intelligence" },

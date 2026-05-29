@@ -17,7 +17,7 @@ export default function page() {
     <main className="relative " >
       <DynamicHeader
         tagText="STRATEGY & CONSULTING"
-        title="Strategy That Adapts to Your Needs "
+        title="Strategy that adapts to your needs"
         paragraphs={strategyParagraphs}
         desktopBg={"/stdeskb.png"}
          mobileImg={"/stmbl.png"}
@@ -27,7 +27,7 @@ export default function page() {
           paragraphs={[
             "We support brands across the entire spectrum—from launch preparation and tactical planning to ongoing lifecycle management. ",
              "Our strategies are designed to be both comprehensive and flexible. Whether you need end-to-end support or targeted interventions at critical moments, we seamlessly plug in where it matters most.  ",
-             "From preparing brands for US launches to enhancing brand presence at congress through interactive experiences and gamification, or transforming key touchpoints into immersive digital experiences, we tailor solutions to your needs—scaling from full-scale strategy to high-impact add-ons. "
+             "From preparing brands for US launches to enhancing brand presence at congress through interactive experiences and gamification, or transforming key touchpoints into immersive digital experiences, we tailor solutions to your needs from full-scale strategy to high-impact add-ons. "
           ]}
           buttons={singleButton1}
         />
@@ -35,7 +35,7 @@ export default function page() {
         <FeatureSection tagText="Brand and business" imageSrc="/brandandbusiness.png" imageAlt="Brand and business " imagePosition="right"
           paragraphs={[
            
-           "We serve as an Agency of Record for emerging and mid-sized pharma brands—enabling brand launches, delivering practical, cost-effective strategies that drive consistent year-on-year growth never seen before in the brand lifecycle",
+           "We serve as an Agency of Record for emerging and mid-sized pharma brands—enabling brand launches, delivering practical, cost-effective strategies that drive consistent year-on-year growth  in the brand lifecycle",
             "Our approach is grounded in real-world market dynamics and commercial priorities, ensuring every strategic decision is actionable, efficient, and built for impact.",
             "By combining strategic thinking with executional agility, we help brands maximize value—achieving more through focused investments and smarter decision-making. ",
           ]}
@@ -44,17 +44,16 @@ export default function page() {
         <div className="py-5" />
         <FeatureSection tagText="OMNICHANNEL" imageSrc="/Omnichannel.png" imageAlt="OMNICHANNEL" imagePosition="left"
           paragraphs={[
-           "We serve as an Agency of Record for emerging and mid-sized pharma brands—enabling brand launches, delivering practical, cost-effective strategies that drive consistent year-on-year growth never seen before in the brand lifecycle",
-            "Our approach is grounded in real-world market dynamics and commercial priorities, ensuring every strategic decision is actionable, efficient, and built for impact.",
-            "By combining strategic thinking with executional agility, we help brands maximize value—achieving more through focused investments and smarter decision-making. "
+           "We bring together channels, content, and data into a connected brand experience ensuring every interaction feels relevant, timely, and consistent.",
+           "Built on a strong understanding of HCPs, patients, and stakeholders, we map key journeys and identify the moments that influence decisions—aligning engagement across channels to improve reach and effectiveness."
           ]}
           buttons={singleButton3}
         />
         <div className="py-5" />
         <FeatureSection tagText="Measurement and Optimization" imageSrc="/mesurment.png" imageAlt="Chart Image" imagePosition="right"
           paragraphs={[
-           "We help brands measure what matters most translating data into clear insights that guide smarter decisions and improve performance over time. ",
-           "From defining the right KPIs to tracking engagement across channels, we ensure every activity is aligned to meaningful outcomes and business goals, through custom built engines and dashboards"
+           "We help brands measure what matters most, translating data into clear insights that guide smarter decisions and improve performance over time. ",
+           "From defining the right KPIs to tracking engagement across channels, we ensure every activity is aligned to meaningful outcomes and business goals, through custom-built engines and dashboards."
           ]}
           
         />

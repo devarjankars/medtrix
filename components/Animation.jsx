@@ -17,7 +17,7 @@ export default function Animation() {
       />
 
       <section className="relative px-0 lg:px-0 py-[50px] lg:py-[100px] overflow-hidden z-10 w-[90%] md:w-[80%] mx-auto">
-        <div className="relative grid grid-cols-1 lg:grid-cols-2 lg:gap-14 items-center">
+        <div className="relative grid grid-cols-1 lg:grid-cols-2 lg:gap-14 items-center flex flex-col-reverse lg:grid">
 
           {/* LEFT - empty on desktop, tablet animation on mobile */}
           <div className="w-full h-[280px] lg:h-auto relative">

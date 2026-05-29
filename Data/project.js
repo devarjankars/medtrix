@@ -376,7 +376,7 @@ export const projects = [
   {
     id: "stemline-ai-storytelling",
     category: "DIGITAL INNOVATION",
-    cardTitle: "Stemline: AI Story Telling",
+    cardTitle: "Stemline: AI Storytelling",
     imgforfiltersection:"/di6.png",
     imgfordetail: "/didesk6.png",
     imgfordetailmbl: "/didesk6.png",
@@ -385,7 +385,7 @@ export const projects = [
     title: "Stemline Therapeutics: AI-Assisted Content Creation",
     tags: ["AI-ASSISTED CONTENT CREATION", "HCP EDUCATION", "DIGITAL STORYTELLING"],
     engagementModel: "Scientific Content Innovation Initiative",
-    timeline: "Rapid development engagement, completed",
+    timeline: "Rapid development engagement, Completed",
     desc: [
       "Developed AI-assisted HCP educational video content for Capillary Leak Syndrome (CLS)",
       "Replaced manual character animation workflows with AI-assisted production, enabling delivery within two weeks of storyboard approval",
