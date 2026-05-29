@@ -28,8 +28,8 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
   const hasItems            = items && items.length > 0;
   const dropdownRef         = useRef(null);
   const itemsRef            = useRef([]);
-  const isChildActive       = hasItems && items.some((i) => pathname === i.href);
-  const isActive            = !hasItems && pathname === href;
+  const isChildActive       = hasItems && items.some((i) => pathname.replace(/\/$/, "") === i.href);
+  const isActive            = !hasItems && pathname.replace(/\/$/, "") === href;
 
   /* Dropdown open: stagger items in */
   useEffect(() => {
@@ -71,7 +71,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
       {hasItems ? (
         <button
           className={`group relative flex items-center gap-1 text-md font-medium py-1 transition-colors duration-200 cursor-pointer ${
-            isChildActive ? "" : "text-white/80 hover:text-white"
+            isChildActive ? "text-red-500" : "text-white/80 hover:text-white"
           }`}
         >
           {label}
@@ -96,7 +96,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
         <Link
           href={href}
           className={`group relative flex items-center gap-1 text-sm font-medium py-1 transition-colors duration-200 ${
-            isActive ? "text-[#FFF]" : "text-white/80 hover:text-white"
+            isActive ? "text-red-500" : "text-white/80 hover:text-white"
           }`}
         >
           {label}
@@ -123,14 +123,14 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
 
           <ul className="relative w-56 bg-[#161616]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] py-2 list-none overflow-hidden">
             {items.map((item, i) => {
-              const isActive = pathname === item.href;
+              const isActive = pathname.replace(/\/$/, "") === item.href;
               return (
                 <li key={item.href} ref={(el) => (itemsRef.current[i] = el)}>
                   <Link
                     href={item.href}
                     className={`group/item relative flex items-center gap-3 px-4 py-2.5 text-md leading-snug transition-all duration-150 ${
                       isActive
-                        ? "text-[#FFF] bg-[#E1251B]"
+                        ? "bg-red-500 text-white font-semibold"
                         : "text-white/65 hover:text-white hover:bg-white/8"
                     }`}
                   >
@@ -178,7 +178,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
       {links.map(({ label, href, items, button }) => {
         const hasItems    = items && items.length > 0;
         const isOpen       = openSection === label;
-        const isChildActive = hasItems && items.some((i) => pathname === i.href);
+        const isChildActive = hasItems && items.some((i) => pathname.replace(/\/$/, "") === i.href);
 
         if (button) {
           return (
@@ -197,14 +197,14 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
               onClick={() => hasItems ? setOpenSection(isOpen ? null : label) : null}
             >
               {hasItems ? (
-                <span className={`text-base font-semibold ${isOpen || isChildActive ? "text-[#E1251B]" : "text-white/75"}`}>
+                <span className={`text-base font-semibold ${isOpen || isChildActive ? "text-red-500" : "text-white/75"}`}>
                   {label}
                 </span>
               ) : (
                 <Link
                   href={href}
                   onClick={() => { setOpenSection(null); onClose(); }}
-                  className={`text-base font-semibold w-full ${pathname === href ? "text-[#E1251B]" : "text-white/75"}`}
+                  className={`text-base font-semibold w-full ${pathname.replace(/\/$/, "") === href ? "text-red-500" : "text-white/75"}`}
                 >
                   {label}
                 </Link>
@@ -229,7 +229,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
                       href={item.href}
                       onClick={() => { setOpenSection(label); onClose(); }}
                       className={`flex items-center gap-2 py-3 px-2 w-full text-lg font-light ${
-                      pathname === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
+                      pathname.replace(/\/$/, "") === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
                     }`}
                   >
                     {item.label}
