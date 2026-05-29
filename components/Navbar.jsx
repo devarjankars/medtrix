@@ -157,8 +157,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
 });
 
 /* ── Mobile menu ── */
-function MobileMenu({ pathname, onClose }) {
-  const [openSection, setOpenSection] = useState(null);
+function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
   const menuRef = useRef(null);
 
   useEffect(() => {
@@ -177,13 +176,14 @@ function MobileMenu({ pathname, onClose }) {
       className="md:hidden bg-[#000000] px-6 pb-6 flex flex-col gap-1 min-h-screen relative"
     >
       {links.map(({ label, href, items, button }) => {
-        const hasItems = items && items.length > 0;
-        const isOpen   = openSection === label;
+        const hasItems    = items && items.length > 0;
+        const isOpen       = openSection === label;
+        const isChildActive = hasItems && items.some((i) => pathname === i.href);
 
         if (button) {
           return (
             <div key={label} className="flex justify-center mt-4">
-              <Link href={href} onClick={onClose} className="bg-[#FF0000] absolute bottom-[160px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
+              <Link href={href} onClick={() => { setOpenSection(null); onClose(); }} className="bg-[#FF0000] absolute bottom-[160px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
                 {label}
               </Link>
             </div>
@@ -197,13 +197,13 @@ function MobileMenu({ pathname, onClose }) {
               onClick={() => hasItems ? setOpenSection(isOpen ? null : label) : null}
             >
               {hasItems ? (
-                <span className={`text-base font-semibold ${isOpen ? "text-white" : "text-white/75"}`}>
+                <span className={`text-base font-semibold ${isOpen || isChildActive ? "text-[#E1251B]" : "text-white/75"}`}>
                   {label}
                 </span>
               ) : (
                 <Link
                   href={href}
-                  onClick={onClose}
+                  onClick={() => { setOpenSection(null); onClose(); }}
                   className={`text-base font-semibold w-full ${pathname === href ? "text-[#E1251B]" : "text-white/75"}`}
                 >
                   {label}
@@ -227,7 +227,7 @@ function MobileMenu({ pathname, onClose }) {
                     <Link
                       key={item.href}
                       href={item.href}
-                      onClick={onClose}
+                      onClick={() => { setOpenSection(label); onClose(); }}
                       className={`flex items-center gap-2 py-3 px-2 w-full text-lg font-light ${
                       pathname === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
                     }`}
@@ -248,6 +248,7 @@ function MobileMenu({ pathname, onClose }) {
 export default function Navbar() {
   const pathname          = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [openSection, setOpenSection] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const navRef            = useRef(null);
   const linksRef          = useRef([]);
@@ -344,7 +345,7 @@ export default function Navbar() {
       </div>
 
       {/* Mobile menu */}
-      {menuOpen && <MobileMenu pathname={pathname} onClose={() => setMenuOpen(false)} />}
+      {menuOpen && <MobileMenu pathname={pathname} onClose={() => setMenuOpen(false)} openSection={openSection} setOpenSection={setOpenSection} />}
     </nav>
   );
 }

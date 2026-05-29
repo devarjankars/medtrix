@@ -49,6 +49,7 @@ function WorkPageInner() {
     : null;
 
   function openProject(project) {
+    
     router.push(`/our-work?project=${project.id}`, { scroll: false });
   }
 

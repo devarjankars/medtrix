@@ -60,7 +60,7 @@ const tabContent = {
       { title: "MOA and MOD videos:", desc: "Hyper realistic and scientifically accurate structures and animations" },
       { title: "3D content development:", desc: "3D content development for integration into banners, slides, detail aids, websites etc." },
     ],
-    caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work/commercial-solutions" },
+    caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work?project=merck-keytruda-mod" },
   },
   "Interactive Platforms": {
     mediaType: "image",
@@ -72,7 +72,7 @@ const tabContent = {
       { title: "Product and Data-driven applications:", desc: "Unified data and product portfolio showcase platforms for web and interactive screens" },
       { title: "Webcast and Symposia platform:", desc: "Unified platform for onboarding, video streaming, quiz and interaction delivery for webinars" },
     ],
-    caseStudy: null,
+    caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work?project=lilly-med-affairs-intelligence" },
   },
 };
 
@@ -194,7 +194,7 @@ export default function CapabilitiesSection() {
                   </div>
                 ))}
               </div>
-{/* 
+
               {content.caseStudy && (
                 <Link
                   href={content.caseStudy.href}
@@ -202,7 +202,7 @@ export default function CapabilitiesSection() {
                 >
                   {content.caseStudy.label}
                 </Link>
-              )} */}
+              )}
             </div>
           </motion.div>
         </AnimatePresence>
@@ -235,6 +235,7 @@ export default function CapabilitiesSection() {
         ]}
         cols={2}
         button="Explore Modulife Expert for Nestlé Health Science"
+        link={"/our-work?project=nhsc-modulife-training"}
       />
     </section>
   );

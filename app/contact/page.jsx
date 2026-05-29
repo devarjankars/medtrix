@@ -178,6 +178,8 @@ export default function Contact() {
                     Company
                   </label>
                   <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Your company" className={inputClass} />
+                  <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Company</label>
+                  <input required type="text" placeholder="Your company" className={inputClass} />
                 </div>
               </div>
 

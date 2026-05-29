@@ -33,6 +33,7 @@ function PageInner() {
     : null;
 
   function openProject(project) {
+    
     router.push(`/our-work/digital-innovation?project=${project.id}`, { scroll: false });
   }
 
