@@ -275,7 +275,7 @@ function OneTeam() {
       {/* Awards */}
       <section className="pt-[50px] pb-[50px] lg:pt-[100px] lg:pb-[80px] relative lg:overflow-visible">
         <Badge label="One Standard" />
-        <SectionHeading red="Excellence, " white="recognized by the industry." />
+        <SectionHeading red="Excellence " white="recognized across the industry" />
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3   w-full ">
           {awardsData.map((award, index) => (
             <div

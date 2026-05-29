@@ -62,16 +62,39 @@ export default function NewsDetails({ news, onBack }) {
 
       {/* Image Gallery */}
       {news.images && news.images.length > 0 && (
-        <div className={`grid gap-4 ${news.images.length === 1 ? 'grid-cols-1' : 'grid-cols-1 sm:grid-cols-2'}`}>
-          {news.images.map((src, i) => (
-            <div key={i} className={`rounded-[14px] overflow-hidden border border-[#2a2a2a] ${news.images.length === 1 ? 'w-full' : ''}`}>
-              <img
-                src={src}
-                alt={`${news.title} image ${i + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
+        <div
+          className={`grid gap-4 ${
+            news.images.length === 1
+              ? "grid-cols-1"
+              : news.images.length === 2
+              ? "grid-cols-1 sm:grid-cols-2"
+              : news.images.length === 3
+              ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+              : "grid-cols-1 sm:grid-cols-2"
+          }`}
+        >
+          {news.images.map((src, i) => {
+            // if odd total and this is the last image, span full width
+            const isLastOdd =
+              news.images.length > 1 &&
+              news.images.length % 2 !== 0 &&
+              i === news.images.length - 1;
+
+            return (
+              <div
+                key={i}
+                className={`rounded-[14px] overflow-hidden border border-[#2a2a2a] ${
+                  isLastOdd ? "sm:col-span-2 lg:col-span-1" : ""
+                }`}
+              >
+                <img
+                  src={src}
+                  alt={`${news.title} image ${i + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            );
+          })}
         </div>
       )}
     </div>

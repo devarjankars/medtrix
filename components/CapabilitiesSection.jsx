@@ -10,7 +10,7 @@ const tabs = [
   "Experience",
   "Websites",
   "Videos",
-  "3D Content, MOA / MOD",
+  "3D Content, MOA/MOD",
   "Interactive Platforms",
 ];
 
@@ -19,7 +19,7 @@ const tabContent = {
     mediaType: "video",
     mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/AMI_Aesthetic_Showcase_01.mp4",
     headline: "Experience",
-    desc: "Immersive and stunning experiential solutions for communication at Congresses, Symposia, and meetings that deliver engaging, compliant, and scalable digital experiences.",
+    desc: "Immersive and stunning experiential solutions for communication at Congresses, Symposia, and meetings that deliver engaging, compliant, and scalable digital experiences",
     points: [
       { title: "Multi-screen LED experiences:", desc: "Synchronized engagement solutions for Congresses" },
       { title: "Immersive experiences:", desc: "Large-screen and HMD-driven experiences for individual and group engagement" },
@@ -31,7 +31,7 @@ const tabContent = {
     mediaType: "image",
     mediaSrc: "/ourcap2.jpg",
     headline: "Websites",
-    desc: "End-to-end capability for design, development, SEO, deployment, maintenance, and omnichannel integration of websites and microsites.",
+    desc: "End-to-end capability for design, development, SEO, deployment, maintenance, and omnichannel integration of websites and microsites",
     points: [
       { title: "Audience Expertise:", desc: "Websites across brand, HCP, patient, disease education, and medical affairs audiences" },
       { title: "CMS & Platforms:", desc: "Expertise across Drupal, WordPress, Adobe Experience Manager, and headless CMS platforms" },
@@ -43,18 +43,18 @@ const tabContent = {
     mediaType: "video",
     mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/Celltrion_Whiteboard_Animation+_Video+1+%281%29.mp4",
     headline: "Videos",
-    desc: "Video development capabilities to produce videos that cover the whole spectrum of video animation styles and narrative storytelling.",
+    desc: "Video development capabilities to produce compelling narratives using the whole spectrum of video animation style",
     points: [
       { title: "2D and 3D videos:", desc: "Full-scale production capabilities for 2D and 3D video content of varying complexity of animation" },
-      { title: "Live action videos:", desc: "Planning, Production, and Post-production of KOL and patient videos" },
+      { title: "Live action videos:", desc: "Planning, production, and post-production of KOL and patient videos" },
       { title: "Multimodal videos:", desc: "Video content deployed as regular videos and immersive AR/VR experiences" },
     ],
     caseStudy: null,
   },
-  "3D Content, MOA / MOD": {
+  "3D Content, MOA/MOD": {
     mediaType: "video",
     mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/Merck+Prostate+Cancer+%281%29.mp4",
-    headline: "3D Content, MOA / MOD",
+    headline: "3D Content, MOA/MOD",
     desc: "3D mechanism of action (MOA) and mechanism of disease (MOD) videos, developed by expert 3D artists and guided by medical experts.",
     points: [
       { title: "MOA and MOD videos:", desc: "Hyper realistic and scientifically accurate structures and animations" },
@@ -217,10 +217,10 @@ export default function CapabilitiesSection() {
         items={[
           { title: "Emailers",              img: "/valuecard1.png", desc: "Veeva, SFMC, and third-party platforms" },
           { title: "Paid and Earned media", img: "/valuecard2.png", desc: "Interactive banners and HCP platforms" },
-          { title: "Rep-driven Engagements",img: "/valuecard3.png", desc: "E-detailers and explainers" },
+          { title: "Rep-Driven Engagements",img: "/valuecard3.png", desc: "E-detailers and explainers" },
         ]}
         cols={3}
-        button="Explore our Omnichannel Catalyst"
+        button="Explore Our Omnichannel Catalyst"
       />
 
       {/* EDUCATE section */}

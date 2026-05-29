@@ -12,8 +12,37 @@ const inputClass =
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [formData, setFormData] = useState({
+    name: "", company: "", email: "", subject: "", message: "",
+  });
 
-  /* refs for GSAP */
+  const handleChange = (e) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch("YOUR_API_ENDPOINT_HERE", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error("Something went wrong. Please try again.");
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err.message || "Failed to send. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  }
   const headerRef  = useRef(null);
   const formRef    = useRef(null);
   const mapRef     = useRef(null);
@@ -139,42 +168,61 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
-                  <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Name</label>
-                  <input required type="text" placeholder="Your name" className={inputClass} />
+                  <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                    Name <span className="text-[#E1251B]">*</span>
+                  </label>
+                  <input required name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Your name" className={inputClass} />
                 </div>
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
-                  <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Company</label>
-                  <input type="text" placeholder="Your company" className={inputClass} />
+                  <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                    Company
+                  </label>
+                  <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Your company" className={inputClass} />
                 </div>
               </div>
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
-                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Email</label>
-                <input required type="email" placeholder="you@company.com" className={inputClass} />
+                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                  Email <span className="text-[#E1251B]">*</span>
+                </label>
+                <input required name="email" value={formData.email} onChange={handleChange} type="email" placeholder="you@company.com" className={inputClass} />
               </div>
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
-                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Subject</label>
-                <input type="text" placeholder="How can we help?" className={inputClass} />
+                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                  Subject <span className="text-[#E1251B]">*</span>
+                </label>
+                <input required name="subject" value={formData.subject} onChange={handleChange} type="text" placeholder="How can we help?" className={inputClass} />
               </div>
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
-                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Message</label>
+                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                  Message <span className="text-[#E1251B]">*</span>
+                </label>
                 <textarea
                   required
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows={6}
                   placeholder="Tell us about your project..."
                   className={`${inputClass} resize-none`}
                 />
               </div>
 
+              {/* Error message */}
+              {error && (
+                <p className="text-[#E1251B] text-sm">{error}</p>
+              )}
+
               <div className="form-field opacity-0">
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.04 }}
-                  whileTap={{ scale: 0.97 }}
+                  disabled={loading}
+                  whileHover={!loading ? { scale: 1.04 } : {}}
+                  whileTap={!loading ? { scale: 0.97 } : {}}
                   transition={{ type: "spring", stiffness: 380, damping: 22 }}
-                  className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-sm overflow-hidden cursor-pointer"
+                  className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-sm overflow-hidden cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   style={{
                     background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
                     boxShadow: "0 0 20px rgba(225,37,27,0.4)",
@@ -189,12 +237,23 @@ export default function Contact() {
                     animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
                     transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
                   />
-                  <span className="relative z-10">Send Message</span>
-                  <motion.span
-                    className="relative z-10"
-                    animate={{ x: [0, 4, 0] }}
-                    transition={{ duration: 1.2, ease: "easeInOut", repeat: Infinity }}
-                  >→</motion.span>
+                  {loading ? (
+                    <>
+                      <svg className="animate-spin relative z-10" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
+                        <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+                      </svg>
+                      <span className="relative z-10">Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="relative z-10">Send Message</span>
+                      <motion.span
+                        className="relative z-10"
+                        animate={{ x: [0, 4, 0] }}
+                        transition={{ duration: 1.2, ease: "easeInOut", repeat: Infinity }}
+                      >→</motion.span>
+                    </>
+                  )}
                 </motion.button>
               </div>
 
@@ -203,7 +262,7 @@ export default function Contact() {
         </div>
 
         {/* ── RIGHT: Map + info (wider column, sticky on desktop) ── */}
-        <div className="flex flex-col gap-6 order-first lg:order-last lg:sticky lg:top-24" ref={cardsRef}>
+        <div className="flex flex-col gap-6 order-first lg:order-last lg:top-24" ref={cardsRef}>
 
           {/* Map */}
           <div
@@ -213,26 +272,26 @@ export default function Contact() {
             <img
               src="/map.png"
               alt="Medtrix office locations"
-              className="w-full  object-contain  md:block "
+              className="w-full hidden lg:block  object-contain  md:block "
             />
             <img
               src="/mobile_map.png"
               alt="Medtrix office locations"
-              className="w-full h-auto block md:hidden"
+              className="w-full h-auto block lg:hidden"
             />
             {/* animated pulse dot — Bangalore */}
             <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "38%", left: "67%" }}>
-              <span className="relative flex h-3 w-3">
+              {/* <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
-              </span>
+              </span> */}
             </div>
             {/* animated pulse dot — New Jersey */}
             <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "52%", left: "24%" }}>
-              <span className="relative flex h-3 w-3">
+              {/* <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
-              </span>
+              </span> */}
             </div>
           </div>
 

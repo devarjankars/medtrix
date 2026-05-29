@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
-import { gsap } from "gsap";
+import { useRef, useState, useCallback } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
 
 const slides = [
   {
@@ -41,227 +43,129 @@ const slides = [
   },
 ];
 
-const INTERVAL = 4000;
-const DRAG_THRESHOLD = 50;
-
 export default function LifeatMet() {
-  const currentRef   = useRef(0);
-  const isAnimating  = useRef(false);
-  const autoTimer    = useRef(null);
-  const activeLayer  = useRef("A");
+  const swiperRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const layerARef = useRef(null);
-  const layerBRef = useRef(null);
-
-  const tagRef   = useRef(null);
-  const titleRef = useRef(null);
-  const descRef  = useRef(null);
-  const dotsRef  = useRef([]);
-
-  // drag
-  const dragStart   = useRef(null);
-  const isDragging  = useRef(false);
-  const dragDelta   = useRef(0);
-
-  // ── dots ──────────────────────────────────────────────────────────────────
-  const updateDots = (index) => {
-    dotsRef.current.forEach((dot, i) => {
-      if (!dot) return;
-      dot.style.width      = i === index ? "32px" : "8px";
-      dot.style.background = i === index ? "#e11d1d" : "rgba(255,255,255,0.35)";
-    });
-  };
-
-  // ── core animation ────────────────────────────────────────────────────────
-  const animateTo = useCallback((nextIndex, direction = 1) => {
-    if (isAnimating.current) return;
-    isAnimating.current = true;
-
-    const incoming = activeLayer.current === "A" ? layerBRef.current : layerARef.current;
-    const outgoing = activeLayer.current === "A" ? layerARef.current : layerBRef.current;
-
-    incoming.style.backgroundImage = `url(${slides[nextIndex].image})`;
-    gsap.set(incoming, { x: `${direction * 100}%`, opacity: 1 });
-
-    const tl = gsap.timeline({
-      onComplete: () => {
-        activeLayer.current  = activeLayer.current === "A" ? "B" : "A";
-        currentRef.current   = nextIndex;
-        isAnimating.current  = false;
-      },
-    });
-
-    tl.to(outgoing,  { x: `${direction * -8}%`, opacity: 0, duration: 0.65, ease: "power2.inOut" });
-    tl.to(incoming,  { x: "0%", opacity: 1,      duration: 0.65, ease: "power2.inOut" }, "<");
-
-    tl.to(
-      [descRef.current, titleRef.current, tagRef.current],
-      { opacity: 0, y: -14, duration: 0.25, ease: "power2.in", stagger: 0.05 },
-      "<"
-    );
-
-    tl.call(() => {
-      if (tagRef.current)   tagRef.current.textContent   = slides[nextIndex].tag;
-      if (titleRef.current) titleRef.current.textContent = slides[nextIndex].title;
-      if (descRef.current)  descRef.current.textContent  = slides[nextIndex].desc;
-      updateDots(nextIndex);
-      gsap.set([tagRef.current, titleRef.current, descRef.current], { y: 20 });
-    });
-
-    tl.to(
-      [tagRef.current, titleRef.current, descRef.current],
-      { opacity: 1, y: 0, duration: 0.45, ease: "power2.out", stagger: 0.08 },
-      "+=0.04"
-    );
+  const handleDotClick = useCallback((index) => {
+    if (swiperRef.current) {
+      swiperRef.current.slideToLoop(index, 500);
+    }
   }, []);
 
-  // ── auto-play ─────────────────────────────────────────────────────────────
-  const startAuto = useCallback(() => {
-    clearInterval(autoTimer.current);
-    autoTimer.current = setInterval(() => {
-      animateTo((currentRef.current + 1) % slides.length, 1);
-    }, INTERVAL);
-  }, [animateTo]);
-
-  const resetAuto = useCallback(() => {
-    clearInterval(autoTimer.current);
-    startAuto();
-  }, [startAuto]);
-
-  // ── mount ─────────────────────────────────────────────────────────────────
-  useEffect(() => {
-    layerARef.current.style.backgroundImage = `url(${slides[0].image})`;
-    gsap.set(layerBRef.current, { x: "100%", opacity: 0 });
-
-    tagRef.current.textContent   = slides[0].tag;
-    titleRef.current.textContent = slides[0].title;
-    descRef.current.textContent  = slides[0].desc;
-    updateDots(0);
-
-    gsap.fromTo(
-      [tagRef.current, titleRef.current, descRef.current],
-      { opacity: 0, y: 28 },
-      { opacity: 1, y: 0, duration: 0.8, ease: "power2.out", stagger: 0.12, delay: 0.3 }
-    );
-
-    startAuto();
-    return () => clearInterval(autoTimer.current);
-  }, [startAuto]);
-
-  // ── nav ───────────────────────────────────────────────────────────────────
-  const goTo = useCallback((index) => {
-    if (index === currentRef.current || isAnimating.current) return;
-    animateTo(index, index > currentRef.current ? 1 : -1);
-    resetAuto();
-  }, [animateTo, resetAuto]);
-
-  const goPrev = useCallback(() => goTo((currentRef.current - 1 + slides.length) % slides.length), [goTo]);
-  const goNext = useCallback(() => goTo((currentRef.current + 1) % slides.length), [goTo]);
-
-  // ── drag / swipe ──────────────────────────────────────────────────────────
-  const getX = (e) => e.clientX ?? e.touches?.[0]?.clientX ?? 0;
-
-  const onPointerDown = (e) => {
-    dragStart.current  = getX(e);
-    dragDelta.current  = 0;
-    isDragging.current = false;
-  };
-
-  const onPointerMove = (e) => {
-    if (dragStart.current === null) return;
-    const delta = getX(e) - dragStart.current;
-    if (!isDragging.current && Math.abs(delta) > 8) {
-      isDragging.current = true;
-    }
-    if (!isDragging.current) return;
-    dragDelta.current = delta;
-
-    // live drag: move both layers smoothly
-    const outgoing = activeLayer.current === "A" ? layerARef.current : layerBRef.current;
-    const incoming = activeLayer.current === "A" ? layerBRef.current : layerARef.current;
-    const nextIndex = delta < 0
-      ? (currentRef.current + 1) % slides.length
-      : (currentRef.current - 1 + slides.length) % slides.length;
-
-    incoming.style.backgroundImage = `url(${slides[nextIndex].image})`;
-    const pct = (delta / window.innerWidth) * 100;
-    gsap.set(outgoing, { x: `${pct * 0.4}%` });
-    gsap.set(incoming, { x: `${(delta < 0 ? 100 : -100) + pct * 0.4}%`, opacity: 1 });
-  };
-
-  const onPointerUp = (e) => {
-    if (dragStart.current === null) return;
-    const delta = dragDelta.current;
-    const wasDragging = isDragging.current;
-    isDragging.current = false;
-    dragStart.current  = null;
-    dragDelta.current  = 0;
-
-    if (!wasDragging) return;
-
-    const outgoing = activeLayer.current === "A" ? layerARef.current : layerBRef.current;
-    const incoming = activeLayer.current === "A" ? layerBRef.current : layerARef.current;
-
-    if (Math.abs(delta) >= DRAG_THRESHOLD) {
-      delta < 0 ? goNext() : goPrev();
-    } else {
-      // snap back
-      gsap.to(outgoing, { x: "0%", duration: 0.3, ease: "power2.out" });
-      gsap.to(incoming, { x: delta < 0 ? "100%" : "-100%", duration: 0.3, ease: "power2.out" });
-    }
-
-    dragStart.current = null;
-    dragDelta.current = 0;
-  };
-
   return (
-    <div
-      className="relative w-full overflow-hidden rounded-[20px] h-[450px] lg:h-[560px] select-none cursor-grab active:cursor-grabbing"
-      // style={{ height: "clamp(320px, 55vw, 560px)" }}
-      onMouseDown={onPointerDown}
-      onMouseMove={onPointerMove}
-      onMouseUp={onPointerUp}
-      onMouseLeave={onPointerUp}
-      onTouchStart={onPointerDown}
-      onTouchMove={onPointerMove}
-      onTouchEnd={onPointerUp}
-    >
-      {/* Image layers */}
-      <div ref={layerARef} className="absolute inset-0 bg-cover bg-center" style={{ willChange: "transform, opacity" }} />
-      <div ref={layerBRef} className="absolute inset-0 bg-cover bg-center" style={{ willChange: "transform, opacity" }} />
+    <div className="w-full rounded-[20px] overflow-hidden" style={{ height: "clamp(320px, 60vh, 700px)", position: "relative" }}>
+      <Swiper
+        onSwiper={(swiper) => { swiperRef.current = swiper; }}
+        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+        modules={[Autoplay]}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
+        loop
+        speed={600}
+        grabCursor
+        style={{ width: "100%", height: "100%" }}
+      >
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id} style={{ position: "relative" }}>
+            {/* Background image */}
+            <img
+              src={slide.image}
+              alt={slide.title}
+              style={{
+                position: "absolute", inset: 0,
+                width: "100%", height: "100%",
+                objectFit: "cover",
+              }}
+              draggable={false}
+            />
 
-      {/* Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/10 z-10" />
+            {/* Gradient */}
+            <div style={{
+              position: "absolute", inset: 0,
+              background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)",
+            }} />
 
-      {/* Content */}
-      <div className="relative z-20 flex flex-col justify-end h-full px-8 pb-10">
-        <div className="mb-3">
-          <span
-            ref={tagRef}
-            className="text-[11px] font-bold uppercase tracking-widest text-white px-3 py-1.5 rounded-full"
-            style={{ background: "rgba(180,30,30,0.75)", border: "1px solid rgba(220,50,50,0.5)", display: "inline-block" }}
-          />
-        </div>
+            {/* Content — sits above dots via pb-16 */}
+            <div style={{
+              position: "absolute", inset: 0,
+              display: "flex", flexDirection: "column",
+              justifyContent: "flex-end",
+              padding: "0 32px 72px 32px",
+              zIndex: 10,
+            }}>
+              {/* Tag */}
+              <div style={{ marginBottom: 12 }}>
+                <span style={{
+                  fontSize: 11, fontWeight: 700,
+                  textTransform: "uppercase", letterSpacing: "0.15em",
+                  color: "white", padding: "5px 12px",
+                  borderRadius: 9999, display: "inline-block",
+                  background: "rgba(180,30,30,0.75)",
+                  border: "1px solid rgba(220,50,50,0.5)",
+                }}>
+                  {slide.tag}
+                </span>
+              </div>
 
-        <h2 ref={titleRef} className="text-white text-2xl md:text-3xl font-semibold mb-3 leading-snug max-w-xl" />
-        <p  ref={descRef}  className="text-gray-300 text-sm md:text-[15px] leading-relaxed max-w-2xl mb-6" />
+              {/* Title */}
+              <h2 style={{
+                color: "white", fontSize: "clamp(20px, 3vw, 28px)",
+                fontWeight: 600, lineHeight: 1.3,
+                marginBottom: 10, maxWidth: 560,
+              }}>
+                {slide.title}
+              </h2>
 
-        {/* Dots */}
-        <div className="flex items-center gap-2">
-          {slides.map((_, i) => (
-            <button
-              key={i}
-              ref={(el) => (dotsRef.current[i] = el)}
-              onClick={(e) => { e.stopPropagation(); goTo(i); resetAuto(); }}
-              className="relative h-[4px] rounded-full cursor-pointer transition-all duration-300"
-              style={{ width: "8px", background: "rgba(255,255,255,0.35)" }}
-              aria-label={`Go to slide ${i + 1}`}
-            >
-              {/* invisible hit area */}
-              <span className="absolute -inset-x-2 -inset-y-4" />
-            </button>
-          ))}
-        </div>
+              {/* Description */}
+              <p style={{
+                color: "rgba(209,213,219,1)", fontSize: 14,
+                lineHeight: 1.7, maxWidth: 640,
+              }}>
+                {slide.desc}
+              </p>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      {/* ── Custom dots — outside Swiper, always on top ── */}
+      <div style={{
+        position: "absolute",
+        bottom: 32, left: 32,
+        display: "flex", alignItems: "center", gap: 8,
+        zIndex: 30,
+      }}>
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => handleDotClick(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            style={{
+              height: 24,           // large tap target
+              width: i === activeIndex ? 44 : 28,
+              borderRadius: 9999,
+              background: "transparent",
+              border: "none",
+              cursor: "pointer",
+              padding: "10px 0",    // extra vertical hit area
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: "width 0.25s ease",
+            }}
+          >
+            {/* visible bar */}
+            <span style={{
+              display: "block",
+              height: 3,
+              width: "100%",
+              borderRadius: 9999,
+              background: i === activeIndex ? "#e11d1d" : "rgba(255,255,255,0.35)",
+              transition: "background 0.25s ease",
+              pointerEvents: "none",
+            }} />
+          </button>
+        ))}
       </div>
     </div>
   );
