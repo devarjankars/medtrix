@@ -50,6 +50,7 @@ const sections = [
       },
       {
         title: "Patient Education and Engagement",
+        img: "/medcom4.png",
         points: [
           "Patient education brochures and disease awareness",
           "Patient decision aids and shared decision-making tools",
@@ -66,6 +67,7 @@ const sections = [
     items: [
       {
         title: "Medical Information and Scientific Support",
+        img: "/maservice1.png",
         points: [
           "Medical information center operations",
           "Response development to unsolicited HCP inquiries",
@@ -75,6 +77,7 @@ const sections = [
       },
       {
         title: "Medical Strategy and Planning",
+        img: "/maservice2.png",
         points: [
           "Comprehensive medical affairs strategic plans",
           "Key opinion leader (KOL) mapping strategy",
@@ -118,6 +121,7 @@ const sections = [
     items: [
       {
         title: "Launch Planning and Execution",
+            img: "/lifecycle1.png",
         points: [
           "Integrated strategy (med + comm)",
           "Timeline and milestone planning",
@@ -127,6 +131,7 @@ const sections = [
       },
       {
         title: "Product Lifecycle and Sustained Support",
+            img: "/lifecycle2.png",
         points: [
           "Ongoing medical information services",
           "Continued HCP and patient education",
@@ -162,6 +167,7 @@ const sections = [
       },
       {
         title: "Medical Review and Quality Assurance",
+        img: "/integration2.png",
         points: [
           "Promotional claim substantiation and review",
           "Comparative claim validation and risk assessment",
@@ -186,6 +192,7 @@ const sections = [
       },
       {
         title: "Mobile Apps and Web Platforms",
+        img: "/techsol2.png",
         points: [
           "Healthcare provider portals and engagement platforms",
           "Patient mobile applications and digital tools",
@@ -194,6 +201,7 @@ const sections = [
       },
       {
         title: "AI and Automation",
+        img: "/techsol3.png",
         points: [
           "Literature mining and evidence synthesis automation",
           "Chatbot and virtual assistant for medical inquiries",
