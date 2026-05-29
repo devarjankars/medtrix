@@ -293,8 +293,8 @@ export default function MedicalAffairs() {
         paragraphs={[
           "MedTrix offers the full scope of medical communications and medical affairs services, powered by cutting-edge digital solutions to support pharmaceutical companies across the entire lifecycle.",
         ]}
-        desktopBg={"/MedicalAffairs.jpg"}
-        mobileImg={"/ma1.png"}
+        desktopBg={"/Desk.png"}
+        mobileImg={"/Medical_Affairsmbl.png"}
       />
 
       <div className="w-[90%] md:w-[80%] mx-auto pb-20">

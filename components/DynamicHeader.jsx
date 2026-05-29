@@ -170,8 +170,8 @@ export default function DynamicHeader({
 
           {/* Mobile image */}
           {mobileImgSrc && (
-            <motion.div className="block lg:hidden" variants={fadeUp}>
-              <img src={mobileImgSrc} alt="" className="w-full object-contain rounded-xl" />
+            <motion.div className="block lg:hidden w-screen relative left-1/2 -translate-x-1/2" variants={fadeUp}>
+              <img src={mobileImgSrc} alt="" className="w-full object-cover" />
             </motion.div>
           )}
 
