@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import LifeatMet from "@/components/LifeatMet";
 import NewsCard from "@/components/NewsCard";
-import NewsDetails from "@/components/NewsDetails";
+import NewsDetailsNew from "@/components/NewsDetailsNew";
 import JobCard from "@/components/JobCard";
 import JobDetailsCard from "@/components/JobDetailsCard";
 import { newsData } from "@/Data/newNews";
@@ -41,7 +41,7 @@ export default function LifeAtMedtrixPage() {
       <section className="w-[90%] md:w-[80%] mx-auto py-20">
 
         {selected ? (
-          <NewsDetails news={selected} onBack={() => setSelected(null)} />
+          <NewsDetailsNew news={selected} onBack={() => setSelected(null)} />
         ) : selectedJob ? (
           <JobDetailsCard job={selectedJob} onBack={() => setSelectedJob(null)} />
         ) : (

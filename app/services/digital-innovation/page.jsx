@@ -118,8 +118,8 @@ function DigitalInnovationInner() {
                 <motion.div
                   key={project.id}
                   variants={cardItem}
-                  className="bg-[#141414] border border-[#2C2C2C] rounded-[34px] overflow-hidden transition-colors duration-300 hover:border-red-500/40 cursor-pointer"
-                  whileHover={{ y: -5, scale: 1.015 }}
+                  className="bg-[#141414] border border-[#2C2C2C] rounded-[34px] overflow-hidden transition-colors duration-300  cursor-pointer"
+                  // whileHover={{ y: -5, scale: 1.015 }}
                   transition={{ type: "spring", stiffness: 280, damping: 24 }}
                   onClick={() => openProject(project)}
                 >
@@ -127,7 +127,7 @@ function DigitalInnovationInner() {
                     <img
                       src={project.imgforfiltersection}
                       alt={project.title}
-                      className="w-full h-70 object-cover rounded-3xl"
+                      className="w-full h-70 object-cover rounded-3xl hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   <div className="p-6">

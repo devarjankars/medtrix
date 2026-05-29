@@ -50,7 +50,7 @@ export default function Footer() {
             <div key={index}>
               <Link
                 href={section.href}
-                className="group inline-block text-white text-2xl font-semibold mb-6 relative"
+                className="group inline-block text-white text-lg md:text-2xl font-semibold mb-6 relative"
               >
                 {section.title}
                 <span className="absolute bottom-0 left-0 h-[1.5px] w-0 group-hover:w-full bg-white/50 rounded-full transition-all duration-300" />

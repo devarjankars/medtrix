@@ -2,7 +2,9 @@
 
 import { useRef, useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { motion } from "framer-motion";
+
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -99,7 +101,8 @@ function ContactInner() {
       </div>
 
       {/* Two-column layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-14 items-start">
+   <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-14 items-start">
+
 
         {/* LEFT: Form */}
         <div ref={formRef}>
@@ -115,7 +118,7 @@ function ContactInner() {
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <h3 className="text-white text-2xl font-bold">Message sent!</h3>
+              <h3 className="text-white text-lg md:text-2xl font-bold">Message sent!</h3>
               <p className="text-zinc-400 text-sm max-w-xs">We'll get back to you within 24 hours.</p>
             </motion.div>
           ) : (
@@ -257,17 +260,20 @@ function ContactInner() {
           <div className="flex items-center gap-4">
             <motion.a href="https://www.linkedin.com/company/medtrix-healthcare" target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
-              className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
-              <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2H8v-4h8z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
+              className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-m transition-colors group">
+              <span className="w-12 h-12 rounded-full   flex items-center justify-center shrink-0  transition-colors">
+                   <Image
+                              src="/linkdin.png"
+                              alt="LinkedIn"
+                              width={80}
+                              height={80}
+                              className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer shrink-0"
+                              loading="lazy"
+                            />
               </span>
               LinkedIn
             </motion.a>
-            <motion.a href="https://www.instagram.com/medtrixhealthcare" target="_blank" rel="noopener noreferrer"
+            {/* <motion.a href="https://www.instagram.com/medtrixhealthcare" target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
               className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
               <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
@@ -277,7 +283,7 @@ function ContactInner() {
                 </svg>
               </span>
               Instagram
-            </motion.a>
+            </motion.a> */}
           </div>
 
 

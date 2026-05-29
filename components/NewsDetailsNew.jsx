@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { lenisInstance } from "@/components/LenisProvider";
 
-export default function NewsDetails({ news, onBack }) {
+export default function NewsDetailsNew({ news, onBack }) {
   useEffect(() => {
     if (lenisInstance) {
       lenisInstance.scrollTo(0, { immediate: true });
@@ -27,7 +27,7 @@ export default function NewsDetails({ news, onBack }) {
           >
             ←
           </motion.span>
-        Back to News & Updates
+        Back to Life @ Medtrix
      </motion.button>
 
       {/* Title */}
