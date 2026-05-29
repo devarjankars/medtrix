@@ -159,11 +159,11 @@ function ImageSlider({ images = [] }) {
           className="flex h-full"
         >
           {slides.map((slide, i) => (
-            <div key={i} className="relative min-w-full h-full shrink-0">
+            <div key={i} className="relative min-w-full h-full shrink-0 p-4 md:p-8">
               <img
                 src={slide.image}
                 alt={`Slide ${i + 1}`}
-                className="absolute inset-0 w-full h-full object-contain"
+                className="absolute inset-4 md:inset-8 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] h-[calc(100%-2rem)] md:h-[calc(100%-4rem)] object-contain"
               />
             </div>
           ))}
@@ -389,11 +389,11 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── OUR SOLUTION ─────────────────────────────────────────────────── */}
       {project.solution && (
-        <section className="lg:py-[100px] py-[50px] relative">
+        <section className="lg:py-[100px] py-[50px]  relative">
           <SectionPill label="Our Solution" />
 
           {project.slider?.length > 0 && (
-            <Reveal delay={0.05} className="mb-10">
+            <Reveal delay={0.05} className="mb-10 ">
               <ImageSlider images={project.slider} />
             </Reveal>
           )}

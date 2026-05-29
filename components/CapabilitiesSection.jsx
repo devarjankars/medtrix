@@ -64,7 +64,7 @@ const tabContent = {
   },
   "Interactive Platforms": {
     mediaType: "image",
-    mediaSrc: "/ourcap1.jpg",
+    mediaSrc: "/ourcap1.png",
     headline: "Interactive Platforms",
     desc: "Custom applications and data-driven platforms that enable informed decision-making and effective engagement.",
     points: [
@@ -72,7 +72,7 @@ const tabContent = {
       { title: "Product and data-driven applications:", desc: "Unified data and product portfolio showcase platforms for web and interactive screens" },
       { title: "Webcast and Symposia platform:", desc: "Unified platform for onboarding, video streaming, quiz and interaction delivery for webinars" },
     ],
-    caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work?project=lilly-med-affairs-intelligence" },
+    caseStudy: { label: "Read the Lilly COMPASS Case Study →", href: "/our-work?project=lilly-med-affairs-intelligence" },
   },
 };
 
