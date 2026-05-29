@@ -221,6 +221,7 @@ export default function CapabilitiesSection() {
         ]}
         cols={3}
         button="Explore Our Omnichannel Catalyst"
+        link={"/services/ai-catalysts"}
       />
 
       {/* EDUCATE section */}
@@ -262,7 +263,7 @@ function SectionGrid({ label, title, items, cols, button, link }) {
                 src={item.img}
                 alt={item.title}
                 fill
-                className="object-contain"
+                className="object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>

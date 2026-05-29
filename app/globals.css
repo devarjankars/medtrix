@@ -275,10 +275,10 @@ button[aria-label="Next slide"] {
 }
 
 @keyframes rotatePhone {
-  0%   { transform: rotate(0deg); }
-  40%  { transform: rotate(0deg); }
-  60%  { transform: rotate(-90deg); }
-  100% { transform: rotate(-90deg); }
+  0%   { transform: rotate(90deg); }
+  40%  { transform: rotate(90deg); }
+  60%  { transform: rotate(0deg); }
+  100% { transform: rotate(0deg); }
 }
 
 @keyframes fadeInUp {

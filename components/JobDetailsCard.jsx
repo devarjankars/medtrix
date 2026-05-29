@@ -37,7 +37,7 @@ export default function JobDetailsCard({ job, onBack }) {
       {/* ── Back button ── */}
       <motion.button
           onClick={onBack}
-          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
+          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer mb-6"
           whileHover={{ x: -3 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
         >
@@ -86,12 +86,16 @@ export default function JobDetailsCard({ job, onBack }) {
       </div>
 
       {/* ── Apply Now ── */}
-      <button className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200 mb-10 cursor-pointer">
+      {/* <button className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200 mb-10 cursor-pointer">
         Apply Now
-      </button>
+      </button> */}
 
+   {/* ── Interest line ── */}
+   
       {/* ── Divider ── */}
       <div className="border-t border-[#1e1e1e] mb-8" />
+
+   
 
       {/* ── Job Summary ── */}
       {job.summary && (
@@ -142,6 +146,15 @@ export default function JobDetailsCard({ job, onBack }) {
           </ul>
         </div>
       )}
+
+{/* apply */}
+
+ <h2 className="text-white font-bold text-base mb-3">Apply</h2>
+         <p className="text-gray-400 text-m mb-8">
+        Interested in this opportunity? Please send your resume to{" "}
+        <a href="mailto:hr@medtrixhealthcare.com" className="text-[#E1251B] hover:underline">hr@medtrixhealthcare.com</a>
+      </p>
+
 
     </div>
   );

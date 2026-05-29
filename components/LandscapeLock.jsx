@@ -2,15 +2,19 @@
 import { useEffect, useState } from 'react';
 
 export default function LandscapeLock() {
-  const [show, setShow] = useState(false);
+  const [mode, setMode] = useState(null); // 'mobile' | 'tablet' | null
 
   useEffect(() => {
     const check = () => {
       const w = window.innerWidth;
       const h = window.innerHeight;
-      const isMobileLandscape = w < 768 && w > h;
-      const isTabletPortrait  = w >= 768 && w <= 1024 && h > w;
-      setShow(isMobileLandscape || isTabletPortrait);
+      if (w < 768 && w > h) {
+        setMode('mobile');
+      } else if (w >= 768 && w <= 1024 && h > w) {
+        setMode('tablet');
+      } else {
+        setMode(null);
+      }
     };
     check();
     window.addEventListener('resize', check);
@@ -21,7 +25,9 @@ export default function LandscapeLock() {
     };
   }, []);
 
-  if (!show) return null;
+  if (!mode) return null;
+
+  const isMobile = mode === 'mobile';
 
   return (
     <div className="landscape-message fixed inset-0 z-[99999] bg-black flex flex-col items-center justify-center gap-6 px-8">
@@ -40,10 +46,14 @@ export default function LandscapeLock() {
         <path d="M12 18h.01" />
       </svg>
       <p className="text-white text-center text-lg font-semibold leading-relaxed">
-        Please rotate your device<br />to landscape mode
+        {isMobile
+          ? <>Please rotate your device<br />to portrait mode</>          
+          : <>Please rotate your device<br />to landscape mode</>}
       </p>
       <p className="text-white/40 text-sm text-center">
-        This site is best viewed in landscape orientation on tablets
+        {isMobile
+          ? 'This site is best viewed in portrait orientation on mobile'
+          : 'This site is best viewed in landscape orientation on tablets & iPads'}
       </p>
     </div>
   );
