@@ -310,7 +310,7 @@ export default function MedicalAffairs() {
         paragraphs={[
           "MedTrix offers the full scope of medical communications and medical affairs services, powered by cutting-edge digital solutions to support pharmaceutical companies across the entire lifecycle.",
         ]}
-        desktopBg={"/Desk.png"}
+        desktopBg={"/MedicalAffairs.png"}
         mobileImg={"/Medical_Affairsmbl.png"}
       />
 

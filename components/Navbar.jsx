@@ -310,13 +310,13 @@ export default function Navbar() {
         className="w-[90%] md:w-[80%] mx-auto flex items-center justify-between"
         style={isDesktop ? { padding: scrolled ? '14px 0' : '26px 0', transition: 'padding 0.6s cubic-bezier(0.4,0,0.2,1)' } : { padding: '14px 0' }}
       >
-        <Link href="/">
+        <a href="/">
           <img
             src="/logo.png"
             alt="Medtrix Logo"
             style={isDesktop ? { width: scrolled ? '130px' : '180px', transition: 'width 0.6s cubic-bezier(0.4,0,0.2,1)' } : { width: '130px' }}
           />
-        </Link>
+        </a>
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-7">
