@@ -295,7 +295,14 @@ export default function Navbar() {
     }
   }, []);
 
-  const isDesktop = typeof window !== 'undefined' && window.innerWidth >= 768;
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+    const onResize = () => setIsDesktop(window.innerWidth >= 768);
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
 
   return (
     <nav className="w-full bg-[#000] fixed top-0 left-0 right-0 z-50">
