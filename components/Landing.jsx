@@ -4,7 +4,7 @@ export default function Landing() {
     <section className="  relative isolate z-10 px-6 pb-[50px] lg:pb-20 bg-black mt-[50px] lg:mt-[50px] lg:px-0">
       <div className="flex flex-col-reverse  lg:m-h-[100vh] mx-auto  w-[90%] md:w-[80%]  md:flex-row items-center justify-between gap-3">
         <div className="text-left flex lg:w-1/2 flex-col gap-5">
-           <h1 className="text-[26px] text-center lg:text-left lg:text-[70px]   font-bold leading-[1.2] text-[#FFF]
+           <h1 className="text-[26px] text-center lg:text-left lg:text-[70px] font-bold leading-[1.2] text-[#FFF]
 1  ">MedTrix - Catalyzing <span className=" text-red-600">Healthcare</span></h1>
   <div className="w-full  lg:hidden block ">
           <img src="/tablet.png" alt=""  className=" items-center min-w-70 md:w-full lg:ml-8 " />

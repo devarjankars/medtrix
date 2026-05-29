@@ -87,13 +87,13 @@ function ContactInner() {
             Contact Us
           </span>
         </div>
-        <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
+        {/* <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
           Let's build something <br className="hidden md:block" />
           <span className="text-[#E1251B]">remarkable</span>
         </h1>
         <p className="text-zinc-400 mt-4 text-base md:text-lg max-w-xl">
           Have a question or want to work with us? We'd love to hear from you.
-        </p>
+        </p> */}
       </div>
 
       {/* Two-column layout */}
@@ -246,11 +246,48 @@ function ContactInner() {
             </div>
           </div>
 
+          {/* divder line */}
+
+          <div className="border-t border-[#1e1e1e]" />
+
+          {/* linked in and instagram logo */}
+
+          <div className="flex items-center gap-4">
+            <motion.a href="https://www.linkedin.com/company/medtrix-healthcare" target="_blank" rel="noopener noreferrer"
+              whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
+              className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
+              <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2H8v-4h8z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </span>
+              LinkedIn
+            </motion.a>
+            <motion.a href="https://www.instagram.com/medtrixhealthcare" target="_blank" rel="noopener noreferrer"
+              whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
+              className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
+              <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="4" />
+                  <circle cx="12" cy="12" r="3" />
+                </svg>
+              </span>
+              Instagram
+            </motion.a>
+          </div>
+
+
+
+
+          
+
           {/* Office cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {/* <div className("grid grid-cols-1 sm:grid-cols-2 gap-4">
             {[
               { city: "Bangalore", country: "India",   address: "Medtrix Healthcare Pvt. Ltd.", icon: "🇮🇳" },
-              { city: "New Jersey", country: "USA",    address: "Medtrix Healthcare Inc.",      icon: "🇺🇸" },
+              { city: "New Jersey", country: "USA",    address: "100 Somerset Corporate Boulevard 2nd Floor, Suite 130, Bridgewater, NJ 08807",   icon: "🇺🇸" },
             ].map((office) => (
               <motion.div key={office.city} whileHover={{ y: -3 }} transition={{ duration: 0.25 }}
                 className="office-card opacity-0 bg-[#0f0f0f] border border-[#1e1e1e] rounded-xl p-5 flex flex-col gap-1">
@@ -259,10 +296,10 @@ function ContactInner() {
                 <p className="text-zinc-500 text-xs">{office.address}</p>
               </motion.div>
             ))}
-          </div>
+          </div> */}
 
           {/* Email */}
-          <motion.a href="mailto:info@medtrixhealthcare.com"
+          {/* <motion.a href="mailto:info@medtrixhealthcare.com"
             whileHover={{ x: 4 }} transition={{ duration: 0.2 }}
             className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
             <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
@@ -272,7 +309,7 @@ function ContactInner() {
               </svg>
             </span>
             info@medtrixhealthcare.com
-          </motion.a>
+          </motion.a> */}
 
         </div>
       </div>
