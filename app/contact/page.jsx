@@ -14,11 +14,13 @@ const inputClass =
   "w-full bg-[#0f0f0f] border border-[#2a2a2a] rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-[#E1251B] focus:ring-1 focus:ring-[#E1251B]/40 transition-all duration-200";
 
 function ContactInner() {
+  const searchParams = useSearchParams();
+
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
-    name: "", company: "", email: "", subject: "", message: "",
+    name: "", company: "", email: "", subject: searchParams.get("subject") || "", message: "",
   });
 
   const handleChange = (e) => {
@@ -105,7 +107,7 @@ function ContactInner() {
 
 
         {/* LEFT: Form */}
-        <div ref={formRef}>
+        <div ref={formRef} className="w-full">
           {submitted ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
@@ -122,7 +124,7 @@ function ContactInner() {
               <p className="text-zinc-400 text-sm max-w-xs">We'll get back to you within 24 hours.</p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full">
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
@@ -228,7 +230,7 @@ function ContactInner() {
             <img
               src="/map.png"
               alt="Medtrix office locations"
-              className="w-full hidden lg:block  object-contain  md:block "
+              className="w-full hidden lg:block  object-contain scale-110  md:block "
             />
             <img
               src="/mobile_map.png"
