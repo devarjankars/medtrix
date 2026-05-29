@@ -267,7 +267,7 @@ function ContactInner() {
               </span>
               LinkedIn
             </motion.a>
-            <motion.a href="https://www.instagram.com/medtrixhealthcare" target="_blank" rel="noopener noreferrer"
+            {/* <motion.a href="https://www.instagram.com/medtrixhealthcare" target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
               className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
               <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
@@ -277,7 +277,7 @@ function ContactInner() {
                 </svg>
               </span>
               Instagram
-            </motion.a>
+            </motion.a> */}
           </div>
 
 

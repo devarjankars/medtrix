@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import Loader from "@/components/Loader";
 import LenisProvider from "@/components/LenisProvider";
-import LandscapeLock from "@/components/LandscapeLock";
 
 
 const albertSans = Albert_Sans({
@@ -25,7 +24,6 @@ export default function RootLayout({ children }) {
       
       <body className={`${albertSans.className} min-h-screen flex flex-col bg-black`}>
         <LenisProvider>
-          <LandscapeLock />
           <ScrollToTop />
           {/* <Loader /> */}
           <Navbar />
