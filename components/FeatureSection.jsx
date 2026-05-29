@@ -85,13 +85,13 @@ export default function FeatureSection({
           >
             <motion.div
               className="relative rounded-2xl overflow-hidden  shadow-2xl"
-              whileHover={{ scale: 1.02 }}
+              // whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
             >
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                className="w-full lg:w-[70%] h-full object-contain object-top"
+                className="w-full lg:w-[70%] h-full object-contain object-top  transition-transform duration-300"
               />
             </motion.div>
           </motion.div>

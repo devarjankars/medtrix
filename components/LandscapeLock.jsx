@@ -31,20 +31,6 @@ export default function LandscapeLock() {
 
   return (
     <div className="landscape-message fixed inset-0 z-[99999] bg-black flex flex-col items-center justify-center gap-6 px-8">
-      <svg
-        className="rotate-phone-icon"
-        width="72"
-        height="72"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="#E1251B"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      >
-        <rect x="5" y="2" width="14" height="20" rx="2" />
-        <path d="M12 18h.01" />
-      </svg>
       <p className="text-white text-center text-lg font-semibold leading-relaxed">
         {isMobile
           ? <>Please rotate your device<br />to portrait mode</>          

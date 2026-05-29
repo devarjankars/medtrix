@@ -17,7 +17,7 @@ export default function NewsDetails({ news, onBack }) {
       {/* Back Button */}
        <motion.button
           onClick={onBack}
-          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
+          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer mb-2"
           whileHover={{ x: -3 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
         >
@@ -57,6 +57,14 @@ export default function NewsDetails({ news, onBack }) {
           {news.body.map((para, i) => (
             <p key={i}>{para}</p>
           ))}
+            {news.link && (
+            <p>
+              <a href={news.link} target="_blank" rel="noopener noreferrer" className="text-[#E1251B] underline underline-offset-4 hover:opacity-80 transition-opacity">
+                Click here
+              </a>
+              {news.linkLabel && ` ${news.linkLabel}`}
+            </p>
+          )}
         </div>
       )}
 

@@ -51,7 +51,7 @@ export default function page() {
             "The MLR Catalyst is a tool built to reduce the time and effort involved in the medical-legal-regulatory approval process. It utilizes AI methodologies rooted in a validated and brand-specific knowledge bank to simplify repetitive tasks.",
             "Importantly, it validates claims in a document with information in the knowledge bank and allows reviewers to utilize their time more efficiently by focusing on relevant areas. ",
           ]}
-          buttons={[{ label: "Learn More ", type: "primary", href: "" }]}
+          buttons={[{ label: "Learn More ", type: "primary", href: "/GenAI" }]}
         />
       </section>
 
@@ -90,29 +90,3 @@ export default function page() {
 }
 
 
-// commerical soulution 
-// medical affairs 
-// innovation
-// 
-
-
-// scrollbar for all pages
-//remove medtrix from Ai 
-// data boxeses 
-// dynamic header imges
-// website 
-//video 
-// innnovation page
-// explore onimchanal --->redirect to capion catalyest -in Al   c
-//  cs== // explor module to ---> our work
-
-  // every page need start from top
-
-
-  // blank space from cards
-  //  map hompage -contact to contact us
-
-
-
-  //learn more -->gen Ai old medterix
-  

@@ -4,11 +4,11 @@ import { useEffect, useRef } from "react";
 import DynamicHeader from "@/components/DynamicHeader";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import advertising from "../../../public/advertising1.png";
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 
-const iconSrc = typeof advertising === "object" ? advertising.src : advertising;
 
 /* ── Data ─────────────────────────────────────────────────────────────────── */
 const sections = [
@@ -18,6 +18,7 @@ const sections = [
     items: [
       {
         title: "Clinical Evidence Communication",
+        img: "/medcom1.png",
         points: [
           "Systematic literature reviews and evidence synthesis",
           "Meta-analyses and health economic analyses",
@@ -27,6 +28,7 @@ const sections = [
       },
       {
         title: "Publication Extenders: Digital Amplification Suite",
+        img: "/medcom2.png",
         points: [
           "Visual Abstracts: graphical summaries optimized for social media",
           "Video Abstracts: authors explain study background and significance",
@@ -37,6 +39,7 @@ const sections = [
       },
       {
         title: "Healthcare Provider Communications",
+        img: "/medcom3.png",
         points: [
           "Peer-reviewed journal article reprints",
           "Conference presentations and slide decks",
@@ -46,7 +49,12 @@ const sections = [
         ],
       },
       {
+<<<<<<< HEAD
         title: "Patient Education and Engagement",
+=======
+        title: "Patient Education & Engagement",
+        img: "/medcom4.png",
+>>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Patient education brochures and disease awareness",
           "Patient decision aids and shared decision-making tools",
@@ -62,7 +70,12 @@ const sections = [
     cols: 3,
     items: [
       {
+<<<<<<< HEAD
         title: "Medical Information and Scientific Support",
+=======
+        title: "Medical Information & Scientific Support",
+        img: "/maservice1.png",
+>>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Medical information center operations",
           "Response development to unsolicited HCP inquiries",
@@ -71,7 +84,12 @@ const sections = [
         ],
       },
       {
+<<<<<<< HEAD
         title: "Medical Strategy and Planning",
+=======
+        title: "Medical Strategy & Planning",
+        img: "/maservice2.png",
+>>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Comprehensive medical affairs strategic plans",
           "Key opinion leader (KOL) mapping strategy",
@@ -80,6 +98,7 @@ const sections = [
       },
       {
         title: "KOL Engagement",
+        img: "/maservice3.png",
         points: [
           "Visual Abstracts for social media",
           "Video Abstracts by study authors",
@@ -88,6 +107,7 @@ const sections = [
       },
       {
         title: "Educational Content Development",
+        img: "/maservice4.png",
         points: [
           "Disease awareness campaigns",
           "HCP training programs and materials",
@@ -97,6 +117,7 @@ const sections = [
       },
       {
         title: "Global Medical Affairs Support",
+        img: "/maservice5.png",
         points: [
           "Cross-regional KOL network development",
           "Scientific document translation",
@@ -111,7 +132,12 @@ const sections = [
     cols: 3,
     items: [
       {
+<<<<<<< HEAD
         title: "Launch Planning and Execution",
+=======
+        title: "Launch Planning & Execution",
+        img: "/lifecycle1.png",
+>>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Integrated strategy (med + comm)",
           "Timeline and milestone planning",
@@ -120,7 +146,12 @@ const sections = [
         ],
       },
       {
+<<<<<<< HEAD
         title: "Product Lifecycle and Sustained Support",
+=======
+        title: "Product Lifecycle & Sustained Support",
+        img: "/lifecycle2.png",
+>>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Ongoing medical information services",
           "Continued HCP and patient education",
@@ -130,6 +161,7 @@ const sections = [
       },
       {
         title: "Real-World Evidence Development",
+        img: "/lifecycle3.png",
         points: [
           "Registry development",
           "Patient tracking",
@@ -145,6 +177,7 @@ const sections = [
     items: [
       {
         title: "Integrated Strategy Alignment",
+        img: "/integration1.png",
         points: [
           "Integrated medical-commercial planning",
           "Coordinated publication strategy",
@@ -153,7 +186,12 @@ const sections = [
         ],
       },
       {
+<<<<<<< HEAD
         title: "Medical Review and Quality Assurance",
+=======
+        title: "Medical Review & Quality Assurance",
+        img: "/integration2.png",
+>>>>>>> 35324350f95b7ccdb61d880f15e4236ae9ff2f73
         points: [
           "Promotional claim substantiation and review",
           "Comparative claim validation and risk assessment",
@@ -169,6 +207,7 @@ const sections = [
     items: [
       {
         title: "Learning Management System",
+        img: "/techsol1.png",
         points: [
           "Purpose-built for the Pharma industry",
           "Customizable automation, personalization, and analytics",
@@ -255,7 +294,7 @@ function ServiceGrid({ label, cols, items }) {
             {/* Icon */}
             <div className="relative mb-5">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-[#E1251B]/30 bg-[#E1251B]/8 p-2.5">
-                <img src={iconSrc} alt={service.title} className="w-full h-full object-contain opacity-90" />
+                <img src={service.img || iconSrc} alt={service.title} className="w-full h-full object-contain opacity-90" />
               </div>
             </div>
 
@@ -293,8 +332,8 @@ export default function MedicalAffairs() {
         paragraphs={[
           "MedTrix offers the full scope of medical communications and medical affairs services, powered by cutting-edge digital solutions to support pharmaceutical companies across the entire lifecycle.",
         ]}
-        desktopBg={"/MedicalAffairs.jpg"}
-        mobileImg={"/ma1.png"}
+        desktopBg={"/Desk.png"}
+        mobileImg={"/Medical_Affairsmbl.png"}
       />
 
       <div className="w-[90%] md:w-[80%] mx-auto pb-20">

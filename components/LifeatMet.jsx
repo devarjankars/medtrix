@@ -8,38 +8,32 @@ import "swiper/css";
 const slides = [
   {
     id: 1,
-    image: "/stories1.png",
+    image: "/f_1.png",
     tag: "EQUALITY",
     title: "Harnessing The Power Of One",
     desc: "We believe diverse perspectives drive stronger ideas. By bringing together people from different backgrounds, disciplines, and experiences, we foster a culture built on inclusion, collaboration, and shared purpose.",
   },
   {
     id: 2,
-    image: "/stories2.png",
-    tag: "GROWTH",
-    title: "Growing Together, Every Day",
-    desc: "At MedTrix, growth is not just professional — it's personal. We invest in our people through mentorship, learning opportunities, and a culture that celebrates curiosity and ambition.",
+    image: "/f_2.png",
+    tag: "AUDACITY",
+    title: "Challenging what’s possible",
+    desc: "We embrace bold thinking and ambitious ideas that push healthcare communication forward. From emerging technologies to new engagement models, we continuously strive to create meaningful impact for our clients and their audiences. ",
   },
   {
     id: 3,
-    image: "/stories3.png",
-    tag: "INNOVATION",
-    title: "Where Ideas Come To Life",
-    desc: "We create space for bold thinking. From strategy to execution, every team member is empowered to challenge the status quo and bring fresh perspectives to the table.",
+    image: "/f_3.png",
+    tag: "Originality",
+    title: "Crafting unique experiences",
+    desc: "We combine creativity, science, and technology to create innovative healthcare communication experiences. From Artificial Intelligence to Augmented and Mixed Reality, we challenge convention through solutions that redefine engagement. ",
   },
+  
   {
     id: 4,
-    image: "/stories4.png",
-    tag: "COMMUNITY",
-    title: "More Than A Workplace",
-    desc: "MedTrix is a community. We celebrate milestones together, support each other through challenges, and build relationships that go beyond the office walls.",
-  },
-  {
-    id: 5,
-    image: "/stories5.png",
-    tag: "IMPACT",
-    title: "Work That Matters",
-    desc: "Every project we take on has a real-world impact on healthcare. Our work helps patients get better access to treatments and empowers healthcare professionals with the knowledge they need.",
+    image: "/f_4.png",
+    tag: "Simplicity",
+    title: "Delivering clarity through design",
+    desc: "We simplify complex concepts through inventive strategy, graphical storytelling, implementation expertise, and high-quality in-house content to create intuitive, user-friendly, end-to-end solutions.",
   },
 ];
 

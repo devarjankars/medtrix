@@ -98,10 +98,10 @@ import awd11 from "../public/awd11.png";
 import awd12 from "../public/awd12.png";
 
 const vpData = [
-  { img: vp1, name: "Kumar Badampudi", role: "VP - Medical Affairs & Strategy" },
-  { img: vp2, name: "Shijin Pulikkotil", role: "VP - Head of Operations" },
-  { img: vp3, name: "Hari Prabhakaran", role: "VP - Business Development" },
-  { img: vp4, name: "Vincent Morella", role: "US Operations Admin" },
+  { img: vp1, name: "Kumar Badampudi", role: "VP - Medical Affairs & Strategy", linkedin: "https://www.linkedin.com/in/kumar-badampudi-71812826/" },
+  { img: vp2, name: "Shijin Pulikkotil", role: "VP - Head of Operations", linkedin: "https://www.linkedin.com/in/shijin-pulikkotil-85139332/" },
+  { img: vp3, name: "Hari Prabhakaran", role: "VP - Business Development", linkedin: "https://www.linkedin.com/in/hari-prabhakaran-90724a2/" },
+  { img: vp4, name: "Vincent Morella", role: "US Operations Admin", linkedin: "https://www.linkedin.com/in/vincent-morella-389b714/" },
 ];
 
 const clientLogos = [
@@ -184,12 +184,13 @@ function OneTeam() {
               <h5 className="lg:text-[28px] text-[22px] font-semibold">Vimal Narayanan</h5>
               <p className="lg:text-[20px] text-[16px] text-gray-300">Founder and CEO</p>
             </div>
+            <a href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/" target="_blank" rel="noopener noreferrer">
             <Image
               src={linkedinImg}
               alt="LinkedIn"
-              
               className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer"
             />
+            </a>
           </div>
         </div>
       </div>
@@ -203,12 +204,12 @@ function OneTeam() {
             className="flex flex-col gap-1 px-5 py-5 pb-4 border border-[#252525] border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1"
             style={{ ...cardStyle, willChange: "opacity, transform", opacity: 0 }}
           >
-            <div className="flex justify-center">
+            <div className="flex justify-center ">
               <Image
                 src={vp.img}
                 alt={vp.name}
-                className="w-full h-auto object-contain"
-                sizes="(max-width: 768px) 90vw, (max-width: 1024px) 45vw, 22vw"
+                className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300 "
+                sizes="(max-width: 768px) 90vw, (max-width: 1024px)  45vw, 22vw"
                 loading="lazy"
               />
             </div>
@@ -217,13 +218,14 @@ function OneTeam() {
                 <h5 className="text-[20px] font-semibold leading-tight">{vp.name}</h5>
                 <p className="text-gray-400 mt-1 text-[14px]">{vp.role}</p>
               </div>
+              <a href={vp.linkedin} target="_blank" rel="noopener noreferrer">
               <Image
                 src={linkedinImg}
                 alt="LinkedIn"
-            
                 className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer shrink-0"
                 loading="lazy"
               />
+              </a>
             </div>
           </div>
         ))}

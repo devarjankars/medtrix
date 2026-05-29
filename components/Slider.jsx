@@ -2,7 +2,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 
 export default function Slider({
   title = "OUR SOLUTION",
@@ -58,16 +57,13 @@ export default function Slider({
             className="flex h-full"
           >
             {slides.map((slide, index) => (
-              <div key={index} className="min-w-full flex justify-center items-center shrink-0">
-                <div className="relative w-full h-full">
-                  <Image
-                    src={slide.image}
-                    alt=""
-                    fill
-                    className="object-contain"
-                    draggable={false}
-                  />
-                </div>
+              <div key={index} className="relative min-w-full h-full shrink-0">
+                <img
+                  src={slide.image}
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-contain"
+                  draggable={false}
+                />
               </div>
             ))}
           </motion.div>

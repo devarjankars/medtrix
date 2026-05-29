@@ -183,11 +183,11 @@ function ImageSlider({ images = [] }) {
           className="flex h-full"
         >
           {slides.map((slide, i) => (
-            <div key={i} className="min-w-full h-full shrink-0">
+            <div key={i} className="relative min-w-full h-full shrink-0 p-4 md:p-8">
               <img
                 src={slide.image}
                 alt={`Slide ${i + 1}`}
-                className="w-full h-full object-contain"
+                className="absolute inset-4 md:inset-8 w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] h-[calc(100%-2rem)] md:h-[calc(100%-4rem)] object-contain"
               />
             </div>
           ))}
@@ -417,11 +417,11 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── OUR SOLUTION ─────────────────────────────────────────────────── */}
       {project.solution && (
-        <section className="lg:py-[100px] py-[50px] relative">
+        <section className="lg:py-[100px] py-[50px]  relative">
           <SectionPill label="Our Solution" />
 
           {project.slider?.length > 0 && (
-            <Reveal delay={0.05} className="mb-10">
+            <Reveal delay={0.05} className="mb-10 ">
               <ImageSlider images={project.slider} />
             </Reveal>
           )}
@@ -447,16 +447,44 @@ export default function ProjectDetail({ project, onBack }) {
 
           <Reveal delay={0.05}>
             <div className="border border-[#1f1f1f] rounded-2xl px-6 md:px-12 py-14 flex flex-col gap-10">
-              {Array.isArray(project.result?.content) ? (
-                <BulletList items={project.result.content} />
-              ) : (
-                <AnimatedParagraph
-                  text={project.result}
-                  className="text-[18px] leading-[1.9] text-[#A6A6A6]"
-                />
-              )}
+              <AnimatedParagraph
+                text={project.result}
+                className="text-[18px] leading-[1.9] text-[#A6A6A6]"
+              />
 
-              {project.desc?.length > 0 && <BulletList items={project.desc} />}
+              {/* {project.desc?.length > 0 && (
+                <motion.ul
+                  className="flex flex-col gap-1"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.1 }}
+                  variants={{
+                    hidden: {},
+                    visible: { transition: { staggerChildren: 0.1 } },
+                  }}
+                >
+                  {project.desc.map((item, i) => (
+                    <motion.li
+                      key={i}
+                      variants={{
+                        hidden: { opacity: 0, x: -24 },
+                        visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease } },
+                      }}
+                      className="flex items-start gap-4 text-[#A6A6A6] text-lg"
+                    >
+                      
+                      <motion.span
+                        className="mt-2.5 w-2 h-2 rounded-full bg-[#705c5b] shrink-0"
+                        variants={{
+                          hidden: { scale: 0 },
+                          visible: { scale: 1, transition: { duration: 0.3, ease } },
+                        }}
+                      />
+                      {item}
+                    </motion.li>
+                  ))}
+                </motion.ul>
+              )} */}
             </div>
           </Reveal>
 
