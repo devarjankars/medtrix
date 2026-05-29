@@ -33,8 +33,7 @@ function PageInner() {
     : null;
 
   function openProject(project) {
-    
-    router.push(`/our-work/strategy-and-consulting?project=${project.id}`, { scroll: false });
+    router.push(`/our-work/strategy-and-consulting?project=${project.id}&from=${encodeURIComponent("/our-work/strategy-and-consulting")}`, { scroll: false });
   }
 
   function goBack() {

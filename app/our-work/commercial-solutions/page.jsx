@@ -33,8 +33,7 @@ function PageInner() {
     : null;
 
   function openProject(project) {
-    
-    router.push(`/our-work/commercial-solutions?project=${project.id}`, { scroll: false });
+    router.push(`/our-work/commercial-solutions?project=${project.id}&from=${encodeURIComponent("/our-work/commercial-solutions")}`, { scroll: false });
   }
 
   function goBack() {

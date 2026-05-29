@@ -71,7 +71,7 @@ export default function page() {
           paragraphs={[
            "The video catalyst brings together a suite of AI-enabled tools to radically simplify the process of developing videos of all types. It applies AI image and video generation capabilities to pre-production, production, and post-production of live action and all other styles of videos. ",
           "The video catalyst dramatically reduces the time to market for videos and lowers the cost and complexity of producing live action videos by using AI-generated characters, sets, props, and shots. " ]}
-          buttons={[{ label: "Read the Video Catalyst Case Study", type: "primary" , href:"/our-work?project=stemline-ai-storytelling" }]}
+          buttons={[{ label: "Read the Video Catalyst Case Study", type: "primary" , href:"/our-work?project=stemline-ai-storytelling&from=%2Fservices%2Fai-catalysts" }]}
         />
       </section>
       <section className="relative py-5 overflow-hidden">

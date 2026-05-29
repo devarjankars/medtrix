@@ -6,7 +6,7 @@ export const metadata = {
 export default function TermsConditions() {
   return (
     <main className="bg-black text-white min-h-screen">
-      <div className="w-[90%] md:w-[80%] mx-auto py-20 max-w-4xl">
+      <div className="w-[90%] md:w-[80%] mx-auto py-20 ">
 
         {/* Header */}
         <div className="mb-14">

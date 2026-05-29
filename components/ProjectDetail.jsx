@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import { lenisInstance } from "@/components/LenisProvider";
@@ -246,6 +247,20 @@ function ImageSlider({ images = [] }) {
 
 // ── Main component ────────────────────────────────────────────────────────────
 export default function ProjectDetail({ project, onBack }) {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const from = searchParams.get("from");
+
+  function handleBack() {
+    if (from) {
+      router.push(decodeURIComponent(from), { scroll: false });
+    } else if (onBack) {
+      onBack();
+    } else {
+      router.push("/our-work");
+    }
+  }
+
   /* Scroll to top via Lenis (bypasses native scroll which Lenis intercepts) */
   useEffect(() => {
     if (lenisInstance) {
@@ -274,7 +289,7 @@ export default function ProjectDetail({ project, onBack }) {
         className="py-8"
       >
         <motion.button
-          onClick={onBack}
+          onClick={() => handleBack()}
           className="group inline-flex items-center mt-4 gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
           whileHover={{ x: -3 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
@@ -285,7 +300,7 @@ export default function ProjectDetail({ project, onBack }) {
           >
             ←
           </motion.span>
-          Back to {project.category.charAt(0).toUpperCase() + project.category.slice(1).toLowerCase()}
+          Back 
         </motion.button>
       </motion.div>
 
@@ -293,7 +308,7 @@ export default function ProjectDetail({ project, onBack }) {
       <section className="mb-4 overflow-hidden">
 
         {/* category pill */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, scale: 0.82 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.45, ease, delay: 0.05 }}
@@ -303,7 +318,7 @@ export default function ProjectDetail({ project, onBack }) {
           <span className="inline-block text-[14px] font-bold tracking-[0.15em] uppercase text-white bg-[#0c0606] px-4 py-1.5 rounded-full">
             {project.category}
           </span>
-        </motion.div>
+        </motion.div> */}
 
         {/* title — word by word */}
         <AnimatedHeading

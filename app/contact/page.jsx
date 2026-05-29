@@ -81,7 +81,7 @@ function ContactInner() {
   }, []);
 
   return (
-    <section className="w-[90%] md:w-[80%] mx-auto py-16 md:py-24">
+    <section className="w-[90%] md:w-[80%] mx-auto py-16 md:py-24 overflow-hidden">
 
       {/* Header */}
       <div ref={headerRef} className="mb-12 md:mb-16 opacity-0">

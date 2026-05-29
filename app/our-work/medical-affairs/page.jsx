@@ -33,8 +33,7 @@ function PageInner() {
     : null;
 
   function openProject(project) {
-    
-    router.push(`/our-work/medical-affairs?project=${project.id}`, { scroll: false });
+    router.push(`/our-work/medical-affairs?project=${project.id}&from=${encodeURIComponent("/our-work/medical-affairs")}`, { scroll: false });
   }
 
   function goBack() {

@@ -5,7 +5,7 @@ import CapabilitiesSection from "@/components/CapabilitiesSection";
 const strategyParagraphs = [
  
     "Large-scale, high-quality content production, customer engagement design, content intelligence and digital optimization, meetings and events support through a model that combines domain expertise, structured workflows, and AI-powered tools.",
-"Our proprietary AI a Catalysts are integrated into our delivery ecosystem and, where appropriate, made available to our clients to enhance speed, consistency, and efficiency. Our model has helped clients achieve up to a 50% reduction in MLR approval time, significantly accelerating time to market."
+"Our proprietary AI Catalysts are integrated into our delivery ecosystem and, where appropriate, made available to our clients to enhance speed, consistency, and efficiency. Our model has helped clients achieve up to a 50% reduction in MLR approval time, significantly accelerating time to market."
 
 ]
 ;

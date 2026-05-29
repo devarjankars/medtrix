@@ -172,7 +172,7 @@ function OneTeam() {
           <Image
             src={ceoImg}
             alt="Vimal Narayanan"
-            className="max-w-[280px] rounded-xl"
+            className="max-w-[280px] hover:scale-110 rounded-xl transition-transform duration-400"
             sizes="280px"
             priority
           />
