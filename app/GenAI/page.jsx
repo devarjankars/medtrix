@@ -235,7 +235,7 @@ export default function MlrCatalyst() {
 
         </div>
 
-        {/* Glow — outside the constrained container so it spans full width */}
+
         <div ref={glowRef} className="relative h-32 w-full overflow-hidden opacity-0">
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-32 rounded-full"
             style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,0.45) 0%, transparent 70%)", filter: "blur(8px)" }} />
