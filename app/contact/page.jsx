@@ -29,7 +29,7 @@ function ContactInner() {
     setError(null);
 
     try {
-      const res = await fetch("YOUR_API_ENDPOINT_HERE", {
+      const res = await fetch("https://medtrixhealthcare.com/corporate-websiteapi/api/contact/send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -92,6 +92,8 @@ function ContactInner() {
           <span className="text-[#E1251B]">remarkable</span>
         </h1>
         <p className="text-zinc-400 mt-4 text-base md:text-lg max-w-xl">
+          Have a question or want to work with us? We&apos;d love to hear from you.
+        </p>
           Have a question or want to work with us? We'd love to hear from you.
         </p> */}
       </div>
@@ -117,7 +119,7 @@ function ContactInner() {
               <p className="text-zinc-400 text-sm max-w-xs">We'll get back to you within 24 hours.</p>
             </motion.div>
           ) : (
-            <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
