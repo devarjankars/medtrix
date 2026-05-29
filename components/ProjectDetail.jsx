@@ -262,7 +262,7 @@ export default function ProjectDetail({ project, onBack }) {
           >
             ←
           </motion.span>
-          Back to Projects
+          Back to our work
         </motion.button>
       </motion.div>
 

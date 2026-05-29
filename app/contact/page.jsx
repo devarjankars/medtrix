@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 const inputClass =
   "w-full bg-[#0f0f0f] border border-[#2a2a2a] rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-[#E1251B] focus:ring-1 focus:ring-[#E1251B]/40 transition-all duration-200";
 
-export default function Contact() {
+function ContactInner() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -50,86 +51,38 @@ export default function Contact() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-
-      /* Header — slides down on mount */
-      gsap.fromTo(
-        headerRef.current,
+      gsap.fromTo(headerRef.current,
         { opacity: 0, y: -30 },
         { opacity: 1, y: 0, duration: 0.9, ease: "power3.out", delay: 0.1 }
       );
-
-      /* Form fields — stagger up on scroll */
       gsap.fromTo(
         formRef.current?.querySelectorAll(".form-field"),
         { opacity: 0, y: 36 },
-        {
-          opacity: 1, y: 0,
-          duration: 0.65,
-          stagger: 0.09,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: formRef.current,
-            start: "top 80%",
-            once: true,
-          },
-        }
+        { opacity: 1, y: 0, duration: 0.65, stagger: 0.09, ease: "power3.out",
+          scrollTrigger: { trigger: formRef.current, start: "top 80%", once: true } }
       );
-
-      /* Map — slides in from right */
-      gsap.fromTo(
-        mapRef.current,
+      gsap.fromTo(mapRef.current,
         { opacity: 0, x: 60, scale: 0.97 },
-        {
-          opacity: 1, x: 0, scale: 1,
-          duration: 0.9,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: mapRef.current,
-            start: "top 80%",
-            once: true,
-          },
-        }
+        { opacity: 1, x: 0, scale: 1, duration: 0.9, ease: "power3.out",
+          scrollTrigger: { trigger: mapRef.current, start: "top 80%", once: true } }
       );
-
-      /* Office cards — stagger up */
       gsap.fromTo(
         cardsRef.current?.querySelectorAll(".office-card"),
         { opacity: 0, y: 24 },
-        {
-          opacity: 1, y: 0,
-          duration: 0.55,
-          stagger: 0.12,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: cardsRef.current,
-            start: "top 85%",
-            once: true,
-          },
-        }
+        { opacity: 1, y: 0, duration: 0.55, stagger: 0.12, ease: "power2.out",
+          scrollTrigger: { trigger: cardsRef.current, start: "top 85%", once: true } }
       );
-
     });
-
     return () => ctx.revert();
   }, []);
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    setSubmitted(true);
-  }
 
   return (
     <section className="w-[90%] md:w-[80%] mx-auto py-16 md:py-24">
 
-      {/* ── Header ── */}
+      {/* Header */}
       <div ref={headerRef} className="mb-12 md:mb-16 opacity-0">
-        <div
-          className="relative inline-block rounded-full max-w-fit p-px mb-6"
-          style={{
-            background:
-              "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
-          }}
-        >
+        <div className="relative inline-block rounded-full max-w-fit p-px mb-6"
+          style={{ background: "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)" }}>
           <span className="inline-block text-xs font-bold uppercase tracking-[3px] text-white bg-[#0c0606] px-5 py-2 rounded-full">
             Contact Us
           </span>
@@ -143,10 +96,10 @@ export default function Contact() {
         </p>
       </div>
 
-      {/* ── Two-column layout: form left, map right (wider) ── */}
+      {/* Two-column layout */}
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-14 items-start">
 
-        {/* ── LEFT: Form ── */}
+        {/* LEFT: Form */}
         <div ref={formRef}>
           {submitted ? (
             <motion.div
@@ -164,7 +117,7 @@ export default function Contact() {
               <p className="text-zinc-400 text-sm max-w-xs">We'll get back to you within 24 hours.</p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }} className="flex flex-col gap-5">
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
@@ -178,8 +131,8 @@ export default function Contact() {
                     Company
                   </label>
                   <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Your company" className={inputClass} />
-                  <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">Company</label>
-                  <input required type="text" placeholder="Your company" className={inputClass} />
+                
+                 
                 </div>
               </div>
 
@@ -230,12 +183,8 @@ export default function Contact() {
                     boxShadow: "0 0 20px rgba(225,37,27,0.4)",
                   }}
                 >
-                  <motion.span
-                    className="absolute inset-0 rounded-full pointer-events-none"
-                    style={{
-                      background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
-                      backgroundSize: "200% 100%",
-                    }}
+                  <motion.span className="absolute inset-0 rounded-full pointer-events-none"
+                    style={{ background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)", backgroundSize: "200% 100%" }}
                     animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
                     transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
                   />
@@ -288,7 +237,7 @@ export default function Contact() {
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
               </span> */}
             </div>
-            {/* animated pulse dot — New Jersey */}
+            {/* pulse — New Jersey */}
             <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "52%", left: "24%" }}>
               {/* <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
@@ -303,12 +252,8 @@ export default function Contact() {
               { city: "Bangalore", country: "India",   address: "Medtrix Healthcare Pvt. Ltd.", icon: "🇮🇳" },
               { city: "New Jersey", country: "USA",    address: "Medtrix Healthcare Inc.",      icon: "🇺🇸" },
             ].map((office) => (
-              <motion.div
-                key={office.city}
-                whileHover={{ y: -3 }}
-                transition={{ duration: 0.25 }}
-                className="office-card opacity-0 bg-[#0f0f0f] border border-[#1e1e1e] rounded-xl p-5 flex flex-col gap-1"
-              >
+              <motion.div key={office.city} whileHover={{ y: -3 }} transition={{ duration: 0.25 }}
+                className="office-card opacity-0 bg-[#0f0f0f] border border-[#1e1e1e] rounded-xl p-5 flex flex-col gap-1">
                 <span className="text-xl mb-1">{office.icon}</span>
                 <h4 className="text-white font-semibold text-sm">{office.city}, {office.country}</h4>
                 <p className="text-zinc-500 text-xs">{office.address}</p>
@@ -317,12 +262,9 @@ export default function Contact() {
           </div>
 
           {/* Email */}
-          <motion.a
-            href="mailto:info@medtrixhealthcare.com"
-            whileHover={{ x: 4 }}
-            transition={{ duration: 0.2 }}
-            className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group"
-          >
+          <motion.a href="mailto:info@medtrixhealthcare.com"
+            whileHover={{ x: 4 }} transition={{ duration: 0.2 }}
+            className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
             <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -334,7 +276,14 @@ export default function Contact() {
 
         </div>
       </div>
-
     </section>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense>
+      <ContactInner />
+    </Suspense>
   );
 }

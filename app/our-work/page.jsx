@@ -6,7 +6,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import WorkCard from "@/components/WorkCard";
 import ProjectDetail from "@/components/ProjectDetail";
 import { projects } from "@/Data/project";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { lenisInstance } from "@/components/LenisProvider";
 
 const filters = [
   "COMMERCIAL SOLUTIONS",
@@ -47,6 +48,15 @@ function WorkPageInner() {
   const selectedProject = projectId
     ? projects.find((p) => p.id === projectId) ?? null
     : null;
+
+  // Scroll to top when arriving via direct link with a project param
+  useEffect(() => {
+    if (selectedProject && lenisInstance) {
+      lenisInstance.scrollTo(0, { immediate: true });
+    } else if (selectedProject) {
+      window.scrollTo(0, 0);
+    }
+  }, [projectId]);
 
   function openProject(project) {
     
