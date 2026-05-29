@@ -420,7 +420,7 @@ export default function ProjectDetail({ project, onBack }) {
                 className="text-[18px] leading-[1.9] text-[#A6A6A6]"
               />
 
-              {project.desc?.length > 0 && (
+              {/* {project.desc?.length > 0 && (
                 <motion.ul
                   className="flex flex-col gap-1"
                   initial="hidden"
@@ -440,7 +440,7 @@ export default function ProjectDetail({ project, onBack }) {
                       }}
                       className="flex items-start gap-4 text-[#A6A6A6] text-lg"
                     >
-                      {/* animated dot */}
+                      
                       <motion.span
                         className="mt-2.5 w-2 h-2 rounded-full bg-[#705c5b] shrink-0"
                         variants={{
@@ -452,7 +452,7 @@ export default function ProjectDetail({ project, onBack }) {
                     </motion.li>
                   ))}
                 </motion.ul>
-              )}
+              )} */}
             </div>
           </Reveal>
 
