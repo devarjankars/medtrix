@@ -15,6 +15,9 @@ const albertSans = Albert_Sans({
 export const metadata = {
   title: "Medtrix",
   description: "Medtrix App",
+   icons: {
+    icon: "https://otterboo.sirv.com/Medtrix%20Images/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
