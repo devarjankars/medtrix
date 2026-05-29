@@ -159,11 +159,11 @@ function ImageSlider({ images = [] }) {
           className="flex h-full"
         >
           {slides.map((slide, i) => (
-            <div key={i} className="min-w-full h-full shrink-0">
+            <div key={i} className="relative min-w-full h-full shrink-0">
               <img
                 src={slide.image}
                 alt={`Slide ${i + 1}`}
-                className="w-full h-full object-contain"
+                className="absolute inset-0 w-full h-full object-contain"
               />
             </div>
           ))}
