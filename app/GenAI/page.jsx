@@ -160,7 +160,7 @@ export default function MlrCatalyst() {
   }, []);
 
   return (
-    <>
+    <div className='w-full overflow-hidden'>
       {/* ── DARK SECTION ── */}
       <section className="bg-black text-white selection:bg-red-600 selection:text-white">
         <div className="w-[90%] md:w-[80%] mx-auto py-20">
@@ -283,6 +283,6 @@ export default function MlrCatalyst() {
             style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,0.45) 0%, transparent 70%)", filter: "blur(8px)" }} />
         </div>
       </section>
-    </>
+    </div>
   );
 }

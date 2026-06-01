@@ -7,11 +7,11 @@ const strategyParagraphs = [
   "For emerging and mid-sized pharma, we deliver end-to-end brand strategy and execution. For larger organizations, we complement existing ecosystems—driving innovation, omnichannel excellence, and high-impact strategic initiatives. "
 ];
 
-const singleButton1 = [{ label: "Read the TRYVIO US Launch Case Study ", type: "primary", href:"/our-work?project=idorsia-tryvio-launch" }];
+const singleButton1 = [{ label: "Read the TRYVIO US Launch Case Study ", type: "primary", href:"/our-work?project=idorsia-tryvio-launch&from=%2Fservices%2FStrategy-Consulting" }];
 const singleButton2 = [
-  { label: "Read the Elzonris AOR Case Study ", type: "primary", href:"/our-work?project=stemline-aor-elzonris" },
+  { label: "Read the Elzonris AOR Case Study ", type: "primary", href:"/our-work?project=stemline-aor-elzonris&from=%2Fservices%2FStrategy-Consulting" },
 ];
-const singleButton3=[ { label: "Read the Stemline Omnichannel Case Study", type: "primary", href:"/our-work?project=stemline-strategic-evolution" }]
+const singleButton3=[ { label: "Read the Stemline Omnichannel Case Study", type: "primary", href:"/our-work?project=stemline-strategic-evolution&from=%2Fservices%2FStrategy-Consulting" }]
 export default function page() {
   return (
     <main className="relative " >

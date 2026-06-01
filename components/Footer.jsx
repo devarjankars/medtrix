@@ -79,7 +79,7 @@ export default function Footer() {
             <Link href="/privacy-policy" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
               Privacy Policy
             </Link>
-            <Link href="https://www.medtrixhealthcare.com/terms-conditions" target="_blank" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
+            <Link href="/terms-conditions"  className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
               Terms & Conditions
             </Link>
           </div>

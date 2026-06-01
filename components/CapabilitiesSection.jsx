@@ -17,7 +17,7 @@ const tabs = [
 const tabContent = {
   "Experience": {
     mediaType: "video",
-    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/AMI_Aesthetic_Showcase_01.mp4",
+    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/AMI_Aesthetic_Showcase_01_new.mp4",
     headline: "Experience",
     desc: "Immersive and stunning experiential solutions for communication at Congresses, Symposia, and meetings that deliver engaging, compliant, and scalable digital experiences",
     points: [

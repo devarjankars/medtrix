@@ -47,7 +47,7 @@ export default function JobDetailsCard({ job, onBack }) {
           >
             ←
           </motion.span>
-          Back to life at medtrix
+          Back to life @ medtrix
         </motion.button>
 
       {/* ── Header ── */}

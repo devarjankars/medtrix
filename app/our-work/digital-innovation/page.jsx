@@ -33,8 +33,7 @@ function PageInner() {
     : null;
 
   function openProject(project) {
-    
-    router.push(`/our-work/digital-innovation?project=${project.id}`, { scroll: false });
+    router.push(`/our-work/digital-innovation?project=${project.id}&from=${encodeURIComponent("/our-work/digital-innovation")}`, { scroll: false });
   }
 
   function goBack() {

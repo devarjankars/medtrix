@@ -59,8 +59,7 @@ function WorkPageInner() {
   }, [projectId]);
 
   function openProject(project) {
-    
-    router.push(`/our-work?project=${project.id}`, { scroll: false });
+    router.push(`/our-work?project=${project.id}&from=${encodeURIComponent("/our-work")}`, { scroll: false });
   }
 
   function goBack() {
