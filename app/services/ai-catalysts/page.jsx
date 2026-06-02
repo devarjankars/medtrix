@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import DynamicHeader from '@/components/DynamicHeader';
 import FeatureSection from '@/components/FeatureSection';
 
@@ -9,23 +9,23 @@ const strategyParagraphs = [
 
 const catalystData = [
   {
-    icon: "/engage1.png",
+    icon: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage1.png",
     title: "Workflow Catalyt",
   },
   {
-    icon: "/engage2.png",
+    icon: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage2.png",
     title: "MLR Catalyst",
   },
   {
-    icon: "/engage3.png",
+    icon: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage3.png",
     title: "Omnichannel Catalyst",
   },
   {
-    icon: "/engage1.png",
+    icon: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage1.png",
     title: "Video Catalyst",
   },
   {
-    icon: "/engage2.png",
+    icon: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage2.png",
     title: "Knowledge Catalyst",
   },
 ];
@@ -40,12 +40,12 @@ export default function page() {
   "Intelligent Catalysts for Content, Compliance, and Engagement"
 ]
      }     paragraphs={strategyParagraphs}
-        desktopBg={"/mAideskb.png"}
-         mobileImg={"/maimbl.png"}
+        desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mAideskb.png"}
+         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maimbl.png"}
       />
       <div className='w-[90%] md:w-[80%] mx-auto'>
       <section className="relative py-5 overflow-hidden">
-        <FeatureSection tagText={"MLR Catalyst"} imageSrc={"/mlr.png"} imageAlt={"Workflow Catalyst "}
+        <FeatureSection tagText={"MLR Catalyst"} imageSrc={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mlr.png"} imageAlt={"Workflow Catalyst "}
           imagePosition={"left"}
           paragraphs={[
             "The MLR Catalyst is a tool built to reduce the time and effort involved in the medical-legal-regulatory approval process. It utilizes AI methodologies rooted in a validated and brand-specific knowledge bank to simplify repetitive tasks.",
@@ -56,7 +56,7 @@ export default function page() {
       </section>
 
       <section className="relative py-5 overflow-hidden">
-        <FeatureSection tagText={"Knowledge Catalyst"} imageSrc={"/knowledge.png"} imageAlt={"Workflow Catalyst "}
+        <FeatureSection tagText={"Knowledge Catalyst"} imageSrc={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/knowledge.png"} imageAlt={"Workflow Catalyst "}
           imagePosition={"right"}
           paragraphs={[
             "The Knowledge Catalyst is an AI-enabled authoring support tool. It uses a knowledge bank comprising a validated set of documents of different types and gives reference-backed first drafts of content for different types of documents.",
@@ -66,7 +66,7 @@ export default function page() {
         />
       </section>
       <section className="relative py-5 overflow-hidden">
-        <FeatureSection tagText={"Video Catalyst"} imageSrc={"/video_catlist.png"} imageAlt={"Video Catalyst "}
+        <FeatureSection tagText={"Video Catalyst"} imageSrc={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/video_catlist.png"} imageAlt={"Video Catalyst "}
           imagePosition={"left"}
           paragraphs={[
            "The video catalyst brings together a suite of AI-enabled tools to radically simplify the process of developing videos of all types. It applies AI image and video generation capabilities to pre-production, production, and post-production of live action and all other styles of videos. ",
@@ -75,7 +75,7 @@ export default function page() {
         />
       </section>
       <section className="relative py-5 overflow-hidden">
-        <FeatureSection tagText={"Campaign Catalyst "} imageSrc={"/Campaign.png"} imageAlt={"Campaign Catalyst  "}
+        <FeatureSection tagText={"Campaign Catalyst "} imageSrc={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Campaign.png"} imageAlt={"Campaign Catalyst  "}
           imagePosition={"right"}
           paragraphs={[
            "The Campaign Catalyst is an AI-enabled production ecosystem designed to accelerate compliant digital communications across email and banner formats. Built specifically for pharmaceutical regulatory requirements, it streamlines content authoring, review formatting, and technical production within a centralized workflow. ",

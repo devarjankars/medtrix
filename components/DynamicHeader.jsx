@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 
@@ -98,7 +98,7 @@ export default function DynamicHeader({
   graphicSrc,
   graphicAlt = "",
   desktopBg = "/bg",
-  mobileImg = "/mblbg.png",
+  mobileImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mblbg.png",
   statsCards = [],
   desktopImgHeight,
   desktopImgAlign = 'bottom',

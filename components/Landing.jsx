@@ -7,7 +7,7 @@ export default function Landing() {
            <h1 className="text-[26px] text-center lg:text-left lg:text-[70px] font-bold leading-[1.2] text-[#FFF]
 1  ">MedTrix - Catalyzing <span className=" text-red-600">Healthcare</span></h1>
   <div className="w-full  lg:hidden block ">
-          <img src="/tablet.png" alt=""  className=" items-center min-w-70 md:w-full lg:ml-8 " />
+          <img src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/tablet.png" alt=""  className=" items-center min-w-70 md:w-full lg:ml-8 " />
         </div>
                   <p className=" text-[14px] text-center lg:text-left lg:text-[20px] text-[#7f818B]">MedTrix is a growth catalyst for pharmaceutical and life science companies. 
                     We work with the science you&apos;ve built, the teams you&apos;ve assembled, and the brands you&apos;ve invested in, 
@@ -19,7 +19,7 @@ export default function Landing() {
           
         </div>
         <div className="w-1/2 hidden lg:block ">
-          <img src="/tablet.png" alt=""  className=" items-center min-w-70 md:w-full lg:ml-8 " />
+          <img src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/tablet.png" alt=""  className=" items-center min-w-70 md:w-full lg:ml-8 " />
         </div>
       </div>
            <div

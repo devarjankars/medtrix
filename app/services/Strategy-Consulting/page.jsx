@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import DynamicHeader from '@/components/DynamicHeader';
 import FeatureSection from '@/components/FeatureSection';
 
@@ -19,11 +19,11 @@ export default function page() {
         tagText="STRATEGY & CONSULTING"
         title="Strategy that adapts to your needs"
         paragraphs={strategyParagraphs}
-        desktopBg={"/stdeskb.png"}
-         mobileImg={"/stmbl.png"}
+        desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stdeskb.png"}
+         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stmbl.png"}
       />
       <div className="py-5 w-[90%] md:w-[80%] mx-auto">
-        <FeatureSection tagText="Launch and lifecycle" imageSrc="/lifecycle.png" imageAlt="Launch and lifecycle " imagePosition="left"
+        <FeatureSection tagText="Launch and lifecycle" imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lifecycle.png" imageAlt="Launch and lifecycle " imagePosition="left"
           paragraphs={[
             "We support brands across the entire spectrum—from launch preparation and tactical planning to ongoing lifecycle management. ",
              "Our strategies are designed to be both comprehensive and flexible. Whether you need end-to-end support or targeted interventions at critical moments, we seamlessly plug in where it matters most.  ",
@@ -32,7 +32,7 @@ export default function page() {
           buttons={singleButton1}
         />
         <div className="py-5" />
-        <FeatureSection tagText="Brand and business" imageSrc="/brandandbusiness.png" imageAlt="Brand and business " imagePosition="right"
+        <FeatureSection tagText="Brand and business" imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/brandandbusiness.png" imageAlt="Brand and business " imagePosition="right"
           paragraphs={[
            
            "We serve as an Agency of Record for emerging and mid-sized pharma brands—enabling brand launches, delivering practical, cost-effective strategies that drive consistent year-on-year growth  in the brand lifecycle",
@@ -42,7 +42,7 @@ export default function page() {
           buttons={singleButton2}
         />
         <div className="py-5" />
-        <FeatureSection tagText="OMNICHANNEL" imageSrc="/Omnichannel.png" imageAlt="OMNICHANNEL" imagePosition="left"
+        <FeatureSection tagText="OMNICHANNEL" imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Omnichannel.png" imageAlt="OMNICHANNEL" imagePosition="left"
           paragraphs={[
            "We bring together channels, content, and data into a connected brand experience ensuring every interaction feels relevant, timely, and consistent.",
            "Built on a strong understanding of HCPs, patients, and stakeholders, we map key journeys and identify the moments that influence decisions—aligning engagement across channels to improve reach and effectiveness."
@@ -50,7 +50,7 @@ export default function page() {
           buttons={singleButton3}
         />
         <div className="py-5" />
-        <FeatureSection tagText="Measurement and Optimization" imageSrc="/mesurment.png" imageAlt="Chart Image" imagePosition="right"
+        <FeatureSection tagText="Measurement and Optimization" imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mesurment.png" imageAlt="Chart Image" imagePosition="right"
           paragraphs={[
            "We help brands measure what matters most, translating data into clear insights that guide smarter decisions and improve performance over time. ",
            "From defining the right KPIs to tracking engagement across channels, we ensure every activity is aligned to meaningful outcomes and business goals, through custom-built engines and dashboards."

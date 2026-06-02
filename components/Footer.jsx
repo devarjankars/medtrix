@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 const footerData = [
   {
@@ -42,7 +42,7 @@ export default function Footer() {
 
           <div className="col-span-2 lg:col-span-1 flex lg:justify-self-start items-start">
             <a href="/">
-              <img src="/logo.png" alt="Medtrix" className="w-[180px] object-contain" />
+              <img src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo.png" alt="Medtrix" className="w-[180px] object-contain" />
             </a>
           </div>
 

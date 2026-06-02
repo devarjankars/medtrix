@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
@@ -42,7 +42,7 @@ function GlowDivider() {
 
 export default function FeatureSection({
   tagText = "BRAND AND BUSINESS",
-  imageSrc = "/path-to-your-image.jpg",
+  imageSrc = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/path-to-your-image.jpg",
   imageAlt = "Feature image",
   paragraphs = [],
   buttons = [],

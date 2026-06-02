@@ -1,9 +1,9 @@
-export const projectDetails = [
+﻿export const projectDetails = [
   {
     slug: "ami-essentials-3d-face-anatomy",
 
     // ── HEADER ──────────────────────────────────────────────────────────────
-    headerImage: "/3dAmi.png",
+    headerImage: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/3dAmi.png",
     category: "MEDICAL AFFAIRS",
     title: "AMI Essentials 3D Face Anatomy App",
     subtitle:
@@ -20,7 +20,7 @@ export const projectDetails = [
         "Existing tools lacked the depth and interactivity needed to support nuanced clinical conversations, leading to longer sales cycles and lower HCP confidence.",
         "The client needed a scalable digital solution that could be deployed across a global field force without heavy infrastructure investment.",
       ],
-      images: ["/ed1.png", "/ed2.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed1.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed2.png"],
     },
 
     // ── SOLUTION ─────────────────────────────────────────────────────────────
@@ -31,7 +31,7 @@ export const projectDetails = [
         "The app was built with an offline-first architecture so field reps could use it in any clinical setting without relying on internet connectivity.",
         "A custom content management layer allowed the medical affairs team to push updated annotations and clinical data without requiring a new app release.",
       ],
-      images: ["/engage1.png", "/engage2.png", "/engage3.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage1.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage2.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage3.png"],
     },
 
     // ── RESULT ───────────────────────────────────────────────────────────────
@@ -48,7 +48,7 @@ export const projectDetails = [
         "HCP engagement scores improved significantly, with reps reporting that the 3D visualisation reduced the need for follow-up visits.",
         "The project was nominated for the Best Innovation Award at the 2024 Pharma Digital Excellence Summit.",
       ],
-      images: ["/awd1.png", "/awd2.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd1.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd2.png"],
     },
 
     // ── TESTIMONIAL ──────────────────────────────────────────────────────────
@@ -57,7 +57,7 @@ export const projectDetails = [
         "Medtrix delivered something we didn't think was possible in the timeline. The 3D anatomy app has completely transformed how our reps engage with HCPs—it's now an indispensable tool in the field.",
       author: "VP of Medical Affairs",
       company: "AMI Pharmaceuticals",
-      avatar: "/ceo.png",
+      avatar: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ceo.png",
     },
   },
 
@@ -65,7 +65,7 @@ export const projectDetails = [
   {
     slug: "idorsia-strategy",
 
-    headerImage: "/servicesHeader.png",
+    headerImage: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/servicesHeader.png",
     category: "STRATEGY & CONSULTING",
     title: "Idorsia: Building Strategy for TRYVIO",
     subtitle:
@@ -81,7 +81,7 @@ export const projectDetails = [
         "Idorsia needed a differentiated positioning strategy that could clearly articulate TRYVIO's clinical advantages to both payers and prescribers.",
         "Internal alignment across commercial, medical, and market access teams was fragmented, creating risk of inconsistent messaging at launch.",
       ],
-      images: ["/valuecard1.png", "/valuecard2.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/valuecard1.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/valuecard2.png"],
     },
 
     solution: {
@@ -91,7 +91,7 @@ export const projectDetails = [
         "A series of cross-functional alignment workshops were facilitated to build a unified brand narrative and value proposition framework.",
         "We developed a full launch readiness playbook covering channel strategy, KPI frameworks, and a phased market entry roadmap.",
       ],
-      images: ["/platform.png", "/innovation.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/platform.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/innovation.png"],
     },
 
     result: {
@@ -107,7 +107,7 @@ export const projectDetails = [
         "Cross-functional alignment improved dramatically, with all teams operating from a single source of truth for the first time.",
         "The launch readiness assessment scored 92%, the highest ever recorded for a new product launch within the organisation.",
       ],
-      images: ["/stories1.png", "/stories2.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stories1.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stories2.png"],
     },
 
     testimonial: {
@@ -115,7 +115,7 @@ export const projectDetails = [
         "The Medtrix team brought clarity to a very complex situation. Their strategic frameworks and facilitation approach got our teams aligned faster than we thought possible. TRYVIO's launch is on track because of this work.",
       author: "Chief Commercial Officer",
       company: "Idorsia Pharmaceuticals",
-      avatar: "/ceo.png",
+      avatar: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ceo.png",
     },
   },
 
@@ -123,7 +123,7 @@ export const projectDetails = [
   {
     slug: "stemline-execution",
 
-    headerImage: "/lunchandlifecycle.png",
+    headerImage: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lunchandlifecycle.png",
     category: "COMMERCIAL SOLUTIONS",
     title: "Stemline Therapeutics High Volume Execution",
     subtitle:
@@ -139,7 +139,7 @@ export const projectDetails = [
         "Existing CRM processes were manual and inconsistent, making it difficult to track account progress and forecast revenue accurately.",
         "The field team lacked standardised training materials and call frameworks, resulting in variable performance across territories.",
       ],
-      images: ["/vp1.png", "/vp2.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp1.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp2.png"],
     },
 
     solution: {
@@ -149,7 +149,7 @@ export const projectDetails = [
         "A streamlined CRM workflow was designed and implemented, reducing data entry time by 60% and improving forecast accuracy significantly.",
         "A comprehensive field training programme was developed, including role-play simulations, objection handling guides, and territory planning tools.",
       ],
-      images: ["/omni.png", "/tablet.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/omni.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/tablet.png"],
     },
 
     result: {
@@ -165,7 +165,7 @@ export const projectDetails = [
         "The new CRM workflow became the standard operating procedure across all Stemline commercial teams.",
         "120+ representatives were trained and deployed, with average performance scores 28% above industry benchmark.",
       ],
-      images: ["/stories3.png", "/stories4.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stories3.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stories4.png"],
     },
 
     testimonial: {
@@ -173,7 +173,7 @@ export const projectDetails = [
         "Medtrix didn't just consult—they rolled up their sleeves and executed alongside us. The results speak for themselves. Our field force is now one of the most efficient in the oncology space.",
       author: "Head of Commercial Operations",
       company: "Stemline Therapeutics",
-      avatar: "/ceo.png",
+      avatar: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ceo.png",
     },
   },
 
@@ -181,7 +181,7 @@ export const projectDetails = [
   {
     slug: "nestle-global-hcp",
 
-    headerImage: "/servicesBrand.png",
+    headerImage: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/servicesBrand.png",
     category: "DIGITAL",
     title: "Nestlé Health Science Global HCP Platform",
     subtitle:
@@ -197,7 +197,7 @@ export const projectDetails = [
         "HCPs reported frustration with fragmented experiences and difficulty finding relevant clinical content, leading to low platform engagement and high drop-off rates.",
         "The marketing and medical teams had no way to personalise content delivery based on HCP specialty, geography, or engagement history.",
       ],
-      images: ["/ed3.png", "/ed4.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed3.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed4.png"],
     },
 
     solution: {
@@ -207,7 +207,7 @@ export const projectDetails = [
         "A personalisation engine was integrated with Salesforce Marketing Cloud, enabling dynamic content delivery based on HCP profile, specialty, and behaviour.",
         "A global content governance framework was established, giving regional teams autonomy to publish local content while maintaining brand and compliance standards.",
       ],
-      images: ["/engage2.png", "/engage3.png", "/platform.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage2.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/engage3.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/platform.png"],
     },
 
     result: {
@@ -223,7 +223,7 @@ export const projectDetails = [
         "HCP engagement metrics tripled within the first 90 days, with average session duration increasing from 1.2 to 4.7 minutes.",
         "Content operations costs were reduced by 65% through centralised tooling and streamlined approval workflows.",
       ],
-      images: ["/stories5.png", "/stories6.png"],
+      images: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stories5.png", "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stories6.png"],
     },
 
     testimonial: {
@@ -231,7 +231,7 @@ export const projectDetails = [
         "This was one of the most complex digital programmes we've ever undertaken. Medtrix brought the technical depth, the strategic thinking, and the project discipline to make it happen. The platform has set a new standard for HCP engagement across our business.",
       author: "Global Head of Digital",
       company: "Nestlé Health Science",
-      avatar: "/ceo.png",
+      avatar: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ceo.png",
     },
   },
 ];

@@ -3,12 +3,16 @@ import Landing from "@/components/Landing";
 import OneTeam from "@/components/OneTeam";
 import Animation from "@/components/Animation";
 import Image from "next/image";
-import mapImg from "../public/map.png";
-import mobile_map from "../public/mobile_map.png";
+
+
 import { motion } from "framer-motion";
 import Link from "next/link";
+const mapImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/map.png";
+const mobile_map = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mobile_map.png";
 
 export default function Home() {
+
+
   return (
     <div className="w-[100%]  mx-auto">
      <div className="relative bg-black"> <Landing /></div>
@@ -26,8 +30,8 @@ export default function Home() {
             Contact Us
             </h5>
              <div className="w-full px-6 lg:px-1 flex flex-col items-center py-10   gap-4">
-          <Image src={mapImg} alt="Contact Locations" className="w-full hidden lg:block object-contain" />
-          <Image src={mobile_map} alt="Contact Locations" className="w-full lg:hidden object-contain" />
+          <img src={mapImg} alt="Contact Locations" className="w-full hidden lg:block object-contain" />
+          <img src={mobile_map} alt="Contact Locations" className="w-full lg:hidden object-contain" />
 
            <Link href="/contact">
         <motion.div

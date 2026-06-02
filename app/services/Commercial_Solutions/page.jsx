@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import DynamicHeader from '@/components/DynamicHeader';
 import CapabilitiesSection from "@/components/CapabilitiesSection";
 
@@ -16,10 +16,10 @@ export default function Commercial_Solutions() {
       <DynamicHeader
         tagText="COMMERCIAL SOLUTIONS"
         title="Capability to achieve transformational outcomes"
-         mobileImg={"/csmbl.png"}
+         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csmbl.png"}
          desktopImgHeight={"700px"}
          desktopImgAlign={"top"}
-         desktopBg={"/csbg.jpg"}
+         desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csbg.jpg"}
         paragraphs={strategyParagraphs}
         statsCards={[
           {

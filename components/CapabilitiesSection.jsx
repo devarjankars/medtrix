@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
@@ -29,7 +29,7 @@ const tabContent = {
   },
   "Websites": {
     mediaType: "image",
-    mediaSrc: "/ourcap2.jpg",
+    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ourcap2.jpg",
     headline: "Websites",
     desc: "End-to-end capability for design, development, SEO, deployment, maintenance, and omnichannel integration of websites and microsites",
     points: [
@@ -64,7 +64,7 @@ const tabContent = {
   },
   "Interactive Platforms": {
     mediaType: "image",
-    mediaSrc: "/ourcap1.png",
+    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ourcap1.png",
     headline: "Interactive Platforms",
     desc: "Custom applications and data-driven platforms that enable informed decision-making and effective engagement",
     points: [
@@ -217,9 +217,9 @@ export default function CapabilitiesSection() {
         label="ENGAGE"
         title="High-impact engagement assets across all channels"
         items={[
-          { title: "Emailers",              img: "/valuecard1.png", desc: "Veeva, SFMC, and third-party platforms" },
-          { title: "Paid & Earned Media", img: "/valuecard2.png", desc: "Interactive banners and HCP platforms" },
-          { title: "Rep-Driven Engagements",img: "/valuecard3.png", desc: "E-detailers and explainers" },
+          { title: "Emailers",              img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/valuecard1.png", desc: "Veeva, SFMC, and third-party platforms" },
+          { title: "Paid & Earned Media", img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/valuecard2.png", desc: "Interactive banners and HCP platforms" },
+          { title: "Rep-Driven Engagements",img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/valuecard3.png", desc: "E-detailers and explainers" },
         ]}
         cols={3}
         button="Explore Our Omnichannel Catalyst"
@@ -231,10 +231,10 @@ export default function CapabilitiesSection() {
         label="EDUCATE"
         title="Scalable learning and engagement solutions that enable effective knowledge transfer and HCP engagement"
         items={[
-          { title: "Detailers",                   img: "/ed1.png", desc: "Designed for Veeva and other leading platforms" },
-          { title: "Learning Solutions",           img: "/ed2.png", desc: "Custom-built digital learning programs tailored to diverse audiences" },
-          { title: "Learning Management System",   img: "/ed3.png", desc: "Proprietary platform for scalable deployment, tracking, and optimization" },
-          { title: "Authoring Expertise",          img: "/ed4.png", desc: "Articulate 360, Rise, and Adobe Captivate" },
+          { title: "Detailers",                   img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed1.png", desc: "Designed for Veeva and other leading platforms" },
+          { title: "Learning Solutions",           img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed2.png", desc: "Custom-built digital learning programs tailored to diverse audiences" },
+          { title: "Learning Management System",   img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed3.png", desc: "Proprietary platform for scalable deployment, tracking, and optimization" },
+          { title: "Authoring Expertise",          img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed4.png", desc: "Articulate 360, Rise, and Adobe Captivate" },
         ]}
         cols={2}
         button="Explore Modulife Expert for Nestlé Health Science"
