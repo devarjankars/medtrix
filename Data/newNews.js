@@ -7,10 +7,10 @@ export const newsData = [
     thumbnail: "/news10.png",
     body: [
       "The MedTrix Cricket League 2026 turned last weekend into an exciting celebration of teamwork, energy, and healthy competition, bringing employees from across the organisation together on the cricket field.",
-      "With four teams competing against each other, the tournament delivered a perfect mix of thrilling gameplay and memorable moments. Every match carried its own excitement — from quick runs and crucial wickets to close contests that kept players and supporters fully engaged till the very end.",
+      "With four teams competing against each other, the tournament delivered a perfect mix of thrilling gameplay and memorable moments. Every match carried its own excitement—from quick runs and crucial wickets to close contests that kept players and supporters fully engaged till the very end.",
       "While the competitive spirit was high, what truly stood out throughout the day was the enthusiasm and camaraderie shared by everyone involved. Colleagues came together not only as teammates, but also as supporters, cheering passionately from the sidelines and celebrating every key moment together.",
       "The event created an opportunity for employees across departments to connect outside of work, strengthening relationships and reinforcing the collaborative culture that defines MedTrix. The friendly rivalries, shared laughter, and collective excitement made the tournament enjoyable for everyone, both on and off the field.",
-      "The MedTrix Cricket League 2026 was more than just a sporting event — it was a reflection of the organisation's people-first culture and the importance of creating experiences that bring teams together beyond everyday work responsibilities.",
+      "The MedTrix Cricket League 2026 was more than just a sporting event—it was a reflection of the organisation's people-first culture and the importance of creating experiences that bring teams together beyond everyday work responsibilities.",
       "A special thanks to all the players, organisers, and supporters whose enthusiasm and participation made the event a grand success. Their energy and sportsmanship made the tournament truly memorable.",
       "As the cheers settled and the matches came to an end, the event left behind not just winning moments, but lasting memories for everyone who was part of it.",
     ],

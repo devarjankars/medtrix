@@ -3,7 +3,7 @@ export const newsData = [
     id: 1,
     date: "April 2026",
     category: "Conference",
-    title: "The MedTrix Healthcare team is heading to ASCO 2026. ",
+    title: "The MedTrix Healthcare team is heading to ASCO 2026 ",
     thumbnail: "/news.png",
     body: [
       "We’re excited for the days ahead as we engage in conversations, collaboration, and knowledge-sharing with industry leaders, partners, and peers.", 
@@ -12,7 +12,7 @@ export const newsData = [
 
 "We look forward to connecting with attendees, learning from diverse perspectives, and sharing how MedTrix continues to drive impactful healthcare experiences through the convergence of science, creativity, and technology.",
 
-"If you’re attending as well, we would love to connect and continue the conversation. "],
+"If you’re attending as well, we would love to connect and continue the conversation"],
     images: ["/nu_1.png"],
   },
   {
@@ -32,7 +32,7 @@ export const newsData = [
     id: 3,
     date: "March 2026",
     category: "Award",
-    title: "Three years of being a Great Place to Work®",
+    title: "# years of being a Great Place to Work®",
     thumbnail: "/news3.png",
     body: [
       "We are proud to share that MedTrix has once again been recognized as a Great Place to Work® Certified™ organization, 3 times in a row. This recognition is more than an achievement for us. It reflects the culture we have continued to build together through collaboration, trust, inclusion, and a shared commitment to excellence.",
@@ -75,7 +75,7 @@ export const newsData = [
       'Being named an MM+M "One to Watch" is not just a milestone for us—it\'s a moment of validation for our team, our partners, and our shared belief in the transformative power of integrated thinking.',
     ],
     link: "https://www.mmm-online.com",
-    linkLabel: "to read more about what MM+M had to say about MedTrix Healthcare",
+    linkLabel: "to read more about what MM+M had to say about MedTrix Healthcare.",
     images: ["/nu_5.png"],
   },
   {
@@ -85,9 +85,9 @@ export const newsData = [
     title: "We’re proud to sponsor the 2025 #PharmaCX Marketing Summit",
     thumbnail: "/news6.png",
     body: [
-      "We're proud to sponsor the 2025 #PharmaCX Marketing Summit in Philadelphia this October — and to play our part in guiding the conversations shaping the future of pharma marketing. It's an honor to stand alongside the US pharma marketing community at a global platform where ideas, innovation, and best practices in Pharma CX come alive.",
-      "Do keep an eye out for Vimal Narayanan on the morning of October 21 at the Columbus Ballroom, Hilton Philadelphia, as he shares his thoughts on \"The Future of Personalized Healthcare Content.\" Expect actionable insights on our content transition journey — from modular to truly personalized approaches designed for specific HCP segments.",
-      "And that's not all — stay tuned for details on a special session moderated by MedTrix Healthcare during the summit.",
+      "We're proud to sponsor the 2025 #PharmaCX Marketing Summit in Philadelphia this October—and to play our part in guiding the conversations shaping the future of pharma marketing. It's an honor to stand alongside the US pharma marketing community at a global platform where ideas, innovation, and best practices in Pharma CX come alive.",
+      "Do keep an eye out for Vimal Narayanan on the morning of October 21 at the Columbus Ballroom, Hilton Philadelphia, as he shares his thoughts on \"The Future of Personalized Healthcare Content.\" Expect actionable insights on our content transition journey—from modular to truly personalized approaches designed for specific HCP segments.",
+      "And that's not all—stay tuned for details on a special session moderated by MedTrix Healthcare during the summit.",
       "We look forward to meaningful conversations, new connections, and building experiences that matter for both HCPs and patients.",
     ],
     images: ["/nu_6.png"],

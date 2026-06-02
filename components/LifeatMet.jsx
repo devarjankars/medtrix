@@ -79,7 +79,7 @@ export default function LifeatMet() {
               background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)",
             }} />
 
-            {/* Content — sits above dots via pb-16 */}
+            {/* Content—sits above dots via pb-16 */}
             <div style={{
               position: "absolute", inset: 0,
               display: "flex", flexDirection: "column",
@@ -122,7 +122,7 @@ export default function LifeatMet() {
         ))}
       </Swiper>
 
-      {/* ── Custom dots — outside Swiper, always on top ── */}
+      {/* ── Custom dots—outside Swiper, always on top ── */}
       <div style={{
         position: "absolute",
         bottom: 32, left: 32,

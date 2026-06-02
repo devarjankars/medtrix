@@ -3,7 +3,7 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 
-// ── Single container variant — one IntersectionObserver drives everything ────
+// ── Single container variant—one IntersectionObserver drives everything ────
 const container = {
   hidden: {},
   visible: {

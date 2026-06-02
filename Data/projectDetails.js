@@ -54,7 +54,7 @@ export const projectDetails = [
     // ── TESTIMONIAL ──────────────────────────────────────────────────────────
     testimonial: {
       quote:
-        "Medtrix delivered something we didn't think was possible in the timeline. The 3D anatomy app has completely transformed how our reps engage with HCPs — it's now an indispensable tool in the field.",
+        "Medtrix delivered something we didn't think was possible in the timeline. The 3D anatomy app has completely transformed how our reps engage with HCPs—it's now an indispensable tool in the field.",
       author: "VP of Medical Affairs",
       company: "AMI Pharmaceuticals",
       avatar: "/ceo.png",
@@ -170,7 +170,7 @@ export const projectDetails = [
 
     testimonial: {
       quote:
-        "Medtrix didn't just consult — they rolled up their sleeves and executed alongside us. The results speak for themselves. Our field force is now one of the most efficient in the oncology space.",
+        "Medtrix didn't just consult—they rolled up their sleeves and executed alongside us. The results speak for themselves. Our field force is now one of the most efficient in the oncology space.",
       author: "Head of Commercial Operations",
       company: "Stemline Therapeutics",
       avatar: "/ceo.png",
@@ -193,7 +193,7 @@ export const projectDetails = [
     challenge: {
       heading: "The Challenge",
       content: [
-        "Nestlé Health Science operated 14 separate regional HCP portals with inconsistent branding, duplicated content, and no unified data layer — making global reporting impossible.",
+        "Nestlé Health Science operated 14 separate regional HCP portals with inconsistent branding, duplicated content, and no unified data layer—making global reporting impossible.",
         "HCPs reported frustration with fragmented experiences and difficulty finding relevant clinical content, leading to low platform engagement and high drop-off rates.",
         "The marketing and medical teams had no way to personalise content delivery based on HCP specialty, geography, or engagement history.",
       ],

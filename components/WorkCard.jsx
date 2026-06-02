@@ -59,7 +59,7 @@ export default function WorkCard({ project, onExplore }) {
           {/* RIGHT */}
           <div className="lg:border-l border-[#252525] lg:pl-8">
             <p className="text-xs uppercase text-gray-400 mb-3 tracking-[2px]">
-              Timeline / Status
+              Timeline/Status
             </p>
 
             <p className="text-white text-lg">
@@ -105,7 +105,7 @@ export default function WorkCard({ project, onExplore }) {
               repeatDelay: 1.5,
             }}
           />
-          <span className="relative z-10">EXPLORE</span>
+          <span className="relative z-10">Explore</span>
           <motion.span
             className="relative z-10"
             animate={{ x: [0, 4, 0] }}

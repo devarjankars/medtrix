@@ -120,7 +120,7 @@ const sections = [
     cols: 3,
     items: [
       {
-        title: "Launch Planning and Execution",
+        title: "Launch Planning & Execution",
             img: "/lifecycle1.png",
         points: [
           "Integrated strategy (med + comm)",

@@ -237,14 +237,14 @@ function ContactInner() {
               alt="Medtrix office locations"
               className="w-full h-auto block lg:hidden"
             />
-            {/* animated pulse dot — Bangalore */}
+            {/* animated pulse dot—Bangalore */}
             <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "38%", left: "67%" }}>
               {/* <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
               </span> */}
             </div>
-            {/* pulse — New Jersey */}
+            {/* pulse—New Jersey */}
             <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "52%", left: "24%" }}>
               {/* <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />

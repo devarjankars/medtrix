@@ -45,7 +45,7 @@ export default function TestimonialSlider({
     ? Math.round(cardW * 0.08)
     : 0;
 
-  // Single item — simple centered card, no carousel
+  // Single item—simple centered card, no carousel
   if (items.length === 1) {
     return (
       <section ref={wrapRef} className="py-8 w-full">

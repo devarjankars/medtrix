@@ -142,7 +142,7 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
         window.addEventListener('mousemove', onMouseMove);
         window.addEventListener('resize', onResize);
 
-        // Reusable vectors — allocated once, never inside the loop
+        // Reusable vectors—allocated once, never inside the loop
         const _dir = new THREE.Vector3();
         const _perp1 = new THREE.Vector3();
         const _perp2 = new THREE.Vector3(0, 0, 0.8);

@@ -29,7 +29,7 @@ const strategyParagraphs = [
   "Our strongest partnerships with pharmaceutical companies have been built through innovative solutions to achieve unique objectives and address challenges specific to a particular client or set of circumstances.",
 ];
 
-// filtered once — only DIGITAL INNOVATION projects
+// filtered once—only DIGITAL INNOVATION projects
 const digitalProjects = projects.filter(
   (p) => p.category.toUpperCase() === "DIGITAL INNOVATION"
 );

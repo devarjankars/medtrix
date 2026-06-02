@@ -106,14 +106,14 @@ export default function MlrCatalyst() {
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      /* Hero — stagger children in */
+      /* Hero—stagger children in */
       gsap.fromTo(
         heroRef.current?.children,
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power3.out", delay: 0.1 }
       );
 
-      /* Feature rows — video slides in, text fades up separately */
+      /* Feature rows—video slides in, text fades up separately */
       const rows = featuresRef.current?.querySelectorAll(".feature-row");
       rows?.forEach((row, i) => {
         const videoEl = row.querySelector(".feature-video");
@@ -132,21 +132,21 @@ export default function MlrCatalyst() {
         );
       });
 
-      /* Glow 1 — bottom of dark section */
+      /* Glow 1—bottom of dark section */
       gsap.fromTo(glowRef.current,
         { opacity: 0, scaleX: 0.4 },
         { opacity: 1, scaleX: 1, duration: 1.4, ease: "power2.out",
           scrollTrigger: { trigger: glowRef.current, start: "top 95%", once: true } }
       );
 
-      /* Glow 2 — bottom of white section */
+      /* Glow 2—bottom of white section */
       gsap.fromTo(glow2Ref.current,
         { opacity: 0, scaleX: 0.4 },
         { opacity: 1, scaleX: 1, duration: 1.4, ease: "power2.out",
           scrollTrigger: { trigger: glow2Ref.current, start: "top 95%", once: true } }
       );
 
-      /* Advantage cards — stagger with title and desc separately */
+      /* Advantage cards—stagger with title and desc separately */
       advRef.current?.querySelectorAll(".adv-card").forEach((card, i) => {
         gsap.fromTo(card,
           { opacity: 0, y: 40 },
