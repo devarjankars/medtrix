@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 import DynamicHeader from "@/components/DynamicHeader";
@@ -18,7 +18,7 @@ const sections = [
     items: [
       {
         title: "Clinical Evidence Communication",
-        img: "/medcom1.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/medcom1.png",
         points: [
           "Systematic literature reviews and evidence synthesis",
           "Meta-analyses and health economic analyses",
@@ -28,7 +28,7 @@ const sections = [
       },
       {
         title: "Publication Extenders: Digital Amplification Suite",
-        img: "/medcom2.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/medcom2.png",
         points: [
           "Visual Abstracts: graphical summaries optimized for social media",
           "Video Abstracts: authors explain study background and significance",
@@ -39,7 +39,7 @@ const sections = [
       },
       {
         title: "Healthcare Provider Communications",
-        img: "/medcom3.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/medcom3.png",
         points: [
           "Peer-reviewed journal article reprints",
           "Conference presentations and slide decks",
@@ -50,7 +50,7 @@ const sections = [
       },
       {
         title: "Patient Education and Engagement",
-        img: "/medcom4.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/medcom4.png",
         points: [
           "Patient education brochures and disease awareness",
           "Patient decision aids and shared decision-making tools",
@@ -67,7 +67,7 @@ const sections = [
     items: [
       {
         title: "Medical Information and Scientific Support",
-        img: "/maservice1.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maservice1.png",
         points: [
           "Medical information center operations",
           "Response development to unsolicited HCP inquiries",
@@ -77,7 +77,7 @@ const sections = [
       },
       {
         title: "Medical Strategy and Planning",
-        img: "/maservice2.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maservice2.png",
         points: [
           "Comprehensive medical affairs strategic plans",
           "Key opinion leader (KOL) mapping strategy",
@@ -86,7 +86,7 @@ const sections = [
       },
       {
         title: "KOL Engagement",
-        img: "/maservice3.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maservice3.png",
         points: [
           "Visual Abstracts for social media",
           "Video Abstracts by study authors",
@@ -95,7 +95,7 @@ const sections = [
       },
       {
         title: "Educational Content Development",
-        img: "/maservice4.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maservice4.png",
         points: [
           "Disease awareness campaigns",
           "HCP training programs and materials",
@@ -105,7 +105,7 @@ const sections = [
       },
       {
         title: "Global Medical Affairs Support",
-        img: "/maservice5.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maservice5.png",
         points: [
           "Cross-regional KOL network development",
           "Scientific document translation",
@@ -120,8 +120,8 @@ const sections = [
     cols: 3,
     items: [
       {
-        title: "Launch Planning and Execution",
-            img: "/lifecycle1.png",
+        title: "Launch Planning & Execution",
+            img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lifecycle1.png",
         points: [
           "Integrated strategy (med + comm)",
           "Timeline and milestone planning",
@@ -131,7 +131,7 @@ const sections = [
       },
       {
         title: "Product Lifecycle and Sustained Support",
-            img: "/lifecycle2.png",
+            img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lifecycle2.png",
         points: [
           "Ongoing medical information services",
           "Continued HCP and patient education",
@@ -141,7 +141,7 @@ const sections = [
       },
       {
         title: "Real-World Evidence Development",
-        img: "/lifecycle3.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lifecycle3.png",
         points: [
           "Registry development",
           "Patient tracking",
@@ -157,7 +157,7 @@ const sections = [
     items: [
       {
         title: "Integrated Strategy Alignment",
-        img: "/integration1.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/integration1.png",
         points: [
           "Integrated medical-commercial planning",
           "Coordinated publication strategy",
@@ -167,7 +167,7 @@ const sections = [
       },
       {
         title: "Medical Review and Quality Assurance",
-        img: "/integration2.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/integration2.png",
         points: [
           "Promotional claim substantiation and review",
           "Comparative claim validation and risk assessment",
@@ -183,7 +183,7 @@ const sections = [
     items: [
       {
         title: "Learning Management System",
-        img: "/techsol1.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/techsol1.png",
         points: [
           "Purpose-built for the Pharma industry",
           "Customizable automation, personalization, and analytics",
@@ -192,7 +192,7 @@ const sections = [
       },
       {
         title: "Mobile Apps and Web Platforms",
-        img: "/techsol2.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/techsol2.png",
         points: [
           "Healthcare provider portals and engagement platforms",
           "Patient mobile applications and digital tools",
@@ -201,7 +201,7 @@ const sections = [
       },
       {
         title: "AI and Automation",
-        img: "/techsol3.png",
+        img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/techsol3.png",
         points: [
           "Literature mining and evidence synthesis automation",
           "Chatbot and virtual assistant for medical inquiries",
@@ -272,7 +272,7 @@ function ServiceGrid({ label, cols, items }) {
             {/* Icon */}
             <div className="relative mb-5">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-[#E1251B]/30 bg-[#E1251B]/8 p-2.5">
-                <img src={service.img || "/advertising1.png"} alt={service.title} className="w-full h-full object-contain opacity-90" />
+                <img src={service.img || "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/advertising1.png"} alt={service.title} className="w-full h-full object-contain opacity-90" />
               </div>
             </div>
 
@@ -310,8 +310,8 @@ export default function MedicalAffairs() {
         paragraphs={[
           "MedTrix offers the full scope of medical communications and medical affairs services, powered by cutting-edge digital solutions to support pharmaceutical companies across the entire lifecycle.",
         ]}
-        desktopBg={"/MedicalAffairs.png"}
-        mobileImg={"/Medical_Affairsmbl.png"}
+        desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/MedicalAffairs.png"}
+        mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Medical_Affairsmbl.png"}
       />
 
       <div className="w-[90%] md:w-[80%] mx-auto pb-20">

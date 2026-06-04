@@ -15,7 +15,7 @@ export default function ScrollToTop() {
       lenisInstance.scrollTo(0, { immediate: true });
     }
 
-    // fallback — also reset native scroll
+    // fallback—also reset native scroll
     window.scrollTo(0, 0);
   }, [pathname]);
 

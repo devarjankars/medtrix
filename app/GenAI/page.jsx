@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { useEffect, useRef } from 'react';
 import { motion } from "framer-motion";
@@ -14,7 +14,7 @@ gsap.registerPlugin(ScrollTrigger);
 const features = [
   {
     no: "01",
-    img: "/ai1.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ai1.png",
     title: "Using AI to simplify repetitive tasks",
     desc: "Quantitative and qualitative evaluation of alignment with pre-approved documents, claims, use-cases, variations for modular content etc.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_1.mp4",
@@ -23,7 +23,7 @@ const features = [
   },
   {
     no: "02",
-    img: "/ai2.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ai2.png",
     title: "AI built specifically with approved documents",
     desc: "A system that works strictly off of role-specific pre-approved knowledge base for Medical Affairs, Brand Teams, Legal, and Regulatory functions.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_2.mp4",
@@ -32,7 +32,7 @@ const features = [
   },
   {
     no: "03",
-    img: "/ai3.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ai3.png",
     title: "AI-driven accuracy assessment",
     desc: "Multi-modal AI evaluates text, images, tables, and videos for review accuracy using validated statistical techniques.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_3.mp4",
@@ -43,32 +43,32 @@ const features = [
 
 const advantages = [
   {
-    img: "/adv1.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv1.png",
     title: "Reducing the time required for all steps of review",
     desc: "LLM enabled linking of source documentation and highlights for the specific part of the source document optimizes review time.",
   },
   {
-    img: "/adv2.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv2.png",
     title: "Mitigating effects of personnel changes",
     desc: "Machine learning components ensure that knowledge of every reviewer is captured and incorporated into the tool continuously.",
   },
   {
-    img: "/adv3.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv3.png",
     title: "Suggestions for improvement of content",
     desc: "Carefully engineered prompts ensure that the AI generates accurate suggestions for improvement of content.",
   },
   {
-    img: "/adv4.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv4.png",
     title: "Enabling reviewers to focus their intelligence",
     desc: "Reviewers queries based on their expert knowledge included by a feature that allows them to send well-defined queries to the AI.",
   },
   {
-    img: "/adv5.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv5.png",
     title: "Accuracy evaluation guided by human intelligence",
     desc: "Enables the reviewer to pose a user-defined query to enable the expert reviewer guide/direct the accuracy evaluation.",
   },
   {
-    img: "/adv6.png",
+    img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv6.png",
     title: "Veeva integration and firewalled knowledge base",
     desc: "Every user has access to files as defined by their role. Integration with Veeva to access and modify files in Veeva.",
   },
@@ -106,14 +106,14 @@ export default function MlrCatalyst() {
   useEffect(() => {
     const ctx = gsap.context(() => {
 
-      /* Hero — stagger children in */
+      /* Hero—stagger children in */
       gsap.fromTo(
         heroRef.current?.children,
         { opacity: 0, y: 30 },
         { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power3.out", delay: 0.1 }
       );
 
-      /* Feature rows — video slides in, text fades up separately */
+      /* Feature rows—video slides in, text fades up separately */
       const rows = featuresRef.current?.querySelectorAll(".feature-row");
       rows?.forEach((row, i) => {
         const videoEl = row.querySelector(".feature-video");
@@ -132,21 +132,21 @@ export default function MlrCatalyst() {
         );
       });
 
-      /* Glow 1 — bottom of dark section */
+      /* Glow 1—bottom of dark section */
       gsap.fromTo(glowRef.current,
         { opacity: 0, scaleX: 0.4 },
         { opacity: 1, scaleX: 1, duration: 1.4, ease: "power2.out",
           scrollTrigger: { trigger: glowRef.current, start: "top 95%", once: true } }
       );
 
-      /* Glow 2 — bottom of white section */
+      /* Glow 2—bottom of white section */
       gsap.fromTo(glow2Ref.current,
         { opacity: 0, scaleX: 0.4 },
         { opacity: 1, scaleX: 1, duration: 1.4, ease: "power2.out",
           scrollTrigger: { trigger: glow2Ref.current, start: "top 95%", once: true } }
       );
 
-      /* Advantage cards — stagger with title and desc separately */
+      /* Advantage cards—stagger with title and desc separately */
       advRef.current?.querySelectorAll(".adv-card").forEach((card, i) => {
         gsap.fromTo(card,
           { opacity: 0, y: 40 },

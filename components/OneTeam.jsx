@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger);
@@ -62,40 +61,40 @@ function TypingQuote({ onDone }) {
     <p ref={paraRef} className="lg:text-[30px] text-[22px] leading-relaxed" />
   );
 }
+const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp1.webp";
+const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp2.webp";
+const vp3 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp3.webp";
+const vp4 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp4.webp";
+const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ceo.webp";
+const linkedinImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/linkdin.png";
+const gptwImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/gptw.webp";
+const gptw_mobile = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/gptw_mobile.png";
 
-import vp1 from "../public/vp1.webp";
-import vp2 from "../public/vp2.webp";
-import vp3 from "../public/vp3.webp";
-import vp4 from "../public/vp4.webp";
-import ceoImg from "../public/ceo.webp";
-import linkedinImg from "../public/linkdin.png";
-import gptwImg from "../public/gptw.webp";
-import gptw_mobile from "../public/gptw_mobile.png";
+const logo1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo1.png";
+const logo2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo2.png";
+const logo3 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo3.png";
+const logo4 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo4.png";
+const logo5 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo5.png";
+const logo6 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo6.png";
+const logo7 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo7.png";
+const logo8 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo8.png";
+const logo9 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo9.png";
+const logo10 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo10.png";
+const logo11 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo11.png";
+const logo12 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo12.png";
 
-import logo1 from "../public/logo1.png";
-import logo2 from "../public/logo2.png";
-import logo3 from "../public/logo3.png";
-import logo4 from "../public/logo4.png";
-import logo5 from "../public/logo5.png";
-import logo6 from "../public/logo6.png";
-import logo7 from "../public/logo7.png";
-import logo8 from "../public/logo8.png";
-import logo9 from "../public/logo9.png";
-import logo10 from "../public/logo10.png";
-import logo11 from "../public/logo11.png";
-import logo12 from "../public/logo12.png";
-import awd1 from "../public/awd1.png";
-import awd2 from "../public/awd2.png";
-import awd3 from "../public/awd3.png";
-import awd4 from "../public/awd4.png";
-import awd5 from "../public/awd5.png";
-import awd6 from "../public/awd6.png";
-import awd7 from "../public/awd7.png";
-import awd8 from "../public/awd8.png";
-import awd9 from "../public/awd9.png";
-import awd10 from "../public/awd10.png";
-import awd11 from "../public/awd11.png";
-import awd12 from "../public/awd12.png";
+const awd1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd1.png";
+const awd2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd2.png";
+const awd3 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd3.png";
+const awd4 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd4.png";
+const awd5 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd5.png";
+const awd6 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd6.png";
+const awd7 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd7.png";
+const awd8 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd8.png";
+const awd9 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd9.png";
+const awd10 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd10.png";
+const awd11 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd11.png";
+const awd12 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd12.png";
 
 const vpData = [
   { img: vp1, name: "Kumar Badampudi", role: "VP - Medical Affairs & Strategy", linkedin: "https://www.linkedin.com/in/kumar-badampudi-71812826/" },
@@ -169,13 +168,7 @@ function OneTeam() {
         style={cardStyle}
       >
         <div className="shrink-0">
-          <Image
-            src={ceoImg}
-            alt="Vimal Narayanan"
-            className="max-w-[280px] hover:scale-110 rounded-xl transition-transform duration-400"
-            sizes="280px"
-            priority
-          />
+          <img src={ceoImg} alt="Vimal Narayanan" className="max-w-[280px] hover:scale-110 rounded-xl transition-transform duration-400" />
         </div>
         <div className="flex items-start justify-between  lg:justify-center lg:px-10 flex-col gap-10">
           <TypingQuote onDone={() => setQuoteDone(true)} />
@@ -185,11 +178,7 @@ function OneTeam() {
               <p className="lg:text-[20px] text-[16px] text-gray-300">Founder and CEO</p>
             </div>
             <a href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/" target="_blank" rel="noopener noreferrer">
-            <Image
-              src={linkedinImg}
-              alt="LinkedIn"
-              className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer"
-            />
+              <img src={linkedinImg} alt="LinkedIn" className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer" />
             </a>
           </div>
         </div>
@@ -205,13 +194,7 @@ function OneTeam() {
             style={{ ...cardStyle, willChange: "opacity, transform", opacity: 0 }}
           >
             <div className="flex justify-center ">
-              <Image
-                src={vp.img}
-                alt={vp.name}
-                className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300 "
-                sizes="(max-width: 768px) 90vw, (max-width: 1024px)  45vw, 22vw"
-                loading="lazy"
-              />
+              <img src={vp.img} alt={vp.name} className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="flex items-start justify-between mt-2">
               <div className="flex-1">
@@ -219,12 +202,7 @@ function OneTeam() {
                 <p className="text-gray-400 mt-1 text-[14px]">{vp.role}</p>
               </div>
               <a href={vp.linkedin} target="_blank" rel="noopener noreferrer">
-              <Image
-                src={linkedinImg}
-                alt="LinkedIn"
-                className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer shrink-0"
-                loading="lazy"
-              />
+                <img src={linkedinImg} alt="LinkedIn" className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer shrink-0" loading="lazy" />
               </a>
             </div>
           </div>
@@ -234,20 +212,8 @@ function OneTeam() {
       {/* GPTW */}
       <section className="relative">
         <div className="flex items-center justify-center py-[50px] lg:py-[100px]">
-          <Image
-            src={gptwImg}
-            alt="Great Place to Work"
-            
-            className="w-full hidden lg:block  object-contain"
-            loading="lazy"
-          />
-          <Image
-            src={gptw_mobile}
-            alt="Great Place to Work"
-            
-            className="w-full lg:hidden object-contain"
-            loading="lazy"
-          />
+          <img src={gptwImg} alt="Great Place to Work" className="w-full hidden lg:block object-contain" loading="lazy" />
+          <img src={gptw_mobile} alt="Great Place to Work" className="w-full lg:hidden object-contain" loading="lazy" />
 
         </div>
         <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]" style={redGlow} />
@@ -260,14 +226,7 @@ function OneTeam() {
         <div className="grid grid-cols-3 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-2 items-center justify-center ">
           {clientLogos.map((logo, index) => (
             <div key={index} className="w-full h-[70px] border-1 border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center transition-transform duration-300 hover:scale-105" style={{ willChange: "transform" }}>
-              <Image
-                src={logo}
-                alt={`client-${index}`}
-                height={44}
-                className="max-h-[44px] w-auto object-contain opacity-90"
-                sizes="(max-width: 768px) 30vw, 14vw"
-                loading="lazy"
-              />
+              <img src={logo} alt={`client-${index}`} className="max-h-[44px] w-auto object-contain opacity-90" loading="lazy" />
             </div>
           ))}
         </div>
@@ -277,7 +236,7 @@ function OneTeam() {
       {/* Awards */}
       <section className="pt-[50px] pb-[50px] lg:pt-[100px] lg:pb-[80px] relative lg:overflow-visible">
         <Badge label="One Standard" />
-        <SectionHeading red="Excellence " white="recognized across the industry" />
+        <SectionHeading red="Excellence " white="Recognized Across the Industry" />
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3   w-full ">
           {awardsData.map((award, index) => (
             <div
@@ -285,13 +244,7 @@ function OneTeam() {
               className="flex items-center justify-center rounded-[10px] border-1 border-[#ffffff56] p-2 transition-transform duration-300 hover:-translate-y-1"
               style={{ willChange: "transform" }}
             >
-              <Image
-                src={award}
-                alt={`award-${index}`}
-                className="lg:max-w-[200px] object-contain"
-                sizes="(max-width: 768px) 45vw, 22vw"
-                loading="lazy"
-              />
+              <img src={award} alt={`award-${index}`} className="lg:max-w-[200px] object-contain" loading="lazy" />
             </div>
           ))}
         </div>

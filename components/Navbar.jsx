@@ -312,7 +312,7 @@ export default function Navbar() {
       >
         <a href="/">
           <img
-            src="/logo.png"
+            src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo.png"
             alt="Medtrix Logo"
             style={isDesktop ? { width: scrolled ? '130px' : '180px', transition: 'width 0.6s cubic-bezier(0.4,0,0.2,1)' } : { width: '130px' }}
           />

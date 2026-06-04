@@ -84,7 +84,7 @@ function SectionPill({ label }) {
   );
 }
 
-// ── Animated paragraph — fades in as one smooth block ───────────────────────
+// ── Animated paragraph—fades in as one smooth block ───────────────────────
 function AnimatedParagraph({ text, className = "", delay = 0 }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
@@ -320,7 +320,7 @@ export default function ProjectDetail({ project, onBack }) {
           </span>
         </motion.div> */}
 
-        {/* title — word by word */}
+        {/* title—word by word */}
         <AnimatedHeading
           text={project.title}
           className="text-3xl md:text-4xl font-medium leading-tight mb-6"
@@ -352,7 +352,7 @@ export default function ProjectDetail({ project, onBack }) {
           </motion.div>
         )}
 
-        {/* meta row — engagement model + timeline */}
+        {/* meta row—engagement model + timeline */}
         {(project.engagementModel || project.timeline) && (
           <motion.div
             className="flex flex-wrap gap-6 mb-10 pb-10 border-b border-[#2e2d2d]"
@@ -375,7 +375,7 @@ export default function ProjectDetail({ project, onBack }) {
           </motion.div>
         )}
 
-        {/* hero image — Ken Burns zoom */}
+        {/* hero image—Ken Burns zoom */}
         {project.imgfordetail && (
           <motion.div
             initial={{ opacity: 0, scale: 1.05 }}
@@ -502,7 +502,7 @@ export default function ProjectDetail({ project, onBack }) {
             </div>
           </Reveal>
 
-          {/* recognitions — only render if at least one item has images */}
+          {/* recognitions—only render if at least one item has images */}
           {project.recognitions?.length > 0 &&
             project.recognitions.some((rec) => {
               const imgs = Array.isArray(rec.img) ? rec.img : typeof rec === "string" ? [rec] : [];

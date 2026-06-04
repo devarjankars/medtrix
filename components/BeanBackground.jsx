@@ -91,7 +91,7 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
           const count = isMobile ? 400 : 400;
         const TABLET_SIZE = isMobile ? 0.66 : 0.26;
 
-        new GLTFLoader().load('/img/capsule.glb', (gltf) => {
+        new GLTFLoader().load('https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/capsule.glb', (gltf) => {
             const source = gltf.scene;
             const size = new THREE.Vector3();
             new THREE.Box3().setFromObject(source).getSize(size);
@@ -142,7 +142,7 @@ export default function BeanBackground({ className = '', style, spotlightRef }) 
         window.addEventListener('mousemove', onMouseMove);
         window.addEventListener('resize', onResize);
 
-        // Reusable vectors — allocated once, never inside the loop
+        // Reusable vectors—allocated once, never inside the loop
         const _dir = new THREE.Vector3();
         const _perp1 = new THREE.Vector3();
         const _perp2 = new THREE.Vector3(0, 0, 0.8);

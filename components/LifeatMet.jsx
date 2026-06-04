@@ -8,21 +8,21 @@ import "swiper/css";
 const slides = [
   {
     id: 1,
-    image: "/f_1.png",
+    image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_1.png",
     tag: "EQUALITY",
     title: "Harnessing The Power Of One",
     desc: "We believe diverse perspectives drive stronger ideas. By bringing together people from different backgrounds, disciplines, and experiences, we foster a culture built on inclusion, collaboration, and shared purpose.",
   },
   {
     id: 2,
-    image: "/f_2.png",
+    image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_2.png",
     tag: "AUDACITY",
     title: "Challenging what’s possible",
     desc: "We embrace bold thinking and ambitious ideas that push healthcare communication forward. From emerging technologies to new engagement models, we continuously strive to create meaningful impact for our clients and their audiences. ",
   },
   {
     id: 3,
-    image: "/f_3.png",
+    image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_3.png",
     tag: "Originality",
     title: "Crafting unique experiences",
     desc: "We combine creativity, science, and technology to create innovative healthcare communication experiences. From Artificial Intelligence to Augmented and Mixed Reality, we challenge convention through solutions that redefine engagement. ",
@@ -30,7 +30,7 @@ const slides = [
   
   {
     id: 4,
-    image: "/f_4.png",
+    image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_4.png",
     tag: "Simplicity",
     title: "Delivering clarity through design",
     desc: "We simplify complex concepts through inventive strategy, graphical storytelling, implementation expertise, and high-quality in-house content to create intuitive, user-friendly, end-to-end solutions.",
@@ -79,7 +79,7 @@ export default function LifeatMet() {
               background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)",
             }} />
 
-            {/* Content — sits above dots via pb-16 */}
+            {/* Content—sits above dots via pb-16 */}
             <div style={{
               position: "absolute", inset: 0,
               display: "flex", flexDirection: "column",
@@ -122,7 +122,7 @@ export default function LifeatMet() {
         ))}
       </Swiper>
 
-      {/* ── Custom dots — outside Swiper, always on top ── */}
+      {/* ── Custom dots—outside Swiper, always on top ── */}
       <div style={{
         position: "absolute",
         bottom: 32, left: 32,

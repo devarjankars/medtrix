@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useEffect, useRef, useState } from "react";
 import DynamicHeader from "@/components/DynamicHeader";
 import FeatureSection from "@/components/FeatureSection";
@@ -82,7 +82,7 @@ export default function Services() {
         tagText="STRATEGY & CONSULTING"
         title="Strategy that adapts to your needs"
         paragraphs={strategyParagraphs}
-        graphicSrc="/servicesHeader.png"
+        graphicSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/servicesHeader.png"
       />
 
       {/* ── animated stats strip ── */}
@@ -104,7 +104,7 @@ export default function Services() {
           <SectionBadge number={1} />
           <FeatureSection
             tagText="Brand and Business Strategy"
-            imageSrc="/servicesBrand.png"
+            imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/servicesBrand.png"
             imageAlt="Brand Strategy Image"
             imagePosition="left"
             paragraphs={[
@@ -122,7 +122,7 @@ export default function Services() {
           <SectionBadge number={2} />
           <FeatureSection
             tagText="Launch and Lifecycle"
-            imageSrc="/lunchandlifecycle.png"
+            imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lunchandlifecycle.png"
             imageAlt="Launch and Lifecycle"
             imagePosition="right"
             paragraphs={[
@@ -140,7 +140,7 @@ export default function Services() {
           <SectionBadge number={3} />
           <FeatureSection
             tagText="OMNICHANNEL"
-            imageSrc="/lunchandlifecycle.png"
+            imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lunchandlifecycle.png"
             imageAlt="Omnichannel"
             imagePosition="left"
             paragraphs={[
@@ -157,7 +157,7 @@ export default function Services() {
           <SectionBadge number={4} />
           <FeatureSection
             tagText="Measurement and Optimization"
-            imageSrc="/mesurment.png"
+            imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mesurment.png"
             imageAlt="Chart Image"
             imagePosition="right"
             paragraphs={[

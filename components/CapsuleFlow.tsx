@@ -98,7 +98,7 @@ export default function CapsuleFlow({
     const cursor    = new THREE.Vector3();
     let cursorActive = false;
  
-    // ── curve — built in full-viewport world space ─────────────────────────
+    // ── curve—built in full-viewport world space ─────────────────────────
     let curve = new THREE.CatmullRomCurve3([]);
  
     const getFullVisSize = () => {

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import { useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion, useInView, AnimatePresence } from "framer-motion";
@@ -29,7 +29,7 @@ const strategyParagraphs = [
   "Our strongest partnerships with pharmaceutical companies have been built through innovative solutions to achieve unique objectives and address challenges specific to a particular client or set of circumstances.",
 ];
 
-// filtered once — only DIGITAL INNOVATION projects
+// filtered once—only DIGITAL INNOVATION projects
 const digitalProjects = projects.filter(
   (p) => p.category.toUpperCase() === "DIGITAL INNOVATION"
 );
@@ -79,8 +79,8 @@ function DigitalInnovationInner() {
         tagText="DIGITAL INNOVATION"
         title="Innovation that creates meaningful impact"
         paragraphs={strategyParagraphs}
-        desktopBg={"/dibgdesk.jpg"}
-        mobileImg={"/dimbl.png"}
+        desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/dibgdesk.jpg"}
+        mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/dimbl.png"}
       />
 
       <section className="relative bg-black py-5 md:py-14 px-2 md:px-0 overflow-hidden w-[90%] md:w-[80%] mx-auto">

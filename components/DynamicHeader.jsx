@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 
@@ -98,7 +98,7 @@ export default function DynamicHeader({
   graphicSrc,
   graphicAlt = "",
   desktopBg = "/bg",
-  mobileImg = "/mblbg.png",
+  mobileImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mblbg.png",
   statsCards = [],
   desktopImgHeight,
   desktopImgAlign = 'bottom',
@@ -118,7 +118,7 @@ export default function DynamicHeader({
         transition={{ duration: 1.8, ease }}
       />
 
-      {/* ── RIGHT IMAGE — absolute, fills full right 70% top-to-bottom ── */}
+      {/* ── RIGHT IMAGE—absolute, fills full right 70% top-to-bottom ── */}
       <motion.div
         className="hidden lg:block absolute top-0 right-0 w-full h-full z-0"
         initial={{ opacity: 0, x: 40 }}
@@ -141,7 +141,7 @@ export default function DynamicHeader({
       {/* ── MAIN GRID ─────────────────────────────────────────────────────── */}
       <div className="relative z-10 w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-[600px_55%] gap-1 items-center py-20  ">
 
-        {/* LEFT COLUMN — 50% */}
+        {/* LEFT COLUMN—50% */}
         <motion.div
           className="flex flex-col gap-5 "
           variants={leftCol}
@@ -209,7 +209,7 @@ export default function DynamicHeader({
           )}
         </motion.div>
 
-        {/* right col spacer — keeps grid balanced, image is absolute */}
+        {/* right col spacer—keeps grid balanced, image is absolute */}
         <div className="hidden lg:block" />
 
       </div>

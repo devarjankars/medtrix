@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useRef, useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
@@ -228,23 +228,23 @@ function ContactInner() {
             className="relative rounded-2xl overflow-hidden border border-white/10 opacity-0 "
           >
             <img
-              src="/map.png"
+              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/map.png"
               alt="Medtrix office locations"
               className="w-full hidden lg:block  object-contain scale-110  md:block "
             />
             <img
-              src="/mobile_map.png"
+              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mobile_map.png"
               alt="Medtrix office locations"
               className="w-full h-auto block lg:hidden"
             />
-            {/* animated pulse dot — Bangalore */}
+            {/* animated pulse dot—Bangalore */}
             <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "38%", left: "67%" }}>
               {/* <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
                 <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
               </span> */}
             </div>
-            {/* pulse — New Jersey */}
+            {/* pulse—New Jersey */}
             <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "52%", left: "24%" }}>
               {/* <span className="relative flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
@@ -265,7 +265,7 @@ function ContactInner() {
               className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-m transition-colors group">
               <span className="w-12 h-12 rounded-full   flex items-center justify-center shrink-0  transition-colors">
                    <Image
-                              src="/linkdin.png"
+                              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/linkdin.png"
                               alt="LinkedIn"
                               width={80}
                               height={80}
