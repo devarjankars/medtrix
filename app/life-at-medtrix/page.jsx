@@ -22,7 +22,7 @@ function CardGrid({ newsData, setSelected }) {
   }, []);
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6  ">
       {newsData.map((item, i) => (
         <div key={item.id} ref={(el) => (cardsRef.current[i] = el)} style={{ opacity: 0 }}>
           <NewsCard news={item} onClick={setSelected} />

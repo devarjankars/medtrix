@@ -4,18 +4,18 @@ export default function Landing() {
     <section className="  relative isolate z-10 px-6 pb-[50px] lg:pb-20 bg-black mt-[50px] lg:mt-[50px] lg:px-0">
       <div className="flex flex-col-reverse  lg:m-h-[100vh] mx-auto  w-[90%] md:w-[80%]  md:flex-row items-center justify-between gap-0">
         <div className="text-left flex lg:w-[55%] flex-col gap-0">
-           <h1 className="text-[26px] text-center lg:text-left lg:text-[70px] font-bold leading-[1.2] text-[#FFF]
-1  ">MedTrix - Catalyzing <span className=" text-red-600">Healthcare</span></h1>
+           <h1 className="text-[26px] text-center lg:text-left lg:text-[65px] font-bold leading-[1.2] text-[#F2F2F2]
+1  ">MedTrix - Catalyzing <span className=" text-[#FF2F2F]">Healthcare</span></h1>
   <div className="w-full  lg:hidden block ">
           <img src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/tablet.png" alt=""  className=" items-center min-w-70 md:w-full lg:ml-8 " />
         </div>
-                  <p className=" text-[14px] text-center lg:text-left lg:text-[20px] text-[#7f818B]">MedTrix is a growth catalyst for pharmaceutical and life science companies. 
+                  <p className=" text-[14px] text-center lg:text-left lg:text-[19px] text-[#7f818B]  leading-relaxed mt-5">MedTrix is a growth catalyst for pharmaceutical and life science companies. 
                     We work with the science you&apos;ve built, the teams you&apos;ve assembled, and the brands you&apos;ve invested in, 
                     to drive outcomes that are faster, bigger, and precise.
                   </p>
-            <p className="text-[14px] lg:text-[20px] text-center lg:text-left text-[#7f818B]">Our proven mix of science, creativity, technology, and strategy accelerates compliant, 
+            <p className="text-[14px] lg:text-[19px] text-center lg:text-left text-[#7f818B] mt-3  leading-relaxed">Our proven mix of science, creativity, technology, and strategy accelerates compliant, 
               high-impact engagement across Medical Affairs and Commercial functions—exponentially. 
-              From launch through the lifecycle, we don&apos;t just support your growth. We <b className="text-[#FFF]">Catalyze</b> it. </p>
+              From launch through the lifecycle, we don&apos;t just support your growth. We <b className="text-[#F2F2F2]">Catalyze</b> it. </p>
           
         </div>
         <div className="w-1/2 hidden lg:block ">

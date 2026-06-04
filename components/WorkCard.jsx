@@ -37,7 +37,7 @@ export default function WorkCard({ project, onExplore }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className=" border  border-[#3A3A3A]   px-4 py-2 rounded-md text-[11px] uppercase tracking-[2px]" >
+              className=" border  border-[#3A3A3A]   px-4 py-2 rounded-full text-[11px] uppercase tracking-[2px]" >
               {tag}
             </span>
           ))}

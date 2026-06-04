@@ -37,7 +37,7 @@ export default function Commercial_Solutions() {
         ]}
       />
       <div className="p w-[90%] md:w-[80%] mx-auto">
-        <section className="relative bg-black lg:py-[100px]  py-[50px] px-6 overflow-hidden">
+        <section className="relative bg-black lg:py-[100px]  py-[50px]  overflow-hidden">
           <CapabilitiesSection />
         </section>
       </div>

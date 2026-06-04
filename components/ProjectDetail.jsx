@@ -63,10 +63,10 @@ function SectionPill({ label }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.5 });
   return (
-    <div ref={ref} className="flex items-center gap-4 mb-8">
+    <div ref={ref} className=" gap-0 mb-8">
       {/* line draws in from left */}
       <motion.div
-        className="h-px bg-linear-to-r from-[#E1251B] to-transparent"
+        className="h-px  to-transparent"
         initial={{ width: 0, opacity: 0 }}
         animate={inView ? { width: 48, opacity: 1 } : {}}
         transition={{ duration: 0.6, ease }}
@@ -386,7 +386,7 @@ export default function ProjectDetail({ project, onBack }) {
             <img
               src={project.imgfordetail}
               alt={project.title}
-              className="w-full object-cover"
+              className="w-full object-contain"
             />
           </motion.div>
         )}
@@ -397,7 +397,7 @@ export default function ProjectDetail({ project, onBack }) {
         <section className="lg:py-[100px] py-[50px] relative">
           <SectionPill label="Challenge" />
 
-          <div className="grid lg:grid-cols-2 gap-14 items-center rounded-2xl px-6 md:px-0 py-10">
+          <div className="grid lg:grid-cols-2 gap-14 items-center rounded-2xl  md:px-0 py-10">
             {project.challengeImg ? (
               <Reveal delay={0.05}>
                 <div className="rounded-2xl overflow-hidden flex items-center justify-center bg-[#0d0d0d] p-4">

@@ -31,7 +31,7 @@ function TypingQuote({ onDone }) {
       });
 
     const beforeSpans = makeSpans(before);
-    const redSpans = makeSpans(RED_WORD, 'text-red-500');
+    const redSpans = makeSpans(RED_WORD, 'text-[#FF2F2F]');
     const afterSpans = makeSpans(after);
     const allSpans = [...beforeSpans, ...redSpans, ...afterSpans];
 
@@ -67,6 +67,46 @@ const vp3 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026
 const vp4 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp4.webp";
 const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ceo.webp";
 const linkedinImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/linkdin.png";
+
+/* ── LinkedIn SVG icon — bg changes to red on hover ── */
+let _liIconCount = 0;
+function LinkedInIcon({ className = "w-12 h-12", hovered = false }) {
+  const id = useRef(`li-${_liIconCount++}`);
+  const filterId = `filter-${id.current}`;
+  const gradientId = `gradient-${id.current}`;
+  return (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* background circle */}
+      <rect
+        width="64" height="64" rx="32"
+        fill={hovered ? "#E1251B" : "#272727"}
+        style={{ transition: "fill 0.25s ease" }}
+      />
+      {/* "IN" logo mark — always white */}
+      <path
+        d="M24.8165 20.2832C23.392 20.2832 22.2363 21.4369 22.2363 22.8615C22.2363 24.2861 23.391 25.4665 24.8146 25.4665C26.2382 25.4665 27.3948 24.2861 27.3948 22.8615C27.3948 21.4379 26.2411 20.2832 24.8165 20.2832ZM37.4047 27.118C35.2381 27.118 33.9985 28.251 33.4038 29.3778H33.3409V27.4212H29.0711V41.7639H33.5202V34.664C33.5202 32.7933 33.6614 30.9854 35.9764 30.9854C38.2582 30.9854 38.2915 33.1185 38.2915 34.7823V41.7639H42.7349V33.886C42.7349 30.0312 41.9118 27.118 37.4047 27.118ZM22.591 27.4212V41.7639H27.0439V27.4212H22.591Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
+/* ── Hover LinkedIn button — bg turns red, size stays fixed ── */
+function LinkedInButton({ href, size = "w-12 h-12" }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`shrink-0 block ${size}`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <LinkedInIcon className="w-full h-full" hovered={hovered} />
+    </a>
+  );
+}
 const gptwImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/gptw.webp";
 const gptw_mobile = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/gptw_mobile.png";
 
@@ -131,8 +171,8 @@ function Badge({ label }) {
 
 function SectionHeading({ red, white }) {
   return (
-    <h2 className="text-[26px] lg:text-[70px] font-bold mb-[30px] lg:mb-16 leading-tight">
-      <span className="text-red-500">{red}</span>
+    <h2 className="text-[26px] lg:text-[65px] font-bold mb-[30px] lg:mb-16 leading-tight">
+      <span className="text-[#FF2F2F]">{red}</span>
       <span className="text-white">{white}</span>
     </h2>
   );
@@ -177,33 +217,64 @@ function OneTeam() {
               <h5 className="lg:text-[28px] text-[22px] font-semibold">Vimal Narayanan</h5>
               <p className="lg:text-[20px] text-[16px] text-gray-300">Founder and CEO</p>
             </div>
-            <a href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/" target="_blank" rel="noopener noreferrer">
-              <img src={linkedinImg} alt="LinkedIn" className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer" />
-            </a>
+            <LinkedInButton href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/" size="w-[60px] h-[60px] lg:w-[60px] lg:h-[60px]" />
           </div>
         </div>
       </div>
 
       {/* VP Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden">
+  {vpData.map((vp, index) => (
+    <div
+      key={index}
+      ref={el => cardRefs.current[index] = el}
+      className="flex flex-col justify-between gap-4 px-5 py-5 pb-4 border border-[#252525] border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1 h-full"
+      style={{ ...cardStyle, willChange: "opacity, transform", opacity: 0 }}
+    >
+      {/* Image container with fixed height to keep alignment consistent */}
+      <div className="flex items-center justify-center h-48 w-full overflow-hidden">
+        <img 
+          src={vp.img} 
+          alt={vp.name} 
+          className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300" 
+        />
+      </div>
+
+      {/* Text and LinkedIn section */}
+      <div className="flex items-center justify-between gap-3 mt-auto">
+        <div className="flex-1 min-w-0">
+          <h5 className="text-[18px] font-semibold leading-tight truncate">{vp.name}</h5>
+          <p className="text-gray-400 text-[13px] leading-snug mt-1">{vp.role}</p>
+        </div>
+        <LinkedInButton href={vp.linkedin} size="w-10 h-10 shrink-0" />
+      </div>
+    </div>
+  ))}
+</div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden">
         {vpData.map((vp, index) => (
           <div
             key={index}
             ref={el => cardRefs.current[index] = el}
-            className="flex flex-col gap-1 px-5 py-5 pb-4 border border-[#252525] border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1"
+            className="flex flex-col justify-between gap-4 px-5 py-5 pb-4 border border-[#252525] border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1"
             style={{ ...cardStyle, willChange: "opacity, transform", opacity: 0 }}
           >
-            <div className="flex justify-center ">
-              <img src={vp.img} alt={vp.name} className="w-full h-auto object-contain hover:scale-105 transition-transform duration-300" />
+            {/* FIX: Added a fixed height (h-48) and forced centering to keep logos aligned */}
+            <div className="flex items-center justify-center h-48 w-full overflow-hidden">
+              <img
+                src={vp.img}
+                alt={vp.name}
+                className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
+              />
             </div>
-            <div className="flex items-start justify-between mt-2">
-              <div className="flex-1">
-                <h5 className="text-[20px] font-semibold leading-tight">{vp.name}</h5>
-                <p className="text-gray-400 mt-1 text-[14px]">{vp.role}</p>
+
+            {/* Text and LinkedIn section */}
+            <div className="flex items-center justify-between gap-3 mt-auto">
+              <div className="flex-1 min-w-0"> {/* 'min-w-0' helps 'truncate' work properly */}
+                <h5 className="text-[18px] font-semibold leading-tight truncate">{vp.name}</h5>
+                <p className="text-gray-400 text-[13px] leading-snug mt-1">{vp.role}</p>
               </div>
-              <a href={vp.linkedin} target="_blank" rel="noopener noreferrer">
-                <img src={linkedinImg} alt="LinkedIn" className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer shrink-0" loading="lazy" />
-              </a>
+              <LinkedInButton href={vp.linkedin} size="w-10 h-10 shrink-0" />
             </div>
           </div>
         ))}
@@ -225,7 +296,7 @@ function OneTeam() {
         <SectionHeading red="Our " white="Clients" />
         <div className="grid grid-cols-3 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-2 items-center justify-center ">
           {clientLogos.map((logo, index) => (
-            <div key={index} className="w-full h-[70px] border-1 border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center transition-transform duration-300 hover:scale-105" style={{ willChange: "transform" }}>
+            <div key={index} className="w-full min-h-[120px] border-1 border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center transition-transform duration-300 hover:scale-105" style={{ willChange: "transform" }}>
               <img src={logo} alt={`client-${index}`} className="max-h-[44px] w-auto object-contain opacity-90" loading="lazy" />
             </div>
           ))}
@@ -237,11 +308,11 @@ function OneTeam() {
       <section className="pt-[50px] pb-[50px] lg:pt-[100px] lg:pb-[80px] relative lg:overflow-visible">
         <Badge label="One Standard" />
         <SectionHeading red="Excellence " white="Recognized Across the Industry" />
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3   w-full ">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3    w-full ">
           {awardsData.map((award, index) => (
             <div
               key={index}
-              className="flex items-center justify-center rounded-[10px] border-1 border-[#ffffff56] p-2 transition-transform duration-300 hover:-translate-y-1"
+              className="flex items-center min-h-[120px] justify-center rounded-[10px] border-1 border-[#ffffff56] p-2 transition-transform duration-300 hover:-translate-y-1"
               style={{ willChange: "transform" }}
             >
               <img src={award} alt={`award-${index}`} className="lg:max-w-[200px] object-contain" loading="lazy" />

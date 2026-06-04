@@ -88,25 +88,34 @@ export default function LifeatMet() {
               zIndex: 10,
             }}>
               {/* Tag */}
-              <div style={{ marginBottom: 12 }}>
-                <span style={{
-                  fontSize: 11, fontWeight: 700,
-                  textTransform: "uppercase", letterSpacing: "0.15em",
-                  color: "white", padding: "5px 12px",
-                  borderRadius: 9999, display: "inline-block",
-                  background: "rgba(180,30,30,0.75)",
-                  border: "1px solid rgba(220,50,50,0.5)",
-                }}>
-                  {slide.tag}
-                </span>
-              </div>
+    <div style={{ marginBottom: 12 }} className="">
+  <span style={{
+    fontSize: 11, 
+    fontWeight: 700,
+    textTransform: "uppercase", 
+    letterSpacing: "0.15em",
+    color: "white", 
+    padding: "6px 14px",
+    borderRadius: 9999, 
+    display: "inline-block",
+    /* Applied your exact solid hex color code */
+    background: "#742323",
+    /* Added a matching border to cleanly define the badge edges */
+    border: "1px solid rgba(255, 255, 255, 0.2)",
+  }}
+  /* Removed the glassmorphism backdrop blur filters */
+  className="shadow-sm"
+  >
+    {slide.tag}
+  </span>
+</div>
 
               {/* Title */}
               <h2 style={{
                 color: "white", fontSize: "clamp(20px, 3vw, 28px)",
                 fontWeight: 600, lineHeight: 1.3,
                 marginBottom: 10, maxWidth: 560,
-              }}>
+              }} >
                 {slide.title}
               </h2>
 

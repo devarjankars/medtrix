@@ -28,12 +28,12 @@ export default function Animation() {
 
           {/* RIGHT CONTENT */}
           <div className="relative z-10">
-            <h2 className="text-[26px] lg:text-[70px] leading-none font-bold text-white mb-8">
+            <h2 className="text-[26px] lg:text-[65px] leading-none font-bold text-[#F2F2F2] mb-8">
               The Power of{" "}
-              <span className="text-[#FF322A]">One</span>
+              <span className="text-[#FF2F2F]">One</span>
             </h2>
 
-            <p className="text-[#8E8E8E] text-[14px] lg:text-[20px] lg:leading-[2]">
+            <p className="text-[#7f818B] text-[14px] lg:text-[20px] lg:leading-[2]">
               MedTrix is driven by the philosophy of the Power of One—the belief that when diverse minds align around a single goal, they can achieve greater outcomes. It is our unified way of working—bringing people, expertise, and technology together as a unified force to <span className="text-white font-semibold">Catalyze</span> how our clients engage their stakeholders and how physicians deliver patient care.
             </p>
 
@@ -42,7 +42,7 @@ export default function Animation() {
                 whileHover={{ scale: 1.06 }}
                 whileTap={{ scale: 0.97 }}
                 transition={{ type: "spring", stiffness: 380, damping: 22 }}
-                className="relative inline-flex w-fit items-center gap-2 px-8 py-4 mt-8 rounded-full text-white font-medium overflow-hidden cursor-pointer"
+                className="relative inline-flex w-fit items-center gap-2 px-8 py-4 mt-8 rounded-full text-[#F2F2F2] font-medium overflow-hidden cursor-pointer"
                 style={{
                   background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
                   boxShadow: "0 0 18px rgba(225,37,27,0.45)",
@@ -73,7 +73,7 @@ export default function Animation() {
                 key={index}
                 className="relative overflow-hidden rounded-2xl border-1 border-[#222222] p-8 lg:p-10 flex flex-col min-h-[200px] bg-gradient-to-b from-[rgba(137,124,124,0.26)] to-[rgba(35,32,32,0.45)]"
               >
-                <div className="w-8 h-1 bg-[#E1251B] rounded-full mb-0" />
+                <div className="w-8 h-1 bg-[#FF2F2F] rounded-full mb-0" />
                 <div>
                   <h3 className="text-[50px] font-bold text-white tracking-tight">{stat.value}</h3>
                   <p className="text-[20px] lg:text-base text-gray-500 font-medium tracking-wide">{stat.label}</p>

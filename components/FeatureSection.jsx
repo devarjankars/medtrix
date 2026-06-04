@@ -91,7 +91,7 @@ export default function FeatureSection({
               <img
                 src={imageSrc}
                 alt={imageAlt}
-                className="w-full lg:w-[70%] h-full object-contain object-top  transition-transform duration-300"
+                className="w-full lg:w-[100%] h-full object-contain object-top  transition-transform duration-300"
               />
             </motion.div>
           </motion.div>

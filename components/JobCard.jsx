@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-
+import { motion } from "framer-motion";
 
 export default function JobCard({ job, onClick }) {
   const [saved, setSaved] = useState(false);
@@ -37,12 +37,28 @@ export default function JobCard({ job, onClick }) {
 
       {/* CTA */}
       <div>
-        <button
+        <motion.button
           onClick={() => onClick?.(job)}
-          className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200 cursor-pointer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
+          className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-semibold overflow-hidden cursor-pointer"
+          style={{
+            background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+            boxShadow: "0 0 14px rgba(225,37,27,0.35)",
+          }}
         >
-          Read More
-        </button>
+          <motion.span
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{
+              background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
+              backgroundSize: "200% 100%",
+            }}
+            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+            transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
+          />
+          <span className="relative z-10">Read More</span>
+        </motion.button>
       </div>
 
     </div>

@@ -29,7 +29,7 @@ const tabContent = {
   },
   "Websites": {
     mediaType: "image",
-    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ourcap2.jpg",
+    mediaSrc: "/ourcap2.jpg",
     headline: "Websites",
     desc: "End-to-end capability for design, development, SEO, deployment, maintenance, and omnichannel integration of websites and microsites",
     points: [
@@ -64,7 +64,7 @@ const tabContent = {
   },
   "Interactive Platforms": {
     mediaType: "image",
-    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ourcap1.png",
+    mediaSrc: "/ourcap1.png",
     headline: "Interactive Platforms",
     desc: "Custom applications and data-driven platforms that enable informed decision-making and effective engagement",
     points: [
@@ -133,7 +133,7 @@ export default function CapabilitiesSection() {
       
 
         {/* Tab bar */}
-        <div className="border border-[#222] rounded-2xl bg-[#111] p-2 flex flex-wrap gap-2 mb-6">
+        <div className="border border-[#222] rounded-full bg-[#111] p-2 flex flex-wrap gap-2 mb-6">
           {tabs.map((tab) => (
             <button
               key={tab}
@@ -175,7 +175,7 @@ export default function CapabilitiesSection() {
                 />
               )}
               {/* subtle dark overlay at bottom for readability */}
-              <div className="absolute inset-0 `qwqwbg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Text content */}
@@ -252,25 +252,24 @@ function SectionGrid({ label, title, items, cols, button, link }) {
         {label}
       </span>
 
-      <p className="text-white mb-10 text-xl max-w-3xl">{title}</p>
+      <p className="text-white mb-10 text-xl ">{title}</p>
 
       <div className={`grid gap-8 ${cols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
         {items.map((item) => (
           <div
             key={item.title}
-            className="relative rounded-[22px] overflow-hidden border border-[#1F1F1F]"
+            className="relative rounded-[16px] overflow-hidden border border-[#1F1F1F]"
           >
-            <div className="relative w-full 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999wh-[320px]">
-              <Image
+            <div className="relative w-full h-[320px] bg-[#1a1a1a]">
+              <img
                 src={item.img}
                 alt={item.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                className="absolute inset-0 w-fit h-auto object-contain"
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
-            <div className="absolute bottom-4 left-8 right-8">
+            {/* lighter gradient so image is visible */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+            <div className="absolute bottom-6 left-8 right-8">
               <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
               <p className="text-gray-300 text-sm">{item.desc}</p>
             </div>

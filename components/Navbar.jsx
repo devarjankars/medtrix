@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState, useRef, useEffect, forwardRef } from "react";
 import gsap from "gsap";
+import { motion } from "framer-motion";
 
 const links = [
   {
@@ -50,11 +51,15 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
   if (button) {
     return (
       <li ref={ref}>
-        <Link
-          href={href}
-          className="relative inline-flex items-center gap-1.5 bg-[#E1251B] hover:bg-[#c41f17] text-white text-sm font-semibold px-5 py-2 rounded-full transition-colors duration-200 shadow-[0_0_18px_rgba(225,37,27,0.35)] hover:shadow-[0_0_26px_rgba(225,37,27,0.55)]"
-        >
-          {label}
+        <Link href={href} className="relative inline-flex items-center gap-1.5 overflow-hidden rounded-full text-white text-sm font-semibold px-5 py-2 cursor-pointer"
+          style={{ background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)", boxShadow: "0 0 14px rgba(225,37,27,0.35)" }}>
+          <motion.span
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{ background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)", backgroundSize: "200% 100%" }}
+            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+            transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
+          />
+          <span className="relative z-10">{label}</span>
         </Link>
       </li>
     );
@@ -71,7 +76,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
       {hasItems ? (
         <button
           className={`group relative flex items-center gap-1 text-md font-medium py-1 transition-colors duration-200 cursor-pointer ${
-            isChildActive ? "text-red-500" : "text-white/80 hover:text-white"
+            isChildActive ? "" : "text-white/80 hover:text-white"
           }`}
         >
           {label}
@@ -96,7 +101,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
         <Link
           href={href}
           className={`group relative flex items-center gap-1 text-sm font-medium py-1 transition-colors duration-200 ${
-            isActive ? "text-red-500" : "text-white/80 hover:text-white"
+            isActive ? "" : "text-white/80 hover:text-white"
           }`}
         >
           {label}
@@ -305,7 +310,21 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="w-full bg-[#000] fixed top-0 left-0 right-0 z-50">
+    <nav
+      ref={navRef}
+      className={`w-full fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-white/10 shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+          : "border-b border-white/5"
+      }`}
+      style={{
+        background: scrolled
+          ? "rgba(0,0,0,0.7)"
+          : "rgba(0,0,0,0.5)",
+        backdropFilter: "blur(15px)",
+        WebkitBackdropFilter: "blur(15px)",
+      }}
+    >
       <div
         className="w-[90%] md:w-[80%] mx-auto flex items-center justify-between"
         style={isDesktop ? { padding: scrolled ? '14px 0' : '26px 0', transition: 'padding 0.6s cubic-bezier(0.4,0,0.2,1)' } : { padding: '14px 0' }}
