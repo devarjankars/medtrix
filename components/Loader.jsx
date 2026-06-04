@@ -11,20 +11,26 @@ export default function Loader() {
   const bottomRef = useRef(null);
 
   useEffect(() => {
+    // Only show loader on first visit per session
+    const seen = sessionStorage.getItem("loaderSeen");
+    if (seen) {
+      setVisible(false);
+      return;
+    }
+    sessionStorage.setItem("loaderSeen", "1");
+
     const tl = gsap.timeline();
 
     // Fast fill sweep upward
     tl.fromTo(
       fillRectRef.current,
       { attr: { y: 63, height: 0 } },
-      { attr: { y: 0, height: 63 }, duration: 0.9, ease: 'power3.inOut' }
+      { attr: { y: 0, height: 63 }, duration: 0.5, ease: 'power3.inOut' }
     )
-    // Split open
-    .to(topRef.current, { y: -50, duration: 0.5, ease: 'power3.in' }, '+=0.1')
-    .to(bottomRef.current, { y: 50, duration: 0.5, ease: 'power3.in' }, '<')
-    // Fade out wrapper
+    .to(topRef.current, { y: -50, duration: 0.3, ease: 'power3.in' }, '+=0.05')
+    .to(bottomRef.current, { y: 50, duration: 0.3, ease: 'power3.in' }, '<')
     .to(wrapperRef.current, {
-      opacity: 0, duration: 0.4,
+      opacity: 0, duration: 0.25,
       onComplete: () => setVisible(false),
     });
 

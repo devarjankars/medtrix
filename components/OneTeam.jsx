@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger);
@@ -170,34 +171,73 @@ function Badge({ label }) {
 }
 
 function SectionHeading({ red, white }) {
+  const ref = useRef(null);
+  const words = `${red}${white}`.split(" ");
+  const redCount = red.trim().split(" ").length;
+
   return (
-    <h2 className="text-[26px] lg:text-[65px] font-bold mb-[30px] lg:mb-16 leading-tight">
-      <span className="text-[#FF2F2F]">{red}</span>
-      <span className="text-white">{white}</span>
-    </h2>
+    <motion.h2
+      ref={ref}
+      className="text-[26px] lg:text-[65px] font-bold mb-[30px] lg:mb-16 leading-tight"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.3 }}
+      variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } } }}
+    >
+      {words.map((word, i) => (
+        <motion.span
+          key={i}
+          className={`inline-block mr-[0.25em] ${i < redCount ? "text-[#FF2F2F]" : "text-white"}`}
+          variants={{
+            hidden: { opacity: 0, y: 32, rotateX: -20 },
+            visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] } },
+          }}
+          style={{ transformOrigin: "bottom center" }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.h2>
   );
 }
 
 function OneTeam() {
-  const cardRefs = useRef([]);
+  const cardRefs  = useRef([]);
+  const gridRef   = useRef(null);
+  const awardsRef = useRef(null);
+  const logosRef  = useRef(null);
   const [quoteDone, setQuoteDone] = useState(false);
 
   useEffect(() => {
+    // VP cards slide in from right
     cardRefs.current.forEach((card, i) => {
       if (!card) return;
       gsap.fromTo(card,
         { opacity: 0, x: 60 },
-        {
-          opacity: 1, x: 0, duration: 0.5, ease: 'power2.out',
-          scrollTrigger: {
-            trigger: cardRefs.current[0],
-            start: 'top 80%',
-            once: true,
-          },
-          delay: i * 0.2,
-        }
+        { opacity: 1, x: 0, duration: 0.5, ease: "power2.out", delay: i * 0.15,
+          scrollTrigger: { trigger: gridRef.current || card, start: "top 80%", once: true } }
       );
     });
+
+    // Client logos pop in with stagger
+    if (logosRef.current) {
+      gsap.fromTo(
+        logosRef.current.querySelectorAll(".logo-card"),
+        { opacity: 0, scale: 0.85, y: 20 },
+        { opacity: 1, scale: 1, y: 0, duration: 0.45, stagger: 0.05, ease: "back.out(1.4)",
+          scrollTrigger: { trigger: logosRef.current, start: "top 80%", once: true } }
+      );
+    }
+
+    // Award cards slide up with stagger
+    if (awardsRef.current) {
+      gsap.fromTo(
+        awardsRef.current.querySelectorAll(".award-card"),
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: "power3.out",
+          scrollTrigger: { trigger: awardsRef.current, start: "top 80%", once: true } }
+      );
+    }
   }, []);
 
   return (
@@ -223,7 +263,7 @@ function OneTeam() {
       </div>
 
       {/* VP Cards */}
-       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden">
+       <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden">
   {vpData.map((vp, index) => (
     <div
       key={index}
