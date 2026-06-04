@@ -60,7 +60,7 @@ const tabContent = {
       { title: "MOA and MOD Videos", desc: "Hyper realistic and scientifically accurate structures and animations" },
       { title: "3D Content Development", desc: "3D content development for integration into banners, slides, detail aids, websites etc." },
     ],
-    caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work?project=merck-keytruda-mod" },
+    caseStudy: { label: "Read the Keytruda MOD Case Study →", href: "/our-work?project=merck-keytruda-mod&from=%2Fservices%2FCommercial_Solutions" },
   },
   "Interactive Platforms": {
     mediaType: "image",
@@ -72,7 +72,7 @@ const tabContent = {
       { title: "Product and Data-Driven Applications", desc: "Unified data and product portfolio showcase platforms for web and interactive screens" },
       { title: "Webcast and Symposia Platform", desc: "Unified platform for onboarding, video streaming, quiz and interaction delivery for webinars" },
     ],
-    caseStudy: { label: "Read the Lilly COMPASS Case Study →", href: "/our-work?project=lilly-med-affairs-intelligence" },
+    caseStudy: { label: "Read the Lilly COMPASS Case Study →", href: "/our-work?project=lilly-med-affairs-intelligence&from=%2Fservices%2FCommercial_Solutions" },
   },
 };
 
@@ -175,7 +175,7 @@ export default function CapabilitiesSection() {
                 />
               )}
               {/* subtle dark overlay at bottom for readability */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 `qwqwbg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
             </div>
 
             {/* Text content */}
@@ -238,7 +238,7 @@ export default function CapabilitiesSection() {
         ]}
         cols={2}
         button="Explore Modulife Expert for Nestlé Health Science"
-        link={"/our-work?project=nhsc-modulife-training"}
+        link={"/our-work?project=nhsc-modulife-training&from=%2Fservices%2FCommercial_Solutions"}
       />
     </section>
   );
@@ -260,7 +260,7 @@ function SectionGrid({ label, title, items, cols, button, link }) {
             key={item.title}
             className="relative rounded-[22px] overflow-hidden border border-[#1F1F1F]"
           >
-            <div className="relative w-full h-[320px]">
+            <div className="relative w-full 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999wh-[320px]">
               <Image
                 src={item.img}
                 alt={item.title}
