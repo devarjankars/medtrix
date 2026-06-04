@@ -404,7 +404,7 @@ export default function ProjectDetail({ project, onBack }) {
                   <motion.img
                     src={project.challengeImg}
                     alt="Challenge"
-                    className="w-full max-h-[420px] object-contain rounded-xl"
+                    className="w-full max-h-[325px] object-contain rounded-lg"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.4 }}
                   />

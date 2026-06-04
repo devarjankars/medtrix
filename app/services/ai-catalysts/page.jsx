@@ -51,7 +51,7 @@ export default function page() {
             "The MLR Catalyst is a tool built to reduce the time and effort involved in the medical-legal-regulatory approval process. It utilizes AI methodologies rooted in a validated and brand-specific knowledge bank to simplify repetitive tasks.",
             "Importantly, it validates claims in a document with information in the knowledge bank and allows reviewers to utilize their time more efficiently by focusing on relevant areas. ",
           ]}
-          buttons={[{ label: "Learn More ", type: "primary", href: "/GenAI" }]}
+          buttons={[{ label: "Learn More ", type: "primary", href: "/MLR-Catalyst" }]}
         />
       </section>
 

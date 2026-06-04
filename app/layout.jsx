@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import Loader from "@/components/Loader";
 import LenisProvider from "@/components/LenisProvider";
+import ConditionalNavbar from "@/components/ConditionalNavbar";
+import MainWrapper from "@/components/MainWrapper";
 
 const albertSans = Albert_Sans({
   subsets: ["latin"],
@@ -27,10 +29,8 @@ export default function RootLayout({ children }) {
         <LenisProvider>
           <ScrollToTop />
           <Loader />
-          <Navbar />
-          <main className="flex-1 w-full bg-black pt-[72px]">
-            <div className="w-full">{children}</div>
-          </main>
+          <ConditionalNavbar />
+          <MainWrapper>{children}</MainWrapper>
           <Footer />
         </LenisProvider>
       </body>

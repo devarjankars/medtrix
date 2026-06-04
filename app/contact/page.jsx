@@ -225,31 +225,70 @@ function ContactInner() {
           {/* Map */}
           <div
             ref={mapRef}
-            className="relative rounded-2xl overflow-hidden border border-white/10 opacity-0 "
+            className="relative rounded-2xl overflow-hidden border border-white/10 opacity-0"
           >
-            <img
-              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/map.png"
-              alt="Medtrix office locations"
-              className="w-full hidden lg:block  object-contain scale-110  md:block "
-            />
-            <img
-              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mobile_map.png"
-              alt="Medtrix office locations"
-              className="w-full h-auto block lg:hidden"
-            />
-            {/* animated pulse dot—Bangalore */}
-            <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "38%", left: "67%" }}>
-              {/* <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
-              </span> */}
+            {/* MAP CONTAINER */}
+            <div className="relative w-full overflow-hidden mb-4 mt-4">
+              <div className="relative w-full">
+                <img
+                  src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/blankMap.png"
+                  alt="Office Locations Map"
+                  className="w-full h-auto object-contain opacity-80 hidden md:block"
+                />
+                <img
+                  src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/blankMap.png"
+                  alt="Office Locations Map"
+                  className="w-full h-auto object-contain opacity-80 block md:hidden"
+                />
+
+                {/* USA indicator */}
+                <div className="hidden md:flex flex-col items-center absolute top-[40%] left-[20%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                  <div className="mt-3 p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[16px] text-red-500 font-bold px-2 py-0.5 rounded">USA</span>
+                    </div>
+                    <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
+                      100 Somerset Corporate Boulevard 2nd Floor, Suite 130, Bridgewater, NJ 08807
+                    </p>
+                  </div>
+                </div>
+
+                {/* India indicator */}
+                <div className="hidden md:flex flex-col items-center absolute top-[60%] left-[70%] -translate-x-1/2 -translate-y-1/2 group z-10">
+                  <div className="mt-3 p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
+                    <div className="flex items-center gap-2 mt-2">
+                      <span className="text-[16px] text-red-500 font-bold px-2 py-0.5 rounded">IND</span>
+                    </div>
+                    <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
+                      1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, Bangalore 560 102
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-            {/* pulse—New Jersey */}
-            <div className="absolute hidden md:flex items-center justify-center" style={{ bottom: "52%", left: "24%" }}>
-              {/* <span className="relative flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#E1251B] opacity-60" />
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-[#E1251B]" />
-              </span> */}
+
+            {/* Mobile address cards */}
+            <div className="grid grid-cols-1 gap-4 mt-2 mb-4 px-4 md:hidden">
+              <div className="p-4 rounded-xl">
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="text-sm font-bold tracking-wider text-red-400">USA</h4>
+                </div>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  100 Somerset Corporate Boulevard<br />
+                  2nd Floor, Suite 130,<br />
+                  Bridgewater, NJ 08807
+                </p>
+              </div>
+              <div className="p-4 rounded-xl">
+                <div className="flex items-center gap-2 mb-1">
+                  <h4 className="text-sm font-bold tracking-wider text-red-400">IND</h4>
+                </div>
+                <p className="text-sm text-gray-300 leading-relaxed">
+                  1st Floor, 574/A, 1st Main,<br />
+                  Sector 6, HSR Layout,<br />
+                  Bangalore 560 102
+                </p>
+              </div>
             </div>
           </div>
 

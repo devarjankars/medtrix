@@ -242,7 +242,7 @@ function ServiceGrid({ label, cols, items }) {
     <section ref={sectionRef} className="py-12">
       {/* Pill */}
       <div className="mb-8">
-        <span className="inline-flex rounded-full bg-[#1a1a1a] border border-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[3px] text-white/70">
+        <span className="inline-flex rounded-full bg-[#1a1a1a] border border-white/10 px-5 py-2 text-lg font-semibold uppercase tracking-[3px] text-white/70">
           {label}
         </span>
       </div>
@@ -277,7 +277,7 @@ function ServiceGrid({ label, cols, items }) {
             </div>
 
             {/* Title */}
-            <h3 className="relative text-white text-base font-semibold mb-4 leading-snug">
+            <h3 className="relative text-white text-lg font-semibold mb-6 mt-4 leading-1">
               {service.title}
             </h3>
 
@@ -287,7 +287,7 @@ function ServiceGrid({ label, cols, items }) {
             {/* List */}
             <ul className="relative space-y-2">
               {service.points.map((pt, idx) => (
-                <li key={idx} className="text-zinc-400 text-sm leading-relaxed flex  gap-2">
+                <li key={idx} className="text-zinc-400 text-md leading-normal flex  gap-2">
                   <span className="shrink-0 mt-[9px] w-1 h-1 rounded-full bg-[#E1251B]/60" />
                   <span>{pt}</span>
                 </li>

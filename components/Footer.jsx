@@ -15,12 +15,7 @@ const footerData = [
   {
     title: "Our Work",
     href: "/our-work",
-    links: [
-      { label: "Strategy & Consulting", href: "/our-work/strategy-and-consulting" },
-      { label: "Commercial Solutions",  href: "/our-work/commercial-solutions" },
-      { label: "Medical Affairs",       href: "/our-work/medical-affairs" },
-      { label: "Digital Innovation",    href: "/our-work/digital-innovation" },
-    ],
+    links: [],
   },
   {
     title: "News & Updates",

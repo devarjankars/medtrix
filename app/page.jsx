@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-const mapImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/map.png";
+const mapImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/blankMap.png";
 const mobile_map = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mobile_map.png";
 
 export default function Home() {
@@ -24,15 +24,86 @@ export default function Home() {
       </span>
        </div>
     <div className="relative w-[90%] md:w-[80%] mx-auto"> <OneTeam /></div>
-    
-     <section className=" py-10">
-          <h5 className="text-2xl font-bold mb-8 mt-8 text-start w-[90%] md:w-[80%] mx-auto">
+      <section className="w-full text-white">
+        <h5 className="text-2xl font-bold mb-8 mt-8 text-start w-[90%] md:w-[80%] mx-auto">
             Contact Us
             </h5>
-             <div className="w-full px-6 lg:px-1 flex flex-col items-center py-10   gap-4">
-          <img src={mapImg} alt="Contact Locations" className="w-full hidden lg:block object-contain" />
-          <img src={mobile_map} alt="Contact Locations" className="w-full lg:hidden object-contain" />
+      
+      {/* MAP CONTAINER */}
+      <div className="relative w-full overflow-hidden mb-4 mt-4">
+        
+        {/* The Base Map Image */}
+        <div className="relative w-full">
+          <img 
+            src={mapImg} 
+            alt="Office Locations Map" 
+            className="w-full h-auto object-contain opacity-80"
+          />
+          {/* USA INDICATOR & TEXT */}
+          {/* Adjust top% and left% to align exactly with your map's USA red dot */}
+          <div className="hidden md:flex flex-col items-center absolute top-[36%] left-[20%] -translate-x-1/2 -translate-y-1/2 group z-10">
+ 
+            {/* Address Box directly below indicator */}
+            <div className="mt-3   p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">USA</span>
+              </div>
+              <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
+                100 Somerset Corporate Boulevard 2nd Floor, Suite 130, Bridgewater, NJ 08807
+              </p>
+            </div>
+          </div>
 
+          {/* INDIA INDICATOR & TEXT */}
+          {/* Adjust top% and left% to align exactly with your map's India red dot */}
+          <div className="hidden md:flex flex-col items-center absolute top-[57%] left-[70%] -translate-x-1/2 -translate-y-1/2 group z-10">
+            <div className="mt-3 p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
+              <div className="flex items-center gap-2 mt-2">
+                <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">IND</span>
+              </div>
+              <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
+                1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, Bangalore 560 102
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* ======================================================== */}
+      {/* MOBILE ADDRESS CARDS (Shows only on Mobile screen sizes) */}
+      {/* ======================================================== */}
+      <div className="grid grid-cols-1 gap-4 mt-6 md:hidden">
+        
+        {/* Mobile USA Card */}
+        <div className=" p-4 rounded-xl">
+          <div className="flex items-center gap-2 mb-1">
+            
+            <h4 className="text-sm font-bold tracking-wider text-red-400">USA</h4>
+          </div>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            100 Somerset Corporate Boulevard<br />
+            2nd Floor, Suite 130,<br />
+            Bridgewater, NJ 08807
+          </p>
+        </div>
+
+        {/* Mobile India Card */}
+        <div className="  p-4 rounded-xl">
+          <div className="flex items-center gap-2 mb-1">
+            
+            <h4 className="text-sm font-bold tracking-wider text-red-400">IND</h4>
+          </div>
+          <p className="text-sm text-gray-300 leading-relaxed">
+            1st Floor, 574/A, 1st Main,<br />
+            Sector 6, HSR Layout,<br />
+            Bangalore 560 102
+          </p>
+        </div>
+
+      </div>
+       <div className="w-full px-6 lg:px-1 flex flex-col items-center py-10   gap-4">
+        
            <Link href="/contact">
         <motion.div
           whileHover={{ scale: 1.06 }}
@@ -44,7 +115,7 @@ export default function Home() {
             boxShadow: "0 0 18px rgba(225,37,27,0.45)",
           }}
         >
-          {/* shimmer sweep */}
+          
           <motion.span
             className="absolute inset-0 rounded-full pointer-events-none"
             style={{
@@ -64,7 +135,10 @@ export default function Home() {
         </motion.div>
       </Link>
           </div>
-        </section>
+
+    </section>
+    
+    
 
     </div>
   );
