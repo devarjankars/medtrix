@@ -17,7 +17,7 @@ export default function NewsDetails({ news, onBack }) {
       {/* Back Button */}
        <motion.button
           onClick={onBack}
-          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer mb-8"
+          className="group inline-flex items-center gap-3 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer mb-10"
           whileHover={{ x: -3 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
         >

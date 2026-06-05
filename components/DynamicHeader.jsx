@@ -139,7 +139,7 @@ export default function DynamicHeader({
       </motion.div>
 
       {/* ── MAIN GRID ─────────────────────────────────────────────────────── */}
-      <div className="relative z-10 w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-[600px_55%] gap-1 items-center py-20  ">
+      <div className="relative z-10 w-[90%] md:w-[80%] mx-auto grid grid-cols-1 lg:grid-cols-[600px_55%] gap-1 items-center py-9  md:py-18">
 
         {/* LEFT COLUMN—50% */}
         <motion.div

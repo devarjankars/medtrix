@@ -48,7 +48,7 @@ export default function LifeatMet() {
   }, []);
 
   return (
-    <div className="w-full rounded-[20px] overflow-hidden" style={{ height: "clamp(320px, 60vh, 700px)", position: "relative" }}>
+    <div className="w-full rounded-[20px] overflow-hidden " style={{ height: "clamp(320px, 60vh, 700px)", position: "relative" }}>
       <Swiper
         onSwiper={(swiper) => { swiperRef.current = swiper; }}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}

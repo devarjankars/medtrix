@@ -244,11 +244,11 @@ function OneTeam() {
     <>
       {/* CEO Quote Card */}
       <div
-        className="flex flex-col lg:flex-row gap-8 p-[30px] border border-white/10 border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-3xl text-white"
+        className="flex flex-col lg:flex-row items-center gap-8 p-[30px] border border-white/10 border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-3xl text-white"
         style={cardStyle}
       >
         <div className="shrink-0">
-          <img src={ceoImg} alt="Vimal Narayanan" className="max-w-[280px] hover:scale-105 rounded-xl transition-transform duration-400 border-1 border-transparent transition-colors duration-300 hover:border-red-500 bg-[#1a1a1a] group" />
+          <img src={ceoImg} alt="Vimal Narayanan" className="max-w-full md:max-w-[280px] hover:scale-105 rounded-xl transition-transform duration-400 border-1 border-transparent transition-colors duration-300 hover:border-red-500 bg-[#1a1a1a] group" />
         </div>
         <div className="flex items-start justify-between  lg:justify-center lg:px-10 flex-col gap-10">
           <TypingQuote onDone={() => setQuoteDone(true)} />

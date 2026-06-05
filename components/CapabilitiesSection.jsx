@@ -29,7 +29,7 @@ const tabContent = {
   },
   "Websites": {
     mediaType: "image",
-    mediaSrc: "/ourcap2.jpg",
+    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ourcap2.jpg",
     headline: "Websites",
     desc: "End-to-end capability for design, development, SEO, deployment, maintenance, and omnichannel integration of websites and microsites",
     points: [
@@ -53,7 +53,7 @@ const tabContent = {
   },
   "3D Content, MOA/MOD": {
     mediaType: "video",
-    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/Merck+Prostate+Cancer+%281%29.mp4",
+    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/Merck+Prostate+Cancer+(1).mp4",
     headline: "3D Content, MOA/MOD",
     desc: "3D mechanism of action (MOA) and mechanism of disease (MOD) videos, developed by seasoned 3D artists and guided by medical experts",
     points: [
@@ -64,7 +64,7 @@ const tabContent = {
   },
   "Interactive Platforms": {
     mediaType: "image",
-    mediaSrc: "/ourcap1.png",
+    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lilly.png",
     headline: "Interactive Platforms",
     desc: "Custom applications and data-driven platforms that enable informed decision-making and effective engagement",
     points: [
@@ -133,12 +133,12 @@ export default function CapabilitiesSection() {
       
 
         {/* Tab bar */}
-        <div className="border border-[#222] rounded-full bg-[#111] p-2 flex flex-wrap gap-2 mb-6">
+        <div className="border border-[#222] rounded-2xl md:rounded-full  bg-[#232121] p-2 flex flex-wrap gap-2 mb-6">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActive(tab)}
-              className={`px-6 py-3 rounded-full cursor-pointer whitespace-nowrap text-sm font-medium transition-all duration-200 ${
+              className={`px-6 py-3 rounded-full  border-gray-700 md:border-none border-[1px] border cursor-pointer whitespace-nowrap text-sm font-medium transition-all duration-200 ${
                 active === tab
                   ? "bg-[#E1251B] text-white shadow-[0_0_14px_rgba(225,37,27,0.4)]"
                   : "text-gray-400 hover:text-white"
@@ -181,7 +181,7 @@ export default function CapabilitiesSection() {
             {/* Text content */}
             <div className="p-8 lg:p-12">
               <h2 className="text-white text-2xl lg:text-3xl font-bold mb-3">{content.headline}</h2>
-              <p className="text-gray-400 text-base lg:text-lg leading-relaxed mb-8 w-7xl">
+              <p className="text-gray-400  text-base lg:text-lg leading-relaxed mb-8 ">
                 {content.desc}
               </p>
 

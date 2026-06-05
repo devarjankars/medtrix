@@ -31,7 +31,7 @@ export default function NewsDetailsNew({ news, onBack }) {
      </motion.button>
 
       {/* Title */}
-      <h1 className="text-3xl  lg:text-[56px] font-semibold text-white lg:leading-[72px] mb-8">
+      <h1 className="text-3xl  lg:text-[56px] font-semibold text-white lg:leading-[72px] mb-8 mt-4 md:mt-10">
         {news.title}
       </h1>
 
