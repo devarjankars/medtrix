@@ -215,7 +215,7 @@ function LinkedInButton({ href, size = "w-12 h-12" }) {
                 <motion.button
                   type="submit"
                   disabled={loading}
-                  whileHover={!loading ? { scale: 1.04 } : {}}
+                  whileHover={!loading ? { scale: 0.98 } : {}}
                   whileTap={!loading ? { scale: 0.97 } : {}}
                   transition={{ type: "spring", stiffness: 380, damping: 22 }}
                   className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-sm overflow-hidden cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
