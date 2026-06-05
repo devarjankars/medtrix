@@ -98,7 +98,7 @@ export default function NewsDetailsNew({ news, onBack }) {
                 <img
                   src={src}
                   alt={`${news.title} image ${i + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full  object-contain"
                 />
               </div>
             );

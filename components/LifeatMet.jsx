@@ -9,6 +9,7 @@ const slides = [
   {
     id: 1,
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_1.png",
+    imgMbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lm1.png",
     tag: "EQUALITY",
     title: "Harnessing The Power Of One",
     desc: "We believe diverse perspectives drive stronger ideas. By bringing together people from different backgrounds, disciplines, and experiences, we foster a culture built on inclusion, collaboration, and shared purpose.",
@@ -16,6 +17,7 @@ const slides = [
   {
     id: 2,
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_2.png",
+    imgMbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lm2.png",
     tag: "AUDACITY",
     title: "Challenging what’s possible",
     desc: "We embrace bold thinking and ambitious ideas that push healthcare communication forward. From emerging technologies to new engagement models, we continuously strive to create meaningful impact for our clients and their audiences. ",
@@ -23,6 +25,7 @@ const slides = [
   {
     id: 3,
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_3.png",
+    imgMbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lm3.png",
     tag: "Originality",
     title: "Crafting unique experiences",
     desc: "We combine creativity, science, and technology to create innovative healthcare communication experiences. From Artificial Intelligence to Augmented and Mixed Reality, we challenge convention through solutions that redefine engagement. ",
@@ -31,6 +34,7 @@ const slides = [
   {
     id: 4,
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_4.png",
+    imgMbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lm4.png",
     tag: "Simplicity",
     title: "Delivering clarity through design",
     desc: "We simplify complex concepts through inventive strategy, graphical storytelling, implementation expertise, and high-quality in-house content to create intuitive, user-friendly, end-to-end solutions.",
@@ -48,7 +52,7 @@ export default function LifeatMet() {
   }, []);
 
   return (
-    <div className="w-full rounded-[20px] overflow-hidden " style={{ height: "clamp(320px, 60vh, 700px)", position: "relative" }}>
+    <div className="w-full rounded-[20px] overflow-hidden" style={{ height: "clamp(420px, 60vh, 700px)", position: "relative" }}>
       <Swiper
         onSwiper={(swiper) => { swiperRef.current = swiper; }}
         onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
@@ -61,14 +65,28 @@ export default function LifeatMet() {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id} style={{ position: "relative" }}>
-            {/* Background image */}
+            {/* Background image — desktop */}
             <img
               src={slide.image}
               alt={slide.title}
+              className="hidden md:block"
               style={{
                 position: "absolute", inset: 0,
                 width: "100%", height: "100%",
                 objectFit: "cover",
+              }}
+              draggable={false}
+            />
+            {/* Background image — mobile */}
+            <img
+              src={slide.imgMbl}
+              alt={slide.title}
+              className="block md:hidden"
+              style={{
+                position: "absolute", inset: 0,
+                width: "100%", height: "100%",
+                objectFit: "cover",
+                objectPosition: "top",
               }}
               draggable={false}
             />
@@ -79,50 +97,49 @@ export default function LifeatMet() {
               background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.1) 100%)",
             }} />
 
-            {/* Content—sits above dots via pb-16 */}
+            {/* Content */}
             <div style={{
               position: "absolute", inset: 0,
               display: "flex", flexDirection: "column",
               justifyContent: "flex-end",
-              padding: "0 32px 72px 32px",
+              padding: "0 20px 56px 20px",
               zIndex: 10,
             }}>
               {/* Tag */}
-    <div style={{ marginBottom: 12 }} className="">
-  <span style={{
-    fontSize: 11, 
-    fontWeight: 700,
-    textTransform: "uppercase", 
-    letterSpacing: "0.15em",
-    color: "white", 
-    padding: "6px 14px",
-    borderRadius: 9999, 
-    display: "inline-block",
-    /* Applied your exact solid hex color code */
-    background: "#742323",
-    /* Added a matching border to cleanly define the badge edges */
-    border: "1px solid rgba(255, 255, 255, 0.2)",
-  }}
-  /* Removed the glassmorphism backdrop blur filters */
-  className="shadow-sm"
-  >
-    {slide.tag}
-  </span>
-</div>
+              <div style={{ marginBottom: 8 }}>
+                <span style={{
+                  fontSize: 10,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.15em",
+                  color: "white",
+                  padding: "4px 10px",
+                  borderRadius: 9999,
+                  display: "inline-block",
+                  background: "#742323",
+                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                }}
+                className="shadow-sm"
+                >
+                  {slide.tag}
+                </span>
+              </div>
 
               {/* Title */}
               <h2 style={{
-                color: "white", fontSize: "clamp(20px, 3vw, 28px)",
+                color: "white",
+                fontSize: "clamp(14px, 4vw, 28px)",
                 fontWeight: 600, lineHeight: 1.3,
-                marginBottom: 10, maxWidth: 560,
-              }} >
+                marginBottom: 6, maxWidth: 560,
+              }}>
                 {slide.title}
               </h2>
 
               {/* Description */}
               <p style={{
-                color: "rgba(209,213,219,1)", fontSize: 14,
-                lineHeight: 1.7, maxWidth: 640,
+                color: "rgba(209,213,219,1)",
+                fontSize: "clamp(11px, 3vw, 14px)",
+                lineHeight: 1.6, maxWidth: 640,
               }}>
                 {slide.desc}
               </p>

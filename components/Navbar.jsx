@@ -196,9 +196,20 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
 
         if (button) {
           return (
-            <div key={label} className="flex justify-center mt-4">
-              <Link href={href} onClick={() => { setOpenSection(null); onClose(); }} className="bg-[#FF0000] absolute bottom-[160px] text-white text-lg font-bold px-8 py-2.5 rounded-full text-center transition-colors w-[90%] lg:w-auto">
-                {label}
+            <div key={label} className="fixed bottom-20 left-0 right-0 flex justify-center px-6 z-50">
+              <Link
+                href={href}
+                onClick={() => { setOpenSection(null); onClose(); }}
+                className="relative inline-flex items-center justify-center overflow-hidden rounded-full text-white text-lg font-bold px-8 py-2.5 text-center w-full"
+                style={{ background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)", boxShadow: "0 0 14px rgba(225,37,27,0.35)" }}
+              >
+                <motion.span
+                  className="absolute inset-0 rounded-full pointer-events-none"
+                  style={{ background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)", backgroundSize: "200% 100%" }}
+                  animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+                  transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
+                />
+                <span className="relative z-10">{label}</span>
               </Link>
             </div>
           );
