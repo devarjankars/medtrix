@@ -49,17 +49,34 @@ function WorkPageInner() {
     ? projects.find((p) => p.id === projectId) ?? null
     : null;
 
-  // Scroll to top when arriving via direct link with a project param
+  const scrollKey = "ourwork-scroll";
+
+  // When returning to list, restore saved scroll position
   useEffect(() => {
-    if (selectedProject && lenisInstance) {
-      lenisInstance.scrollTo(0, { immediate: true });
-    } else if (selectedProject) {
-      window.scrollTo(0, 0);
+    if (!selectedProject) {
+      const saved = sessionStorage.getItem(scrollKey);
+      if (saved) {
+        const y = parseInt(saved, 10);
+        requestAnimationFrame(() => {
+          if (lenisInstance) lenisInstance.scrollTo(y, { immediate: true });
+          else window.scrollTo(0, y);
+        });
+        sessionStorage.removeItem(scrollKey);
+      }
+    }
+  }, [selectedProject]);
+
+  // Scroll to top when opening a project
+  useEffect(() => {
+    if (selectedProject) {
+      if (lenisInstance) lenisInstance.scrollTo(0, { immediate: true });
+      else window.scrollTo(0, 0);
     }
   }, [projectId]);
 
   function openProject(project) {
-    router.push(`/our-work?project=${project.id}&from=${encodeURIComponent("/our-work")}`, { scroll: false });
+    sessionStorage.setItem(scrollKey, String(lenisInstance?.scroll ?? window.scrollY));
+    router.push(`/our-work?project=${project.id}`, { scroll: false });
   }
 
   function goBack() {

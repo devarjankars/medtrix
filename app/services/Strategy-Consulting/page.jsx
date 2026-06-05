@@ -20,7 +20,7 @@ export default function page() {
         title="Strategy that adapts to your needs"
         paragraphs={strategyParagraphs}
         desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stdeskb.png"}
-         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stmbl.png"}
+         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/scmobi.png"}
       />
       <div className="py-5 w-[90%] md:w-[80%] mx-auto">
         <FeatureSection tagText="Launch and lifecycle" imageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lifecycle.png" imageAlt="Launch and lifecycle " imagePosition="left"

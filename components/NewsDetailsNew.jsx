@@ -27,7 +27,7 @@ export default function NewsDetailsNew({ news, onBack }) {
           >
             ←
           </motion.span>
-        Back to Life @ Medtrix
+        Back 
      </motion.button>
 
       {/* Title */}

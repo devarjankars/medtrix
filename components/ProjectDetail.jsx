@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import TestimonialSlider from "@/components/TestimonialSlider";
 import { lenisInstance } from "@/components/LenisProvider";
@@ -248,17 +248,10 @@ function ImageSlider({ images = [] }) {
 // ── Main component ────────────────────────────────────────────────────────────
 export default function ProjectDetail({ project, onBack }) {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const from = searchParams.get("from");
 
   function handleBack() {
-    if (from) {
-      router.push(decodeURIComponent(from), { scroll: false });
-    } else if (onBack) {
-      onBack();
-    } else {
-      router.push("/our-work");
-    }
+    if (onBack) onBack();
+    else router.push("/our-work");
   }
 
   /* Scroll to top via Lenis (bypasses native scroll which Lenis intercepts) */

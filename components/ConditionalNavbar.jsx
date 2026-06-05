@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Navbar from "@/components/Navbar";
 
-const HIDDEN_NAVBAR_ROUTES = ["/MLR-Catalyst"];
+const HIDDEN_NAVBAR_ROUTES = [];
 
 export function useNavbarHidden() {
   const pathname = usePathname();

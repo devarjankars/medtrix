@@ -297,7 +297,7 @@ function OneTeam() {
       <section className="relative">
         <div className="flex items-center justify-center py-[50px] lg:py-[100px]">
           <img src={gptwImg} alt="Great Place to Work" className="w-full hidden lg:block object-contain" loading="lazy" />
-          <img src={gptw_mobile} alt="Great Place to Work" className="w-full lg:hidden object-contain" loading="lazy" />
+          <img src={gptw_mobile} alt="Great Place to Work" className="w-full lg:hidden object-contain rounded-xl border-[1px] border-gray-600" loading="lazy" />
 
         </div>
         <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]" style={redGlow} />

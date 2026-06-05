@@ -1,13 +1,15 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
-import { Suspense } from "react";
+import { Suspense, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import WorkCard from "@/components/WorkCard";
 import ProjectDetail from "@/components/ProjectDetail";
 import { projects } from "@/Data/project";
+import { lenisInstance } from "@/components/LenisProvider";
 
 const CATEGORY = "DIGITAL INNOVATION";
+const scrollKey = "di-ourwork-scroll";
 
 const cardVariants = {
   hidden: { opacity: 0, y: 48 },
@@ -32,8 +34,30 @@ function PageInner() {
     ? projects.find((p) => p.id === projectId) ?? null
     : null;
 
+  useEffect(() => {
+    if (!selectedProject) {
+      const saved = sessionStorage.getItem(scrollKey);
+      if (saved) {
+        const y = parseInt(saved, 10);
+        requestAnimationFrame(() => {
+          if (lenisInstance) lenisInstance.scrollTo(y, { immediate: true });
+          else window.scrollTo(0, y);
+        });
+        sessionStorage.removeItem(scrollKey);
+      }
+    }
+  }, [selectedProject]);
+
+  useEffect(() => {
+    if (selectedProject) {
+      if (lenisInstance) lenisInstance.scrollTo(0, { immediate: true });
+      else window.scrollTo(0, 0);
+    }
+  }, [projectId]);
+
   function openProject(project) {
-    router.push(`/our-work/digital-innovation?project=${project.id}&from=${encodeURIComponent("/our-work/digital-innovation")}`, { scroll: false });
+    sessionStorage.setItem(scrollKey, String(lenisInstance?.scroll ?? window.scrollY));
+    router.push(`/our-work/digital-innovation?project=${project.id}`, { scroll: false });
   }
 
   function goBack() {

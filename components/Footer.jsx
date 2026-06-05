@@ -1,4 +1,5 @@
-﻿import Link from "next/link";
+"use client";
+import Link from "next/link";
 
 const footerData = [
   {
@@ -70,7 +71,24 @@ export default function Footer() {
 
         <div className="border-t border-[#222222] pt-8 mt-8 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
           <p className="text-center text-gray-500 text-sm">© 2026. All rights reserved. Medtrix Healthcare</p>
-          <div className="flex gap-6 mt-4">
+          <div className="flex gap-6 mt-4 items-center">
+            <button
+              onClick={() => {
+                if (typeof window !== "undefined") {
+                  import("@/components/LenisProvider").then(({ lenisInstance }) => {
+                    if (lenisInstance) lenisInstance.scrollTo(0, { duration: 1.2 });
+                    else window.scrollTo({ top: 0, behavior: "smooth" });
+                  });
+                }
+              }}
+              className="text-gray-400 text-sm hover:text-white transition-colors duration-200 flex items-center gap-1.5 group"
+            >
+              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full border border-[#333] group-hover:border-white/40 transition-colors text-xs">↑</span>
+              Back to top
+            </button>
+             <Link href="https://www.linkedin.com/company/medtrix-healthcare/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200"  target="_blank">
+             Linkedin
+            </Link>
             <Link href="/privacy-policy" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
               Privacy Policy
             </Link>

@@ -38,7 +38,7 @@ export default function LifeAtMedtrixPage() {
 
   return (
     <main className="min-h-screen bg-[#0a0a0a]">
-      <section className="w-[90%] md:w-[80%] mx-auto py-20">
+      <section className="w-[90%] md:w-[80%] mx-auto py-3 md:10">
 
         {selected ? (
           <NewsDetailsNew news={selected} onBack={() => setSelected(null)} />

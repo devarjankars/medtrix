@@ -29,7 +29,11 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
   const hasItems            = items && items.length > 0;
   const dropdownRef         = useRef(null);
   const itemsRef            = useRef([]);
-  const isChildActive       = hasItems && items.some((i) => pathname.replace(/\/$/, "") === i.href);
+  const MLR_PARENT = "/services/ai-catalysts";
+  const isChildActive       = hasItems && items.some((i) => {
+    const clean = pathname.replace(/\/$/, "");
+    return clean === i.href || (clean === "/MLR-Catalyst" && i.href === MLR_PARENT);
+  });
   const isActive            = !hasItems && pathname.replace(/\/$/, "") === href;
 
   /* Dropdown open: stagger items in */
@@ -128,11 +132,13 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
 
           <ul className="relative w-56 bg-[#161616]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] py-2 list-none overflow-hidden">
             {items.map((item, i) => {
-              const isActive = pathname.replace(/\/$/, "") === item.href;
+              const isActive = pathname.replace(/\/$/, "") === item.href ||
+                (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/services/ai-catalysts");
               return (
                 <li key={item.href} ref={(el) => (itemsRef.current[i] = el)}>
                   <Link
                     href={item.href}
+                    onClick={() => setOpen(false)}
                     className={`group/item relative flex items-center gap-3 px-4 py-2.5 text-md leading-snug transition-all duration-150 ${
                       isActive
                         ? "bg-red-500 text-white font-semibold"
@@ -183,7 +189,10 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
       {links.map(({ label, href, items, button }) => {
         const hasItems    = items && items.length > 0;
         const isOpen       = openSection === label;
-        const isChildActive = hasItems && items.some((i) => pathname.replace(/\/$/, "") === i.href);
+        const isChildActive = hasItems && items.some((i) => {
+          const clean = pathname.replace(/\/$/, "");
+          return clean === i.href || (clean === "/MLR-Catalyst" && i.href === "/services/ai-catalysts");
+        });
 
         if (button) {
           return (
@@ -234,7 +243,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
                       href={item.href}
                       onClick={() => { setOpenSection(label); onClose(); }}
                       className={`flex items-center gap-2 py-3 px-2 w-full text-lg font-light ${
-                      pathname.replace(/\/$/, "") === item.href ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
+                      (pathname.replace(/\/$/, "") === item.href || (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/services/ai-catalysts")) ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
                     }`}
                   >
                     {item.label}

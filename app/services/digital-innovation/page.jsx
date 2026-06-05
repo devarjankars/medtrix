@@ -1,10 +1,13 @@
 ﻿"use client";
-import { useRef, Suspense } from "react";
+import { useRef, Suspense, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import DynamicHeader from "@/components/DynamicHeader";
 import ProjectDetail from "@/components/ProjectDetail";
 import { projects } from "@/Data/project";
+import { lenisInstance } from "@/components/LenisProvider";
+
+const scrollKey = "di-services-scroll";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -49,10 +52,30 @@ function DigitalInnovationInner() {
     ? digitalProjects.find((p) => p.id === projectId) ?? null
     : null;
 
+  useEffect(() => {
+    if (!selectedProject) {
+      const saved = sessionStorage.getItem(scrollKey);
+      if (saved) {
+        const y = parseInt(saved, 10);
+        requestAnimationFrame(() => {
+          if (lenisInstance) lenisInstance.scrollTo(y, { immediate: true });
+          else window.scrollTo(0, y);
+        });
+        sessionStorage.removeItem(scrollKey);
+      }
+    }
+  }, [selectedProject]);
+
+  useEffect(() => {
+    if (selectedProject) {
+      if (lenisInstance) lenisInstance.scrollTo(0, { immediate: true });
+      else window.scrollTo(0, 0);
+    }
+  }, [projectId]);
+
   function openProject(project) {
-    router.push(`/services/digital-innovation?project=${project.id}`, {
-      scroll: false,
-    });
+    sessionStorage.setItem(scrollKey, String(lenisInstance?.scroll ?? window.scrollY));
+    router.push(`/services/digital-innovation?project=${project.id}`, { scroll: false });
   }
 
   function goBack() {
@@ -80,7 +103,7 @@ function DigitalInnovationInner() {
         title="Innovation that creates meaningful impact"
         paragraphs={strategyParagraphs}
         desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/dibgdesk.jpg"}
-        mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/dimbl.png"}
+        mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/dimobi.png"}
       />
 
       <section className="relative bg-black py-5 md:py-14 px-2 md:px-0 overflow-hidden w-[90%] md:w-[80%] mx-auto">

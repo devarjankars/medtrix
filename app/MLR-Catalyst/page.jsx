@@ -164,32 +164,27 @@ export default function MlrCatalyst() {
   return (
     <div className='w-full overflow-hidden'>
 
-      {/* ── Top bar: logo + back button ── */}
-      <div className="fixed top-0 left-0 right-0 z-50"
-        style={{ background: "rgba(0,0,0,0.6)", backdropFilter: "blur(16px)", WebkitBackdropFilter: "blur(16px)" }}>
-        <div className="w-[90%] md:w-[80%] mx-auto  flex flex-col items-start gap-2">
-          <Link href="/">
-            <img src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo.png" alt="Medtrix" width={140} />
-          </Link>
-          <motion.button
-            onClick={() => router.back()}
-            className="group inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer  mt-5"
-            whileHover={{ x: -3 }}
-            transition={{ type: "spring", stiffness: 380, damping: 22 }}
+      {/* ── Back button ── */}
+      <div className="w-[90%] md:w-[80%] mx-auto pt-[20px] pb-2">
+        <motion.button
+          onClick={() => router.push("/services/ai-catalysts")}
+          className="group inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
+          whileHover={{ x: -3 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
+        >
+          <motion.span
+            className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors text-xs "
+            whileHover={{ scale: 1.1 }}
           >
-            <motion.span
-              className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors text-xs"
-              whileHover={{ scale: 1.1 }}
-            >
-              ←
-            </motion.span>
-            Back
-          </motion.button>
-        </div>
+            ←
+          </motion.span>
+          Back
+        </motion.button>
       </div>
+
       {/* ── DARK SECTION ── */}
-      <section className=" text-white selection:bg-red-600 selection:text-white pt-20">
-        <div className="w-[90%] md:w-[80%] mx-auto py-20">
+      <section className="text-white selection:bg-red-600 selection:text-white">
+        <div className="w-[90%] md:w-[80%] mx-auto py-5">
 
           {/* Hero */}
           <div ref={heroRef} className=" text-center flex flex-col items-center mb-24">

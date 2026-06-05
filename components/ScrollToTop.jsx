@@ -1,23 +1,32 @@
 "use client";
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 import { lenisInstance } from "@/components/LenisProvider";
 
-export default function ScrollToTop() {
-  const pathname = usePathname();
+/* Only scroll to top when navigating to a project detail (has ?project= param) */
+function ScrollToTopInner() {
+  const pathname     = usePathname();
+  const searchParams = useSearchParams();
+  const projectId    = searchParams.get("project");
 
   useEffect(() => {
-    // prevent browser from restoring scroll position
+    if (!projectId) return; // don't scroll on normal page nav
     window.history.scrollRestoration = "manual";
-
-    // reset Lenis internal scroll position
     if (lenisInstance) {
       lenisInstance.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
     }
-
-    // fallback—also reset native scroll
-    window.scrollTo(0, 0);
-  }, [pathname]);
+  }, [pathname, projectId]);
 
   return null;
+}
+
+export default function ScrollToTop() {
+  return (
+    <Suspense>
+      <ScrollToTopInner />
+    </Suspense>
+  );
 }

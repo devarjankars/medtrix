@@ -16,7 +16,7 @@ export default function Commercial_Solutions() {
       <DynamicHeader
         tagText="COMMERCIAL SOLUTIONS"
         title="Capability to achieve transformational outcomes"
-         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csmbl.png"}
+         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csmobil.png"}
          desktopImgHeight={"700px"}
          desktopImgAlign={"top"}
          desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csbg.jpg"}

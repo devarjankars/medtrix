@@ -80,6 +80,48 @@ function ContactInner() {
     return () => ctx.revert();
   }, []);
 
+
+
+  /* ── LinkedIn SVG icon — bg changes to red on hover ── */
+let _liIconCount = 0;
+function LinkedInIcon({ className = "w-12 h-12", hovered = false }) {
+  const id = useRef(`li-${_liIconCount++}`);
+  const filterId = `filter-${id.current}`;
+  const gradientId = `gradient-${id.current}`;
+  return (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {/* background circle */}
+      <rect
+        width="64" height="64" rx="32"
+        fill={hovered ? "#E1251B" : "#272727"}
+        style={{ transition: "fill 0.25s ease" }}
+      />
+      {/* "IN" logo mark — always white */}
+      <path
+        d="M24.8165 20.2832C23.392 20.2832 22.2363 21.4369 22.2363 22.8615C22.2363 24.2861 23.391 25.4665 24.8146 25.4665C26.2382 25.4665 27.3948 24.2861 27.3948 22.8615C27.3948 21.4379 26.2411 20.2832 24.8165 20.2832ZM37.4047 27.118C35.2381 27.118 33.9985 28.251 33.4038 29.3778H33.3409V27.4212H29.0711V41.7639H33.5202V34.664C33.5202 32.7933 33.6614 30.9854 35.9764 30.9854C38.2582 30.9854 38.2915 33.1185 38.2915 34.7823V41.7639H42.7349V33.886C42.7349 30.0312 41.9118 27.118 37.4047 27.118ZM22.591 27.4212V41.7639H27.0439V27.4212H22.591Z"
+        fill="white"
+      />
+    </svg>
+  );
+}
+
+/* ── Hover LinkedIn button — bg turns red, size stays fixed ── */
+function LinkedInButton({ href, size = "w-12 h-12" }) {
+  const [hovered, setHovered] = useState(false);
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`shrink-0 block ${size}`}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+    >
+      <LinkedInIcon className="w-full h-full" hovered={hovered} />
+    </a>
+  );
+}
+
   return (
     <section className="w-[90%] md:w-[80%] mx-auto py-16 md:py-24 overflow-hidden">
 
@@ -91,18 +133,10 @@ function ContactInner() {
             Contact Us
           </span>
         </div>
-        {/* <h1 className="text-white text-4xl md:text-6xl font-bold leading-tight">
-          Let's build something <br className="hidden md:block" />
-          <span className="text-[#E1251B]">remarkable</span>
-        </h1>
-        <p className="text-zinc-400 mt-4 text-base md:text-lg max-w-xl">
-          Have a question or want to work with us? We&apos;d love to hear from you.
-        </p>
-          Have a question or want to work with us? We'd love to hear from you.
-        </p> */}
+        
       </div>
 
-      {/* Two-column layout */}
+      
    <div className="flex flex-col-reverse lg:grid lg:grid-cols-[1fr_1.6fr] gap-10 lg:gap-14 items-start">
 
 
@@ -299,21 +333,12 @@ function ContactInner() {
           {/* linked in and instagram logo */}
 
           <div className="flex items-center gap-4">
-            <motion.a href="https://www.linkedin.com/company/medtrix-healthcare" target="_blank" rel="noopener noreferrer"
-              whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
-              className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-m transition-colors group">
-              <span className="w-12 h-12 rounded-full   flex items-center justify-center shrink-0  transition-colors">
-                   <Image
-                              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/linkdin.png"
-                              alt="LinkedIn"
-                              width={80}
-                              height={80}
-                              className="object-contain w-[60px] h-[60px] lg:w-[48px] lg:h-[48px] cursor-pointer shrink-0"
-                              loading="lazy"
-                            />
-              </span>
-              LinkedIn
-            </motion.a>
+            <motion.div
+              
+              className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 ">
+              <LinkedInButton href="https://www.linkedin.com/company/medtrix-healthcare" size="w-[45px] h-[45px] lg:w-[45px] lg:h-[45px] hover:scale-105" />
+              <span>LinkedIn</span>
+            </motion.div>
             {/* <motion.a href="https://www.instagram.com/medtrixhealthcare" target="_blank" rel="noopener noreferrer"
               whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
               className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">

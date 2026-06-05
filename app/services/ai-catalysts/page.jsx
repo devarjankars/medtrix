@@ -41,7 +41,7 @@ export default function page() {
 ]
      }     paragraphs={strategyParagraphs}
         desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mAideskb.png"}
-         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maimbl.png"}
+         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/AImobi.png"}
       />
       <div className='w-[90%] md:w-[80%] mx-auto'>
       <section className="relative py-5 overflow-hidden">
