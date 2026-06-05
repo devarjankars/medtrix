@@ -10,11 +10,16 @@ export default function NewsCard({ news, onClick }) {
       <div className="p-4">
         <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[14px]">
 
-          {/* Image */}
+          {/* Image — mobile uses thumbnailMbl if set, else falls back to thumbnail */}
+          <img
+            src={news.thumbnailMbl || news.thumbnail}
+            alt={news.title}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 md:hidden"
+          />
           <img
             src={news.thumbnail}
             alt={news.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 hidden md:block"
           />
 
           {/* Dark gradient overlay at bottom */}

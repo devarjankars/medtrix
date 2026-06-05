@@ -81,8 +81,9 @@ export default function NewsDetailsNew({ news, onBack }) {
               : "grid-cols-1 sm:grid-cols-2"
           }`}
         >
-          {news.images.map((src, i) => {
-            // if odd total and this is the last image, span full width
+          {news.images.map((img, i) => {
+            const desktopSrc = typeof img === "string" ? img : img.desktop;
+            const mobileSrc = typeof img === "string" ? img : (img.mobile || img.desktop);
             const isLastOdd =
               news.images.length > 1 &&
               news.images.length % 2 !== 0 &&
@@ -95,11 +96,8 @@ export default function NewsDetailsNew({ news, onBack }) {
                   isLastOdd ? "sm:col-span-2 lg:col-span-1" : ""
                 }`}
               >
-                <img
-                  src={src}
-                  alt={`${news.title} image ${i + 1}`}
-                  className="w-full  object-contain"
-                />
+                <img src={mobileSrc} alt={`${news.title} image ${i + 1}`} className="w-full object-contain md:hidden" />
+                <img src={desktopSrc} alt={`${news.title} image ${i + 1}`} className="w-full object-contain hidden md:block" />
               </div>
             );
           })}
