@@ -26,7 +26,7 @@ const features = [
     no: "02",
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ai2.png",
     title: "AI built specifically with approved documents",
-    desc: "A system that works strictly off of role-specific pre-approved knowledge base for Medical Affairs, Brand Teams, Legal, and Regulatory functions.",
+    desc: "A system that works strictly off of role-specific, pre-approved knowledge base for Medical Affairs, Brand Teams, Legal, and Regulatory functions.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_2.mp4",
     bg: "bg-zinc-900",
     reverse: true,
@@ -46,7 +46,7 @@ const advantages = [
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv1.png",
     title: "Reducing the time required for all steps of review",
-    desc: "LLM enabled linking of source documentation and highlights for the specific part of the source document optimizes review time.",
+    desc: "LLM-enabled, optimize linking of source documentation and highlights for the specific part of the source document optimizes review time.",
   },
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv2.png",
@@ -192,16 +192,16 @@ export default function MlrCatalyst() {
               The MLR Catalyst
             </h1>
             <p className="text-lg font-medium text-gray-300  mb-4 leading-relaxed opacity-0">
-              The Latest in a Legacy of AI Implementation in Healthcare and Pharma Communication.
+              The Latest in a Legacy of AI Implementation in Healthcare and Pharma Communication
             </p>
             <p className="text-sm text-gray-400 max-w-3xl mb-8 leading-relaxed opacity-0">
-              Today we are implementing retrieval-augmented generative AI to allow implementation of AI in
+              We are now implementing retrieval-augmented generative AI to allow implementation of AI in
               the tightly regulated Pharma milieu. This AI-powered MLR review tool is aimed at drastically
               reducing the time and effort needed for MLR review.
             </p>
 
             <div className="opacity-0 mb-10">
-              <ShimmerBtn label="Book a demo" href="/contact?subject=Book%20a%20Demo" />
+              <ShimmerBtn label="Book a Demo" href="/contact?subject=Book%20a%20Demo" />
             </div>
 
             {/* Hero video */}

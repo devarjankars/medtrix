@@ -16,7 +16,7 @@ export const projects = [
     title: "AbbVie Rinvoq Immunology: Transforming International-to-Affiliate Modular Content Enablement",
     tags: ["MODULAR CONTENT", "GLOBAL-TO-LOCAL ENABLEMENT", "VEEVA DAMS"],
     engagementModel: "Global-to-Local Modular Content Enablement",
-    timeline: "Multi-market rollout engagement, completed",
+    timeline: "Multi-Market Rollout Engagement, Completed",
     desc: [
       "Enabled faster international-to-affiliate content activation",
       "Built scalable modular content workflows for local market adaptation",
@@ -79,7 +79,7 @@ export const projects = [
     title: "Nestlé Health Science (NHSc): Building a Global HCP Education & Certification Ecosystem for ModuLife™",
     tags: ["LMS", "GLOBAL EDUCATION", "HCP CERTIFICATION"],
     engagementModel: "Global HCP Education & Certification Initiative",
-    timeline: "Multi-year global program, Ongoing",
+    timeline: "Multi-Year Global Program, Ongoing",
     desc: [
       "Deployed across several countries",
       "12,000+ registered HCPs and 6,000+ certified experts globally",
@@ -107,7 +107,7 @@ export const projects = [
     title: "Stemline Therapeutics: Decoupling High-Volume Execution",
     tags: ["OMNICHANNEL", "COMMERCIAL OPERATIONS", "SCALABLE DELIVERY"],
     engagementModel: "Strategic Omnichannel Operations Partnership",
-    timeline: "3-year strategic engagement, Ongoing",
+    timeline: "3-Year Strategic Engagement, Ongoing",
     desc: [
       "Delivered 650+ email campaigns, 320+ banner assets & 70+ website update",
       "40% cost savings by workflow optimization",
@@ -167,7 +167,7 @@ export const projects = [
     title: "CSL Behring: Advancing Cardio-Renal Scientific Engagement",
     tags: ["MEDICAL AFFAIRS", "PHASE 2 DATA", "MSL ENGAGEMENT"],
     engagementModel: "Integrated Scientific Engagement Initiative",
-    timeline: "4 months, Completed",
+    timeline: "4-Months, Completed",
     desc: [
       "Simplified complex Phase 2 cardio-renal study data into interactive scientific experiences",
       "Enabled connected HCP engagement through microsites, interactive tools, and MSL assets",
@@ -219,7 +219,7 @@ export const projects = [
     title: "Lilly Oncology: Building COMPASS (Clinical Outreach Mapping Platform for Actionable Strategic Support)",
     tags: ["DATA VISUALIZATION", "GEN AI", "MEDICAL AFFAIRS"],
     engagementModel: "Medical Affairs Intelligence & Insights Initiative",
-    timeline: "4 months, Completed",
+    timeline: "4-Months, Completed",
     desc: [
       "Integrated 12,000+ medical affairs data points into a unified platform",
       "Enabled real-time visibility across MSL, clinical, and engagement activities",
@@ -250,7 +250,7 @@ export const projects = [
     title: "AbbVie Rinvoq Immunology: Advancing HCP Engagement Through an Interactive Case Player",
     tags: ["CASE-BASED LEARNING", "MACHINE LEARNING", "HCP ENGAGEMENT"],
     engagementModel: "Global Digital Medical Education Initiative",
-    timeline: "Multi-phase engagement, Completed",
+    timeline: "Multi-Phase Engagement, Completed",
     desc: [
       "Delivered immersive, case-based learning experiences for HCPs",
       "Expanded from 3 to 15+ interactive patient cases globally",
@@ -277,7 +277,7 @@ export const projects = [
     title: "Allergan Medical Institute: 3D Facial Anatomy App",
     tags: ["MOBILE", "iPAD", "3D"],
     engagementModel: "Global Digital Education Initiative",
-    timeline: "6 months, completed",
+    timeline: "6 Months, Completed",
     desc: [
       "12,000+ registered HCPs globally",
       "Rolled out across 27 Countries",
@@ -304,7 +304,7 @@ export const projects = [
     title: "Allergan Medical Institute: Interactive Rheology Portal for HA Dermal Fillers",
     tags: ["INTERACTIVE DASHBOARD", "SCIENTIFIC VISUALIZATION", "HCP EDUCATION"],
     engagementModel: "Scientific Education & Interactive Visualization Initiative",
-    timeline: "6 months, Completed",
+    timeline: "6 Months, Completed",
     desc: [
       "Consolidated rheology data from 90+ HA dermal filler products",
       "Enabled side-by-side comparative analysis of rheological properties through dynamic visualization tools",
@@ -331,7 +331,7 @@ export const projects = [
     title: "Celltrion: Transforming IBD Education Through an Immersive VR Experience at DDW 2026",
     tags: ["VIRTUAL REALITY", "IMMERSIVE SCIENTIFIC ENGAGEMENT", "CONGRESS EXPERIENCE"],
     engagementModel: "Scientific Experience & Congress Engagement Initiative",
-    timeline: "DDW 2026 congress activation, completed",
+    timeline: "DDW 2026 Congress Activation, Completed",
     desc: [
       "Transformed complex therapeutic concepts into interactive visual storytelling",
       "Achieved over 90% full-experience completion with average interaction time exceeding 6 minutes",
@@ -358,7 +358,7 @@ export const projects = [
     title: "Novartis: Transforming Patient Engagement Through a Web-Based AR Experience for Jakavi",
     tags: ["WEB-BASED AUGMENTED REALITY", "PATIENT ENGAGEMENT", "DIGITAL INNOVATION"],
     engagementModel: "Digital Patient Engagement Initiative",
-    timeline: "Multi-phase engagement, completed",
+    timeline: "Multi-Phase Engagement, Completed",
     desc: [
       "Enabled app-free AR experiences directly through mobile browsers",
       "Created multilingual patient support experiences for the Swiss market",
@@ -385,7 +385,7 @@ export const projects = [
     title: "Stemline Therapeutics: AI-Assisted Content Creation",
     tags: ["AI-ASSISTED CONTENT CREATION", "HCP EDUCATION", "DIGITAL STORYTELLING"],
     engagementModel: "Scientific Content Innovation Initiative",
-    timeline: "Rapid development engagement, Completed",
+    timeline: "Rapid Development Engagement, Completed",
     desc: [
       "Developed AI-assisted HCP educational video content for Capillary Leak Syndrome (CLS)",
       "Replaced manual character animation workflows with AI-assisted production, enabling delivery within two weeks of storyboard approval",
@@ -415,7 +415,7 @@ export const projects = [
     title: "Idorsia: Building a Launch-Ready Strategy for TRYVIO Through a Strategic AOR Partnership",
     tags: ["LAUNCH STRATEGY", "OMNICHANNEL", "SCALABILITY"],
     engagementModel: "AOR Partnership for Global Brand Launch",
-    timeline: "Multi-phase launch engagement, Ongoing",
+    timeline: "Multi-Phase Launch Engagement, Ongoing",
     desc: [
       "Developed a differentiated launch strategy for TRYVIO",
       "Built scalable omnichannel HCP, payer & patient engagement ecosystem",
@@ -441,7 +441,7 @@ export const projects = [
     title: "Elzonris: MedTrix as AOR for the Brand",
     tags: ["AOR", "OMNICHANNEL STRATEGY", "CONGRESS EXPERIENCE"],
     engagementModel: "Strategic Brand AOR Partnership",
-    timeline: "Multi-year engagement, Ongoing",
+    timeline: "Multi-Year Engagement, Ongoing",
     desc: [
       "Developed integrated HCP and patient engagement ecosystem for Elzonris",
       "Enabled personalized outreach through NBA-driven omnichannel engagement strategies",
