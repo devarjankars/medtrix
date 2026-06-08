@@ -117,15 +117,22 @@ function DigitalInnovationInner() {
             animate={pillInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            <div
-              className="inline-flex px-4 py-3 rounded-full text-white tracking-[4px] text-xs md:text-sm font-bold uppercase border border-[#2A2525]"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(255,255,255,0.2), rgba(0,0,0,0.4))",
-              }}
+            <motion.div
+              className="relative inline-flex px-4 py-3 rounded-full text-white tracking-[4px] text-xs md:text-sm font-bold uppercase border border-[#2A2525] overflow-hidden"
+              style={{ background: "linear-gradient(to right, rgba(255,255,255,0.2), rgba(0,0,0,0.4))" }}
+              animate={pillInView ? { borderColor: ["rgba(42,37,37,1)", "rgba(225,37,27,0.5)", "rgba(42,37,37,1)"] } : {}}
+              transition={{ duration: 2, ease: "easeInOut", delay: 0.5, repeat: Infinity, repeatDelay: 3 }}
             >
+              {/* shimmer sweep on enter */}
+              <motion.span
+                className="absolute inset-0 pointer-events-none"
+                style={{ background: "linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%)" }}
+                initial={{ x: "-100%" }}
+                animate={pillInView ? { x: "200%" } : {}}
+                transition={{ duration: 0.9, ease: "easeInOut", delay: 0.3 }}
+              />
               EXPLORE OUR INNOVATION CASE STUDIES
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Cards grid */}

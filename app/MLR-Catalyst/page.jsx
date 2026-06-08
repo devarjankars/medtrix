@@ -1,15 +1,11 @@
 ﻿'use client';
 
-import { useEffect, useRef } from 'react';
-import { motion } from "framer-motion";
+import { useRef } from 'react';
+import { motion, useInView } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Image from "next/image";
 
-
-gsap.registerPlugin(ScrollTrigger);
+const ease = [0.22, 1, 0.36, 1];
 
 /* ── Data ─────────────────────────────────────────────────────────────────── */
 const features = [
@@ -98,74 +94,17 @@ function ShimmerBtn({ label, href }) {
 
 /* ── Page ─────────────────────────────────────────────────────────────────── */
 export default function MlrCatalyst() {
-  const router      = useRouter();
-  const heroRef     = useRef(null);
+  const router     = useRouter();
   const featuresRef = useRef(null);
-  const glowRef     = useRef(null);
-  const glow2Ref    = useRef(null);
-  const advRef      = useRef(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-
-      /* Hero—stagger children in */
-      gsap.fromTo(
-        heroRef.current?.children,
-        { opacity: 0, y: 30 },
-        { opacity: 1, y: 0, duration: 0.7, stagger: 0.12, ease: "power3.out", delay: 0.1 }
-      );
-
-      /* Feature rows—video slides in, text fades up separately */
-      const rows = featuresRef.current?.querySelectorAll(".feature-row");
-      rows?.forEach((row, i) => {
-        const videoEl = row.querySelector(".feature-video");
-        const textEl  = row.querySelector(".feature-text");
-        const fromX   = i % 2 === 0 ? -60 : 60;
-
-        gsap.fromTo(videoEl,
-          { opacity: 0, x: fromX, scale: 0.95 },
-          { opacity: 1, x: 0, scale: 1, duration: 0.9, ease: "power3.out",
-            scrollTrigger: { trigger: row, start: "top 80%", once: true } }
-        );
-        gsap.fromTo(textEl,
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, duration: 0.75, ease: "power3.out", delay: 0.2,
-            scrollTrigger: { trigger: row, start: "top 80%", once: true } }
-        );
-      });
-
-      /* Glow 1—bottom of dark section */
-      gsap.fromTo(glowRef.current,
-        { opacity: 0, scaleX: 0.4 },
-        { opacity: 1, scaleX: 1, duration: 1.4, ease: "power2.out",
-          scrollTrigger: { trigger: glowRef.current, start: "top 95%", once: true } }
-      );
-
-      /* Glow 2—bottom of white section */
-      gsap.fromTo(glow2Ref.current,
-        { opacity: 0, scaleX: 0.4 },
-        { opacity: 1, scaleX: 1, duration: 1.4, ease: "power2.out",
-          scrollTrigger: { trigger: glow2Ref.current, start: "top 95%", once: true } }
-      );
-
-      /* Advantage cards—stagger with title and desc separately */
-      advRef.current?.querySelectorAll(".adv-card").forEach((card, i) => {
-        gsap.fromTo(card,
-          { opacity: 0, y: 40 },
-          { opacity: 1, y: 0, duration: 0.6, ease: "power3.out", delay: i * 0.08,
-            scrollTrigger: { trigger: advRef.current, start: "top 80%", once: true } }
-        );
-      });
-
-    });
-    return () => ctx.revert();
-  }, []);
+  const featuresInView = useInView(featuresRef, { once: true, amount: 0.1 });
+  const advRef     = useRef(null);
+  const advInView  = useInView(advRef, { once: true, amount: 0.1 });
 
   return (
     <div className='w-full overflow-hidden'>
 
       {/* ── Back button ── */}
-      <div className="w-[90%] md:w-[80%] mx-auto pt-[20px] pb-2">
+      <div className="w-[90%] md:w-[80%] mx-auto pt-[50px] pb-2">
         <motion.button
           onClick={() => router.push("/services/ai-catalysts")}
           className="group inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
@@ -173,7 +112,7 @@ export default function MlrCatalyst() {
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
         >
           <motion.span
-            className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors text-xs "
+            className="inline-flex items-center justify-center w-7 h-7 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors text-xs"
             whileHover={{ scale: 1.1 }}
           >
             ←
@@ -187,122 +126,161 @@ export default function MlrCatalyst() {
         <div className="w-[90%] md:w-[80%] mx-auto py-5">
 
           {/* Hero */}
-          <div ref={heroRef} className=" text-center flex flex-col items-center mb-24">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6 opacity-0">
-              The MLR Catalyst
-            </h1>
-            <p className="text-lg font-medium text-gray-300  mb-4 leading-relaxed opacity-0">
+          <div className="text-center flex flex-col items-center mb-24">
+
+            {/* Shimmer pill title */}
+            <motion.div
+              className="mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease }}
+            >
+              <motion.h1
+                className="relative inline-flex text-4xl md:text-5xl font-bold tracking-tight text-white px-6 py-3 rounded-2xl overflow-hidden "
+                transition={{ duration: 2, ease: "easeInOut", delay: 0.6, repeat: Infinity, repeatDelay: 3 }}
+              >
+                {/* shimmer sweep */}
+                <motion.span
+                  className="absolute inset-0 pointer-events-none"
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "200%" }}
+                  transition={{ duration: 1, ease: "easeInOut", delay: 0.4 }}
+                />
+                The MLR Catalyst
+              </motion.h1>
+            </motion.div>
+
+            <motion.p
+              className="text-lg font-medium text-gray-300 mb-4 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease, delay: 0.15 }}
+            >
               The Latest in a Legacy of AI Implementation in Healthcare and Pharma Communication
-            </p>
-            <p className="text-sm text-gray-400 max-w-3xl mb-8 leading-relaxed opacity-0">
+            </motion.p>
+
+            <motion.p
+              className="text-sm text-gray-400 max-w-3xl mb-8 leading-relaxed"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease, delay: 0.25 }}
+            >
               We are now implementing retrieval-augmented generative AI to allow implementation of AI in
               the tightly regulated Pharma milieu. This AI-powered MLR review tool is aimed at drastically
               reducing the time and effort needed for MLR review.
-            </p>
+            </motion.p>
 
-            <div className="opacity-0 mb-10">
+            <motion.div
+              className="mb-10"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease, delay: 0.35 }}
+            >
               <ShimmerBtn label="Book a Demo" href="/contact?subject=Book%20a%20Demo" />
-            </div>
+            </motion.div>
 
             {/* Hero video */}
-            <div className="opacity-0 relative w-full max-w-2xl aspect-16/10 rounded-xl p-px shadow-2xl border border-zinc-800/50 group"
-              style={{ background: "linear-gradient(135deg, #3f3f3f, #1a1a1a)" }}>
+            <motion.div
+              className="relative w-full max-w-2xl aspect-16/10 rounded-xl p-px shadow-2xl border border-zinc-800/50 group"
+              style={{ background: "linear-gradient(135deg, #3f3f3f, #1a1a1a)" }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease, delay: 0.45 }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-red-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-xl blur-sm" />
               <div className="w-full h-full bg-[#121212] rounded-[10px] overflow-hidden border-1 border-gray-50">
-
                 <video src="https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_4.mp4"
                   className="w-full h-full object-cover" autoPlay muted loop playsInline />
               </div>
-            </div>
-                      <div className="flex items-center w-full bg-black px-8 pt-[75px] pb-16 md:pb-20">
-                          <div className="flex-grow border-t border-[#4C4C4C]" />
-                          <img
-                              src="https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/bolt_icon.svg"
-                              alt="Divider Icon"
-                              className="mx-4 h-6 w-6 object-contain"
-                          />
-                          <div className="flex-grow border-t border-[#4C4C4C]" />
-                      </div>
+            </motion.div>
 
-                  </div>
+            <div className="flex items-center w-full bg-black px-8 pt-[75px] pb-16 md:pb-20">
+              <div className="flex-grow border-t border-[#4C4C4C]" />
+              <img src="https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/bolt_icon.svg" alt="Divider Icon" className="mx-4 h-6 w-6 object-contain" />
+              <div className="flex-grow border-t border-[#4C4C4C]" />
+            </div>
+          </div>
 
           {/* Feature rows */}
           <div ref={featuresRef} className="space-y-24">
-            {features.map((f) => (
+            {features.map((f, i) => (
               <div key={f.no}
-                className={`feature-row flex flex-col md:flex-row items-center gap-8 md:gap-16 ${f.reverse ? "md:flex-row-reverse" : ""}`}>
-
-                {/* Video card */}
-                <div className="feature-video opacity-0 w-full md:w-1/2 aspect-4/3 rounded-2xl flex items-center justify-center relative overflow-hidden group"
-                  style={{ background: "linear-gradient(135deg, rgba(39,39,42,0.4), rgba(9,9,11,1))" }}>
+                className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${f.reverse ? "md:flex-row-reverse" : ""}`}>
+                <motion.div
+                  className="w-full md:w-1/2 aspect-4/3 rounded-2xl flex items-center justify-center relative overflow-hidden group"
+                  style={{ background: "linear-gradient(135deg, rgba(39,39,42,0.4), rgba(9,9,11,1))" }}
+                  initial={{ opacity: 0, x: i % 2 === 0 ? -60 : 60 }}
+                  animate={featuresInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.8, ease, delay: i * 0.1 }}
+                >
                   <div className={`w-full h-full ${f.bg} overflow-hidden shadow-md transform group-hover:scale-[1.02] transition-transform duration-300`}>
                     <video src={f.video} className="w-full h-full object-cover" autoPlay muted loop playsInline />
                   </div>
-                </div>
-
-                {/* Text */}
-                <div className="feature-text opacity-0 w-full md:w-1/2 space-y-3">
-                  <img
-                    src={f.img}
-                    alt={f.title}
-                    className="h-6 w-6 object-contain"
-                  />
+                </motion.div>
+                <motion.div
+                  className="w-full md:w-1/2 space-y-3"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={featuresInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.7, ease, delay: i * 0.1 + 0.15 }}
+                >
+                  <img src={f.img} alt={f.title} className="h-6 w-6 object-contain" />
                   <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white">{f.title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed font-light">{f.desc}</p>
-                </div>
+                </motion.div>
               </div>
             ))}
           </div>
 
         </div>
 
-
-        <div ref={glowRef} className="relative h-32 w-full overflow-hidden opacity-0">
+        <motion.div
+          className="relative h-32 w-full overflow-hidden"
+          initial={{ opacity: 0, scaleX: 0.4 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.4, ease }}
+        >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-32 rounded-full"
             style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,0.45) 0%, transparent 70%)", filter: "blur(8px)" }} />
-        </div>
+        </motion.div>
       </section>
 
-      {/* ── WHITE SECTION ── */}
-      <section className=" text-[#FFF] antialiased selection:bg-red-100 selection:text-red-700">
-        <div ref={advRef} className="w-[90%] md:w-[80%] mx-auto py-20">
-
-          {/* Connector */}
+      {/* ── ADVANTAGES SECTION ── */}
+      <section className="text-[#FFF] antialiased selection:bg-red-100 selection:text-red-700">
+        <div className="w-[90%] md:w-[80%] mx-auto py-20">
           <div className="flex flex-col items-center justify-center h-48 mb-10">
-  {/* Top Vertical Divider Segment */}
-  <div className="w-px flex-grow bg-gray-300"></div>
-  
-  {/* Centered Logo Asset */}
-  <img 
-    alt="icon" 
-    className="my-4 w-6 h-6 object-contain" 
-    src="https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/bolt_icon.svg"
-  />
-  
-  {/* Bottom Vertical Divider Segment */}
-  <div className="w-px flex-grow bg-gray-300"></div>
-</div>
-
-          {/* Advantages grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-16">
-            {advantages.map((a, i) => (
-              <div key={i} className="adv-card opacity-0 flex flex-col items-start space-y-3">
-                <img
-                  src={a.img}
-                  alt={a.title}
-                  className="h-6 w-6 object-contain"
-                />
-                <h4 className="text-[19px] font-bold tracking-tight text-[#FFF] leading-snug">{a.title}</h4>
-                <p className="text-sm text-zinc-300 leading-relaxed">{a.desc}</p>
-              </div>
-            ))}
+            <div className="w-px flex-grow bg-gray-300" />
+            <img alt="icon" className="my-4 w-6 h-6 object-contain" src="https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/bolt_icon.svg" />
+            <div className="w-px flex-grow bg-gray-300" />
           </div>
 
+          <div ref={advRef} className="grid grid-cols-1 md:grid-cols-3 gap-x-16 gap-y-16">
+            {advantages.map((a, i) => (
+              <motion.div
+                key={i}
+                className="flex flex-col items-start space-y-3"
+                initial={{ opacity: 0, y: 50 }}
+                animate={advInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, ease, delay: i * 0.08 }}
+              >
+                <img src={a.img} alt={a.title} className="h-6 w-6 object-contain" />
+                <h4 className="text-[19px] font-bold tracking-tight text-[#FFF] leading-snug">{a.title}</h4>
+                <p className="text-sm text-zinc-300 leading-relaxed">{a.desc}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-         <div ref={glow2Ref} className="relative h-32 w-full overflow-hidden opacity-0">
+
+        <motion.div
+          className="relative h-32 w-full overflow-hidden"
+          initial={{ opacity: 0, scaleX: 0.4 }}
+          whileInView={{ opacity: 1, scaleX: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1.4, ease }}
+        >
           <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[80%] h-32 rounded-full"
             style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,0.45) 0%, transparent 70%)", filter: "blur(8px)" }} />
-        </div>
+        </motion.div>
       </section>
     </div>
   );
