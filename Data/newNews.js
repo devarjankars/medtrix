@@ -46,7 +46,7 @@ export const newsData = [
     date: "March 2026",
     category: "Award",
     title: "Highlights from the MedTrix Q2 Town Hall",
-    thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news8.png",
+    thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsin3_3.png",
     thumbnailMbl: "",
     body: [
       "The recent MedTrix Town Hall brought teams together to reflect on achievements, align on priorities, and look ahead to the next quarter.",

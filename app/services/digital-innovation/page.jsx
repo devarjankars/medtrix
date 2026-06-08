@@ -158,7 +158,7 @@ function DigitalInnovationInner() {
                       {project.cardTitle || project.title}
                     </h3>
                     {/* tags */}
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    {/* <div className="flex flex-wrap gap-2 mt-3">
                       {project.tags.slice(0, 2).map((tag) => (
                         <span
                           key={tag}
@@ -167,7 +167,7 @@ function DigitalInnovationInner() {
                           {tag}
                         </span>
                       ))}
-                    </div>
+                    </div> */}
                   </div>
                 </motion.div>
               ))}

@@ -18,7 +18,7 @@ export const newsData = [
   },
   {
     id: 2,
-    date: "February 2026",
+    date: "May 2026",
     category: "Award",
     title: "We are PM360 ELITE 100 Winner in AI Marketing Pioneers category ",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news2.png",
@@ -36,7 +36,7 @@ export const newsData = [
     id: 3,
     date: "March 2026",
     category: "Award",
-    title: "# years of being a Great Place to Work®",
+    title: "3 years of being a Great Place to Work®",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news3.png",
     thumbnailMbl: "",
     body: [
@@ -69,7 +69,7 @@ export const newsData = [
   },
   {
     id: 5,
-    date: "January 2026",
+    date: "April 2025",
     category: "Award",
     title: 'MedTrix Healthcare Named MM+M Agency 100 "Ones to Watch" for 2025',
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news5.png",
@@ -90,7 +90,7 @@ export const newsData = [
   },
   {
     id: 6,
-    date: "November 2025",
+    date: "Octber 2025",
     category: "Sponsorship",
     title: "We're proud to sponsor the 2025 #PharmaCX Marketing Summit",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news6.png",

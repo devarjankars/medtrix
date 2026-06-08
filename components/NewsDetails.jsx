@@ -30,26 +30,27 @@ export default function NewsDetails({ news, onBack }) {
         Back 
      </motion.button>
 
-      {/* Title */}
-      <h1 className="text-3xl  lg:text-[56px] font-semibold text-white lg:leading-[72px] mb-8">
-        {news.title}
-      </h1>
-
-      {/* Meta */}
-      {/* {(news.date || news.category) && (
-        <div className="flex items-center gap-4 mb-8">
+      {/* Date + Category */}
+      {(news.date || news.category) && (
+        <div className="flex items-center gap-3 mb-6">
           {news.date && (
             <span className="text-xs text-red-500 font-semibold uppercase tracking-widest">
               {news.date}
             </span>
           )}
+          {news.date && news.category && <span className="text-gray-600">·</span>}
           {news.category && (
             <span className="text-xs text-gray-500 uppercase tracking-widest border border-[#2a2a2a] px-3 py-1 rounded-full">
               {news.category}
             </span>
           )}
         </div>
-      )} */}
+      )}
+
+      {/* Title */}
+      <h1 className="text-3xl lg:text-[50px] font-semibold text-white lg:leading-[72px] mb-8">
+        {news.title}
+      </h1>
 
       {/* Body paragraphs */}
       {news.body && (
