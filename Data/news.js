@@ -46,7 +46,7 @@ export const newsData = [
       "We extend our heartfelt gratitude to our employees for making this recognition possible. Their energy, resilience, and belief in our shared vision continue to shape the MedTrix story. As we celebrate this milestone, we look forward to growing together and building an even stronger workplace for the future."
     ],
     images: [
-      { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/nu_3.png", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/GPTW.png " },
+      { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsUpdatesGptwDesk.png", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsUpdatesGptwMobil.png " },
     ],
   },
   {

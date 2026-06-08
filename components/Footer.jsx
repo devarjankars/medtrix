@@ -91,16 +91,84 @@ export default function Footer() {
         {visible && (
           <motion.button
             onClick={scrollToTop}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 16 }}
-            transition={{ duration: 0.25 }}
-            className="fixed bottom-50 right-10 z-50 group flex items-center gap-2 text-md text-[#fff] hover:scale-100 transition-colors duration-200 cursor-pointer"
+            initial={{ opacity: 0, x: 60 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: 60 }}
+            transition={{ type: "spring", stiffness: 260, damping: 22 }}
+            whileHover="hover"
+            className="fixed bottom-[30%] right-6 z-50 cursor-pointer flex flex-col items-center gap-2"
           >
-            <span className="hidden sm:inline">Back to top</span>
-            <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#333] group-hover:border-white/40 bg-black/80 backdrop-blur-sm transition-colors text-base">
-              ↑
-            </span>
+            {/* Vertical dashed track */}
+            <motion.span
+              className="w-px h-12 rounded-full"
+              style={{ background: "linear-gradient(to top, rgba(225,37,27,0.8), transparent)" }}
+              initial={{ scaleY: 0, originY: 1 }}
+              animate={{ scaleY: 1 }}
+              transition={{ delay: 0.2, duration: 0.5, ease: "easeOut" }}
+            />
+
+            {/* Main button */}
+            <motion.span
+              className="relative flex items-center justify-center w-12 h-12 rounded-full"
+              style={{
+                background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+                boxShadow: "0 0 20px rgba(225,37,27,0.55)",
+              }}
+              variants={{
+                hover: { scale: 1.15, boxShadow: "0 0 36px rgba(225,37,27,0.85)" },
+              }}
+              transition={{ type: "spring", stiffness: 300, damping: 16 }}
+            >
+              {/* Rotating outer ring */}
+              <motion.span
+                className="absolute inset-[-4px] rounded-full border-2 border-dashed border-red-400/50"
+                animate={{ rotate: 360 }}
+                transition={{ duration: 6, ease: "linear", repeat: Infinity }}
+              />
+              {/* Pulse ring */}
+              <motion.span
+                className="absolute inset-0 rounded-full"
+                style={{ background: "rgba(225,37,27,0.3)" }}
+                animate={{ scale: [1, 1.7, 1], opacity: [0.5, 0, 0.5] }}
+                transition={{ duration: 2, ease: "easeInOut", repeat: Infinity }}
+              />
+              {/* Shimmer */}
+              <motion.span
+                className="absolute inset-0 rounded-full pointer-events-none"
+                style={{
+                  background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.22) 50%, transparent 65%)",
+                  backgroundSize: "200% 100%",
+                }}
+                animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+                transition={{ duration: 2, ease: "linear", repeat: Infinity, repeatDelay: 0.8 }}
+              />
+              {/* Arrow bouncing */}
+              <motion.svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18" height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="white"
+                strokeWidth="2.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="relative z-10"
+                animate={{ y: [0, -4, 0] }}
+                transition={{ duration: 0.9, ease: "easeInOut", repeat: Infinity }}
+              >
+                <polyline points="18 15 12 9 6 15" />
+              </motion.svg>
+            </motion.span>
+
+            {/* Label that slides in on hover */}
+            <motion.span
+              className="text-[10px] font-bold uppercase tracking-[2px] text-red-400"
+              initial={{ opacity: 0, y: 4 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35, duration: 0.4 }}
+            >
+              Top
+            </motion.span>
           </motion.button>
         )}
       </AnimatePresence>

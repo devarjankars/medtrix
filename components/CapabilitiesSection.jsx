@@ -231,7 +231,7 @@ export default function CapabilitiesSection() {
         label="EDUCATE"
         title="Scalable learning and engagement solutions that enable effective knowledge transfer and HCP engagement"
         items={[
-          { title: "Detailers",                   img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed1.png", desc: "Designed for Veeva and other leading platforms" },
+          { title: "E-Deatilers",                   img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed1.png", desc: "Designed for Veeva and other leading platforms" },
           { title: "Learning Solutions",           img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed2.png", desc: "Custom-built digital learning programs tailored to diverse audiences" },
           { title: "Learning Management System",   img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed3.png", desc: "Proprietary platform for scalable deployment, tracking, and optimization" },
           { title: "Authoring Expertise",          img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ed4.png", desc: "Articulate 360, Rise, and Adobe Captivate" },

@@ -296,9 +296,26 @@ function OneTeam() {
       {/* GPTW */}
       <section className="relative">
         <div className="flex items-center justify-center py-[50px] lg:py-[100px]">
-          <img src={gptwImg} alt="Great Place to Work" className="w-full hidden lg:block object-contain" loading="lazy" />
-          <img src={gptw_mobile} alt="Great Place to Work" className="w-full lg:hidden object-contain rounded-xl border-[1px] border-gray-600" loading="lazy" />
-
+          <motion.img
+            src={gptwImg}
+            alt="Great Place to Work"
+            className="w-full hidden lg:block object-contain"
+            loading="lazy"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          />
+          <motion.img
+            src={gptw_mobile}
+            alt="Great Place to Work"
+            className="w-full lg:hidden object-contain rounded-xl border-[1px] border-gray-600"
+            loading="lazy"
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          />
         </div>
         <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]" style={redGlow} />
       </section>
@@ -307,11 +324,18 @@ function OneTeam() {
       <section className="bg-black lg:py-[100px] py-[50px] px-6 lg:px-0 relative overflow-hidden">
         <Badge label="One Commitment" />
         <SectionHeading red="Our " white="Clients" />
-        <div className="grid grid-cols-3 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-2 items-center justify-center ">
+        <div className="grid grid-cols-3 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-2 items-center justify-center">
           {clientLogos.map((logo, index) => (
-            <div key={index} className="w-full min-h-[125px] border-1 border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center transition-transform duration-300 hover:scale-[98%]" >
+            <motion.div
+              key={index}
+              className="w-full min-h-[125px] border-1 border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 4) * 0.08 }}
+            >
               <img src={logo} alt={`client-${index}`} className="max-h-[44px] w-auto object-contain opacity-90" loading="lazy" />
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]" style={redGlow} />
@@ -321,15 +345,18 @@ function OneTeam() {
       <section className="pt-[50px] pb-[50px] lg:pt-[100px] lg:pb-[80px] relative lg:overflow-visible">
         <Badge label="One Standard" />
         <SectionHeading red="Excellence " white="Recognized Across the Industry" />
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3    w-full ">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 w-full">
           {awardsData.map((award, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex items-center max-h-[125px] justify-center rounded-[10px] border-1 border-[#ffffff56] p-2 transition-transform duration-300 hover:scale-[98%]"
-              style={{ willChange: "transform" }}
+              className="flex items-center max-h-[125px] justify-center rounded-[10px] border-1 border-[#ffffff56] p-2"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 4) * 0.08 }}
             >
               <img src={award} alt={`award-${index}`} className="lg:max-w-[200px] object-contain" loading="lazy" />
-            </div>
+            </motion.div>
           ))}
         </div>
         <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]" style={redGlow} />
