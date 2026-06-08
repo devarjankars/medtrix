@@ -15,7 +15,7 @@ export default function JobCard({ job, onClick }) {
     <div className="flex flex-col gap-4 bg-[#111111] border border-[#2a2a2a] rounded-[16px] p-6 hover:border-[#3a3a3a] transition-colors duration-300">
 
       {/* Title row with saved indicator */}
-      <div className="flex items-start justify-between gap-2">
+      {/* <div className="flex items-start justify-between gap-2">
         <h3 className="text-white text-lg font-semibold leading-snug">{job.title}</h3>
         {saved && (
           <span className="flex-shrink-0 mt-0.5">
@@ -24,7 +24,7 @@ export default function JobCard({ job, onClick }) {
             </svg>
           </span>
         )}
-      </div>
+      </div> */}
 
       {/* Meta */}
       <div className="flex items-center gap-0 text-gray-400 text-[13px]">

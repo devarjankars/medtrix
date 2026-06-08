@@ -27,10 +27,7 @@ export const projects = [
     solution: "MedTrix partnered with AbbVie to operationalize the International-to-Affiliate framework by building a scalable modular content ecosystem that enabled affiliates to rapidly create compliant local assets. The team reviewed AbbVie’s Brand Plan and strategic foundations to extract key messaging pillars, value stories, clinical evidence, and scientific claims for modularization. Using AbbVie’s Content Blueprint framework, MedTrix developed reusable content modules, Mini ISA Tiles, and standardized content cards combining approved messaging, substantiating data, Med-Reg guidance, and usage rules. All approved assets and components were structured and uploaded into Veeva DAM and Promomats to support rapid localization, reuse, and compliant affiliate deployment across markets.",
     result: "The engagement established a scalable modular content framework that accelerated AbbVie’s global-to-local activation model while improving consistency, compliance readiness, and operational efficiency across affiliate teams. Standardized claims and reusable content components simplified localization workflows and reduced duplication of effort. The solution enabled affiliates to assemble market-ready materials significantly faster while improving first-pass MLR approval success. AbbVie achieved 50% faster global-to-local timelines, 40% faster approval workflows, and 50% cost savings through modular content reuse, streamlined governance, and scalable content deployment processes.",
     recognitions: [
-      {
-        img:["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/recognitions.png"],
-        content:""
-      }
+      
     ],
     testimonials: [{
       quote: "Thank you for the great collaboration throughout our partnership. The MedTrix team consistently demonstrated professionalism, responsiveness, and a collaborative spirit that made working together truly seamless and enjoyable. ",
@@ -259,7 +256,10 @@ export const projects = [
     challenge: "AbbVie launched a global initiative to engage healthcare professionals while strengthening its Immunology portfolio ahead of Humira’s patent expiry. The company needed an innovative educational approach to support Rinvoq’s positioning in rheumatoid arthritis and effectively communicate its differentiated treatment efficacy. Traditional educational formats lacked the engagement and personalization needed to demonstrate complex patient journeys and comparative clinical outcomes. AbbVie required a scalable digital platform capable of presenting real-world evidence, expert-driven clinical scenarios, and compelling scientific narratives that could enhance HCP engagement.",
     solution: "MedTrix leveraged its ML-driven Patient Case Player platform to transform conventional patient cases into immersive and interactive educational journeys for healthcare professionals. Proprietary algorithms analyzed user interactions to provide personalized recommendations and adaptive learning pathways tailored to individual case experiences. MedTrix and AbbVie collaborated with leading global Rheumatology experts to collect and structure real-world patient cases optimized for the platform. Our medical, regulatory, and technology teams supported MLR reviews, addressed compliance considerations related to ML-driven clinical content, and worked closely with AbbVie’s Technology Solutions team to successfully meet rigorous security and IT requirements for global deployment.",
     result: "The Rinvoq Interactive Clinical Case Player became a flagship HCP engagement initiative for AbbVie, delivering highly engaging, expert-led educational experiences that strengthened understanding of Rinvoq’s clinical value in rheumatoid arthritis treatment. Initially launched with three interactive patient cases, the platform rapidly expanded to include more than fifteen clinical cases. The success of the initiative also expanded the platform into AbbVie’s broader Cross Rheum program, supporting additional Immunology brands including Skyrizi. The platform now supports educational engagement across multiple therapeutic areas, including Atopic Dermatitis, Axial Spondyloarthritis, Giant Cell Arteritis, Non-radiographic Axial Spondyloarthritis, Psoriatic Arthritis, and Rheumatoid Arthritis.",
-    recognitions: [],
+    recognitions: [{
+        img:["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/recognitions.png"],
+        content:""
+      }],
     testimonials: [{
       quote: "Working with MedTrix has been an absolute pleasure. The final solution delivered by them is nothing short of exceptional. We truly appreciate their efforts and look forward to future collaborations.",
       author: "Global Marketing Manager - Rheumatology, Global Marketing and Commercial Operations"
@@ -286,10 +286,25 @@ export const projects = [
     challenge: "Allergan Medical Institute (AMI) is renowned for delivering top-notch medical education, empowering healthcare professionals (HCPs) to achieve the highest quality treatment outcomes. However, conducting facial anatomy and cadaver dissection training posed limitations in space and the availability of cadavers, which restricted the number of training sessions. This challenge presented an exciting opportunity to embrace cutting-edge technology and digitize the process, transcending the cadaver dissection experience from the lab to an interactive platform. Yet, the primary hurdle was to develop a digital model that went beyond mere illustrations, accurately replicating the real tissue texture of dissected cadavers, and capturing every anatomical detail.",
     solution: "Our team of experts explored photogrammetry to digitally reconstruct a cadaver dissection procedure in a laboratory. This created a photorealistic 3D cadaver model with a high degree of realism. The planning process involved studying the photogrammetry process and applications required to generate 3D models with natural texture and almost no manual image manipulation. The application was developed using Unity to seamlessly incorporate a detailed 3D model with a high polycount mesh and visually impressive, high-resolution image textures. The solution was launched using Microsoft HoloLens in several Allergan events across the globe before being converted into a high-fidelity app which caters to both Android and iOS users, ensuring compatibility across various smartphones and tablets.",
     result: "The app allowed aesthetic specialists to interact with a virtual cadaver using intuitive touch gestures to explore facial layers, labels, and dissection videos. The app garnered significant attention as Key Opinion Leaders (KOLs) offered a sneak peek during the Aesthetic and Anti-Aging Medicine World Congress and several AMI Summits, generating overwhelmingly positive feedback from healthcare professionals worldwide. Following a highly successful launch, the AMI Essentials 3D Facial Anatomy App has been rolled out across North America, South America, Europe, Asia, and Australia, supporting global medical education initiatives at scale. Today, the platform has registered over 12,000 healthcare professionals (HCPs), reinforcing its value as an innovative and accessible training solution for aesthetic specialists around the world.",
-    recognitions: [],
-    testimonials: [{
-      quote: "The team at MedTrix has proven to be incredibly easy to work with, consistently pushing themselves to meet deadlines even in the face of a dynamic environment that introduced unforeseen changes. I am extremely impressed with their dedication and professionalism and look forward to continuing our collaboration with MedTrix in the future.",
-      author: "Executive Director, Digital Strategy and Operations (US)"
+    recognitions: [{ img:["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/recognitions.png"],
+        content:""
+      }],
+    testimonials: [
+      {
+        quote:"The team at MedTrix has proven to be incredibly easy to work with, consistently pushing themselves to meet deadlines even in the face of a dynamic environment that introduced unforeseen changes. I am extremely impressed with their dedication and professionalism and look forward to continuing our collaboration with MedTrix in the future.",
+        author: "Executive Director, Digital Strategy and Operations (US)"
+      },
+      {
+      quote: "The team at MedTrix is truly exemplary, exhibiting utmost professionalism, responsiveness, and proactivity. Working with them has been an absolute pleasure, as they consistently collaborate to find innovative solutions and continuously surpass our expectations. I’m looking forward to collaborating on more projects together in the future!",
+      author: "Associate Director, Digital (US)"
+    }
+  , {
+      quote: "A BIG THANK YOU to the team! Your support over the last few months has been instrumental in guiding us in the right direction and enabling the timely and successful completion of this innovative project. Your assistance has made a significant difference, and we are truly grateful for it.",
+      author: "AMI Digital Specialist (Southeast Europe)"
+    },
+    {
+      quote: "MedTrix team were a great support for us during the implementation of our Anatomy app, being always agile, service minded and professional. We couldn´t be happier with their performances during the project. Thank you, Team MedTrix!",
+      author: "Project Lead – AMI Nordics"
     }]
   },
   {
@@ -314,10 +329,13 @@ export const projects = [
     solution: "MedTrix consolidated scientific data from more than 90 HA dermal filler products across multiple brands and publications, extracting and standardizing rheological and physicochemical parameters to create a structured comparison dataset. We developed a scientific education framework focused on key comparative parameters including elasticity, cohesivity, lift capacity, extrusion force, and tissue integration. Our team designed and developed an intuitive interactive dashboard enabling multi-product selection, side-by-side comparison, dynamic graph visualization, and educational learning sections for HCPs. The platform incorporated color-coded markers, responsive HTML architecture, and integrated tissue visuals to simplify complex rheology concepts while ensuring seamless deployment across Mobile Locker, iPad, and desktop environments.",
     result: "The interactive rheology portal successfully transformed complex scientific data into an engaging and accessible educational experience for healthcare professionals. By centralizing comparative rheology information into a single interactive platform, Allergan Medical Institute improved usability, product differentiation understanding, and scientific communication effectiveness across aesthetic treatment discussions. The platform enabled HCPs to perform intuitive comparative analysis through dynamic filtering, graphing, and visualization capabilities while maintaining scientific rigor and compliance standards. The solution consolidated over 90 products into a single ecosystem and contributed to improved MLR efficiency, achieving approximately 50% first-pass review success during deployment workflows.",
     recognitions: [],
-    testimonials: [{
-      quote: "",
-      author: ""
-    }]
+    testimonials: [
+      {
+      quote: "MedTrix helped us transform highly complex rheology data into an intuitive and engaging educational platform for HCPs. Representing information accurately when comparing multiple products with very similar values was a significant challenge, and the way the MedTrix team handled it was truly a masterpiece in programming and scientific visualization. ",
+      author: "Director, Learning and Development "
+    },
+    
+  ]
   },
   {
     id: "celltrion-ibd-vr",
@@ -342,8 +360,8 @@ export const projects = [
     result: "The immersive VR experience successfully transformed Celltrion’s DDW 2026 booth engagement into a highly interactive scientific learning environment. By replacing passive content consumption with experiential storytelling, the platform enabled healthcare professionals to engage more deeply with complex IBD science and therapeutic concepts throughout the congress experience. The engagement metrics reflected strong audience participation, with nearly 80% of booth visitors engaging with the VR experience, average interaction time exceeding six minutes, and more than 90% completing the full journey. The initiative demonstrated the effectiveness of immersive scientific engagement in improving attention, retention, and healthcare professional interaction during congress activations.",
     recognitions: [],
     testimonials: [{
-      quote: "",
-      author: ""
+      quote: "MedTrix took on an ambitious VR initiative that others hesitated to pursue and delivered an exceptional experience in an incredibly short timeframe. The final product was innovative, immersive, and visually impressive while still maintaining the educational depth and scientific rigor that was critical for our audience. The success of the experience has sparked discussions around expanding its use into a broader, enduring educational resource for HCPs, and we look forward to continuing to build on this foundation for future meetings. ",
+      author: "Executive Medical Director, Head of Medical & Scientific Communication "
     }]
   },
   {
@@ -367,7 +385,9 @@ export const projects = [
     challenge: "Novartis Oncology Switzerland sought an innovative and accessible patient engagement solution for Jakavi that could effectively educate patients living with myeloproliferative neoplasms, particularly polycythemia vera. The goal was to provide disease-state education, treatment mechanism information, FAQs, and support resources through an engaging digital experience optimized for mobile users. Traditional patient engagement approaches lacked interactivity and often required app downloads, creating barriers to accessibility and adoption. Novartis needed a seamless, mobile-friendly solution that could simplify patient access to approved educational content while supporting multilingual engagement across the Swiss market.",
     solution: "MedTrix designed and developed a cutting-edge web-based Augmented Reality (AR) solution that enabled patients to access immersive AR experiences directly through their mobile device browsers without requiring app installation. Patients could activate the experience using a unique code placed on Jakavi packaging, simplifying access to educational and support materials. The platform included disease-state education, Jakavi’s treatment mechanism of action, useful support resources, and an interactive FAQ experience powered through a sequential chat-based interface. To support Switzerland’s multilingual patient population, the entire ecosystem was developed in German, French, and Italian with seamless language-switching capabilities integrated throughout the patient journey.",
     result: "Through this collaboration, MedTrix Healthcare pioneered the world’s first web-based AR solution for patient engagement within the healthcare industry. The innovative experience successfully improved accessibility and engagement by eliminating the need for app downloads while creating a more immersive educational journey for patients living with rare hematologic conditions. Despite the rarity of polycythemia vera, platform analytics demonstrated active and sustained patient usage, validating the solution’s effectiveness in supporting patient education and engagement. The continued expansion of platform features and patient support capabilities further reinforced its value as a scalable and future-ready digital engagement ecosystem for Novartis Oncology.",
-    recognitions: [],
+    recognitions: [{ img:["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/recognitions.png"],
+        content:""
+      }],
     testimonials: [{
       quote: "We are incredibly excited about our augmented reality solution receiving the PM360 PharmaChoice award. Together we could push the limit of innovation to build industry-first AR solutions for patient education.",
       author: "Disease Area Manager – Hematology and Oncology, Novartis Switzerland"
@@ -396,8 +416,8 @@ export const projects = [
     result: "The AI-assisted educational video was successfully approved through MLR review and deployed within Stemline Therapeutics’ HCP website ecosystem. Following storyboard approval, the complete video was developed and finalized within just two weeks, demonstrating the speed and efficiency of the AI-assisted production workflow while maintaining scientific accuracy and visual quality. The web-optimized and visually engaging experience effectively communicated complex clinical concepts related to CLS management while supporting seamless digital integration and HCP accessibility. The initiative demonstrated the value of AI-assisted creative workflows in accelerating scientific content production and was ultimately recognized externally with a Hermes Award for innovation in healthcare communication and digital content execution.",
     recognitions: [],
     testimonials: [{
-      quote: "",
-      author: ""
+      quote: "This would be one of the few AI-generated educational videos deployed within an HCP website, and MedTrix did an outstanding job bringing it to life. ",
+      author: "Associate Director, Marketing "
     }]
   },
 
@@ -452,8 +472,8 @@ export const projects = [
     result: "The integrated omnichannel strategy helped create stronger alignment across messaging, digital engagement, field outreach, and conference activation. The coordinated approach improved HCP engagement and strengthened awareness around BPDCN and Elzonris across key specialist audiences. The enhanced conference experiences contributed to increased interaction and engagement, with the Elzonris team reporting its strongest booth footfall to date at ASH 2025. The convergence of strategic messaging, NBA integration, MSL enablement, and digital engagement initiatives helped support a positive growth trajectory for the brand.",
     recognitions: [],
     testimonials: [{
-      quote: "",
-      author: ""
+      quote: "It was a pleasure having the presence of Medtrix team at ASH congress. The professionalism, dedication, and collaboration demonstrated throughout the event were truly appreciated, and we look forward to working together again in the future. ",
+      author: "Senior Director of Marketing Leukemia Franchise at Stemline, New Jersey, United States"
     }]
   }
 ];

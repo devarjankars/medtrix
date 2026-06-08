@@ -1,35 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { lenisInstance } from "@/components/LenisProvider";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function JobDetailsCard({ job, onBack }) {
-  const [saved, setSaved] = useState(false);
-
-  // load saved state from localStorage on mount
   useEffect(() => {
     if (lenisInstance) {
       lenisInstance.scrollTo(0, { immediate: true });
     } else {
       window.scrollTo(0, 0);
     }
-
-    const savedJobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
-    setSaved(savedJobs.includes(job.id));
   }, [job.id]);
-
-  const toggleSave = () => {
-    const savedJobs = JSON.parse(localStorage.getItem("savedJobs") || "[]");
-    let updated;
-    if (savedJobs.includes(job.id)) {
-      updated = savedJobs.filter((id) => id !== job.id);
-    } else {
-      updated = [...savedJobs, job.id];
-    }
-    localStorage.setItem("savedJobs", JSON.stringify(updated));
-    setSaved(!saved);
-  };
 
   return (
     <div className="w-full animate-fadeIn">
@@ -51,29 +33,10 @@ export default function JobDetailsCard({ job, onBack }) {
         </motion.button>
 
       {/* ── Header ── */}
-      <div className="flex items-start justify-between mb-2">
+      <div className="mb-2">
         <h1 className="text-3xl md:text-4xl font-bold text-white leading-tight">
           {job.title}
         </h1>
-        {/* Bookmark icon */}
-        <button
-          onClick={toggleSave}
-          title={saved ? "Unsave job" : "Save job"}
-          className="w-10 h-10 rounded-full flex items-center justify-center transition-all duration-200 flex-shrink-0 ml-4 mt-1 hover:scale-110"
-          style={{
-            background: saved ? "rgba(220,38,38,0.15)" : "rgba(26,26,26,1)",
-            border: `1px solid ${saved ? "rgba(220,38,38,0.6)" : "#2a2a2a"}`,
-          }}
-        >
-          <svg
-            width="16" height="16" viewBox="0 0 24 24"
-            fill={saved ? "#ef4444" : "none"}
-            stroke={saved ? "#ef4444" : "white"}
-            strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
-          >
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-          </svg>
-        </button>
       </div>
 
       {/* ── Meta ── */}
