@@ -2,30 +2,29 @@
 
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { motion, useInView } from "framer-motion";
 import NewsCard from "@/components/NewsCard";
 import NewsDetails from "@/components/NewsDetails";
 import { newsData } from "@/Data/news";
-import gsap from "gsap";
 
+const ease = [0.22, 1, 0.36, 1];
 const scrollKey = "news-scroll";
 
 function CardGrid({ newsData, onOpen }) {
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    gsap.fromTo(
-      cardsRef.current,
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.15 }
-    );
-  }, []);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {newsData.map((item, i) => (
-        <div key={item.id} ref={(el) => (cardsRef.current[i] = el)} style={{ opacity: 0 }}>
+        <motion.div
+          key={item.id}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease, delay: i * 0.1 }}
+        >
           <NewsCard news={item} onClick={() => onOpen(item)} />
-        </div>
+        </motion.div>
       ))}
     </div>
   );
@@ -82,17 +81,20 @@ function NewsPageInner() {
         <NewsDetails news={selected} onBack={goBack} />
       ) : (
         <>
-          <div
+          <motion.div
             className="relative inline-block rounded-full max-w-fit p-[1px] mb-10"
             style={{
               background:
                 "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
             }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease }}
           >
             <span className="inline-block text-[14px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
               NEWS &amp; UPDATES
             </span>
-          </div>
+          </motion.div>
           <CardGrid newsData={newsData} onOpen={openNews} />
         </>
       )}

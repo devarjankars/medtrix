@@ -248,17 +248,35 @@ export default function CapabilitiesSection() {
 function SectionGrid({ label, title, items, cols, button, link }) {
   return (
     <div className="relative lg:py-24 py-16">
-      <span  className="inline-flex rounded-full mb-8 bg-[#1a1a1a] border border-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[3px] text-white/70">
+      <motion.span
+        className="inline-flex rounded-full mb-8 bg-[#1a1a1a] border border-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[3px] text-white/70"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
         {label}
-      </span>
+      </motion.span>
 
-      <p className="text-white mb-10 text-xl ">{title}</p>
+      <motion.p
+        className="text-white mb-10 text-xl"
+        initial={{ opacity: 0, y: 24 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
+      >
+        {title}
+      </motion.p>
 
       <div className={`grid gap-8 ${cols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
-        {items.map((item) => (
-          <div
+        {items.map((item, i) => (
+          <motion.div
             key={item.title}
             className="relative rounded-[16px] overflow-hidden border border-[#1F1F1F]"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
           >
             <div className="relative w-full h-[320px] bg-[#1a1a1a]">
               <img
@@ -267,18 +285,23 @@ function SectionGrid({ label, title, items, cols, button, link }) {
                 className="absolute inset-0 w-fit h-auto object-contain"
               />
             </div>
-            {/* lighter gradient so image is visible */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             <div className="absolute bottom-6 left-8 right-8">
               <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
               <p className="text-gray-300 text-sm">{item.desc}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
 
       {button && (
-        <div className="flex justify-center mt-12">
+        <motion.div
+          className="flex justify-center mt-12"
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        >
           {link ? (
             <Link href={link}>
               <ShimmerButton label={button} />
@@ -286,7 +309,7 @@ function SectionGrid({ label, title, items, cols, button, link }) {
           ) : (
             <ShimmerButton label={button} />
           )}
-        </div>
+        </motion.div>
       )}
 
       <Glow />

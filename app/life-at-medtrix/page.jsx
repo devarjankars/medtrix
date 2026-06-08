@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { motion, useInView } from "framer-motion";
 import LifeatMet from "@/components/LifeatMet";
 import NewsCard from "@/components/NewsCard";
 import NewsDetailsNew from "@/components/NewsDetailsNew";
@@ -9,28 +10,46 @@ import JobCard from "@/components/JobCard";
 import JobDetailsCard from "@/components/JobDetailsCard";
 import { newsData } from "@/Data/newNews";
 import { jobsData } from "@/Data/jobs";
-import gsap from "gsap";
 
+const ease = [0.22, 1, 0.36, 1];
 const newsScrollKey = "lam-news-scroll";
 const jobScrollKey = "lam-job-scroll";
 
 function CardGrid({ newsData, onOpen }) {
-  const cardsRef = useRef([]);
-
-  useEffect(() => {
-    gsap.fromTo(
-      cardsRef.current,
-      { opacity: 0, y: 40 },
-      { opacity: 1, y: 0, duration: 0.5, ease: "power2.out", stagger: 0.15 }
-    );
-  }, []);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+    <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
       {newsData.map((item, i) => (
-        <div key={item.id} ref={(el) => (cardsRef.current[i] = el)} style={{ opacity: 0 }}>
+        <motion.div
+          key={item.id}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease, delay: i * 0.1 }}
+        >
           <NewsCard news={item} onClick={() => onOpen(item)} />
-        </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
+
+function JobCardsGrid({ jobsData, openJob }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.1 });
+
+  return (
+    <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {jobsData.map((job, i) => (
+        <motion.div
+          key={job.id}
+          initial={{ opacity: 0, y: 50 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease, delay: i * 0.08 }}
+        >
+          <JobCard job={job} onClick={() => openJob(job)} />
+        </motion.div>
       ))}
     </div>
   );
@@ -146,9 +165,15 @@ function LifeAtMedtrixInner() {
         />
 
         {/* ── News badge ── */}
-        <div className="inline-flex px-6 py-3 rounded-full bg-[#2A2525] mb-8 text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]">
+        <motion.div
+          className="inline-flex px-6 py-3 rounded-full bg-[#2A2525] mb-8 text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, ease }}
+        >
           WHAT&apos;s NEW @ MEDTRIX
-        </div>
+        </motion.div>
 
         {/* ── News card grid ── */}
         <CardGrid newsData={newsData} onOpen={openNews} />
@@ -160,16 +185,18 @@ function LifeAtMedtrixInner() {
         />
 
         {/* ── Jobs badge ── */}
-        <div className="inline-flex px-6 py-3 rounded-full bg-[#2A2525] mb-8 text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]">
+        <motion.div
+          className="inline-flex px-6 py-3 rounded-full bg-[#2A2525] mb-8 text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.5 }}
+          transition={{ duration: 0.5, ease }}
+        >
           Current Openings at MedTrix
-        </div>
+        </motion.div>
 
         {/* ── Job card grid ── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {jobsData.map((job) => (
-            <JobCard key={job.id} job={job} onClick={() => openJob(job)} />
-          ))}
-        </div>
+        <JobCardsGrid jobsData={jobsData} openJob={openJob} />
 
         {/* ── Bottom glow ── */}
         <div

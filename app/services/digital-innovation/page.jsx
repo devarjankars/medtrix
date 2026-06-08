@@ -113,9 +113,9 @@ function DigitalInnovationInner() {
           <motion.div
             ref={pillRef}
             className="mb-12"
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={pillInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.55, ease }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
             <div
               className="inline-flex px-4 py-3 rounded-full text-white tracking-[4px] text-xs md:text-sm font-bold uppercase border border-[#2A2525]"

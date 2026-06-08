@@ -1,13 +1,8 @@
 ﻿"use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import DynamicHeader from "@/components/DynamicHeader";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-
-
-gsap.registerPlugin(ScrollTrigger);
 
 
 /* ── Data ─────────────────────────────────────────────────────────────────── */
@@ -213,87 +208,64 @@ const sections = [
 ];
 
 /* ── Reusable animated grid section ─────────────────────────────────────── */
-function ServiceGrid({ label, cols, items }) {
-  const sectionRef = useRef(null);
+const ease = [0.22, 1, 0.36, 1];
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        sectionRef.current?.querySelectorAll(".service-card"),
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.6,
-          stagger: 0.1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 82%",
-            once: true,
-          },
-        }
-      );
-    });
-    return () => ctx.revert();
-  }, []);
+function ServiceGrid({ label, cols, items }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <section ref={sectionRef} className="py-12">
-      {/* Pill */}
-      <div className="mb-8">
+    <section className="py-12">
+      <motion.div
+        className="mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.5 }}
+        transition={{ duration: 0.5, ease }}
+      >
         <span className="inline-flex rounded-full bg-[#1a1a1a] border border-white/10 px-5 py-2 text-lg font-semibold uppercase tracking-[3px] text-white/70">
           {label}
         </span>
-      </div>
+      </motion.div>
 
-      {/* Grid */}
       <div
+        ref={ref}
         className={`grid grid-cols-1 md:grid-cols-2 gap-5 ${
           cols === 3 ? "lg:grid-cols-3" : "lg:grid-cols-2"
         }`}
       >
         {items.map((service, i) => (
-          <div
+          <motion.div
             key={i}
-            className="service-card opacity-0 group relative rounded-2xl border border-white/8 p-6 overflow-hidden transition-all duration-300 hover:border-[#E1251B]/40"
+            className="group relative rounded-2xl border border-white/8 p-6 overflow-hidden transition-all duration-300 hover:border-[#E1251B]/40"
             style={{
-              background:
-                "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
+              background: "linear-gradient(135deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.01) 100%)",
               backdropFilter: "blur(12px)",
               WebkitBackdropFilter: "blur(12px)",
             }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease, delay: i * 0.08 }}
           >
-            {/* hover glow */}
             <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
               style={{ background: "radial-gradient(circle at top left, rgba(225,37,27,0.07), transparent 60%)" }}
             />
-
-            {/* Icon */}
             <div className="relative mb-5">
               <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-[#E1251B]/30 bg-[#E1251B]/8 p-2.5">
-                <img src={service.img || "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/advertising1.png"} alt={service.title} className="w-full h-full object-contain opacity-90" />
+                <img src={service.img} alt={service.title} className="w-full h-full object-contain opacity-90" />
               </div>
             </div>
-
-            {/* Title */}
-            <h3 className="relative text-white text-lg font-semibold mb-6 mt-4 leading-1">
-              {service.title}
-            </h3>
-
-            {/* Divider */}
+            <h3 className="relative text-white text-lg font-semibold mb-6 mt-4 leading-1">{service.title}</h3>
             <div className="w-8 h-px bg-[#E1251B]/50 mb-4" />
-
-            {/* List */}
             <ul className="relative space-y-2">
               {service.points.map((pt, idx) => (
-                <li key={idx} className="text-zinc-400 text-md leading-normal flex  gap-2">
+                <li key={idx} className="text-zinc-400 text-md leading-normal flex gap-2">
                   <span className="shrink-0 mt-[9px] w-1 h-1 rounded-full bg-[#E1251B]/60" />
                   <span>{pt}</span>
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
