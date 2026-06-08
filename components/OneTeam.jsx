@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger);
@@ -201,6 +201,24 @@ function SectionHeading({ red, white }) {
   );
 }
 
+function GptwImage({ src, className }) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.15 });
+
+  return (
+    <motion.img
+      ref={ref}
+      src={src}
+      alt="Great Place to Work"
+      className={className}
+      loading="lazy"
+      initial={{ opacity: 0, y: 80 }}
+      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 80 }}
+      transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+    />
+  );
+}
+
 function OneTeam() {
   const cardRefs  = useRef([]);
   const gridRef   = useRef(null);
@@ -296,28 +314,15 @@ function OneTeam() {
       {/* GPTW */}
       <section className="relative">
         <div className="flex items-center justify-center py-[50px] lg:py-[100px]">
-          <motion.img
-            src={gptwImg}
-            alt="Great Place to Work"
-            className="w-full hidden lg:block object-contain"
-            loading="lazy"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          />
-          <motion.img
-            src={gptw_mobile}
-            alt="Great Place to Work"
-            className="w-full lg:hidden object-contain rounded-xl border-[1px] border-gray-600"
-            loading="lazy"
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          />
+          <GptwImage src={gptwImg} className="w-full hidden lg:block object-contain" />
+          <GptwImage src={gptw_mobile} className="w-full lg:hidden object-contain rounded-xl border-[1px] border-gray-600" />
         </div>
-        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]" style={redGlow} />
+        <motion.div
+          className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[40px]"
+          style={redGlow}
+          animate={{ opacity: [0.5, 1, 0.5] }}
+          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
+        />
       </section>
 
       {/* Client Logos */}

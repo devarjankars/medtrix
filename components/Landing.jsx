@@ -50,10 +50,13 @@ export default function Landing() {
 
           {/* Mobile image */}
           <div className="w-full lg:hidden block">
-            <img
+            <motion.img
               src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/tablet.png"
               alt=""
               className="items-center min-w-70 md:w-full lg:ml-8"
+              initial={{ opacity: 0, y: 60 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
             />
           </div>
 
@@ -87,10 +90,13 @@ export default function Landing() {
 
         {/* RIGHT — desktop image */}
         <div className="w-1/2 hidden lg:block">
-          <img
+          <motion.img
             src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/tablet.png"
             alt=""
             className="items-center min-w-70 md:w-full lg:ml-8"
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           />
         </div>
       </div>
