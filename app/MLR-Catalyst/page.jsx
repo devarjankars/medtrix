@@ -66,12 +66,12 @@ const advantages = [
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv5.png",
     title: "Accuracy evaluation guided by human intelligence",
-    desc: "Enables the reviewer to pose a user-defined query to enable the expert reviewer guide/direct the accuracy evaluation.",
+    desc: "Enables the reviewer to pose a user-defined query that guides the expert reviewer in conducting the accuracy evaluation",
   },
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv6.png",
-    title: "Veeva integration and firewalled knowledge base",
-    desc: "Every user has access to files as defined by their role. Integration with Veeva to access and modify files in Veeva.",
+    title: "Veeva Integration and Secured Knowledge Base/Role-Based Knowledge Access",
+    desc: "Users are granted access to files according to their role. Veeva integration allows users to view and update content within the Veeva platform.",
   },
 ];
 

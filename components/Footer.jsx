@@ -1,38 +1,47 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const footerData = [
   {
     title: "Services",
     href: "/services/Commercial_Solutions",
     links: [
-      { label: "Commercial Solutions",  href: "/services/Commercial_Solutions" },
-      { label: "Medical Affairs",        href: "/services/medical-affairs" },
-      { label: "Digital Innovation",   href: "/services/digital-innovation" },
-      { label: "AI Catalysts",   href: "/services/ai-catalysts" },
-      { label: "Strategy & Consulting",  href: "/services/Strategy-Consulting" },
+      { label: "Commercial Solutions", href: "/services/Commercial_Solutions" },
+      { label: "Medical Affairs", href: "/services/medical-affairs" },
+      { label: "Digital Innovation", href: "/services/digital-innovation" },
+      { label: "AI Catalysts", href: "/services/ai-catalysts" },
+      { label: "Strategy & Consulting", href: "/services/Strategy-Consulting" },
     ],
   },
-  {
-    title: "Our Work",
-    href: "/our-work",
-    links: [],
-  },
-  {
-    title: "News & Updates",
-    href: "/news",
-    links: [],
-  },
-  {
-    title: "Life @ Medtrix",
-    href: "/life-at-medtrix",
-    links: [],
-  },
+  { title: "Our Work", href: "/our-work", links: [] },
+  { title: "News & Updates", href: "/news", links: [] },
+  { title: "Life @ Medtrix", href: "/life-at-medtrix", links: [] },
 ];
 
 export default function Footer() {
+  const footerRef = useRef(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const obs = new IntersectionObserver(
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.1 }
+    );
+    if (footerRef.current) obs.observe(footerRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  function scrollToTop() {
+    import("@/components/LenisProvider").then(({ lenisInstance }) => {
+      if (lenisInstance) lenisInstance.scrollTo(0, { duration: 1.2 });
+      else window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  }
+
   return (
-    <footer className="bg-black">
+    <footer ref={footerRef} className="bg-black">
       <div className="w-[90%] md:w-[80%] mx-auto py-4 md:py-16">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-12">
 
@@ -44,21 +53,13 @@ export default function Footer() {
 
           {footerData.map((section, index) => (
             <div key={index}>
-              <Link
-                href={section.href}
-                className="group inline-block text-white text-lg md:text-2xl font-semibold mb-6 relative"
-              >
+              <Link href={section.href} className="group inline-block text-white text-lg md:text-2xl font-semibold mb-6 relative">
                 {section.title}
                 <span className="absolute bottom-0 left-0 h-[1.5px] w-0 group-hover:w-full bg-white/50 rounded-full transition-all duration-300" />
               </Link>
-
               <div className="flex flex-col gap-5">
                 {section.links.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="group relative w-fit text-gray-400 text-base transition-colors duration-200 hover:text-white"
-                  >
+                  <Link key={link.href} href={link.href} className="group relative w-fit text-gray-400 text-base transition-colors duration-200 hover:text-white">
                     {link.label}
                     <span className="absolute bottom-0 left-0 h-[1px] w-0 group-hover:w-full bg-white/40 rounded-full transition-all duration-300" />
                   </Link>
@@ -72,32 +73,37 @@ export default function Footer() {
         <div className="border-t border-[#222222] pt-8 mt-8 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
           <p className="text-center text-gray-500 text-sm">© 2026. All rights reserved. Medtrix Healthcare</p>
           <div className="flex gap-6 mt-4 items-center">
-            <button
-              onClick={() => {
-                if (typeof window !== "undefined") {
-                  import("@/components/LenisProvider").then(({ lenisInstance }) => {
-                    if (lenisInstance) lenisInstance.scrollTo(0, { duration: 1.2 });
-                    else window.scrollTo({ top: 0, behavior: "smooth" });
-                  });
-                }
-              }}
-              className="text-gray-400 text-sm hover:text-white transition-colors duration-200 flex items-center gap-1.5 group"
-            >
-              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full border border-[#333] group-hover:border-white/40 transition-colors text-xs">↑</span>
-              Back to top
-            </button>
-             <Link href="https://www.linkedin.com/company/medtrix-healthcare/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200"  target="_blank">
-             Linkedin
+            <Link href="https://www.linkedin.com/company/medtrix-healthcare/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200" target="_blank">
+              Linkedin
             </Link>
             <Link href="/privacy-policy" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
               Privacy Policy
             </Link>
-            <Link href="/terms-conditions"  className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
+            <Link href="/terms-conditions" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
               Terms & Conditions
             </Link>
           </div>
         </div>
       </div>
+
+      {/* Back to top — fixed bottom-right, only when footer is in view */}
+      <AnimatePresence>
+        {visible && (
+          <motion.button
+            onClick={scrollToTop}
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 16 }}
+            transition={{ duration: 0.25 }}
+            className="fixed bottom-50 right-10 z-50 group flex items-center gap-2 text-md text-[#fff] hover:scale-100 transition-colors duration-200 cursor-pointer"
+          >
+            <span className="hidden sm:inline">Back to top</span>
+            <span className="inline-flex items-center justify-center w-9 h-9 rounded-full border border-[#333] group-hover:border-white/40 bg-black/80 backdrop-blur-sm transition-colors text-base">
+              ↑
+            </span>
+          </motion.button>
+        )}
+      </AnimatePresence>
     </footer>
   );
 }
