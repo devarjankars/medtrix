@@ -1,16 +1,16 @@
 export const newsData = [
   {
     id: 1,
-    date: "April 2026",
+    date: "May 2026",
     category: "Conference",
-    title: "The MedTrix Healthcare team is heading to ASCO 2026 ",
+    title: "The MedTrix Healthcare Team Is Heading to ASCO 2026!",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news.png",
     thumbnailMbl: "",
     body: [
       "We're excited for the days ahead as we engage in conversations, collaboration, and knowledge-sharing with industry leaders, partners, and peers.",
       "Events like these create valuable opportunities to exchange ideas, explore emerging trends, and strengthen partnerships that continue to shape the future of healthcare communication and innovation.",
       "We look forward to connecting with attendees, learning from diverse perspectives, and sharing how MedTrix continues to drive impactful healthcare experiences through the convergence of science, creativity, and technology.",
-      "If you're attending as well, we would love to connect and continue the conversation"
+      "If you're attending as well, we would love to connect and continue the conversation!"
     ],
     images: [
       { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/nu_1.png", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ascombl.png" },
@@ -20,7 +20,7 @@ export const newsData = [
     id: 2,
     date: "May 2026",
     category: "Award",
-    title: "We are PM360 ELITE 100 Winner in AI Marketing Pioneers category ",
+    title: "We Are PM360 ELITE 100 Winner in AI Marketing Pioneers Category ",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news2.png",
     thumbnailMbl: "",
     body: [
@@ -36,7 +36,7 @@ export const newsData = [
     id: 3,
     date: "March 2026",
     category: "Award",
-    title: "3 years of being a Great Place to Work®",
+    title: "3 Years of Being a Great Place to Work®",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news3.png",
     thumbnailMbl: "",
     body: [
@@ -46,7 +46,7 @@ export const newsData = [
       "We extend our heartfelt gratitude to our employees for making this recognition possible. Their energy, resilience, and belief in our shared vision continue to shape the MedTrix story. As we celebrate this milestone, we look forward to growing together and building an even stronger workplace for the future."
     ],
     images: [
-      { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsUpdatesGptwDesk.png", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsUpdatesGptwMobil.png " },
+      { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsUpdatesGptwMobil.png", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsUpdatesGptwDesk.png" },
     ],
   },
   {
@@ -92,7 +92,7 @@ export const newsData = [
     id: 6,
     date: "Octber 2025",
     category: "Sponsorship",
-    title: "We're proud to sponsor the 2025 #PharmaCX Marketing Summit",
+    title: "We're Proud to Sponsor the 2025 #PharmaCX Marketing Summit",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news6.png",
     thumbnailMbl: "",
     body: [

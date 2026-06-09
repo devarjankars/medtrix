@@ -175,7 +175,7 @@ export const projects = [
     result: "The integrated ecosystem enabled continuity between congress engagement and field-force scientific discussions, creating a more connected HCP experience across channels. The platform was successfully launched at ASN 2024, where the touchscreen scientific experience and modular engagement tools supported high levels of interaction. The scalable ecosystem also provided CSL Behring with adaptable assets and infrastructure to support ongoing Phase 3 engagement activities. Following the success of the initiative, CSL Behring continues to engage MedTrix as a strategic partner for ASN 2026, further extending the collaboration to support future congress engagement and scientific communication initiatives.",
     recognitions: [],
     testimonials: [{
-      quote: "CSL - Client Testimonial: Preparing for ASN 2024 required significant coordination and speed, and MedTrix played a key role in helping us make it happen.",
+      quote: "Preparing for ASN 2024 required significant coordination and speed, and MedTrix played a key role in helping us make it happen.",
       author: "Global Medical Lead"
     }]
   },

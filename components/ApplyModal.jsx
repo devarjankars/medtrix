@@ -43,17 +43,39 @@ export default function ApplyModal({ jobTitle, onClose }) {
     }
   };
 
-  return (
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => { setMounted(true); }, []);
+
+  const modal = (
     <AnimatePresence>
+      {/* Backdrop */}
       <motion.div
-        className="fixed bg-[#121212] overflow-y-auto"
-        style={{ inset: 0, zIndex: 9999 }}
+        className="fixed inset-0 bg-black/70"
+        style={{ zIndex: 9998 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.25 }}
+        onClick={onClose}
+      />
+      {/* Modal */}
+      <motion.div
+        className="fixed inset-0 overflow-y-auto"
+        style={{ zIndex: 9999 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 0.25 }}
       >
-        <div className="relative w-full md:w-[80%] mx-auto p-8 md:p-12 min-h-screen">
+        <div className="min-h-full flex items-center justify-center p-4">
+          <motion.div
+            className="relative w-full max-w-2xl bg-[#121212] rounded-2xl p-8 md:p-12 shadow-2xl"
+            initial={{ opacity: 0, y: 40, scale: 0.96 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 40, scale: 0.96 }}
+            transition={{ type: "spring", stiffness: 260, damping: 24 }}
+            onClick={(e) => e.stopPropagation()}
+          >
 
           {/* Close */}
           <button
@@ -206,8 +228,11 @@ export default function ApplyModal({ jobTitle, onClose }) {
 
             </form>
           )}
+          </motion.div>
         </div>
       </motion.div>
     </AnimatePresence>
   );
+
+  return mounted ? createPortal(modal, document.body) : null;
 }

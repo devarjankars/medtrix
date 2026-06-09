@@ -1,10 +1,15 @@
 "use client";
-
 import { useEffect } from "react";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { lenisInstance } from "@/components/LenisProvider";
 
+const ease = [0.22, 1, 0.36, 1];
+const fadeScale = {
+  hidden: { opacity: 0, scale: 0.82 },
+  visible: { opacity: 1, scale: 1, transition: { duration: 0.55, ease } },
+};
 export default function NewsDetails({ news, onBack }) {
+
   useEffect(() => {
     if (lenisInstance) {
       lenisInstance.scrollTo(0, { immediate: true });
@@ -34,11 +39,22 @@ export default function NewsDetails({ news, onBack }) {
       {(news.date || news.category) && (
         <div className="flex items-center gap-3 mb-6">
           {news.date && (
-            <span className="text-xs text-red-500 font-semibold uppercase tracking-widest">
-              {news.date}
-            </span>
+               <motion.div variants={fadeScale}>
+                        <div
+                          className="relative inline-block rounded-full max-w-fit p-px"
+                          style={{
+                            background:
+                              "linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
+                          }}
+                        >
+                          <span className="inline-block text-[14px] font-light tracking-[0.15em] uppercase text-white bg-[#0c0606] px-3 py-1 rounded-full">
+                            {news.date}
+                          </span>
+                        </div>
+                      </motion.div>
+            
           )}
-          {news.date && news.category && <span className="text-gray-600">·</span>}
+          
           {news.category && (
             <span className="text-xs text-gray-500 uppercase tracking-widest border border-[#2a2a2a] px-3 py-1 rounded-full">
               {news.category}
@@ -48,13 +64,13 @@ export default function NewsDetails({ news, onBack }) {
       )}
 
       {/* Title */}
-      <h1 className="text-3xl lg:text-[50px] font-semibold text-white lg:leading-[72px] mb-8">
+      <h1 className="text-3xl lg:text-5xl font-normal text-white lg:leading-[51px] mb-4 mt-4">
         {news.title}
       </h1>
 
       {/* Body paragraphs */}
       {news.body && (
-        <div className="space-y-5 text-gray-300 text-sm md:text-base leading-relaxed mb-12">
+        <div className="space-y-3 text-gray-300 text-sm md:text-[16px] leading-relaxed mb-10 mt-4">
           {news.body.map((para, i) => (
             <p key={i}>{para}</p>
           ))}
