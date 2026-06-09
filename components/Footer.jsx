@@ -18,6 +18,7 @@ const footerData = [
   { title: "Our Work", href: "/our-work", links: [] },
   { title: "News & Updates", href: "/news", links: [] },
   { title: "Life @ Medtrix", href: "/life-at-medtrix", links: [] },
+   
 ];
 
 export default function Footer() {
@@ -53,7 +54,7 @@ export default function Footer() {
 
           {footerData.map((section, index) => (
             <div key={index}>
-              <Link href={section.href} className="group inline-block text-white text-lg md:text-2xl font-semibold mb-6 relative">
+              <Link href={section.href} className="group inline-block text-white text-lg md:text-2xl font-normal mb-6 relative">
                 {section.title}
                 <span className="absolute bottom-0 left-0 h-[1.5px] w-0 group-hover:w-full bg-white/50 rounded-full transition-all duration-300" />
               </Link>
@@ -71,16 +72,21 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-[#222222] pt-8 mt-8 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
-          <p className="text-center text-gray-500 text-sm">© 2026. All rights reserved. Medtrix Healthcare</p>
+          <p className="text-center text-gray-500 text-sm">© 2026 Medtrix Healthcare. All rights reserved.</p>
           <div className="flex gap-6 mt-4 items-center">
-            <Link href="https://www.linkedin.com/company/medtrix-healthcare/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200" target="_blank">
-              LinkedIn
+            <Link href="https://www.linkedin.com/company/medtrix-healthcare/" className="text-gray-400 hover:text-white transition-colors duration-200" target="_blank" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+              </svg>
             </Link>
             <Link href="/privacy-policy" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
               Privacy Policy
             </Link>
             <Link href="/terms-conditions" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
               Terms & Conditions
+            </Link>
+            <Link href="/contact" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
+              Contact Us
             </Link>
           </div>
         </div>

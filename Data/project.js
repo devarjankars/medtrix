@@ -13,6 +13,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csdesk1.png",
     challengeImg:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge1.png",
     slider:["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide0.png"],
+    videoSrc: "",
     title: "AbbVie Rinvoq Immunology: Transforming International-to-Affiliate Modular Content Enablement",
     tags: ["MODULAR CONTENT", "GLOBAL-TO-LOCAL ENABLEMENT", "VEEVA DAMS"],
     engagementModel: "Global-to-Local Modular Content Enablement",
@@ -30,7 +31,7 @@ export const projects = [
       
     ],
     testimonials: [{
-      quote: "Thank you for the great collaboration throughout our partnership. The MedTrix team consistently demonstrated professionalism, responsiveness, and a collaborative spirit that made working together truly seamless and enjoyable. ",
+      quote: "Thank you for the great collaboration throughout our partnership. The MedTrix team consistently demonstrated professionalism, responsiveness, and a collaborative spirit that made working together truly seamless and enjoyable.",
      
       author: "Marketing Manager, Abbvie "
     },
@@ -45,6 +46,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csdesk2.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge2.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide1.png"],
+    videoSrc: "",
     title: "MOD 3D Video and AR Adaptation for Keytruda",
     tags: ["3D ANIMATION", "AR", "ONCOLOGY EDUCATION"],
     engagementModel: "Immersive Scientific Visualization Initiative",
@@ -73,6 +75,7 @@ export const projects = [
     imgfordetailmbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csdesk3.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge3.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide2.png"],
+    videoSrc: "",
     title: "Nestlé Health Science (NHSc): Building a Global HCP Education & Certification Ecosystem for ModuLife™",
     tags: ["LMS", "GLOBAL EDUCATION", "HCP CERTIFICATION"],
     engagementModel: "Global HCP Education & Certification Initiative",
@@ -101,6 +104,7 @@ export const projects = [
     imgfordetailmbl: "",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge4.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide3.png"],
+    videoSrc: "",
     title: "Stemline Therapeutics: Decoupling High-Volume Execution",
     tags: ["OMNICHANNEL", "COMMERCIAL OPERATIONS", "SCALABLE DELIVERY"],
     engagementModel: "Strategic Omnichannel Operations Partnership",
@@ -133,6 +137,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maDesk1.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge5.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide4.png"],
+    videoSrc: "",
     title: "Celltrion: Elevating Medical Affairs Scientific Engagement",
     tags: ["VR", "MEDICAL AFFAIRS", "SCIENTIFIC ENGAGEMENT"],
     engagementModel: "Integrated Scientific Engagement Initiative",
@@ -161,6 +166,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maDesk2.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge6.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide5.png"],
+    videoSrc: "",
     title: "CSL Behring: Advancing Cardio-Renal Scientific Engagement",
     tags: ["MEDICAL AFFAIRS", "PHASE 2 DATA", "MSL ENGAGEMENT"],
     engagementModel: "Integrated Scientific Engagement Initiative",
@@ -187,6 +193,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maDesk3.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge7.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide6.png"],
+    videoSrc: "",
     title: "Exact Sciences Portfolio and Pipeline Initiatives",
     tags: ["CONGRESS ENGAGEMENT", "SCIENTIFIC COMMUNICATIONS", "HEOR"],
     engagementModel: "Integrated Scientific Communications & Interactive Engagement Initiative",
@@ -213,6 +220,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/maDesk4.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge8.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide7.png"],
+    videoSrc: "",
     title: "Lilly Oncology: Building COMPASS (Clinical Outreach Mapping Platform for Actionable Strategic Support)",
     tags: ["DATA VISUALIZATION", "GEN AI", "MEDICAL AFFAIRS"],
     engagementModel: "Medical Affairs Intelligence & Insights Initiative",
@@ -227,7 +235,7 @@ export const projects = [
     result: "COMPASS was well received by the Thoracic Oncology team, driving strong engagement during the initial rollout phase and encouraging active collaboration across medical affairs stakeholders. The Lilly team particularly valued the AI-enabled interaction capabilities, which simplified data exploration and accelerated access to actionable insights across multiple medical affairs datasets. With more than 12,000 integrated data points, teams could analyze hospital-level lung cancer burden alongside MSL engagement activities within a single interface to support more informed planning and strategic decision-making. Following the success of the initiative, discussions are currently underway to expand COMPASS adoption across additional tumor franchises within Lilly Oncology Medical Affairs.",
     recognitions: [],
     testimonials: [{
-      quote: "When we first shared the COMPASS idea with MedTrix, we were unsure how it would come together. Their team transformed complex data into an intelligent, highly usable interface for our Medical Affairs team. The AI integration was the icing on the cake. ",
+      quote: "When we first shared the COMPASS idea with MedTrix, we were unsure how it would come together. Their team transformed complex data into an intelligent, highly usable interface for our Medical Affairs team. The AI integration was the icing on the cake.",
       author: "Scientific Lead, Medical Affairs "
     }]
   },
@@ -244,6 +252,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/didesk1.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge9.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide8.png"],
+    videoSrc: "",
     title: "AbbVie Rinvoq Immunology: Advancing HCP Engagement Through an Interactive Case Player",
     tags: ["CASE-BASED LEARNING", "MACHINE LEARNING", "HCP ENGAGEMENT"],
     engagementModel: "Global Digital Medical Education Initiative",
@@ -274,6 +283,7 @@ export const projects = [
     imgfordetailmbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/didesk2.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge10.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide9.png"],
+    videoSrc: "",
     title: "Allergan Medical Institute: 3D Facial Anatomy App",
     tags: ["MOBILE", "iPAD", "3D"],
     engagementModel: "Global Digital Education Initiative",
@@ -292,7 +302,7 @@ export const projects = [
     testimonials: [
       {
         quote:"The team at MedTrix has proven to be incredibly easy to work with, consistently pushing themselves to meet deadlines even in the face of a dynamic environment that introduced unforeseen changes. I am extremely impressed with their dedication and professionalism and look forward to continuing our collaboration with MedTrix in the future.",
-        author: "Executive Director, Digital Strategy and Operations (US)"
+        author: "Executive Director, Digital Strategy & Operations (US)"
       },
       {
       quote: "The team at MedTrix is truly exemplary, exhibiting utmost professionalism, responsiveness, and proactivity. Working with them has been an absolute pleasure, as they consistently collaborate to find innovative solutions and continuously surpass our expectations. I’m looking forward to collaborating on more projects together in the future!",
@@ -316,6 +326,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/didesk3.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge11.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide10.png"],
+    videoSrc: "",
     title: "Allergan Medical Institute: Interactive Rheology Portal for HA Dermal Fillers",
     tags: ["INTERACTIVE DASHBOARD", "SCIENTIFIC VISUALIZATION", "HCP EDUCATION"],
     engagementModel: "Scientific Education & Interactive Visualization Initiative",
@@ -331,7 +342,7 @@ export const projects = [
     recognitions: [],
     testimonials: [
       {
-      quote: "MedTrix helped us transform highly complex rheology data into an intuitive and engaging educational platform for HCPs. Representing information accurately when comparing multiple products with very similar values was a significant challenge, and the way the MedTrix team handled it was truly a masterpiece in programming and scientific visualization. ",
+      quote: "MedTrix helped us transform highly complex rheology data into an intuitive and engaging educational platform for HCPs. Representing information accurately when comparing multiple products with very similar values was a significant challenge, and the way the MedTrix team handled it was truly a masterpiece in programming and scientific visualization.",
       author: "Director, Learning & Development "
     },
     
@@ -346,6 +357,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/didesk4.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge12.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide11.png"],
+    videoSrc: "",
     title: "Celltrion: Transforming IBD Education Through an Immersive VR Experience at DDW 2026",
     tags: ["VIRTUAL REALITY", "IMMERSIVE SCIENTIFIC ENGAGEMENT", "CONGRESS EXPERIENCE"],
     engagementModel: "Scientific Experience & Congress Engagement Initiative",
@@ -360,7 +372,7 @@ export const projects = [
     result: "The immersive VR experience successfully transformed Celltrion’s DDW 2026 booth engagement into a highly interactive scientific learning environment. By replacing passive content consumption with experiential storytelling, the platform enabled healthcare professionals to engage more deeply with complex IBD science and therapeutic concepts throughout the congress experience. The engagement metrics reflected strong audience participation, with nearly 80% of booth visitors engaging with the VR experience, average interaction time exceeding six minutes, and more than 90% completing the full journey. The initiative demonstrated the effectiveness of immersive scientific engagement in improving attention, retention, and healthcare professional interaction during congress activations.",
     recognitions: [],
     testimonials: [{
-      quote: "MedTrix took on an ambitious VR initiative that others hesitated to pursue and delivered an exceptional experience in an incredibly short timeframe. The final product was innovative, immersive, and visually impressive while still maintaining the educational depth and scientific rigor that was critical for our audience. The success of the experience has sparked discussions around expanding its use into a broader, enduring educational resource for HCPs, and we look forward to continuing to build on this foundation for future meetings. ",
+      quote: "MedTrix took on an ambitious VR initiative that others hesitated to pursue and delivered an exceptional experience in an incredibly short timeframe. The final product was innovative, immersive, and visually impressive while still maintaining the educational depth and scientific rigor that was critical for our audience. The success of the experience has sparked discussions around expanding its use into a broader, enduring educational resource for HCPs, and we look forward to continuing to build on this foundation for future meetings.",
       author: "Executive Medical Director, Head of Medical & Scientific Communication "
     }]
   },
@@ -373,6 +385,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/didesk5.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge13.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide12.png"],
+    videoSrc: "",
     title: "Novartis: Transforming Patient Engagement Through a Web-Based AR Experience for Jakavi",
     tags: ["WEB-BASED AUGMENTED REALITY", "PATIENT ENGAGEMENT", "DIGITAL INNOVATION"],
     engagementModel: "Digital Patient Engagement Initiative",
@@ -403,6 +416,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/didesk6.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge14.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide13.png"],
+    videoSrc: "",
     title: "Stemline Therapeutics: AI-Assisted Content Creation",
     tags: ["AI-ASSISTED CONTENT CREATION", "HCP EDUCATION", "DIGITAL STORYTELLING"],
     engagementModel: "Scientific Content Innovation Initiative",
@@ -422,7 +436,7 @@ export const projects = [
       }
     ],
     testimonials: [{
-      quote: "This would be one of the few AI-generated educational videos deployed within an HCP website, and MedTrix did an outstanding job bringing it to life. ",
+      quote: "This would be one of the few AI-generated educational videos deployed within an HCP website, and MedTrix did an outstanding job bringing it to life.",
       author: "Associate Director, Marketing "
     }]
   },
@@ -438,6 +452,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/scdesk1.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge15.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide14.png"],
+    videoSrc: "",
     title: "Idorsia: Building a Launch-Ready Strategy for TRYVIO Through a Strategic AOR Partnership",
     tags: ["LAUNCH STRATEGY", "OMNICHANNEL", "SCALABILITY"],
     engagementModel: "AOR Partnership for Global Brand Launch",
@@ -464,6 +479,7 @@ export const projects = [
     imgfordetailmbl: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/scdesk2.png",
     challengeImg: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/challenge16.png",
     slider: ["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/slide15.png"],
+    videoSrc: "",
     title: "Elzonris: MedTrix as AOR for the Brand",
     tags: ["AOR", "OMNICHANNEL STRATEGY", "CONGRESS EXPERIENCE"],
     engagementModel: "Strategic Brand AOR Partnership",
@@ -478,7 +494,7 @@ export const projects = [
     result: "The integrated omnichannel strategy helped create stronger alignment across messaging, digital engagement, field outreach, and conference activation. The coordinated approach improved HCP engagement and strengthened awareness around BPDCN and Elzonris across key specialist audiences. The enhanced conference experiences contributed to increased interaction and engagement, with the Elzonris team reporting its strongest booth footfall to date at ASH 2025. The convergence of strategic messaging, NBA integration, MSL enablement, and digital engagement initiatives helped support a positive growth trajectory for the brand.",
     recognitions: [],
     testimonials: [{
-      quote: "It was a pleasure having the presence of Medtrix team at ASH congress. The professionalism, dedication, and collaboration demonstrated throughout the event were truly appreciated, and we look forward to working together again in the future. ",
+      quote: "It was a pleasure having the presence of Medtrix team at ASH congress. The professionalism, dedication, and collaboration demonstrated throughout the event were truly appreciated, and we look forward to working together again in the future.",
       author: "Senior Director of Marketing Leukemia Franchise at Stemline, New Jersey, United States"
     }]
   }

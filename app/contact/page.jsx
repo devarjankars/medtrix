@@ -65,11 +65,6 @@ function ContactInner() {
         { opacity: 1, y: 0, duration: 0.65, stagger: 0.09, ease: "power3.out",
           scrollTrigger: { trigger: formRef.current, start: "top 80%", once: true } }
       );
-      gsap.fromTo(mapRef.current,
-        { opacity: 0, x: 60, scale: 0.97 },
-        { opacity: 1, x: 0, scale: 1, duration: 0.9, ease: "power3.out",
-          scrollTrigger: { trigger: mapRef.current, start: "top 80%", once: true } }
-      );
       gsap.fromTo(
         cardsRef.current?.querySelectorAll(".office-card"),
         { opacity: 0, y: 24 },
@@ -253,137 +248,56 @@ function LinkedInButton({ href, size = "w-12 h-12" }) {
           )}
         </div>
 
-        {/* ── RIGHT: Map + info (wider column, sticky on desktop) ── */}
-        <div className="flex flex-col gap-6 order-first lg:order-last lg:top-24" ref={cardsRef}>
+        {/* ── RIGHT: Addresses + LinkedIn ── */}
+        <div className="flex flex-col gap-8 order-first lg:order-last" ref={cardsRef}>
 
-          {/* Map */}
-          <div
-            ref={mapRef}
-            className="relative rounded-2xl overflow-hidden border border-white/10 opacity-0"
-          >
-            {/* MAP CONTAINER */}
-            <div className="relative w-full overflow-hidden mb-4 mt-4">
-              <div className="relative w-full">
-                <img
-                  src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/blankMap.png"
-                  alt="Office Locations Map"
-                  className="w-full h-auto object-contain opacity-80 hidden md:block"
-                />
-                <img
-                  src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/blankMap.png"
-                  alt="Office Locations Map"
-                  className="w-full h-auto object-contain opacity-80 block md:hidden"
-                />
+          {/* Address cards side by side */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <motion.div
+              className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-3"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              whileHover={{ y: -3 }}
+            >
+              <span className="text-xs font-bold uppercase tracking-[3px] text-[#E1251B]">USA</span>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                100 Somerset Corporate Boulevard<br />
+                2nd Floor, Suite 130,<br />
+                Bridgewater, NJ 08807
+              </p>
+            </motion.div>
 
-                {/* USA indicator */}
-                <div className="hidden md:flex flex-col items-center absolute top-[40%] left-[20%] -translate-x-1/2 -translate-y-1/2 group z-10">
-                  <div className="mt-3 p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[16px] text-red-500 font-bold px-2 py-0.5 rounded">USA</span>
-                    </div>
-                    <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
-                      100 Somerset Corporate Boulevard 2nd Floor, Suite 130, Bridgewater, NJ 08807
-                    </p>
-                  </div>
-                </div>
-
-                {/* India indicator */}
-                <div className="hidden md:flex flex-col items-center absolute top-[60%] left-[70%] -translate-x-1/2 -translate-y-1/2 group z-10">
-                  <div className="mt-3 p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
-                    <div className="flex items-center gap-2 mt-2">
-                      <span className="text-[16px] text-red-500 font-bold px-2 py-0.5 rounded">IND</span>
-                    </div>
-                    <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
-                      1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, Bangalore 560 102
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Mobile address cards */}
-            <div className="grid grid-cols-1 gap-4 mt-2 mb-4 px-4 md:hidden">
-              <div className="p-4 rounded-xl">
-                <div className="flex items-center gap-2 mb-1">
-                  <h4 className="text-sm font-bold tracking-wider text-red-400">USA</h4>
-                </div>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  100 Somerset Corporate Boulevard<br />
-                  2nd Floor, Suite 130,<br />
-                  Bridgewater, NJ 08807
-                </p>
-              </div>
-              <div className="p-4 rounded-xl">
-                <div className="flex items-center gap-2 mb-1">
-                  <h4 className="text-sm font-bold tracking-wider text-red-400">IND</h4>
-                </div>
-                <p className="text-sm text-gray-300 leading-relaxed">
-                  1st Floor, 574/A, 1st Main,<br />
-                  Sector 6, HSR Layout,<br />
-                  Bangalore 560 102
-                </p>
-              </div>
-            </div>
+            <motion.div
+              className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-3"
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+              whileHover={{ y: -3 }}
+            >
+              <span className="text-xs font-bold uppercase tracking-[3px] text-[#E1251B]">IND</span>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                1st Floor, 574/A, 1st Main,<br />
+                Sector 6, HSR Layout,<br />
+                bengaluru, 560 102
+              </p>
+            </motion.div>
           </div>
-
-          {/* divder line */}
 
           <div className="border-t border-[#1e1e1e]" />
 
-          {/* linked in and instagram logo */}
-
-          <div className="flex items-center gap-4">
-            <motion.div
-              
-              className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 ">
-              <LinkedInButton href="https://www.linkedin.com/company/medtrix-healthcare" size="w-[45px] h-[45px] lg:w-[45px] lg:h-[45px] hover:scale-105" />
-              <span>LinkedIn</span>
-            </motion.div>
-            {/* <motion.a href="https://www.instagram.com/medtrixhealthcare" target="_blank" rel="noopener noreferrer"
-              whileHover={{ y: -3 }} transition={{ duration: 0.2 }}
-              className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
-              <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="4" />
-                  <circle cx="12" cy="12" r="3" />
-                </svg>
-              </span>
-              Instagram
-            </motion.a> */}
-          </div>
-
-
-
-
-          
-
-          {/* Office cards */}
-          {/* <div className("grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {[
-              { city: "Bangalore", country: "India",   address: "Medtrix Healthcare Pvt. Ltd.", icon: "🇮🇳" },
-              { city: "New Jersey", country: "USA",    address: "100 Somerset Corporate Boulevard 2nd Floor, Suite 130, Bridgewater, NJ 08807",   icon: "🇺🇸" },
-            ].map((office) => (
-              <motion.div key={office.city} whileHover={{ y: -3 }} transition={{ duration: 0.25 }}
-                className="office-card opacity-0 bg-[#0f0f0f] border border-[#1e1e1e] rounded-xl p-5 flex flex-col gap-1">
-                <span className="text-xl mb-1">{office.icon}</span>
-                <h4 className="text-white font-semibold text-sm">{office.city}, {office.country}</h4>
-                <p className="text-zinc-500 text-xs">{office.address}</p>
-              </motion.div>
-            ))}
-          </div> */}
-
-          {/* Email */}
-          {/* <motion.a href="mailto:info@medtrixhealthcare.com"
-            whileHover={{ x: 4 }} transition={{ duration: 0.2 }}
-            className="office-card opacity-0 inline-flex items-center gap-3 text-zinc-400 hover:text-white text-sm transition-colors group">
-            <span className="w-8 h-8 rounded-full bg-[#E1251B]/10 border border-[#E1251B]/20 flex items-center justify-center shrink-0 group-hover:bg-[#E1251B]/20 transition-colors">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-              </svg>
-            </span>
-            info@medtrixhealthcare.com
-          </motion.a> */}
+          <motion.div
+            className="inline-flex items-center gap-3 text-zinc-400"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+          >
+            <LinkedInButton href="https://www.linkedin.com/company/medtrix-healthcare" size="w-[45px] h-[45px] hover:scale-105" />
+            <span>LinkedIn</span>
+          </motion.div>
 
         </div>
       </div>

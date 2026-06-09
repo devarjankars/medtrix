@@ -29,7 +29,7 @@ export default function JobCard({ job, onClick }) {
       {/* Meta */}
       <p className="font-medium text-white">{job.title}</p>
       <div className="flex items-center  text-gray-400 text-[13px]">
-        <span>Experience : {job.experience}</span><span className="mx-1 text-[#3a3a3a]">|</span>
+        <span>Experience: {job.experience}</span><span className="mx-1 text-[#3a3a3a]">|</span>
         <span>{job.location}</span>
         <span className="mx-1 text-[#3a3a3a]">|</span>
         <span>{job.type}</span>

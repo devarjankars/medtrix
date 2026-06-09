@@ -53,7 +53,7 @@ const tabContent = {
   },
   "3D Content, MOA/MOD": {
     mediaType: "video",
-    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/Merck+Prostate+Cancer+(1).mp4",
+    mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/Showreel3d(1).mp4",
     headline: "3D Content, MOA/MOD",
     desc: "3D mechanism of action (MOA) and mechanism of disease (MOD) videos, developed by seasoned 3D artists and guided by medical experts",
     points: [

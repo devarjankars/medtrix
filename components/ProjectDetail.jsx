@@ -245,6 +245,35 @@ function ImageSlider({ images = [] }) {
   );
 }
 
+// ── Autoplay video section ───────────────────────────────────────────────────
+function AutoPlayVideo({ src }) {
+  const ref = useRef(null);
+  const videoRef = useRef(null);
+  const inView = useInView(ref, { once: false, amount: 0.5 });
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (inView) { v.play().catch(() => {}); }
+    else { v.pause(); }
+  }, [inView]);
+
+  return (
+    <Reveal>
+      <div ref={ref} className="w-full rounded-[22px] overflow-hidden border border-[#1f1f1f] bg-black">
+        <video
+          ref={videoRef}
+          src={src}
+          className="w-full h-full object-cover"
+          muted
+          loop
+          playsInline
+        />
+      </div>
+    </Reveal>
+  );
+}
+
 // ── Main component ────────────────────────────────────────────────────────────
 export default function ProjectDetail({ project, onBack }) {
   const router = useRouter();
@@ -418,6 +447,14 @@ export default function ProjectDetail({ project, onBack }) {
             )}
           </div>
 
+          <GlowDivider />
+        </section>
+      )}
+
+      {/* ── PROJECT VIDEO ──────────────────────────────────────────── */}
+      {project.videoSrc && (
+        <section className="lg:py-[100px] py-[50px] relative">
+          <AutoPlayVideo src={project.videoSrc} />
           <GlowDivider />
         </section>
       )}

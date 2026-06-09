@@ -30,12 +30,14 @@ export default function TestimonialSlider({
     return () => ro.disconnect();
   }, []);
 
+  const [paused, setPaused] = useState(false);
+
   // Auto-play
   useEffect(() => {
-    if (!autoPlay || items.length <= 1) return;
+    if (!autoPlay || items.length <= 1 || paused) return;
     const t = setInterval(() => setActive((p) => (p + 1) % items.length), delay);
     return () => clearInterval(t);
-  }, [items.length, autoPlay, delay]);
+  }, [items.length, autoPlay, delay, paused]);
 
   const GAP = 24;
   const STEP = cardW + GAP;
@@ -65,7 +67,10 @@ export default function TestimonialSlider({
   }
 
   return (
-    <section ref={wrapRef} className="relative py-8 w-full" style={{ overflow: "clip" }}>
+    <section ref={wrapRef} className="relative py-8 w-full" style={{ overflow: "clip" }}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       {/*
         Centering formula (container-relative, not viewport-relative):
           offset = containerW/2 - cardW/2 - active*STEP - desktopBias
@@ -123,7 +128,20 @@ export default function TestimonialSlider({
         })}
       </motion.div>
 
-     
+     {/* Dot indicators */}
+      {items.length > 1 && (
+        <div className="flex justify-center gap-3 mt-6">
+          {items.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                i === active ? "w-8 bg-[#E1251B]" : "w-2 bg-[#333]"
+              }`}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
