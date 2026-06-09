@@ -284,9 +284,9 @@ function SectionGrid({ label, title, items, cols, button, link }) {
                 alt={item.title}
                 className="absolute inset-0 w-fit h-auto object-contain"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-            <div className="absolute bottom-6 left-8 right-8">
+            <div className="px-6 py-5">
               <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
               <p className="text-gray-300 text-sm">{item.desc}</p>
             </div>

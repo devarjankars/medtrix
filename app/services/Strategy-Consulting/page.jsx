@@ -17,7 +17,7 @@ export default function page() {
     <main className="relative " >
       <DynamicHeader
         tagText="STRATEGY & CONSULTING"
-        title="Strategy that adapts to your needs"
+        title="Strategy That Adapts to Your Needs"
         paragraphs={strategyParagraphs}
         desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stdeskb.png"}
          mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/scmobi.png"}

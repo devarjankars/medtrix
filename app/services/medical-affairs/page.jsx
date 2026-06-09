@@ -278,7 +278,7 @@ export default function MedicalAffairs() {
     <main className="relative">
       <DynamicHeader
         tagText="MEDICAL AFFAIRS"
-        title={"Scientific rigor meets digital innovation"}
+        title={"Scientific Rigor Meets Digital Innovation"}
         paragraphs={[
           "MedTrix offers the full scope of medical communications and medical affairs services, powered by cutting-edge digital solutions to support pharmaceutical companies across the entire lifecycle.",
         ]}

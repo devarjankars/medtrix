@@ -163,7 +163,7 @@ function LinkedInButton({ href, size = "w-12 h-12" }) {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
                   <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
-                    Name <span className="text-[#E1251B]">*</span>
+                    Name<span className="text-[#E1251B]">*</span>
                   </label>
                   <input required name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Your name" className={inputClass} />
                 </div>
@@ -179,21 +179,21 @@ function LinkedInButton({ href, size = "w-12 h-12" }) {
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
                 <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
-                  Email <span className="text-[#E1251B]">*</span>
+                  Email<span className="text-[#E1251B]">*</span>
                 </label>
                 <input required name="email" value={formData.email} onChange={handleChange} type="email" placeholder="you@company.com" className={inputClass} />
               </div>
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
                 <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
-                  Subject <span className="text-[#E1251B]">*</span>
+                  Subject<span className="text-[#E1251B]">*</span>
                 </label>
                 <input required name="subject" value={formData.subject} onChange={handleChange} type="text" placeholder="How can we help?" className={inputClass} />
               </div>
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
                 <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
-                  Message <span className="text-[#E1251B]">*</span>
+                  Message<span className="text-[#E1251B]">*</span>
                 </label>
                 <textarea
                   required
@@ -218,7 +218,7 @@ function LinkedInButton({ href, size = "w-12 h-12" }) {
                   whileHover={!loading ? { scale: 0.98 } : {}}
                   whileTap={!loading ? { scale: 0.97 } : {}}
                   transition={{ type: "spring", stiffness: 380, damping: 22 }}
-                  className="relative inline-flex items-center gap-2 px-8 py-4 rounded-full text-white font-semibold text-sm overflow-hidden cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
+                  className="relative inline-flex items-center gap-2 px-6 py-2 rounded-full text-white font-semibold text-sm overflow-hidden cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   style={{
                     background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
                     boxShadow: "0 0 20px rgba(225,37,27,0.4)",
@@ -238,7 +238,7 @@ function LinkedInButton({ href, size = "w-12 h-12" }) {
                     </>
                   ) : (
                     <>
-                      <span className="relative z-10">Send Message</span>
+                      <span className="relative z-10 text-lg ">Submit</span>
                       <motion.span
                         className="relative z-10"
                         animate={{ x: [0, 4, 0] }}

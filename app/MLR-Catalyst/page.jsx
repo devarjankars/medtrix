@@ -12,7 +12,7 @@ const features = [
   {
     no: "01",
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ai1.png",
-    title: "Using AI to simplify repetitive tasks",
+    title: "Using AI to Simplify Repetitive Tasks",
     desc: "Quantitative and qualitative evaluation of alignment with pre-approved documents, claims, use-cases, variations for modular content etc.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_1.mp4",
     bg: "bg-white/95",
@@ -21,7 +21,7 @@ const features = [
   {
     no: "02",
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ai2.png",
-    title: "AI built specifically with approved documents",
+    title: "AI Built Specifically ith Approved Documents",
     desc: "A system that works strictly off of role-specific, pre-approved knowledge base for Medical Affairs, Brand Teams, Legal, and Regulatory functions.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_2.mp4",
     bg: "bg-zinc-900",
@@ -30,7 +30,7 @@ const features = [
   {
     no: "03",
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ai3.png",
-    title: "AI-driven accuracy assessment",
+    title: "AI-Driven Accuracy Assessment",
     desc: "Multi-modal AI evaluates text, images, tables, and videos for review accuracy using validated statistical techniques.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_3.mp4",
     bg: "bg-white",
@@ -41,27 +41,27 @@ const features = [
 const advantages = [
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv1.png",
-    title: "Reducing the time required for all steps of review",
+    title: "Reducing the Time Required for All Steps of Review",
     desc: "LLM-enabled, optimize linking of source documentation and highlights for the specific part of the source document optimizes review time.",
   },
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv2.png",
-    title: "Mitigating effects of personnel changes",
+    title: "Mitigating Effects of Personnel Changes",
     desc: "Machine learning components ensure that knowledge of every reviewer is captured and incorporated into the tool continuously.",
   },
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv3.png",
-    title: "Suggestions for improvement of content",
+    title: "Suggestions for Improvement of Content",
     desc: "Carefully engineered prompts ensure that the AI generates accurate suggestions for improvement of content.",
   },
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv4.png",
-    title: "Enabling reviewers to focus their intelligence",
+    title: "Enabling Reviewers to Focus Their Intelligence",
     desc: "Reviewers queries based on their expert knowledge included by a feature that allows them to send well-defined queries to the AI.",
   },
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv5.png",
-    title: "Accuracy evaluation guided by human intelligence",
+    title: "Accuracy Evaluation Guided by Human Intelligence",
     desc: "Enables the reviewer to pose a user-defined query that guides the expert reviewer in conducting the accuracy evaluation",
   },
   {
@@ -78,7 +78,7 @@ function ShimmerBtn({ label, href }) {
       <motion.div
         whileHover={{ scale: 1.06 }} whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 380, damping: 22 }}
-        className="relative inline-flex w-fit items-center gap-2 px-8 py-4 rounded-full text-white font-medium overflow-hidden cursor-pointer"
+        className="relative inline-flex w-fit items-center gap-2 px-7 py-2 rounded-full text-white font-medium overflow-hidden cursor-pointer"
         style={{ background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)", boxShadow: "0 0 18px rgba(225,37,27,0.45)" }}
       >
         <motion.span className="absolute inset-0 rounded-full pointer-events-none"
@@ -86,7 +86,7 @@ function ShimmerBtn({ label, href }) {
           animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
           transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
         />
-        <span className="relative z-10">{label}</span>
+        <span className="relative z-10 ">{label}</span>
       </motion.div>
     </Link>
   );
@@ -136,7 +136,7 @@ export default function MlrCatalyst() {
               transition={{ duration: 0.5, ease }}
             >
               <motion.h1
-                className="relative inline-flex text-4xl md:text-5xl font-bold tracking-tight text-white px-6 py-3 rounded-2xl overflow-hidden "
+                className="relative inline-flex text-3xl md:text-5xl font-bold tracking-tight text-white px-6 py-3 rounded-2xl overflow-hidden "
                 transition={{ duration: 2, ease: "easeInOut", delay: 0.6, repeat: Infinity, repeatDelay: 3 }}
               >
                 {/* shimmer sweep */}
@@ -151,7 +151,7 @@ export default function MlrCatalyst() {
             </motion.div>
 
             <motion.p
-              className="text-lg font-medium text-gray-300 mb-4 leading-relaxed"
+              className="text-[24px] font-medium text-gray-300 mb-4 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease, delay: 0.15 }}
@@ -160,13 +160,13 @@ export default function MlrCatalyst() {
             </motion.p>
 
             <motion.p
-              className="text-sm text-gray-400 max-w-3xl mb-8 leading-relaxed"
+              className="text-sm text-gray-400 w-full md:max-w-4xl mb-8 leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, ease, delay: 0.25 }}
             >
               We are now implementing retrieval-augmented generative AI to allow implementation of AI in
-              the tightly regulated Pharma milieu. This AI-powered MLR review tool is aimed at drastically
+              the tightly regulated Pharma milieu. <br/>This AI-powered MLR review tool is aimed at drastically
               reducing the time and effort needed for MLR review.
             </motion.p>
 
@@ -224,7 +224,7 @@ export default function MlrCatalyst() {
                   transition={{ duration: 0.7, ease, delay: i * 0.1 + 0.15 }}
                 >
                   <img src={f.img} alt={f.title} className="h-6 w-6 object-contain" />
-                  <h3 className="text-xl md:text-2xl font-bold tracking-tight text-white">{f.title}</h3>
+                  <h3 className="text-xl md:text-2xl  font-medium tracking-tight text-white">{f.title}</h3>
                   <p className="text-sm text-gray-400 leading-relaxed font-light">{f.desc}</p>
                 </motion.div>
               </div>
@@ -264,7 +264,7 @@ export default function MlrCatalyst() {
                 transition={{ duration: 0.6, ease, delay: i * 0.08 }}
               >
                 <img src={a.img} alt={a.title} className="h-6 w-6 object-contain" />
-                <h4 className="text-[19px] font-bold tracking-tight text-[#FFF] leading-snug">{a.title}</h4>
+                <h4 className="text-[24px] font-medium tracking-tight text-[#FFF] leading-snug">{a.title}</h4>
                 <p className="text-sm text-zinc-300 leading-relaxed">{a.desc}</p>
               </motion.div>
             ))}

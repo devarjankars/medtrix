@@ -34,7 +34,7 @@ function AnimatedTitle({ text }) {
 
   return (
     <motion.h1
-      className="text-4xl lg:text-6xl"
+      className="text-4xl lg:text-5xl"
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: 0.07, delayChildren: 0 } },
@@ -164,7 +164,7 @@ export default function DynamicHeader({
           </motion.div>
 
           {/* Title */}
-          <motion.div variants={fadeUp} className="w-full">
+          <motion.div variants={fadeUp} className="w-full ">
             <AnimatedTitle text={title ?? ""} />
           </motion.div>
 

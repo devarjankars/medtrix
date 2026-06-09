@@ -100,7 +100,7 @@ function DigitalInnovationInner() {
     <main className="relative min-h-screen">
       <DynamicHeader
         tagText="DIGITAL INNOVATION"
-        title="Innovation that creates meaningful impact"
+        title="Innovation That Creates Meaningful Impact"
         paragraphs={strategyParagraphs}
         desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/dibgdesk.jpg"}
         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/dimobi.png"}

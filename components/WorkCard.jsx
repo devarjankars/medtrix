@@ -48,10 +48,10 @@ export default function WorkCard({ project, onExplore }) {
           {/* LEFT */}
           <div>
             <p className="text-xs uppercase text-gray-400 mb-3 tracking-[2px]">
-              Engagement Model:
+              Engagement Model
             </p>
 
-            <p className="text-white text-lg">
+            <p className="text-white text-lg ">
               {project.engagementModel}
             </p>
           </div>

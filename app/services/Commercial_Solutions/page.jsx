@@ -15,7 +15,7 @@ export default function Commercial_Solutions() {
     <main className="relative ">
       <DynamicHeader
         tagText="COMMERCIAL SOLUTIONS"
-        title="Capability to achieve transformational outcomes"
+        title="Capability to Achieve Transformational Outcomes"
          mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/csmobil.png"}
          desktopImgHeight={"700px"}
          desktopImgAlign={"top"}

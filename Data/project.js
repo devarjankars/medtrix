@@ -104,7 +104,7 @@ export const projects = [
     title: "Stemline Therapeutics: Decoupling High-Volume Execution",
     tags: ["OMNICHANNEL", "COMMERCIAL OPERATIONS", "SCALABLE DELIVERY"],
     engagementModel: "Strategic Omnichannel Operations Partnership",
-    timeline: "3-Year Strategic Engagement, Ongoing",
+    timeline: "3 Years Strategic Engagement, Ongoing",
     desc: [
       "Delivered 650+ email campaigns, 320+ banner assets & 70+ website update",
       "40% cost savings by workflow optimization",
@@ -164,7 +164,7 @@ export const projects = [
     title: "CSL Behring: Advancing Cardio-Renal Scientific Engagement",
     tags: ["MEDICAL AFFAIRS", "PHASE 2 DATA", "MSL ENGAGEMENT"],
     engagementModel: "Integrated Scientific Engagement Initiative",
-    timeline: "4-Months, Completed",
+    timeline: "4 Months, Completed",
     desc: [
       "Simplified complex Phase 2 cardio-renal study data into interactive scientific experiences",
       "Enabled connected HCP engagement through microsites, interactive tools, and MSL assets",
@@ -216,7 +216,7 @@ export const projects = [
     title: "Lilly Oncology: Building COMPASS (Clinical Outreach Mapping Platform for Actionable Strategic Support)",
     tags: ["DATA VISUALIZATION", "GEN AI", "MEDICAL AFFAIRS"],
     engagementModel: "Medical Affairs Intelligence & Insights Initiative",
-    timeline: "4-Months, Completed",
+    timeline: "4 Months, Completed",
     desc: [
       "Integrated 12,000+ medical affairs data points into a unified platform",
       "Enabled real-time visibility across MSL, clinical, and engagement activities",
@@ -332,7 +332,7 @@ export const projects = [
     testimonials: [
       {
       quote: "MedTrix helped us transform highly complex rheology data into an intuitive and engaging educational platform for HCPs. Representing information accurately when comparing multiple products with very similar values was a significant challenge, and the way the MedTrix team handled it was truly a masterpiece in programming and scientific visualization. ",
-      author: "Director, Learning and Development "
+      author: "Director, Learning & Development "
     },
     
   ]
@@ -391,7 +391,7 @@ export const projects = [
       }],
     testimonials: [{
       quote: "We are incredibly excited about our augmented reality solution receiving the PM360 PharmaChoice award. Together we could push the limit of innovation to build industry-first AR solutions for patient education.",
-      author: "Disease Area Manager – Hematology and Oncology, Novartis Switzerland"
+      author: "Disease Area Manager – Hematology & Oncology, Novartis Switzerland"
     }]
   },
   {
