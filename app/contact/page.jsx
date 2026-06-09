@@ -263,7 +263,7 @@ function LinkedInButton({ href, size = "w-12 h-12" }) {
             >
               <span className="text-xs font-bold uppercase tracking-[3px] text-[#E1251B]">USA</span>
               <p className="text-gray-300 text-sm leading-relaxed">
-                100 Somerset Corporate Boulevard<br />
+                100 Somerset Corporate Boulevard,<br />
                 2nd Floor, Suite 130,<br />
                 Bridgewater, NJ 08807
               </p>
@@ -281,23 +281,39 @@ function LinkedInButton({ href, size = "w-12 h-12" }) {
               <p className="text-gray-300 text-sm leading-relaxed">
                 1st Floor, 574/A, 1st Main,<br />
                 Sector 6, HSR Layout,<br />
-                bengaluru, 560 102
+                Bengaluru, 560102
               </p>
             </motion.div>
           </div>
 
           <div className="border-t border-[#1e1e1e]" />
 
-          <motion.div
-            className="inline-flex items-center gap-3 text-zinc-400"
+          <motion.a
+            href="https://www.linkedin.com/company/medtrix-healthcare"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-4 bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl px-5 py-4 w-full transition-colors duration-300 hover:border-[#E1251B]/40"
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+            whileHover={{ y: -3 }}
           >
-            <LinkedInButton href="https://www.linkedin.com/company/medtrix-healthcare" size="w-[45px] h-[45px] hover:scale-105" />
-            <span>LinkedIn</span>
-          </motion.div>
+            <LinkedInButton href="https://www.linkedin.com/company/medtrix-healthcare" size="w-[42px] h-[42px]" />
+            <div className="flex flex-col gap-0.5">
+              <span className="text-white font-semibold text-sm">LinkedIn</span>
+              
+            </div>
+            <motion.span
+              className="ml-auto text-zinc-600 group-hover:text-[#E1251B] transition-colors duration-300"
+              animate={{ x: [0, 4, 0] }}
+              transition={{ duration: 1.4, ease: "easeInOut", repeat: Infinity }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </motion.span>
+          </motion.a>
 
         </div>
       </div>
