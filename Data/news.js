@@ -29,7 +29,7 @@ export const newsData = [
       "We're excited for the days ahead as we engage in conversations, collaboration, and knowledge-sharing with industry leaders, partners, and peers.",
       "Events like these create valuable opportunities to exchange ideas, explore emerging trends, and strengthen partnerships that continue to shape the future of healthcare communication and innovation.",
       "We look forward to connecting with attendees, learning from diverse perspectives, and sharing how MedTrix continues to drive impactful healthcare experiences through the convergence of science, creativity, and technology.",
-      "If you're attending as well, we would love to connect and continue the conversation!"
+      "If you're attending, we would love to connect and continue the conversation!"
     ],
     images: [
       { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/nu_1.png", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ascombl.png" },

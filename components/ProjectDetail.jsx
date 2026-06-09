@@ -193,7 +193,6 @@ function ImageSlider({ images = [] }) {
             </div>
           ))}
         </motion.div>
-
         {/* arrows removed */}
       </div>
 
@@ -245,32 +244,36 @@ function ImageSlider({ images = [] }) {
   );
 }
 
-// ── Autoplay video section ───────────────────────────────────────────────────
-function AutoPlayVideo({ src }) {
+// ── Solution video — same container dimensions as ImageSlider ───────────────
+function SolutionVideo({ src }) {
   const ref = useRef(null);
   const videoRef = useRef(null);
-  const inView = useInView(ref, { once: false, amount: 0.5 });
+  const inView = useInView(ref, { once: false, amount: 0.4 });
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    if (inView) { v.play().catch(() => {}); }
-    else { v.pause(); }
+    if (inView) v.play().catch(() => {});
+    else v.pause();
   }, [inView]);
 
   return (
-    <Reveal>
-      <div ref={ref} className="w-full rounded-[22px] overflow-hidden border border-[#1f1f1f] bg-black">
-        <video
-          ref={videoRef}
-          src={src}
-          className="w-full h-full object-cover"
-          muted
-          loop
-          playsInline
-        />
-      </div>
-    </Reveal>
+    <motion.div
+      ref={ref}
+      className="w-full rounded-2xl md:rounded-[28px] overflow-hidden border border-[#812626] bg-[#090202] h-52 sm:h-72 md:h-96 lg:h-120"
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.65, ease }}
+    >
+      <video
+        ref={videoRef}
+        src={src}
+        className="w-full h-full object-contain"
+        muted
+        loop
+        playsInline
+      />
+    </motion.div>
   );
 }
 
@@ -451,21 +454,17 @@ export default function ProjectDetail({ project, onBack }) {
         </section>
       )}
 
-      {/* ── PROJECT VIDEO ──────────────────────────────────────────── */}
-      {project.videoSrc && (
-        <section className="lg:py-[100px] py-[50px] relative">
-          <AutoPlayVideo src={project.videoSrc} />
-          <GlowDivider />
-        </section>
-      )}
-
       {/* ── OUR SOLUTION ─────────────────────────────────────────────────── */}
       {project.solution && (
         <section className="lg:py-[100px] py-[50px]  relative">
           <SectionPill label="Our Solution" />
 
-          {project.slider?.length > 0 && (
-            <Reveal delay={0.05} className="mb-10 ">
+          {project.videoSrc ? (
+            <div className="mb-10">
+              <SolutionVideo src={project.videoSrc} />
+            </div>
+          ) : project.slider?.length > 0 && (
+            <Reveal delay={0.05} className="mb-10">
               <ImageSlider images={project.slider} />
             </Reveal>
           )}

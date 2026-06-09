@@ -55,11 +55,11 @@ export default function NewsDetails({ news, onBack }) {
             
           )}
           
-          {news.category && (
+          {/* {news.category && (
             <span className="text-xs text-gray-500 uppercase tracking-widest border border-[#2a2a2a] px-3 py-1 rounded-full">
               {news.category}
             </span>
-          )}
+          )} */}
         </div>
       )}
 
