@@ -67,7 +67,7 @@ const advantages = [
   {
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/adv6.png",
     title: "Veeva Integration and Secured Knowledge Base/Role-Based Knowledge Access",
-    desc: "Users are granted access to files according to their role. Veeva integration allows users to view and update content within the Veeva platform.",
+    desc: "Veeva integration allows users to view and update content within the Veeva platform. Users are granted access to files according to their role. ",
   },
 ];
 

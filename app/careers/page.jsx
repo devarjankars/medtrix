@@ -32,7 +32,7 @@ export default function Careers() {
 
             {/* ── Life at MedTrix slider ── */}
             <h2 className="text-2xl md:text-3xl font-semibold text-white mb-6">
-              What we believe in
+              What We Believe in
             </h2>
             <div className="mb-20">
               <LifeatMet />

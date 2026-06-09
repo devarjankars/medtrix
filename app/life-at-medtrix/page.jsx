@@ -151,7 +151,7 @@ function LifeAtMedtrixInner() {
         {/* ── Heading ── */}
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
-            What we believe in
+            What We Believe in
           </h1>
         </div>
 
