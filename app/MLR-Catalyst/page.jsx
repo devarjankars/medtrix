@@ -21,7 +21,7 @@ const features = [
   {
     no: "02",
     img: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ai2.png",
-    title: "AI Built Specifically ith Approved Documents",
+    title: "AI Built Specifically with Approved Documents",
     desc: "A system that works strictly off of role-specific, pre-approved knowledge base for Medical Affairs, Brand Teams, Legal, and Regulatory functions.",
     video: "https://d218mh3sadleh5.cloudfront.net/Clients/Gen_AI/assets/Video_2.mp4",
     bg: "bg-zinc-900",

@@ -26,15 +26,15 @@ export const newsData = [
     id: 2,
     date: "February 2026",
     category: "Award",
-    title: "Celebrating the women who shape MedTrix",
+    title: "Celebrating the Women Who Shape MedTrix",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news9.png",
     thumbnailMbl: "",
     body: [
       "Women are at the heart of our journey at Medtrix. Across teams, departments, and functions, they contribute not only through their expertise and leadership, but also through the perspectives, ideas, and energy that shape the way we work and grow together.",
       "This Women's Day, we came together to celebrate those contributions and create space for meaningful conversations around aspirations, ambitions, growth, and the goals that continue to inspire us. The celebration was not just about recognizing achievements, but also about reflecting on the importance of creating an environment where every voice is heard, valued, and empowered.",
-      "The teams shared stories, experiences, and aspirations that highlighted the diversity of journeys and perspectives within our organization. These conversations served as a reminder that progress is built through collaboration, mutual support, and the willingness to uplift one another",
+      "The teams shared stories, experiences, and aspirations that highlighted the diversity of journeys and perspectives within our organization. These conversations served as a reminder that progress is built through collaboration, mutual support, and the willingness to uplift one another.",
       "We also celebrated the collective spirit, resilience, creativity, and leadership that women across MedTrix bring to our organization and the impact they continue to make across the healthcare industry.",
-      "We look forward to continuing to foster a workplace where people feel valued, supported, and empowered to grow"
+      "We look forward to continuing to foster a workplace where people feel valued, supported, and empowered to grow."
     ],
     images: [
       { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsNew_2_1.png", mobile: "" },
@@ -45,7 +45,7 @@ export const newsData = [
     id: 3,
     date: "March 2026",
     category: "Award",
-    title: "Highlights from the MedTrix Q2 Town Hall",
+    title: "Highlights From the MedTrix Q2 Town Hall",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsin3_3.png",
     thumbnailMbl: "",
     body: [
@@ -82,4 +82,6 @@ export const newsData = [
       { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsin4_2.png", mobile: "" },
     ],
   },
+  
 ];
+

@@ -74,7 +74,7 @@ export default function Footer() {
           <p className="text-center text-gray-500 text-sm">© 2026. All rights reserved. Medtrix Healthcare</p>
           <div className="flex gap-6 mt-4 items-center">
             <Link href="https://www.linkedin.com/company/medtrix-healthcare/" className="text-gray-400 text-sm hover:text-white transition-colors duration-200" target="_blank">
-              Linkedin
+              LinkedIn
             </Link>
             <Link href="/privacy-policy" className="text-gray-400 text-sm hover:text-white transition-colors duration-200">
               Privacy Policy
@@ -96,7 +96,7 @@ export default function Footer() {
             exit={{ opacity: 0, x: 60 }}
             transition={{ type: "spring", stiffness: 260, damping: 22 }}
             whileHover="hover"
-            className="fixed bottom-[30%] right-6 z-50 cursor-pointer flex flex-col items-center gap-2"
+            className="fixed bottom-[20%] right-6 z-50 cursor-pointer flex flex-col items-center gap-2"
           >
             {/* Vertical dashed track */}
             <motion.span
@@ -145,7 +145,7 @@ export default function Footer() {
               {/* Arrow bouncing */}
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="18" height="18"
+                width="40" height="40"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="white"
@@ -167,7 +167,6 @@ export default function Footer() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.4 }}
             >
-              Top
             </motion.span>
           </motion.button>
         )}

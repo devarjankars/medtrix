@@ -1,6 +1,25 @@
 export const newsData = [
   {
     id: 1,
+    date: "June 2026",
+    category: "Sponsorship",
+    title: "ASCO 2026: Insights, Innovation, and the Future of HCP Engagement",
+    thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Asco_Linkedin_Post.png",
+    thumbnailMbl: "",
+    body: [
+      "ASCO 2026 brought together oncology experts, healthcare innovators, and industry leaders from around the world, creating an unparalleled opportunity to exchange ideas, explore emerging trends, and discuss the future of cancer care.",
+      "For the MedTrix team, the congress was more than an opportunity to learn about the latest scientific advancements. It was a chance to engage in meaningful conversations with clients, partners, and industry stakeholders about the evolving needs of healthcare professionals and the role of innovative engagement strategies in today's healthcare landscape. ",
+      "One theme that consistently emerged throughout the event was the growing importance of delivering scientific content in ways that are relevant, accessible, and impactful. As oncology research continues to advance at a remarkable pace, healthcare professionals are navigating increasingly complex information. This has created a greater need for communication approaches that not only inform but also enhance understanding and engagement. ",
+      "Discussions at ASCO also highlighted the shift toward more personalized and audience-centric experiences. Whether through digital learning, omnichannel engagement, or innovative educational formats, organizations are exploring new ways to ensure that scientific information reaches the right audience at the right time. ",
+      "Another key takeaway was the value of collaboration. Some of the most insightful moments came from conversations with colleagues, clients, and partners who shared their perspectives on the challenges and opportunities shaping the future of healthcare communication. These exchanges reinforced the importance of bringing together scientific expertise, creativity, and technology to create meaningful experiences for healthcare professionals. ",
+      "As we reflect on our time at ASCO 2026, we return inspired by the ideas shared, energized by the connections made, and excited about the opportunities ahead. The insights gained during the congress will continue to inform how we support our partners in delivering impactful scientific and educational experiences that drive engagement and advance healthcare outcomes. "
+    ],
+    images: [
+      { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/asco_vm.jpg ", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/asco_vm.jpg" },
+    ],
+  },
+  {
+    id: 2,
     date: "May 2026",
     category: "Conference",
     title: "The MedTrix Healthcare Team Is Heading to ASCO 2026!",
@@ -17,7 +36,7 @@ export const newsData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     date: "May 2026",
     category: "Award",
     title: "We Are PM360 ELITE 100 Winner in AI Marketing Pioneers Category ",
@@ -33,7 +52,7 @@ export const newsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     date: "March 2026",
     category: "Award",
     title: "3 Years of Being a Great Place to Work®",
@@ -50,7 +69,7 @@ export const newsData = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     date: "March 2026",
     category: "Awareness",
     title: "Autoimmune Awareness Month: Turning Understanding Into Impact",
@@ -68,7 +87,7 @@ export const newsData = [
     ],
   },
   {
-    id: 5,
+    id: 6,
     date: "April 2025",
     category: "Award",
     title: 'MedTrix Healthcare Named MM+M Agency 100 "Ones to Watch" for 2025',
@@ -89,7 +108,7 @@ export const newsData = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     date: "Octber 2025",
     category: "Sponsorship",
     title: "We're Proud to Sponsor the 2025 #PharmaCX Marketing Summit",
@@ -105,4 +124,5 @@ export const newsData = [
       { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/nu_6.png", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Finalvimal.png " },
     ],
   },
+  
 ];

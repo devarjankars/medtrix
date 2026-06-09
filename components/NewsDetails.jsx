@@ -64,7 +64,7 @@ export default function NewsDetails({ news, onBack }) {
       )}
 
       {/* Title */}
-      <h1 className="text-3xl lg:text-5xl font-normal text-white lg:leading-[51px] mb-4 mt-4">
+      <h1 className="text-[28px] leading-[30px] lg:text-5xl font-normal text-white lg:leading-[51px] mb-4 mt-4">
         {news.title}
       </h1>
 

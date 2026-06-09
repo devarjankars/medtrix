@@ -27,11 +27,11 @@ export default function NewsDetailsNew({ news, onBack }) {
           >
             ←
           </motion.span>
-        Back to News & Updates
+        Back to Life @ Medtrix
      </motion.button>
 
       {/* Title */}
-      <h1 className="text-3xl  lg:text-[56px] font-semibold text-white lg:leading-[72px] mb-8 mt-4 md:mt-10">
+      <h1 className="text-3xl  lg:text-5xl font-normal text-white lg:leading-[51px] mb-4 mt-4 md:mt-10">
         {news.title}
       </h1>
 
@@ -53,7 +53,7 @@ export default function NewsDetailsNew({ news, onBack }) {
 
       {/* Body paragraphs */}
       {news.body && (
-        <div className="space-y-5 text-gray-300 text-sm md:text-base leading-relaxed mb-12">
+        <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed mb-12">
           {news.body.map((para, i) => (
             <p key={i}>{para}</p>
           ))}

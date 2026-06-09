@@ -223,7 +223,7 @@ function ServiceGrid({ label, cols, items }) {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5, ease }}
       >
-        <span className="inline-flex rounded-full bg-[#1a1a1a] border border-white/10 px-5 py-2 text-lg font-semibold uppercase tracking-[3px] text-white/70">
+        <span className="inline-flex rounded-full bg-[#1a1a1a] border border-white/10 px-5 py-2 text-lg font-semibold uppercase tracking-[3px] text-white/70  leading-relaxed ">
           {label}
         </span>
       </motion.div>
@@ -255,7 +255,7 @@ function ServiceGrid({ label, cols, items }) {
                 <img src={service.img} alt={service.title} className="w-full h-full object-contain opacity-90" />
               </div>
             </div>
-            <h3 className="relative text-white text-lg font-semibold mb-6 mt-4 leading-1">{service.title}</h3>
+            <h3 className="relative text-white text-lg font-semibold mb-6 mt-4 leading-relaxed">{service.title}</h3>
             <div className="w-8 h-px bg-[#E1251B]/50 mb-4" />
             <ul className="relative space-y-2">
               {service.points.map((pt, idx) => (

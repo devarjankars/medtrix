@@ -11,7 +11,7 @@ const slides = [
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_1.png",
     imgMbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lm1.png",
     tag: "EQUALITY",
-    title: "Harnessing The Power Of One",
+    title: "Harnessing the Power of One",
     desc: "We believe diverse perspectives drive stronger ideas. By bringing together people from different backgrounds, disciplines, and experiences, we foster a culture built on inclusion, collaboration, and shared purpose.",
   },
   {
@@ -19,7 +19,7 @@ const slides = [
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_2.png",
     imgMbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lm2.png",
     tag: "AUDACITY",
-    title: "Challenging what’s possible",
+    title: "Challenging What’s Possible",
     desc: "We embrace bold thinking and ambitious ideas that push healthcare communication forward. From emerging technologies to new engagement models, we continuously strive to create meaningful impact for our clients and their audiences. ",
   },
   {
@@ -27,7 +27,7 @@ const slides = [
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_3.png",
     imgMbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lm3.png",
     tag: "Originality",
-    title: "Crafting unique experiences",
+    title: "Crafting Unique Experiences",
     desc: "We combine creativity, science, and technology to create innovative healthcare communication experiences. From Artificial Intelligence to Augmented and Mixed Reality, we challenge convention through solutions that redefine engagement. ",
   },
   
@@ -36,7 +36,7 @@ const slides = [
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/f_4.png",
     imgMbl:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/lm4.png",
     tag: "Simplicity",
-    title: "Delivering clarity through design",
+    title: "Delivering Clarity Through Design",
     desc: "We simplify complex concepts through inventive strategy, graphical storytelling, implementation expertise, and high-quality in-house content to create intuitive, user-friendly, end-to-end solutions.",
   },
 ];
@@ -109,7 +109,7 @@ export default function LifeatMet() {
               <div style={{ marginBottom: 8 }}>
                 <span style={{
                   fontSize: 10,
-                  fontWeight: 700,
+                  fontWeight: 400,
                   textTransform: "uppercase",
                   letterSpacing: "0.15em",
                   color: "white",
@@ -117,7 +117,7 @@ export default function LifeatMet() {
                   borderRadius: 9999,
                   display: "inline-block",
                   background: "#742323",
-                  border: "1px solid rgba(255, 255, 255, 0.2)",
+                  
                 }}
                 className="shadow-sm"
                 >
@@ -129,7 +129,7 @@ export default function LifeatMet() {
               <h2 style={{
                 color: "white",
                 fontSize: "clamp(14px, 4vw, 28px)",
-                fontWeight: 600, lineHeight: 1.3,
+                fontWeight: 400, lineHeight: 1.3,
                 marginBottom: 6, maxWidth: 560,
               }}>
                 {slide.title}

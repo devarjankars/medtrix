@@ -12,7 +12,7 @@ export default function JobCard({ job, onClick }) {
   }, [job.id]);
 
   return (
-    <div className="flex flex-col gap-4 bg-[#111111] border border-[#2a2a2a] rounded-[16px] p-6 hover:border-[#3a3a3a] transition-colors duration-300">
+    <div className="flex flex-col  md:gap-2 bg-[#111111] border border-[#2a2a2a] rounded-[16px] p-6 hover:border-[#3a3a3a] transition-colors duration-300">
 
       {/* Title row with saved indicator */}
       {/* <div className="flex items-start justify-between gap-2">
@@ -27,11 +27,11 @@ export default function JobCard({ job, onClick }) {
       </div> */}
 
       {/* Meta */}
-      <div className="flex items-center gap-0 text-gray-400 text-[13px]">
-        <span>Experience : {job.experience}</span>
-        <span className="mx-3 text-[#3a3a3a]">|</span>
+      <p className="font-medium text-white">{job.title}</p>
+      <div className="flex items-center  text-gray-400 text-[13px]">
+        <span>Experience : {job.experience}</span><span className="mx-1 text-[#3a3a3a]">|</span>
         <span>{job.location}</span>
-        <span className="mx-3 text-[#3a3a3a]">|</span>
+        <span className="mx-1 text-[#3a3a3a]">|</span>
         <span>{job.type}</span>
       </div>
 
@@ -42,7 +42,7 @@ export default function JobCard({ job, onClick }) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
-          className="relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-white text-sm font-semibold overflow-hidden cursor-pointer"
+          className="relative inline-flex items-center gap-1 px-4 py-1.5  mt-2 rounded-full text-white text-xs  overflow-hidden cursor-pointer"
           style={{
             background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
             boxShadow: "0 0 14px rgba(225,37,27,0.35)",
@@ -57,7 +57,7 @@ export default function JobCard({ job, onClick }) {
             animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
             transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
           />
-          <span className="relative z-10">Read More</span>
+          <span className="relative z-10 font-normal">Read More</span>
         </motion.button>
       </div>
 
