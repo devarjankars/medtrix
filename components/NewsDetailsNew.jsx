@@ -27,7 +27,7 @@ export default function NewsDetailsNew({ news, onBack }) {
           >
             ←
           </motion.span>
-        Back 
+        Back to News & Updates
      </motion.button>
 
       {/* Title */}

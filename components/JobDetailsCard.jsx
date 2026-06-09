@@ -1,10 +1,13 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { lenisInstance } from "@/components/LenisProvider";
 import { motion } from "framer-motion";
+import ApplyModal from "@/components/ApplyModal";
 
 export default function JobDetailsCard({ job, onBack }) {
+  const [applyOpen, setApplyOpen] = useState(false);
+
   useEffect(() => {
     if (lenisInstance) {
       lenisInstance.scrollTo(0, { immediate: true });
@@ -111,12 +114,30 @@ export default function JobDetailsCard({ job, onBack }) {
       )}
 
 {/* apply */}
+      <div className="flex items-center gap-4 mt-4 mb-8">
+        <motion.button
+          onClick={() => setApplyOpen(true)}
+          className="relative inline-flex items-center gap-2 px-8 py-3 rounded-full text-white font-semibold text-sm overflow-hidden cursor-pointer"
+          style={{ background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)", boxShadow: "0 0 18px rgba(225,37,27,0.4)" }}
+          whileHover={{ scale: 1.04 }}
+          whileTap={{ scale: 0.97 }}
+          transition={{ type: "spring", stiffness: 380, damping: 22 }}
+        >
+          <motion.span
+            className="absolute inset-0 rounded-full pointer-events-none"
+            style={{ background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)", backgroundSize: "200% 100%" }}
+            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
+            transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
+          />
+          <span className="relative z-10">Apply Now</span>
+        </motion.button>
+        <p className="text-gray-500 text-sm">
+          or email us at{" "}
+          <a href="mailto:hr@medtrixhealthcare.com" className="text-[#E1251B] hover:underline">hr@medtrixhealthcare.com</a>
+        </p>
+      </div>
 
- <h2 className="text-white font-bold text-base mb-3">Apply</h2>
-         <p className="text-gray-400 text-m mb-8">
-        Interested in this opportunity? Please send your resume to{" "}
-        <a href="mailto:hr@medtrixhealthcare.com" className="text-[#E1251B] hover:underline">hr@medtrixhealthcare.com</a>
-      </p>
+      {applyOpen && <ApplyModal jobTitle={job.title} onClose={() => setApplyOpen(false)} />}
 
 
     </div>

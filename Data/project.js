@@ -175,8 +175,8 @@ export const projects = [
     result: "The integrated ecosystem enabled continuity between congress engagement and field-force scientific discussions, creating a more connected HCP experience across channels. The platform was successfully launched at ASN 2024, where the touchscreen scientific experience and modular engagement tools supported high levels of interaction. The scalable ecosystem also provided CSL Behring with adaptable assets and infrastructure to support ongoing Phase 3 engagement activities. Following the success of the initiative, CSL Behring continues to engage MedTrix as a strategic partner for ASN 2026, further extending the collaboration to support future congress engagement and scientific communication initiatives.",
     recognitions: [],
     testimonials: [{
-      quote: "",
-      author: ""
+      quote: "CSL - Client Testimonial: Preparing for ASN 2024 required significant coordination and speed, and MedTrix played a key role in helping us make it happen.",
+      author: "Global Medical Lead"
     }]
   },
   {
@@ -227,8 +227,8 @@ export const projects = [
     result: "COMPASS was well received by the Thoracic Oncology team, driving strong engagement during the initial rollout phase and encouraging active collaboration across medical affairs stakeholders. The Lilly team particularly valued the AI-enabled interaction capabilities, which simplified data exploration and accelerated access to actionable insights across multiple medical affairs datasets. With more than 12,000 integrated data points, teams could analyze hospital-level lung cancer burden alongside MSL engagement activities within a single interface to support more informed planning and strategic decision-making. Following the success of the initiative, discussions are currently underway to expand COMPASS adoption across additional tumor franchises within Lilly Oncology Medical Affairs.",
     recognitions: [],
     testimonials: [{
-      quote: "",
-      author: ""
+      quote: "When we first shared the COMPASS idea with MedTrix, we were unsure how it would come together. Their team transformed complex data into an intelligent, highly usable interface for our Medical Affairs team. The AI integration was the icing on the cake. ",
+      author: "Scientific Lead, Medical Affairs "
     }]
   },
 

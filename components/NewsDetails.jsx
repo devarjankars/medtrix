@@ -27,7 +27,7 @@ export default function NewsDetails({ news, onBack }) {
           >
             ←
           </motion.span>
-        Back  to News & Updates
+        Back to News & Updates
      </motion.button>
 
       {/* Date + Category */}
