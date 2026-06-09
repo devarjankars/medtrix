@@ -385,7 +385,8 @@ export const projects = [
     challenge: "Novartis Oncology Switzerland sought an innovative and accessible patient engagement solution for Jakavi that could effectively educate patients living with myeloproliferative neoplasms, particularly polycythemia vera. The goal was to provide disease-state education, treatment mechanism information, FAQs, and support resources through an engaging digital experience optimized for mobile users. Traditional patient engagement approaches lacked interactivity and often required app downloads, creating barriers to accessibility and adoption. Novartis needed a seamless, mobile-friendly solution that could simplify patient access to approved educational content while supporting multilingual engagement across the Swiss market.",
     solution: "MedTrix designed and developed a cutting-edge web-based Augmented Reality (AR) solution that enabled patients to access immersive AR experiences directly through their mobile device browsers without requiring app installation. Patients could activate the experience using a unique code placed on Jakavi packaging, simplifying access to educational and support materials. The platform included disease-state education, Jakavi’s treatment mechanism of action, useful support resources, and an interactive FAQ experience powered through a sequential chat-based interface. To support Switzerland’s multilingual patient population, the entire ecosystem was developed in German, French, and Italian with seamless language-switching capabilities integrated throughout the patient journey.",
     result: "Through this collaboration, MedTrix Healthcare pioneered the world’s first web-based AR solution for patient engagement within the healthcare industry. The innovative experience successfully improved accessibility and engagement by eliminating the need for app downloads while creating a more immersive educational journey for patients living with rare hematologic conditions. Despite the rarity of polycythemia vera, platform analytics demonstrated active and sustained patient usage, validating the solution’s effectiveness in supporting patient education and engagement. The continued expansion of platform features and patient support capabilities further reinforced its value as a scalable and future-ready digital engagement ecosystem for Novartis Oncology.",
-    recognitions: [{ img:["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/recognitions.png"],
+    recognitions: [{ 
+      img:["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/recognitions.png"],
         content:""
       }],
     testimonials: [{
@@ -414,7 +415,12 @@ export const projects = [
     challenge: "Stemline Therapeutics required an HCP-focused educational video to support awareness and management of Capillary Leak Syndrome (CLS) associated with Elzonris treatment. The objective was to communicate complex clinical information through visually engaging storytelling while maintaining scientific accuracy, compliance alignment, and seamless deployment within the HCP website ecosystem. The engagement required rapid execution, with the final video needing to be developed and deployed within less than eight weeks. Conventional production approaches involving time-intensive character illustration, animation, and video development workflows were not feasible within the required timelines. Stemline therefore needed a web-optimized, scalable, and faster content production approach capable of delivering hyper-realistic visuals while supporting MLR expectations and website integration requirements.",
     solution: "MedTrix leveraged an AI-assisted production workflow to create hyper-realistic educational video content with significantly reduced manual effort and accelerated production timelines. The engagement began with MLR alignment and concept briefing sessions to establish clarity around AI-generated content usage, copyright ownership, compliance expectations, and downstream review processes. Our team developed AI-generated characters, backgrounds, environments, and supporting visual assets using an AI-assisted production workflow optimized for speed and scalability. Motion prototyping, iterative refinement, compositing, transitions, AI-generated voiceovers, and final editing were combined into a cohesive scientific storytelling experience optimized for HCP website deployment and engagement.",
     result: "The AI-assisted educational video was successfully approved through MLR review and deployed within Stemline Therapeutics’ HCP website ecosystem. Following storyboard approval, the complete video was developed and finalized within just two weeks, demonstrating the speed and efficiency of the AI-assisted production workflow while maintaining scientific accuracy and visual quality. The web-optimized and visually engaging experience effectively communicated complex clinical concepts related to CLS management while supporting seamless digital integration and HCP accessibility. The initiative demonstrated the value of AI-assisted creative workflows in accelerating scientific content production and was ultimately recognized externally with a Hermes Award for innovation in healthcare communication and digital content execution.",
-    recognitions: [],
+    recognitions: [
+      { 
+      img:["https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd10.png"],
+        content:""
+      }
+    ],
     testimonials: [{
       quote: "This would be one of the few AI-generated educational videos deployed within an HCP website, and MedTrix did an outstanding job bringing it to life. ",
       author: "Associate Director, Marketing "
@@ -477,3 +483,5 @@ export const projects = [
     }]
   }
 ];
+
+// aarmos biryanimmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm,,m.mmmmmmmmmmmmmmmmmmmmmmmmm.mmnj
