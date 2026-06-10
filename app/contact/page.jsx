@@ -137,7 +137,7 @@ function LinkedInCard() {
      
       <div className="flex flex-col gap-0.5">
         
-        <span className="text-white font-semibold text-sm">LinkedIn</span>
+        <span className="text-white font-semibold text-lg">LinkedIn</span>
         {/* <span className="text-zinc-500 text-xs">@medtrix-healthcare</span> */}
       </div>
        <LinkedInIcon className="w-[42px] h-[42px] shrink-0" hovered={hovered} />
@@ -147,9 +147,9 @@ function LinkedInCard() {
         animate={{ x: [0, 4, 0] }}
         transition={{ duration: 1.4, ease: "easeInOut", repeat: Infinity }}
       >
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        {/* <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M5 12h14M12 5l7 7-7 7" />
-        </svg>
+        </svg> */}
       </motion.span>
     </motion.a>
   );
