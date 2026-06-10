@@ -82,7 +82,7 @@ export default function Home() {
             <h4 className="text-sm font-bold tracking-wider text-red-400">USA</h4>
           </div>
           <p className="text-sm text-gray-300 leading-relaxed">
-            100 Somerset Corporate Boulevard<br />
+            100 Somerset Corporate Boulevard,<br />
             2nd Floor, Suite 130,<br />
             Bridgewater, NJ 08807
           </p>
@@ -97,7 +97,7 @@ export default function Home() {
           <p className="text-sm text-gray-300 leading-relaxed">
             1st Floor, 574/A, 1st Main,<br />
             Sector 6, HSR Layout,<br />
-            Bangalore 560 102
+            Bangalore, 560102
           </p>
         </div>
 

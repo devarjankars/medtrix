@@ -5,7 +5,7 @@ const ease = [0.22, 1, 0.36, 1];
 
 const headingWords = [
   { text: "MedTrix", red: false },
-  { text: "-", red: false },
+  { text: "—", red: false },
   { text: "Catalyzing", red: false },
   { text: "Healthcare", red: true },
 ];
