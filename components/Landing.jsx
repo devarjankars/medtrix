@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 const ease = [0.22, 1, 0.36, 1];
 
 const headingWords = [
-  { text: "MedTrix", red: false },
-  { text: "—", red: false },
+  { text: "MedTrix—", red: false, noGap: true },
   { text: "Catalyzing", red: false },
   { text: "Healthcare", red: true },
 ];
@@ -36,7 +35,7 @@ export default function Landing() {
             {headingWords.map((w, i) => (
               <motion.span
                 key={i}
-                className={`inline-block mr-[0.25em] ${w.red ? "text-[#FF2F2F]" : ""}`}
+                className={`inline-block ${w.noGap ? "mr-0" : "mr-[0.25em]"} ${w.red ? "text-[#FF2F2F]" : ""}`}
                 variants={{
                   hidden: { opacity: 0, y: 36, rotateX: -20 },
                   visible: { opacity: 1, y: 0, rotateX: 0, transition: { duration: 0.6, ease } },

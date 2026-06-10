@@ -137,7 +137,7 @@ function LinkedInCard() {
      
       <div className="flex flex-col gap-0.5">
         
-        <span className="text-white font-semibold text-lg">LinkedIn</span>
+        <span className="text-white font-semibold text-md">LinkedIn</span>
         {/* <span className="text-zinc-500 text-xs">@medtrix-healthcare</span> */}
       </div>
        <LinkedInIcon className="w-[42px] h-[42px] shrink-0" hovered={hovered} />

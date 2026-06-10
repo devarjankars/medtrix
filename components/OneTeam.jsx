@@ -329,7 +329,7 @@ function OneTeam() {
       <section className="bg-black lg:py-[100px] py-[50px] px-6 lg:px-0 relative overflow-hidden">
         <Badge label="One Commitment" />
         <SectionHeading red="Our " white="Clients" />
-        <div className="grid grid-cols-3 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-2 items-center justify-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-2 items-center justify-center">
           {clientLogos.map((logo, index) => (
             <motion.div
               key={index}
