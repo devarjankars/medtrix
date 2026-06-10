@@ -101,7 +101,7 @@ export const newsData = [
       "And the impact is being recognized—over 10 industry awards in the past year alone speak to our team's relentless drive to challenge the status quo, raise the bar for excellence, and build the future of healthcare communication.",
       'Being named an MM+M "One to Watch" is not just a milestone for us—it\'s a moment of validation for our team, our partners, and our shared belief in the transformative power of integrated thinking.',
     ],
-    link: "https://www.mmm-online.com",
+    link: "https://www.mmm-online.com/agency-100/ones-to-watch-2025-medtrix/",
     linkLabel: "to read more about what MM+M had to say about MedTrix Healthcare.",
     images: [
       { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/nu_5.png", mobile: "" },

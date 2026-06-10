@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 const mapImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/blankMap.png";
 const mobile_map = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/mobile_map.png";
+const pointerMap= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/pointerMap.png"
 
 export default function Home() {
 
@@ -37,7 +38,7 @@ export default function Home() {
           <img 
             src={mapImg} 
             alt="Office Locations Map" 
-            className="w-full h-auto object-contain opacity-80"
+            className=" hidden lg:block w-full h-auto object-contain opacity-80"
           />
           {/* USA INDICATOR & TEXT */}
           {/* Adjust top% and left% to align exactly with your map's USA red dot */}
@@ -59,10 +60,10 @@ export default function Home() {
           <div className="hidden md:flex flex-col items-center absolute top-[57%] left-[70%] -translate-x-1/2 -translate-y-1/2 group z-10">
             <div className="mt-3 p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">IND</span>
+                <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">INDIA</span>
               </div>
               <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
-                1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, Bangalore 560 102
+                1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, bengaluru 560102
               </p>
             </div>
           </div>
@@ -78,8 +79,13 @@ export default function Home() {
         {/* Mobile USA Card */}
         <div className=" p-4 rounded-xl">
           <div className="flex items-center gap-2 mb-1">
-            
-            <h4 className="text-sm font-bold tracking-wider text-red-400">USA</h4>
+            <div className=" flex-col">
+              <img
+                src={pointerMap}
+                alt="pointer"
+                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
+              />
+            <h4 className="text-sm font-bold tracking-wider text-red-400">USA</h4></div>
           </div>
           <p className="text-sm text-gray-300 leading-relaxed">
             100 Somerset Corporate Boulevard,<br />
@@ -91,13 +97,19 @@ export default function Home() {
         {/* Mobile India Card */}
         <div className="  p-4 rounded-xl">
           <div className="flex items-center gap-2 mb-1">
-            
-            <h4 className="text-sm font-bold tracking-wider text-red-400">IND</h4>
+            <div className=" flex-col">
+              <img
+                src={pointerMap}
+                alt="pointer"
+                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
+              />
+            <h4 className="text-sm font-bold tracking-wider text-red-400">INDIA</h4>
+            </div>
           </div>
           <p className="text-sm text-gray-300 leading-relaxed">
             1st Floor, 574/A, 1st Main,<br />
             Sector 6, HSR Layout,<br />
-            Bangalore, 560102
+            bengaluru, 560102
           </p>
         </div>
 

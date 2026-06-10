@@ -7,7 +7,7 @@ import Link from "next/link";
 
 /* ── Tab data ─────────────────────────────────────────────────────────────── */
 const tabs = [
-  "Experience",
+  "Experiences",
   "Websites",
   "Videos",
   "3D Content, MOA/MOD",
@@ -18,7 +18,7 @@ const tabContent = {
   "Experience": {
     mediaType: "video",
     mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/AMI_Aesthetic_Showcase_01_new.mp4",
-    headline: "Experience",
+    headline: "Experiences",
     desc: "Immersive and stunning experiential solutions for communication at Congresses, Symposia, and meetings that deliver engaging, compliant, and scalable digital experiences",
     points: [
       { title: "Multi-Screen LED Experiences", desc: "Synchronized engagement solutions for Congresses" },

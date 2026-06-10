@@ -95,9 +95,8 @@ function AnimatedParagraph({ text, className = "", delay = 0 }) {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.7, ease, delay }}
-    >
-      {text}
-    </motion.p>
+      dangerouslySetInnerHTML={{ __html: text }}
+    />
   );
 }
 
@@ -546,10 +545,10 @@ export default function ProjectDetail({ project, onBack }) {
                   viewport={{ once: true }}
                   transition={{ duration: 0.55, ease }}
                 >
-                  <span className="text-red-600">The</span> Recognitions
+                  <span className="text-red-600">Our</span> Recognitions
                 </motion.h5>
               </div>
-              <div className="flex flex-col gap-10">
+              <div className="flex flex-col gap-8">
                 {project.recognitions.map((rec, i) => {
                   const imgs = Array.isArray(rec.img) ? rec.img : typeof rec === "string" ? [rec] : [];
                   const content = rec.content || "";

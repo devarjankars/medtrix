@@ -4,6 +4,8 @@ import { useRef, useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
+const pointerMap= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/pointerMap.png"
+
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -291,6 +293,7 @@ function LinkedInCard() {
 
           {/* Address cards side by side */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+           
             <motion.div
               className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-3"
               initial={{ opacity: 0, y: 24 }}
@@ -299,6 +302,11 @@ function LinkedInCard() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -3 }}
             >
+               <img
+                src={pointerMap}
+                alt="pointer"
+                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
+              />
               <span className="text-xs font-bold uppercase tracking-[3px] text-[#E1251B]">USA</span>
               <p className="text-gray-300 text-sm leading-relaxed">
                 100 Somerset Corporate Boulevard,<br />
@@ -315,7 +323,12 @@ function LinkedInCard() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
               whileHover={{ y: -3 }}
             >
-              <span className="text-xs font-bold uppercase tracking-[3px] text-[#E1251B]">IND</span>
+               <img
+                src={pointerMap}
+                alt="pointer"
+                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
+              />
+              <span className="text-xs font-bold uppercase tracking-[3px] text-[#E1251B]">INDIA</span>
               <p className="text-gray-300 text-sm leading-relaxed">
                 1st Floor, 574/A, 1st Main,<br />
                 Sector 6, HSR Layout,<br />

@@ -33,7 +33,7 @@ export default function TermsConditions() {
             MedTrix Healthcare Pvt Ltd. is located at:<br />
             1st Floor, 574/A, 1st Main,<br />
             Sector 6, HSR Layout,<br />
-            Bangalore 560 102.
+            bengaluru 560102.
           </p>
 
           <p>
@@ -191,7 +191,7 @@ export default function TermsConditions() {
               <br />
               1st Floor, 574/A, 1st Main,<br />
               Sector 6, HSR Layout,<br />
-              Bangalore 560 102.
+              bengaluru 560102.
               <br /><br />
               <a href="mailto:info@medtrixhealthcare.com" className="text-[#E1251B] hover:underline">
                 info@medtrixhealthcare.com
