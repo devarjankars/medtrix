@@ -106,13 +106,13 @@ function DigitalInnovationInner() {
         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/dimobi.png"}
       />
 
-      <section className="relative bg-black py-5 md:py-14 px-2 md:px-0 overflow-hidden w-[90%] md:w-[80%] mx-auto">
+      <section className="relative bg-black py-5 md:py-10  md:px-0 overflow-hidden w-[90%] md:w-[80%] mx-auto">
         <div className="mb-10">
 
           {/* Section pill */}
           <motion.div
             ref={pillRef}
-            className="mb-12"
+            className="mb-9"
             initial={{ opacity: 0, y: 20 }}
             animate={pillInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
@@ -138,7 +138,7 @@ function DigitalInnovationInner() {
           {/* Cards grid */}
           <motion.div
             ref={gridRef}
-            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 w-full"
             variants={cardContainer}
             initial="hidden"
             animate={gridInView ? "visible" : "hidden"}

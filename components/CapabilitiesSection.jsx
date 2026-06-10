@@ -123,7 +123,7 @@ export default function CapabilitiesSection() {
 
   return (
     <section ref={sectionRef} className="bg-black">
-      <div className="mx-auto relative pb-28">
+      <div className="mx-auto relative pb-14 md:20">
 
         {/* Header pill */}
         <span className="inline-flex rounded-full mb-8 bg-[#1a1a1a] border border-white/10 px-5 py-2 text-xs font-semibold uppercase tracking-[3px] text-white/70">
@@ -160,9 +160,9 @@ export default function CapabilitiesSection() {
             className="bg-[#111] rounded-[26px] border border-[#1F1F1F] overflow-hidden"
           >
             {/* Media area */}
-            <div className="relative w-full aspect-video bg-black">
+            <div className="relative w-full  aspect-video bg-black ">
               {content.mediaType === "video" ? (
-                <TabVideo key={content.mediaSrc} src={content.mediaSrc} />
+                <TabVideo key={content.mediaSrc} src={content.mediaSrc}  />
               ) : (
                 <Image
                   key={content.mediaSrc}
@@ -179,13 +179,13 @@ export default function CapabilitiesSection() {
             </div>
 
             {/* Text content */}
-            <div className="p-8 lg:p-12">
+            <div className="px-3 md:px-16 py-4">
               <h2 className="text-white text-2xl lg:text-3xl font-bold mb-3">{content.headline}</h2>
               <p className="text-gray-400  text-base lg:text-lg leading-relaxed mb-8 ">
                 {content.desc}
               </p>
 
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid md:grid-cols-3 gap-6">
                 {content.points.map((pt, i) => (
                   <div key={i} className="flex flex-col gap-2">
                     <h2 className="text-[#E1251B] text-5xl font-bold mb-2">
@@ -272,23 +272,23 @@ function SectionGrid({ label, title, items, cols, button, link }) {
         {items.map((item, i) => (
           <motion.div
             key={item.title}
-            className="relative rounded-[16px] overflow-hidden border border-[#1F1F1F]"
+            className="relative rounded-[16px] overflow-hidden "
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
           >
-            <div className="relative w-full h-[320px] bg-[#1a1a1a]">
+            <div className="relative w-full bg-[#1a1a1a]">
               <img
                 src={item.img}
                 alt={item.title}
-                className="absolute inset-0 w-fit h-auto object-contain"
+                className="w-full h-auto block"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-            </div>
-            <div className="px-6 py-5">
-              <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
-              <p className="text-gray-300 text-sm">{item.desc}</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+              <div className="absolute bottom-5 left-0 right-0 px-6 py-5">
+                <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
+                <p className="text-gray-300 text-sm">{item.desc}</p>
+              </div>
             </div>
           </motion.div>
         ))}

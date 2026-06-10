@@ -15,7 +15,7 @@ export const newsData = [
       "As we reflect on our time at ASCO 2026, we return inspired by the ideas shared, energized by the connections made, and excited about the opportunities ahead. The insights gained during the congress will continue to inform how we support our partners in delivering impactful scientific and educational experiences that drive engagement and advance healthcare outcomes. "
     ],
     images: [
-      { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/asco_vm.jpg ", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/asco_vm.jpg" },
+      { desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/asco_vm1.jpg", mobile: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/asco_vm1.jpg" },
     ],
   },
   {
