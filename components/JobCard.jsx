@@ -31,11 +31,11 @@ export default function JobCard({ job, onClick }) {
        <p className="text-[#fff] text-[14px]">Experience: {job.experience}</p>
       <div className="flex flex-wrap items-center justify-between  items-center text-gray-400 text-[13px]">
          <div>
+        <span>{job.workMode}</span>
+        <span className="mx-1 text-[#3a3a3a]">|</span>
         <span>{job.location}</span>
         <span className="mx-1 text-[#3a3a3a]">|</span>
         <span>{job.type}</span>
-        <span className="mx-1 text-[#3a3a3a]">|</span>
-        <span>{job.location}</span>
         </div>
         <div>
         <motion.button

@@ -3,9 +3,9 @@ export const jobsData = [
     id: 1,
     title: "Medical Writer",
     experience: "0-3",
-    location: "On-site",
+    workMode: "On-site",
+    location: "IND",
     type: "Full-Time",
-    location:"IND",
     summary:
       "Use scientific expertise to develop high-quality, publication-ready scientific documents, including manuscripts, posters, abstracts, short communications, presentations, and more.",
     duties: [
@@ -28,9 +28,9 @@ export const jobsData = [
     id: 2,
     title: "Graphic Designer",
     experience: "3-6",
-    location: "On-site",
+    workMode: "On-site",
+    location: "IND",
     type: "Full-Time",
-    location:"IND",
     summary:
       "Create compelling visual content for healthcare brands across digital and print media.",
     duties: [
@@ -48,9 +48,9 @@ export const jobsData = [
     id: 3,
     title: "HTML Developer",
     experience: "2-6",
-    location: "On-site",
+    workMode: "On-site",
+    location: "IND",
     type: "Full-Time",
-    location:"IND",
     summary:
       "Build and maintain high-quality HTML/CSS email templates and web pages for healthcare campaigns.",
     duties: [
@@ -70,9 +70,9 @@ export const jobsData = [
     id: 4,
     title: "Unity Developer",
     experience: "6-7",
-    location: "On-site",
+    workMode: "On-site",
+    location: "USA",
     type: "Part-Time",
-    location:"USA",
     summary:
       "Develop interactive 3D medical simulations and educational experiences using Unity.",
     duties: [
@@ -92,9 +92,9 @@ export const jobsData = [
     id: 5,
     title: "Project Associate",
     experience: "0-3",
-    location: "On-site",
+    workMode: "On-site",
+    location: "IND",
     type: "Full-Time",
-    location:"IND",
     summary:
       "Support project managers in planning, executing, and delivering healthcare communication projects on time.",
     duties: [
@@ -114,9 +114,9 @@ export const jobsData = [
     id: 6,
     title: "Senior Project Manager",
     experience: "7-8",
-    location: "On-site",
+    workMode: "On-site",
+    location: "USA",
     type: "Full-Time",
-    location:"USA",
     summary:
       "Lead end-to-end delivery of complex healthcare communication projects, managing cross-functional teams and client relationships.",
     duties: [
