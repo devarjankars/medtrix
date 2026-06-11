@@ -4,7 +4,7 @@ export const newsData = [
     date: "June 2026",
     category: "Sponsorship",
     title: "ASCO 2026: Insights, Innovation, and the Future of HCP Engagement",
-    thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Asco_Linkedin_Post.png",
+    thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/asco26_thumbnail.png",
     thumbnailMbl: "",
     body: [
       "ASCO 2026 brought together oncology experts, healthcare innovators, and industry leaders from around the world, creating an unparalleled opportunity to exchange ideas, explore emerging trends, and discuss the future of cancer care.",

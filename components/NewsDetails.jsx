@@ -64,31 +64,13 @@ export default function NewsDetails({ news, onBack }) {
       )}
 
       {/* Title */}
-      <h1 className="text-[28px] leading-[30px] lg:text-5xl font-normal text-white lg:leading-[51px] mb-4 mt-4">
+      <h1 className="text-[28px] leading-[30px] lg:text-5xl font-normal text-gray-200 lg:leading-[51px] mb-4 mt-4">
         {news.title}
       </h1>
-
-      {/* Body paragraphs */}
-      {news.body && (
-        <div className="space-y-3 text-gray-300 text-sm md:text-[16px] leading-relaxed mb-10 mt-4">
-          {news.body.map((para, i) => (
-            <p key={i}>{para}</p>
-          ))}
-            {news.link && (
-            <p>
-              <a href={news.link} target="_blank" rel="noopener noreferrer" className="text-[#E1251B] underline underline-offset-4 hover:opacity-80 transition-opacity">
-                Click here
-              </a>
-              {news.linkLabel && ` ${news.linkLabel}`}
-            </p>
-          )}
-        </div>
-      )}
-
-      {/* Image Gallery */}
+        {/* Image Gallery */}
       {news.images && news.images.length > 0 && (
         <div
-          className={`grid gap-4 ${
+          className={`grid gap-4 mt-5 mb-4 md:mt-6 ${
             news.images.length === 1
               ? "grid-cols-1"
               : news.images.length === 2
@@ -120,6 +102,26 @@ export default function NewsDetails({ news, onBack }) {
           })}
         </div>
       )}
+      {/* Body paragraphs */}
+      {news.body && (
+        <div className="space-y-3 text-[#A6A6A6]  text-[14px] lg:text-[19px] leading-normal mb-2 mt-4">
+          {news.body.map((para, i) => (
+            <p key={i}>{para}</p>
+          ))}
+            {news.link && (
+            <p>
+              <a href={news.link} target="_blank" rel="noopener noreferrer" className="text-[#E1251B] underline underline-offset-4 hover:opacity-80 transition-opacity">
+                Click here
+              </a>
+              {news.linkLabel && ` ${news.linkLabel}`}
+            </p>
+          )}
+        </div>
+      )}
+       <div
+          className="pointer-events-none relative left-1/2 -translate-x-1/2 w-full h-[40px] rounded-full my-16"
+          style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)" }}
+        />
     </div>
   );
 }

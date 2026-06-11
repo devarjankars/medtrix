@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
@@ -272,7 +272,7 @@ function SectionGrid({ label, title, items, cols, button, link }) {
         {items.map((item, i) => (
           <motion.div
             key={item.title}
-            className="relative rounded-[16px] overflow-hidden "
+            className="relative rounded-2xl overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
@@ -284,8 +284,10 @@ function SectionGrid({ label, title, items, cols, button, link }) {
                 alt={item.title}
                 className="w-full h-auto block"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-5 left-0 right-0 px-6 py-5">
+              {/* Gradient overlay covering bottom ~50% of image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+              {/* Text overlaid on the image bottom */}
+              <div className="absolute bottom-10 left-0 right-0 px-7 py-5">
                 <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
                 <p className="text-gray-300 text-sm">{item.desc}</p>
               </div>

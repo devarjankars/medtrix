@@ -35,27 +35,13 @@ export default function NewsDetailsNew({ news, onBack }) {
         {news.title}
       </h1>
 
-      {/* Meta */}
-      {/* {(news.date || news.category) && (
-        <div className="flex items-center gap-4 mb-8">
-          {news.date && (
-            <span className="text-xs text-red-500 font-semibold uppercase tracking-widest">
-              {news.date}
-            </span>
-          )}
-          {news.category && (
-            <span className="text-xs text-gray-500 uppercase tracking-widest border border-[#2a2a2a] px-3 py-1 rounded-full">
-              {news.category}
-            </span>
-          )}
-        </div>
-      )} */}
+      
 
       {/* Body paragraphs */}
       {news.body && (
-        <div className="space-y-4 text-gray-300 text-sm md:text-base leading-relaxed mb-12">
+        <div className="space-y-4 text-gray-300 text-[14px] lg:text-[19px] leading-relaxed mb-12  ">
           {news.body.map((para, i) => (
-            <p key={i}>{para}</p>
+            <p className="text-[14px] lg:text-[19px]" key={i}>{para}</p>
           ))}
             {news.link && (
             <p>
