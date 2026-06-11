@@ -118,10 +118,7 @@ export default function NewsDetails({ news, onBack }) {
           )}
         </div>
       )}
-       <div
-          className="pointer-events-none relative left-1/2 -translate-x-1/2 w-full h-[40px] rounded-full my-16"
-          style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)" }}
-        />
+       
     </div>
   );
 }
