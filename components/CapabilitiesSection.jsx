@@ -15,7 +15,7 @@ const tabs = [
 ];
 
 const tabContent = {
-  "Experience": {
+  "Experiences": {
     mediaType: "video",
     mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/AMI_Aesthetic_Showcase_01_new.mp4",
     headline: "Experiences",
@@ -103,7 +103,7 @@ function TabVideo({ src }) {
 
 /* ── Main component ──────────────────────────────────────────────────────── */
 export default function CapabilitiesSection() {
-  const [active, setActive] = useState("Experience");
+  const [active, setActive] = useState("Experiences");
   const sectionRef = useRef(null);
   const [sectionInView, setSectionInView] = useState(false);
 
