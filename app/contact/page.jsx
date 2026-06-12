@@ -182,15 +182,28 @@ function LinkedInCard() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center text-center py-24 gap-4"
+              className="flex flex-col py-16 gap-5"
             >
-              <div className="w-16 h-16 rounded-full bg-[#E1251B]/15 flex items-center justify-center mb-2">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-full bg-[#E1251B]/15 flex items-center justify-center">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <h3 className="text-gray-200 text-[12px] md:text-[16px] font-bold">Message sent!</h3>
-              <p className="text-gray-200 text-[12px] md:text-[16px] max-w-xs">We'll get back to you within 24 hours.</p>
+
+              {/* Message */}
+              <div className="flex flex-col gap-4 text-sm leading-relaxed text-gray-300">
+                <p>
+                  Hi <span className="text-white font-semibold">{formData.name.trim().split(" ")[0]}</span>,
+                </p>
+                <p>
+                  Thank you for contacting us. We have received your inquiry, and a member of our team will review it and get back to you shortly.
+                </p>
+                <p className="flex flex-col gap-0.5">
+                  <span>Best regards,</span>
+                  <span className="text-white font-semibold">Team MedTrix Healthcare</span>
+                </p>
+              </div>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full">
