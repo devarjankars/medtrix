@@ -61,7 +61,7 @@ export default function Landing() {
 
           {/* Paragraphs — slide up sequentially */}
           <motion.p
-            className="text-[14px] text-center lg:text-left lg:text-[19px] text-[#7f818B] leading-relaxed mt-5"
+            className="text-[16px] text-center lg:text-left lg:text-[19px] text-gray-200 leading-relaxed mt-5"
             custom={0}
             initial="hidden"
             animate="visible"
@@ -73,7 +73,7 @@ export default function Landing() {
           </motion.p>
 
           <motion.p
-            className="text-[14px] lg:text-[19px] text-center lg:text-left text-[#7f818B] mt-3 leading-relaxed"
+            className="text-[16px] lg:text-[19px] text-center lg:text-left text-gray-200 mt-3 leading-relaxed"
             custom={1}
             initial="hidden"
             animate="visible"
