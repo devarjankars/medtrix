@@ -333,7 +333,7 @@ function LinkedInCard() {
               <p className="text-[#d1d5db] text-sm leading-relaxed">
                 1st Floor, 574/A, 1st Main,<br />
                 Sector 6, HSR Layout,<br />
-                Bengaluru, 560102
+                Bengaluru, KA 560102
               </p>
             </motion.div>
           </div>

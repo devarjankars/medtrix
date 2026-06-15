@@ -60,10 +60,10 @@ export default function Home() {
           <div className="hidden md:flex flex-col items-center absolute top-[57%] left-[70%] -translate-x-1/2 -translate-y-1/2 group z-10">
             <div className="mt-3 p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">INDIA</span>
+                <span className="text-[16px]  text-red-500 font-bold px-2 py-1 rounded">INDIA</span>
               </div>
               <p className="text-[16px] text-[#d1d5db]  leading-relaxed font-medium">
-                1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, bengaluru 560102
+                1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, Bengaluru, KA 560102
               </p>
             </div>
           </div>
@@ -84,7 +84,7 @@ export default function Home() {
                       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
                       whileHover={{ y: -3 }}
                     >
-                      <img src={pointerMap} alt="pointer" width={32} height={32} className="object-contain shrink-0" />
+                      <img src={pointerMap} alt="pointer" width={42} height={42} className="object-contain shrink-0" />
                       <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">USA</span>
                       <p className="text-[#d1d5db] text-sm leading-relaxed">
                         100 Somerset Corporate Boulevard,<br />
@@ -101,12 +101,12 @@ export default function Home() {
                       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
                       whileHover={{ y: -3 }}
                     >
-                      <img src={pointerMap} alt="pointer" width={32} height={32} className="object-contain shrink-0" />
+                      <img src={pointerMap} alt="pointer" width={42} height={42} className="object-contain shrink-0" />
                       <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">INDIA</span>
                       <p className="text-[#d1d5db] text-sm leading-relaxed">
                         1st Floor, 574/A, 1st Main,<br />
                         Sector 6, HSR Layout,<br />
-                        Bengaluru, 560102
+                        Bengaluru, KA 560102
                       </p>
                     </motion.div>
 

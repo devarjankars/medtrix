@@ -133,7 +133,7 @@ function GlowDivider() {
       whileInView={{ opacity: 1, scaleX: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1.1, ease }}
-      style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.45) 0%, transparent 80%)" }}
+      style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.20) 0%, transparent 50%)" }}
     />
   );
 }
@@ -173,7 +173,7 @@ function ImageSlider({ images = [] }) {
   return (
     <div ref={ref} className="w-full">
       <div
-        className="relative overflow-hidden rounded-2xl md:rounded-[28px] border border-[#812626] bg-[#090202] h-52 sm:h-72 md:h-96 lg:h-120"
+        className="relative overflow-hidden rounded-2xl md:rounded-[28px] border border-[#81262654] bg-[#09020218] h-52 sm:h-72 md:h-96 lg:h-120"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
@@ -424,7 +424,7 @@ export default function ProjectDetail({ project, onBack }) {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             {project.challengeImg ? (
               <Reveal delay={0.05}>
-                <div className="rounded-2xl overflow-hidden flex items-center justify-center bg-[#0d0d0d] p-4 text-[16px] md:text-[20px] ">
+                <div className="rounded-2xl overflow-hidden flex items-center justify-center bg-[#0d0d0d3c] p-4 text-[16px] md:text-[20px] ">
                   <motion.img
                     src={project.challengeImg}
                     alt="Challenge"

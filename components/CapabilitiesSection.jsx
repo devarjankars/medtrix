@@ -180,7 +180,7 @@ export default function CapabilitiesSection() {
 
             {/* Text content */}
             <div className="px-3 md:px-16 py-4">
-              <h2 className="text-white text-2xl lg:text-3xl font-bold mb-3">{content.headline}</h2>
+              <h2 className="text-white text-2xl lg:text-3xl font-medium mb-3">{content.headline}</h2>
               <p className="text-gray-400  text-base lg:text-lg leading-relaxed mb-8 ">
                 {content.desc}
               </p>
@@ -289,7 +289,7 @@ function SectionGrid({ label, title, items, cols, button, link }) {
               {/* Text overlaid on the image bottom */}
               <div className="absolute bottom-10 left-0 right-0 px-7 py-5">
                 <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
-                <p className="text-gray-300 text-sm">{item.desc}</p>
+                <p className="text-[#d1d5db] text-[16px] text-[17px]">{item.desc}</p>
               </div>
             </div>
           </motion.div>

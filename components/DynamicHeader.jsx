@@ -217,7 +217,7 @@ export default function DynamicHeader({
       {/* bottom glow */}
       <div
         className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[60px] rounded-full"
-        style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.4) 0%, transparent 80%)" }}
+        style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.3) 0%, transparent 60%)" }}
       />
     </section>
   );

@@ -51,7 +51,7 @@ export default function TestimonialSlider({
   if (items.length === 1) {
     return (
       <section ref={wrapRef} className="py-8 w-full">
-        <div className="w-full rounded-[36px] p-8 md:p-10 border border-red-500 bg-black">
+        <div className="w-full rounded-[36px] p-8 md:p-10 border-[1px] border-red-400 bg-black">
           <p className="text-white text-[16px] md:text-[20px]  leading-[130%]">
             &ldquo;{items[0].text}&rdquo;
           </p>
