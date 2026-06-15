@@ -198,7 +198,7 @@ export default function DynamicHeader({
                   variants={fadeUp}
                   whileHover={{ y: -4, borderColor: "rgba(225,37,27,0.5)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                  className="bg-[#1b1a1a] border-[1px] border-[#2A2A2A]  rounded-2xl p-6 cursor-default"
+                  className="bg-[#1b1a1a]  rounded-2xl p-6 cursor-default"
                 >
                   <div className="w-6 h-0.5 bg-red-500 mb-2" />
                   <h3 className=" opacity-[40%] text-[#fff] text-[22px] leading-[30px] ">{card.value}</h3>
