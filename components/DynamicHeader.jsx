@@ -189,7 +189,7 @@ export default function DynamicHeader({
           {/* Stats cards */}
           {statsCards.length > 0 && (
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2 "
+              className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-2 mb-2 "
               variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1 } } }}
             >
               {statsCards.map((card, index) => (
@@ -198,7 +198,7 @@ export default function DynamicHeader({
                   variants={fadeUp}
                   whileHover={{ y: -4, borderColor: "rgba(225,37,27,0.5)" }}
                   transition={{ type: "spring", stiffness: 300, damping: 22 }}
-                  className="bg-[#323232] border border-[#2A2A2A] rounded-2xl p-6 cursor-default"
+                  className="bg-[#1b1a1a] border-[1px] border-[#2A2A2A]  rounded-2xl p-6 cursor-default"
                 >
                   <div className="w-6 h-0.5 bg-red-500 mb-2" />
                   <h3 className=" opacity-[40%] text-[#fff] text-[22px] leading-[30px] ">{card.value}</h3>

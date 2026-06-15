@@ -126,7 +126,7 @@ function LinkedInCard() {
       href="https://www.linkedin.com/company/medtrix-healthcare"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-4 bg-[#0f0f0f] border rounded-2xl px-5 py-4 w-fit transition-colors duration-300"
+      className="inline-flex items-center gap-4   rounded-2xl w-fit transition-colors duration-300"
       style={{ borderColor: hovered ? "rgba(225,37,27,0.4)" : "#1e1e1e" }}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -137,12 +137,8 @@ function LinkedInCard() {
       onMouseLeave={() => setHovered(false)}
     >
      
-      <div className="flex flex-col gap-0.5">
-        
-        <span className="text-white font-semibold text-md">LinkedIn</span>
-        {/* <span className="text-zinc-500 text-xs">@medtrix-healthcare</span> */}
-      </div>
-       <LinkedInIcon className="w-[42px] h-[42px] shrink-0" hovered={hovered} />
+      <LinkedInIcon className="w-[42px] h-[42px] shrink-0" hovered={hovered} />
+       
       <motion.span
         className="ml-auto shrink-0 transition-colors duration-300"
         style={{ color: hovered ? "#E1251B" : "#52525b" }}
