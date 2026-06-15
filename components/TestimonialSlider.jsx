@@ -52,7 +52,7 @@ export default function TestimonialSlider({
     return (
       <section ref={wrapRef} className="py-8 w-full">
         <div className="w-full rounded-[36px] p-8 md:p-10 border border-red-500 bg-black">
-          <p className="text-white text-[16px] md:text-[20px]  leading-loose">
+          <p className="text-white text-[16px] md:text-[20px]  leading-[130%]">
             &ldquo;{items[0].text}&rdquo;
           </p>
           <div className="mt-10">
@@ -113,7 +113,7 @@ export default function TestimonialSlider({
               {/* Quote mark */}
               
 
-              <p className="text-white text-base md:text-lg lg:text-[20px] leading-loose">
+              <p className="text-white text-base md:text-lg lg:text-[20px] leading-[130%]">
                 "{item.text}"
               </p>
 

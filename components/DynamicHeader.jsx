@@ -180,7 +180,7 @@ export default function DynamicHeader({
             <motion.p
               key={index}
               variants={fadeUp}
-              className="text-[#d1d5db] text-[16px] lg:text-[19px] leading-8"
+              className="text-[#d1d5db] text-[16px] lg:text-[19px] leading-[130%]"
             >
               {item}
             </motion.p>

@@ -95,7 +95,7 @@ function NewsPageInner() {
               NEWS &amp; UPDATES
             </span>
           </motion.div>
-          <CardGrid newsData={newsData} onOpen={openNews} />
+          <CardGrid newsData={[...newsData].reverse()} onOpen={openNews} />
         </>
       )}
       <div
