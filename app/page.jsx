@@ -49,7 +49,7 @@ export default function Home() {
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">USA</span>
               </div>
-              <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
+              <p className="text-[16px] text-[#d1d5db] leading-relaxed font-medium">
                 100 Somerset Corporate Boulevard 2nd Floor, Suite 130, Bridgewater, NJ 08807
               </p>
             </div>
@@ -62,7 +62,7 @@ export default function Home() {
               <div className="flex items-center gap-2 mt-2">
                 <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">INDIA</span>
               </div>
-              <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
+              <p className="text-[16px] text-[#d1d5db]  leading-relaxed font-medium">
                 1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, bengaluru 560102
               </p>
             </div>
@@ -74,7 +74,7 @@ export default function Home() {
       {/* ======================================================== */}
       {/* MOBILE ADDRESS CARDS (Shows only on Mobile screen sizes) */}
       {/* ======================================================== */}
-      <div className="grid grid-cols-1 gap-4 mt-6 md:hidden">
+      <div className="grid grid-cols-1 gap-4 mt-2 md:hidden">
         
         {/* Mobile USA Card */}
         <div className=" p-4 rounded-xl">
@@ -83,7 +83,7 @@ export default function Home() {
               <img
                 src={pointerMap}
                 alt="pointer"
-                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
+                className="w-12 h-11 ml-[-10] object-contain  transition-transform duration-300"
               />
             <h4 className="text-sm font-bold tracking-wider text-red-400">USA</h4></div>
           </div>
@@ -101,7 +101,7 @@ export default function Home() {
               <img
                 src={pointerMap}
                 alt="pointer"
-                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
+                className="w-10 h-10 ml-[-10] object-contain   transition-transform duration-300"
               />
             <h4 className="text-sm font-bold tracking-wider text-red-400">INDIA</h4>
             </div>

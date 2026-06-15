@@ -134,7 +134,7 @@ function WorkPageInner() {
                 "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
             }}
           >
-            <span className="inline-block text-[14px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
+            <span className="inline-block text-[16px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
               our work
             </span>
           </div>
@@ -213,7 +213,7 @@ function WorkPageInner() {
                   className={`relative z-10 text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
                     isActive
                       ? "bg-white/20 text-white"
-                      : "bg-zinc-700 text-gray-400"
+                      : "bg-zinc-700 text-[#d1d5db] "
                   }`}
                   initial={{ opacity: 0, scale: 0.6 }}
                   animate={{ opacity: 1, scale: 1 }}
