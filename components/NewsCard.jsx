@@ -30,7 +30,7 @@ export default function NewsCard({ news, onClick }) {
           {news.date && (
             <span className="text-gray-400 text-xs uppercase tracking-widest mb-2 block">{news.date}</span>
           )}
-          <h3 className="text-[#A6A6A6] text-[14px] lg:text-[19px] font-semibold leading-normal line-clamp-3">
+          <h3 className="text-[#d1d5db] text-[16px] lg:text-[19px] font-semibold leading-normal line-clamp-3">
             {news.title}
           </h3>
         </div>

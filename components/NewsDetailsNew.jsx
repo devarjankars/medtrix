@@ -39,9 +39,9 @@ export default function NewsDetailsNew({ news, onBack }) {
 
       {/* Body paragraphs */}
       {news.body && (
-        <div className="space-y-4 text-gray-300 text-[14px] lg:text-[19px] leading-relaxed mb-12  ">
+        <div className="space-y-4 text-[#d1d5db] text-[16px] lg:text-[19px] leading-relaxed mb-12  ">
           {news.body.map((para, i) => (
-            <p className="text-[14px] lg:text-[19px]" key={i}>{para}</p>
+            <p className="text-[16px] lg:text-[19px]" key={i}>{para}</p>
           ))}
             {news.link && (
             <p>

@@ -424,7 +424,7 @@ export default function ProjectDetail({ project, onBack }) {
           <div className="grid lg:grid-cols-2 gap-14 items-center">
             {project.challengeImg ? (
               <Reveal delay={0.05}>
-                <div className="rounded-2xl overflow-hidden flex items-center justify-center bg-[#0d0d0d] p-4 text-[14px] md:text-[20px] ">
+                <div className="rounded-2xl overflow-hidden flex items-center justify-center bg-[#0d0d0d] p-4 text-[16px] md:text-[20px] ">
                   <motion.img
                     src={project.challengeImg}
                     alt="Challenge"
@@ -443,7 +443,7 @@ export default function ProjectDetail({ project, onBack }) {
             ) : (
               <AnimatedParagraph
                 text={project.challenge}
-                className="text-[14px] md:text-[20px] leading-[1.9] text-[#A6A6A6]"
+                className="text-[16px] md:text-[20px]  leading-[1.9] text-[#d1d5db]"
                 delay={0.1}
               />
             )}
@@ -473,7 +473,7 @@ export default function ProjectDetail({ project, onBack }) {
           ) : (
             <AnimatedParagraph
               text={project.solution}
-              className="text-[14px] md:text-[20px]  leading-[1.9] text-[#A6A6A6]"
+              className="text-[16px] md:text-[20px]  leading-[1.9] text-[#A6A6A6]"
               delay={0.1}
             />
           )}
@@ -491,7 +491,7 @@ export default function ProjectDetail({ project, onBack }) {
             <div className="border border-[#1f1f1f] rounded-2xl px-6 md:px-12 py-10">
               <AnimatedParagraph
                 text={project.result}
-                className="text-[14px] md:text-[20px]  leading-[1.9] text-[#A6A6A6]"
+                className="text-[16px] md:text-[20px]  leading-[1.9] text-[#d1d5db]"
               />
             </div>
           </Reveal>

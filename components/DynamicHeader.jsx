@@ -157,7 +157,7 @@ export default function DynamicHeader({
                   "linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
               }}
             >
-              <span className="inline-block text-[14px] font-bold tracking-[0.15em] uppercase text-white bg-[#0c0606] px-4 py-1.5 rounded-full">
+              <span className="inline-block text-[16px] font-bold tracking-[0.15em] uppercase text-white bg-[#0c0606] px-4 py-1.5 rounded-full">
                 {tagText}
               </span>
             </div>
@@ -180,7 +180,7 @@ export default function DynamicHeader({
             <motion.p
               key={index}
               variants={fadeUp}
-              className="text-[#7f818B] text-[14px] lg:text-[19px] leading-8"
+              className="text-[#d1d5db] text-[16px] lg:text-[19px] leading-8"
             >
               {item}
             </motion.p>

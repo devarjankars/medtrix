@@ -47,7 +47,7 @@ export default function NewsDetails({ news, onBack }) {
                               "linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
                           }}
                         >
-                          <span className="inline-block text-[14px] font-light tracking-[0.15em] uppercase text-white bg-[#0c0606] px-3 py-1 rounded-full">
+                          <span className="inline-block text-[16px] font-light tracking-[0.15em] uppercase text-white bg-[#0c0606] px-3 py-1 rounded-full">
                             {news.date}
                           </span>
                         </div>
@@ -104,7 +104,7 @@ export default function NewsDetails({ news, onBack }) {
       )}
       {/* Body paragraphs */}
       {news.body && (
-        <div className="space-y-3 text-[#A6A6A6]  text-[14px] lg:text-[19px] leading-normal mb-2 mt-4">
+        <div className="space-y-3 text-[#A6A6A6]  text-[16px] lg:text-[19px] leading-normal mb-2 mt-4">
           {news.body.map((para, i) => (
             <p key={i}>{para}</p>
           ))}

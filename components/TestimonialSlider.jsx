@@ -52,14 +52,14 @@ export default function TestimonialSlider({
     return (
       <section ref={wrapRef} className="py-8 w-full">
         <div className="w-full rounded-[36px] p-8 md:p-10 border border-red-500 bg-black">
-          <p className="text-white text-[14px] md:text-[20px]  leading-loose">
+          <p className="text-white text-[16px] md:text-[20px]  leading-loose">
             &ldquo;{items[0].text}&rdquo;
           </p>
           <div className="mt-10">
-            <h3 className="text-white text-[14px] md:text-[20px]  font-semibold">
+            <h3 className="text-white text-[16px] md:text-[20px]  font-semibold">
               {items[0].role}
             </h3>
-            <p className="mt-1 text-gray-400 text-[14px] md:text-[20px] ">{items[0].location}</p>
+            <p className="mt-1 text-gray-400 text-[16px] md:text-[20px] ">{items[0].location}</p>
           </div>
         </div>
       </section>

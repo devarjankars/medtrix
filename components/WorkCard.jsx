@@ -62,7 +62,7 @@ export default function WorkCard({ project, onExplore }) {
               Timeline/Status
             </p>
 
-            <p className="text-[14px] md:text-[18px] text-gray-300 leading-normal">
+            <p className="text-[16px] md:text-[18px] text-gray-300 leading-normal">
               {project.timeline}
             </p>
           </div>
