@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import WorkCard from "@/components/WorkCard";
 import ProjectDetail from "@/components/ProjectDetail";
 import { projects } from "@/Data/project";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { lenisInstance } from "@/components/LenisProvider";
 
 const filters = [
@@ -44,6 +44,28 @@ function WorkPageInner() {
   const projectId = searchParams.get("project");
 
   const [active, setActive] = useState("COMMERCIAL SOLUTIONS");
+
+  const scrollRowRef = useRef(null);
+  const btnRefs = useRef({});
+
+  // Scroll active button into view on mobile — left-aligned with next button peeking
+  useEffect(() => {
+    const row = scrollRowRef.current;
+    const btn = btnRefs.current[active];
+    if (!row || !btn) return;
+
+    // Only auto-scroll on mobile (row is scrollable)
+    if (row.scrollWidth <= row.clientWidth) return;
+
+    const rowLeft = row.getBoundingClientRect().left;
+    const btnLeft = btn.getBoundingClientRect().left;
+    const currentScroll = row.scrollLeft;
+
+    // Align button to ~16px from the left edge so it's fully visible
+    const targetScroll = currentScroll + (btnLeft - rowLeft) - 16;
+
+    row.scrollTo({ left: Math.max(0, targetScroll), behavior: "smooth" });
+  }, [active]);
 
   const selectedProject = projectId
     ? projects.find((p) => p.id === projectId) ?? null
@@ -112,16 +134,22 @@ function WorkPageInner() {
                 "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
             }}
           >
-            <span className="inline-block text-[14px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
+            <span className="inline-block text-[16px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
               our work
             </span>
           </div>
-      <motion.div
-        variants={filterRow}
-        initial="hidden"
-        animate="visible"
-        className="flex gap-3 mb-14 flex-nowrap overflow-x-auto md:flex-wrap md:overflow-visible scrollbar-none pb-2 md:pb-0 cursor-pointer"
-      >
+      {/* Filter row — on mobile scrolls horizontally; active button auto-aligns left */}
+      <div className="relative mb-14">
+        {/* Right fade mask — hints there's more to scroll on mobile */}
+        <div className="pointer-events-none absolute right-0 top-0 bottom-2 w-16 bg-gradient-to-l from-black to-transparent z-10 md:hidden" />
+
+        <motion.div
+          variants={filterRow}
+          initial="hidden"
+          animate="visible"
+          ref={scrollRowRef}
+          className="flex gap-3 flex-nowrap overflow-x-auto md:flex-wrap md:overflow-visible scrollbar-none pb-2 md:pb-0 cursor-pointer"
+        >
         {filters.map((filter) => {
           const isActive = active === filter;
           const count = projects.filter(
@@ -131,6 +159,7 @@ function WorkPageInner() {
           return (
             <motion.button
               key={filter}
+              ref={(el) => { btnRefs.current[filter] = el; }}
               variants={filterBtn}
               onClick={() => setActive(filter)}
               whileHover={{ scale: 0.99, y: -2 }}
@@ -175,7 +204,7 @@ function WorkPageInner() {
                 />
               )}
 
-              <span className="relative z-10">{filter}</span>
+              <span className="relative z-10">{filter === "STRATEGY AND CONSULTING" ? "STRATEGY & CONSULTING" : filter}</span>
 
               {/* count badge */}
               <AnimatePresence mode="wait">
@@ -184,7 +213,7 @@ function WorkPageInner() {
                   className={`relative z-10 text-[11px] px-1.5 py-0.5 rounded-full font-bold ${
                     isActive
                       ? "bg-white/20 text-white"
-                      : "bg-zinc-700 text-zinc-400"
+                      : "bg-zinc-700 text-[#d1d5db] "
                   }`}
                   initial={{ opacity: 0, scale: 0.6 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -198,7 +227,7 @@ function WorkPageInner() {
           );
         })}
       </motion.div>
-
+      </div>
       {/* PROJECT CARDS */}
       <AnimatePresence mode="wait">
         <motion.div key={active}>

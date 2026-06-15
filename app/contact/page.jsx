@@ -126,7 +126,7 @@ function LinkedInCard() {
       href="https://www.linkedin.com/company/medtrix-healthcare"
       target="_blank"
       rel="noopener noreferrer"
-      className="inline-flex items-center gap-4 bg-[#0f0f0f] border rounded-2xl px-5 py-4 w-fit transition-colors duration-300"
+      className="inline-flex items-center gap-4   rounded-2xl w-fit transition-colors duration-300"
       style={{ borderColor: hovered ? "rgba(225,37,27,0.4)" : "#1e1e1e" }}
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -137,12 +137,8 @@ function LinkedInCard() {
       onMouseLeave={() => setHovered(false)}
     >
      
-      <div className="flex flex-col gap-0.5">
-        
-        <span className="text-white font-semibold text-md">LinkedIn</span>
-        {/* <span className="text-zinc-500 text-xs">@medtrix-healthcare</span> */}
-      </div>
-       <LinkedInIcon className="w-[42px] h-[42px] shrink-0" hovered={hovered} />
+      <LinkedInIcon className="w-[42px] h-[42px] shrink-0" hovered={hovered} />
+       
       <motion.span
         className="ml-auto shrink-0 transition-colors duration-300"
         style={{ color: hovered ? "#E1251B" : "#52525b" }}
@@ -182,28 +178,41 @@ function LinkedInCard() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="flex flex-col items-center justify-center text-center py-24 gap-4"
+              className="flex flex-col py-16 gap-5"
             >
-              <div className="w-16 h-16 rounded-full bg-[#E1251B]/15 flex items-center justify-center mb-2">
-                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Icon */}
+              <div className="w-14 h-14 rounded-full bg-[#E1251B]/15 flex items-center justify-center">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#E1251B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="20 6 9 17 4 12" />
                 </svg>
               </div>
-              <h3 className="text-white text-lg md:text-2xl font-bold">Message sent!</h3>
-              <p className="text-zinc-400 text-sm max-w-xs">We'll get back to you within 24 hours.</p>
+
+              {/* Message */}
+              <div className="flex flex-col gap-4 text-sm leading-relaxed text-[#d1d5db]">
+                <p>
+                  Hi <span className="text-white font-semibold">{formData.name.trim().split(" ")[0]}</span>,
+                </p>
+                <p>
+                  Thank you for contacting us. We have received your inquiry, and a member of our team will review it and get back to you shortly.
+                </p>
+                <p className="flex flex-col gap-0.5">
+                  <span>Best regards,</span>
+                  <span className="text-white font-semibold">Team MedTrix Healthcare</span>
+                </p>
+              </div>
             </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="flex flex-col gap-5 w-full">
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
-                  <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                  <label className="text-xs font-semibold uppercase tracking-[2px] text-[16px] md:text-[18px] text-[#d1d5db]">
                     Name<span className="text-[#E1251B]">*</span>
                   </label>
                   <input required name="name" value={formData.name} onChange={handleChange} type="text" placeholder="Your name" className={inputClass} />
                 </div>
                 <div className="form-field flex flex-col gap-1.5 opacity-0">
-                  <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                  <label className="text-xs font-semibold uppercase tracking-[2px] text-[12px] md:text-[16px] text-[#d1d5db]">
                     Company
                   </label>
                   <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Your company" className={inputClass} />
@@ -213,21 +222,21 @@ function LinkedInCard() {
               </div>
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
-                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                <label className="text-[12px] md:text-[16px] text-[#d1d5db] font-semibold uppercase tracking-[2px]">
                   Email<span className="text-[#E1251B]">*</span>
                 </label>
                 <input required name="email" value={formData.email} onChange={handleChange} type="email" placeholder="you@company.com" className={inputClass} />
               </div>
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
-                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                <label className="text-xs font-semibold uppercase tracking-[2px] text-[12px] md:text-[16px] text-[#d1d5db]">
                   Subject<span className="text-[#E1251B]">*</span>
                 </label>
                 <input required name="subject" value={formData.subject} onChange={handleChange} type="text" placeholder="How can we help?" className={inputClass} />
               </div>
 
               <div className="form-field flex flex-col gap-1.5 opacity-0">
-                <label className="text-xs font-semibold uppercase tracking-[2px] text-zinc-400">
+                <label className="text-xs font-semibold uppercase tracking-[2px] text-[12px] md:text-[16px] text-[#d1d5db]">
                   Message<span className="text-[#E1251B]">*</span>
                 </label>
                 <textarea
@@ -269,11 +278,11 @@ function LinkedInCard() {
                       <svg className="animate-spin relative z-10" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
                         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                       </svg>
-                      <span className="relative z-10">Sending...</span>
+                      <span className="relative z-10 text-[12px] md:text-[16px] ">Sending...</span>
                     </>
                   ) : (
                     <>
-                      <span className="relative z-10 text-lg ">Submit</span>
+                      <span className="relative z-10 text-[12px] md:text-[16px]  ">Submit</span>
                       <motion.span
                         className="relative z-10"
                         animate={{ x: [0, 4, 0] }}
@@ -289,11 +298,11 @@ function LinkedInCard() {
         </div>
 
         {/* ── RIGHT: Addresses + LinkedIn ── */}
-        <div className="flex flex-col gap-8 order-first lg:order-last" ref={cardsRef}>
+        <div className="w-full flex flex-col gap-8 order-first lg:order-last" ref={cardsRef}>
 
           {/* Address cards side by side */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-           
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+
             <motion.div
               className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-3"
               initial={{ opacity: 0, y: 24 }}
@@ -302,13 +311,9 @@ function LinkedInCard() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ y: -3 }}
             >
-               <img
-                src={pointerMap}
-                alt="pointer"
-                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
-              />
-              <span className="text-xs font-bold uppercase tracking-[3px] text-[#E1251B]">USA</span>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <img src={pointerMap} alt="pointer" width={32} height={32} className="object-contain shrink-0" />
+              <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">USA</span>
+              <p className="text-[#d1d5db] text-sm leading-relaxed">
                 100 Somerset Corporate Boulevard,<br />
                 2nd Floor, Suite 130,<br />
                 Bridgewater, NJ 08807
@@ -323,16 +328,12 @@ function LinkedInCard() {
               transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
               whileHover={{ y: -3 }}
             >
-               <img
-                src={pointerMap}
-                alt="pointer"
-                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
-              />
-              <span className="text-xs font-bold uppercase tracking-[3px] text-[#E1251B]">INDIA</span>
-              <p className="text-gray-300 text-sm leading-relaxed">
+              <img src={pointerMap} alt="pointer" width={32} height={32} className="object-contain shrink-0" />
+              <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">INDIA</span>
+              <p className="text-[#d1d5db] text-sm leading-relaxed">
                 1st Floor, 574/A, 1st Main,<br />
                 Sector 6, HSR Layout,<br />
-                Bengaluru, 560102
+                Bengaluru, KA 560102
               </p>
             </motion.div>
           </div>

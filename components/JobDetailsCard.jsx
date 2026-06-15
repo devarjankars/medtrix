@@ -46,6 +46,8 @@ export default function JobDetailsCard({ job, onBack }) {
       <div className="flex items-center gap-0 text-gray-400 text-[13px] mb-6">
         <span>Experience : {job.experience}</span>
         <span className="mx-3 text-[#3a3a3a]">|</span>
+        <span>{job.workMode}</span>
+        <span className="mx-3 text-[#3a3a3a]">|</span>
         <span>{job.location}</span>
         <span className="mx-3 text-[#3a3a3a]">|</span>
         <span>{job.type}</span>

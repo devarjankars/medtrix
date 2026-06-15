@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function WorkCard({ project, onExplore }) {
   return (
     <motion.div
-      className="grid lg:grid-cols-2 gap-8 mb-20"
+      className="grid lg:grid-cols-2 gap-8 mb-20 items-center"
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.15 }}
@@ -25,7 +25,7 @@ export default function WorkCard({ project, onExplore }) {
       </motion.div>
 
       {/* RIGHT */}
-      <div className="text-white flex flex-col">
+      <div className="text-[#d1d5db]  flex flex-col">
 
         <h2 className=" text-3xl  lg:text-[36px]  leading-tight  font-medium  mb-6"
         >
@@ -37,7 +37,7 @@ export default function WorkCard({ project, onExplore }) {
           {project.tags.map((tag) => (
             <span
               key={tag}
-              className=" border  border-[#3A3A3A]   px-4 py-2 rounded-full text-[11px] uppercase tracking-[2px]" >
+              className=" border  border-[#3A3A3A]   px-4 py-2 rounded-full text-[12px] uppercase tracking-[2px]" >
               {tag}
             </span>
           ))}
@@ -62,14 +62,14 @@ export default function WorkCard({ project, onExplore }) {
               Timeline/Status
             </p>
 
-            <p className="text-white text-lg">
+            <p className="text-[16px] md:text-[18px] text-[#d1d5db]  leading-[130%]">
               {project.timeline}
             </p>
           </div>
         </div>
 
         {/* DESCRIPTION */}
-        <div className="space-y-3 text-gray-300 mb-10">
+        <div className="space-y-3 text-[#d1d5db]  text-[16px] lg:text-[18px] mb-10">
           {project.desc.map((item) => (
             <p key={item} className="flex items-start gap-3">
               <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#E1251B] shrink-0" />

@@ -64,7 +64,7 @@ export const newsData = [
   },
   {
     id: 4,
-    date: "March 2026",
+    date: "December 2025",
     category: "Award",
     title: "Christmas 2025 at MedTrix: A Celebration to Remember ",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news7.png",

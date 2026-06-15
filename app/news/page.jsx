@@ -33,9 +33,9 @@ function CardGrid({ newsData, onOpen }) {
 function NewsPageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const newsId = searchParams.get("id");
+  const newsTag = searchParams.get("article");
 
-  const selected = newsId ? newsData.find((n) => String(n.id) === newsId) ?? null : null;
+  const selected = newsTag ? newsData.find((n) => n.pageTag === newsTag) ?? null : null;
 
   // Restore scroll when returning to list
   useEffect(() => {
@@ -62,13 +62,13 @@ function NewsPageInner() {
         else window.scrollTo(0, 0);
       });
     }
-  }, [newsId]);
+  }, [newsTag]);
 
   function openNews(item) {
     import("@/components/LenisProvider").then(({ lenisInstance }) => {
       sessionStorage.setItem(scrollKey, String(lenisInstance?.scroll ?? window.scrollY));
     });
-    router.push(`/news?id=${item.id}`, { scroll: false });
+    router.push(`/news?article=${item.pageTag}`, { scroll: false });
   }
 
   function goBack() {
@@ -91,13 +91,17 @@ function NewsPageInner() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease }}
           >
-            <span className="inline-block text-[14px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
+            <span className="inline-block text-[16px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
               NEWS &amp; UPDATES
             </span>
           </motion.div>
-          <CardGrid newsData={newsData} onOpen={openNews} />
+          <CardGrid newsData={[...newsData].reverse()} onOpen={openNews} />
         </>
       )}
+      <div
+          className="pointer-events-none relative left-1/2 -translate-x-1/2 w-full h-[40px] rounded-full my-16"
+          style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)" }}
+        />
     </section>
   );
 }

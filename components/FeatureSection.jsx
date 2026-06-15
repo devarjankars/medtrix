@@ -76,7 +76,7 @@ export default function FeatureSection({
           </div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
 
           {/* Image side */}
           <motion.div
@@ -106,7 +106,7 @@ export default function FeatureSection({
               <motion.p
                 key={index}
                 variants={item}
-                className="text-[#A6A6A6] text-base md:text-lg leading-relaxed font-light w-full lg:w-[80%]"
+                className="text-[#d1d5db]  text-[16px] md:text-[19px] leading-[130%] font-light w-full lg:w-[80%]"
               >
                 {text}
               </motion.p>

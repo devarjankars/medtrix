@@ -223,7 +223,7 @@ function ServiceGrid({ label, cols, items }) {
         viewport={{ once: true, amount: 0.5 }}
         transition={{ duration: 0.5, ease }}
       >
-        <span className="inline-flex rounded-full bg-[#1a1a1a] border border-white/10 px-5 py-2 text-lg font-semibold uppercase tracking-[3px] text-white/70  leading-relaxed ">
+        <span className="inline-flex rounded-full bg-[#1a1a1a] border border-white/10 px-5 py-2 text-lg font-semibold uppercase tracking-[3px] text-[#d1d5db]   leading-relaxed ">
           {label}
         </span>
       </motion.div>
@@ -259,7 +259,7 @@ function ServiceGrid({ label, cols, items }) {
             <div className="w-8 h-px bg-[#E1251B]/50 mb-4" />
             <ul className="relative space-y-2">
               {service.points.map((pt, idx) => (
-                <li key={idx} className="text-zinc-400 text-md leading-normal flex gap-2">
+                <li key={idx} className="text-[#d1d5db]  text-[16px] lg:text-[18px] leading-normal flex gap-2">
                   <span className="shrink-0 mt-[9px] w-1 h-1 rounded-full bg-[#E1251B]/60" />
                   <span>{pt}</span>
                 </li>

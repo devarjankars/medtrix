@@ -26,12 +26,14 @@ export default function Footer() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const obs = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.1 }
-    );
-    if (footerRef.current) obs.observe(footerRef.current);
-    return () => obs.disconnect();
+    function handleScroll() {
+      const scrolled = window.scrollY;
+      const total = document.documentElement.scrollHeight - window.innerHeight;
+      setVisible(total > 0 && scrolled / total >= 0.2);
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   function scrollToTop() {
@@ -42,7 +44,7 @@ export default function Footer() {
   }
 
   return (
-    <footer ref={footerRef} className="bg-black">
+    <footer className="bg-black">
       <div className="w-[90%] md:w-[80%] mx-auto py-8 md:py-16">
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-12">
 
@@ -71,7 +73,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="border-t border-[#222222] pt-8 mt-8 flex flex-col lg:flex-row items-center justify-center lg:justify-between">
+        <div className="border-t border-[#222222] pt-8 mt-8 flex flex-col lg:flex-row items-center justify-center lg:justify-between ">
           <p className="text-center text-gray-500 text-sm">© 2026 Medtrix Healthcare. All rights reserved.</p>
           <div className="flex gap-6 mt-4 items-center">
             <Link href="https://www.linkedin.com/company/medtrix-healthcare/" className="text-gray-400 hover:text-white transition-colors duration-200" target="_blank" aria-label="LinkedIn">
@@ -102,7 +104,7 @@ export default function Footer() {
             exit={{ opacity: 0, x: 60 }}
             transition={{ type: "spring", stiffness: 260, damping: 22 }}
             whileHover="hover"
-            className="fixed bottom-[20%] right-6 z-50 cursor-pointer flex flex-col items-center gap-2"
+            className="fixed bottom-8 right-6 z-50 cursor-pointer flex flex-col items-center gap-2"
           >
             {/* Vertical dashed track */}
             <motion.span

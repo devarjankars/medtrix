@@ -143,14 +143,14 @@ function LifeAtMedtrixInner() {
               "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
           }}
         >
-          <span className="inline-block text-[14px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
+          <span className="inline-block text-[16px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
             LIFE @ MEDTRIX
           </span>
         </div>
 
         {/* ── Heading ── */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-200 leading-tight mb-4">
             What We Believe in
           </h1>
         </div>
@@ -199,10 +199,7 @@ function LifeAtMedtrixInner() {
         <JobCardsGrid jobsData={jobsData} openJob={openJob} />
 
         {/* ── Bottom glow ── */}
-        <div
-          className="pointer-events-none relative left-1/2 -translate-x-1/2 w-full h-[40px] rounded-full my-16"
-          style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)" }}
-        />
+        
 
       </section>
     </main>

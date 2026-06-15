@@ -28,21 +28,22 @@ export default function JobCard({ job, onClick }) {
 
       {/* Meta */}
       <p className="font-medium text-white">{job.title}</p>
-      <div className="flex items-center  text-gray-400 text-[13px]">
-        <span>Experience: {job.experience}</span><span className="mx-1 text-[#3a3a3a]">|</span>
+       <p className="text-[#fff] text-[16px]">Experience: {job.experience}</p>
+      <div className="flex flex-wrap items-center justify-between  items-center text-gray-400 text-[13px]">
+         <div>
+        <span>{job.workMode}</span>
+        <span className="mx-1 text-[#3a3a3a]">|</span>
         <span>{job.location}</span>
         <span className="mx-1 text-[#3a3a3a]">|</span>
         <span>{job.type}</span>
-      </div>
-
-      {/* CTA */}
-      <div>
+        </div>
+        <div>
         <motion.button
           onClick={() => onClick?.(job)}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
-          className="relative inline-flex items-center gap-1 px-4 py-1.5  mt-2 rounded-full text-white text-xs  overflow-hidden cursor-pointer"
+          className="relative inline-flex items-center gap-1 px-4 py-1.5   rounded-full text-white text-xs  overflow-hidden cursor-pointer"
           style={{
             background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
             boxShadow: "0 0 14px rgba(225,37,27,0.35)",
@@ -60,6 +61,10 @@ export default function JobCard({ job, onClick }) {
           <span className="relative z-10 font-normal">Read More</span>
         </motion.button>
       </div>
+      </div>
+
+      {/* CTA */}
+ 
 
     </div>
   );

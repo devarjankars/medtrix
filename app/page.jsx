@@ -49,7 +49,7 @@ export default function Home() {
               <div className="flex items-center gap-2 mb-1">
                 <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">USA</span>
               </div>
-              <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
+              <p className="text-[16px] text-[#d1d5db] leading-relaxed font-medium">
                 100 Somerset Corporate Boulevard 2nd Floor, Suite 130, Bridgewater, NJ 08807
               </p>
             </div>
@@ -60,10 +60,10 @@ export default function Home() {
           <div className="hidden md:flex flex-col items-center absolute top-[57%] left-[70%] -translate-x-1/2 -translate-y-1/2 group z-10">
             <div className="mt-3 p-4 rounded-xl shadow-2xl max-w-[260px] transition-all duration-300 group-hover:border-red-500">
               <div className="flex items-center gap-2 mt-2">
-                <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">INDIA</span>
+                <span className="text-[16px]  text-red-500 font-bold px-2 py-1 rounded">INDIA</span>
               </div>
-              <p className="text-[16px] text-gray-300 leading-relaxed font-medium">
-                1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, bengaluru 560102
+              <p className="text-[16px] text-[#d1d5db]  leading-relaxed font-medium">
+                1st Floor, 574/A, 1st Main, Sector 6, HSR Layout, Bengaluru, KA 560102
               </p>
             </div>
           </div>
@@ -74,44 +74,41 @@ export default function Home() {
       {/* ======================================================== */}
       {/* MOBILE ADDRESS CARDS (Shows only on Mobile screen sizes) */}
       {/* ======================================================== */}
-      <div className="grid grid-cols-1 gap-4 mt-6 md:hidden">
+      <div className="grid grid-cols-1 gap-4 mt-2 md:hidden">
         
-        {/* Mobile USA Card */}
-        <div className=" p-4 rounded-xl">
-          <div className="flex items-center gap-2 mb-1">
-            <div className=" flex-col">
-              <img
-                src={pointerMap}
-                alt="pointer"
-                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
-              />
-            <h4 className="text-sm font-bold tracking-wider text-red-400">USA</h4></div>
-          </div>
-          <p className="text-sm text-gray-300 leading-relaxed">
-            100 Somerset Corporate Boulevard,<br />
-            2nd Floor, Suite 130,<br />
-            Bridgewater, NJ 08807
-          </p>
-        </div>
-
-        {/* Mobile India Card */}
-        <div className="  p-4 rounded-xl">
-          <div className="flex items-center gap-2 mb-1">
-            <div className=" flex-col">
-              <img
-                src={pointerMap}
-                alt="pointer"
-                className="w-10 h-full ml-[-10] object-top  transition-transform duration-300"
-              />
-            <h4 className="text-sm font-bold tracking-wider text-red-400">INDIA</h4>
-            </div>
-          </div>
-          <p className="text-sm text-gray-300 leading-relaxed">
-            1st Floor, 574/A, 1st Main,<br />
-            Sector 6, HSR Layout,<br />
-            bengaluru, 560102
-          </p>
-        </div>
+         <motion.div
+                      className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-3"
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                      whileHover={{ y: -3 }}
+                    >
+                      <img src={pointerMap} alt="pointer" width={42} height={42} className="object-contain shrink-0" />
+                      <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">USA</span>
+                      <p className="text-[#d1d5db] text-sm leading-relaxed">
+                        100 Somerset Corporate Boulevard,<br />
+                        2nd Floor, Suite 130,<br />
+                        Bridgewater, NJ 08807
+                      </p>
+                    </motion.div>
+        
+                    <motion.div
+                      className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-3"
+                      initial={{ opacity: 0, y: 24 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+                      whileHover={{ y: -3 }}
+                    >
+                      <img src={pointerMap} alt="pointer" width={42} height={42} className="object-contain shrink-0" />
+                      <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">INDIA</span>
+                      <p className="text-[#d1d5db] text-sm leading-relaxed">
+                        1st Floor, 574/A, 1st Main,<br />
+                        Sector 6, HSR Layout,<br />
+                        Bengaluru, KA 560102
+                      </p>
+                    </motion.div>
 
       </div>
        <div className="w-full px-6 lg:px-1 flex flex-col items-center py-10   gap-4">

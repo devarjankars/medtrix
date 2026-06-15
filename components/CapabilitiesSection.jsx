@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
@@ -15,7 +15,7 @@ const tabs = [
 ];
 
 const tabContent = {
-  "Experience": {
+  "Experiences": {
     mediaType: "video",
     mediaSrc: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Video/AMI_Aesthetic_Showcase_01_new.mp4",
     headline: "Experiences",
@@ -103,7 +103,7 @@ function TabVideo({ src }) {
 
 /* ── Main component ──────────────────────────────────────────────────────── */
 export default function CapabilitiesSection() {
-  const [active, setActive] = useState("Experience");
+  const [active, setActive] = useState("Experiences");
   const sectionRef = useRef(null);
   const [sectionInView, setSectionInView] = useState(false);
 
@@ -157,7 +157,7 @@ export default function CapabilitiesSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="bg-[#111] rounded-[26px] border border-[#1F1F1F] overflow-hidden"
+            className="bg-[#111] rounded-none lg:rounded-[26px] border border-[#1F1F1F] overflow-hidden"
           >
             {/* Media area */}
             <div className="relative w-full  aspect-video bg-black ">
@@ -180,7 +180,7 @@ export default function CapabilitiesSection() {
 
             {/* Text content */}
             <div className="px-3 md:px-16 py-4">
-              <h2 className="text-white text-2xl lg:text-3xl font-bold mb-3">{content.headline}</h2>
+              <h2 className="text-white text-2xl lg:text-3xl font-medium mb-3">{content.headline}</h2>
               <p className="text-gray-400  text-base lg:text-lg leading-relaxed mb-8 ">
                 {content.desc}
               </p>
@@ -272,22 +272,24 @@ function SectionGrid({ label, title, items, cols, button, link }) {
         {items.map((item, i) => (
           <motion.div
             key={item.title}
-            className="relative rounded-[16px] overflow-hidden "
+            className="relative rounded-none lg:rounded-2xl overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
           >
-            <div className="relative w-full bg-[#1a1a1a]">
+            <div className="relative w-full ">
               <img
                 src={item.img}
                 alt={item.title}
                 className="w-full h-auto block"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-              <div className="absolute bottom-5 left-0 right-0 px-6 py-5">
+              {/* Gradient overlay covering bottom ~50% of image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+              {/* Text overlaid on the image bottom */}
+              <div className="absolute bottom-10 left-0 right-0 px-7 py-5">
                 <h3 className="text-white text-xl font-semibold mb-1">{item.title}</h3>
-                <p className="text-gray-300 text-sm">{item.desc}</p>
+                <p className="text-[#d1d5db] text-[16px] text-[17px]">{item.desc}</p>
               </div>
             </div>
           </motion.div>

@@ -133,7 +133,7 @@ function GlowDivider() {
       whileInView={{ opacity: 1, scaleX: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1.1, ease }}
-      style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.45) 0%, transparent 80%)" }}
+      style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.20) 0%, transparent 50%)" }}
     />
   );
 }
@@ -173,7 +173,7 @@ function ImageSlider({ images = [] }) {
   return (
     <div ref={ref} className="w-full">
       <div
-        className="relative overflow-hidden rounded-2xl md:rounded-[28px] border border-[#812626] bg-[#090202] h-52 sm:h-72 md:h-96 lg:h-120"
+        className="relative overflow-hidden rounded-2xl md:rounded-[28px] border border-[#81262654] bg-[#09020218] h-52 sm:h-72 md:h-96 lg:h-120"
         onTouchStart={onTouchStart}
         onTouchEnd={onTouchEnd}
       >
@@ -347,7 +347,7 @@ export default function ProjectDetail({ project, onBack }) {
         {/* title—word by word */}
         <AnimatedHeading
           text={project.title}
-          className="text-3xl md:text-4xl font-medium leading-tight mb-6"
+          className="text-3xl md:text-5xl font-medium leading-tight mb-6 text-gray-200"
         />
 
         {/* tags */}
@@ -368,7 +368,7 @@ export default function ProjectDetail({ project, onBack }) {
                   hidden: { opacity: 0, scale: 0.8, y: 8 },
                   visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.4, ease } },
                 }}
-                className="px-3 py-1 rounded-full text-xs font-semibold tracking-widest uppercase border border-[#676767] text-[#ededed]"
+                className="px-3 py-1 rounded-full text-sm font-semibold tracking-widest uppercase border   border-[#676767] text-[#ededed]"
               >
                 {tag}
               </motion.span>
@@ -386,7 +386,7 @@ export default function ProjectDetail({ project, onBack }) {
           >
             {project.engagementModel && (
               <div className="flex flex-col gap-1">
-                <span className="text-[11px] tracking-[3px] uppercase text-[#e7e7e7]">Engagement Model</span>
+                <span className="text-[12px] tracking-[3px] uppercase text-[#e7e7e7]">Engagement Model</span>
                 <span className="text-sm text-[#8d8c8c]">{project.engagementModel}</span>
               </div>
             )}
@@ -418,13 +418,13 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── CHALLENGE ────────────────────────────────────────────────────── */}
       {project.challenge && (
-        <section className="lg:py-[100px] py-[50px] relative">
+        <section className="py-10 lg:py-15 relative">
           <SectionPill label="Challenge" />
 
-          <div className="grid lg:grid-cols-2 gap-14 items-center rounded-2xl  md:px-0 py-10">
+          <div className="grid lg:grid-cols-2 gap-14 items-center">
             {project.challengeImg ? (
               <Reveal delay={0.05}>
-                <div className="rounded-2xl overflow-hidden flex items-center justify-center bg-[#0d0d0d] p-4">
+                <div className="rounded-2xl overflow-hidden flex items-center justify-center bg-[#0d0d0d3c] p-4 text-[16px] md:text-[20px] ">
                   <motion.img
                     src={project.challengeImg}
                     alt="Challenge"
@@ -443,7 +443,7 @@ export default function ProjectDetail({ project, onBack }) {
             ) : (
               <AnimatedParagraph
                 text={project.challenge}
-                className="text-[20px] leading-[1.9] text-[#A6A6A6]"
+                className="text-[16px] md:text-[20px]  leading-[1.9] text-[#d1d5db]"
                 delay={0.1}
               />
             )}
@@ -455,7 +455,7 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── OUR SOLUTION ─────────────────────────────────────────────────── */}
       {project.solution && (
-        <section className="lg:py-[100px] py-[50px]  relative">
+        <section className="py-10 lg:py-15 relative">
           <SectionPill label="Our Solution" />
 
           {project.videoSrc ? (
@@ -473,7 +473,7 @@ export default function ProjectDetail({ project, onBack }) {
           ) : (
             <AnimatedParagraph
               text={project.solution}
-              className="text-[18px] leading-[1.9] text-[#A6A6A6] px-6 md:px-0 py-0"
+              className="text-[16px] md:text-[20px]  leading-[1.9] text-[#d1d5db]"
               delay={0.1}
             />
           )}
@@ -484,49 +484,15 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── THE RESULT ───────────────────────────────────────────────────── */}
       {project.result && (
-        <section className="lg:py-[100px] py-[50px] relative">
+        <section className="py-10 lg:py-15 relative">
           <SectionPill label="The Result" />
 
           <Reveal delay={0.05}>
-            <div className="border border-[#1f1f1f] rounded-2xl px-6 md:px-12 py-14 flex flex-col gap-10">
+            <div className="border border-[#1f1f1f] rounded-2xl px-6 md:px-12 py-10">
               <AnimatedParagraph
                 text={project.result}
-                className="text-[18px] leading-[1.9] text-[#A6A6A6]"
+                className="text-[16px] md:text-[20px]  leading-[1.9] text-[#d1d5db]"
               />
-
-              {/* {project.desc?.length > 0 && (
-                <motion.ul
-                  className="flex flex-col gap-1"
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.1 }}
-                  variants={{
-                    hidden: {},
-                    visible: { transition: { staggerChildren: 0.1 } },
-                  }}
-                >
-                  {project.desc.map((item, i) => (
-                    <motion.li
-                      key={i}
-                      variants={{
-                        hidden: { opacity: 0, x: -24 },
-                        visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease } },
-                      }}
-                      className="flex items-start gap-4 text-[#A6A6A6] text-lg"
-                    >
-                      
-                      <motion.span
-                        className="mt-2.5 w-2 h-2 rounded-full bg-[#705c5b] shrink-0"
-                        variants={{
-                          hidden: { scale: 0 },
-                          visible: { scale: 1, transition: { duration: 0.3, ease } },
-                        }}
-                      />
-                      {item}
-                    </motion.li>
-                  ))}
-                </motion.ul>
-              )} */}
             </div>
           </Reveal>
 
@@ -536,8 +502,8 @@ export default function ProjectDetail({ project, onBack }) {
               const imgs = Array.isArray(rec.img) ? rec.img : typeof rec === "string" ? [rec] : [];
               return imgs.length > 0;
             }) && (
-            <Reveal delay={0.1} className="py-10">
-              <div className="w-full flex justify-center py-8">
+            <Reveal delay={0.1} className="mt-16">
+              <div className="w-full flex justify-center mb-10">
                 <motion.h5
                   className="text-white font-semibold text-4xl"
                   initial={{ opacity: 0, y: 20 }}
@@ -594,7 +560,7 @@ export default function ProjectDetail({ project, onBack }) {
 
       {/* ── CLIENT TESTIMONIAL ───────────────────────────────────────────── */}
       {testimonialItems.length > 0 && (
-        <section className="lg:py-[100px] py-[50px] relative">
+        <section className="py-10 lg:py-15 relative">
           <SectionPill label="Client Testimonial" />
           <Reveal delay={0.08}>
             <TestimonialSlider items={testimonialItems} autoPlay={true} delay={3000} />
