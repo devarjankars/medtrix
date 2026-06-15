@@ -302,10 +302,10 @@ function LinkedInCard() {
         </div>
 
         {/* ── RIGHT: Addresses + LinkedIn ── */}
-        <div className="flex flex-col gap-8 order-first lg:order-last" ref={cardsRef}>
+        <div className="w-full flex flex-col gap-8 order-first lg:order-last" ref={cardsRef}>
 
           {/* Address cards side by side */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
 
             <motion.div
               className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-3"
@@ -316,7 +316,7 @@ function LinkedInCard() {
               whileHover={{ y: -3 }}
             >
               <img src={pointerMap} alt="pointer" width={32} height={32} className="object-contain shrink-0" />
-              <span className="text-sm font-bold uppercase tracking-[3px] text-[#E1251B]">USA</span>
+              <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">USA</span>
               <p className="text-[#d1d5db] text-sm leading-relaxed">
                 100 Somerset Corporate Boulevard,<br />
                 2nd Floor, Suite 130,<br />
@@ -333,7 +333,7 @@ function LinkedInCard() {
               whileHover={{ y: -3 }}
             >
               <img src={pointerMap} alt="pointer" width={32} height={32} className="object-contain shrink-0" />
-              <span className="text-sm font-bold uppercase tracking-[3px] text-[#E1251B]">INDIA</span>
+              <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">INDIA</span>
               <p className="text-[#d1d5db] text-sm leading-relaxed">
                 1st Floor, 574/A, 1st Main,<br />
                 Sector 6, HSR Layout,<br />
