@@ -106,7 +106,7 @@ export default function FeatureSection({
               <motion.p
                 key={index}
                 variants={item}
-                className="text-[#A6A6A6] text-base md:text-lg leading-relaxed font-light w-full lg:w-[80%]"
+                className="text-[#d1d5db]  text-[16px] md:text-[19px] leading-relaxed font-light w-full lg:w-[80%]"
               >
                 {text}
               </motion.p>
