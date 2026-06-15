@@ -473,7 +473,7 @@ export default function ProjectDetail({ project, onBack }) {
           ) : (
             <AnimatedParagraph
               text={project.solution}
-              className="text-[16px] md:text-[20px]  leading-[1.9] text-[#A6A6A6]"
+              className="text-[16px] md:text-[20px]  leading-[1.9] text-[#d1d5db]"
               delay={0.1}
             />
           )}

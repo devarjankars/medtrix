@@ -157,7 +157,7 @@ export default function CapabilitiesSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.28, ease: "easeOut" }}
-            className="bg-[#111] rounded-[26px] border border-[#1F1F1F] overflow-hidden"
+            className="bg-[#111] rounded-none lg:rounded-[26px] border border-[#1F1F1F] overflow-hidden"
           >
             {/* Media area */}
             <div className="relative w-full  aspect-video bg-black ">
@@ -272,13 +272,13 @@ function SectionGrid({ label, title, items, cols, button, link }) {
         {items.map((item, i) => (
           <motion.div
             key={item.title}
-            className="relative rounded-2xl overflow-hidden"
+            className="relative rounded-none lg:rounded-2xl overflow-hidden"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: i * 0.1 }}
           >
-            <div className="relative w-full bg-[#1a1a1a]">
+            <div className="relative w-full ">
               <img
                 src={item.img}
                 alt={item.title}
