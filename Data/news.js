@@ -1,8 +1,10 @@
 export const newsData = [
   {
     id: 1,
+    pageTag: "pharmaCX-marketing-summit-2025",
     date: "Octber 2025",
     category: "Sponsorship",
+    pagetag:"Sponsor the 2025 #PharmaCX Marketing Summit",
     title: "We're Proud to Sponsor the 2025 #PharmaCX Marketing Summit",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news6.png",
     thumbnailMbl: "",
@@ -18,8 +20,10 @@ export const newsData = [
   },
   {
     id: 2,
+    pageTag: "mmm-agency-100-ones-to-watch-2025",
     date: "April 2025",
     category: "Award",
+    pagetag:"MM+M Agency 100",
     title: 'MedTrix Healthcare Named MM+M Agency 100 "Ones to Watch" for 2025',
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news5.png",
     thumbnailMbl: "",
@@ -39,8 +43,10 @@ export const newsData = [
   },
   {
     id: 3,
+    pageTag: "autoimmune-awareness-month",
     date: "March 2026",
     category: "Awareness",
+     pagetag:"Autoimmune diseases",
     title: "Autoimmune Awareness Month: Turning Understanding Into Impact",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news4.png",
     thumbnailMbl: "",
@@ -57,8 +63,10 @@ export const newsData = [
   },
   {
     id: 4,
+    pageTag: "great-place-to-work-3-years",
     date: "March 2026",
     category: "Award",
+     pagetag:"Great Place to Work",
     title: "3 Years of Being a Great Place to Work®",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news3.png",
     thumbnailMbl: "",
@@ -74,8 +82,10 @@ export const newsData = [
   },
   {
     id: 5,
+    pageTag: "pm360-elite-100-ai-marketing-pioneers",
     date: "May 2026",
     category: "Award",
+     pagetag:"PM360 ELITE 100 Winner",
     title: "We Are PM360 ELITE 100 Winner in AI Marketing Pioneers Category ",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news2.png",
     thumbnailMbl: "",
@@ -90,8 +100,10 @@ export const newsData = [
   },
   {
     id: 6,
+    pageTag: "medtrix-heading-to-asco-2026",
     date: "May 2026",
     category: "Conference",
+     pagetag:"Heading to ASCO 2026",
     title: "The MedTrix Healthcare Team Is Heading to ASCO 2026!",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/news.png",
     thumbnailMbl: "",
@@ -107,8 +119,10 @@ export const newsData = [
   },
   {
     id: 7,
+    pageTag: "asco-2026-insights-innovation-hcp-engagement",
     date: "June 2026",
     category: "Sponsorship",
+     pagetag:"ASCO 2026: Insights",
     title: "ASCO 2026: Insights, Innovation, and the Future of HCP Engagement",
     thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/asco26_thumbnail.png",
     thumbnailMbl: "",

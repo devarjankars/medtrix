@@ -33,9 +33,9 @@ function CardGrid({ newsData, onOpen }) {
 function NewsPageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const newsId = searchParams.get("id");
+  const newsTag = searchParams.get("article");
 
-  const selected = newsId ? newsData.find((n) => String(n.id) === newsId) ?? null : null;
+  const selected = newsTag ? newsData.find((n) => n.pageTag === newsTag) ?? null : null;
 
   // Restore scroll when returning to list
   useEffect(() => {
@@ -62,13 +62,13 @@ function NewsPageInner() {
         else window.scrollTo(0, 0);
       });
     }
-  }, [newsId]);
+  }, [newsTag]);
 
   function openNews(item) {
     import("@/components/LenisProvider").then(({ lenisInstance }) => {
       sessionStorage.setItem(scrollKey, String(lenisInstance?.scroll ?? window.scrollY));
     });
-    router.push(`/news?id=${item.id}`, { scroll: false });
+    router.push(`/news?article=${item.pageTag}`, { scroll: false });
   }
 
   function goBack() {
