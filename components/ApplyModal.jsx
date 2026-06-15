@@ -341,22 +341,22 @@ export default function ApplyModal({ jobTitle, onClose }) {
                 {/* Personal info */}
                 <div>
                   <h3 className="text-white font-semibold text-lg mb-1">Personal Information</h3>
-                  <p className="text-zinc-500 text-xs mb-5">Fields marked <span className="text-[#FF3838]">*</span> are required.</p>
+                  <p className="text-zinc-500 text-xs mb-5">Fields marked<span className="text-[#FF3838]">*</span> are required.</p>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
                     <div>
-                      <label className="block text-xs text-zinc-400 mb-1.5">First name <span className="text-[#FF3838]">*</span></label>
+                      <label className="block text-xs text-zinc-200 mb-1.5 font-normal">First name<span className="text-[#FF3838]">*</span></label>
                       <input required value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className={inputCls} placeholder="John" />
                     </div>
 
                     <div>
-                      <label className="block text-xs text-zinc-400 mb-1.5">Last name <span className="text-[#FF3838]">*</span></label>
+                      <label className="block text-xs text-zinc-200 mb-1.5 font-normal">Last name<span className="text-[#FF3838]">*</span></label>
                       <input required value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} className={inputCls} placeholder="Doe" />
                     </div>
 
                     <div>
-                      <label className="block text-xs text-zinc-400 mb-1.5">Email <span className="text-[#FF3838]">*</span></label>
+                      <label className="block text-xs text-zinc-400 mb-1.5">Email<span className="text-[#FF3838]">*</span></label>
                       <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls} placeholder="john@example.com" />
                     </div>
 
@@ -373,7 +373,7 @@ export default function ApplyModal({ jobTitle, onClose }) {
                           value={form.phone}
                           onChange={(e) => setForm({ ...form, phone: e.target.value })}
                           className={inputCls}
-                          placeholder="000 000 0000"
+                          placeholder="0000000000"
                         />
                       </div>
                     </div>

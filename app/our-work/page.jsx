@@ -204,7 +204,7 @@ function WorkPageInner() {
                 />
               )}
 
-              <span className="relative z-10">{filter}</span>
+              <span className="relative z-10">{filter === "STRATEGY AND CONSULTING" ? "STRATEGY & CONSULTING" : filter}</span>
 
               {/* count badge */}
               <AnimatePresence mode="wait">
