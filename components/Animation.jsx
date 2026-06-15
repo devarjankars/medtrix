@@ -168,7 +168,7 @@ export default function Animation() {
               </motion.span>
             </motion.h2>
 
-            <p className="text-gray-200 text-[16px] lg:text-[19px] lg:leading-[2]">
+            <p className="text-[#d1d5db] text-[16px] lg:text-[19px] lg:leading-[2]">
               MedTrix is driven by the philosophy of the Power of One—the belief that when diverse minds align around a single goal, they can achieve greater outcomes. It is our unified way of working—bringing people, expertise, and technology together as a unified force to <span className="text-white font-semibold">Catalyze</span> how our clients engage their stakeholders and how physicians deliver patient care.
             </p>
 
