@@ -7,7 +7,6 @@ import { pauseLenis, resumeLenis } from "@/components/LenisProvider";
 
 /* ── Country data ─────────────────────────────────────────────────────── */
 const COUNTRIES = [
-   { name: "America",          code: "US", dial: "+1",  flag: "US" },
   { name: "Afghanistan",          code: "AF", dial: "+93",  flag: "🇦🇫" },
   { name: "Albania",              code: "AL", dial: "+355", flag: "🇦🇱" },
   { name: "Algeria",              code: "DZ", dial: "+213", flag: "🇩🇿" },
@@ -350,7 +349,7 @@ export default function ApplyModal({ jobTitle, onClose }) {
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
                       </svg>
                       <span className="text-white text-sm"><span className="text-[#FF3838]">Click to upload</span> or drag & drop</span>
-                      <span className="text-zinc-600 text-xs">PDF, DOC, DOCX — 16 MB max</span>
+                      <span className="text-zinc-600 text-xs">PDF, DOC, DOCX — 24 MB max</span>
                       {resume && <span className="text-green-400 text-xs mt-1">{resume.name}</span>}
                       {fieldErrors.resume && <span className="text-[#FF3838] text-xs mt-1 block">{fieldErrors.resume}</span>}
                     </label>

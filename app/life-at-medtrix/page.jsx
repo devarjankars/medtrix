@@ -40,13 +40,14 @@ function JobCardsGrid({ jobsData, openJob }) {
   const inView = useInView(ref, { once: true, amount: 0.1 });
 
   return (
-    <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 ">
       {jobsData.map((job, i) => (
         <motion.div
           key={job.id}
           initial={{ opacity: 0, y: 50 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease, delay: i * 0.08 }}
+          
         >
           <JobCard job={job} onClick={() => openJob(job)} />
         </motion.div>
