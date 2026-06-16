@@ -245,7 +245,7 @@ function LinkedInCard() {
                   value={formData.message}
                   onChange={handleChange}
                   rows={6}
-                  placeholder="Tell us about your project..."
+                  placeholder="Tell us about your query"
                   className={`${inputClass} resize-none`}
                 />
               </div>

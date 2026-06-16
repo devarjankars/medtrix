@@ -233,9 +233,23 @@ export default function ApplyModal({ jobTitle, onClose }) {
     if (form.phone.trim() && !/^[0-9]{7,15}$/.test(form.phone.trim())) {
       errs.phone = "Enter a valid phone number (7–15 digits).";
     }
-    if (!resume) errs.resume = "Please upload your resume.";
+    if (!resume) {
+      errs.resume = "Please upload your resume.";
+    } else {
+      const allowed = ["application/pdf", "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+      const ext = resume.name.split(".").pop().toLowerCase();
+      if (!allowed.includes(resume.type) && !["pdf","doc","docx"].includes(ext)) {
+        errs.resume = "Only PDF, DOC, or DOCX files are allowed.";
+      } else if (resume.size === 0) {
+        errs.resume = "The file is empty. Please upload a valid resume.";
+      } else if (resume.size > 16 * 1024 * 1024) {
+        errs.resume = "File size exceeds 16 MB. Please upload a smaller file.";
+      }
+    }
     return errs;
   }
+
+  const [serverMsg, setServerMsg] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -243,7 +257,31 @@ export default function ApplyModal({ jobTitle, onClose }) {
     if (Object.keys(errs).length > 0) { setFieldErrors(errs); return; }
     setFieldErrors({});
     setLoading(true);
-    setTimeout(() => { setLoading(false); setSubmit(true); }, 600);
+
+    const selected = COUNTRIES.find((c) => c.code === form.countryCode);
+    const fd = new FormData();
+    fd.append("firstName", form.firstName);
+    fd.append("lastName",  form.lastName);
+    fd.append("email",     form.email);
+    fd.append("phone",     `${selected?.dial ?? ""}${form.phone}`.trim());
+    fd.append("jobTitle",  jobTitle);
+    fd.append("message",   form.message);
+    if (resume) fd.append("resume", resume);
+
+    try {
+      const res = await fetch("https://medtrixhealthcare.com/corporate-websiteapi/api/career/apply", {
+        method: "POST",
+        body: fd,
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.message || "Something went wrong. Please try again.");
+      setServerMsg(data.message || "");
+      setSubmit(true);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const inputCls = (field) =>
@@ -306,8 +344,8 @@ export default function ApplyModal({ jobTitle, onClose }) {
             }}
             className="rounded-2xl px-5 py-6 sm:px-8 sm:py-8 md:px-10 md:py-10"
           >
-            <p className="text-white text-xl sm:text-3xl font-semibold pr-10 mb-1">{jobTitle}</p>
-            <p className="text-zinc-500 text-sm mb-8">Fill in the details below to apply.</p>
+            {!submitted && <p className="text-white text-xl sm:text-3xl font-semibold pr-10 mb-2">{jobTitle}</p>}
+            {!submitted && <p className="text-zinc-500 text-sm mb-8">Fill in the details below to apply.</p>}
 
             {submitted ? (
               <div className="flex flex-col items-start py-10 gap-5">
@@ -317,16 +355,21 @@ export default function ApplyModal({ jobTitle, onClose }) {
                   </svg>
                 </div>
                 <div className="text-white text-base leading-relaxed space-y-4 max-w-xl">
-                  <p>Hi <span className="font-semibold text-[#FF3838]">{form.firstName}</span>,</p>
-                  <p>
-                    Thank you for your interest in joining MedTrix Healthcare and for applying for the{" "}
-                    <span className="font-semibold text-white">{jobTitle}</span> position.
-                    We appreciate the time and effort you invested in your application and look forward to reviewing your profile.
-                  </p>
-                  <p>
-                    If your experience aligns with our current requirements, a member of our team will be in touch regarding the next steps.
-                  </p>
-                  <p className="text-zinc-400">Best regards,<br /><span className="text-white font-semibold">Team MedTrix Healthcare</span></p>
+                  <p>Hi <span className="font-semibold ">{form.firstName}</span>,</p>
+                  {serverMsg ? (
+                    <p>{serverMsg} for the{" "}
+                        <span className="font-semibold text-white">{jobTitle}</span> position.</p>
+                  ) : (
+                    <>
+                      <p>
+                        Thank you for your interest in joining MedTrix Healthcare and for applying for the{" "}
+                        <span className="font-semibold text-white">{jobTitle}</span> position.
+                        We appreciate the time and effort you invested in your application and look forward to reviewing your profile.
+                      </p>
+                      <p>If your experience aligns with our current requirements, a member of our team will be in touch regarding the next steps.</p>
+                    </>
+                  )}
+                  {/* <p className="text-zinc-400">Best regards,<br /><span className="text-white font-semibold">Team MedTrix Healthcare</span></p> */}
                 </div>
                 <button
                   onClick={onClose}
@@ -343,13 +386,33 @@ export default function ApplyModal({ jobTitle, onClose }) {
                   <label className="block text-sm text-zinc-400 mb-2 font-medium">Resume / CV</label>
                   <div className={`border border-dashed ${fieldErrors.resume ? "border-[#FF3838]" : "border-[#FF3838]/50"} rounded-xl p-5 text-center hover:border-[#FF3838] transition-colors`}>
                     <input type="file" id="resume" accept=".pdf,.doc,.docx" className="hidden"
-                      onChange={(e) => { setResume(e.target.files?.[0] ?? null); setFieldErrors((p) => ({ ...p, resume: undefined })); }} />
+                      onChange={(e) => {
+                        const file = e.target.files?.[0] ?? null;
+                        if (file) {
+                          const allowed = ["application/pdf","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+                          const ext = file.name.split(".").pop().toLowerCase();
+                          if (!allowed.includes(file.type) && !["pdf","doc","docx"].includes(ext)) {
+                            setFieldErrors((p) => ({ ...p, resume: "Only PDF, DOC, or DOCX files are allowed." }));
+                            setResume(null); e.target.value = ""; return;
+                          }
+                          if (file.size === 0) {
+                            setFieldErrors((p) => ({ ...p, resume: "The file is empty. Please upload a valid resume." }));
+                            setResume(null); e.target.value = ""; return;
+                          }
+                          if (file.size > 16 * 1024 * 1024) {
+                            setFieldErrors((p) => ({ ...p, resume: "File size exceeds 16 MB. Please upload a smaller file." }));
+                            setResume(null); e.target.value = ""; return;
+                          }
+                        }
+                        setResume(file);
+                        setFieldErrors((p) => ({ ...p, resume: undefined }));
+                      }} />
                     <label htmlFor="resume" className="cursor-pointer flex flex-col items-center gap-1">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3838" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-1">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
                       </svg>
                       <span className="text-white text-sm"><span className="text-[#FF3838]">Click to upload</span> or drag & drop</span>
-                      <span className="text-zinc-600 text-xs">PDF, DOC, DOCX — 24 MB max</span>
+                      <span className="text-zinc-600 text-xs">PDF, DOC, DOCX — 16 MB max</span>
                       {resume && <span className="text-green-400 text-xs mt-1">{resume.name}</span>}
                       {fieldErrors.resume && <span className="text-[#FF3838] text-xs mt-1 block">{fieldErrors.resume}</span>}
                     </label>
