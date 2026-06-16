@@ -326,14 +326,14 @@ function OneTeam() {
       </section>
 
       {/* Client Logos */}
-      <section className="bg-black lg:py-[100px] py-[50px] px-6 lg:px-0 relative overflow-hidden">
+      <section className="bg-black lg:py-[100px] py-[50px]   relative overflow-hidden">
         <Badge label="One Commitment" />
         <SectionHeading red="Our " white="Clients" />
         <div className="grid grid-cols-2 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-2 items-center justify-center">
           {clientLogos.map((logo, index) => (
             <motion.div
               key={index}
-              className="w-full min-h-[125px] border-1 border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center"
+              className="w-full min-h-[120px] border-1 border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center"
               initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}

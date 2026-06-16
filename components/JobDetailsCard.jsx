@@ -43,7 +43,7 @@ export default function JobDetailsCard({ job, onBack }) {
       </div>
 
       {/* ── Meta ── */}
-      <div className="flex items-center gap-0 text-gray-400 text-[13px] mb-6">
+      <div className="flex items-center gap-0 text-[#d1d5db] text-[15px] mb-6  gap-2">
         <span>Experience : {job.experience}</span>
         <span className="mx-3 text-[#3a3a3a]">|</span>
         <span>{job.workMode}</span>
@@ -51,17 +51,7 @@ export default function JobDetailsCard({ job, onBack }) {
         <span>{job.location}</span>
         <span className="mx-3 text-[#3a3a3a]">|</span>
         <span>{job.type}</span>
-      </div>
-
-      {/* ── Apply Now ── */}
-      {/* <button className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200 mb-10 cursor-pointer">
-        Apply Now
-      </button> */}
-
-   {/* ── Interest line ── */}
-   
-      {/* ── Divider ── */}
-      <div className="border-t border-[#1e1e1e] mb-8" />
+        <div className="border-t border-[#1e1e1e] mb-8" />
          <div className="flex items-center gap-4 mt-4 mb-8">
         <motion.button
           onClick={() => setApplyOpen(true)}
@@ -81,13 +71,36 @@ export default function JobDetailsCard({ job, onBack }) {
         </motion.button>
         
       </div>
+      </div>
+
+      {/* ── Apply Now ── */}
+      {/* <button className="px-6 py-2.5 rounded-full bg-red-600 hover:bg-red-500 text-white text-sm font-semibold transition-colors duration-200 mb-10 cursor-pointer">
+        Apply Now
+      </button> */}
+
+   {/* ── Interest line ── */}
    
+      {/* ── Divider ── */}
+      
+    
+        <div className="text-[#d1d5db] text-[16px] lg:text-[18px]">
+          <p >
+            For over 14 years, MedTrix has helped leading pharmaceutical and biotechnology companies bring complex science to life through impactful medical communications and engagement solutions.  
+          </p>
+          <p >
+            As a medical communications and digital enablement partner, we combine scientific expertise, creative excellence, and technology-driven solutions to create meaningful experiences for global healthcare audiences.
+          </p>
+          <p>At MedTrix, you will contribute to innovative healthcare communication initiatives while collaborating with some of the world’s most recognized pharmaceutical brands. </p>
+          <p>Our collaborative and agile environment brings together a dynamic team of talented professionals who are passionate about learning, innovation, and delivering meaningful impact.  </p>
+          <p>If you enjoy working with an energetic, ambitious, and growth-oriented team where your ideas and contributions are valued, we invite you to explore a career with us. </p>
+        </div>
+    
 
       {/* ── Job Summary ── */}
       {job.summary && (
         <div className="mb-8">
-          <h2 className="text-white font-bold text-base mb-2">Job Summary</h2>
-          <p className="text-gray-400 text-sm leading-relaxed">{job.summary}</p>
+          <h2 className="text-[#d1d5db] text-[15px] lg:text-[17px]  mt-4">Job Summary</h2>
+          <p className="text-[#d1d5db] text-[15px] lg:text-[17px] leading-[130%]">{job.summary}</p>
         </div>
       )}
 
@@ -97,8 +110,8 @@ export default function JobDetailsCard({ job, onBack }) {
           <h2 className="text-white font-bold text-base mb-3">Duties and Responsibilities</h2>
           <ul className="space-y-2">
             {job.duties.map((item, i) => (
-              <li key={i} className="flex gap-2 text-gray-400 text-sm leading-relaxed">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 flex-shrink-0" />
+              <li key={i} className="flex gap-2 text-[#d1d5db] text-[15px] lg:text-[17px] leading-[130%]">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full text-[#d1d5db] flex-shrink-0" />
                 {item}
               </li>
             ))}
@@ -112,8 +125,8 @@ export default function JobDetailsCard({ job, onBack }) {
           <h2 className="text-white font-bold text-base mb-3">Experience</h2>
           <ul className="space-y-2">
             {job.experienceDetails.map((item, i) => (
-              <li key={i} className="flex gap-2 text-gray-400 text-sm leading-relaxed">
-                <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-gray-500 flex-shrink-0" />
+              <li key={i} className="flex gap-1 text-[#d1d5db] text-[15px] lg:text-[17px] leading-[130%]">
+                <span className="mt-1.5 w-1.5 h-1.5 rounded-full text-[#d1d5db] flex-shrink-0" />
                 {item}
               </li>
             ))}
@@ -127,7 +140,7 @@ export default function JobDetailsCard({ job, onBack }) {
           <h2 className="text-white font-bold text-base mb-3">Qualifications</h2>
           <ul className="space-y-1">
             {job.qualifications.map((item, i) => (
-              <li key={i} className="text-gray-400 text-sm leading-relaxed">{item}</li>
+              <li key={i} className="text-[#d1d5db] text-[15px] lg:text-[17px] leading-[130%]">{item}</li>
             ))}
           </ul>
         </div>

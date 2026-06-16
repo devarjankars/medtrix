@@ -7,6 +7,7 @@ import { pauseLenis, resumeLenis } from "@/components/LenisProvider";
 
 /* ── Country data ─────────────────────────────────────────────────────── */
 const COUNTRIES = [
+   { name: "America",          code: "US", dial: "+1",  flag: "US" },
   { name: "Afghanistan",          code: "AF", dial: "+93",  flag: "🇦🇫" },
   { name: "Albania",              code: "AL", dial: "+355", flag: "🇦🇱" },
   { name: "Algeria",              code: "DZ", dial: "+213", flag: "🇩🇿" },
@@ -191,6 +192,7 @@ export default function ApplyModal({ jobTitle, onClose }) {
   const [loading, setLoading]  = useState(false);
   const [error, setError]      = useState(null);
   const [mounted, setMounted]  = useState(false);
+  const [fieldErrors, setFieldErrors] = useState({});
 
   useEffect(() => { setMounted(true); }, []);
 
@@ -220,17 +222,33 @@ export default function ApplyModal({ jobTitle, onClose }) {
     };
   }, [mounted]);
 
+  function validate() {
+    const errs = {};
+    if (!form.firstName.trim()) errs.firstName = "First name is required.";
+    if (!form.lastName.trim()) errs.lastName = "Last name is required.";
+    if (!form.email.trim()) {
+      errs.email = "Email is required.";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
+      errs.email = "Enter a valid email address.";
+    }
+    if (form.phone.trim() && !/^[0-9]{7,15}$/.test(form.phone.trim())) {
+      errs.phone = "Enter a valid phone number (7–15 digits).";
+    }
+    if (!resume) errs.resume = "Please upload your resume.";
+    return errs;
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length > 0) { setFieldErrors(errs); return; }
+    setFieldErrors({});
     setLoading(true);
-    // API not ready — show confirmation directly
-    setTimeout(() => {
-      setLoading(false);
-      setSubmit(true);
-    }, 600);
+    setTimeout(() => { setLoading(false); setSubmit(true); }, 600);
   };
 
-  const inputCls = "w-full bg-[#1a1a1a] border border-[#333] rounded-xl h-12 px-4 text-white text-sm focus:outline-none focus:border-[#FF3838] transition-colors placeholder:text-zinc-600";
+  const inputCls = (field) =>
+    `w-full bg-[#1a1a1a] border ${fieldErrors[field] ? "border-[#FF3838]" : "border-[#333]"} rounded-xl h-12 px-4 text-white text-sm focus:outline-none focus:border-[#FF3838] transition-colors placeholder:text-zinc-600`;
 
   if (!mounted) return null;
 
@@ -324,9 +342,9 @@ export default function ApplyModal({ jobTitle, onClose }) {
                 {/* Resume upload */}
                 <div>
                   <label className="block text-sm text-zinc-400 mb-2 font-medium">Resume / CV</label>
-                  <div className="border border-dashed border-[#FF3838]/50 rounded-xl p-5 text-center hover:border-[#FF3838] transition-colors">
+                  <div className={`border border-dashed ${fieldErrors.resume ? "border-[#FF3838]" : "border-[#FF3838]/50"} rounded-xl p-5 text-center hover:border-[#FF3838] transition-colors`}>
                     <input type="file" id="resume" accept=".pdf,.doc,.docx" className="hidden"
-                      onChange={(e) => setResume(e.target.files?.[0] ?? null)} />
+                      onChange={(e) => { setResume(e.target.files?.[0] ?? null); setFieldErrors((p) => ({ ...p, resume: undefined })); }} />
                     <label htmlFor="resume" className="cursor-pointer flex flex-col items-center gap-1">
                       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF3838" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-1">
                         <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
@@ -334,6 +352,7 @@ export default function ApplyModal({ jobTitle, onClose }) {
                       <span className="text-white text-sm"><span className="text-[#FF3838]">Click to upload</span> or drag & drop</span>
                       <span className="text-zinc-600 text-xs">PDF, DOC, DOCX — 16 MB max</span>
                       {resume && <span className="text-green-400 text-xs mt-1">{resume.name}</span>}
+                      {fieldErrors.resume && <span className="text-[#FF3838] text-xs mt-1 block">{fieldErrors.resume}</span>}
                     </label>
                   </div>
                 </div>
@@ -347,35 +366,30 @@ export default function ApplyModal({ jobTitle, onClose }) {
 
                     <div>
                       <label className="block text-xs text-zinc-200 mb-1.5 font-normal">First name<span className="text-[#FF3838]">*</span></label>
-                      <input required value={form.firstName} onChange={(e) => setForm({ ...form, firstName: e.target.value })} className={inputCls} placeholder="John" />
+                      <input value={form.firstName} onChange={(e) => { setForm({ ...form, firstName: e.target.value }); setFieldErrors((p) => ({ ...p, firstName: undefined })); }} className={inputCls("firstName")} placeholder="John" />
+                      {fieldErrors.firstName && <p className="text-[#FF3838] text-xs mt-1">{fieldErrors.firstName}</p>}
                     </div>
 
                     <div>
                       <label className="block text-xs text-zinc-200 mb-1.5 font-normal">Last name<span className="text-[#FF3838]">*</span></label>
-                      <input required value={form.lastName} onChange={(e) => setForm({ ...form, lastName: e.target.value })} className={inputCls} placeholder="Doe" />
+                      <input value={form.lastName} onChange={(e) => { setForm({ ...form, lastName: e.target.value }); setFieldErrors((p) => ({ ...p, lastName: undefined })); }} className={inputCls("lastName")} placeholder="Doe" />
+                      {fieldErrors.lastName && <p className="text-[#FF3838] text-xs mt-1">{fieldErrors.lastName}</p>}
                     </div>
 
                     <div>
                       <label className="block text-xs text-zinc-400 mb-1.5">Email<span className="text-[#FF3838]">*</span></label>
-                      <input required type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls} placeholder="john@example.com" />
+                      <input type="email" value={form.email} onChange={(e) => { setForm({ ...form, email: e.target.value }); setFieldErrors((p) => ({ ...p, email: undefined })); }} className={inputCls("email")} placeholder="john@example.com" />
+                      {fieldErrors.email && <p className="text-[#FF3838] text-xs mt-1">{fieldErrors.email}</p>}
                     </div>
 
                     {/* Phone + country picker */}
                     <div>
                       <label className="block text-xs text-zinc-400 mb-1.5">Phone number</label>
                       <div className="flex gap-2">
-                        <CountryPicker
-                          value={form.countryCode}
-                          onChange={(code) => setForm({ ...form, countryCode: code })}
-                        />
-                        <input
-                          type="tel"
-                          value={form.phone}
-                          onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                          className={inputCls}
-                          placeholder="0000000000"
-                        />
+                        <CountryPicker value={form.countryCode} onChange={(code) => setForm({ ...form, countryCode: code })} />
+                        <input type="tel" value={form.phone} onChange={(e) => { setForm({ ...form, phone: e.target.value }); setFieldErrors((p) => ({ ...p, phone: undefined })); }} className={inputCls("phone")} placeholder="0000000000" />
                       </div>
+                      {fieldErrors.phone && <p className="text-[#FF3838] text-xs mt-1">{fieldErrors.phone}</p>}
                     </div>
 
                   </div>
