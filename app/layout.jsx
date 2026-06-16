@@ -22,6 +22,9 @@ export const metadata = {
   icons: {
     icon: "https://otterboo.sirv.com/Medtrix%20Images/favicon.png",
   },
+  alternates: {
+    canonical: "https://www.medtrixhealthcare.com",
+  },
 };
 
 export default function RootLayout({ children }) {
