@@ -12,7 +12,7 @@ export default function JobCard({ job, onClick }) {
   }, [job.id]);
 
   return (
-    <div className="flex flex-col  md:gap-2 bg-[#111111] border border-[#2a2a2a] rounded-[16px] p-6 hover:border-[#3a3a3a] transition-colors duration-300">
+    <div className="flex flex-col  gap-1 md:gap-2 bg-[#111111] border border-[#2a2a2a] rounded-[16px] p-6 hover:border-[#3a3a3a] transition-colors duration-300">
 
       {/* Title row with saved indicator */}
       {/* <div className="flex items-start justify-between gap-2">
@@ -29,13 +29,13 @@ export default function JobCard({ job, onClick }) {
       {/* Meta */}
       <p className="font-medium text-white">{job.title}</p>
        <p className="text-[#fff] text-[16px]">Experience: {job.experience}</p>
-      <div className="flex flex-wrap items-center justify-between  items-center text-gray-400 text-[13px]">
-         <div>
-        <span>{job.workMode}</span>
-        <span className="mx-1 text-[#3a3a3a]">|</span>
-        <span>{job.location}</span>
-        <span className="mx-1 text-[#3a3a3a]">|</span>
-        <span>{job.type}</span>
+      <div className="flex flex-row  items-center justify-between text-gray-400 text-[13px]">
+        <div>
+          <span>{job.workMode}</span>
+          <span className="mx-1 text-[#3a3a3a]">|</span>
+          <span>{job.location}</span>
+          <span className="mx-1 text-[#3a3a3a]">|</span>
+          <span>{job.type}</span>
         </div>
         <div>
         <motion.button
@@ -43,7 +43,7 @@ export default function JobCard({ job, onClick }) {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}
-          className="relative inline-flex items-center gap-1 px-4 py-1.5   rounded-full text-white text-xs  overflow-hidden cursor-pointer"
+          className="relative inline-flex items-center gap-1 px-6 py-1.5 rounded-full text-white text-xs overflow-hidden cursor-pointer shrink-0"
           style={{
             background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
             boxShadow: "0 0 14px rgba(225,37,27,0.35)",

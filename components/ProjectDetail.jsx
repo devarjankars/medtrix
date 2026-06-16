@@ -133,7 +133,7 @@ function GlowDivider() {
       whileInView={{ opacity: 1, scaleX: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 1.1, ease }}
-      style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.20) 0%, transparent 50%)" }}
+      style={{ background: "radial-gradient(ellipse at bottom, rgba(0,106,128,0.25) 0%, transparent 55%)" }}
     />
   );
 }
