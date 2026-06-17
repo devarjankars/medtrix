@@ -106,7 +106,7 @@ export default function JobDetailsCard({ job, onBack }) {
 
       {/* About */}
       <FadeUp delay={0.05}>
-        <div className="text-[#d1d5db] text-[16px] lg:text-[18px] space-y-3 mb-8">
+        <div className="text-[#d1d5db] text-[16px] lg:text-[18px] space-y-1 mb-8">
           <p>For over 14 years, MedTrix has helped leading pharmaceutical and biotechnology companies bring complex science to life through impactful medical communications and engagement solutions.</p>
           <p>As a medical communications and digital enablement partner, we combine scientific expertise, creative excellence, and technology-driven solutions to create meaningful experiences for global healthcare audiences.</p>
           <p>At MedTrix, you will contribute to innovative healthcare communication initiatives while collaborating with some of the world's most recognized pharmaceutical brands.</p>
@@ -146,31 +146,12 @@ export default function JobDetailsCard({ job, onBack }) {
       )}
 
       {/* Experience */}
-      {job.experienceDetails?.length > 0 && (
-        <FadeUp delay={0.05} className="mb-8">
-          <h2 className="text-white font-bold text-base mb-3">Experience</h2>
-          <ul className="space-y-2">
-            {job.experienceDetails.map((item, i) => (
-              <motion.li
-                key={i}
-                className="flex gap-2 text-[#d1d5db] text-[15px] lg:text-[17px] leading-[130%]"
-                initial={{ opacity: 0, x: -16 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.4, ease, delay: i * 0.06 }}
-              >
-                <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#E1251B] shrink-0" />
-                {item}
-              </motion.li>
-            ))}
-          </ul>
-        </FadeUp>
-      )}
+     
 
       {/* Qualifications */}
       {job.qualifications?.length > 0 && (
         <FadeUp delay={0.05} className="mb-8">
-          <h2 className="text-white font-bold text-base mb-3">Qualifications</h2>
+          <h2 className="text-white font-bold text-base mb-3">  Qualifications & Experience</h2>
           <ul className="space-y-2">
             {job.qualifications.map((item, i) => (
               <motion.li
