@@ -107,10 +107,8 @@ export default function JobDetailsCard({ job, onBack }) {
       {/* About */}
       <FadeUp delay={0.05}>
         <div className="text-[#d1d5db] text-[16px] lg:text-[18px] space-y-1 mb-8">
-          <p>For over 14 years, MedTrix has helped leading pharmaceutical and biotechnology companies bring complex science to life through impactful medical communications and engagement solutions.</p>
-          <p>As a medical communications and digital enablement partner, we combine scientific expertise, creative excellence, and technology-driven solutions to create meaningful experiences for global healthcare audiences.</p>
-          <p>At MedTrix, you will contribute to innovative healthcare communication initiatives while collaborating with some of the world's most recognized pharmaceutical brands.</p>
-          <p>Our collaborative and agile environment brings together a dynamic team of talented professionals who are passionate about learning, innovation, and delivering meaningful impact.</p>
+          <p>For over 14 years, MedTrix has helped leading pharmaceutical and biotechnology companies bring complex science to life through impactful medical communications and engagement solutions. As a medical communications and digital enablement partner, we combine scientific expertise, creative excellence, and technology-driven solutions to create meaningful experiences for global healthcare audiences.</p>
+          <p>At MedTrix, you will contribute to innovative healthcare communication initiatives while collaborating with some of the world’s most recognized pharmaceutical brands.Our collaborative and agile environment brings together a dynamic team of talented professionals who are passionate about learning, innovation, and delivering meaningful impact.</p>
           <p>If you enjoy working with an energetic, ambitious, and growth-oriented team where your ideas and contributions are valued, we invite you to explore a career with us.</p>
         </div>
       </FadeUp>
