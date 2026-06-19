@@ -314,22 +314,27 @@ export default function ApplyModal({ jobTitle, onClose }) {
           exit={{ opacity: 0, y: 28, scale: 0.97 }}
           transition={{ type: "spring", stiffness: 300, damping: 28 }}
         >
-          {/* Close button — only way to dismiss */}
-          <button
-            onClick={onClose}
-            className="absolute top-4 right-4 z-10 w-9 h-9 flex items-center justify-center rounded-full border border-[#333] text-gray-400 hover:text-white hover:border-[#FF3838] transition-colors cursor-pointer"
-          >
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-            </svg>
-          </button>
+          {/* Sticky header with close button — never scrolls */}
+          <div className="flex items-center justify-between shrink-0 px-5 pt-5 sm:px-8 sm:pt-6 md:px-10 md:pt-8 pb-0">
+            <div>
+              {!submitted && <p className="text-white text-xl sm:text-3xl font-semibold">{jobTitle}</p>}
+              {!submitted && <p className="text-zinc-500 text-sm mt-1">Fill in the details below to apply.</p>}
+            </div>
+            <button
+              onClick={onClose}
+              className="shrink-0 ml-4 w-9 h-9 flex items-center justify-center rounded-full border border-[#333] text-gray-400 hover:text-white hover:border-[#FF3838] transition-colors cursor-pointer"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          </div>
 
           {/*
             Scrollable body.
-            — position:relative + overflow-y:auto on a flex-1 child is the
-              reliable cross-browser pattern for scrollable modal content.
+            — flex:1 + minHeight:0 is the reliable cross-browser pattern.
             — touch-action:pan-y lets mobile browsers handle swipe-to-scroll.
-            — overscroll-behavior:contain stops the scroll from leaking to the page.
+            — overscroll-behavior:contain stops scroll leaking to the page.
           */}
           <div
             onWheel={(e) => e.stopPropagation()}
@@ -342,10 +347,8 @@ export default function ApplyModal({ jobTitle, onClose }) {
               WebkitOverflowScrolling: "touch",
               touchAction: "pan-y",
             }}
-            className="rounded-2xl px-5 py-6 sm:px-8 sm:py-8 md:px-10 md:py-10"
+            className="px-5 pb-6 pt-4 sm:px-8 sm:pb-8 sm:pt-4 md:px-10 md:pb-10 md:pt-5"
           >
-            {!submitted && <p className="text-white text-xl sm:text-3xl font-semibold pr-10 mb-2">{jobTitle}</p>}
-            {!submitted && <p className="text-zinc-500 text-sm mb-8">Fill in the details below to apply.</p>}
 
             {submitted ? (
               <div className="flex flex-col items-start py-10 gap-5">
@@ -384,7 +387,34 @@ export default function ApplyModal({ jobTitle, onClose }) {
                 {/* Resume upload */}
                 <div>
                   <label className="block text-sm text-zinc-400 mb-2 font-medium">Resume / CV</label>
-                  <div className={`border border-dashed ${fieldErrors.resume ? "border-[#FF3838]" : "border-[#FF3838]/50"} rounded-xl p-5 text-center hover:border-[#FF3838] transition-colors`}>
+                  <div
+                    className={`border border-dashed ${fieldErrors.resume ? "border-[#FF3838]" : "border-[#FF3838]/50"} rounded-xl p-5 text-center hover:border-[#FF3838] transition-colors`}
+                    onDragOver={(e) => { e.preventDefault(); e.currentTarget.classList.add("border-[#FF3838]", "bg-[#FF3838]/5"); }}
+                    onDragEnter={(e) => { e.preventDefault(); e.currentTarget.classList.add("border-[#FF3838]", "bg-[#FF3838]/5"); }}
+                    onDragLeave={(e) => { e.currentTarget.classList.remove("border-[#FF3838]", "bg-[#FF3838]/5"); }}
+                    onDrop={(e) => {
+                      e.preventDefault();
+                      e.currentTarget.classList.remove("border-[#FF3838]", "bg-[#FF3838]/5");
+                      const file = e.dataTransfer.files?.[0];
+                      if (!file) return;
+                      const allowed = ["application/pdf","application/msword","application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+                      const ext = file.name.split(".").pop().toLowerCase();
+                      if (!allowed.includes(file.type) && !["pdf","doc","docx"].includes(ext)) {
+                        setFieldErrors((p) => ({ ...p, resume: "Only PDF, DOC, or DOCX files are allowed." }));
+                        setResume(null); return;
+                      }
+                      if (file.size === 0) {
+                        setFieldErrors((p) => ({ ...p, resume: "The file is empty. Please upload a valid resume." }));
+                        setResume(null); return;
+                      }
+                      if (file.size > 16 * 1024 * 1024) {
+                        setFieldErrors((p) => ({ ...p, resume: "File size exceeds 16 MB. Please upload a smaller file." }));
+                        setResume(null); return;
+                      }
+                      setResume(file);
+                      setFieldErrors((p) => ({ ...p, resume: undefined }));
+                    }}
+                  >
                     <input type="file" id="resume" accept=".pdf,.doc,.docx" className="hidden"
                       onChange={(e) => {
                         const file = e.target.files?.[0] ?? null;
@@ -447,9 +477,24 @@ export default function ApplyModal({ jobTitle, onClose }) {
                     {/* Phone + country picker */}
                     <div>
                       <label className="block text-xs text-zinc-400 mb-1.5">Phone number</label>
-                      <div className="flex gap-2">
-                        <CountryPicker value={form.countryCode} onChange={(code) => setForm({ ...form, countryCode: code })} />
-                        <input type="tel" value={form.phone} onChange={(e) => { setForm({ ...form, phone: e.target.value }); setFieldErrors((p) => ({ ...p, phone: undefined })); }} className={inputCls("phone")} placeholder="0000000000" />
+                      <div className="flex gap-2 w-full min-w-0">
+                        <div className="shrink-0">
+                          <CountryPicker value={form.countryCode} onChange={(code) => setForm({ ...form, countryCode: code })} />
+                        </div>
+                        <input
+                          type="tel"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
+                          maxLength={15}
+                          value={form.phone}
+                          onChange={(e) => {
+                            const digits = e.target.value.replace(/\D/g, "").slice(0, 15);
+                            setForm({ ...form, phone: digits });
+                            setFieldErrors((p) => ({ ...p, phone: undefined }));
+                          }}
+                          className={`${inputCls("phone")} min-w-0 w-full`}
+                          placeholder="0000000000"
+                        />
                       </div>
                       {fieldErrors.phone && <p className="text-[#FF3838] text-xs mt-1">{fieldErrors.phone}</p>}
                     </div>

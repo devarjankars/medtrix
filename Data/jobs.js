@@ -15,7 +15,7 @@ export const jobsData = [
       "Identify and cultivate opportunities for organic account growth by understanding client priorities, anticipating future needs, and expanding the scope of services and solutions.",
       "Support the acquisition and development of new accounts through proactive relationship building, strategic engagement, and effective presentation of MedTrix's capabilities and solutions.",
       "Lead client meetings, business reviews, and strategic discussions, ensuring alignment between client expectations and agency deliverables while proactively managing risks and resolving challenges.",
-      "•	Collaborate with Business Development and senior leadership teams to support proposal development, pitch presentations, and new business opportunities that contribute to organizational growth."
+      "Collaborate with Business Development and senior leadership teams to support proposal development, pitch presentations, and new business opportunities that contribute to organizational growth."
     ],
    
     "qualifications": [
@@ -56,7 +56,7 @@ export const jobsData = [
     "fileName": "Creative_Director_website_V1.0 1.docx",
     "title": "Creative Director",
     "experience": "10+ years",
-    "location": "Bangalore, India",
+    "location": "New Jersey, US",
     "workMode": "Onsite",
     "type": "Full-Time",
     "summary": "As a Creative Director, you will be responsible for leading and elevating the creative vision across client engagements, ensuring the delivery of innovative, impactful, and strategically aligned communication solutions. This role drives the development and execution of creative initiatives that enhance client experiences, strengthen engagement, and support business objectives. Working closely with Account Teams and cross-functional stakeholders, you will play a key role in ensuring consistent delivery of high-quality work across multiple channels and formats. As a client-facing leader, this role provides strategic creative counsel, champions brand and visual excellence, and fosters innovation through emerging design trends, technologies, and best practices.",
@@ -218,10 +218,10 @@ export const jobsData = [
     ],
    
     "qualifications": [
-      "•	Bachelor's or Master's degree in Computer Science, Information Technology, or a related engineering discipline (B.Tech/M.Tech).",
-      "•	Demonstrate strong knowledge of object-oriented design, RESTful web services, JavaScript, Ajax, HTML5, CSS3, XML, jQuery, JSON, internet programming languages, web technologies, protocols, tools, analytics, and emerging industry trends.",
-      "•	Exhibit extensive knowledge of cross-browser development, W3C standards, and web server technologies, with the ability to recommend appropriate server support solutions for applications.",
-      "•	Possess a solid understanding of application development methodologies, interactive web applications, and Agile practices."
+      "Bachelor's or Master's degree in Computer Science, Information Technology, or a related engineering discipline (B.Tech/M.Tech).",
+      "Demonstrate strong knowledge of object-oriented design, RESTful web services, JavaScript, Ajax, HTML5, CSS3, XML, jQuery, JSON, internet programming languages, web technologies, protocols, tools, analytics, and emerging industry trends.",
+      "Exhibit extensive knowledge of cross-browser development, W3C standards, and web server technologies, with the ability to recommend appropriate server support solutions for applications.",
+      "Possess a solid understanding of application development methodologies, interactive web applications, and Agile practices."
 
 
     ]
