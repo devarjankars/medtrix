@@ -3,7 +3,8 @@
 import { useRef, useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 const pointerMap= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/pointerMap.png"
 
 
@@ -17,9 +18,13 @@ const inputClass =
 
 function ContactInner() {
   const searchParams = useSearchParams();
+  const recaptchaRef = useRef(null);
 
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  // "idle" → user filling form
+  // "captcha" → validation passed, show captcha widget
+  // "sending" → captcha solved, calling API
+  // "done" → success
+  const [stage, setStage] = useState("idle");
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     name: "", company: "", email: "", subject: searchParams.get("subject") || "", message: "",
@@ -29,25 +34,35 @@ function ContactInner() {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  async function handleSubmit(e) {
+  // Step 1: validate → show captcha
+  function handleSubmit(e) {
     e.preventDefault();
-    setLoading(true);
+    setError(null);
+    setStage("captcha"); // reCAPTCHA widget appears
+  }
+
+  // Step 2: user solves captcha → send mail
+  async function handleCaptchaVerify(token) {
+    if (!token) return;
+    setStage("sending");
     setError(null);
 
     try {
-      const res = await fetch("https://medtrixhealthcare.com/corporate-websiteapi/api/contact/send", {
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, captchaToken: token }),
       });
 
-      if (!res.ok) throw new Error("Something went wrong. Please try again.");
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
 
-      setSubmitted(true);
+      setStage("done");
     } catch (err) {
       setError(err.message || "Failed to send. Please try again.");
-    } finally {
-      setLoading(false);
+      // Reset captcha so user can retry
+      recaptchaRef.current?.reset();
+      setStage("captcha");
     }
   }
   const headerRef  = useRef(null);
@@ -173,7 +188,7 @@ function LinkedInCard() {
 
         {/* LEFT: Form */}
         <div ref={formRef} className="w-full">
-          {submitted ? (
+          {stage === "done" ? (
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -216,8 +231,6 @@ function LinkedInCard() {
                     Company
                   </label>
                   <input name="company" value={formData.company} onChange={handleChange} type="text" placeholder="Your company" className={inputClass} />
-                
-                 
                 </div>
               </div>
 
@@ -255,12 +268,33 @@ function LinkedInCard() {
                 <p className="text-[#E1251B] text-sm">{error}</p>
               )}
 
+              {/* reCAPTCHA widget — slides in after validation */}
+              <AnimatePresence>
+                {(stage === "captcha" || stage === "sending") && (
+                  <motion.div
+                    key="recaptcha"
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    className="overflow-hidden"
+                  >
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+                      onChange={handleCaptchaVerify}
+                      theme="dark"
+                    />
+                  </motion.div>
+                )}
+              </AnimatePresence>
+
               <div className="form-field opacity-0">
                 <motion.button
                   type="submit"
-                  disabled={loading}
-                  whileHover={!loading ? { scale: 0.98 } : {}}
-                  whileTap={!loading ? { scale: 0.97 } : {}}
+                  disabled={stage === "captcha" || stage === "sending"}
+                  whileHover={stage === "idle" ? { scale: 0.98 } : {}}
+                  whileTap={stage === "idle" ? { scale: 0.97 } : {}}
                   transition={{ type: "spring", stiffness: 380, damping: 22 }}
                   className="relative inline-flex items-center gap-2 px-6 py-2 rounded-full text-white font-semibold text-sm overflow-hidden cursor-pointer disabled:opacity-70 disabled:cursor-not-allowed"
                   style={{
@@ -273,16 +307,18 @@ function LinkedInCard() {
                     animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
                     transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
                   />
-                  {loading ? (
+                  {stage === "sending" ? (
                     <>
                       <svg className="animate-spin relative z-10" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
                         <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
                       </svg>
-                      <span className="relative z-10 text-[12px] md:text-[16px] ">Sending...</span>
+                      <span className="relative z-10 text-[12px] md:text-[16px]">Sending...</span>
                     </>
+                  ) : stage === "captcha" ? (
+                    <span className="relative z-10 text-[12px] md:text-[16px]">Complete the verification above ↑</span>
                   ) : (
                     <>
-                      <span className="relative z-10 text-[12px] md:text-[16px]  ">Submit</span>
+                      <span className="relative z-10 text-[12px] md:text-[16px]">Submit</span>
                       <motion.span
                         className="relative z-10"
                         animate={{ x: [0, 4, 0] }}
