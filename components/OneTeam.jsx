@@ -138,8 +138,8 @@ const awd11 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_20
 const awd12 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd12.png";
 
 const vpData = [
-  { img: vp1, name: "Kumar Badampudi", role: "VP - Medical Affairs & Strategy", linkedin: "https://www.linkedin.com/in/kumar-badampudi-71812826/" },
-  { img: vp2, name: "Shijin Pulikkotil", role: "VP - Head of Operations", linkedin: "https://www.linkedin.com/in/shijin-pulikkotil-85139332/" },
+  { img: vp1, name: "Kumar Badampudi", role: "Chief Innovation Officer", linkedin: "https://www.linkedin.com/in/kumar-badampudi-71812826/" },
+  { img: vp2, name: "Shijin Pulikkotil", role: "Chief Operating Officer", linkedin: "https://www.linkedin.com/in/shijin-pulikkotil-85139332/" },
   { img: vp3, name: "Hari Prabhakaran", role: "VP - Business Development", linkedin: "https://www.linkedin.com/in/hari-prabhakaran-90724a2/" },
   { img: vp4, name: "Vincent Morella", role: "US Operations Admin", linkedin: "https://www.linkedin.com/in/vincent-morella-389b714/" },
 ];
