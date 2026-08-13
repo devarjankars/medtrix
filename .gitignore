@@ -18,6 +18,11 @@
 /out/
 *.zip
 
+# IIS deployment artifacts (local only, never commit)
+/iis-deploy/
+/deploy-iis.ps1
+/server.js
+
 # production
 /build
 
