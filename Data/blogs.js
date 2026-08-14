@@ -1,7 +1,7 @@
 export const blogsData = [
   {
     id: 1,
-      slug: "Rethinking-MLR-blog-post",
+      slug: "Rethinking-MLR-Review-with-AI-blog-post",
     date: "",
     category: "MLR Review",
     title: "Rethinking MLR Review: How AI is driving smarter content approvals",
@@ -33,7 +33,7 @@ export const blogsData = [
   {
     id: 2,
     date: "",
-      slug: "Rethinking-scientific-communication-blog-post",
+      slug: "from-content-volume-to-content-value-blog-post",
     category: "Scientific Communication",
     title: "From Content Volume to Content Value: Rethinking Scientific Communication",
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Linkedin_Post-02_mobi.jpg",
