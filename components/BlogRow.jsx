@@ -2,7 +2,18 @@
 
 import { motion } from "framer-motion";
 
+// Picks a subtle gradient per index so each row has its own accent
+const gradients = [
+  "from-[#E1251B]/20 to-[#1a0505]",
+  "from-[#1a2a4a] to-[#0a0e1a]",
+  "from-[#1a3a2a] to-[#080f0a]",
+  "from-[#2a1a3a] to-[#0a080f]",
+  "from-[#2a2510] to-[#0f0e07]",
+];
+
 export default function BlogRow({ blog, onClick, index }) {
+  const grad = gradients[index % gradients.length];
+
   return (
     <motion.div
       onClick={() => onClick(blog)}
@@ -11,30 +22,20 @@ export default function BlogRow({ blog, onClick, index }) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1], delay: index * 0.07 }}
     >
-      {/* Index number */}
-      <span className="shrink-0 text-[13px] text-gray-700 group-hover:text-[#E1251B] transition-colors duration-300 w-5 text-right font-mono select-none">
-        {String(index + 1).padStart(2, "0")}
-      </span>
-
-      {/* Thumbnail — only if URL present */}
-      {blog.thumbnail ? (
-        <div className="shrink-0 w-18 h-13 md:w-24 md:h-16 rounded-xl overflow-hidden bg-[#1a1a1a]">
-          <img
-            src={blog.thumbnail}
-            alt={blog.title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-        </div>
-      ) : (
-        /* Placeholder block when no image */
-        <div className="shrink-0 w-18 h-13 md:w-24 md:h-16 rounded-xl bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#3a3a3a" strokeWidth="1.5">
-            <rect x="3" y="3" width="18" height="18" rx="3" />
-            <circle cx="8.5" cy="8.5" r="1.5" />
-            <polyline points="21 15 16 10 5 21" />
-          </svg>
-        </div>
-      )}
+      {/* Decorative index tile — replaces thumbnail */}
+      <div
+        className={`shrink-0 w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${grad} border border-white/5 flex flex-col items-center justify-center gap-0.5 group-hover:border-[#E1251B]/30 transition-all duration-300`}
+      >
+        <span className="text-[18px] md:text-[22px] font-bold text-white/20 group-hover:text-[#E1251B]/60 transition-colors duration-300 leading-none font-mono">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        {/* Small category initial */}
+        {blog.category && (
+          <span className="text-[8px] uppercase tracking-[0.2em] text-white/20 group-hover:text-[#E1251B]/50 transition-colors duration-300 leading-none">
+            {blog.category.split(" ")[0]}
+          </span>
+        )}
+      </div>
 
       {/* Text block */}
       <div className="flex-1 min-w-0">
@@ -51,7 +52,7 @@ export default function BlogRow({ blog, onClick, index }) {
         )}
       </div>
 
-      {/* Arrow */}
+      {/* Arrow circle */}
       <div className="shrink-0 w-8 h-8 rounded-full border border-[#2a2a2a] group-hover:border-[#E1251B] flex items-center justify-center text-gray-600 group-hover:text-[#E1251B] transition-all duration-300 ml-1">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="M9 18l6-6-6-6" />
