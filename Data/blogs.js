@@ -95,7 +95,7 @@ export const blogsData = [
    {
     id: 3,
     date: "",
-      slug: "migraine-Awareness-2024-news-post",
+      slug: "migraine-Awareness-news-post",
     category: "Migraine Awareness",
     title: "Migraine Awareness: How to Support and Advocate for Those Affected",
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/MedTrix/corporate/news/Migraine%20Awareness.png",
