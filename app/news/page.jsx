@@ -2,11 +2,10 @@
 
 import { useState, useEffect, useRef, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { motion, useInView, AnimatePresence } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import NewsCard from "@/components/NewsCard";
 import NewsDetails from "@/components/NewsDetails";
 import BlogRow from "@/components/BlogRow";
-import BlogDetail from "@/components/BlogDetail";
 import { newsData } from "@/Data/news";
 import { blogsData } from "@/Data/blogs";
 
@@ -17,7 +16,6 @@ const scrollKey = "news-scroll";
 function CardGrid({ data, onOpen }) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, amount: 0.1 });
-
   return (
     <div ref={ref} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {data.map((item, i) => (
@@ -34,11 +32,11 @@ function CardGrid({ data, onOpen }) {
   );
 }
 
-// ─── Pill badge header shared by both tabs ────────────────────────────────────
+// ─── Pill badge ───────────────────────────────────────────────────────────────
 function SectionBadge({ label }) {
   return (
     <motion.div
-      className="relative inline-block rounded-full max-w-fit p-[1px]"
+      className="relative inline-block rounded-full max-w-fit p-px"
       style={{
         background:
           "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
@@ -59,8 +57,6 @@ function TabBar({ activeTab, onChange }) {
   return (
     <div className="flex items-center gap-2">
       <SectionBadge label="News &amp; Updates" />
-
-      {/* Blogs tab pill */}
       <motion.button
         onClick={() => onChange("blogs")}
         className={`relative inline-flex items-center px-5 py-2 rounded-full text-[14px] font-semibold uppercase tracking-wider transition-colors duration-200 border cursor-pointer ${
@@ -86,30 +82,29 @@ function TabBar({ activeTab, onChange }) {
   );
 }
 
-// ─── Inner page (needs searchParams) ─────────────────────────────────────────
+// ─── Inner page ───────────────────────────────────────────────────────────────
 function NewsPageInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
-
-  // tab: "news" | "blogs"
-  const tabParam = searchParams.get("tab") ?? "news";
   const articleParam = searchParams.get("article");
-  const blogParam = searchParams.get("blog");
+  const viewParam = searchParams.get("view"); // "blogs" to land on blog list
 
-  const [activeTab, setActiveTab] = useState(tabParam);
-  const [selectedNews, setSelectedNews] = useState(null);
-  const [selectedBlog, setSelectedBlog] = useState(null);
+  // News article from URL (existing behaviour — shareable links)
+  const selectedNews = articleParam
+    ? newsData.find((n) => n.pageTag === articleParam) ?? null
+    : null;
 
-  // Sync from URL
+  // Blog list view — synced with ?view param
+  const [view, setView] = useState(viewParam === "blogs" ? "blogs" : "news");
+
+  // Keep state in sync when URL changes (browser back/forward, openBlogList push)
   useEffect(() => {
-    setActiveTab(tabParam);
-    setSelectedNews(articleParam ? newsData.find((n) => n.pageTag === articleParam) ?? null : null);
-    setSelectedBlog(blogParam ? blogsData.find((b) => b.slug === blogParam) ?? null : null);
-  }, [tabParam, articleParam, blogParam]);
+    setView(viewParam === "blogs" ? "blogs" : "news");
+  }, [viewParam]);
 
   // Restore scroll when returning to news list
   useEffect(() => {
-    if (!selectedNews && activeTab === "news") {
+    if (!selectedNews && view === "news") {
       const saved = sessionStorage.getItem(scrollKey);
       if (saved) {
         const y = parseInt(saved, 10);
@@ -122,49 +117,46 @@ function NewsPageInner() {
         sessionStorage.removeItem(scrollKey);
       }
     }
-  }, [selectedNews, activeTab]);
+  }, [selectedNews, view]);
 
   // Scroll to top when opening any detail
   useEffect(() => {
-    if (selectedNews || selectedBlog) {
+    if (selectedNews || view === "blog-detail") {
       import("@/components/LenisProvider").then(({ lenisInstance }) => {
         if (lenisInstance) lenisInstance.scrollTo(0, { immediate: true });
         else window.scrollTo(0, 0);
       });
     }
-  }, [articleParam, blogParam]);
+  }, [articleParam, view]);
 
-  // ── Navigation helpers ──────────────────────────────────────────────────────
-  function switchTab(tab) {
-    router.push(`/news?tab=${tab}`, { scroll: false });
-  }
-
+  // ── Navigation helpers ────────────────────────────────────────────────────
   function openNewsItem(item) {
     import("@/components/LenisProvider").then(({ lenisInstance }) => {
       sessionStorage.setItem(scrollKey, String(lenisInstance?.scroll ?? window.scrollY));
     });
-    router.push(`/news?tab=news&article=${item.pageTag}`, { scroll: false });
+    router.push(`/news?article=${item.pageTag}`, { scroll: false });
   }
 
   function goBackToNews() {
-    router.push("/news?tab=news", { scroll: false });
+    router.push("/news", { scroll: false });
+  }
+
+  function openBlogList() {
+    router.push("/news?view=blogs", { scroll: false });
   }
 
   function openBlog(blog) {
-    import("@/components/LenisProvider").then(({ lenisInstance }) => {
-      sessionStorage.setItem(scrollKey, String(lenisInstance?.scroll ?? window.scrollY));
-    });
-    router.push(`/news?tab=blogs&blog=${blog.slug}`, { scroll: false });
+    router.push(`/news/blog/${blog.slug}`, { scroll: false });
   }
 
   function goBackToBlogs() {
-    router.push("/news?tab=blogs", { scroll: false });
+    router.push("/news?view=blogs", { scroll: false });
   }
 
-  // ── Render ──────────────────────────────────────────────────────────────────
+  // ── Render ────────────────────────────────────────────────────────────────
 
-  // View: News article detail
-  if (activeTab === "news" && selectedNews) {
+  // News article detail
+  if (selectedNews) {
     return (
       <section className="w-[90%] md:w-[80%] mx-auto py-3 md:py-20 min-h-screen">
         <NewsDetails news={selectedNews} onBack={goBackToNews} />
@@ -173,66 +165,37 @@ function NewsPageInner() {
     );
   }
 
-  // View: Blog post detail
-  if (activeTab === "blogs" && selectedBlog) {
+  // Blog post detail
+  // (handled by /news/blog/[slug] dynamic route)
+
+  // Blog list
+  if (view === "blogs") {
     return (
       <section className="w-[90%] md:w-[80%] mx-auto py-3 md:py-20 min-h-screen">
-        <BlogDetail blog={selectedBlog} onBack={goBackToBlogs} />
-        <BottomGlow />
-      </section>
-    );
-  }
-
-  // View: Blog list
-  if (activeTab === "blogs") {
-    return (
-      <section className="w-[90%] md:w-[80%] mx-auto py-3 md:py-20 min-h-screen">
-        {/* Header row */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
-          <div className="flex items-center gap-3">
-            {/* Back to News */}
-            <motion.button
-              onClick={() => switchTab("news")}
-              className="group inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
-              whileHover={{ x: -3 }}
-              transition={{ type: "spring", stiffness: 380, damping: 22 }}
+        <div className="flex items-center gap-3 mb-8">
+          <motion.button
+            onClick={() => router.push("/news", { scroll: false })}
+            className="group inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
+            whileHover={{ x: -3 }}
+            transition={{ type: "spring", stiffness: 380, damping: 22 }}
+          >
+            <motion.span
+              className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors"
+              whileHover={{ scale: 1.1 }}
             >
-              <motion.span
-                className="inline-flex items-center justify-center w-8 h-8 rounded-full border border-[#2A2A2A] group-hover:border-[#E1251B] transition-colors"
-                whileHover={{ scale: 1.1 }}
-              >
-                ←
-              </motion.span>
-              <span className="text-[13px]">Back to News</span>
-            </motion.button>
-
-            {/* Divider */}
-            <span className="text-gray-700 select-none">/</span>
-
-            {/* Active badge */}
-            <motion.div
-              className="relative inline-block rounded-full max-w-fit p-[1px]"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(225,37,27,0.5), transparent 43%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
-              }}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease }}
-            >
-              <span className="inline-block text-[16px] font-bold uppercase text-[#FFF] bg-[#0c0606] px-5 py-2 rounded-full">
-                Blogs
-              </span>
-            </motion.div>
-          </div>
+              ←
+            </motion.span>
+            <span className="text-[13px]">Back to News</span>
+          </motion.button>
+          <span className="text-gray-700 select-none">/</span>
+          <SectionBadge label="Blogs" />
         </div>
 
-        {/* Blog rows — newest entry is first in the array */}
         <motion.div
           className="flex flex-col"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.4, ease }}
         >
           {blogsData.map((blog, i) => (
             <BlogRow key={blog.id} blog={blog} index={i} onClick={openBlog} />
@@ -244,14 +207,12 @@ function NewsPageInner() {
     );
   }
 
-  // View: News list (default)
+  // News list (default)
   return (
     <section className="w-[90%] md:w-[80%] mx-auto py-3 md:py-20 min-h-screen">
-      {/* Tab header */}
       <div className="mb-10">
-        <TabBar activeTab={activeTab} onChange={switchTab} />
+        <TabBar activeTab={view} onChange={(tab) => tab === "blogs" ? openBlogList() : setView("news")} />
       </div>
-
       <CardGrid data={[...newsData].reverse()} onOpen={openNewsItem} />
       <BottomGlow />
     </section>
@@ -261,11 +222,8 @@ function NewsPageInner() {
 function BottomGlow() {
   return (
     <div
-      className="pointer-events-none relative left-1/2 -translate-x-1/2 w-full h-[40px] rounded-full my-16"
-      style={{
-        background:
-          "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)",
-      }}
+      className="pointer-events-none relative left-1/2 -translate-x-1/2 w-full h-10 rounded-full my-16"
+      style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)" }}
     />
   );
 }

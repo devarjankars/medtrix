@@ -1,7 +1,7 @@
 export const blogsData = [
   {
     id: 1,
-      slug: "blog1",
+      slug: "Rethinking-MLR-blog-post",
     date: "",
     category: "MLR Review",
     title: "Rethinking MLR Review: How AI is driving smarter content approvals",
@@ -33,7 +33,7 @@ export const blogsData = [
   {
     id: 2,
     date: "",
-      slug: "blog2",
+      slug: "Rethinking-scientific-communication-blog-post",
     category: "Scientific Communication",
     title: "From Content Volume to Content Value: Rethinking Scientific Communication",
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Linkedin_Post-02_mobi.jpg",
@@ -95,7 +95,7 @@ export const blogsData = [
    {
     id: 3,
     date: "",
-      slug: "blog3",
+      slug: "migraine-Awareness-2024-news-post",
     category: "Migraine Awareness",
     title: "Migraine Awareness: How to Support and Advocate for Those Affected",
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/MedTrix/corporate/news/Migraine%20Awareness.png",
@@ -123,7 +123,7 @@ export const blogsData = [
    {
     id: 4,
     date: "",
-      slug: "blog4",
+      slug: "bridging-boundaries-ensuring-equal-healthcare-access-news-post",
     category: "Healthcare Access ",
     title: "Bridging Boundaries: Ensuring Equal Healthcare Access for All",
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/MedTrix/corporate/news/Ensuring_Equal_1421x637.png",
@@ -150,7 +150,7 @@ export const blogsData = [
    {
     id: 5,
     date: "",
-      slug: "blog5",
+      slug: "threed-capabilities-blog-post",
     category: "3D Videos",
     title: "What makes 3-D videos visually intriguing yet effective in healthcare communication?",
     featuredImageMobi: "",
@@ -203,7 +203,7 @@ export const blogsData = [
    {
     id: 6,
     date: "",
-      slug: "blog6",
+      slug: "rare-disease-blog-post",
     category: "Rare Disease",
     title: "improve awareness and engagement in the rare disease space globally",
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/MedTrix/corporate/blog/rare_disease_img.jpg",
@@ -249,7 +249,7 @@ export const blogsData = [
   {
     id: 7,
     date: "",
-      slug: "blog7",
+      slug: "elearning-blog-post",
     category: "MEDICAL EDUCATION",
     title: "Harnessing the Pace of Change in Medical Education",
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/MedTrix/corporate/blog/elearning_banner.jpg",
@@ -281,7 +281,7 @@ export const blogsData = [
   {
     id: 8,
     date: "",
-      slug: "blog8",
+      slug: "learning-through-continuous-engagement-blog-post",
     category: "Engagement",
     title: "Learning Through Continuous Engagement",
     featuredImageMobi: "https://otterboo.sirv.com/Blog/learning_through_banners.png",
@@ -306,7 +306,7 @@ export const blogsData = [
    {
     id: 9,
     date: "",
-      slug: "blog9",
+      slug: "hololens-in-medicals-sciences-blog-post",
     category: "Medical Sciences",
     title: "HoloLens in Medical Sciences",
     featuredImageMobi: "https://otterboo.sirv.com/Blog/HoloLens%20_blog_banner.png",

@@ -1,3 +1,4 @@
+import { use } from "react";
 import { newsData } from "@/Data/news";
 import NewsDetailClient from "./NewsDetailClient";
 
@@ -6,6 +7,7 @@ export function generateStaticParams() {
 }
 
 export default function NewsDetailPage({ params }) {
-  const news = newsData.find((n) => n.pageTag === params.slug) ?? null;
+  const { slug } = use(params);
+  const news = newsData.find((n) => n.pageTag === slug) ?? null;
   return <NewsDetailClient news={news} />;
 }
