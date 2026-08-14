@@ -4,6 +4,16 @@ import { motion } from "framer-motion";
 
 const LOWER = new Set(["a","an","the","and","but","or","for","nor","on","at","to","by","in","of","up","as","is","it"]);
 
+// Subtle tinted backgrounds — one per row, cycles
+const BOX_COLORS = [
+  { bg: "bg-[#1a0808]", border: "border-[#3a1010]", text: "text-[#6b2020]" },
+  { bg: "bg-[#080d1a]", border: "border-[#102040]", text: "text-[#1e4080]" },
+  { bg: "bg-[#08140e]", border: "border-[#10381e]", text: "text-[#1a6030]" },
+  { bg: "bg-[#12100a]", border: "border-[#302810]", text: "text-[#5a4810]" },
+  { bg: "bg-[#100a18]", border: "border-[#281440]", text: "text-[#4a2080]" },
+  { bg: "bg-[#0a1414]", border: "border-[#103030]", text: "text-[#106060]" },
+];
+
 function toTitleCase(str) {
   if (!str) return "";
   return str
@@ -55,16 +65,23 @@ export default function BlogRow({ blog, onClick, index }) {
       {/* Main row content */}
       <div className="relative border-b border-[#161616] group-hover:border-[#252525] transition-colors duration-400 py-7 pl-5 pr-1 flex items-center gap-5 md:gap-8">
 
-        {/* Index number */}
-        <div className="shrink-0 w-6 text-right select-none">
-          <motion.span
-            className="block text-[11px] font-mono text-[#2e2e2e] group-hover:text-[#E1251B]/50 transition-colors duration-300"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: index * 0.08 + 0.2 }}
-          >
-            {String(index + 1).padStart(2, "0")}
-          </motion.span>
+        {/* Index number — coloured bordered box */}
+        <div className="shrink-0 select-none">
+          {(() => {
+            const c = BOX_COLORS[index % BOX_COLORS.length];
+            return (
+              <motion.div
+                className={`w-9 h-9 rounded-lg border ${c.border} ${c.bg} group-hover:border-[#E1251B]/50 group-hover:bg-[#1a0505] flex items-center justify-center transition-all duration-300`}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: index * 0.08 + 0.15, duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <span className={`text-[12px] font-mono font-semibold ${c.text} group-hover:text-[#E1251B]/80 transition-colors duration-300 leading-none`}>
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </motion.div>
+            );
+          })()}
         </div>
 
         {/* Text */}

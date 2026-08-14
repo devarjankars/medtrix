@@ -8,7 +8,7 @@ export const blogsData = [
   
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Linkedin_Post-01_mobi.jpg",
     featuredImage:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Website_Post-01_desk.jpg",
-    LinkedInDescription:"We've spent years making content creation faster. Perhaps it's time to make content review smarter. As AI continues to reshape pharmaceutical workflows, its greatest impact may not be in replacing reviewers, but in helping them make faster, more informed decisions with greater confidence. In our latest blog, we explore how AI is helping redefine the future of MLR review through connected knowledge, intelligent search, and smarter content approvals.",
+    LinkedInDescription:"",
     fullArticleLink:"",
     body: [
       "As pharmaceutical organizations continue to expand omnichannel engagement, content production has increased by 7% globally and 29% in the U.S., placing growing pressure on MLR teams to review growing volumes of scientific and promotional content without compromising compliance.",
@@ -38,7 +38,7 @@ export const blogsData = [
     title: "From Content Volume to Content Value: Rethinking Scientific Communication",
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Linkedin_Post-02_mobi.jpg",
     featuredImage:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Website_Post-02_desk.jpg",
-    LinkedInDescription:"Pharmaceutical organizations are creating more scientific content than ever before. Yet nearly <b>80% of approved field content is rarely or never used.</b><br/>The challenge isn't producing more content—it's ensuring every asset is discoverable, reusable, and delivers value when matters most. In our latest blog, we explore how organizations can shift from <b>content volume</b> to <b>content value</b> by combining <b>strategic scientific storytelling, audience-centric content strategies, modular content, personalized engagement, and AI-enabled workflows</b> to maximize the impact of every scientific asset.",
+    LinkedInDescription:"",
 
     fullArticleLink:"",
     body: [
