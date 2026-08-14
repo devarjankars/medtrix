@@ -6,6 +6,19 @@ import { lenisInstance } from "@/components/LenisProvider";
 
 const ease = [0.22, 1, 0.36, 1];
 
+const LOWER = new Set(["a","an","the","and","but","or","for","nor","on","at","to","by","in","of","up","as","is","it"]);
+function toTitleCase(str) {
+  if (!str) return "";
+  return str
+    .split(" ")
+    .map((word, i) => {
+      if (!word) return word;
+      if (i !== 0 && LOWER.has(word.toLowerCase())) return word.toLowerCase();
+      return word.charAt(0).toUpperCase() + word.slice(1);
+    })
+    .join(" ");
+}
+
 // ── Video player with poster thumbnail ───────────────────────────────────────
 function VideoBlock({ src, poster, title }) {
   const videoRef = useRef(null);
@@ -104,7 +117,7 @@ export default function BlogDetail({ blog, onBack }) {
         )}
         {blog.category && (
           <span className="text-xs text-gray-500 uppercase tracking-widest border border-[#2a2a2a] px-3 py-1 rounded-full">
-            {blog.category}
+            {toTitleCase(blog.category)}
           </span>
         )}
       </div>
@@ -116,7 +129,7 @@ export default function BlogDetail({ blog, onBack }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease, delay: 0.05 }}
       >
-        {blog.title}
+        {toTitleCase(blog.title)}
       </motion.h1>
 
       {/* ── LinkedIn teaser ────────────────────────────────────────────── */}

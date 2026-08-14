@@ -227,12 +227,17 @@ function NewsPageInner() {
           </div>
         </div>
 
-        {/* Blog rows */}
-        <div className="flex flex-col">
+        {/* Blog rows — newest entry is first in the array */}
+        <motion.div
+          className="flex flex-col"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        >
           {blogsData.map((blog, i) => (
             <BlogRow key={blog.id} blog={blog} index={i} onClick={openBlog} />
           ))}
-        </div>
+        </motion.div>
 
         <BottomGlow />
       </section>
