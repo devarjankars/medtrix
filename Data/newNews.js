@@ -1,7 +1,56 @@
 export const newsData = 
 [
-		{
-                id: 1,
+    {
+                id: 6,
+                date: "Augest 2026",
+                category: "Celebrations",
+                title: "Independence Day Celebrations at MedTrix Bengaluru",
+                thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Group image.jpg",
+                thumbnailMbl: "",
+                body: [
+                    "Independence Day celebrations at MedTrix Bengaluru had a great mix of music, dance, patriotic conversations, a quiz that brought out everyone’s competitive side, and a meal that ended things on a delicious note.",
+                    "The program began with the rendition of Vande Mataram. The musical opening was followed by a speech on India’s growth across sectors and the changes shaping the country’s progress.",
+                    "A different perspective followed, with examples from the Netflix series Operation Safed Sagar bringing relevant stories and events into the conversation.",
+                    "The program continued with a dance performance, with the performers bringing their own style and energy to the afternoon.",
+                    "Next came the quiz. Four teams went up against each other, with colleagues putting their knowledge and quick thinking to work across a series of questions. There was plenty of discussion within teams, some close competition, and lots of excitement along the way when the right answers came through.",
+                    "The Best Dressed contest was another highlight, with winners announced during the event. The final stop was the dining table, where scrumptious food inspired by the colours of the tricolour provided a fitting finale for a truly memorable day.",
+                    "With music in the air, a little competition in the room, and the tricolour on the table, it was an Independence Day well celebrated."
+
+                ],
+                images: [
+                    {
+                        desktop:
+                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Group image.jpg ",
+
+                        mobile: "",
+                    },
+                    {
+                        desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Balloons.jpg",
+
+                        mobile: "",
+                    },
+                    
+                     {
+                        desktop:
+                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Dance(Yam and Vid).jpg",
+                        mobile: "",
+                    },
+                    {
+                        desktop:
+                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Rishab.jpg",
+                        mobile: "",
+                    },
+                    {
+                        desktop:
+                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj.jpg",
+                        mobile: "",
+                    },
+                   
+                    
+                ],
+            },
+		     {
+                id: 5,
                 date: "July 2026",
                 category: "Award",
                 title: "Celebrating and Recognizing Excellence at our Q2 Town Hall",
@@ -38,7 +87,7 @@ export const newsData =
                 ],
             },
             {
-                id: 2,
+                id: 4,
                 date: "April 2026",
                 category: "Conference",
                 title: "MedTrix Cricket League 2026: Bringing Teams Together Beyond Work ",
@@ -74,6 +123,7 @@ export const newsData =
                             "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/newsin0_4.png",
                         mobile: "",
                     },
+                    
                 ],
             },
             {
@@ -104,7 +154,7 @@ export const newsData =
                 ],
             },
             {
-                id: 4,
+                id: 2,
                 date: "March 2026",
                 category: "Award",
                 title: "Highlights From the MedTrix Q1 Town Hall",
@@ -141,7 +191,7 @@ export const newsData =
                 ],
             },
             {
-                id: 5,
+                id: 1,
                 date: "December 2025",
                 category: "Award",
                 title: "Christmas 2025 at MedTrix: A Celebration to Remember ",
