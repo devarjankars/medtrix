@@ -50,7 +50,7 @@ export default function Home() {
                 <span className="text-[16px]  text-red-500 font-bold px-2 py-0.5 rounded">USA</span>
               </div>
               <p className="text-[16px] text-[#d1d5db] leading-relaxed font-medium">
-                100 Somerset Corporate Boulevard 2nd Floor, Suite 130, Bridgewater, NJ 08807
+                100 Somerset Corporate, <br/>Blvd 2nd Floor, Suite 137, Bridgewater, NJ 08807
               </p>
             </div>
           </div>
@@ -87,9 +87,8 @@ export default function Home() {
                       <img src={pointerMap} alt="pointer" width={42} height={42} className="object-contain shrink-0" />
                       <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">USA</span>
                       <p className="text-[#d1d5db] text-sm leading-relaxed">
-                        100 Somerset Corporate Boulevard,<br />
-                        2nd Floor, Suite 130,<br />
-                        Bridgewater, NJ 08807
+                        
+                        100 Somerset Corporate, <br/>Blvd 2nd Floor, Suite 137, <br/>Bridgewater, NJ 08807
                       </p>
                     </motion.div>
         

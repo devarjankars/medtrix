@@ -5,7 +5,7 @@ export const jobsData = [
     "title": "Account Director",
     "experience": "8+ years ",
     "location": "New Jersey, US",
-    "workMode": "Onsite/Remote",
+    "workMode": "On-site / Remote",
     "type": "Full-Time",
     "summary": "As an Account Director, you will lead strategic client partnerships and oversee the successful delivery of programs across assigned accounts. As a senior client-facing leader, this role builds strong client relationships, drives account growth, and ensures exceptional client satisfaction through proactive partnership and strategic guidance. The Account Director collaborates closely with Medical Directors, Creative, Digital, and Project Management Teams to deliver high-quality, compliant, and impactful solutions that align with client objectives. This role is responsible for identifying and driving organic growth opportunities, expanding client engagements, strengthening long-term partnerships, and contributing to the organization's continued growth and success."
     ,"duties": [
@@ -31,7 +31,7 @@ export const jobsData = [
     "title": "Account Manager",
     "experience": "4+ years",
     "location": "New Jersey, US",
-    "workMode": "Onsite/Remote",
+    "workMode": "On-site / Remote",
     "type": "Full-Time",
     "summary": "As an Account Manager, you will be responsible for managing day-to-day client relationships and supporting the successful delivery of programs across assigned accounts. As a key client-facing partner, this role works closely with clients and internal teams to ensure projects are executed efficiently, meet quality standards, and align with client objectives. You will collaborate with Medical Directors, Creative, Digital, and Project Management Teams to deliver high-quality, compliant, and impactful solutions while maintaining strong client satisfaction. This role supports account growth by identifying opportunities to expand client engagements, strengthening client relationships, and contributing to the overall success and retention of assigned accounts.",
     "duties": [
@@ -57,7 +57,7 @@ export const jobsData = [
     "title": "Creative Director",
     "experience": "10+ years",
     "location": "New Jersey, US",
-    "workMode": "Onsite",
+    "workMode": "On-site",
     "type": "Full-Time",
     "summary": "As a Creative Director, you will be responsible for leading and elevating the creative vision across client engagements, ensuring the delivery of innovative, impactful, and strategically aligned communication solutions. This role drives the development and execution of creative initiatives that enhance client experiences, strengthen engagement, and support business objectives. Working closely with Account Teams and cross-functional stakeholders, you will play a key role in ensuring consistent delivery of high-quality work across multiple channels and formats. As a client-facing leader, this role provides strategic creative counsel, champions brand and visual excellence, and fosters innovation through emerging design trends, technologies, and best practices.",
     "duties": [
@@ -83,11 +83,11 @@ export const jobsData = [
   
   {
     "id": 4,
-    "fileName": "Sr.Medical Writer_website_V1.0 1.docx",
-    "title": "Sr.Medical Writer",
+    "fileName": "Sr. Medical Writer_website_V1.0 1.docx",
+    "title": "Sr. Medical Writer",
     "experience": "6+ years",
     "location": "Bangalore, India",
-    "workMode": "Onsite/Remote",
+    "workMode": "On-site / Remote",
     "type": "Full-Time",
     "summary": "As a Senior Medical Writer, you will be responsible for leading the development of complex, scientifically accurate, and publication-ready medical content across a variety of deliverables, including publications, Medical Affairs materials, educational programs, omnichannel campaigns, and digital learning assets. Leveraging deep scientific expertise and strong communication skills, this role translates complex clinical and scientific information into clear, compelling, and compliant content for healthcare professionals and other stakeholders. As a senior scientific contributor, you will provide content oversight, support high-quality client and MLR review outcomes, participate in scientific discussions with clients, and mentor junior team members while ensuring the successful delivery of strategic medical communications programs.",
     "duties": [
@@ -118,7 +118,7 @@ export const jobsData = [
     "title": "Medical Writer",
     "experience": "2+ years",
     "location": "Bangalore, India",
-    "workMode": "Onsite or Remote",
+    "workMode": "On-site / Remote",
     "type": "Full-Time",
     "summary": "In this role, you will develop high-quality, scientifically accurate, and publication-ready medical content across a variety of formats, including manuscripts, abstracts, posters, presentations, educational materials, digital learning modules, infographics, omnichannel content, and multimedia assets. This role combines scientific expertise with strong writing and communication skills to translate complex medical and clinical information into clear, engaging, and compliant content for healthcare professionals and other stakeholders. Working closely with scientific, creative, and project teams, you will conduct research, interpret scientific data, and ensure the timely delivery of high-quality content that aligns with client objectives, industry standards, and regulatory requirements.",
     "duties": [
@@ -146,7 +146,7 @@ export const jobsData = [
     "title": "Medical Writer",
     "experience": "3+ years",
     "location": "Bangalore, India",
-    "workMode": "Onsite/Remote",
+    "workMode": "On-site / Remote",
     "type": "Full-Time",
     "summary": "In this role, you will be responsible for reviewing, editing, and quality-checking scientific, medical, and marketing content. The role requires strong attention to detail in ensuring accuracy, clarity, consistency, and adherence to client, regulatory, and agency standards. Working closely with Medical Writers, Creative Teams, Account Teams, and Project Managers, this role plays a critical part in delivering error-free, publication-ready content across a variety of formats, including manuscripts, presentations, educational materials, digital assets, websites, and omnichannel campaigns. As a Copy Editor, you will ensure that all deliverables maintain high editorial quality, consistent messaging, and compliance with established style guides and best practices.",
     "duties": [
@@ -174,7 +174,7 @@ export const jobsData = [
     "title": "Graphic Designer",
     "experience": "2+ years",
     "location": "Bangalore, India",
-    "workMode": "Onsite",
+    "workMode": "On-site",
     "type": "Full-Time",
     "summary": "In this role, you will be responsible for creating visually compelling and brand-consistent communication materials across print, digital, and multimedia platforms. The role combines creativity, visual storytelling, and design expertise to translate complex scientific and business information into engaging, audience-centric designs that support client objectives and drive engagement. Working closely with Creative Directors, Medical Writers, Account Teams, and other cross-functional stakeholders, you will be required to develop high-quality visual assets while ensuring adherence to brand guidelines, design standards, and project requirements.",
     "duties": [
@@ -202,7 +202,7 @@ export const jobsData = [
     "title": "Web Developer",
     "experience": "4+ years",
     "location": "Bangalore, India",
-    "workMode": "Onsite",
+    "workMode": "On-site",
     "type": "Full-Time",
     "summary": "As a Web Developer, you will be responsible for designing, developing, and maintaining engaging digital experiences across websites, microsites, emailers, interactive applications, digital learning modules, and omnichannel marketing assets. In this role, you will work closely with Creative, Content, Project Management, and Technical Teams to transform business requirements and design concepts into scalable, responsive, and high-performing digital solutions. You will need to leverage strong front-end development expertise and a passion for creating seamless user experiences while ensuring quality, performance, accessibility, and compliance with development best practices.",
     "duties": [
@@ -232,7 +232,7 @@ export const jobsData = [
     "title": "Project Manager",
     "experience": "6+ years",
     "location": "Bangalore, India",
-    "workMode": "Onsite",
+    "workMode": "On-site",
     "type": "Full-Time",
     "summary": "As a Project Manager, you will be responsible for planning, coordinating, and overseeing the successful delivery of projects across assigned client accounts. This role works closely with Account Management, Medical, Creative, Digital, and cross-functional teams to ensure projects are delivered on time, within scope, and in accordance with quality and compliance requirements. You will serve as a central point of coordination, proactively managing timelines, resources, risks, and stakeholder communications while driving operational excellence and ensuring a seamless project experience for both clients and internal teams.",
     "duties": [

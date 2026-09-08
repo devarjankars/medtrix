@@ -350,9 +350,8 @@ function LinkedInCard() {
               <img src={pointerMap} alt="pointer" width={32} height={32} className="object-contain shrink-0" />
               <span className="text-md font-extrabold uppercase tracking-[3px] text-[#E1251B]">USA</span>
               <p className="text-[#d1d5db] text-sm leading-relaxed">
-                100 Somerset Corporate Boulevard,<br />
-                2nd Floor, Suite 130,<br />
-                Bridgewater, NJ 08807
+                
+                100 Somerset Corporate,<br/> Blvd 2nd Floor, Suite 137,<br/> Bridgewater, NJ 08807
               </p>
             </motion.div>
 

@@ -5,7 +5,7 @@ const ease = [0.22, 1, 0.36, 1];
 
 const headingWords = [
   { text: "MedTrix—", red: false, noGap: true },
-  { text: "Catalyzing", red: false },
+  { text: "Catalyzing ", red: false },
   { text: "Healthcare", red: true },
 ];
 
@@ -81,8 +81,8 @@ export default function Landing() {
           >
             Our proven mix of science, creativity, technology, and strategy accelerates compliant,
             high-impact engagement across Medical Affairs and Commercial functions—exponentially.
-            From launch through the lifecycle, we don&apos;t just support your growth. We{" "}
-            <b className="text-[#F2F2F2]">Catalyze</b> it.
+            From launch through the lifecycle, we don&apos;t just support your growth, we{" "}
+            <b className="text-[#F2F2F2]">catalyze</b> it.
           </motion.p>
 
         </div>
