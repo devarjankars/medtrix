@@ -17,23 +17,14 @@ export const newsData =
    
                 ],
                 images: [
-                    {
-                        desktop:
-                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vimal_visit1.jpg",
-
-                        mobile: "",
-                    },
+                    
                     {
                         desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vimal_visit2.jpg",
 
                         mobile: "",
                     },
                     
-                     {
-                        desktop:
-                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vimal_visit3.jpg",
-                        mobile: "",
-                    },
+                     
                     {
                         desktop:
                             "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vimal_visit4.jpg",
