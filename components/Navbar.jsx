@@ -130,7 +130,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
           {/* arrow tip */}
           {/* <div className="absolute top-[6px] left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-[#161616] border-l border-t border-white/10 z-10" /> */}
 
-          <ul className="relative w-56 bg-[#161616]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] py-2 list-none overflow-hidden">
+          <ul className="relative w-56 bg-[#161616]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] p-2 list-none">
             {items.map((item, i) => {
               const isActive = pathname.replace(/\/$/, "") === item.href ||
                 (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/services/ai-catalysts");
@@ -139,7 +139,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className={`group/item relative flex items-center gap-3 px-4 py-2.5 text-md leading-snug transition-all duration-150 ${
+                    className={`group/item relative flex items-center gap-3 rounded-xl px-4 py-2.5 text-md leading-snug transition-all duration-150 ${
                       isActive
                         ? "bg-red-500 text-white font-semibold"
                         : "text-white/65 hover:text-white hover:bg-white/8"
@@ -216,7 +216,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
         }
 
         return (
-          <div key={label} className="border-b border-white/6">
+          <div key={label} className="border-b border-white/6 px-2">
             <div
               className="flex items-center justify-between py-4 cursor-pointer w-full"
               onClick={() => hasItems ? setOpenSection(isOpen ? null : label) : null}
@@ -253,8 +253,8 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
                       key={item.href}
                       href={item.href}
                       onClick={() => { setOpenSection(label); onClose(); }}
-                      className={`flex items-center gap-2 py-3 px-2 w-full text-lg font-light ${
-                      (pathname.replace(/\/$/, "") === item.href || (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/services/ai-catalysts")) ? "text-red-500" : "text-gray-500 hover:text-gray-200 transition-colors"
+                    className={`flex items-center gap-2 rounded-xl py-3 px-3 w-full text-lg font-light transition-colors ${
+                      (pathname.replace(/\/$/, "") === item.href || (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/services/ai-catalysts")) ? "bg-red-500 text-white" : "text-gray-500 hover:bg-white/8 hover:text-gray-200"
                     }`}
                   >
                     {item.label}

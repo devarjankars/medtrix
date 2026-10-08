@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const footerData = [
   {
     title: "Services",
-    href: "/services/Commercial_Solutions",
+    href: "/services",
     links: [
       { label: "Commercial Solutions", href: "/services/Commercial_Solutions" },
       { label: "Medical Affairs", href: "/services/medical-affairs" },

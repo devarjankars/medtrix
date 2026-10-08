@@ -5,8 +5,8 @@ const ease = [0.22, 1, 0.36, 1];
 
 const headingWords = [
   { text: "MedTrix—", red: false, noGap: true },
-  { text: "Catalyzing ", red: false },
-  { text: "Healthcare", red: true },
+  { text: "Catalyzing", red: false },
+  { text: "\u00A0Healthcare", red: true },
 ];
 
 const paraVariants = {

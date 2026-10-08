@@ -1,6 +1,9 @@
 export const blogsData = [
+  
+
+  
   {
-    id: 1,
+    id: 9,
       slug: "Rethinking-MLR-Review-with-AI-blog-post",
     date: "",
     category: "MLR Review",
@@ -31,7 +34,7 @@ export const blogsData = [
     ]
   },
   {
-    id: 2,
+    id: 8,
     date: "",
       slug: "from-content-volume-to-content-value-blog-post",
     category: "Scientific Communication",
@@ -93,7 +96,7 @@ export const blogsData = [
     ]
   },
    {
-    id: 3,
+    id: 7,
     date: "",
       slug: "migraine-Awareness-news-post",
     category: "Migraine Awareness",
@@ -121,7 +124,7 @@ export const blogsData = [
     
   },
    {
-    id: 4,
+    id: 6,
     date: "",
       slug: "bridging-boundaries-ensuring-equal-healthcare-access-news-post",
     category: "Healthcare Access ",
@@ -201,7 +204,7 @@ export const blogsData = [
   ]
   },
    {
-    id: 6,
+    id: 4,
     date: "",
       slug: "rare-disease-blog-post",
     category: "Rare Disease",
@@ -247,7 +250,7 @@ export const blogsData = [
 
 
   {
-    id: 7,
+    id: 3,
     date: "",
       slug: "elearning-blog-post",
     category: "MEDICAL EDUCATION",
@@ -279,7 +282,7 @@ export const blogsData = [
             ]
   },
   {
-    id: 8,
+    id: 2,
     date: "",
       slug: "learning-through-continuous-engagement-blog-post",
     category: "Engagement",
@@ -304,7 +307,7 @@ export const blogsData = [
   },
 
    {
-    id: 9,
+    id: 1,
     date: "",
       slug: "hololens-in-medicals-sciences-blog-post",
     category: "Medical Sciences",

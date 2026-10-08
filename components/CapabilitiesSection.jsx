@@ -169,7 +169,7 @@ export default function CapabilitiesSection() {
                   src={content.mediaSrc}
                   alt={content.headline}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   sizes="100vw"
                   unoptimized
                 />
