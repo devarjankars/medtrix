@@ -55,12 +55,7 @@ export const newsData =
 
                 ],
                 images: [
-                    {
-                        desktop:
-                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/onam2.png",
-
-                        mobile: "",
-                    },
+                  
                     {
                         desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/onam1.jpg",
 
@@ -77,21 +72,13 @@ export const newsData =
                             "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/onam4.jpg",
                         mobile: "",
                     },
-                    {
-                        desktop:
-                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/onam5.jpg",
-                        mobile: "",
-                    },
+                    
                     {
                         desktop:
                             "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/onam6.jpg",
                         mobile: "",
                     },
-                    {
-                        desktop:
-                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/onam7.jpg",
-                        mobile: "",
-                    },
+                 
                     {
                         desktop:
                             "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/onam8.jpg",
