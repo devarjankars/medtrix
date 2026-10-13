@@ -252,10 +252,11 @@ export default function BlogDetail({ blog, onBack }) {
                 </ul>
               )}
               {section.body && (
-                <p
-                  className="text-[#A6A6A6] text-[16px] lg:text-[19px] leading-[160%] [&_b]:text-gray-200 [&_b]:font-semibold"
-                  dangerouslySetInnerHTML={{ __html: section.body }}
-                />
+                <div className="space-y-4 text-[#A6A6A6] text-[16px] lg:text-[19px] leading-[160%] [&_b]:text-gray-200 [&_b]:font-semibold">
+                  {section.body.split(/<br\s*\/?>/i).map((paragraph, j) => (
+                    <p key={j} dangerouslySetInnerHTML={{ __html: paragraph }} />
+                  ))}
+                </div>
               )}
             </motion.div>
           ))}
