@@ -8,7 +8,7 @@ export const blogsData = [
       slug: "Science-Storytelling-Technology-New-Formula-Healthcare-Marketing-Content",
     date: "",
     category: "Healthcare-Marketing",
-    title: "",
+    title: "Science + Storytelling + Technology: The New Formula for Healthcare Marketing Content",
   
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/12thblogMobi.jpeg",
     featuredImage:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/12thblog.jpg",
@@ -54,7 +54,7 @@ export const blogsData = [
       slug: "Content-Formats-HCPs-Prefer-Today-blog-post",
     date: "",
     category: "Content Formats",
-    title: "",
+    title: "Content Formats HCPs Prefer Today",
   
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/11thblobMobi.jpeg",
     featuredImage:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/11thblog.jpg",
@@ -79,7 +79,7 @@ export const blogsData = [
       slug: "Why-Scientific-Storytelling-Matters-More-Than-Ever-blog-post",
     date: "",
     category: "Scientific Storytelling ",
-    title: "",
+    title: "Why Scientific Storytelling Matters More Than Ever",
   
     featuredImageMobi: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/10thblogMobi.jpeg",
     featuredImage:"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/10thblog.jpg",

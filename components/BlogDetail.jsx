@@ -122,16 +122,6 @@ export default function BlogDetail({ blog, onBack }) {
         )}
       </div>
 
-      {/* ── Title ─────────────────────────────────────────────────────── */}
-      <motion.h1
-        className="text-[28px] leading-[1.2] lg:text-5xl font-normal text-gray-200 lg:leading-[1.15] mb-6"
-        initial={{ opacity: 0, y: 16 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease, delay: 0.05 }}
-      >
-        {toTitleCase(blog.title)}
-      </motion.h1>
-
       {/* ── LinkedIn teaser ────────────────────────────────────────────── */}
       {blog.LinkedInDescription && (
         <motion.div
