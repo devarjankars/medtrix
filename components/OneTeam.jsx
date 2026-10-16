@@ -62,21 +62,21 @@ function TypingQuote({ onDone }) {
     <p ref={paraRef} className="lg:text-[30px] text-[22px] leading-relaxed" />
   );
 }
-const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar.png";
-const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shijin.png";
+const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar_Headshot.png";
+const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shijin_Headshot.png";
 const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vimal.png";
-const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lyris.png";
-const hari = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Hari2.png";
-const binoj = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj.png";
-const rajesh = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Rajesh 1.png";
-const michel= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Michelle 1.png";
-const suja= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shuja.png";
-const stalin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Stalin 1.png";
-const  suru= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Suresh 1.png";
-const vincent= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vincent.png";
-const christopher= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Christopher Moccia.png";
-const Jaclym= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Jaclym 1.png";
-const colin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Colin2.png";
+const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lyris_Headshot.jpeg";
+const hari = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Hari_Headshot.png";
+const binoj = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj_Headshot.png";
+const rajesh = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Rajesh_Headshot.png";
+const michel= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Michelle_Headshot.png";
+const suja= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shuja_Headshot.png";
+const stalin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Stalin Headshot.png ";
+const  suru= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Suresh_Headshot.png";
+const vincent= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vince_Headshot.png";
+const christopher= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Chris_Headshot.png";
+const jaclyn= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Jaclyn_Headshot.png";
+const colin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Colin_Headshot.png";
 
 
 /* ── LinkedIn SVG icon — bg changes to red on hover ── */
@@ -169,7 +169,7 @@ const accountsTeamData = [
   { img: christopher, name: "Christopher Moccia", role: "VP - Client Partnerships", linkedin: "https://www.linkedin.com/in/christopher-moccia-a176901b/" },
   { img: michel, name: "Michelle Trussell", role: "Account Director", linkedin: "https://www.linkedin.com/in/michelle-trussell-44068747/" },
   
-  { img: Jaclym, name: "Jaclyn Pallotti", role: "Account Director" },
+  { img: jaclyn, name: "Jaclyn Pallotti", role: "Account Director" },
   { img: colin, name: "Colin Lewandowski", role: "Account Executive", linkedin: "https://www.linkedin.com/in/colin-lewandowski-7b5910329/" },
 ];
 
