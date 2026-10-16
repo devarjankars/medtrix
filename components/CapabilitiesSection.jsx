@@ -223,7 +223,7 @@ export default function CapabilitiesSection() {
         ]}
         cols={3}
         button="Explore Our Omnichannel Catalyst"
-        link={"/services/ai-catalysts"}
+        link={"/cipher"}
       />
 
       {/* EDUCATE section */}

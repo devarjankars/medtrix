@@ -62,12 +62,22 @@ function TypingQuote({ onDone }) {
     <p ref={paraRef} className="lg:text-[30px] text-[22px] leading-relaxed" />
   );
 }
-const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp1.png";
-const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp2.png";
-const vp3 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp3.png";
-const vp4 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vp4.png";
-const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ceo.png";
-const linkedinImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/linkdin.png";
+const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar.png";
+const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shijin.png";
+const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vimal.png";
+const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lyris.png";
+const hari = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Hari2.png";
+const binoj = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj.png";
+const rajesh = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Rajesh 1.png";
+const michel= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Michelle 1.png";
+const suja= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shuja.png";
+const stalin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Stalin 1.png";
+const  suru= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Suresh 1.png";
+const vincent= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vincent.png";
+const christopher= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Christopher Moccia.png";
+const Jaclym= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Jaclym 1.png";
+const colin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Colin2.png";
+
 
 /* ── LinkedIn SVG icon — bg changes to red on hover ── */
 let _liIconCount = 0;
@@ -79,8 +89,8 @@ function LinkedInIcon({ className = "w-12 h-12", hovered = false }) {
     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
       {/* background circle */}
       <rect
-        width="64" height="64" rx="32"
-        fill={hovered ? "#E1251B" : "#272727"}
+        width="64" height="64" rx="10"
+        fill={hovered ? "#E1251B" : "#0A66C2"}
         style={{ transition: "fill 0.25s ease" }}
       />
       {/* "IN" logo mark — always white */}
@@ -112,19 +122,21 @@ const gptwImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_
 const gptw_mobile = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/gptw_mobile.png";
 
 const logo1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo1.png";
-const logo2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo2.png";
+const logo2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo2v2.png";
 const logo3 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Berline_chemie.png";
 const logo4 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/celltrion.png";
-const logo5 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo5.png";
-const logo6 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ferring.png";
+const logo5 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo5v2.png";
+const logo6 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo6v2.png";
 const logo7 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo7.png";
 const logo8 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo8.png";
 const logo9 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/nestlelogo.png";
 const logo10 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo10.png";
 const logo11 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo11.png";
 const logo12 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stemlinelogo.png";
+const logo13 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo11v2.png";
+const logo14 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo12v2.png";
 
-const awd1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd1.png";
+const   awd1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd1.png";
 const awd2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd2.png";
 const awd3 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd3.png";
 const awd4 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd4.png";
@@ -137,26 +149,84 @@ const awd10 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_20
 const awd11 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd11.png";
 const awd12 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd12.png";
 
-const vpData = [
-  { img: vp1, name: "Kumar Badampudi", role: "Chief Innovation Officer", linkedin: "https://www.linkedin.com/in/kumar-badampudi-71812826/" },
+const leadershipData = [
   { img: vp2, name: "Shijin Pulikkotil", role: "Chief Operating Officer", linkedin: "https://www.linkedin.com/in/shijin-pulikkotil-85139332/" },
-  { img: vp3, name: "Hari Prabhakaran", role: "VP - Business Development", linkedin: "https://www.linkedin.com/in/hari-prabhakaran-90724a2/" },
-  { img: vp4, name: "Vincent Morella", role: "US Operations Admin", linkedin: "https://www.linkedin.com/in/vincent-morella-389b714/" },
+  { img: vp1, name: "Kumar Badampudi", role: "Chief Innovation Officer", linkedin: "https://www.linkedin.com/in/kumar-badampudi-71812826/" },
 ];
+
+const coreTeamData = [
+  { img: liz, name: "Lyris Lazar", role: "Director - US Operations", linkedin: "https://www.linkedin.com/in/lyris-lazar-4a1121234/" },
+  { img: hari, name: "Hari Prabhakaran", role: "VP - Client Partnerships", linkedin: "https://www.linkedin.com/in/hari-prabhakaran-90724a2/" },
+  { img: binoj, name: "Binoj Krishnan", role: "VP - Finance and Administration", linkedin: "https://www.linkedin.com/in/binoj-krishnan-89588915/" },
+  { img: vincent, name: "Vincent Morella", role: "US Operations Administrator", linkedin: "https://www.linkedin.com/in/vincent-morella-389b714/" },
+  { img: rajesh, name: "Dr Rajesh Hariharan", role: "Medical Director", linkedin: "https://www.linkedin.com/in/dr-rajesh-h-2a182849/" },
+  { img: suru, name: "Suresh Waghmore", role: "Associate VP - Creative", linkedin: "https://www.linkedin.com/in/suresh-waghmore-99442510/" },
+  { img: suja, name: "Dr Shuja Jacob", role: "Medical Director", linkedin: "https://www.linkedin.com/in/dr-shuja-jacob-810a03124/?isSelfProfile=false" },
+  { img: stalin, name: "Stalin Blazy", role: "Technical Lead", linkedin: "https://www.linkedin.com/in/stalin-blazy-8290a631/" },
+];
+
+const accountsTeamData = [
+  { img: christopher, name: "Christopher Moccia", role: "VP - Client Partnerships", linkedin: "https://www.linkedin.com/in/christopher-moccia-a176901b/" },
+  { img: michel, name: "Michelle Trussell", role: "Account Director", linkedin: "https://www.linkedin.com/in/michelle-trussell-44068747/" },
+  
+  { img: Jaclym, name: "Jaclyn Pallotti", role: "Account Director" },
+  { img: colin, name: "Colin Lewandowski", role: "Account Executive", linkedin: "https://www.linkedin.com/in/colin-lewandowski-7b5910329/" },
+];
+
+function ProfileCard({ person, leadership = false }) {
+  const imageHeight = leadership ? "h-[220px] sm:h-[250px]" : "h-[145px] sm:h-[160px]";
+  const initials = person.name
+    .split(" ")
+    .filter((part) => part && !["Dr", "Dr."].includes(part))
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("");
+
+  return (
+    <article className="overflow-hidden rounded-2xl border border-[#292929] bg-[#111111]">
+      <div className={`${imageHeight} flex items-end justify-center overflow-hidden bg-[#151515]`}>
+        {person.img ? (
+          <img
+            src={person.img}
+            alt={person.name}
+            loading="lazy"
+            className="h-full w-full object-contain object-bottom"
+          />
+        ) : (
+          <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.08),transparent_65%)] text-4xl font-semibold tracking-wide text-white/20">
+            {initials}
+          </div>
+        )}
+      </div>
+
+      <div className={`flex min-h-[76px] items-center justify-between gap-2 border-t border-[#424242] bg-black px-3 ${leadership ? "py-4 sm:px-5" : "py-2.5"}`}>
+        <div className="min-w-0 flex-1">
+          <h4 className={`${leadership ? "text-lg sm:text-xl" : "text-[13px] sm:text-sm"} truncate font-semibold leading-tight text-white`}>
+            {person.name}
+          </h4>
+          <p className={`${leadership ? "text-xs sm:text-sm" : "text-[10px] sm:text-[11px]"} mt-1 leading-snug text-gray-400`}>
+            {person.role}
+          </p>
+        </div>
+        {person.linkedin ? (
+          <LinkedInButton href={person.linkedin} size={leadership ? "h-6 w-6 shrink-0" : "h-5 w-5 shrink-0"} />
+        ) : (
+          <LinkedInIcon className={leadership ? "h-6 w-6 shrink-0" : "h-5 w-5 shrink-0"} />
+        )}
+      </div>
+    </article>
+  );
+}
 
 const clientLogos = [
   logo1, logo2, logo3, logo4, logo5, logo6,
-  logo7, logo8, logo9, logo10, logo11, logo12,
+  logo7, logo8, logo9, logo10, logo11, logo12,logo13,logo14,
 ];
 
 const awardsData = [
   awd1, awd2, awd3, awd4, awd5, awd6,
   awd7, awd8, awd9, awd10, awd11, awd12,
 ];
-
-const cardStyle = {
-  background: "radial-gradient(circle at 20% 0%, rgba(255,255,255,0.12) 0%, rgba(24,24,27,0.2) 35%, rgba(0,0,0,1) 100%)",
-};
 
 const redGlow = {
   background: "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)",
@@ -220,23 +290,11 @@ function GptwImage({ src, className }) {
 }
 
 function OneTeam() {
-  const cardRefs  = useRef([]);
-  const gridRef   = useRef(null);
   const awardsRef = useRef(null);
   const logosRef  = useRef(null);
   const [quoteDone, setQuoteDone] = useState(false);
 
   useEffect(() => {
-    // VP cards slide in from right
-    cardRefs.current.forEach((card, i) => {
-      if (!card) return;
-      gsap.fromTo(card,
-        { opacity: 0, x: 60 },
-        { opacity: 1, x: 0, duration: 0.5, ease: "power2.out", delay: i * 0.15,
-          scrollTrigger: { trigger: gridRef.current || card, start: "top 80%", once: true } }
-      );
-    });
-
     // Client logos pop in with stagger
     if (logosRef.current) {
       gsap.fromTo(
@@ -260,56 +318,43 @@ function OneTeam() {
 
   return (
     <>
-      {/* CEO Quote Card */}
-      <div
-        className="flex flex-col lg:flex-row items-center gap-8 p-[30px] border border-white/10 border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-3xl text-white"
-        style={cardStyle}
-      >
-        <div className="shrink-0">
-          <img src={ceoImg} alt="Vimal Narayanan" className="max-w-full md:max-w-[280px] hover:scale-105 rounded-xl transition-transform duration-400 border-1 border-transparent transition-colors duration-300 hover:border-red-500 bg-[#1a1a1a] group" />
+      {/* CEO quote card */}
+      <div className="flex flex-col items-center gap-5 rounded-2xl border border-[#292929] bg-[#101010] p-4 text-white sm:p-6 md:flex-row md:gap-7">
+        <div className="h-[230px] w-full shrink-0 overflow-hidden rounded-xl bg-[#151515] md:h-[220px] md:w-[188px]">
+          <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-top" />
         </div>
-        <div className="flex items-start justify-between  lg:justify-center lg:px-10 flex-col gap-10">
+        <div className="flex min-w-0 flex-1 flex-col justify-center gap-5 md:px-2">
           <TypingQuote onDone={() => setQuoteDone(true)} />
-          <div className={`flex lg:items-center justify-between w-full lg:w-fit gap-4 transition-opacity duration-700 ${quoteDone ? 'opacity-100' : 'opacity-0'}`}>
+          <div className={`flex items-center justify-between gap-4 border-t border-white/10 pt-4 transition-opacity duration-700 ${quoteDone ? "opacity-100" : "opacity-0"}`}>
             <div>
-              <h5 className="lg:text-[28px] text-[22px] font-semibold">Vimal Narayanan</h5>
-              <p className="lg:text-[20px] text-[16px] text-gray-300">Founder and CEO</p>
+              <h5 className="text-base font-semibold sm:text-lg">Vimal Narayanan</h5>
+              <p className="text-xs text-gray-300 sm:text-sm">Founder and CEO</p>
             </div>
-            <LinkedInButton href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/" size="w-[60px] h-[60px] lg:w-[60px] lg:h-[60px]" />
+            <LinkedInButton href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/" size="h-6 w-6" />
           </div>
         </div>
       </div>
 
-      {/* VP Cards */}
-       <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-12 text-white overflow-hidden">
-  {vpData.map((vp, index) => (
-    <div
-      key={index}
-      ref={el => cardRefs.current[index] = el}
-      className="flex flex-col justify-between gap-4 px-5 py-5 pb-4 border border-[#252525] border-t-4 border-t-[rgba(135,135,135,0.22)] rounded-2xl shadow-lg transition-transform duration-300 hover:-translate-y-1 h-full "
-      style={{ ...cardStyle,  }}
-    >
-      {/* 1. Container gets the uniform rounded shape, hidden overflow, and the hover trigger */}
-<div className="flex items-center justify-center h-48 w-full overflow-hidden rounded-xl border-2 border-transparent transition-colors duration-300 hover:border-red-500 bg-[#1a1a1a] group">
-  <img 
-    src={vp.img} 
-    alt={vp.name} 
-    
-    className="max-w-full h-auto object-contain transition-transform duration-300 group-hover:scale-[102%]" 
-  />
-</div>
-
-      {/* Text and LinkedIn section */}
-      <div className="flex items-center justify-between gap-3 mt-auto">
-        <div className="flex-1 min-w-0">
-          <h5 className="text-[18px] font-semibold leading-tight truncate">{vp.name}</h5>
-          <p className="text-gray-400 text-[13px] leading-snug mt-1">{vp.role}</p>
+      <section className="mt-7">
+        <h3 className="mb-3 text-lg font-bold text-[#ff3034]">Leadership</h3>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {leadershipData.map((person) => <ProfileCard key={person.name} person={person} leadership />)}
         </div>
-        <LinkedInButton href={vp.linkedin} size="w-10 h-10 shrink-0" />
-      </div>
-    </div>
-  ))}
-</div>
+      </section>
+
+      <section className="mt-7">
+        <h3 className="mb-3 text-lg font-bold text-[#ff3034]">Core Team</h3>
+        <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-4 lg:gap-3">
+          {coreTeamData.map((person) => <ProfileCard key={person.name} person={person} />)}
+        </div>
+      </section>
+
+      <section className="mt-7">
+        <h3 className="mb-3 text-lg font-bold text-[#ff3034]">Accounts Team</h3>
+        <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-4 lg:gap-3">
+          {accountsTeamData.map((person) => <ProfileCard key={person.name} person={person} />)}
+        </div>
+      </section>
 
       {/* GPTW */}
       <section className="relative">
@@ -339,7 +384,7 @@ function OneTeam() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 4) * 0.08 }}
             >
-              <img src={logo} alt={`client-${index}`} className="max-h-[44px] w-auto object-contain opacity-90" loading="lazy" />
+              <img src={logo} alt={`client-${index}`} className="max-h-[40px] w-auto object-contain opacity-90" loading="lazy" />
             </motion.div>
           ))}
         </div>

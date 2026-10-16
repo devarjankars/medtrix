@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { isValidElement } from "react";
 
 // ── shared easing ────────────────────────────────────────────────────────────
 const ease = [0.22, 1, 0.36, 1];
@@ -26,6 +27,14 @@ const fadeScale = {
 // ── word-by-word title split ─────────────────────────────────────────────────
 // title can be a string OR an array of strings (each item = one desktop line)
 function AnimatedTitle({ text }) {
+  if (isValidElement(text)) {
+    return (
+      <motion.h1 className="text-4xl lg:text-5xl">
+        {text}
+      </motion.h1>
+    );
+  }
+
   // normalise to array of lines
   const lines = Array.isArray(text) ? text : [text];
 
@@ -93,8 +102,12 @@ function AnimatedTitle({ text }) {
 
 export default function DynamicHeader({
   tagText,
+  tagImageSrc,
+  tagImageAlt = "",
   title,
   paragraphs = [],
+  contentAfterParagraphs,
+  cta,
   graphicSrc,
   graphicAlt = "",
   desktopBg = "/bg",
@@ -149,19 +162,32 @@ export default function DynamicHeader({
           animate="visible"
         >
           {/* Tag badge */}
+          {(tagText || tagImageSrc) && (
           <motion.div variants={fadeScale}>
-            <div
-              className="relative inline-block rounded-full max-w-fit p-px"
-              style={{
-                background:
-                  "linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
-              }}
-            >
-              <span className="inline-block text-[16px] font-bold tracking-[0.15em] uppercase text-white bg-[#0c0606] px-4 py-1.5 rounded-full">
-                {tagText}
-              </span>
+            <div className="flex flex-wrap items-center gap-3">
+              {tagText && (
+                <div
+                  className="relative inline-block rounded-full max-w-fit p-px"
+                  style={{
+                    background:
+                      "linear-gradient(to right, rgba(225,37,27,0.5), transparent 53%), linear-gradient(to left, rgba(225,37,27,0.5), transparent 33%)",
+                  }}
+                >
+                  <span className="inline-block text-[16px] font-bold tracking-[0.15em] uppercase text-white bg-[#0c0606] px-4 py-1.5 rounded-full">
+                    {tagText}
+                  </span>
+                </div>
+              )}
+              {tagImageSrc && (
+                <img
+                  src={tagImageSrc}
+                  alt={tagImageAlt}
+                  className="h-10 w-auto object-contain"
+                />
+              )}
             </div>
           </motion.div>
+          )}
 
           {/* Title */}
           <motion.div variants={fadeUp} className="w-full ">
@@ -185,6 +211,19 @@ export default function DynamicHeader({
               {item}
             </motion.p>
           ))}
+
+          {contentAfterParagraphs}
+
+          {cta && (
+            <motion.div variants={fadeUp}>
+              <a
+                href={cta.href}
+                className="inline-flex items-center justify-center rounded-full bg-[#ff3034] px-8 py-3.5 text-sm font-bold text-white shadow-[0_0_22px_rgba(255,48,52,0.55)] transition hover:bg-[#e92228]"
+              >
+                {cta.label}
+              </a>
+            </motion.div>
+          )}
 
           {/* Stats cards */}
           {statsCards.length > 0 && (

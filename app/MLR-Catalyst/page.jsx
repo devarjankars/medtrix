@@ -106,7 +106,7 @@ export default function MlrCatalyst() {
       {/* ── Back button ── */}
       <div className="w-[90%] md:w-[80%] mx-auto pt-[50px] pb-2">
         <motion.button
-          onClick={() => router.push("/services/ai-catalysts")}
+          onClick={() => router.push("/cipher")}
           className="group inline-flex items-center gap-2 text-sm text-gray-400 hover:text-white transition-colors cursor-pointer"
           whileHover={{ x: -3 }}
           transition={{ type: "spring", stiffness: 380, damping: 22 }}

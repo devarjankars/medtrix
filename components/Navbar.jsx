@@ -13,7 +13,7 @@ const links = [
       { label: "Commercial Solutions", href: "/services/Commercial_Solutions" },
       { label: "Medical Affairs",       href: "/services/medical-affairs" },
       { label: "Digital Innovation",  href: "/services/digital-innovation" },
-      { label: "AI Catalysts",          href: "/services/ai-catalysts" },
+      { label: "Cipher",                href: "/cipher" },
       { label: "Strategy & Consulting", href: "/services/Strategy-Consulting" },
     ],
   },
@@ -29,7 +29,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
   const hasItems            = items && items.length > 0;
   const dropdownRef         = useRef(null);
   const itemsRef            = useRef([]);
-  const MLR_PARENT = "/services/ai-catalysts";
+  const MLR_PARENT = "/cipher";
   const isChildActive       = hasItems && items.some((i) => {
     const clean = pathname.replace(/\/$/, "");
     return clean === i.href || (clean === "/MLR-Catalyst" && i.href === MLR_PARENT);
@@ -133,7 +133,7 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
           <ul className="relative w-56 bg-[#161616]/95 backdrop-blur-md border border-white/10 rounded-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)] p-2 list-none">
             {items.map((item, i) => {
               const isActive = pathname.replace(/\/$/, "") === item.href ||
-                (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/services/ai-catalysts");
+                (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/cipher");
               return (
                 <li key={item.href} ref={(el) => (itemsRef.current[i] = el)}>
                   <Link
@@ -191,7 +191,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
         const isOpen       = openSection === label;
         const isChildActive = hasItems && items.some((i) => {
           const clean = pathname.replace(/\/$/, "");
-          return clean === i.href || (clean === "/MLR-Catalyst" && i.href === "/services/ai-catalysts");
+          return clean === i.href || (clean === "/MLR-Catalyst" && i.href === "/cipher");
         });
 
         if (button) {
@@ -254,7 +254,7 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
                       href={item.href}
                       onClick={() => { setOpenSection(label); onClose(); }}
                     className={`flex items-center gap-2 rounded-xl py-3 px-3 w-full text-lg font-light transition-colors ${
-                      (pathname.replace(/\/$/, "") === item.href || (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/services/ai-catalysts")) ? "bg-red-500 text-white" : "text-gray-500 hover:bg-white/8 hover:text-gray-200"
+                      (pathname.replace(/\/$/, "") === item.href || (pathname.replace(/\/$/, "") === "/MLR-Catalyst" && item.href === "/cipher")) ? "bg-red-500 text-white" : "text-gray-500 hover:bg-white/8 hover:text-gray-200"
                     }`}
                   >
                     {item.label}
