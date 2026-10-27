@@ -153,7 +153,7 @@ function CipherLogo() {
     <img
       src="/cipher-logo.png"
       alt="Cipher"
-      className="h-10 w-[40%] object-contain sm:h-12"
+      className="h-7 w-[100px] shrink-0 object-contain sm:h-9 sm:w-[128px]"
     />
   );
 }
@@ -429,7 +429,7 @@ export default function CipherPage() {
         </div>
       </div>
     </section>
-     <section className="relative overflow-hidden bg-[#090403] py-16 text-white lg:py-24">
+     <section className="relative overflow-hidden bg-[#090403] py-16 font-sans text-white lg:py-24">
       {/* Ambient red glow */}
      
       <div
@@ -450,7 +450,7 @@ export default function CipherPage() {
         <div
           role="tablist"
           aria-label="Cipher capabilities"
-          className="mb-6 flex flex-wrap items-center gap-1 rounded-md lg:rounded-full border border-[#292626] bg-[#1b1b1b] p-1.5 sm:flex-nowrap"
+          className="mb-6 grid grid-cols-3 items-center gap-2.5 rounded-[20px] border border-[#302d2d] bg-[#1b1b1b] p-3 sm:gap-4 sm:p-4 lg:mb-8 lg:flex lg:gap-1 lg:rounded-full lg:p-1.5"
         >
           {products.map((product, index) => (
             <button
@@ -461,10 +461,10 @@ export default function CipherPage() {
               aria-selected={activeIndex === index}
               aria-controls="product-panel"
               onClick={() => setActiveIndex(index)}
-              className={`min-h-10 flex-1 whitespace-nowrap rounded-full px-3 py-2 text-md transition-colors duration-200 sm:text-[16px] ${
+              className={`min-h-10 whitespace-nowrap rounded-full border px-3 py-2.5 text-[13px] transition-colors duration-200 sm:px-5 sm:text-base lg:min-h-12 lg:flex-1 lg:border-transparent lg:px-5 ${index === products.length - 1 ? "col-span-2 justify-self-start lg:justify-self-auto" : ""} ${
                 activeIndex === index
-                  ? "bg-[#ff3034] font-semibold text-white"
-                  : "text-[#e7e7e7] hover:bg-white/5"
+                  ? "border-[#ff3034] bg-[#ff3034] font-semibold text-white"
+                  : "border-[#393939] text-[#e7e7e7] hover:bg-white/5"
               }`}
             >
               {product.name}
@@ -477,34 +477,34 @@ export default function CipherPage() {
           id="product-panel"
           role="tabpanel"
           aria-labelledby={`product-tab-${activeIndex}`}
-          className="rounded-[22px] border border-[#302d2d] bg-[#1b1b1b] p-3.5 sm:p-5"
+          className="rounded-[28px] border border-[#302d2d] bg-[#1b1b1b] p-6 sm:p-8 lg:rounded-[28px] lg:p-6"
         >
           {/* Hero image */}
-          <div className="relative min-h-0 overflow-hidden rounded-[14px] bg-[#080909] sm:min-h-[400px]">
+          <div className="relative min-w-0 lg:aspect-[2/1] lg:overflow-hidden lg:rounded-[18px] lg:bg-[#080909]">
             <img
               key={activeProduct.image}
               src={activeProduct.image}
               alt={`${activeProduct.name} capability`}
-              className="mx-auto block h-auto w-[95%] object-contain"
+              className="block aspect-[1.6] w-full rounded-[14px] object-cover object-center lg:absolute lg:inset-0 lg:h-full lg:rounded-none"
               onError={(event) => {
                 event.currentTarget.style.display = "none";
               }}
             />
 
             {/* Readability overlay */}
-            <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black via-black/75 to-transparent sm:block" />
+            <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black via-black/75 to-transparent lg:block" />
 
             {/* Hero content */}
-            <div className="relative z-10 max-w-[440px] px-4 pb-5 pt-2 sm:absolute sm:inset-y-0 sm:left-0 sm:flex sm:items-center sm:px-9 sm:py-8 lg:px-10">
+            <div className="relative z-10 pt-7 lg:absolute lg:inset-y-0 lg:left-0 lg:flex lg:w-[48%] lg:max-w-[560px] lg:items-center lg:px-10 lg:py-8">
               <div>
-              <div className=" flex flex-wrap items-center gap-3 lg:mb-5">
+              <div className="mb-5 flex flex-wrap items-center gap-2.5 lg:mb-6">
                 <CipherLogo />
-                <span className="text-xl text-white">
+                <span className="text-xl text-white sm:text-2xl lg:text-[clamp(20px,1.8vw,32px)]">
                   {activeProduct.name}
                 </span>
               </div>
 
-              <h2 className="mb-5 text-lg font-medium leading-[1.35] tracking-[-0.025em] sm:text-[30px]">
+              <h2 className="mb-5 text-xl font-medium leading-[1.4] tracking-[-0.025em] sm:text-[28px] lg:text-[clamp(24px,2.2vw,40px)]">
                 {activeProduct.title}
               </h2>
 
@@ -522,14 +522,14 @@ export default function CipherPage() {
           </div>
 
           {/* Three descriptions */}
-          <div className="grid grid-cols-1 gap-7 px-1 py-7 sm:grid-cols-3 sm:gap-6 sm:px-1 sm:py-7 lg:gap-8">
+          <div className="grid grid-cols-1 gap-8 pt-8 lg:grid-cols-3 lg:gap-8 lg:px-2 lg:pb-16 lg:pt-10">
             {activeProduct.descriptions.map((description, index) => (
               <div key={`${activeProduct.name}-${index}`}>
-                <span className="mb-2 block text-[32px] font-light leading-none tracking-[-0.04em] text-[#ff3034]">
+                <span className="mb-3 block text-[36px] sm:text-[44px] font-light leading-none tracking-[-0.04em] text-[#ff3034]">
                   0{index + 1}
                 </span>
 
-                <p className="text-[15px] leading-[1.65] text-[#999595] sm:text-[16px] lg:text-[17px]">
+                <p className="text-[15px] leading-[1.65] text-[#999595] sm:text-lg lg:text-[clamp(15px,1.15vw,20px)]">
                   {renderDescription(description)}
                 </p>
               </div>
