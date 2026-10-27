@@ -307,12 +307,10 @@ export default function CipherPage() {
               {/* Red accent */}
               <div className="mb-5 h-[3px] w-[38px] bg-[#ff3038]" />
 
-              {/* Optional prefix */}
-              {metric.prefix && (
-                <p className="mb-1 text-base text-[#858181] sm:text-lg">
-                  {metric.prefix}
-                </p>
-              )}
+              {/* Reserve the prefix line so every metric value aligns. */}
+              <p className="mb-1 min-h-[1.5em] text-base leading-normal text-[#858181] sm:text-lg">
+                {metric.prefix}
+              </p>
 
               {/* Metric */}
               <h3 className="mb-3 text-[48px] font-medium leading-[1.1] tracking-[-0.045em] text-white sm:text-[52px] lg:text-[56px]">
