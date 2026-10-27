@@ -179,8 +179,8 @@ export default function CipherPage() {
         tagImageAlt="Product Hunt"
         title={
           <>
-            <span className="block whitespace-nowrap text-[clamp(20px,6vw,36px)] leading-[1.25] lg:text-inherit lg:leading-inherit">Decoding complexity.</span>
-            <span className="block whitespace-nowrap text-[clamp(20px,6vw,36px)] leading-[1.25] lg:text-inherit lg:leading-inherit">Catalyzing healthcare.</span>
+            <span className="block whitespace-nowrap text-[clamp(28px,5vw,54px)] leading-[1.1] lg:text-inherit lg:leading-inherit">Decoding complexity.</span>
+            <span className="block whitespace-nowrap text-[clamp(28px,5vw,54px)]  leading-[1.1] lg:text-inherit lg:leading-inherit">Catalyzing healthcare.</span>
           </>
         }
         paragraphs={[
@@ -219,11 +219,11 @@ export default function CipherPage() {
         {/* Image and description */}
         <div className="mb-11 grid grid-cols-1 items-stretch gap-8 md:grid-cols-2 lg:gap-16">
           {/* Workflow illustration */}
-          <div className="flex min-h-[280px] items-center justify-start overflow-hidden p-4 sm:min-h-[340px] sm:p-6 md:min-h-0 md:px-0 md:py-0">
+          <div className="flex items-center justify-start overflow-hidden  md:min-h-0 md:px-0 md:py-0">
             <img
               src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ciphar_Iv1.png"
               alt="Cipher platform workflow"
-              className="relative z-10 h-auto max-h-[420px] w-full object-contain object-left"
+              className="relative z-10 h-auto  w-full object-contain object-left"
             />
           </div>
 
@@ -253,127 +253,32 @@ export default function CipherPage() {
             From approved source to finished deliverable. Content, design, and
             code in one system.
           </p>
-                <div className="w-full">
+       <div className="w-full">
       {/* DESKTOP: horizontal workflow */}
       <div className="hidden sm:block">
-        <div className="grid grid-cols-7">
-          {steps.map(({ number, label, icon }, index) => {
-            const active = index >= 4;
-            const redConnector = index >= 3;
-
-            return (
-              <div
-                key={number}
-                className="relative flex min-w-0 flex-col items-center text-center"
-              >
-                {/* Connector: runs from one circle's center to the next */}
-                {index < steps.length - 1 && (
-                  <div className="pointer-events-none absolute left-1/2 right-[-50%] top-[55px] z-0 h-px">
-                    <div
-                      className={`absolute inset-0 ${
-                        redConnector ? "bg-[#ff3030]" : "bg-[#777777]"
-                      }`}
-                    />
-
-                    {/* Arrowhead sits ON the line, halfway between circles */}
-                    <Chevron
-                      size={19}
-                      className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${
-                        redConnector ? "text-[#ff3030]" : "text-[#999999]"
-                      }`}
-                    />
-                  </div>
-                )}
-
-                {/* Icon circle */}
-                <div
-                  className={`relative z-10 flex h-[112px] w-[112px] shrink-0 items-center justify-center rounded-full border-2 ${
-                    active
-                      ? "border-[#ff3030] bg-[#ff3030] text-white shadow-[0_0_30px_9px_rgba(255,48,48,0.38)]"
-                      : "border-[#393536] bg-[#100e0e] text-white"
-                  }`}
-                >
-                  <StepIcon name={icon} size={24} />
-                </div>
-
-                <span className="mt-8 text-[22px] font-bold leading-none tracking-wider text-[#ff3030]">
-                  {number}
-                </span>
-
-                <span className="mt-4 px-1 text-sm font-semibold leading-[1.5] tracking-[0.06em] text-white lg:text-base">
-                  {label}
-                </span>
-              </div>
-            );
-          })}
-        </div>
+        <img
+          src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Track_v2.png"
+          alt="Cipher platform workflow"
+          className="w-full h-auto object-contain"
+        />
       </div>
 
       {/* MOBILE: vertical workflow */}
-      <div className="sm:hidden">
-        {steps.map(({ number, label, icon }, index) => {
-          const active = index >= 4;
-          const redConnector = index >= 3;
-          const last = index === steps.length - 1;
-
-          return (
-            <div
-              key={number}
-              className={`relative flex min-h-[176px] gap-8 ${
-                last ? "min-h-[100px]" : ""
-              }`}
-            >
-              {/* Vertical line and arrow between circles */}
-              {!last && (
-                <div className="pointer-events-none absolute left-[43px] top-[88px] h-[88px] w-px">
-                  <div
-                    className={`absolute inset-0 ${
-                      redConnector ? "bg-[#ff3030]" : "bg-[#777777]"
-                    }`}
-                  />
-
-                  {/* Downward chevron centered on the line */}
-                  <Chevron
-                    direction="down"
-                    size={25}
-                    className={`absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 ${
-                      redConnector ? "text-[#ff3030]" : "text-[#999999]"
-                    }`}
-                  />
-                </div>
-              )}
-
-              {/* Icon */}
-              <div
-                className={`relative z-10 flex h-[88px] w-[88px] shrink-0 items-center justify-center rounded-full border-2 ${
-                  active
-                    ? "border-[#ff3030] bg-[#ff3030] text-white shadow-[0_0_30px_9px_rgba(255,48,48,0.38)]"
-                    : "border-[#393536] bg-[#100e0e] text-white"
-                }`}
-              >
-                <StepIcon name={icon} size={28} />
-              </div>
-
-              {/* Text */}
-              <div className="flex flex-col pt-2">
-                <span className="text-xl font-bold leading-none text-[#ff3030]">
-                  {number}
-                </span>
-
-                <span className="mt-3 text-lg font-semibold leading-snug tracking-wide text-white">
-                  {label}
-                </span>
-              </div>
-            </div>
-          );
-        })}
+      <div className="block sm:hidden">
+        <img
+          src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Steps.png"
+          alt="Cipher platform workflow steps"
+          className="w-full h-auto object-contain"
+        />
       </div>
     </div>
          
         </div>
       </div>
     </section>
-      <section className="relative overflow-hidden bg-black py-16 text-white lg:py-24">
+
+     {/*  */}
+    <section className="relative overflow-hidden bg-black py-16 text-white lg:py-24">
       {/* Bottom red ambient glow */}
       <div
         aria-hidden="true"
@@ -427,6 +332,7 @@ export default function CipherPage() {
         </div>
       </div>
     </section>
+    {/*  */}
      <section className="relative overflow-hidden bg-[#090403] py-10 font-sans text-white lg:py-14">
       {/* Ambient red glow */}
      
@@ -435,7 +341,7 @@ export default function CipherPage() {
         className="pointer-events-none absolute bottom-0 left-1/2 h-16 w-full -translate-x-1/2 rounded-full"
         style={{ background: "radial-gradient(ellipse at bottom, rgba(225,37,27,0.35) 0%, transparent 80%)" }}
       />
-
+          {/*  */}
       <div className="relative mx-auto w-[90%] py-5 md:w-[80%]">
         {/* Section label */}
         <div className="mb-6">
@@ -478,7 +384,7 @@ export default function CipherPage() {
           className="rounded-[28px] border border-[#302d2d] bg-[#1b1b1b] p-5 sm:p-6 lg:rounded-[28px] lg:p-5"
         >
           {/* Hero image */}
-          <div className="relative min-w-0 lg:aspect-[2.3/1] lg:overflow-hidden lg:rounded-[18px] lg:bg-[#080909]">
+          <div className="relative min-w-0 lg:aspect-[2.6/1] lg:overflow-hidden lg:rounded-[18px] lg:bg-[#080909]">
             <img
               key={activeProduct.image}
               src={activeProduct.image}
@@ -493,16 +399,16 @@ export default function CipherPage() {
             <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black via-black/75 to-transparent lg:block" />
 
             {/* Hero content */}
-            <div className="relative z-10 pt-5 text-center lg:text-left lg:absolute lg:inset-y-0 lg:left-0 lg:flex lg:w-[48%] lg:max-w-[560px] lg:items-center lg:px-10 lg:py-8">
+            <div className="relative z-10 pt-5 text-left lg:text-left lg:absolute lg:inset-y-0 lg:left-0 lg:flex lg:w-[48%] lg:max-w-[560px] lg:items-center lg:px-10 lg:py-8">
               <div>
-              <div className="mb-4 flex flex-wrap items-center justify-center gap-2.5 lg:mb-6 lg:justify-start">
+              <div className="mb-4 flex flex-wrap  gap-2.5 lg:mb-6 lg:justify-start">
                 <CipherLogo />
                 <span className="text-xl text-white sm:text-2xl lg:text-[clamp(20px,1.8vw,32px)]">
                   {activeProduct.name}
                 </span>
               </div>
 
-              <h2 className="mb-5 text-xl font-medium leading-[1.4] tracking-[-0.025em] sm:text-[28px] lg:text-[clamp(24px,2.2vw,40px)]">
+              <h2 className="mb-5 text-lg font-medium leading-[1.4] tracking-[-0.025em] sm:text-[28px] lg:text-[clamp(24px,2.2vw,40px)]">
                 {activeProduct.title}
               </h2>
 
