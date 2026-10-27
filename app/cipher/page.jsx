@@ -409,9 +409,9 @@ export default function CipherPage() {
               {activeIndex === products.length - 1 && (
                 <Link
                   href="/MLR-Catalyst"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#ff3034] px-5 py-3 text-xs font-semibold text-white shadow-[0_5px_24px_rgba(255,48,52,0.18)] transition hover:bg-[#e92228] sm:text-[13px]"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#ff3034] px-5 py-1.5 text-xs font-semibold text-white shadow-[0_5px_24px_rgba(255,48,52,0.18)] transition hover:bg-[#e92228] sm:text-[13px]"
                 >
-                  <PlayCircle size={16} />
+                  <PlayCircle size={30} />
                   {activeProduct.button}
                 </Link>
               )}
