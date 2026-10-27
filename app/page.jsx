@@ -74,7 +74,7 @@ export default function Home() {
       {/* ======================================================== */}
       {/* MOBILE ADDRESS CARDS (Shows only on Mobile screen sizes) */}
       {/* ======================================================== */}
-      <div className="grid grid-cols-1 gap-4 mt-2 md:hidden">
+      <div className="grid grid-cols-1 gap-4 mt-2 md:hidden w-[90%] md:w-[80%] mx-auto">
         
          <motion.div
                       className="bg-[#0f0f0f] border border-[#1e1e1e] rounded-2xl p-6 flex flex-col gap-3"

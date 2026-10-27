@@ -7,11 +7,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const FULL_TEXT = "\u201cWe believe great outcomes are built by great teams. Our strength lies in our people and the way we come together as one to solve complex challenges, support one another, and deliver meaningful impact for our clients.\u201d";
-const RED_WORD = "one";
+const RED_BOLD_WORD = "one";
 
 function TypingQuote() {
   const paraRef = useRef(null);
-  const redStart = FULL_TEXT.indexOf(RED_WORD);
+  const redStart = FULL_TEXT.indexOf(RED_BOLD_WORD);
+  const redEnd   = redStart + RED_BOLD_WORD.length;
 
   useEffect(() => {
     const el = paraRef.current;
@@ -33,15 +34,24 @@ function TypingQuote() {
     return () => context.revert();
   }, []);
 
+  // Split into 3 segments: before "one", "one" (red + bold), after "one"
+  const before = Array.from(FULL_TEXT.slice(0, redStart));
+  const bold   = Array.from(FULL_TEXT.slice(redStart, redEnd));
+  const after  = Array.from(FULL_TEXT.slice(redEnd));
+  let charIndex = 0;
+
   return (
-    <p ref={paraRef} className="text-base md:text-[clamp(14px,1.45vw,24px)] leading-[1.9]" aria-label={FULL_TEXT}>
-      {Array.from(FULL_TEXT).map((character, index) => (
-        <span
-          key={index}
-          data-quote-character
-          aria-hidden="true"
-          className={index >= redStart && index < redStart + RED_WORD.length ? "text-[#FF2F2F]" : undefined}
-        >{character}</span>
+    <p ref={paraRef} className="text-lg leading-1.3 md:text-[clamp(24px,1.45vw,44px)] md:leading-[1.9]" aria-label={FULL_TEXT}>
+      {before.map((ch) => (
+        <span key={charIndex} data-quote-character aria-hidden="true">{(() => { const i = charIndex++; return ch; })()}</span>
+      ))}
+      <strong className="font-bold text-[#FF2F2F]">
+        {bold.map((ch) => (
+          <span key={charIndex} data-quote-character aria-hidden="true">{(() => { const i = charIndex++; return ch; })()}</span>
+        ))}
+      </strong>
+      {after.map((ch) => (
+        <span key={charIndex} data-quote-character aria-hidden="true">{(() => { const i = charIndex++; return ch; })()}</span>
       ))}
     </p>
   );
@@ -49,7 +59,7 @@ function TypingQuote() {
 
 const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar_v4.png";
 const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shijin.png";
-const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vimal.png";
+const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vimal_v3.png";
 const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lyris.png";
 const hari = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Hari2.png";
 const binoj = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj.png";
@@ -304,14 +314,14 @@ function OneTeam() {
       {/* ── CEO Quote Card ── */}
       <div className="group/ceo flex flex-col md:flex-row items-center gap-5 md:gap-[3.5%] rounded-2xl border border-[#292929] bg-[radial-gradient(ellipse_at_top,#1b1b1b,#090909_75%)] p-4 md:p-[3%] text-white">
         <div className="w-[100%] md:w-1/4 aspect-[188/224] shrink-0 overflow-hidden rounded-xl bg-[#151515]">
-          <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-top transition-[filter] duration-300 group-hover/ceo:grayscale" />
+          <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-center transition-[filter] duration-300 group-hover/ceo:grayscale" />
         </div>
         <div className="flex min-w-0 flex-1 flex-col justify-center gap-7">
           <TypingQuote />
           <div className="flex items-center gap-5 border-t border-white/10 pt-7 justify-between md:justify-normal">
             <div>
-              <h5 className="text-lg font-semibold transition-colors group-hover/ceo:text-[#E1251B]">Vimal Narayanan</h5>
-              <p className="text-md text-gray-300">Founder and CEO</p>
+              <h5 className="text-lg md:text-2xl font-semibold transition-colors group-hover/ceo:text-[#E1251B]">Vimal Narayanan</h5>
+              <p className="text-md md:text-lg text-gray-300">Founder and CEO</p>
             </div>
             <a
               href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/"
@@ -327,8 +337,8 @@ function OneTeam() {
       </div>
 
       {/* ── Leadership ── */}
-      <section className="mt-8">
-        <h3 className="mb-4 text-[#ff3034] text-lg md:text-xl font-bold">Leadership</h3>
+      <section className="mt-10 md:mt-30">
+        <h3 className="mb-4 text-[#ff3034] text-lg md:text-3xl font-bold mb-5">Leadership</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {leadershipData.map((person) => (
             <ProfileCard key={person.name} person={person} leadership />
@@ -337,8 +347,8 @@ function OneTeam() {
       </section>
 
       {/* ── Core Team ── */}
-      <section className="mt-8">
-        <h3 className="mb-4 text-[#ff3034] text-xl font-bold">Core Team</h3>
+      <section className="mt-10 md:mt-30">
+        <h3 className="mb-4 text-[#ff3034] text-xl font-bold md:text-3xl font-bold mb-5">Core Team</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {coreTeamData.map((person) => (
             <ProfileCard key={person.name} person={person} />
@@ -347,8 +357,8 @@ function OneTeam() {
       </section>
 
       {/* ── Accounts Team ── */}
-      <section className="mt-8">
-        <h3 className="mb-4 text-[#ff3034] text-xl font-bold">Accounts Team</h3>
+      <section className="mt-10 md:mt-30">
+        <h3 className="mb-4 text-[#ff3034] text-xl font-bold md:text-3xl font-bold mb-5">Accounts Team</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
           {accountsTeamData.map((person) => (
             <ProfileCard key={person.name} person={person} />
@@ -374,7 +384,7 @@ function OneTeam() {
       <section className="bg-black lg:py-24 py-12 relative overflow-hidden">
         <Badge label="One Commitment" />
         <SectionHeading red="Our " white="Clients" />
-        <div ref={logosRef} className="grid grid-cols-2 lg:grid-cols-4 lg:gap-y-14 lg:gap-x-8 gap-2 items-center justify-center">
+        <div ref={logosRef} className="grid grid-cols-2 lg:grid-cols-4 lg:gap-y-4 lg:gap-x-4 gap-2 items-center justify-center">
           {clientLogos.map((logo, index) => (
             <motion.div
               key={index}
@@ -400,7 +410,7 @@ function OneTeam() {
       <section ref={awardsRef} className="pt-12 pb-12 lg:pt-24 lg:pb-20 relative lg:overflow-visible">
         <Badge label="One Standard" />
         <SectionHeading red="Excellence " white="Recognized Across the Industry" />
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 w-full">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
           {awardsData.map((award, index) => (
             <motion.div
               key={index}

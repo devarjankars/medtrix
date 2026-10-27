@@ -286,9 +286,9 @@ export default function MedicalAffairs() {
         desktopBg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/MedicalAffairs.png"}
         mobileImg={"https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Medical_Affairsmbl.png"}
       />
-       <div className="w-[90%] md:w-[80%] mx-auto pb-20">
+       {/* <div className="w-[90%] md:w-[80%] mx-auto pb-20">
         <MedcomServices />
-      </div>
+      </div> */}
 
       <div className="w-[90%] md:w-[80%] mx-auto pb-20">
         {sections.map((s) => (
