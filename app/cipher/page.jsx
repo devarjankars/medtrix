@@ -177,12 +177,7 @@ export default function CipherPage() {
       <DynamicHeader
         tagImageSrc="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/product-hunt-label.png"
         tagImageAlt="Product Hunt"
-        title={
-          <>
-            <span className="block whitespace-nowrap text-[clamp(28px,5vw,54px)] leading-[1.1] lg:text-inherit lg:leading-inherit">Decoding complexity.</span>
-            <span className="block whitespace-nowrap text-[clamp(28px,5vw,54px)]  leading-[1.1] lg:text-inherit lg:leading-inherit">Catalyzing healthcare.</span>
-          </>
-        }
+        title="Decoding complexity. Catalyzing healthcare."
         paragraphs={[
           "The content for pharma owes responsibility and commitment to patients. It must be scientifically validated, visually captivating, delivered in innovative formats, and now has to be produced faster and at lower cost than ever. It is a complex undertaking and involves multiple teams, multiple handoffs, and multiple review cycles.",
         ]}
@@ -445,7 +440,11 @@ export default function CipherPage() {
         <div className="mt-8 flex justify-center sm:mt-8">
           <a
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full bg-[#ff3034] px-6 py-3 text-xs font-semibold text-white shadow-[0_6px_24px_rgba(255,48,52,0.3)] transition hover:bg-[#e92228] sm:text-[13px]"
+            className="inline-flex items-center justify-center rounded-full px-10 py-3.5 text-sm font-bold text-white transition hover:opacity-90"
+            style={{
+              background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
+              boxShadow: "0 0 18px rgba(225,37,27,0.45)",
+            }}
           >
             Book a Demo
           </a>

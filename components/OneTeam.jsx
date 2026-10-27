@@ -64,13 +64,13 @@ const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026
 const hari = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Hari2.png";
 const binoj = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj.png";
 const rajesh = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Rajesh%201.png";
-const michel = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Michelle_v5.png";
+const michel = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Michelle_v4.png";
 const suja = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shuja.png";
 const stalin = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Stalin%201.png";
 const suru = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Suresh%201.png";
 const vincent = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vincent.png";
 const christopher = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Christopher%20Moccia.png";
-const jaclyn = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Jaclyn_v2.png";
+const jaclyn = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Jaclyn_v4.png";
 const colin = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Colin_v2.png";
 
 const gptwImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/gptw.webp";
