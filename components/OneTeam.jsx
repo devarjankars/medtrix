@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -34,7 +34,7 @@ function TypingQuote() {
   }, []);
 
   return (
-    <p ref={paraRef} className="text-[22px] lg:text-[30px] leading-relaxed" aria-label={FULL_TEXT}>
+    <p ref={paraRef} className="text-base md:text-[clamp(14px,1.45vw,24px)] leading-[1.9]" aria-label={FULL_TEXT}>
       {Array.from(FULL_TEXT).map((character, index) => (
         <span
           key={index}
@@ -49,7 +49,7 @@ function TypingQuote() {
 
 const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar.png";
 const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shijin.png";
-const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vimal_v2.png";
+const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vimal.png";
 const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lyris.png";
 const hari = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Hari2.png";
 const binoj = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj.png";
@@ -154,7 +154,7 @@ function ProfileCard({ person, leadership = false }) {
   return (
     <article className={`group flex min-w-0 flex-col overflow-hidden border border-[#303030] bg-[#111] ${leadership ? "rounded-2xl" : "rounded-xl"}`}>
       {/* Portrait */}
-      <div className={`flex items-end justify-center overflow-hidden ${leadership ? "h-[190px] sm:h-[240px] lg:h-[280px]" : "[aspect-ratio:1.35]"}`}>
+      <div className={`flex items-end justify-center overflow-hidden ${leadership ? "aspect-[1.9]" : "[aspect-ratio:1.35]"}`}>
         <img
           src={person.img.trim()}
           alt={person.name}
@@ -164,7 +164,7 @@ function ProfileCard({ person, leadership = false }) {
       </div>
 
       {/* Info */}
-      <div className={`relative flex-1 border-t border-[#666] bg-black ${leadership ? "min-h-[144px] px-4 pt-5 pb-16 sm:px-6 sm:pt-6" : "min-h-[74px] px-[10px] pt-[7px] pb-8 pr-8"}`}>
+      <div className={`relative flex-1 border-t border-[#666] bg-black ${leadership ? "min-h-[120px] px-4 pt-5 pb-14 sm:px-5" : "min-h-[74px] px-[10px] pt-[7px] pb-8 pr-8"}`}>
         <h4 className={`text-white font-semibold leading-tight transition-colors duration-200 group-hover:text-[#E1251B] group-focus-within:text-[#E1251B] ${leadership ? "text-[clamp(18px,2vw,28px)]" : "text-[clamp(13px,1.3vw,20px)]"}`}>
           {person.name}
         </h4>
@@ -248,7 +248,6 @@ function GptwImage({ src, className }) {
 function OneTeam() {
   const awardsRef = useRef(null);
   const logosRef  = useRef(null);
-  const [quoteDone, setQuoteDone] = useState(false);
 
   useEffect(() => {
     if (logosRef.current) {
@@ -272,16 +271,16 @@ function OneTeam() {
   return (
     <>
       {/* ── CEO Quote Card ── */}
-      <div className="flex flex-col md:flex-row items-center gap-5 md:gap-7 rounded-2xl border border-[#292929] bg-[#101010] p-4 sm:p-6 text-white">
-        <div className="w-full md:w-[188px] h-[230px] md:h-[220px] shrink-0 overflow-hidden rounded-xl bg-[#151515]">
-          <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-top" />
+      <div className="group/ceo flex flex-col md:flex-row items-center gap-5 md:gap-[3.5%] rounded-2xl border border-[#292929] bg-[radial-gradient(ellipse_at_top,#1b1b1b,#090909_75%)] p-4 md:p-[3%] text-white">
+        <div className="w-[188px] md:w-1/4 aspect-[188/224] shrink-0 overflow-hidden rounded-xl bg-[#151515]">
+          <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-top transition-[filter] duration-300 group-hover/ceo:grayscale" />
         </div>
-        <div className="flex min-w-0 flex-1 flex-col justify-center gap-5 md:px-2">
-          <TypingQuote onDone={() => setQuoteDone(true)} />
-          <div className={`flex items-center justify-between gap-4 border-t border-white/10 pt-4 transition-opacity duration-700 ${quoteDone ? "opacity-100" : "opacity-0"}`}>
+        <div className="flex min-w-0 flex-1 flex-col justify-center gap-7">
+          <TypingQuote />
+          <div className="flex items-center gap-3.5 border-t border-white/10 pt-7">
             <div>
-              <h5 className="text-base font-semibold sm:text-lg">Vimal Narayanan</h5>
-              <p className="text-xs text-gray-300 sm:text-sm">Founder and CEO</p>
+              <h5 className="text-sm font-semibold transition-colors group-hover/ceo:text-[#E1251B]">Vimal Narayanan</h5>
+              <p className="text-xs text-gray-300">Founder and CEO</p>
             </div>
             <a
               href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/"
