@@ -139,7 +139,7 @@ export default function DynamicHeader({
         transition={{ duration: 0.9, ease, delay: 0.2 }}
       >
         {/* dark gradient on left edge so text stays readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/20 to-transparent z-10" />
         <img
           src={desktopBgSrc}
           alt={graphicAlt}
