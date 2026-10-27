@@ -104,14 +104,14 @@ function LinkedInIcon({ className = "w-5 h-5" }) {
   );
 }
 
-function LinkedInButton({ href, name = "LinkedIn", iconClass = "w-4 h-4" }) {
+function LinkedInButton({ href, name = "LinkedIn", iconClass = "w-4 h-4", positionClass = "right-3 bottom-3" }) {
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${name} on LinkedIn`}
-      className="absolute right-3 bottom-3 block transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+      className={`absolute ${positionClass} block transition-opacity duration-200 hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2`}
     >
       <LinkedInIcon className={iconClass} />
     </a>
@@ -152,20 +152,20 @@ const redGlow = {
 /* ── Profile Card ──────────────────────────────────────────────────────────── */
 function ProfileCard({ person, leadership = false }) {
   return (
-    <article className={`overflow-hidden border border-[#303030] bg-[#111] ${leadership ? "rounded-2xl" : "rounded-xl"}`}>
+    <article className={`group flex min-w-0 flex-col overflow-hidden border border-[#303030] bg-[#111] ${leadership ? "rounded-2xl" : "rounded-xl"}`}>
       {/* Portrait */}
-      <div className={`flex items-end justify-center overflow-hidden ${leadership ? "[aspect-ratio:1.2]" : "[aspect-ratio:1.35]"}`}>
+      <div className={`flex items-end justify-center overflow-hidden ${leadership ? "h-[190px] sm:h-[240px] lg:h-[280px]" : "[aspect-ratio:1.35]"}`}>
         <img
           src={person.img.trim()}
           alt={person.name}
           loading="lazy"
-          className={`w-full h-full transition-[filter] duration-300 hover:grayscale ${leadership ? "object-contain object-bottom" : "object-contain object-bottom"}`}
+          className="w-full h-full object-contain object-bottom transition-[filter] duration-300 group-hover:grayscale group-focus-within:grayscale"
         />
       </div>
 
       {/* Info */}
-      <div className={`relative border-t border-[#666] bg-black ${leadership ? "min-h-[90px] px-[18px] pt-[18px] pb-[52px] pr-[48px]" : "min-h-[74px] px-[10px] pt-[7px] pb-8 pr-8"}`}>
-        <h4 className={`text-white font-semibold leading-tight ${leadership ? "text-[clamp(18px,2vw,28px)]" : "text-[clamp(13px,1.3vw,20px)]"}`}>
+      <div className={`relative flex-1 border-t border-[#666] bg-black ${leadership ? "min-h-[144px] px-4 pt-5 pb-16 sm:px-6 sm:pt-6" : "min-h-[74px] px-[10px] pt-[7px] pb-8 pr-8"}`}>
+        <h4 className={`text-white font-semibold leading-tight transition-colors duration-200 group-hover:text-[#E1251B] group-focus-within:text-[#E1251B] ${leadership ? "text-[clamp(18px,2vw,28px)]" : "text-[clamp(13px,1.3vw,20px)]"}`}>
           {person.name}
         </h4>
         <p className={`mt-1 text-[#c5c5c5] leading-snug ${leadership ? "text-[clamp(12px,1.2vw,17px)]" : "text-[clamp(9px,0.8vw,13px)]"}`}>
@@ -176,6 +176,7 @@ function ProfileCard({ person, leadership = false }) {
             href={person.linkedin}
             name={person.name}
             iconClass={leadership ? "w-5 h-5" : "w-[14px] h-[14px]"}
+            positionClass={leadership ? "right-4 bottom-5 sm:right-6" : "right-3 bottom-3"}
           />
         ) : (
           <span className={`absolute right-3 bottom-3 block ${leadership ? "w-5 h-5" : "w-[14px] h-[14px]"}`}>
