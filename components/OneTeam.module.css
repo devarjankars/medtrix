@@ -11,7 +11,7 @@
 }
 .founderPortrait { width: 25%; aspect-ratio: 188 / 224; flex-shrink: 0; overflow: hidden; border-radius: 10px; }
 .founderPortrait img { transition: filter .3s ease; }
-.founderPortrait:hover img { filter: grayscale(1); }
+.founder:hover .founderPortrait img, .founder:focus-within .founderPortrait img { filter: grayscale(1); }
 .founderContent { flex: 1; min-width: 0; }
 .quote { font-size: clamp(14px, 1.45vw, 24px); line-height: 1.9; }
 .founderInfo { display: flex; align-items: center; gap: 14px; margin-top: 28px; padding-top: 28px; border-top: 1px solid #ffffff14; }
@@ -52,4 +52,14 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .portrait img, .founderPortrait img, .linkedin { transition: none; }
+}
+
+/* Keep the theme highlight consistent for pointer and keyboard interaction. */
+.profileInfo h4, .founderInfo h5 { transition: color .25s ease; }
+.profile:hover .profileInfo h4,
+.profile:focus-within .profileInfo h4,
+.founder:hover .founderInfo h5,
+.founder:focus-within .founderInfo h5 { color: #E1251B; }
+@media (prefers-reduced-motion: reduce) {
+  .profileInfo h4, .founderInfo h5 { transition: none; }
 }

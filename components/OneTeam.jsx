@@ -10,7 +10,7 @@ gsap.registerPlugin(ScrollTrigger);
 const FULL_TEXT = "“We believe great outcomes are built by great teams. Our strength lies in our people and the way we come together as one to solve complex challenges, support one another, and deliver meaningful impact for our clients.”";
 const RED_WORD = "one";
 
-function TypingQuote({ onDone }) {
+function TypingQuote() {
   const paraRef = useRef(null);
 
   useEffect(() => {
@@ -53,14 +53,17 @@ function TypingQuote({ onDone }) {
       duration: 0.01,
       stagger: 0.018,
       ease: 'none',
-      onComplete: onDone,
     });
 
     return () => tl.kill();
   }, []);
 
   return (
-    <p ref={paraRef} className="lg:text-[30px] text-[22px] leading-relaxed" />
+    <p ref={paraRef} className={styles.quote}>
+      {FULL_TEXT.slice(0, FULL_TEXT.indexOf(RED_WORD))}
+      <span className="text-[#FF2F2F]">{RED_WORD}</span>
+      {FULL_TEXT.slice(FULL_TEXT.indexOf(RED_WORD) + RED_WORD.length)}
+    </p>
   );
 }
 
@@ -278,13 +281,13 @@ function OneTeam() {
   return (
     <>
       {/* CEO quote card */}
-      <div className="flex flex-col items-center gap-5 rounded-2xl border border-[#292929] bg-[#101010] p-4 text-white sm:p-6 md:flex-row md:gap-7">
-        <div className="h-[230px] w-full shrink-0 overflow-hidden rounded-xl bg-[#151515] md:h-[220px] md:w-[188px]">
+      <div className={styles.founder}>
+        <div className={styles.founderPortrait}>
           <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-top" />
         </div>
-        <div className="flex min-w-0 flex-1 flex-col justify-center gap-5 md:px-2">
-          <TypingQuote onDone={() => setQuoteDone(true)} />
-          <div className={`flex items-center justify-between gap-4 border-t border-white/10 pt-4 transition-opacity duration-700 ${quoteDone ? "opacity-100" : "opacity-0"}`}>
+        <div className={styles.founderContent}>
+          <TypingQuote />
+          <div className={styles.founderInfo}>
             <div>
               <h5 className="text-base font-semibold sm:text-lg">Vimal Narayanan</h5>
               <p className="text-xs text-gray-300 sm:text-sm">Founder and CEO</p>
