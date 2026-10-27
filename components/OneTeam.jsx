@@ -59,26 +59,25 @@ function TypingQuote({ onDone }) {
   }, []);
 
   return (
-    <p ref={paraRef} className="lg:text-[30px] text-[22px] leading-relaxed" />
+    <p ref={paraRef} className="lg:text-[24px] text-[20px] leading-relaxed" />
   );
 }
-const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar_Headshot.png";
-const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shijin_Headshot.png";
-const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vimal.png";
-const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lyris_Headshot.jpeg";
-const hari = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Hari_Headshot.png";
-const binoj = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj_Headshot.png";
-const rajesh = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Rajesh_Headshot.png";
-const michel= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Michelle_Headshot.png";
-const suja= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shuja_Headshot.png";
-const stalin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Stalin Headshot.png ";
-const  suru= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Suresh_Headshot.png";
-const vincent= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vince_Headshot.png";
-const christopher= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Chris_Headshot.png";
-const jaclyn= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Jaclyn_Headshot.png";
-const colin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Colin_Headshot.png";
 
-
+const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar.png";
+const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shijin.png";
+const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/vimal_v2.png";
+const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lyris.png";
+const hari = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Hari2.png";
+const binoj = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Binoj.png";
+const rajesh = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Rajesh 1.png";
+const michel= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Michelle_v4.png";
+const suja= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shuja.png";
+const stalin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Stalin 1.png";
+const  suru= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Suresh 1.png";
+const vincent= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vincent.png";
+const christopher= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Christopher Moccia.png";
+const jaclyn= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Jaclyn_v2.png";
+const colin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Colin_v2.png";
 /* ── LinkedIn SVG icon — bg changes to red on hover ── */
 let _liIconCount = 0;
 function LinkedInIcon({ className = "w-12 h-12", hovered = false }) {
@@ -320,12 +319,12 @@ function OneTeam() {
     <>
       {/* CEO quote card */}
       <div className="flex flex-col items-center gap-5 rounded-2xl border border-[#292929] bg-[#101010] p-4 text-white sm:p-6 md:flex-row md:gap-7">
-        <div className="h-[230px] w-full shrink-0 overflow-hidden rounded-xl bg-[#151515] md:h-[220px] md:w-[188px]">
+        <div className="h-[230px] w-full shrink-0 overflow-hidden rounded-xl bg-[#151515] md:h-[340px] md:w-[340px]">
           <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-top" />
         </div>
-        <div className="flex min-w-0 flex-1 flex-col justify-center gap-5 md:px-2">
+        <div className="flex min-w-0 flex-1 flex-col justify-center gap-5 md:gap-15 md:px-2">
           <TypingQuote onDone={() => setQuoteDone(true)} />
-          <div className={`flex items-center justify-between gap-4 border-t border-white/10 pt-4 transition-opacity duration-700 ${quoteDone ? "opacity-100" : "opacity-0"}`}>
+          <div className={`flex items-center justify-between gap-5 border-t border-white/10 pt-4 transition-opacity duration-700 ${quoteDone ? "opacity-100" : "opacity-0"}`}>
             <div>
               <h5 className="text-base font-semibold sm:text-lg">Vimal Narayanan</h5>
               <p className="text-xs text-gray-300 sm:text-sm">Founder and CEO</p>

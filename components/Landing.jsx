@@ -24,7 +24,7 @@ export default function Landing() {
     <section className="relative isolate z-10 px-6 pb-[40px] lg:pb-20 bg-black mt-[50px] lg:mt-[20px] lg:px-0">
       <div className="flex flex-col-reverse  mx-auto w-[90%] md:w-[80%] md:flex-row items-center justify-between gap-0">
 
-        <div className="text-left flex lg:w-[55%] flex-col gap-0">
+        <div className="text-left flex lg:w-[55%] flex-col gap-0  lg:mt-2">
           <motion.h1
             className="text-[26px] text-center lg:text-left lg:text-[65px] font-bold leading-[1.2] text-[#F2F2F2]"
             initial="hidden"
@@ -52,7 +52,7 @@ export default function Landing() {
           {/* Mobile image */}
           <div className="w-full lg:hidden block">
             <motion.img
-              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Bg.png"
+              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/tablet.png"
               alt=""
               className="items-center min-w-70 md:w-full lg:ml-8"
               initial={{ opacity: 0, y: 60 }}
@@ -74,7 +74,7 @@ export default function Landing() {
           </motion.p>
 
           <motion.p
-            className="text-[16px] lg:text-[18px] text-center lg:text-left text-[#d1d5db] mt-3 leading-[130%]"
+            className="text-[16px]   lg:text-[18px] text-center lg:text-left text-[#d1d5db] mt-3 leading-[130%]"
             custom={1}
             initial="hidden"
             animate="visible"
@@ -83,7 +83,7 @@ export default function Landing() {
             Across Medical Affairs and Commercial functions, we accelerate compliant, <br className="hidden 2xl:block" />high-impact engagement from launch through the lifecycle. We don’t just <br className="hidden 2xl:block" />support growth—we{" "}<b className="text-[#F2F2F2]">catalyze</b> it.
           </motion.p>
  <motion.p
-            className="text-[20px] lg:text-[30px] text-center lg:text-left text-[#FFFFFF] mt-8 leading-[130%]"
+            className="text-[20px]  lg:text-[30px] text-center lg:text-left text-[#FFFFFF] mt-8"
             custom={1}
             initial="hidden"
             animate="visible"
@@ -128,7 +128,7 @@ export default function Landing() {
         {/* RIGHT — desktop image */}
         <div className="w-1/2 hidden lg:block">
           <motion.img
-            src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Bg.png"
+            src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/tablet.png"
             alt=""
             className="items-center min-w-70 md:w-full lg:ml-8"
             initial={{ opacity: 0, y: 60 }}
