@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import AnimatedCta from "./AnimatedCta";
 import { isValidElement } from "react";
 
 // ── shared easing ────────────────────────────────────────────────────────────
@@ -217,16 +218,9 @@ export default function DynamicHeader({
 
           {cta && (
             <motion.div variants={fadeUp}>
-              <a
-                href={cta.href}
-                className="inline-flex items-center justify-center rounded-full px-8 py-4  mt-2 text-sm font-bold text-white transition hover:opacity-90"
-                style={{
-                  background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
-                  boxShadow: "0 0 18px rgba(225,37,27,0.45)",
-                }}
-              >
+              <AnimatedCta href={cta.href} className="mt-2">
                 {cta.label}
-              </a>
+              </AnimatedCta>
             </motion.div>
           )}
 
