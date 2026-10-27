@@ -212,7 +212,7 @@ export default function CipherPage() {
         
       <div className="relative z-10 mx-auto w-[90%] py-5 md:w-[80%]">
         {/* Section heading */}
-        <div className="mb-8 inline-flex rounded-full bg-[#292929] px-5 py-2.5">
+        <div className="mb-8  inline-flex rounded-full bg-[#292929] px-5 py-4">
           <span className="text-xs font-semibold tracking-[0.25em] sm:text-sm">
             HOW CIPHER WORKS
           </span>
@@ -385,14 +385,14 @@ export default function CipherPage() {
 
       <div className="relative mx-auto w-[90%] py-5 md:w-[80%]">
         {/* Section label */}
-        <div className="mb-10">
-          <span className="inline-flex rounded-full bg-[#292929] px-6 py-2.5 text-xs font-semibold tracking-[0.22em] text-white sm:text-sm">
+        <div className="mb-6">
+          <span className="inline-flex rounded-full bg-[#292929] px-6 py-4 text-xs font-semibold tracking-[0.22em] text-white sm:text-sm">
             MEASURABLE BUSINESS IMPACT
           </span>
         </div>
 
         {/* Introduction */}
-        <p className="mb-12 max-w-none text-base leading-[1.8] tracking-[-0.025em] text-[#eeeeee] sm:text-lg lg:mb-14 lg:text-[23px] lg:leading-[1.9]">
+        <p className="mb-10 max-w-none text-base  tracking-[-0.025em] text-[#eeeeee] sm:text-lg lg:mb-8 lg:text-[23px] ">
           By integrating AI across content development, production, and review,
           Cipher is designed to deliver measurable improvements in speed,
           efficiency, quality, and cost.
@@ -429,7 +429,7 @@ export default function CipherPage() {
         </div>
       </div>
     </section>
-     <section className="relative overflow-hidden bg-[#090403] py-16 font-sans text-white lg:py-24">
+     <section className="relative overflow-hidden bg-[#090403] py-14 font-sans text-white lg:py-20">
       {/* Ambient red glow */}
      
       <div
@@ -440,8 +440,8 @@ export default function CipherPage() {
 
       <div className="relative mx-auto w-[90%] py-5 md:w-[80%]">
         {/* Section label */}
-        <div className="mb-8">
-          <span className="inline-flex rounded-full bg-[#292929] px-6 py-2.5 text-xs font-semibold tracking-[0.22em] text-white sm:text-sm">
+        <div className="mb-8 ">
+          <span className="inline-flex rounded-full bg-[#292929] px-6 py-4 text-xs font-semibold tracking-[0.22em] text-white sm:text-sm">
             CIPHER CAPABILITIES
           </span>
         </div>

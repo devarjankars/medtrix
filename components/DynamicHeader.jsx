@@ -26,10 +26,10 @@ const fadeScale = {
 
 // ── word-by-word title split ─────────────────────────────────────────────────
 // title can be a string OR an array of strings (each item = one desktop line)
-function AnimatedTitle({ text }) {
+function AnimatedTitle({ text, className = "text-4xl lg:text-5xl" }) {
   if (isValidElement(text)) {
     return (
-      <motion.h1 className="text-4xl lg:text-5xl">
+      <motion.h1 className={className}>
         {text}
       </motion.h1>
     );
@@ -43,7 +43,7 @@ function AnimatedTitle({ text }) {
 
   return (
     <motion.h1
-      className="text-4xl lg:text-5xl"
+      className={className}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: 0.07, delayChildren: 0 } },
@@ -105,6 +105,7 @@ export default function DynamicHeader({
   tagImageSrc,
   tagImageAlt = "",
   title,
+  titleClassName,
   paragraphs = [],
   contentAfterParagraphs,
   cta,
@@ -191,7 +192,7 @@ export default function DynamicHeader({
 
           {/* Title */}
           <motion.div variants={fadeUp} className="w-full ">
-            <AnimatedTitle text={title ?? ""} />
+            <AnimatedTitle text={title ?? ""} className={titleClassName ?? "text-4xl lg:text-5xl"} />
           </motion.div>
 
           {/* Mobile image */}
