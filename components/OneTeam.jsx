@@ -1,8 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
+import styles from "./OneTeam.module.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,7 +60,11 @@ function TypingQuote({ onDone }) {
   }, []);
 
   return (
-    <p ref={paraRef} className="lg:text-[30px] text-[22px] leading-relaxed" />
+    <p ref={paraRef} className={styles.quote}>
+      {FULL_TEXT.slice(0, FULL_TEXT.indexOf(RED_WORD))}
+      <span className="text-[#FF2F2F]">{RED_WORD}</span>
+      {FULL_TEXT.slice(FULL_TEXT.indexOf(RED_WORD) + RED_WORD.length)}
+    </p>
   );
 }
 const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar_Headshot.png";
@@ -79,42 +84,21 @@ const jaclyn= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_20
 const colin= "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Colin_Headshot.png";
 
 
-/* ── LinkedIn SVG icon — bg changes to red on hover ── */
-let _liIconCount = 0;
-function LinkedInIcon({ className = "w-12 h-12", hovered = false }) {
-  const id = useRef(`li-${_liIconCount++}`);
-  const filterId = `filter-${id.current}`;
-  const gradientId = `gradient-${id.current}`;
+function LinkedInIcon({ className = "" }) {
   return (
-    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* background circle */}
-      <rect
-        width="64" height="64" rx="10"
-        fill={hovered ? "#E1251B" : "#0A66C2"}
-        style={{ transition: "fill 0.25s ease" }}
-      />
-      {/* "IN" logo mark — always white */}
-      <path
-        d="M24.8165 20.2832C23.392 20.2832 22.2363 21.4369 22.2363 22.8615C22.2363 24.2861 23.391 25.4665 24.8146 25.4665C26.2382 25.4665 27.3948 24.2861 27.3948 22.8615C27.3948 21.4379 26.2411 20.2832 24.8165 20.2832ZM37.4047 27.118C35.2381 27.118 33.9985 28.251 33.4038 29.3778H33.3409V27.4212H29.0711V41.7639H33.5202V34.664C33.5202 32.7933 33.6614 30.9854 35.9764 30.9854C38.2582 30.9854 38.2915 33.1185 38.2915 34.7823V41.7639H42.7349V33.886C42.7349 30.0312 41.9118 27.118 37.4047 27.118ZM22.591 27.4212V41.7639H27.0439V27.4212H22.591Z"
-        fill="white"
-      />
+    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className={className}>
+      <rect width="24" height="24" rx="2" fill="#0A66C2" />
+      <path fill="white" d="M5 9h3v10H5V9Zm1.5-4.5a1.75 1.75 0 1 0 0 3.5 1.75 1.75 0 0 0 0-3.5ZM10 9h2.9v1.4h.04C13.35 9.6 14.34 8.8 15.8 8.8c3.06 0 3.7 2.02 3.7 4.65V19h-3v-4.92c0-1.17-.02-2.68-1.64-2.68-1.64 0-1.89 1.28-1.89 2.59V19H10V9Z" />
     </svg>
   );
 }
 
-/* ── Hover LinkedIn button — bg turns red, size stays fixed ── */
-function LinkedInButton({ href, size = "w-12 h-12" }) {
-  const [hovered, setHovered] = useState(false);
+function LinkedInButton({ href, size = "", name = "Vimal Narayanan" }) {
   return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={`shrink-0 block ${size}`}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-    >
-      <LinkedInIcon className="w-full h-full" hovered={hovered} />
+    <a href={href} target="_blank" rel="noopener noreferrer"
+      aria-label={`${name} on LinkedIn`}
+      className={`${styles.linkedin} ${size}`}>
+      <LinkedInIcon />
     </a>
   );
 }
@@ -174,44 +158,18 @@ const accountsTeamData = [
 ];
 
 function ProfileCard({ person, leadership = false }) {
-  const imageHeight = leadership ? "h-[220px] sm:h-[250px]" : "h-[145px] sm:h-[160px]";
-  const initials = person.name
-    .split(" ")
-    .filter((part) => part && !["Dr", "Dr."].includes(part))
-    .slice(0, 2)
-    .map((part) => part[0])
-    .join("");
-
   return (
-    <article className="overflow-hidden rounded-2xl border border-[#292929] bg-[#111111]">
-      <div className={`${imageHeight} flex items-end justify-center overflow-hidden bg-[#151515]`}>
-        {person.img ? (
-          <img
-            src={person.img}
-            alt={person.name}
-            loading="lazy"
-            className="h-full w-full object-contain object-bottom"
-          />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(ellipse_at_bottom,rgba(255,255,255,0.08),transparent_65%)] text-4xl font-semibold tracking-wide text-white/20">
-            {initials}
-          </div>
-        )}
+    <article className={`${styles.profile} ${leadership ? styles.leadership : ""}`}>
+      <div className={styles.portrait}>
+        <img src={person.img.trim()} alt={person.name} loading="lazy" />
       </div>
-
-      <div className={`flex min-h-[76px] items-center justify-between gap-2 border-t border-[#424242] bg-black px-3 ${leadership ? "py-4 sm:px-5" : "py-2.5"}`}>
-        <div className="min-w-0 flex-1">
-          <h4 className={`${leadership ? "text-lg sm:text-xl" : "text-[13px] sm:text-sm"} truncate font-semibold leading-tight text-white`}>
-            {person.name}
-          </h4>
-          <p className={`${leadership ? "text-xs sm:text-sm" : "text-[10px] sm:text-[11px]"} mt-1 leading-snug text-gray-400`}>
-            {person.role}
-          </p>
-        </div>
+      <div className={styles.profileInfo}>
+        <h4>{person.name}</h4>
+        <p>{person.role}</p>
         {person.linkedin ? (
-          <LinkedInButton href={person.linkedin} size={leadership ? "h-6 w-6 shrink-0" : "h-5 w-5 shrink-0"} />
+          <LinkedInButton href={person.linkedin} name={person.name} />
         ) : (
-          <LinkedInIcon className={leadership ? "h-6 w-6 shrink-0" : "h-5 w-5 shrink-0"} />
+          <span className={styles.linkedin}><LinkedInIcon /></span>
         )}
       </div>
     </article>
@@ -292,7 +250,6 @@ function GptwImage({ src, className }) {
 function OneTeam() {
   const awardsRef = useRef(null);
   const logosRef  = useRef(null);
-  const [quoteDone, setQuoteDone] = useState(false);
 
   useEffect(() => {
     // Client logos pop in with stagger
@@ -319,47 +276,47 @@ function OneTeam() {
   return (
     <>
       {/* CEO quote card */}
-      <div className="flex flex-col items-center gap-5 rounded-2xl border border-[#292929] bg-[#101010] p-4 text-white sm:p-6 md:flex-row md:gap-7">
-        <div className="h-[230px] w-full shrink-0 overflow-hidden rounded-xl bg-[#151515] md:h-[220px] md:w-[188px]">
+      <div className={styles.founder}>
+        <div className={styles.founderPortrait}>
           <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-top" />
         </div>
-        <div className="flex min-w-0 flex-1 flex-col justify-center gap-5 md:px-2">
-          <TypingQuote onDone={() => setQuoteDone(true)} />
-          <div className={`flex items-center justify-between gap-4 border-t border-white/10 pt-4 transition-opacity duration-700 ${quoteDone ? "opacity-100" : "opacity-0"}`}>
+        <div className={styles.founderContent}>
+          <TypingQuote />
+          <div className={styles.founderInfo}>
             <div>
               <h5 className="text-base font-semibold sm:text-lg">Vimal Narayanan</h5>
               <p className="text-xs text-gray-300 sm:text-sm">Founder and CEO</p>
             </div>
-            <LinkedInButton href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/" size="h-6 w-6" />
+            <LinkedInButton href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/" size={styles.founderLinkedin} />
           </div>
         </div>
       </div>
 
-      <section className="mt-7">
-        <h3 className="mb-3 text-lg font-bold text-[#ff3034]">Leadership</h3>
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+      <section className={styles.teamGroup}>
+        <h3 className={styles.teamHeading}>Leadership</h3>
+        <div className={styles.leadershipGrid}>
           {leadershipData.map((person) => <ProfileCard key={person.name} person={person} leadership />)}
         </div>
       </section>
 
-      <section className="mt-7">
-        <h3 className="mb-3 text-lg font-bold text-[#ff3034]">Core Team</h3>
-        <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-4 lg:gap-3">
+      <section className={styles.teamGroup}>
+        <h3 className={styles.teamHeading}>Core Team</h3>
+        <div className={styles.teamGrid}>
           {coreTeamData.map((person) => <ProfileCard key={person.name} person={person} />)}
         </div>
       </section>
 
-      <section className="mt-7">
-        <h3 className="mb-3 text-lg font-bold text-[#ff3034]">Accounts Team</h3>
-        <div className="grid grid-cols-2 gap-2.5 lg:grid-cols-4 lg:gap-3">
+      <section className={styles.teamGroup}>
+        <h3 className={styles.teamHeading}>Accounts Team</h3>
+        <div className={styles.teamGrid}>
           {accountsTeamData.map((person) => <ProfileCard key={person.name} person={person} />)}
         </div>
       </section>
 
       {/* GPTW */}
       <section className="relative">
-        <div className="flex items-center justify-center py-[50px] lg:py-[100px]">
-          <GptwImage src={gptwImg} className="w-full hidden lg:block object-contain" />
+        <div className="flex items-center justify-center pt-11 pb-16 lg:pb-[100px]">
+          <GptwImage src={gptwImg} className="w-full hidden lg:block object-contain rounded-xl border border-[#292929]" />
           <GptwImage src={gptw_mobile} className="w-full lg:hidden object-contain rounded-xl border-[1px] border-gray-600" />
         </div>
         <motion.div
