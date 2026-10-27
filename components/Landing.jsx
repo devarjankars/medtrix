@@ -105,7 +105,7 @@ export default function Landing() {
                           whileHover={{ scale: 1.06 }}
                           whileTap={{ scale: 0.97 }}
                           transition={{ type: "spring", stiffness: 380, damping: 22 }}
-                          className="relative inline-flex w-fit min-w-[180px] items-center justify-center gap-2 px-8 py-4 mt-8 rounded-full text-[#F2F2F2] font-medium overflow-hidden cursor-pointer"
+                          className="relative inline-flex w-fit items-center justify-center  gap-2 px-8 py-4 mt-8 rounded-full text-[#F2F2F2] font-medium overflow-hidden cursor-pointer"
                           style={{
                             background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
                             boxShadow: "0 0 18px rgba(225,37,27,0.45)",
