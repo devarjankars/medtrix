@@ -47,7 +47,7 @@ function TypingQuote() {
   );
 }
 
-const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar.png";
+const vp1 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Kumar_v4.png";
 const vp2 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Shijin.png";
 const ceoImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Vimal.png";
 const liz = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Lyris.png";
@@ -68,15 +68,15 @@ const gptw_mobile = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medt
 
 const logo1  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo1.png";
 const logo2  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo2v2.png";
-const logo3  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Berline_chemie.png";
+const logo3  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/BerlinChemie_v2.png";
 const logo4  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/celltrion.png";
 const logo5  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo5v2.png";
 const logo6  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo6v2.png";
 const logo7  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo7.png";
 const logo8  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo8.png";
 const logo9  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/nestlelogo.png";
-const logo10 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo10.png";
-const logo11 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo11.png";
+const logo10 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/PTC_v2.png";
+const logo11 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Sanofi_v2.png";
 const logo12 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stemlinelogo.png";
 const logo13 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo11v2.png";
 const logo14 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo12v2.png";
@@ -154,7 +154,7 @@ function ProfileCard({ person, leadership = false }) {
   return (
     <article className={`group flex min-w-0 flex-col overflow-hidden border border-[#303030] bg-[#111] ${leadership ? "rounded-2xl" : "rounded-xl"}`}>
       {/* Portrait */}
-      <div className={`flex items-end justify-center overflow-hidden ${leadership ? "aspect-[1.9]" : "[aspect-ratio:1.35]"}`}>
+      <div className={`flex items-end justify-center overflow-hidden ${leadership ? "" : "[aspect-ratio:1.35]"}`}>
         <img
           src={person.img.trim()}
           alt={person.name}
@@ -164,26 +164,57 @@ function ProfileCard({ person, leadership = false }) {
       </div>
 
       {/* Info */}
-      <div className={`relative flex-1 border-t border-[#666] bg-black ${leadership ? "min-h-[120px] px-4 pt-5 pb-14 sm:px-5" : "min-h-[74px] px-[10px] pt-[7px] pb-8 pr-8"}`}>
-        <h4 className={`text-white font-semibold leading-tight transition-colors duration-200 group-hover:text-[#E1251B] group-focus-within:text-[#E1251B] ${leadership ? "text-[clamp(18px,2vw,28px)]" : "text-[clamp(13px,1.3vw,20px)]"}`}>
-          {person.name}
-        </h4>
-        <p className={`mt-1 text-[#c5c5c5] leading-snug ${leadership ? "text-[clamp(12px,1.2vw,17px)]" : "text-[clamp(9px,0.8vw,13px)]"}`}>
-          {person.role}
-        </p>
-        {person.linkedin ? (
-          <LinkedInButton
-            href={person.linkedin}
-            name={person.name}
-            iconClass={leadership ? "w-5 h-5" : "w-[14px] h-[14px]"}
-            positionClass={leadership ? "right-4 bottom-5 sm:right-6" : "right-3 bottom-3"}
-          />
-        ) : (
-          <span className={`absolute right-3 bottom-3 block ${leadership ? "w-5 h-5" : "w-[14px] h-[14px]"}`}>
-            <LinkedInIcon className="w-full h-full" />
-          </span>
-        )}
-      </div>
+      {leadership ? (
+        /* Leadership — name/role on left, LinkedIn on right, same row */
+        <div className="flex items-center justify-between gap-3 border-t border-[#666] bg-black px-4 pt-4 pb-6 md:px-5 md:pt-5 md:pb-7">
+          <div className="min-w-0">
+            <h4 className="text-white font-semibold leading-tight text-[15px] md:text-[clamp(16px,1.6vw,24px)] transition-colors duration-200 group-hover:text-[#E1251B]">
+              {person.name}
+            </h4>
+            <p className="mt-1 text-[#c5c5c5] leading-snug text-[12px] md:text-[clamp(11px,1vw,15px)]">
+              {person.role}
+            </p>
+          </div>
+          {person.linkedin ? (
+            <a
+              href={person.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${person.name} on LinkedIn`}
+              className="shrink-0 transition-opacity hover:opacity-70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white focus-visible:outline-offset-2"
+            >
+              <LinkedInIcon className="w-[26px] h-[26px]" />
+            </a>
+          ) : (
+            <span className="shrink-0 w-[26px] h-[26px]"><LinkedInIcon className="w-full h-full" /></span>
+          )}
+        </div>
+      ) : (
+        /* Core / Accounts — original absolute positioned layout */
+        <div className="relative min-h-[74px] border-t border-[#666] bg-black px-[10px] pt-[7px] pb-8 pr-8">
+          <h4 className="text-white font-semibold leading-tight text-[clamp(13px,1.3vw,20px)] transition-colors duration-200 group-hover:text-[#E1251B]">
+            {person.name}
+          </h4>
+          <p className="mt-1 text-[#c5c5c5] leading-snug text-[clamp(9px,0.8vw,13px)]">
+            {person.role}
+          </p>
+          {person.linkedin ? (
+            <a
+              href={person.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${person.name} on LinkedIn`}
+              className="absolute right-3 bottom-3 block transition-opacity hover:opacity-70"
+            >
+              <LinkedInIcon className="w-[18px] h-[18px]" />
+            </a>
+          ) : (
+            <span className="absolute right-3 bottom-3 block w-[18px] h-[18px]">
+              <LinkedInIcon className="w-full h-full" />
+            </span>
+          )}
+        </div>
+      )}
     </article>
   );
 }
@@ -272,15 +303,15 @@ function OneTeam() {
     <>
       {/* ── CEO Quote Card ── */}
       <div className="group/ceo flex flex-col md:flex-row items-center gap-5 md:gap-[3.5%] rounded-2xl border border-[#292929] bg-[radial-gradient(ellipse_at_top,#1b1b1b,#090909_75%)] p-4 md:p-[3%] text-white">
-        <div className="w-[188px] md:w-1/4 aspect-[188/224] shrink-0 overflow-hidden rounded-xl bg-[#151515]">
+        <div className="w-[100%] md:w-1/4 aspect-[188/224] shrink-0 overflow-hidden rounded-xl bg-[#151515]">
           <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-top transition-[filter] duration-300 group-hover/ceo:grayscale" />
         </div>
         <div className="flex min-w-0 flex-1 flex-col justify-center gap-7">
           <TypingQuote />
-          <div className="flex items-center gap-3.5 border-t border-white/10 pt-7">
+          <div className="flex items-center gap-5 border-t border-white/10 pt-7 justify-between md:justify-normal">
             <div>
-              <h5 className="text-sm font-semibold transition-colors group-hover/ceo:text-[#E1251B]">Vimal Narayanan</h5>
-              <p className="text-xs text-gray-300">Founder and CEO</p>
+              <h5 className="text-lg font-semibold transition-colors group-hover/ceo:text-[#E1251B]">Vimal Narayanan</h5>
+              <p className="text-md text-gray-300">Founder and CEO</p>
             </div>
             <a
               href="https://www.linkedin.com/in/vimal-narayanan-01a40b6/"
@@ -289,7 +320,7 @@ function OneTeam() {
               aria-label="Vimal Narayanan on LinkedIn"
               className="transition-opacity hover:opacity-70"
             >
-              <LinkedInIcon className="w-7 h-7" />
+              <LinkedInIcon className="w-10 h-10" />
             </a>
           </div>
         </div>
@@ -297,8 +328,8 @@ function OneTeam() {
 
       {/* ── Leadership ── */}
       <section className="mt-8">
-        <h3 className="mb-4 text-[#ff3034] text-xl font-bold">Leadership</h3>
-        <div className="grid grid-cols-2 gap-3">
+        <h3 className="mb-4 text-[#ff3034] text-lg md:text-xl font-bold">Leadership</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {leadershipData.map((person) => (
             <ProfileCard key={person.name} person={person} leadership />
           ))}
