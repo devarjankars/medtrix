@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import DynamicHeader from "@/components/DynamicHeader";
+import AnimatedCta from "@/components/AnimatedCta";
 
 const stepIconPaths = {
   shield: ["M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11Z", "m9 12 2 2 4-4"],
@@ -438,16 +439,7 @@ export default function CipherPage() {
 
         {/* CTA */}
         <div className="mt-8 flex justify-center sm:mt-8">
-          <a
-            href="/contact"
-            className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-bold text-white transition hover:opacity-90"
-            style={{
-              background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
-              boxShadow: "0 0 18px rgba(225,37,27,0.45)",
-            }}
-          >
-            Book a Demo
-          </a>
+          <AnimatedCta href="/contact">Book a Demo</AnimatedCta>
         </div>
       </div>
     </section>

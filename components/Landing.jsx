@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import Link from "next/link";
+import AnimatedCta from "./AnimatedCta";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -100,29 +100,9 @@ export default function Landing() {
           >
            Cipher is our AI-enabled platform, built to accelerate content creation. It <br className="hidden 2xl:block" />integrates AI specifically suited for content development for pharma and <br className="hidden 2xl:block" />healthcare into content creation, digital production, and review—to<br className="hidden 2xl:block" /> accelerate delivery, improve consistency, and drive efficiency at scale.
           </motion.p>
-           <Link href="/cipher" className="self-center lg:self-start">
-                        <motion.div
-                          whileHover={{ scale: 1.06 }}
-                          whileTap={{ scale: 0.97 }}
-                          transition={{ type: "spring", stiffness: 380, damping: 22 }}
-                          className="relative inline-flex w-fit items-center justify-center  gap-2 px-8 py-4 mt-8 rounded-full text-[#F2F2F2] font-medium overflow-hidden cursor-pointer"
-                          style={{
-                            background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
-                            boxShadow: "0 0 18px rgba(225,37,27,0.45)",
-                          }}
-                        >
-                          <motion.span
-                            className="absolute inset-0 rounded-full pointer-events-none"
-                            style={{
-                              background: "linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.15) 50%, transparent 65%)",
-                              backgroundSize: "200% 100%",
-                            }}
-                            animate={{ backgroundPosition: ["200% 0", "-200% 0"] }}
-                            transition={{ duration: 2.5, ease: "linear", repeat: Infinity, repeatDelay: 1.5 }}
-                          />
-                          <span className="relative z-10">Explore Cipher</span>
-                        </motion.div>
-            </Link>
+           <AnimatedCta href="/cipher" className="mt-8 self-center lg:self-start">
+             Explore Cipher
+           </AnimatedCta>
         </div>
 
         {/* RIGHT — desktop image */}
