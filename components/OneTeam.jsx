@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import gsap from "gsap";
 import styles from "./OneTeam.module.css";
@@ -12,57 +12,38 @@ const RED_WORD = "one";
 
 function TypingQuote() {
   const paraRef = useRef(null);
+  const redStart = FULL_TEXT.indexOf(RED_WORD);
 
   useEffect(() => {
     const el = paraRef.current;
-    if (!el) return;
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
-    // Split into segments: before "one", "one", after "one"
-    const idx = FULL_TEXT.indexOf(RED_WORD);
-    const before = FULL_TEXT.slice(0, idx);
-    const after = FULL_TEXT.slice(idx + RED_WORD.length);
+    const context = gsap.context(() => {
+      gsap.fromTo(el.querySelectorAll("[data-quote-character]"),
+        { opacity: 0 },
+        {
+          opacity: 1,
+          duration: 0.01,
+          stagger: 0.018,
+          ease: "none",
+          scrollTrigger: { trigger: el, start: "top 80%", once: true },
+        }
+      );
+    }, el);
 
-    // Build char spans
-    const makeSpans = (text, className = '') =>
-      text.split('').map(ch => {
-        const s = document.createElement('span');
-        s.textContent = ch;
-        s.style.opacity = '0';
-        if (className) s.className = className;
-        return s;
-      });
-
-    const beforeSpans = makeSpans(before);
-    const redSpans = makeSpans(RED_WORD, 'text-[#FF2F2F]');
-    const afterSpans = makeSpans(after);
-    const allSpans = [...beforeSpans, ...redSpans, ...afterSpans];
-
-    el.innerHTML = '';
-    allSpans.forEach(s => el.appendChild(s));
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 80%',
-        once: true,
-      },
-    });
-
-    tl.to(allSpans, {
-      opacity: 1,
-      duration: 0.01,
-      stagger: 0.018,
-      ease: 'none',
-    });
-
-    return () => tl.kill();
+    return () => context.revert();
   }, []);
 
   return (
-    <p ref={paraRef} className={styles.quote}>
-      {FULL_TEXT.slice(0, FULL_TEXT.indexOf(RED_WORD))}
-      <span className="text-[#FF2F2F]">{RED_WORD}</span>
-      {FULL_TEXT.slice(FULL_TEXT.indexOf(RED_WORD) + RED_WORD.length)}
+    <p ref={paraRef} className={styles.quote} aria-label={FULL_TEXT}>
+      {Array.from(FULL_TEXT).map((character, index) => (
+        <span
+          key={index}
+          data-quote-character
+          aria-hidden="true"
+          className={index >= redStart && index < redStart + RED_WORD.length ? "text-[#FF2F2F]" : undefined}
+        >{character}</span>
+      ))}
     </p>
   );
 }
@@ -254,7 +235,6 @@ function GptwImage({ src, className }) {
 function OneTeam() {
   const awardsRef = useRef(null);
   const logosRef  = useRef(null);
-  const [quoteDone, setQuoteDone] = useState(false);
 
   useEffect(() => {
     // Client logos pop in with stagger
