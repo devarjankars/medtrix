@@ -326,7 +326,7 @@ function OneTeam() {
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 4) * 0.08 }}
             >
-              <img src={logo} alt={`client-${index}`} className="max-h-[40px] w-auto object-contain opacity-90" loading="lazy" />
+              <img src={logo} alt={`client-${index}`} className={styles.clientLogo} loading="lazy" />
             </motion.div>
           ))}
         </div>
