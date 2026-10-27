@@ -1,5 +1,53 @@
 export const newsData = 
 [
+     {
+                id: 9,
+                date: "October 2026",
+                category: "Celebrations",
+                title: "A Week of Colours, Culture and Celebration at MedTrix Healthcare",
+                thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Navaratri.jpg",
+                thumbnailMbl: "",
+                body: [
+                 "Our Bangalore Global Delivery Center celebrated Navratri and Dussehra with a week filled with festive colours, traditional attire, and team spirit.  The five-day celebration brought colleagues together through themed-dress days, MedTrix colors, coordinated team color outfits, and ethnic wear. Each theme added a different touch to the festivities, giving everyone an opportunity to participate, express their personal style, and celebrate India's rich cultural traditions.",
+                 "A little friendly competition added to the excitement, with recognitions for Best Dressed Team, Style Icon of the Week, and Best Traditional Look. Beyond the festivities, the week was an opportunity for colleagues to connect beyond their everyday work, share traditions, and create memorable moments together.",
+                 "At MedTrix Healthcare, celebrations like these reflect the people and cultural experiences that shape our workplace, bringing colleagues closer through shared moments of joy and connection. "
+   
+                ],
+                images: [
+                    
+                    {
+                        desktop: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Navaratri1.jpg",
+
+                        mobile: "",
+                    },
+                    
+                    {
+                        desktop:
+                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Navaratri2.png",
+                        mobile: "",
+                    },
+                    {
+                        desktop:
+                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Navaratri3.png",
+                        mobile: "",
+                    },
+                     {
+                        desktop:
+                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Navaratri4.png",
+                        mobile: "",
+                    },
+                     {
+                        desktop:
+                            "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Navaratri5.png",
+                        mobile: "",
+                    },
+                  
+                  
+                   
+                   
+                    
+                ],
+            },
     {
                 id: 8,
                 date: "September 2026",
