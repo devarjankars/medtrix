@@ -397,7 +397,7 @@ function OneTeam() {
               <img
                 src={logo}
                 alt={`client-${index}`}
-                className="block w-full max-w-[180px] h-16 object-contain object-center opacity-90"
+                className="block w-full max-w-[120px] h-10 sm:max-w-[180px] sm:h-16 object-contain object-center opacity-90"
                 loading="lazy"
               />
             </motion.div>
