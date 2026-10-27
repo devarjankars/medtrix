@@ -122,7 +122,7 @@ export default function Landing() {
                           />
                           <span className="relative z-10">Explore Cipher</span>
                         </motion.div>
-                      </Link>
+            </Link>
         </div>
 
         {/* RIGHT — desktop image */}

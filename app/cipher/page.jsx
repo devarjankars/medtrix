@@ -440,7 +440,7 @@ export default function CipherPage() {
         <div className="mt-8 flex justify-center sm:mt-8">
           <a
             href="/contact"
-            className="inline-flex items-center justify-center rounded-full px-10 py-3.5 text-sm font-bold text-white transition hover:opacity-90"
+            className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-bold text-white transition hover:opacity-90"
             style={{
               background: "linear-gradient(135deg, #E1251B 0%, #ff4d42 100%)",
               boxShadow: "0 0 18px rgba(225,37,27,0.45)",
