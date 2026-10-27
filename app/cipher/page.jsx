@@ -179,10 +179,8 @@ export default function CipherPage() {
         tagImageAlt="Product Hunt"
         title={
           <>
-            <span>Decoding complexity.</span>
-            <br className="hidden lg:block" />
-            <span className="lg:hidden"> </span>
-            <span>Catalyzing healthcare.</span>
+            <span className="block whitespace-nowrap text-[clamp(20px,6vw,36px)] leading-[1.25] lg:text-inherit lg:leading-inherit">Decoding complexity.</span>
+            <span className="block whitespace-nowrap text-[clamp(20px,6vw,36px)] leading-[1.25] lg:text-inherit lg:leading-inherit">Catalyzing healthcare.</span>
           </>
         }
         paragraphs={[
@@ -429,7 +427,7 @@ export default function CipherPage() {
         </div>
       </div>
     </section>
-     <section className="relative overflow-hidden bg-[#090403] py-14 font-sans text-white lg:py-20">
+     <section className="relative overflow-hidden bg-[#090403] py-10 font-sans text-white lg:py-14">
       {/* Ambient red glow */}
      
       <div
@@ -440,8 +438,8 @@ export default function CipherPage() {
 
       <div className="relative mx-auto w-[90%] py-5 md:w-[80%]">
         {/* Section label */}
-        <div className="mb-8 ">
-          <span className="inline-flex rounded-full bg-[#292929] px-6 py-4 text-xs font-semibold tracking-[0.22em] text-white sm:text-sm">
+        <div className="mb-6">
+          <span className="inline-flex rounded-full bg-[#292929] px-5 py-2.5 text-xs font-semibold tracking-[0.22em] text-white sm:text-sm">
             CIPHER CAPABILITIES
           </span>
         </div>
@@ -461,7 +459,7 @@ export default function CipherPage() {
               aria-selected={activeIndex === index}
               aria-controls="product-panel"
               onClick={() => setActiveIndex(index)}
-              className={`min-h-10 whitespace-nowrap rounded-full border px-3 py-2.5 text-[13px] transition-colors duration-200 sm:px-5 sm:text-base lg:min-h-12 lg:flex-1 lg:border-transparent lg:px-5 ${index === products.length - 1 ? "col-span-2 justify-self-start lg:justify-self-auto" : ""} ${
+              className={`min-h-10 whitespace-nowrap rounded-full border px-3 py-2.5 text-[13px] transition-colors duration-200 sm:px-5 sm:text-base lg:min-h-10 lg:flex-1 lg:border-transparent lg:px-5 ${index === products.length - 1 ? "col-span-2 justify-self-start lg:justify-self-auto" : ""} ${
                 activeIndex === index
                   ? "border-[#ff3034] bg-[#ff3034] font-semibold text-white"
                   : "border-[#393939] text-[#e7e7e7] hover:bg-white/5"
@@ -477,15 +475,15 @@ export default function CipherPage() {
           id="product-panel"
           role="tabpanel"
           aria-labelledby={`product-tab-${activeIndex}`}
-          className="rounded-[28px] border border-[#302d2d] bg-[#1b1b1b] p-6 sm:p-8 lg:rounded-[28px] lg:p-6"
+          className="rounded-[28px] border border-[#302d2d] bg-[#1b1b1b] p-5 sm:p-6 lg:rounded-[28px] lg:p-5"
         >
           {/* Hero image */}
-          <div className="relative min-w-0 lg:aspect-[2/1] lg:overflow-hidden lg:rounded-[18px] lg:bg-[#080909]">
+          <div className="relative min-w-0 lg:aspect-[2.3/1] lg:overflow-hidden lg:rounded-[18px] lg:bg-[#080909]">
             <img
               key={activeProduct.image}
               src={activeProduct.image}
               alt={`${activeProduct.name} capability`}
-              className="block aspect-[1.6] w-full rounded-[14px] object-cover object-center lg:absolute lg:inset-0 lg:h-full lg:rounded-none"
+              className="block aspect-[1.8] w-full rounded-[14px] object-cover object-center lg:absolute lg:inset-0 lg:h-full lg:rounded-none"
               onError={(event) => {
                 event.currentTarget.style.display = "none";
               }}
@@ -495,9 +493,9 @@ export default function CipherPage() {
             <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-black via-black/75 to-transparent lg:block" />
 
             {/* Hero content */}
-            <div className="relative z-10 pt-7 lg:absolute lg:inset-y-0 lg:left-0 lg:flex lg:w-[48%] lg:max-w-[560px] lg:items-center lg:px-10 lg:py-8">
+            <div className="relative z-10 pt-5 text-center lg:text-left lg:absolute lg:inset-y-0 lg:left-0 lg:flex lg:w-[48%] lg:max-w-[560px] lg:items-center lg:px-10 lg:py-8">
               <div>
-              <div className="mb-5 flex flex-wrap items-center gap-2.5 lg:mb-6">
+              <div className="mb-4 flex flex-wrap items-center justify-center gap-2.5 lg:mb-6 lg:justify-start">
                 <CipherLogo />
                 <span className="text-xl text-white sm:text-2xl lg:text-[clamp(20px,1.8vw,32px)]">
                   {activeProduct.name}
@@ -522,7 +520,7 @@ export default function CipherPage() {
           </div>
 
           {/* Three descriptions */}
-          <div className="grid grid-cols-1 gap-8 pt-8 lg:grid-cols-3 lg:gap-8 lg:px-2 lg:pb-16 lg:pt-10">
+          <div className="grid grid-cols-1 gap-6 pt-6 lg:grid-cols-3 lg:gap-6 lg:px-2 lg:pb-8 lg:pt-7">
             {activeProduct.descriptions.map((description, index) => (
               <div key={`${activeProduct.name}-${index}`}>
                 <span className="mb-3 block text-[36px] sm:text-[44px] font-light leading-none tracking-[-0.04em] text-[#ff3034]">
