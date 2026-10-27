@@ -48,7 +48,7 @@ const metrics = [
     description: "Reduction in content rework through AI-powered MLR review",
   },
   {
-    prefix: "",
+    prefix: "  ",
     value: "~50%",
     description: "Overall cost savings",
   },
