@@ -286,9 +286,10 @@ function GptwImage({ src, className }) {
 }
 
 /* ── Main Component ────────────────────────────────────────────────────────── */
-function OneTeam() {
+function OneTeam({ endSection, showCommitment = true, showTeam = true } = {}) {
   const awardsRef = useRef(null);
   const logosRef  = useRef(null);
+  const showAwards = showCommitment && endSection !== "one-commitment";
 
   useEffect(() => {
     if (logosRef.current) {
@@ -311,8 +312,10 @@ function OneTeam() {
 
   return (
     <>
-      {/* ── CEO Quote Card ── */}
-      <div className="group/ceo flex flex-col md:flex-row items-center gap-5 md:gap-[3.5%] rounded-2xl border border-[#292929] bg-[radial-gradient(ellipse_at_top,#1b1b1b,#090909_75%)] p-4 md:p-[3%] text-white">
+      {showTeam && (
+        <>
+          {/* ── CEO Quote Card ── */}
+          <div className="group/ceo flex flex-col md:flex-row items-center gap-5 md:gap-[3.5%] rounded-2xl border border-[#292929] bg-[radial-gradient(ellipse_at_top,#1b1b1b,#090909_75%)] p-4 md:p-[3%] text-white">
         <div className="w-[100%] md:w-1/4 aspect-[188/224] shrink-0 overflow-hidden rounded-xl bg-[#151515]">
           <img src={ceoImg} alt="Vimal Narayanan" className="h-full w-full object-cover object-center transition-[filter] duration-300 group-hover/ceo:grayscale" />
         </div>
@@ -378,54 +381,62 @@ function OneTeam() {
           animate={{ opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
         />
-      </section>
+          </section>
+        </>
+      )}
 
-      {/* ── Client Logos ── */}
-      <section className="bg-black lg:py-24 py-12 relative overflow-hidden">
-        <Badge label="One Commitment" />
-        <SectionHeading red="Our " white="Clients" />
-        <div ref={logosRef} className="grid grid-cols-2 lg:grid-cols-4 lg:gap-y-4 lg:gap-x-4 gap-2 items-center justify-center">
-          {clientLogos.map((logo, index) => (
-            <motion.div
-              key={index}
-              className="logo-card w-full min-h-[120px] border border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 4) * 0.08 }}
-            >
-              <img
-                src={logo}
-                alt={`client-${index}`}
-                className="block w-full max-w-[120px] h-10 sm:max-w-[180px] sm:h-16 object-contain object-center opacity-90"
-                loading="lazy"
-              />
-            </motion.div>
-          ))}
-        </div>
-        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-10" style={redGlow} />
-      </section>
+      {showCommitment && (
+        /* ── Client Logos ── */
+        <section className="bg-black lg:py-24 py-12 relative overflow-hidden">
+          <Badge label="One Commitment" />
+          <SectionHeading red="Our " white="Clients" />
+          <div ref={logosRef} className="grid grid-cols-2 lg:grid-cols-4 lg:gap-y-4 lg:gap-x-4 gap-2 items-center justify-center">
+            {clientLogos.map((logo, index) => (
+              <motion.div
+                key={index}
+                className="logo-card w-full min-h-[120px] border border-[#ffffff56] p-2 rounded-[10px] flex items-center justify-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 4) * 0.08 }}
+              >
+                <img
+                  src={logo}
+                  alt={`client-${index}`}
+                  className="block w-full max-w-[120px] h-10 sm:max-w-[180px] sm:h-16 object-contain object-center opacity-90"
+                  loading="lazy"
+                />
+              </motion.div>
+            ))}
+          </div>
+          <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-10" style={redGlow} />
+        </section>
+      )}
 
-      {/* ── Awards ── */}
-      <section ref={awardsRef} className="pt-12 pb-12 lg:pt-24 lg:pb-20 relative lg:overflow-visible">
-        <Badge label="One Standard" />
-        <SectionHeading red="Excellence " white="Recognized Across the Industry" />
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
-          {awardsData.map((award, index) => (
-            <motion.div
-              key={index}
-              className="award-card flex items-center max-h-[125px] justify-center rounded-[10px] border border-[#ffffff56] p-2"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 4) * 0.08 }}
-            >
-              <img src={award} alt={`award-${index}`} className="lg:max-w-[200px] object-contain" loading="lazy" />
-            </motion.div>
-          ))}
-        </div>
-        <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-10" style={redGlow} />
-      </section>
+      {showAwards && (
+        <>
+          {/* ── Awards ── */}
+          <section ref={awardsRef} className="pt-12 pb-12 lg:pt-24 lg:pb-20 relative lg:overflow-visible">
+            <Badge label="One Standard" />
+            <SectionHeading red="Excellence " white="Recognized Across the Industry" />
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+              {awardsData.map((award, index) => (
+                <motion.div
+                  key={index}
+                  className="award-card flex items-center max-h-[125px] justify-center rounded-[10px] border border-[#ffffff56] p-2"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.1 }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay: (index % 4) * 0.08 }}
+                >
+                  <img src={award} alt={`award-${index}`} className="lg:max-w-[200px] object-contain" loading="lazy" />
+                </motion.div>
+              ))}
+            </div>
+            <div className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-10" style={redGlow} />
+          </section>
+        </>
+      )}
     </>
   );
 }

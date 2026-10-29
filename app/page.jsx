@@ -1,7 +1,7 @@
 "use client";
 import Landing from "@/components/Landing";
-import OneTeam from "@/components/OneTeam";
 import Animation from "@/components/Animation";
+import OneTeam from "@/components/OneTeam";
 import Image from "next/image";
 
 
@@ -18,13 +18,9 @@ export default function Home() {
     <div className="w-[100%]  mx-auto">
      <div className="relative bg-black"> <Landing /></div>
       <Animation />
-      <div className=" mb-5 lg:mt-[80px] mt-[50px] w-[90%] md:w-[80%] mx-auto ">
-       <span
-          className="inline-flex px-4 py-1.5 rounded-full bg-[#2A2525] text-white tracking-[4px] text-sm font-bold uppercase bg-[linear-gradient(to_right,_rgba(255,255,255,0.2),_rgba(0,0,0,0.4))] border border-[#2A2525]"
-        > ONE TEAM
-      </span>
-       </div>
-    <div className="relative w-[90%] md:w-[80%] mx-auto"> <OneTeam /></div>
+      <div className="mx-auto w-[90%] md:w-[80%]">
+        <OneTeam showTeam={false} />
+      </div>
       <section className="w-full text-white">
         <h5 className="text-2xl font-bold mb-8 mt-8 text-start w-[90%] md:w-[80%] mx-auto">
             Contact Us

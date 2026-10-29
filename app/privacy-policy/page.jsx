@@ -2,9 +2,9 @@ export const metadata = {
   title: "Privacy Policy | MedTrix Healthcare",
 };
 
-function Section({ title, children }) {
+function Section({ title, children, id }) {
   return (
-    <div className="mb-8">
+    <div id={id} className="mb-8">
       <h2 className="text-white text-lg font-semibold mb-3">{title}</h2>
       <div className="text-gray-400 text-sm leading-relaxed space-y-3">{children}</div>
     </div>
@@ -73,7 +73,7 @@ export default function PrivacyPolicy() {
             <p className="mt-3">We do not sell, trade, or rent your personal information to third parties.</p>
           </Section>
 
-          <Section title="Cookies">
+          <Section id="cookies" title="Cookies">
             <p>We use cookies to enhance your experience on our website. Cookies are small data files stored on your device. You can instruct your browser to refuse all cookies or to indicate when a cookie is being sent. However, if you do not accept cookies, some portions of our site may not function properly.</p>
             <p>Types of cookies we use:</p>
             <BulletList items={[
