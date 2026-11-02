@@ -244,33 +244,7 @@ Validated prompts convert a concept to structured copy from a pre-approved knowl
           </div>
         </div>
 
-        {/* Workflow panel */}
-        <div className="rounded-[24px] border border-[#302d2d] bg-[radial-gradient(ellipse_at_65%_110%,rgba(255,45,45,0.045),transparent_45%),#100e0e] px-5 py-8 sm:px-8 sm:py-10 lg:px-11 lg:py-12">
-          <p className="mb-9 text-base leading-relaxed tracking-[-0.02em] sm:text-lg">
-            From approved source to finished deliverable. Content, design, and
-            code in one system.
-          </p>
-       <div className="w-full">
-      {/* DESKTOP: horizontal workflow */}
-      <div className="hidden sm:block">
-        <img
-          src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Track_v2.png"
-          alt="Cipher platform workflow"
-          className="w-full h-auto object-contain"
-        />
-      </div>
-
-      {/* MOBILE: vertical workflow */}
-      <div className="block sm:hidden">
-        <img
-          src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Steps.png"
-          alt="Cipher platform workflow steps"
-          className="w-full h-auto object-contain"
-        />
-      </div>
-    </div>
-         
-        </div>
+       
       </div>
     </section>
 
