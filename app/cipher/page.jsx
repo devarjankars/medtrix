@@ -180,7 +180,7 @@ export default function CipherPage() {
         tagImageAlt="Product Hunt"
         title="Decoding complexity. Catalyzing healthcare."
         paragraphs={[
-          "The content for pharma owes responsibility and commitment to patients. It must be scientifically validated, visually captivating, delivered in innovative formats, and now has to be produced faster and at lower cost than ever. It is a complex undertaking and involves multiple teams, multiple handoffs, and multiple review cycles.",
+          "The content for pharma owes responsibility and commitment to patients. It must be scientifically validated, visually captivating, delivered in innovative formats, and now has to be produced faster and at lower cost than ever. This complex undertaking requires coordination across multiple teams, with numerous handoffs and rounds of review.",
         ]}
         contentAfterParagraphs={
           <div className="flex flex-col gap-3">
@@ -208,7 +208,7 @@ export default function CipherPage() {
         {/* Section heading */}
         <div className="mb-8  inline-flex rounded-full bg-[#292929] px-5 py-4">
           <span className="text-xs font-semibold tracking-[0.25em] sm:text-sm">
-            HOW CIPHER WORKS
+            WHAT IS CIPHER
           </span>
         </div>
 
@@ -226,19 +226,17 @@ export default function CipherPage() {
           {/* Description */}
           <div className="flex flex-col justify-center text-left border-t border-[#383838] pt-6 md:border-l md:border-t-0 md:py-0 md:pl-8 lg:pl-16">
             <p className="mb-4 text-base leading-[1.9] tracking-[-0.025em] text-[#eeeeee] sm:text-lg">
-              AI systems synthesize information grounded in approved sources,
-              ensuring every claim is traceable to its reference.
+             From idea to a ready-to-ship deliverable in days, not months.
+Validated prompts convert a concept to structured copy from a pre-approved knowledge bank with a few clicks. Each statement strictly adheres to the science, is referenced to the source, and MLR-review ready.
+
             </p>
 
             <p className="mb-4 text-base leading-[1.9] tracking-[-0.025em] text-[#eeeeee] sm:text-lg">
-              Generative design workflows turn that content into scientifically
-              precise, on-brand visuals, layouts, and designs.
+              Colors, designs, and images that comply with pre-defined brand guidelines are automatically added.
             </p>
 
             <p className="text-base leading-[1.9] tracking-[-0.025em] text-[#eeeeee] sm:text-lg">
-              AI-assisted development and custom-built components then
-              transform the content and designs into pharma-specific digital
-              formats.
+              Cipher handles the technical execution by instantly generating and exporting production-ready code for immediate deployment.
             </p>
           </div>
         </div>
