@@ -217,7 +217,7 @@ export default function CipherPage() {
           {/* Workflow illustration */}
           <div className="flex items-center justify-start overflow-hidden  md:min-h-0 md:px-0 md:py-0">
             <img
-              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ciphar_Iv1.png"
+              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ciphersection.png"
               alt="Cipher platform workflow"
               className="relative z-10 h-auto  w-full object-contain object-left"
             />
