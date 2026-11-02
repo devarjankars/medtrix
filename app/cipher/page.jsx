@@ -208,7 +208,7 @@ export default function CipherPage() {
         {/* Section heading */}
         <div className="mb-8  inline-flex rounded-full bg-[#292929] px-5 py-4">
           <span className="text-xs font-semibold tracking-[0.25em] sm:text-sm">
-            WHAT IS CIPHER
+            CIPHER
           </span>
         </div>
 
@@ -227,8 +227,11 @@ export default function CipherPage() {
           <div className="flex flex-col justify-center text-left border-t border-[#383838] pt-6 md:border-l md:border-t-0 md:py-0 md:pl-8 lg:pl-16">
             <p className="mb-4 text-base leading-[1.9] tracking-[-0.025em] text-[#eeeeee] sm:text-lg">
              From idea to a ready-to-ship deliverable in days, not months.
-Validated prompts convert a concept to structured copy from a pre-approved knowledge bank with a few clicks. Each statement strictly adheres to the science, is referenced to the source, and MLR-review ready.
+Validated prompts convert a concept to structured copy from a pre-approved knowledge bank with a few clicks.
 
+            </p>
+            <p className="mb-4 text-base leading-[1.9] tracking-[-0.025em] text-[#eeeeee] sm:text-lg">
+               Each statement strictly adheres to the science, is referenced to the source, and MLR-review ready.
             </p>
 
             <p className="mb-4 text-base leading-[1.9] tracking-[-0.025em] text-[#eeeeee] sm:text-lg">
