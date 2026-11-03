@@ -193,8 +193,8 @@ export default function CipherPage() {
           </div>
         }
         cta={{ label: "Book a Demo", href: "/contact" }}
-        desktopBg="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/cipherDesk_v2.png"
-        mobileImg="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/cipherMobile.png"
+        desktopBg="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/cipher_wallperDesk_v2.png"
+        mobileImg="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/cipher_wallpaper_v2.png"
       />
 
       <section className="relative overflow-hidden bg-black py-16 text-white lg:py-24">
