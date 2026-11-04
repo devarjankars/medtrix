@@ -219,7 +219,7 @@ export default function CipherPage() {
             <img
               src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Cipher image.png"
               alt="Cipher platform workflow"
-              className="relative z-10 h-auto  w-full object-contain object-left"
+              className="relative z-10 h-auto w-full rounded-2xl border border-[#383838] object-contain object-left"
             />
           </div>
 
