@@ -193,7 +193,7 @@ export default function CipherPage() {
           </div>
         }
         cta={{ label: "Book a Demo", href: "/contact" }}
-        desktopBg="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/cipher_wallperDesk_v2.png"
+        desktopBg="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Final Hero Image.png"
         mobileImg="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/cipher_wallpaper_v2.png"
       />
 
@@ -217,7 +217,7 @@ export default function CipherPage() {
           {/* Workflow illustration */}
           <div className="flex items-center justify-start overflow-hidden  md:min-h-0 md:px-0 md:py-0">
             <img
-              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/ciphersection.png"
+              src="https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Cipher image.png"
               alt="Cipher platform workflow"
               className="relative z-10 h-auto  w-full object-contain object-left"
             />
@@ -276,7 +276,7 @@ Validated prompts convert a concept to structured copy from a pre-approved knowl
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4 xl:gap-6">
           {metrics.map((metric) => (
             <div
-              key={metric.value}
+              key={metric.description}
               className="group min-h-[230px] rounded-xl border border-[#292626] bg-gradient-to-br from-[#1c1919] via-[#171414] to-[#0d0b0b] px-7 py-7 transition-colors duration-300 hover:border-[#443030] sm:min-h-[245px] lg:px-[34px] lg:py-8"
             >
               {/* Red accent */}
