@@ -90,6 +90,7 @@ const logo11 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2
 const logo12 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/stemlinelogo.png";
 const logo13 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo11v2.png";
 const logo14 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/logo12v2.png";
+const logo15 = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Ascentis.png";
 
 const awd1  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd1.png";
 const awd2  = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/awd2.png";
@@ -152,12 +153,17 @@ const accountsTeamData = [
   { img: colin,       name: "Colin Lewandowski",  role: "Account Executive",        linkedin: "https://www.linkedin.com/in/colin-lewandowski-7b5910329/" },
 ];
 
-const clientLogos = [logo1, logo2, logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo10, logo11, logo12, logo13, logo14];
+const clientLogos = [logo1, logo2,logo13, logo15,  logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo14, logo10, logo11, logo12, ];
 const awardsData  = [awd1, awd2, awd3, awd4, awd5, awd6, awd7, awd8, awd9, awd10, awd11, awd12];
 
 const redGlow = {
   background: "radial-gradient(ellipse at bottom, rgba(225,37,27,.3) 0%, transparent 60%)",
 };
+const glowAnimation = {
+  left: ["-50%", "-50%", "-50%"],
+  opacity: [0.5, 1, 0.5],
+  transition: { duration: 3, ease: "easeInOut", repeat: Infinity },
+}
 
 /* ── Profile Card ──────────────────────────────────────────────────────────── */
 function ProfileCard({ person, leadership = false }) {

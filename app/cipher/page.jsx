@@ -73,7 +73,7 @@ const products = [
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/cipherEmail.png",
     descriptions: [
       "Cipher transforms approved storyboards into <b>channel-ready emails</b>, using brand-defined templates, reusable modules, and approved content to maintain consistency from narrative to final execution.",
-      "Built for pharma workflows, it can incorporate <b>client- and brand-specific MLR requirements</b>, generate downloadable <b>VSBs for MLR submission</b>, and produce HTML tested across commonly used channels, including <b>SFMC and Veeva</b>.",
+      "Built for pharma workflows, it can incorporate client- and brand-specific MLR requirements, generate downloadable <b>VSBs for MLR submission</b>, and produce HTML tested across commonly used channels, including <b>SFMC and Veeva</b>.",
       "Reduces repetitive production effort, minimizes downstream corrections, and accelerates deployment.",
     ],
   },
@@ -123,13 +123,9 @@ function renderDescription(description) {
     }
 
     const isBold = match[1].toLowerCase() === "b" || match[1].toLowerCase() === "strong";
-    parts.push(
-      isBold ? (
-        <strong key={match.index} className="font-semibold text-white">{match[2]}</strong>
-      ) : (
-        <em key={match.index} className="italic text-[#d4d0d0]">{match[2]}</em>
-      ),
-    );
+    parts.push(isBold ? match[2] : (
+      <em key={match.index} className="italic text-[#d4d0d0]">{match[2]}</em>
+    ));
     lastIndex = emphasisPattern.lastIndex;
   }
 

@@ -14,10 +14,10 @@ const links = [
       { label: "Commercial Solutions", href: "/services/Commercial_Solutions" },
       { label: "Medical Affairs",       href: "/services/medical-affairs" },
       { label: "Digital Innovation",  href: "/services/digital-innovation" },
-      { label: "Cipher",                href: "/cipher" },
       { label: "Strategy & Consulting", href: "/services/Strategy-Consulting" },
     ],
   },
+  { label: "Cipher", href: "/cipher" },
   { label: "Our Work",      href: "/our-work" },
   { label: "News & Updates", href: "/news" },
   { label: "Life @ Medtrix",  href: "/life-at-medtrix" },
@@ -35,7 +35,10 @@ const NavItem = forwardRef(function NavItem({ label, href, items, pathname, butt
     const clean = pathname.replace(/\/$/, "");
     return clean === i.href || (clean === "/MLR-Catalyst" && i.href === MLR_PARENT);
   });
-  const isActive            = !hasItems && pathname.replace(/\/$/, "") === href;
+  const cleanPath           = pathname.replace(/\/$/, "");
+  const isActive            = !hasItems && (
+    cleanPath === href || (href === "/cipher" && cleanPath === "/MLR-Catalyst")
+  );
 
   /* Dropdown open: stagger items in */
   useEffect(() => {
@@ -230,7 +233,12 @@ function MobileMenu({ pathname, onClose, openSection, setOpenSection }) {
                 <Link
                   href={href}
                   onClick={() => { setOpenSection(null); onClose(); }}
-                  className={`text-base font-semibold w-full ${pathname.replace(/\/$/, "") === href ? "text-red-500" : "text-white/75"}`}
+                  className={`text-base font-semibold w-full ${
+                    pathname.replace(/\/$/, "") === href ||
+                    (href === "/cipher" && pathname.replace(/\/$/, "") === "/MLR-Catalyst")
+                      ? "text-red-500"
+                      : "text-white/75"
+                  }`}
                 >
                   {label}
                 </Link>
