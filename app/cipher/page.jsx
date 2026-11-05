@@ -94,7 +94,7 @@ const products = [
     image: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/cipherVideo.png",
     descriptions: [
       "Cipher brings AI into the video development process—from early-stage concept and scripting through storyboarding and production support.",
-      "AI can assist with scripts, visual storyboards, voice, imagery, animation concepts, and other production elements, while medical, creative, and production specialists retain control over scientific accuracy, storytelling, brand alignment, and final execution.AI can assist with scripts, visual storyboards, voice, imagery, animation concepts, and other production elements, while medical, creative, and production specialists retain control over scientific accuracy, storytelling, brand alignment, and final execution.",
+      "AI can assist with scripts, visual storyboards, voice, imagery, animation concepts, and other production elements, while medical, creative, and production specialists retain control over scientific accuracy, storytelling, brand alignment, and final execution. AI can assist with scripts, visual storyboards, voice, imagery, animation concepts, and other production elements, while medical, creative, and production specialists retain control over scientific accuracy, storytelling, brand alignment, and final execution.",
       "This creates opportunities to develop video content faster and explore a broader range of creative approaches without removing expert oversight from the process.",
     ],
   },
@@ -380,7 +380,7 @@ Validated prompts convert a concept to structured copy from a pre-approved knowl
               {activeIndex === products.length - 1 && (
                 <Link
                   href="/MLR-Catalyst"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#ff3034] px-5 py-1.5 text-xs font-semibold text-white shadow-[0_5px_24px_rgba(255,48,52,0.18)] transition hover:bg-[#e92228] sm:text-[13px]"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#ff3034] px-5 py-1.5 text-sm font-semibold text-white shadow-[0_5px_24px_rgba(255,48,52,0.18)] transition hover:bg-[#e92228] sm:text-[17px]"
                 >
                   <PlayCircle size={30} />
                   {activeProduct.button}
