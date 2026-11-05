@@ -72,6 +72,7 @@ const vincent = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_
 const christopher = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Christopher%20Moccia.png";
 const jaclyn = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Jaclyn_v4.png";
 const colin = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Colin_v2.png";
+const blair = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Blair.png";
 
 const gptwImg = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/gptw.webp";
 const gptw_mobile = "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/gptw_mobile.png";
@@ -151,6 +152,8 @@ const accountsTeamData = [
   { img: michel,      name: "Michelle Trussell",  role: "Account Director",         linkedin: "https://www.linkedin.com/in/michelle-trussell-44068747/" },
   { img: jaclyn,      name: "Jaclyn Pallotti",    role: "Account Director" },
   { img: colin,       name: "Colin Lewandowski",  role: "Account Executive",        linkedin: "https://www.linkedin.com/in/colin-lewandowski-7b5910329/" },
+       { img: blair,    name: "Blair Sirockman",          role: "Account Manager",    linkedin: "https://www.linkedin.com/in/blairsirockman/" },
+
 ];
 
 const clientLogos = [logo1, logo2,logo13, logo15,  logo3, logo4, logo5, logo6, logo7, logo8, logo9, logo14, logo10, logo11, logo12, ];
