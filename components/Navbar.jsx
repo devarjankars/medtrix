@@ -6,7 +6,7 @@ import gsap from "gsap";
 import { motion } from "framer-motion";
 
 const links = [
-  { label: "About Us",        href: "/about" },
+  { label: "Our Team",        href: "/about" },
   {
     label: "Services",
     href: null,

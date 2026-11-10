@@ -148,7 +148,7 @@ export const newsData =
             },
     {
                 id: 6,
-                date: "Augest 2026",
+                date: "August 2026",
                 category: "Celebrations",
                 title: "Independence Day Celebrations at MedTrix Bengaluru",
                 thumbnail: "https://d218mh3sadleh5.cloudfront.net/Website/Internal/Medtrix_2026/Image/Group image.jpg",

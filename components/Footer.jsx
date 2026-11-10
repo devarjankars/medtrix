@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const footerData = [
-  { title: "About Us", href: "/about", links: [] },
+  { title: "Our Team", href: "/about", links: [] },
   {
     title: "Services",
     href: "/services",
