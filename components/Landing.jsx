@@ -68,9 +68,7 @@ export default function Landing() {
             initial="hidden"
             animate="visible"
             variants={paraVariants}
-          >
-            MedTrix is a growth catalyst for pharmaceutical and life science companies.
-            <br className="hidden 2xl:block" />We bring together <b>science, creativity, technology, and strategy</b> to turn your<br className="hidden 2xl:block" /> science, teams, and brands into faster, bigger, and more precise outcomes.
+          >MedTrix is a growth catalyst for pharmaceutical and life science companies. We work with the science you've built, the teams you've assembled, and the brands you've invested in, to drive outcomes that are faster, bigger, and precise.
           </motion.p>
 
           <motion.p
@@ -79,9 +77,8 @@ export default function Landing() {
             initial="hidden"
             animate="visible"
             variants={paraVariants}
-          >
-            Across Medical Affairs and Commercial functions, we accelerate compliant, <br className="hidden 2xl:block" />high-impact engagement from launch through the lifecycle. We don’t just <br className="hidden 2xl:block" />support growth—we{" "}<b className="text-[#F2F2F2]">catalyze</b> it.
-          </motion.p>
+          >Our proven mix of science, creativity, technology, and strategy accelerates compliant, high-impact engagement across Medical Affairs and Commercial functions - exponentially. From launch through the lifecycle, we don't just support your growth. We <b>Catalyze</b>chrom it. 
+            </motion.p>
  <motion.p
             className="text-[20px]  lg:text-[30px] text-center lg:text-left text-[#FFFFFF] mt-8"
             custom={1}
