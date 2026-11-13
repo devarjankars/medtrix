@@ -54,7 +54,13 @@ function ContactInner() {
         body: JSON.stringify({ ...formData, captchaToken: token }),
       });
 
-      const data = await res.json();
+      let data;
+      try {
+        data = await res.json();
+      } catch {
+        throw new Error("The contact service returned an invalid response. Please try again later.");
+      }
+
       if (!res.ok) throw new Error(data.error || "Something went wrong. Please try again.");
 
       setStage("done");
