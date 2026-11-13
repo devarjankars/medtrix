@@ -77,7 +77,7 @@ export default function Landing() {
             initial="hidden"
             animate="visible"
             variants={paraVariants}
-          >Our proven mix of science, creativity, technology, and strategy accelerates compliant, high-impact engagement across Medical Affairs and Commercial functions - exponentially. From launch through the lifecycle, we don't just support your growth. We <b>Catalyze</b>chrom it. 
+          >Our proven mix of science, creativity, technology, and strategy accelerates compliant, high-impact engagement across Medical Affairs and Commercial functions - exponentially. From launch through the lifecycle, we don't just support your growth. We <b>Catalyze</b> it. 
             </motion.p>
  <motion.p
             className="text-[20px]  lg:text-[30px] text-center lg:text-left text-[#FFFFFF] mt-8"
